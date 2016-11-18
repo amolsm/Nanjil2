@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="DairyerpConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DairyerpConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.DairyerpConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DairyerpConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        od.ProductID, p.ProductName, COUNT(od.ProductID) AS Expr1, SUM(od.Qty) AS Expr2, SUM(od.UnitCost) AS Expr3, SUM(od.Total) AS Expr4
+FROM            OrderDetails AS od LEFT OUTER JOIN
+                         Products AS p ON od.ProductID = p.ProductID
+GROUP BY od.ProductID, p.ProductName</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ProductID" DataSetColumn="ProductID" />
+              <Mapping SourceColumn="ProductName" DataSetColumn="ProductName" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+              <Mapping SourceColumn="Expr3" DataSetColumn="Expr3" />
+              <Mapping SourceColumn="Expr4" DataSetColumn="Expr4" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProductID" msprop:Generator_ColumnVarNameInTable="columnProductID" msprop:Generator_ColumnPropNameInRow="ProductID" msprop:Generator_ColumnPropNameInTable="ProductIDColumn" msprop:Generator_UserColumnName="ProductID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProductName" msprop:Generator_ColumnVarNameInTable="columnProductName" msprop:Generator_ColumnPropNameInRow="ProductName" msprop:Generator_ColumnPropNameInTable="ProductNameColumn" msprop:Generator_UserColumnName="ProductName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnExpr3" msprop:Generator_ColumnPropNameInRow="Expr3" msprop:Generator_ColumnPropNameInTable="Expr3Column" msprop:Generator_UserColumnName="Expr3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Expr4" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnExpr4" msprop:Generator_ColumnPropNameInRow="Expr4" msprop:Generator_ColumnPropNameInTable="Expr4Column" msprop:Generator_UserColumnName="Expr4" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

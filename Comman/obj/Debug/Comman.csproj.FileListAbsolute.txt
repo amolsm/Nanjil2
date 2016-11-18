@@ -1,0 +1,10 @@
+D:\NanjilCode\Comman\bin\Comman.dll
+D:\NanjilCode\Comman\bin\Comman.pdb
+D:\NanjilCode\Comman\obj\Debug\Comman.csprojResolveAssemblyReference.cache
+D:\NanjilCode\Comman\obj\Debug\Comman.dll
+D:\NanjilCode\Comman\obj\Debug\Comman.pdb
+D:\NanjilCode\Nanjil\Comman\bin\Comman.dll
+D:\NanjilCode\Nanjil\Comman\bin\Comman.pdb
+D:\NanjilCode\Nanjil\Comman\obj\Debug\Comman.dll
+D:\NanjilCode\Nanjil\Comman\obj\Debug\Comman.pdb
+D:\NanjilCode\Nanjil\Comman\obj\Debug\Comman.csprojResolveAssemblyReference.cache

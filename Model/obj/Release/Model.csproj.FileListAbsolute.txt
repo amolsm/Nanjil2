@@ -1,0 +1,10 @@
+D:\NanjilCode\Nanjil\Model\bin\Model.dll
+D:\NanjilCode\Nanjil\Model\bin\Model.pdb
+D:\NanjilCode\Nanjil\Model\obj\Release\Model.dll
+D:\NanjilCode\Nanjil\Model\obj\Release\Model.pdb
+D:\NanjilCode\Model\bin\Model.dll
+D:\NanjilCode\Model\bin\Model.pdb
+D:\NanjilCode\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+D:\NanjilCode\Model\obj\Release\Model.dll
+D:\NanjilCode\Model\obj\Release\Model.pdb
+D:\NanjilCode\Nanjil\Model\obj\Release\Model.csprojResolveAssemblyReference.cache

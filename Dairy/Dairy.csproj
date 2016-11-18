@@ -1,0 +1,2775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C42AFC17-88AF-4957-9A72-F77FFFBE1BEB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dairy</RootNamespace>
+    <AssemblyName>Dairy</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.5.0.0\lib\net40\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.5.0.0\lib\net45\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.5.0.0\tools\about_EntityFramework.help.txt" />
+    <Content Include="packages\EntityFramework.5.0.0\tools\EntityFramework.PowerShell.dll" />
+    <Content Include="packages\EntityFramework.5.0.0\tools\EntityFramework.PowerShell.Utility.dll" />
+    <Content Include="packages\EntityFramework.5.0.0\tools\migrate.exe" />
+    <Content Include="Print.aspx" />
+    <Content Include="Reports\AgentSchemeReport.aspx" />
+    <Content Include="Reports\BillsReports.aspx" />
+    <Content Include="Reports\PartyWiseScheme.aspx" />
+    <Content Include="Reports\ProductWIseSealsReports.aspx" />
+    <Content Include="Reports\StaffACCSaleSummary.aspx" />
+    <Content Include="Authentication\ForgotPassword.aspx" />
+    <Content Include="Authentication\LoginT.aspx" />
+    <Content Include="Authentication\LogOut.aspx" />
+    <Content Include="obj\Debug\Dairy.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Dairy.dll" />
+    <Content Include="obj\Debug\Dairy.pdb" />
+    <Content Include="Tabs\Administration\AddAgent.aspx" />
+    <Content Include="Tabs\Administration\AddBank.aspx" />
+    <Content Include="Tabs\Administration\AddBrand.aspx" />
+    <Content Include="Tabs\Administration\AddCommodity.aspx" />
+    <Content Include="Tabs\Administration\AddDesignation.aspx" />
+    <Content Include="Tabs\Administration\AddLocation.aspx" />
+    <Content Include="Tabs\Administration\AddProduct.aspx" />
+    <Content Include="Tabs\Administration\AddReturnedItems.aspx" />
+    <Content Include="Tabs\Administration\AddRoute.aspx" />
+    <Content Include="Tabs\Administration\AddSlab.aspx" />
+    <Content Include="Tabs\Administration\AddTypeInfo.aspx" />
+    <Content Include="Tabs\Administration\BillSequence.aspx" />
+    <Content Include="Tabs\Administration\BoothLog.aspx" />
+    <Content Include="Tabs\Administration\DamageRateSetup.aspx" />
+    <Content Include="Tabs\Administration\EditOrder.aspx" />
+    <Content Include="Tabs\Administration\GenrateBillThermal.aspx" />
+    <Content Include="Tabs\Administration\IncentiveSetup.aspx" />
+    <Content Include="Tabs\Administration\OrderQuantity.aspx" />
+    <Content Include="Tabs\Administration\UserLog.aspx" />
+    <Content Include="Tabs\Administration\ViewDispatchSummary.aspx" />
+    <Content Include="Tabs\Administration\ViewDispatchSummaryUsers.aspx" />
+    <Content Include="Tabs\Administration\ViewDispatchUserShiftwise.aspx" />
+    <Content Include="Tabs\Despatch\AddReturnedItems.aspx" />
+    <Content Include="Tabs\Despatch\BoothPlaceOrder.aspx" />
+    <Content Include="Tabs\Despatch\ItemwiseSalesSummary.aspx" />
+    <Content Include="Tabs\Despatch\ReturnedTrays.aspx" />
+    <Content Include="Tabs\Despatch\ReturnScheme.aspx" />
+    <Content Include="Tabs\Despatch\RoutewiseSalesSummary.aspx" />
+    <Content Include="Tabs\Despatch\ViewDispatchOrders.aspx" />
+    <Content Include="Tabs\Despatch\ViewDispatchSummary.aspx" />
+    <Content Include="Tabs\Despatch\ViewDispatchSummaryUsers.aspx" />
+    <Content Include="Tabs\Despatch\ViewDispatchUserShiftwise.aspx" />
+    <Content Include="Tabs\Dispatch\DoNotDelete.xml" />
+    <Content Include="Tabs\Marketing\AgencyCloserScreen.aspx" />
+    <Content Include="Tabs\Marketing\AgencyIcentivePayment.aspx" />
+    <Content Include="Tabs\Marketing\AgentListNotPlacedOrder.aspx" />
+    <Content Include="Tabs\Marketing\AgentSchemeDetails.aspx" />
+    <Content Include="Tabs\Marketing\AgentSchemeSummary.aspx" />
+    <Content Include="Tabs\Marketing\AgentSlabReportList.aspx" />
+    <Content Include="Tabs\Marketing\AmountwiseIceCreamReport.aspx" />
+    <Content Include="Tabs\Marketing\BillwiseSalesSummaryforMarketing.aspx" />
+    <Content Include="Tabs\Marketing\BillwiseStaffSalesSummary.aspx" />
+    <Content Include="Tabs\Marketing\DamageReplacementRateSetup.aspx" />
+    <Content Include="Tabs\Marketing\DeactivateAgentList.aspx" />
+    <Content Include="Tabs\Marketing\DespatchComparisonReport.aspx" />
+    <Content Include="Tabs\Marketing\DispatchReturnComparison.aspx" />
+    <Content Include="Tabs\Marketing\IncentiveSetupScreen.aspx" />
+    <Content Include="Tabs\Marketing\ItemwisePurchaseAgentList.aspx" />
+    <Content Include="Tabs\Marketing\ItemwiseSalesSummaryForMarketing.aspx" />
+    <Content Include="Tabs\Marketing\ItemwiseStaffSalesSummary.aspx" />
+    <Content Include="Tabs\Marketing\MarketingSalesAnalysisItemwise.aspx" />
+    <Content Include="Tabs\Marketing\NewAgentList.aspx" />
+    <Content Include="Tabs\Marketing\PartywiseDamageReplacementSummary.aspx" />
+    <Content Include="Tabs\Marketing\PartywiseIncentiveSummary.aspx" />
+    <Content Include="Tabs\Marketing\ProductIncentive.aspx" />
+    <Content Include="Tabs\Marketing\RefundSchemeSummary.aspx" />
+    <Content Include="Tabs\Marketing\ReturnComparisonReport.aspx" />
+    <Content Include="Tabs\Marketing\SalesComparison.aspx" />
+    <Content Include="Tabs\Marketing\SchemeRefund.aspx" />
+    <Content Include="Tabs\Marketing\SpotDamageComparisonReport.aspx" />
+    <Content Include="Tabs\Marketing\StaffAccountSalesSummary.aspx" />
+    <Content Include="Tabs\Procurement\AddMilkCollectionCenter.aspx" />
+    <Content Include="Tabs\Procurement\AddMilkCollectionRoute.aspx" />
+    <Content Include="Tabs\Procurement\AddMilkSuppliersProfile.aspx" />
+    <Content Include="Tabs\Procurement\AddSupplierAdvanceDetails.aspx" />
+    <Content Include="Tabs\Procurement\AddSupplierBankDetails.aspx" />
+    <Content Include="Tabs\Procurement\AddSupplierLoanDetails.aspx" />
+    <Content Include="Tabs\Procurement\AddSupplierRDInfo.aspx" />
+    <Content Include="Tabs\Procurement\AddSupplierSchemeBonus.aspx" />
+    <Content Include="Tabs\Procurement\AddSuppliersLoanInfo.aspx" />
+    <Content Include="Tabs\Procurement\CalulateRawMilkPurchase.aspx" />
+    <Content Include="Tabs\Procurement\CheckList.aspx" />
+    <Content Include="Tabs\Procurement\ConsolidatePaymentSummary.aspx" />
+    <Content Include="Tabs\Procurement\IncentiveTarrif.aspx" />
+    <Content Include="Tabs\Procurement\InsertBatchWiseMilk.aspx" />
+    <Content Include="Tabs\Procurement\MilkCollectionDetails.aspx" />
+    <Content Include="Tabs\Procurement\MilkCollectionTransport.aspx" />
+    <Content Include="Tabs\Procurement\PaymentSummary.aspx" />
+    <Content Include="Tabs\Procurement\RawMilkPaymentListViaBank.aspx" />
+    <Content Include="Tabs\Procurement\RawMilkStockRegister.aspx" />
+    <Content Include="Tabs\Procurement\RawMilkTariff.aspx" />
+    <Content Include="Tabs\Procurement\ReceiveDisposalheadmaster.aspx" />
+    <Content Include="Tabs\Procurement\SupplierAdvanceInfo.aspx" />
+    <Content Include="Tabs\Procurement\Supplierwiserawmilkqtyqlty.aspx" />
+    <Content Include="Tabs\Procurement\Transaction.aspx" />
+    <Content Include="Tabs\Procurement\VehicleMaster.aspx" />
+    <Content Include="Tabs\Procurement\VehicleTariff.aspx" />
+    <Content Include="Tabs\Procurement\VehicleType.aspx" />
+    <Content Include="Tabs\PurchaseM\Dashboard.aspx" />
+    <Content Include="Tabs\PurchaseM\ViewPrchsRequest.aspx" />
+    <Content Include="Tabs\Purchase\ApprovedRequestItems.aspx" />
+    <Content Include="Tabs\Purchase\Categories.aspx" />
+    <Content Include="Tabs\Purchase\ComparativeStatement.aspx" />
+    <Content Include="Tabs\Purchase\Dashboard.aspx" />
+    <Content Include="Tabs\Purchase\IndentMaterial.aspx" />
+    <Content Include="Tabs\Purchase\ItemRates.aspx" />
+    <Content Include="Tabs\Purchase\Items.aspx" />
+    <Content Include="Tabs\Purchase\MaterialReceived.aspx" />
+    <Content Include="Tabs\Purchase\PurchaseOrder.aspx" />
+    <Content Include="Tabs\Purchase\PurchaseRequests.aspx" />
+    <Content Include="Tabs\Purchase\RackSections.aspx" />
+    <Content Include="Tabs\Purchase\VendorRegistration.aspx" />
+    <Content Include="Tabs\Purchase\ViewPurchaseOrder.aspx" />
+    <Content Include="Tabs\Reception\CancelOrder.aspx" />
+    <Content Include="Tabs\Reception\EditOrder.aspx" />
+    <Content Include="Tabs\Reception\GenrateBillThermal.aspx" />
+    <Content Include="Tabs\Reception\OrderQuantity.aspx" />
+    <Content Include="Tabs\Reports\BoothSalesAnalysis.aspx" />
+    <Content Include="Tabs\Reports\BoothSalesAnalysisUsers.aspx" />
+    <Content Include="Tabs\Sales\AgentBilling.aspx" />
+    <Content Include="Tabs\Administration\BindSlab.aspx" />
+    <Content Include="Tabs\Administration\BoothPlaceOrder.aspx" />
+    <Content Include="Tabs\Sales\AgentSale.aspx" />
+    <Content Include="Tabs\Sales\BoothPlaceOrder.aspx" />
+    <Content Include="Tabs\Sales\BoothReturnReplace.aspx" />
+    <Content Include="Tabs\Sales\BoothStockLanding.aspx" />
+    <Content Include="Tabs\Administration\CashierBoothSettlement.aspx" />
+    <Content Include="Tabs\Administration\CashierSettlement.aspx" />
+    <Content Include="Tabs\Administration\CreateUser.aspx" />
+    <Content Include="Tabs\Administration\Department.aspx" />
+    <Content Include="Tabs\Administration\DuplicateBillForAgent.aspx" />
+    <Content Include="Tabs\Sales\EmployeeBilling.aspx" />
+    <Content Include="Tabs\Administration\EmployeeInfo.aspx" />
+    <Content Include="Tabs\Administration\GenerateBillForBooth.aspx" />
+    <Content Include="Tabs\Administration\GenrateBill.aspx" />
+    <Content Include="Tabs\Sales\LocalBilling.aspx" />
+    <Content Include="Tabs\Administration\PlaceOrder.aspx" />
+    <Content Include="Tabs\Administration\PlaceOrderEmpRoutewise.aspx" />
+    <Content Include="Tabs\Administration\PlaceOrderRoutewise.aspx" />
+    <Content Include="Tabs\Administration\ReturnedTrays.aspx" />
+    <Content Include="Tabs\Administration\ReturnScheme.aspx" />
+    <Content Include="Tabs\Administration\UnitMaster.aspx" />
+    <Content Include="Tabs\Administration\ViewBoothStock.aspx" />
+    <Content Include="Tabs\Administration\ViewBoothUserSales.aspx" />
+    <Content Include="Tabs\Administration\ViewDispatchOrders.aspx" />
+    <Content Include="Tabs\Administration\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Tabs\Reception\DuplicateBillForAgent.aspx" />
+    <Content Include="Tabs\Reception\GenrateBill.aspx" />
+    <Content Include="Tabs\Reception\ItemwiseOrderSummary.aspx" />
+    <Content Include="Tabs\Reception\PlaceOrder.aspx" />
+    <Content Include="Tabs\Reception\PlaceOrderEmpRoutewise.aspx" />
+    <Content Include="Tabs\Reception\PlaceOrderRoutewise.aspx" />
+    <Content Include="Tabs\Reception\RatewiseOrderSummary.aspx" />
+    <Content Include="Tabs\Reports\BillwiseSaleSummary.aspx" />
+    <Content Include="Tabs\Reports\BoothBillWiseSalesSummary.aspx" />
+    <Content Include="Tabs\Reports\Boothitemwisesalessummary.aspx" />
+    <Content Include="Tabs\Reports\BoothroutewiseSalesSummary.aspx" />
+    <Content Include="Tabs\Reports\BoothSalesAnalysisItemwise.aspx" />
+    <Content Include="Tabs\Reports\ItemwiseOrderSummary.aspx" />
+    <Content Include="Tabs\Reports\ItemwiseSalesSummary.aspx" />
+    <Content Include="Tabs\Reports\RatewiseOrderSummary.aspx" />
+    <Content Include="Tabs\Reports\RoutewiseSalesSummary.aspx" />
+    <Content Include="Tabs\Reports\SalesAnalysisItemwise.aspx" />
+    <Content Include="Tabs\TransportModule\Configure.aspx" />
+    <Content Include="Tabs\TransportModule\FuelDetails.aspx" />
+    <Content Include="Tabs\TransportModule\FuelPumpMaster.aspx" />
+    <Content Include="Tabs\TransportModule\InsuranceMaintenance.aspx" />
+    <Content Include="Tabs\TransportModule\JOBCard.aspx" />
+    <Content Include="Tabs\TransportModule\ProductSupplyOutOperation.aspx" />
+    <Content Include="Tabs\TransportModule\PUCMaintenance.aspx" />
+    <Content Include="Tabs\TransportModule\RouteWiseScheduleTime.aspx" />
+    <Content Include="Tabs\TransportModule\TranportModelMaster.aspx" />
+    <Content Include="Tabs\TransportModule\TransportBrandMaster.aspx" />
+    <Content Include="Tabs\TransportModule\TransportDetails.aspx" />
+    <Content Include="Tabs\TransportModule\TransportReports\FuelDaywiseUses.aspx" />
+    <Content Include="Tabs\TransportModule\TransportReports\FuelListDateWise.aspx" />
+    <Content Include="Tabs\TransportModule\TransportReports\InternalReportofVehicleSection.aspx" />
+    <Content Include="Tabs\TransportModule\TransportReports\MilkSupplyVehicleReportRoutewise.aspx" />
+    <Content Include="Tabs\TransportModule\TransportReports\VehicleRouteOperationSummary.aspx" />
+    <Content Include="Tabs\TransportModule\TransportReports\VehicleWiseSummary.aspx" />
+    <Content Include="Tabs\TransportModule\VehicleInOperation.aspx" />
+    <Content Include="Tabs\TransportModule\VehicleMaintenance.aspx" />
+    <Content Include="Tabs\TransportModule\VehicleOperations.aspx" />
+    <Content Include="Tabs\TransportModule\VehicleRouteMap.aspx" />
+    <Content Include="Tabs\TransportModule\VehicleTarifDetails.aspx" />
+    <Content Include="test.aspx" />
+    <Content Include="Test.html" />
+    <Content Include="testwithMaster.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Theme\bootstrap\css\bootstrap-select.min.css" />
+    <Content Include="Theme\bootstrap\css\bootstrap.css" />
+    <Content Include="Theme\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Theme\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Theme\bootstrap\js\bootstrap-select.min.js" />
+    <Content Include="Theme\bootstrap\js\bootstrap.js" />
+    <Content Include="Theme\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Theme\bootstrap\js\npm.js" />
+    <Content Include="Theme\Custom\Custom.css" />
+    <Content Include="Theme\dist\css\AdminLTE.css" />
+    <Content Include="Theme\dist\css\AdminLTE.min.css" />
+    <Content Include="Theme\dist\css\skins\skin-black-light.css" />
+    <Content Include="Theme\dist\css\skins\skin-black-light.min.css" />
+    <Content Include="Theme\dist\css\skins\skin-black.css" />
+    <Content Include="Theme\dist\css\skins\skin-black.min.css" />
+    <Content Include="Theme\dist\css\skins\skin-blue-light.css" />
+    <Content Include="Theme\dist\css\skins\skin-blue-light.min.css" />
+    <Content Include="Theme\dist\css\skins\skin-blue.css" />
+    <Content Include="Theme\dist\css\skins\skin-blue.min.css" />
+    <Content Include="Theme\dist\css\skins\skin-green-light.css" />
+    <Content Include="Theme\dist\css\skins\skin-green-light.min.css" />
+    <Content Include="Theme\dist\css\skins\skin-green.css" />
+    <Content Include="Theme\dist\css\skins\skin-green.min.css" />
+    <Content Include="Theme\dist\css\skins\skin-purple-light.css" />
+    <Content Include="Theme\dist\css\skins\skin-purple-light.min.css" />
+    <Content Include="Theme\dist\css\skins\skin-purple.css" />
+    <Content Include="Theme\dist\css\skins\skin-purple.min.css" />
+    <Content Include="Theme\dist\css\skins\skin-red-light.css" />
+    <Content Include="Theme\dist\css\skins\skin-red-light.min.css" />
+    <Content Include="Theme\dist\css\skins\skin-red.css" />
+    <Content Include="Theme\dist\css\skins\skin-red.min.css" />
+    <Content Include="Theme\dist\css\skins\skin-yellow-light.css" />
+    <Content Include="Theme\dist\css\skins\skin-yellow-light.min.css" />
+    <Content Include="Theme\dist\css\skins\skin-yellow.css" />
+    <Content Include="Theme\dist\css\skins\skin-yellow.min.css" />
+    <Content Include="Theme\dist\css\skins\_all-skins.css" />
+    <Content Include="Theme\dist\css\skins\_all-skins.min.css" />
+    <Content Include="Theme\dist\img\avatar.png" />
+    <Content Include="Theme\dist\img\avatar04.png" />
+    <Content Include="Theme\dist\img\avatar2.png" />
+    <Content Include="Theme\dist\img\avatar3.png" />
+    <Content Include="Theme\dist\img\avatar5.png" />
+    <Content Include="Theme\dist\img\boxed-bg.jpg" />
+    <Content Include="Theme\dist\img\boxed-bg.png" />
+    <Content Include="Theme\dist\img\credit\american-express.png" />
+    <Content Include="Theme\dist\img\credit\cirrus.png" />
+    <Content Include="Theme\dist\img\credit\mastercard.png" />
+    <Content Include="Theme\dist\img\credit\mestro.png" />
+    <Content Include="Theme\dist\img\credit\paypal.png" />
+    <Content Include="Theme\dist\img\credit\paypal2.png" />
+    <Content Include="Theme\dist\img\credit\visa.png" />
+    <Content Include="Theme\dist\img\default-50x50.gif" />
+    <Content Include="Theme\dist\img\icons.png" />
+    <Content Include="Theme\dist\img\photo1.png" />
+    <Content Include="Theme\dist\img\photo2.png" />
+    <Content Include="Theme\dist\img\photo3.jpg" />
+    <Content Include="Theme\dist\img\photo4.jpg" />
+    <Content Include="Theme\dist\img\user1-128x128.jpg" />
+    <Content Include="Theme\dist\img\user2-160x160.jpg" />
+    <Content Include="Theme\dist\img\user3-128x128.jpg" />
+    <Content Include="Theme\dist\img\user4-128x128.jpg" />
+    <Content Include="Theme\dist\img\user5-128x128.jpg" />
+    <Content Include="Theme\dist\img\user6-128x128.jpg" />
+    <Content Include="Theme\dist\img\user7-128x128.jpg" />
+    <Content Include="Theme\dist\img\user8-128x128.jpg" />
+    <Content Include="Theme\dist\js\app.js" />
+    <Content Include="Theme\dist\js\app.min.js" />
+    <Content Include="Theme\dist\js\demo.js" />
+    <Content Include="Theme\dist\js\pages\dashboard.js" />
+    <Content Include="Theme\dist\js\pages\dashboard2.js" />
+    <Content Include="Theme\img\back.jpg" />
+    <Content Include="Theme\img\back.png" />
+    <Content Include="Theme\img\calendar.png" />
+    <Content Include="Theme\img\logo.png" />
+    <Content Include="Theme\img\logo1.png" />
+    <Content Include="Theme\img\logo2.png" />
+    <Content Include="Theme\logincss\login.css" />
+    <Content Include="Theme\logincss\loginbody.css" />
+    <Content Include="Theme\obj\Debug\Dairy.csproj.FileListAbsolute.txt" />
+    <Content Include="Theme\obj\Debug\Dairy.dll" />
+    <Content Include="Theme\obj\Debug\Dairy.pdb" />
+    <Content Include="Theme\plugins\bootstrap-slider\bootstrap-slider.js" />
+    <Content Include="Theme\plugins\bootstrap-slider\slider.css" />
+    <Content Include="Theme\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.js" />
+    <Content Include="Theme\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="Theme\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
+    <Content Include="Theme\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
+    <Content Include="Theme\plugins\chartjs\Chart.js" />
+    <Content Include="Theme\plugins\chartjs\Chart.min.js" />
+    <Content Include="Theme\plugins\ckeditor\adapters\jquery.js" />
+    <Content Include="Theme\plugins\ckeditor\build-config.js" />
+    <Content Include="Theme\plugins\ckeditor\ckeditor.js" />
+    <Content Include="Theme\plugins\ckeditor\config.js" />
+    <Content Include="Theme\plugins\ckeditor\contents.css" />
+    <Content Include="Theme\plugins\ckeditor\lang\af.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\ar.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\bg.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\bn.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\bs.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\ca.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\cs.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\cy.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\da.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\de.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\el.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\en-au.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\en-ca.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\en-gb.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\en.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\eo.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\es.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\et.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\eu.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\fa.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\fi.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\fo.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\fr-ca.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\fr.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\gl.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\gu.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\he.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\hi.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\hr.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\hu.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\id.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\is.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\it.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\ja.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\ka.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\km.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\ko.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\ku.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\lt.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\lv.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\mk.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\mn.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\ms.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\nb.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\nl.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\no.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\pl.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\pt-br.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\pt.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\ro.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\ru.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\si.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\sk.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\sl.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\sq.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\sr-latn.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\sr.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\sv.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\th.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\tr.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\ug.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\uk.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\vi.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\zh-cn.js" />
+    <Content Include="Theme\plugins\ckeditor\lang\zh.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Theme\plugins\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Theme\plugins\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Theme\plugins\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="Theme\plugins\ckeditor\plugins\icons.png" />
+    <Content Include="Theme\plugins\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Theme\plugins\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Theme\plugins\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Theme\plugins\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Theme\plugins\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Theme\plugins\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Theme\plugins\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Theme\plugins\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Theme\plugins\ckeditor\plugins\wsc\dialogs\tmp.html" />
+    <Content Include="Theme\plugins\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Theme\plugins\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Theme\plugins\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Theme\plugins\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\editor.css" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\icons.png" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="Theme\plugins\ckeditor\styles.js" />
+    <Content Include="Theme\plugins\colorpicker\bootstrap-colorpicker.css" />
+    <Content Include="Theme\plugins\colorpicker\bootstrap-colorpicker.js" />
+    <Content Include="Theme\plugins\colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="Theme\plugins\colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="Theme\plugins\colorpicker\img\alpha-horizontal.png" />
+    <Content Include="Theme\plugins\colorpicker\img\alpha.png" />
+    <Content Include="Theme\plugins\colorpicker\img\hue-horizontal.png" />
+    <Content Include="Theme\plugins\colorpicker\img\hue.png" />
+    <Content Include="Theme\plugins\colorpicker\img\saturation.png" />
+    <Content Include="Theme\plugins\datatables\dataTables.bootstrap.css" />
+    <Content Include="Theme\plugins\datatables\dataTables.bootstrap.js" />
+    <Content Include="Theme\plugins\datatables\dataTables.bootstrap.min.js" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\css\dataTables.autoFill.css" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\css\dataTables.autoFill.min.css" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\examples\columns.html" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\examples\complete-callback.html" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\examples\fill-both.html" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\examples\fill-horizontal.html" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\examples\index.html" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\examples\scrolling.html" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\examples\simple.html" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\examples\step-callback.html" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\images\filler.png" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\js\dataTables.autoFill.js" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\js\dataTables.autoFill.min.js" />
+    <Content Include="Theme\plugins\datatables\extensions\AutoFill\Readme.txt" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\css\dataTables.colReorder.css" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\css\dataTables.colReorder.min.css" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\alt_insert.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\colvis.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\col_filter.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\fixedcolumns.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\fixedheader.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\index.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\jqueryui.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\new_init.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\predefined.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\realtime.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\reset.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\scrolling.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\server_side.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\simple.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\examples\state_save.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\images\insert.png" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\js\dataTables.colReorder.js" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\js\dataTables.colReorder.min.js" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\License.txt" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\css\dataTables.colVis.css" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\css\dataTables.colvis.jqueryui.css" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\css\dataTables.colVis.min.css" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\examples\button_order.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\examples\exclude_columns.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\examples\group_columns.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\examples\index.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\examples\jqueryui.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\examples\mouseover.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\examples\new_init.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\examples\restore.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\examples\simple.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\examples\text.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\examples\title_callback.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\examples\two_tables.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\examples\two_tables_identical.html" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\js\dataTables.colVis.js" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\js\dataTables.colVis.min.js" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\License.txt" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\css\dataTables.fixedColumns.css" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\css\dataTables.fixedColumns.min.css" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\bootstrap.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\colvis.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\col_filter.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\css_size.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\index.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\index_column.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\left_right_columns.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\right_column.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\rowspan.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\server-side-processing.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\simple.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\size_fixed.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\size_fluid.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\examples\two_columns.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\js\dataTables.fixedColumns.js" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\License.txt" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedHeader\css\dataTables.fixedHeader.css" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedHeader\css\dataTables.fixedHeader.min.css" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedHeader\examples\header_footer.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedHeader\examples\index.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedHeader\examples\simple.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedHeader\examples\top_left_right.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedHeader\examples\two_tables.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedHeader\examples\zIndexes.html" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedHeader\js\dataTables.fixedHeader.js" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedHeader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedHeader\Readme.txt" />
+    <Content Include="Theme\plugins\datatables\extensions\KeyTable\css\dataTables.keyTable.css" />
+    <Content Include="Theme\plugins\datatables\extensions\KeyTable\css\dataTables.keyTable.min.css" />
+    <Content Include="Theme\plugins\datatables\extensions\KeyTable\examples\events.html" />
+    <Content Include="Theme\plugins\datatables\extensions\KeyTable\examples\html.html" />
+    <Content Include="Theme\plugins\datatables\extensions\KeyTable\examples\index.html" />
+    <Content Include="Theme\plugins\datatables\extensions\KeyTable\examples\scrolling.html" />
+    <Content Include="Theme\plugins\datatables\extensions\KeyTable\examples\simple.html" />
+    <Content Include="Theme\plugins\datatables\extensions\KeyTable\js\dataTables.keyTable.js" />
+    <Content Include="Theme\plugins\datatables\extensions\KeyTable\js\dataTables.keyTable.min.js" />
+    <Content Include="Theme\plugins\datatables\extensions\KeyTable\Readme.txt" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\css\dataTables.responsive.css" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\child-rows\column-control.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\child-rows\custom-renderer.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\child-rows\disable-child-rows.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\child-rows\index.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\child-rows\right-column.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\child-rows\whole-row-control.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\display-control\auto.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\display-control\classes.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\display-control\complexHeader.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\display-control\fixedHeader.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\display-control\index.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\display-control\init-classes.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\index.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\initialisation\ajax.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\initialisation\className.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\initialisation\default.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\initialisation\index.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\initialisation\new.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\initialisation\option.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\styling\bootstrap.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\styling\compact.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\styling\foundation.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\styling\index.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\examples\styling\scrolling.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\js\dataTables.responsive.js" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\License.txt" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\css\dataTables.scroller.css" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\css\dataTables.scroller.min.css" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\examples\api_scrolling.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\examples\data\2500.txt" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\examples\index.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\examples\large_js_source.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\examples\server-side_processing.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\examples\simple.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\examples\state_saving.html" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\images\loading-background.png" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\js\dataTables.scroller.js" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\Readme.txt" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\css\dataTables.tableTools.css" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\css\dataTables.tableTools.min.css" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\ajax.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\alter_buttons.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\bootstrap.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\button_text.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\collection.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\defaults.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\index.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\jqueryui.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\multiple_tables.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\multi_instance.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\new_init.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\pdf_message.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\plug-in.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\select_column.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\select_multi.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\select_os.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\select_single.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\simple.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\examples\swf_path.html" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\collection.png" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\collection_hover.png" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\copy.png" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\copy_hover.png" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\csv.png" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\csv_hover.png" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\pdf.png" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\pdf_hover.png" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\print.png" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\print_hover.png" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\xls.png" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\xls_hover.png" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\js\dataTables.tableTools.js" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\swf\copy_csv_xls.swf" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Theme\plugins\datatables\images\sort_asc.png" />
+    <Content Include="Theme\plugins\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Theme\plugins\datatables\images\sort_both.png" />
+    <Content Include="Theme\plugins\datatables\images\sort_desc.png" />
+    <Content Include="Theme\plugins\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Theme\plugins\datatables\jquery.dataTables.css" />
+    <Content Include="Theme\plugins\datatables\jquery.dataTables.js" />
+    <Content Include="Theme\plugins\datatables\jquery.dataTables.min.css" />
+    <Content Include="Theme\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="Theme\plugins\datatables\jquery.dataTables_themeroller.css" />
+    <Content Include="Theme\plugins\datepicker\bootstrap-datepicker.js" />
+    <Content Include="Theme\plugins\datepicker\datepicker3.css" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Theme\plugins\datepicker\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Theme\plugins\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Theme\plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="Theme\plugins\daterangepicker\moment.js" />
+    <Content Include="Theme\plugins\daterangepicker\moment.min.js" />
+    <Content Include="Theme\plugins\fastclick\fastclick.js" />
+    <Content Include="Theme\plugins\fastclick\fastclick.min.js" />
+    <Content Include="Theme\plugins\flot\excanvas.js" />
+    <Content Include="Theme\plugins\flot\excanvas.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="Theme\plugins\flot\jquery.colorhelpers.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.canvas.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.canvas.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.categories.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.categories.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.errorbars.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.image.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.image.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.navigate.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.selection.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.stack.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.symbol.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.threshold.min.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.time.js" />
+    <Content Include="Theme\plugins\flot\jquery.flot.time.min.js" />
+    <Content Include="Theme\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Theme\plugins\fullcalendar\fullcalendar.js" />
+    <Content Include="Theme\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Theme\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Theme\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Theme\plugins\iCheck\all.css" />
+    <Content Include="Theme\plugins\iCheck\flat\aero%402x.png" />
+    <Content Include="Theme\plugins\iCheck\flat\aero.css" />
+    <Content Include="Theme\plugins\iCheck\flat\aero.png" />
+    <Content Include="Theme\plugins\iCheck\flat\blue%402x.png" />
+    <Content Include="Theme\plugins\iCheck\flat\blue.css" />
+    <Content Include="Theme\plugins\iCheck\flat\blue.png" />
+    <Content Include="Theme\plugins\iCheck\flat\flat%402x.png" />
+    <Content Include="Theme\plugins\iCheck\flat\flat.css" />
+    <Content Include="Theme\plugins\iCheck\flat\flat.png" />
+    <Content Include="Theme\plugins\iCheck\flat\green%402x.png" />
+    <Content Include="Theme\plugins\iCheck\flat\green.css" />
+    <Content Include="Theme\plugins\iCheck\flat\green.png" />
+    <Content Include="Theme\plugins\iCheck\flat\grey%402x.png" />
+    <Content Include="Theme\plugins\iCheck\flat\grey.css" />
+    <Content Include="Theme\plugins\iCheck\flat\grey.png" />
+    <Content Include="Theme\plugins\iCheck\flat\orange%402x.png" />
+    <Content Include="Theme\plugins\iCheck\flat\orange.css" />
+    <Content Include="Theme\plugins\iCheck\flat\orange.png" />
+    <Content Include="Theme\plugins\iCheck\flat\pink%402x.png" />
+    <Content Include="Theme\plugins\iCheck\flat\pink.css" />
+    <Content Include="Theme\plugins\iCheck\flat\pink.png" />
+    <Content Include="Theme\plugins\iCheck\flat\purple%402x.png" />
+    <Content Include="Theme\plugins\iCheck\flat\purple.css" />
+    <Content Include="Theme\plugins\iCheck\flat\purple.png" />
+    <Content Include="Theme\plugins\iCheck\flat\red%402x.png" />
+    <Content Include="Theme\plugins\iCheck\flat\red.css" />
+    <Content Include="Theme\plugins\iCheck\flat\red.png" />
+    <Content Include="Theme\plugins\iCheck\flat\yellow%402x.png" />
+    <Content Include="Theme\plugins\iCheck\flat\yellow.css" />
+    <Content Include="Theme\plugins\iCheck\flat\yellow.png" />
+    <Content Include="Theme\plugins\iCheck\flat\_all.css" />
+    <Content Include="Theme\plugins\iCheck\futurico\futurico%402x.png" />
+    <Content Include="Theme\plugins\iCheck\futurico\futurico.css" />
+    <Content Include="Theme\plugins\iCheck\futurico\futurico.png" />
+    <Content Include="Theme\plugins\iCheck\icheck.js" />
+    <Content Include="Theme\plugins\iCheck\icheck.min.js" />
+    <Content Include="Theme\plugins\iCheck\line\aero.css" />
+    <Content Include="Theme\plugins\iCheck\line\blue.css" />
+    <Content Include="Theme\plugins\iCheck\line\green.css" />
+    <Content Include="Theme\plugins\iCheck\line\grey.css" />
+    <Content Include="Theme\plugins\iCheck\line\line%402x.png" />
+    <Content Include="Theme\plugins\iCheck\line\line.css" />
+    <Content Include="Theme\plugins\iCheck\line\line.png" />
+    <Content Include="Theme\plugins\iCheck\line\orange.css" />
+    <Content Include="Theme\plugins\iCheck\line\pink.css" />
+    <Content Include="Theme\plugins\iCheck\line\purple.css" />
+    <Content Include="Theme\plugins\iCheck\line\red.css" />
+    <Content Include="Theme\plugins\iCheck\line\yellow.css" />
+    <Content Include="Theme\plugins\iCheck\line\_all.css" />
+    <Content Include="Theme\plugins\iCheck\minimal\aero%402x.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\aero.css" />
+    <Content Include="Theme\plugins\iCheck\minimal\aero.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\blue%402x.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\blue.css" />
+    <Content Include="Theme\plugins\iCheck\minimal\blue.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\green%402x.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\green.css" />
+    <Content Include="Theme\plugins\iCheck\minimal\green.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\grey%402x.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\grey.css" />
+    <Content Include="Theme\plugins\iCheck\minimal\grey.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\minimal%402x.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\minimal.css" />
+    <Content Include="Theme\plugins\iCheck\minimal\minimal.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\orange%402x.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\orange.css" />
+    <Content Include="Theme\plugins\iCheck\minimal\orange.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\pink%402x.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\pink.css" />
+    <Content Include="Theme\plugins\iCheck\minimal\pink.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\purple%402x.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\purple.css" />
+    <Content Include="Theme\plugins\iCheck\minimal\purple.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\red%402x.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\red.css" />
+    <Content Include="Theme\plugins\iCheck\minimal\red.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\yellow%402x.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\yellow.css" />
+    <Content Include="Theme\plugins\iCheck\minimal\yellow.png" />
+    <Content Include="Theme\plugins\iCheck\minimal\_all.css" />
+    <Content Include="Theme\plugins\iCheck\polaris\polaris%402x.png" />
+    <Content Include="Theme\plugins\iCheck\polaris\polaris.css" />
+    <Content Include="Theme\plugins\iCheck\polaris\polaris.png" />
+    <Content Include="Theme\plugins\iCheck\square\aero%402x.png" />
+    <Content Include="Theme\plugins\iCheck\square\aero.css" />
+    <Content Include="Theme\plugins\iCheck\square\aero.png" />
+    <Content Include="Theme\plugins\iCheck\square\blue%402x.png" />
+    <Content Include="Theme\plugins\iCheck\square\blue.css" />
+    <Content Include="Theme\plugins\iCheck\square\blue.png" />
+    <Content Include="Theme\plugins\iCheck\square\green%402x.png" />
+    <Content Include="Theme\plugins\iCheck\square\green.css" />
+    <Content Include="Theme\plugins\iCheck\square\green.png" />
+    <Content Include="Theme\plugins\iCheck\square\grey%402x.png" />
+    <Content Include="Theme\plugins\iCheck\square\grey.css" />
+    <Content Include="Theme\plugins\iCheck\square\grey.png" />
+    <Content Include="Theme\plugins\iCheck\square\orange%402x.png" />
+    <Content Include="Theme\plugins\iCheck\square\orange.css" />
+    <Content Include="Theme\plugins\iCheck\square\orange.png" />
+    <Content Include="Theme\plugins\iCheck\square\pink%402x.png" />
+    <Content Include="Theme\plugins\iCheck\square\pink.css" />
+    <Content Include="Theme\plugins\iCheck\square\pink.png" />
+    <Content Include="Theme\plugins\iCheck\square\purple%402x.png" />
+    <Content Include="Theme\plugins\iCheck\square\purple.css" />
+    <Content Include="Theme\plugins\iCheck\square\purple.png" />
+    <Content Include="Theme\plugins\iCheck\square\red%402x.png" />
+    <Content Include="Theme\plugins\iCheck\square\red.css" />
+    <Content Include="Theme\plugins\iCheck\square\red.png" />
+    <Content Include="Theme\plugins\iCheck\square\square%402x.png" />
+    <Content Include="Theme\plugins\iCheck\square\square.css" />
+    <Content Include="Theme\plugins\iCheck\square\square.png" />
+    <Content Include="Theme\plugins\iCheck\square\yellow%402x.png" />
+    <Content Include="Theme\plugins\iCheck\square\yellow.css" />
+    <Content Include="Theme\plugins\iCheck\square\yellow.png" />
+    <Content Include="Theme\plugins\iCheck\square\_all.css" />
+    <Content Include="Theme\plugins\input-mask\jquery.inputmask.date.extensions.js" />
+    <Content Include="Theme\plugins\input-mask\jquery.inputmask.extensions.js" />
+    <Content Include="Theme\plugins\input-mask\jquery.inputmask.js" />
+    <Content Include="Theme\plugins\input-mask\jquery.inputmask.numeric.extensions.js" />
+    <Content Include="Theme\plugins\input-mask\jquery.inputmask.phone.extensions.js" />
+    <Content Include="Theme\plugins\input-mask\jquery.inputmask.regex.extensions.js" />
+    <Content Include="Theme\plugins\input-mask\phone-codes\readme.txt" />
+    <Content Include="Theme\plugins\ionslider\img\sprite-skin-flat.png" />
+    <Content Include="Theme\plugins\ionslider\img\sprite-skin-nice.png" />
+    <Content Include="Theme\plugins\ionslider\ion.rangeSlider.css" />
+    <Content Include="Theme\plugins\ionslider\ion.rangeSlider.min.js" />
+    <Content Include="Theme\plugins\ionslider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Theme\plugins\ionslider\ion.rangeSlider.skinNice.css" />
+    <Content Include="Theme\plugins\jQueryUI\jquery-ui.css" />
+    <Content Include="Theme\plugins\jQueryUI\jquery-ui.js" />
+    <Content Include="Theme\plugins\jQueryUI\jquery-ui.min.js" />
+    <Content Include="Theme\plugins\jQuery\jquery-1.10.2.js" />
+    <Content Include="Theme\plugins\jQuery\jquery-1.10.2.min.js" />
+    <Content Include="Theme\plugins\jQuery\jQuery-2.1.4.min.js" />
+    <Content Include="Theme\plugins\jvectormap\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Theme\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Theme\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Theme\plugins\knob\jquery.knob.js" />
+    <Content Include="Theme\plugins\morris\morris.css" />
+    <Content Include="Theme\plugins\morris\morris.js" />
+    <Content Include="Theme\plugins\morris\morris.min.js" />
+    <Content Include="Theme\plugins\pace\pace.js" />
+    <Content Include="Theme\plugins\select2\i18n\az.js" />
+    <Content Include="Theme\plugins\select2\i18n\bg.js" />
+    <Content Include="Theme\plugins\select2\i18n\ca.js" />
+    <Content Include="Theme\plugins\select2\i18n\cs.js" />
+    <Content Include="Theme\plugins\select2\i18n\da.js" />
+    <Content Include="Theme\plugins\select2\i18n\de.js" />
+    <Content Include="Theme\plugins\select2\i18n\en.js" />
+    <Content Include="Theme\plugins\select2\i18n\es.js" />
+    <Content Include="Theme\plugins\select2\i18n\et.js" />
+    <Content Include="Theme\plugins\select2\i18n\eu.js" />
+    <Content Include="Theme\plugins\select2\i18n\fa.js" />
+    <Content Include="Theme\plugins\select2\i18n\fi.js" />
+    <Content Include="Theme\plugins\select2\i18n\fr.js" />
+    <Content Include="Theme\plugins\select2\i18n\gl.js" />
+    <Content Include="Theme\plugins\select2\i18n\he.js" />
+    <Content Include="Theme\plugins\select2\i18n\hi.js" />
+    <Content Include="Theme\plugins\select2\i18n\hr.js" />
+    <Content Include="Theme\plugins\select2\i18n\hu.js" />
+    <Content Include="Theme\plugins\select2\i18n\id.js" />
+    <Content Include="Theme\plugins\select2\i18n\is.js" />
+    <Content Include="Theme\plugins\select2\i18n\it.js" />
+    <Content Include="Theme\plugins\select2\i18n\ko.js" />
+    <Content Include="Theme\plugins\select2\i18n\lt.js" />
+    <Content Include="Theme\plugins\select2\i18n\lv.js" />
+    <Content Include="Theme\plugins\select2\i18n\mk.js" />
+    <Content Include="Theme\plugins\select2\i18n\nb.js" />
+    <Content Include="Theme\plugins\select2\i18n\nl.js" />
+    <Content Include="Theme\plugins\select2\i18n\pl.js" />
+    <Content Include="Theme\plugins\select2\i18n\pt-BR.js" />
+    <Content Include="Theme\plugins\select2\i18n\pt.js" />
+    <Content Include="Theme\plugins\select2\i18n\ro.js" />
+    <Content Include="Theme\plugins\select2\i18n\ru.js" />
+    <Content Include="Theme\plugins\select2\i18n\sk.js" />
+    <Content Include="Theme\plugins\select2\i18n\sr.js" />
+    <Content Include="Theme\plugins\select2\i18n\sv.js" />
+    <Content Include="Theme\plugins\select2\i18n\th.js" />
+    <Content Include="Theme\plugins\select2\i18n\tr.js" />
+    <Content Include="Theme\plugins\select2\i18n\uk.js" />
+    <Content Include="Theme\plugins\select2\i18n\vi.js" />
+    <Content Include="Theme\plugins\select2\i18n\zh-CN.js" />
+    <Content Include="Theme\plugins\select2\i18n\zh-TW.js" />
+    <Content Include="Theme\plugins\select2\select2.css" />
+    <Content Include="Theme\plugins\select2\select2.full.js" />
+    <Content Include="Theme\plugins\select2\select2.full.min.js" />
+    <Content Include="Theme\plugins\select2\select2.js" />
+    <Content Include="Theme\plugins\select2\select2.min.css" />
+    <Content Include="Theme\plugins\select2\select2.min.js" />
+    <Content Include="Theme\plugins\slimScroll\jquery.slimscroll.js" />
+    <Content Include="Theme\plugins\slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="Theme\plugins\sparkline\jquery.sparkline.js" />
+    <Content Include="Theme\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Theme\plugins\timepicker\bootstrap-timepicker.css" />
+    <Content Include="Theme\plugins\timepicker\bootstrap-timepicker.js" />
+    <Content Include="Theme\plugins\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Theme\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="UserControl\Footer.ascx" />
+    <Content Include="UserControl\Head.ascx" />
+    <Content Include="UserControl\Header.ascx" />
+    <Content Include="UserControl\SiteMenu.ascx" />
+    <Content Include="UserControl\ThemesSetting.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebService\BindAgentSlab.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgentSchemeReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgentSchemeReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AgentSeameWiseReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgentSeameWiseReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\GlobalInfo.cs" />
+    <Compile Include="DairyerpDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DairyerpDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DairyerpDataSetnew.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DairyerpDataSetnew.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dsbills.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dsbills.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AgentSchemeReport.aspx.cs">
+      <DependentUpon>AgentSchemeReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\AgentSchemeReport.aspx.designer.cs">
+      <DependentUpon>AgentSchemeReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BillsReports.aspx.cs">
+      <DependentUpon>BillsReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\BillsReports.aspx.designer.cs">
+      <DependentUpon>BillsReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSet\PartywiseScheme.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartywiseScheme.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PartyWiseScheme.aspx.cs">
+      <DependentUpon>PartyWiseScheme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\PartyWiseScheme.aspx.designer.cs">
+      <DependentUpon>PartyWiseScheme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ProductWIseSealsReports.aspx.cs">
+      <DependentUpon>ProductWIseSealsReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ProductWIseSealsReports.aspx.designer.cs">
+      <DependentUpon>ProductWIseSealsReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDataSet\StaffACCSaleSummary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StaffACCSaleSummary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StaffACCSaleSummary.aspx.cs">
+      <DependentUpon>StaffACCSaleSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\StaffACCSaleSummary.aspx.designer.cs">
+      <DependentUpon>StaffACCSaleSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddAgent.aspx.cs">
+      <DependentUpon>AddAgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddAgent.aspx.designer.cs">
+      <DependentUpon>AddAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddBank.aspx.cs">
+      <DependentUpon>AddBank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddBank.aspx.designer.cs">
+      <DependentUpon>AddBank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddBrand.aspx.cs">
+      <DependentUpon>AddBrand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddBrand.aspx.designer.cs">
+      <DependentUpon>AddBrand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddCommodity.aspx.cs">
+      <DependentUpon>AddCommodity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddCommodity.aspx.designer.cs">
+      <DependentUpon>AddCommodity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddDesignation.aspx.cs">
+      <DependentUpon>AddDesignation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddDesignation.aspx.designer.cs">
+      <DependentUpon>AddDesignation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddLocation.aspx.cs">
+      <DependentUpon>AddLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddLocation.aspx.designer.cs">
+      <DependentUpon>AddLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddReturnedItems.aspx.cs">
+      <DependentUpon>AddReturnedItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddReturnedItems.aspx.designer.cs">
+      <DependentUpon>AddReturnedItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddRoute.aspx.cs">
+      <DependentUpon>AddRoute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddRoute.aspx.designer.cs">
+      <DependentUpon>AddRoute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddSlab.aspx.cs">
+      <DependentUpon>AddSlab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddSlab.aspx.designer.cs">
+      <DependentUpon>AddSlab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddTypeInfo.aspx.cs">
+      <DependentUpon>AddTypeInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\AddTypeInfo.aspx.designer.cs">
+      <DependentUpon>AddTypeInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\BillSequence.aspx.cs">
+      <DependentUpon>BillSequence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\BillSequence.aspx.designer.cs">
+      <DependentUpon>BillSequence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\BoothLog.aspx.cs">
+      <DependentUpon>BoothLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\BoothLog.aspx.designer.cs">
+      <DependentUpon>BoothLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\DamageRateSetup.aspx.cs">
+      <DependentUpon>DamageRateSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\DamageRateSetup.aspx.designer.cs">
+      <DependentUpon>DamageRateSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\EditOrder.aspx.cs">
+      <DependentUpon>EditOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\EditOrder.aspx.designer.cs">
+      <DependentUpon>EditOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\GenrateBillThermal.aspx.cs">
+      <DependentUpon>GenrateBillThermal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\GenrateBillThermal.aspx.designer.cs">
+      <DependentUpon>GenrateBillThermal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\IncentiveSetup.aspx.cs">
+      <DependentUpon>IncentiveSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\IncentiveSetup.aspx.designer.cs">
+      <DependentUpon>IncentiveSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\OrderQuantity.aspx.cs">
+      <DependentUpon>OrderQuantity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\OrderQuantity.aspx.designer.cs">
+      <DependentUpon>OrderQuantity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\UserLog.aspx.cs">
+      <DependentUpon>UserLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\UserLog.aspx.designer.cs">
+      <DependentUpon>UserLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\ViewDispatchSummary.aspx.cs">
+      <DependentUpon>ViewDispatchSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\ViewDispatchSummary.aspx.designer.cs">
+      <DependentUpon>ViewDispatchSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\ViewDispatchSummaryUsers.aspx.cs">
+      <DependentUpon>ViewDispatchSummaryUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\ViewDispatchSummaryUsers.aspx.designer.cs">
+      <DependentUpon>ViewDispatchSummaryUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\ViewDispatchUserShiftwise.aspx.cs">
+      <DependentUpon>ViewDispatchUserShiftwise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\ViewDispatchUserShiftwise.aspx.designer.cs">
+      <DependentUpon>ViewDispatchUserShiftwise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Despatch\AddReturnedItems.aspx.cs">
+      <DependentUpon>AddReturnedItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Despatch\AddReturnedItems.aspx.designer.cs">
+      <DependentUpon>AddReturnedItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Despatch\BoothPlaceOrder.aspx.cs">
+      <DependentUpon>BoothPlaceOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Despatch\BoothPlaceOrder.aspx.designer.cs">
+      <DependentUpon>BoothPlaceOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ItemwiseSalesSummary.aspx.cs">
+      <DependentUpon>ItemwiseSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ItemwiseSalesSummary.aspx.designer.cs">
+      <DependentUpon>ItemwiseSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ReturnedTrays.aspx.cs">
+      <DependentUpon>ReturnedTrays.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ReturnedTrays.aspx.designer.cs">
+      <DependentUpon>ReturnedTrays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ReturnScheme.aspx.cs">
+      <DependentUpon>ReturnScheme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ReturnScheme.aspx.designer.cs">
+      <DependentUpon>ReturnScheme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Despatch\RoutewiseSalesSummary.aspx.cs">
+      <DependentUpon>RoutewiseSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Despatch\RoutewiseSalesSummary.aspx.designer.cs">
+      <DependentUpon>RoutewiseSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ViewDispatchOrders.aspx.cs">
+      <DependentUpon>ViewDispatchOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ViewDispatchOrders.aspx.designer.cs">
+      <DependentUpon>ViewDispatchOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ViewDispatchSummary.aspx.cs">
+      <DependentUpon>ViewDispatchSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ViewDispatchSummary.aspx.designer.cs">
+      <DependentUpon>ViewDispatchSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ViewDispatchSummaryUsers.aspx.cs">
+      <DependentUpon>ViewDispatchSummaryUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ViewDispatchSummaryUsers.aspx.designer.cs">
+      <DependentUpon>ViewDispatchSummaryUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ViewDispatchUserShiftwise.aspx.cs">
+      <DependentUpon>ViewDispatchUserShiftwise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Despatch\ViewDispatchUserShiftwise.aspx.designer.cs">
+      <DependentUpon>ViewDispatchUserShiftwise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AgencyCloserScreen.aspx.cs">
+      <DependentUpon>AgencyCloserScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AgencyCloserScreen.aspx.designer.cs">
+      <DependentUpon>AgencyCloserScreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AgencyIcentivePayment.aspx.cs">
+      <DependentUpon>AgencyIcentivePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AgencyIcentivePayment.aspx.designer.cs">
+      <DependentUpon>AgencyIcentivePayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AgentListNotPlacedOrder.aspx.cs">
+      <DependentUpon>AgentListNotPlacedOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AgentListNotPlacedOrder.aspx.designer.cs">
+      <DependentUpon>AgentListNotPlacedOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AgentSchemeDetails.aspx.cs">
+      <DependentUpon>AgentSchemeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AgentSchemeDetails.aspx.designer.cs">
+      <DependentUpon>AgentSchemeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AgentSchemeSummary.aspx.cs">
+      <DependentUpon>AgentSchemeSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AgentSchemeSummary.aspx.designer.cs">
+      <DependentUpon>AgentSchemeSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AgentSlabReportList.aspx.cs">
+      <DependentUpon>AgentSlabReportList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AgentSlabReportList.aspx.designer.cs">
+      <DependentUpon>AgentSlabReportList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AmountwiseIceCreamReport.aspx.cs">
+      <DependentUpon>AmountwiseIceCreamReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\AmountwiseIceCreamReport.aspx.designer.cs">
+      <DependentUpon>AmountwiseIceCreamReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\BillwiseSalesSummaryforMarketing.aspx.cs">
+      <DependentUpon>BillwiseSalesSummaryforMarketing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\BillwiseSalesSummaryforMarketing.aspx.designer.cs">
+      <DependentUpon>BillwiseSalesSummaryforMarketing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\BillwiseStaffSalesSummary.aspx.cs">
+      <DependentUpon>BillwiseStaffSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\BillwiseStaffSalesSummary.aspx.designer.cs">
+      <DependentUpon>BillwiseStaffSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\DamageReplacementRateSetup.aspx.cs">
+      <DependentUpon>DamageReplacementRateSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\DamageReplacementRateSetup.aspx.designer.cs">
+      <DependentUpon>DamageReplacementRateSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\DeactivateAgentList.aspx.cs">
+      <DependentUpon>DeactivateAgentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\DeactivateAgentList.aspx.designer.cs">
+      <DependentUpon>DeactivateAgentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\DespatchComparisonReport.aspx.cs">
+      <DependentUpon>DespatchComparisonReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\DespatchComparisonReport.aspx.designer.cs">
+      <DependentUpon>DespatchComparisonReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\DispatchReturnComparison.aspx.cs">
+      <DependentUpon>DispatchReturnComparison.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\DispatchReturnComparison.aspx.designer.cs">
+      <DependentUpon>DispatchReturnComparison.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\IncentiveSetupScreen.aspx.cs">
+      <DependentUpon>IncentiveSetupScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\IncentiveSetupScreen.aspx.designer.cs">
+      <DependentUpon>IncentiveSetupScreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\ItemwisePurchaseAgentList.aspx.cs">
+      <DependentUpon>ItemwisePurchaseAgentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\ItemwisePurchaseAgentList.aspx.designer.cs">
+      <DependentUpon>ItemwisePurchaseAgentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\ItemwiseSalesSummaryForMarketing.aspx.cs">
+      <DependentUpon>ItemwiseSalesSummaryForMarketing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\ItemwiseSalesSummaryForMarketing.aspx.designer.cs">
+      <DependentUpon>ItemwiseSalesSummaryForMarketing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\ItemwiseStaffSalesSummary.aspx.cs">
+      <DependentUpon>ItemwiseStaffSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\ItemwiseStaffSalesSummary.aspx.designer.cs">
+      <DependentUpon>ItemwiseStaffSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\MarketingSalesAnalysisItemwise.aspx.cs">
+      <DependentUpon>MarketingSalesAnalysisItemwise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\MarketingSalesAnalysisItemwise.aspx.designer.cs">
+      <DependentUpon>MarketingSalesAnalysisItemwise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\NewAgentList.aspx.cs">
+      <DependentUpon>NewAgentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\NewAgentList.aspx.designer.cs">
+      <DependentUpon>NewAgentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\PartywiseDamageReplacementSummary.aspx.cs">
+      <DependentUpon>PartywiseDamageReplacementSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\PartywiseDamageReplacementSummary.aspx.designer.cs">
+      <DependentUpon>PartywiseDamageReplacementSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\PartywiseIncentiveSummary.aspx.cs">
+      <DependentUpon>PartywiseIncentiveSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\PartywiseIncentiveSummary.aspx.designer.cs">
+      <DependentUpon>PartywiseIncentiveSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\ProductIncentive.aspx.cs">
+      <DependentUpon>ProductIncentive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\ProductIncentive.aspx.designer.cs">
+      <DependentUpon>ProductIncentive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\RefundSchemeSummary.aspx.cs">
+      <DependentUpon>RefundSchemeSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\RefundSchemeSummary.aspx.designer.cs">
+      <DependentUpon>RefundSchemeSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\ReturnComparisonReport.aspx.cs">
+      <DependentUpon>ReturnComparisonReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\ReturnComparisonReport.aspx.designer.cs">
+      <DependentUpon>ReturnComparisonReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\SalesComparison.aspx.cs">
+      <DependentUpon>SalesComparison.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\SalesComparison.aspx.designer.cs">
+      <DependentUpon>SalesComparison.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\SchemeRefund.aspx.cs">
+      <DependentUpon>SchemeRefund.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\SchemeRefund.aspx.designer.cs">
+      <DependentUpon>SchemeRefund.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\SpotDamageComparisonReport.aspx.cs">
+      <DependentUpon>SpotDamageComparisonReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\SpotDamageComparisonReport.aspx.designer.cs">
+      <DependentUpon>SpotDamageComparisonReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\StaffAccountSalesSummary.aspx.cs">
+      <DependentUpon>StaffAccountSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\StaffAccountSalesSummary.aspx.designer.cs">
+      <DependentUpon>StaffAccountSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddMilkCollectionCenter.aspx.cs">
+      <DependentUpon>AddMilkCollectionCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddMilkCollectionCenter.aspx.designer.cs">
+      <DependentUpon>AddMilkCollectionCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddMilkCollectionRoute.aspx.cs">
+      <DependentUpon>AddMilkCollectionRoute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddMilkCollectionRoute.aspx.designer.cs">
+      <DependentUpon>AddMilkCollectionRoute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddMilkSuppliersProfile.aspx.cs">
+      <DependentUpon>AddMilkSuppliersProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddMilkSuppliersProfile.aspx.designer.cs">
+      <DependentUpon>AddMilkSuppliersProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierAdvanceDetails.aspx.cs">
+      <DependentUpon>AddSupplierAdvanceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierAdvanceDetails.aspx.designer.cs">
+      <DependentUpon>AddSupplierAdvanceDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierBankDetails.aspx.cs">
+      <DependentUpon>AddSupplierBankDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierBankDetails.aspx.designer.cs">
+      <DependentUpon>AddSupplierBankDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierLoanDetails.aspx.cs">
+      <DependentUpon>AddSupplierLoanDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierLoanDetails.aspx.designer.cs">
+      <DependentUpon>AddSupplierLoanDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierRDInfo.aspx.cs">
+      <DependentUpon>AddSupplierRDInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierRDInfo.aspx.designer.cs">
+      <DependentUpon>AddSupplierRDInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierSchemeBonus.aspx.cs">
+      <DependentUpon>AddSupplierSchemeBonus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSupplierSchemeBonus.aspx.designer.cs">
+      <DependentUpon>AddSupplierSchemeBonus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSuppliersLoanInfo.aspx.cs">
+      <DependentUpon>AddSuppliersLoanInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\AddSuppliersLoanInfo.aspx.designer.cs">
+      <DependentUpon>AddSuppliersLoanInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\CalulateRawMilkPurchase.aspx.cs">
+      <DependentUpon>CalulateRawMilkPurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\CalulateRawMilkPurchase.aspx.designer.cs">
+      <DependentUpon>CalulateRawMilkPurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\CheckList.aspx.cs">
+      <DependentUpon>CheckList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\CheckList.aspx.designer.cs">
+      <DependentUpon>CheckList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\ConsolidatePaymentSummary.aspx.cs">
+      <DependentUpon>ConsolidatePaymentSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\ConsolidatePaymentSummary.aspx.designer.cs">
+      <DependentUpon>ConsolidatePaymentSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\IncentiveTarrif.aspx.cs">
+      <DependentUpon>IncentiveTarrif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\IncentiveTarrif.aspx.designer.cs">
+      <DependentUpon>IncentiveTarrif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\InsertBatchWiseMilk.aspx.cs">
+      <DependentUpon>InsertBatchWiseMilk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\InsertBatchWiseMilk.aspx.designer.cs">
+      <DependentUpon>InsertBatchWiseMilk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\MilkCollectionDetails.aspx.cs">
+      <DependentUpon>MilkCollectionDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\MilkCollectionDetails.aspx.designer.cs">
+      <DependentUpon>MilkCollectionDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\MilkCollectionTransport.aspx.cs">
+      <DependentUpon>MilkCollectionTransport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\MilkCollectionTransport.aspx.designer.cs">
+      <DependentUpon>MilkCollectionTransport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\PaymentSummary.aspx.cs">
+      <DependentUpon>PaymentSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\PaymentSummary.aspx.designer.cs">
+      <DependentUpon>PaymentSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkPaymentListViaBank.aspx.cs">
+      <DependentUpon>RawMilkPaymentListViaBank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkPaymentListViaBank.aspx.designer.cs">
+      <DependentUpon>RawMilkPaymentListViaBank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkStockRegister.aspx.cs">
+      <DependentUpon>RawMilkStockRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkStockRegister.aspx.designer.cs">
+      <DependentUpon>RawMilkStockRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkTariff.aspx.cs">
+      <DependentUpon>RawMilkTariff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkTariff.aspx.designer.cs">
+      <DependentUpon>RawMilkTariff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\ReceiveDisposalheadmaster.aspx.cs">
+      <DependentUpon>ReceiveDisposalheadmaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\ReceiveDisposalheadmaster.aspx.designer.cs">
+      <DependentUpon>ReceiveDisposalheadmaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\SupplierAdvanceInfo.aspx.cs">
+      <DependentUpon>SupplierAdvanceInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\SupplierAdvanceInfo.aspx.designer.cs">
+      <DependentUpon>SupplierAdvanceInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\Supplierwiserawmilkqtyqlty.aspx.cs">
+      <DependentUpon>Supplierwiserawmilkqtyqlty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\Supplierwiserawmilkqtyqlty.aspx.designer.cs">
+      <DependentUpon>Supplierwiserawmilkqtyqlty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\Transaction.aspx.cs">
+      <DependentUpon>Transaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\Transaction.aspx.designer.cs">
+      <DependentUpon>Transaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehicleMaster.aspx.cs">
+      <DependentUpon>VehicleMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehicleMaster.aspx.designer.cs">
+      <DependentUpon>VehicleMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehicleTariff.aspx.cs">
+      <DependentUpon>VehicleTariff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehicleTariff.aspx.designer.cs">
+      <DependentUpon>VehicleTariff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehicleType.aspx.cs">
+      <DependentUpon>VehicleType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehicleType.aspx.designer.cs">
+      <DependentUpon>VehicleType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\PurchaseM\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\PurchaseM\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\PurchaseM\ViewPrchsRequest.aspx.cs">
+      <DependentUpon>ViewPrchsRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\PurchaseM\ViewPrchsRequest.aspx.designer.cs">
+      <DependentUpon>ViewPrchsRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ApprovedRequestItems.aspx.cs">
+      <DependentUpon>ApprovedRequestItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ApprovedRequestItems.aspx.designer.cs">
+      <DependentUpon>ApprovedRequestItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ComparativeStatement.aspx.cs">
+      <DependentUpon>ComparativeStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ComparativeStatement.aspx.designer.cs">
+      <DependentUpon>ComparativeStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\IndentMaterial.aspx.cs">
+      <DependentUpon>IndentMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\IndentMaterial.aspx.designer.cs">
+      <DependentUpon>IndentMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ItemRates.aspx.cs">
+      <DependentUpon>ItemRates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ItemRates.aspx.designer.cs">
+      <DependentUpon>ItemRates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\Items.aspx.cs">
+      <DependentUpon>Items.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\Items.aspx.designer.cs">
+      <DependentUpon>Items.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\MaterialReceived.aspx.cs">
+      <DependentUpon>MaterialReceived.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\MaterialReceived.aspx.designer.cs">
+      <DependentUpon>MaterialReceived.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\PurchaseOrder.aspx.cs">
+      <DependentUpon>PurchaseOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\PurchaseOrder.aspx.designer.cs">
+      <DependentUpon>PurchaseOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\PurchaseRequests.aspx.cs">
+      <DependentUpon>PurchaseRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\PurchaseRequests.aspx.designer.cs">
+      <DependentUpon>PurchaseRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\RackSections.aspx.cs">
+      <DependentUpon>RackSections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\RackSections.aspx.designer.cs">
+      <DependentUpon>RackSections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\VendorRegistration.aspx.cs">
+      <DependentUpon>VendorRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\VendorRegistration.aspx.designer.cs">
+      <DependentUpon>VendorRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ViewPurchaseOrder.aspx.cs">
+      <DependentUpon>ViewPurchaseOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ViewPurchaseOrder.aspx.designer.cs">
+      <DependentUpon>ViewPurchaseOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reception\CancelOrder.aspx.cs">
+      <DependentUpon>CancelOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reception\CancelOrder.aspx.designer.cs">
+      <DependentUpon>CancelOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reception\EditOrder.aspx.cs">
+      <DependentUpon>EditOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reception\EditOrder.aspx.designer.cs">
+      <DependentUpon>EditOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reception\GenrateBillThermal.aspx.cs">
+      <DependentUpon>GenrateBillThermal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reception\GenrateBillThermal.aspx.designer.cs">
+      <DependentUpon>GenrateBillThermal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reception\OrderQuantity.aspx.cs">
+      <DependentUpon>OrderQuantity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reception\OrderQuantity.aspx.designer.cs">
+      <DependentUpon>OrderQuantity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reports\BoothSalesAnalysis.aspx.cs">
+      <DependentUpon>BoothSalesAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reports\BoothSalesAnalysis.aspx.designer.cs">
+      <DependentUpon>BoothSalesAnalysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reports\BoothSalesAnalysisUsers.aspx.cs">
+      <DependentUpon>BoothSalesAnalysisUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reports\BoothSalesAnalysisUsers.aspx.designer.cs">
+      <DependentUpon>BoothSalesAnalysisUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Sales\AgentBilling.aspx.cs">
+      <DependentUpon>AgentBilling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Sales\AgentBilling.aspx.designer.cs">
+      <DependentUpon>AgentBilling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\BindSlab.aspx.cs">
+      <DependentUpon>BindSlab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\BindSlab.aspx.designer.cs">
+      <DependentUpon>BindSlab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\BoothPlaceOrder.aspx.cs">
+      <DependentUpon>BoothPlaceOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\BoothPlaceOrder.aspx.designer.cs">
+      <DependentUpon>BoothPlaceOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Sales\AgentSale.aspx.cs">
+      <DependentUpon>AgentSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Sales\AgentSale.aspx.designer.cs">
+      <DependentUpon>AgentSale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Sales\BoothPlaceOrder.aspx.cs">
+      <DependentUpon>BoothPlaceOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Sales\BoothPlaceOrder.aspx.designer.cs">
+      <DependentUpon>BoothPlaceOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Sales\BoothReturnReplace.aspx.cs">
+      <DependentUpon>BoothReturnReplace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Sales\BoothReturnReplace.aspx.designer.cs">
+      <DependentUpon>BoothReturnReplace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Sales\BoothStockLanding.aspx.cs">
+      <DependentUpon>BoothStockLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Sales\BoothStockLanding.aspx.designer.cs">
+      <DependentUpon>BoothStockLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\CashierBoothSettlement.aspx.cs">
+      <DependentUpon>CashierBoothSettlement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\CashierBoothSettlement.aspx.designer.cs">
+      <DependentUpon>CashierBoothSettlement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\CashierSettlement.aspx.cs">
+      <DependentUpon>CashierSettlement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\CashierSettlement.aspx.designer.cs">
+      <DependentUpon>CashierSettlement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\CreateUser.aspx.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\CreateUser.aspx.designer.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\Department.aspx.cs">
+      <DependentUpon>Department.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\Department.aspx.designer.cs">
+      <DependentUpon>Department.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\DuplicateBillForAgent.aspx.cs">
+      <DependentUpon>DuplicateBillForAgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\DuplicateBillForAgent.aspx.designer.cs">
+      <DependentUpon>DuplicateBillForAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Sales\EmployeeBilling.aspx.cs">
+      <DependentUpon>EmployeeBilling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Sales\EmployeeBilling.aspx.designer.cs">
+      <DependentUpon>EmployeeBilling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\EmployeeInfo.aspx.cs">
+      <DependentUpon>EmployeeInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\EmployeeInfo.aspx.designer.cs">
+      <DependentUpon>EmployeeInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\GenerateBillForBooth.aspx.cs">
+      <DependentUpon>GenerateBillForBooth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\GenerateBillForBooth.aspx.designer.cs">
+      <DependentUpon>GenerateBillForBooth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\GenrateBill.aspx.cs">
+      <DependentUpon>GenrateBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\GenrateBill.aspx.designer.cs">
+      <DependentUpon>GenrateBill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Sales\LocalBilling.aspx.cs">
+      <DependentUpon>LocalBilling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Sales\LocalBilling.aspx.designer.cs">
+      <DependentUpon>LocalBilling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\PlaceOrder.aspx.cs">
+      <DependentUpon>PlaceOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\PlaceOrder.aspx.designer.cs">
+      <DependentUpon>PlaceOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\PlaceOrderEmpRoutewise.aspx.cs">
+      <DependentUpon>PlaceOrderEmpRoutewise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\PlaceOrderEmpRoutewise.aspx.designer.cs">
+      <DependentUpon>PlaceOrderEmpRoutewise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\PlaceOrderRoutewise.aspx.cs">
+      <DependentUpon>PlaceOrderRoutewise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\PlaceOrderRoutewise.aspx.designer.cs">
+      <DependentUpon>PlaceOrderRoutewise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\ReturnedTrays.aspx.cs">
+      <DependentUpon>ReturnedTrays.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\ReturnedTrays.aspx.designer.cs">
+      <DependentUpon>ReturnedTrays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\ReturnScheme.aspx.cs">
+      <DependentUpon>ReturnScheme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\ReturnScheme.aspx.designer.cs">
+      <DependentUpon>ReturnScheme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\UnitMaster.aspx.cs">
+      <DependentUpon>UnitMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\UnitMaster.aspx.designer.cs">
+      <DependentUpon>UnitMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\ViewBoothStock.aspx.cs">
+      <DependentUpon>ViewBoothStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\ViewBoothStock.aspx.designer.cs">
+      <DependentUpon>ViewBoothStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\ViewBoothUserSales.aspx.cs">
+      <DependentUpon>ViewBoothUserSales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\ViewBoothUserSales.aspx.designer.cs">
+      <DependentUpon>ViewBoothUserSales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\ViewDispatchOrders.aspx.cs">
+      <DependentUpon>ViewDispatchOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\ViewDispatchOrders.aspx.designer.cs">
+      <DependentUpon>ViewDispatchOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reception\DuplicateBillForAgent.aspx.cs">
+      <DependentUpon>DuplicateBillForAgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reception\DuplicateBillForAgent.aspx.designer.cs">
+      <DependentUpon>DuplicateBillForAgent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reception\GenrateBill.aspx.cs">
+      <DependentUpon>GenrateBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reception\GenrateBill.aspx.designer.cs">
+      <DependentUpon>GenrateBill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reception\ItemwiseOrderSummary.aspx.cs">
+      <DependentUpon>ItemwiseOrderSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reception\ItemwiseOrderSummary.aspx.designer.cs">
+      <DependentUpon>ItemwiseOrderSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reception\PlaceOrder.aspx.cs">
+      <DependentUpon>PlaceOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reception\PlaceOrder.aspx.designer.cs">
+      <DependentUpon>PlaceOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reception\PlaceOrderEmpRoutewise.aspx.cs">
+      <DependentUpon>PlaceOrderEmpRoutewise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reception\PlaceOrderEmpRoutewise.aspx.designer.cs">
+      <DependentUpon>PlaceOrderEmpRoutewise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reception\PlaceOrderRoutewise.aspx.cs">
+      <DependentUpon>PlaceOrderRoutewise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reception\PlaceOrderRoutewise.aspx.designer.cs">
+      <DependentUpon>PlaceOrderRoutewise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reception\RatewiseOrderSummary.aspx.cs">
+      <DependentUpon>RatewiseOrderSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reception\RatewiseOrderSummary.aspx.designer.cs">
+      <DependentUpon>RatewiseOrderSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reports\BillwiseSaleSummary.aspx.cs">
+      <DependentUpon>BillwiseSaleSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reports\BillwiseSaleSummary.aspx.designer.cs">
+      <DependentUpon>BillwiseSaleSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reports\BoothBillWiseSalesSummary.aspx.cs">
+      <DependentUpon>BoothBillWiseSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reports\BoothBillWiseSalesSummary.aspx.designer.cs">
+      <DependentUpon>BoothBillWiseSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reports\Boothitemwisesalessummary.aspx.cs">
+      <DependentUpon>Boothitemwisesalessummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reports\Boothitemwisesalessummary.aspx.designer.cs">
+      <DependentUpon>Boothitemwisesalessummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reports\BoothroutewiseSalesSummary.aspx.cs">
+      <DependentUpon>BoothroutewiseSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reports\BoothroutewiseSalesSummary.aspx.designer.cs">
+      <DependentUpon>BoothroutewiseSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reports\BoothSalesAnalysisItemwise.aspx.cs">
+      <DependentUpon>BoothSalesAnalysisItemwise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reports\BoothSalesAnalysisItemwise.aspx.designer.cs">
+      <DependentUpon>BoothSalesAnalysisItemwise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reports\ItemwiseOrderSummary.aspx.cs">
+      <DependentUpon>ItemwiseOrderSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reports\ItemwiseOrderSummary.aspx.designer.cs">
+      <DependentUpon>ItemwiseOrderSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reports\ItemwiseSalesSummary.aspx.cs">
+      <DependentUpon>ItemwiseSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reports\ItemwiseSalesSummary.aspx.designer.cs">
+      <DependentUpon>ItemwiseSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reports\RatewiseOrderSummary.aspx.cs">
+      <DependentUpon>RatewiseOrderSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reports\RatewiseOrderSummary.aspx.designer.cs">
+      <DependentUpon>RatewiseOrderSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reports\RoutewiseSalesSummary.aspx.cs">
+      <DependentUpon>RoutewiseSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reports\RoutewiseSalesSummary.aspx.designer.cs">
+      <DependentUpon>RoutewiseSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reports\SalesAnalysisItemwise.aspx.cs">
+      <DependentUpon>SalesAnalysisItemwise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reports\SalesAnalysisItemwise.aspx.designer.cs">
+      <DependentUpon>SalesAnalysisItemwise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\Configure.aspx.cs">
+      <DependentUpon>Configure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\Configure.aspx.designer.cs">
+      <DependentUpon>Configure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\FuelDetails.aspx.cs">
+      <DependentUpon>FuelDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\FuelDetails.aspx.designer.cs">
+      <DependentUpon>FuelDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\FuelPumpMaster.aspx.cs">
+      <DependentUpon>FuelPumpMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\FuelPumpMaster.aspx.designer.cs">
+      <DependentUpon>FuelPumpMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\InsuranceMaintenance.aspx.cs">
+      <DependentUpon>InsuranceMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\InsuranceMaintenance.aspx.designer.cs">
+      <DependentUpon>InsuranceMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\JOBCard.aspx.cs">
+      <DependentUpon>JOBCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\JOBCard.aspx.designer.cs">
+      <DependentUpon>JOBCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\ProductSupplyOutOperation.aspx.cs">
+      <DependentUpon>ProductSupplyOutOperation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\ProductSupplyOutOperation.aspx.designer.cs">
+      <DependentUpon>ProductSupplyOutOperation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\PUCMaintenance.aspx.cs">
+      <DependentUpon>PUCMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\PUCMaintenance.aspx.designer.cs">
+      <DependentUpon>PUCMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\RouteWiseScheduleTime.aspx.cs">
+      <DependentUpon>RouteWiseScheduleTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\RouteWiseScheduleTime.aspx.designer.cs">
+      <DependentUpon>RouteWiseScheduleTime.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TranportModelMaster.aspx.cs">
+      <DependentUpon>TranportModelMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TranportModelMaster.aspx.designer.cs">
+      <DependentUpon>TranportModelMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportBrandMaster.aspx.cs">
+      <DependentUpon>TransportBrandMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportBrandMaster.aspx.designer.cs">
+      <DependentUpon>TransportBrandMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportDetails.aspx.cs">
+      <DependentUpon>TransportDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportDetails.aspx.designer.cs">
+      <DependentUpon>TransportDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\FuelDaywiseUses.aspx.cs">
+      <DependentUpon>FuelDaywiseUses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\FuelDaywiseUses.aspx.designer.cs">
+      <DependentUpon>FuelDaywiseUses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\FuelListDateWise.aspx.cs">
+      <DependentUpon>FuelListDateWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\FuelListDateWise.aspx.designer.cs">
+      <DependentUpon>FuelListDateWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\InternalReportofVehicleSection.aspx.cs">
+      <DependentUpon>InternalReportofVehicleSection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\InternalReportofVehicleSection.aspx.designer.cs">
+      <DependentUpon>InternalReportofVehicleSection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\MilkSupplyVehicleReportRoutewise.aspx.cs">
+      <DependentUpon>MilkSupplyVehicleReportRoutewise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\MilkSupplyVehicleReportRoutewise.aspx.designer.cs">
+      <DependentUpon>MilkSupplyVehicleReportRoutewise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\VehicleRouteOperationSummary.aspx.cs">
+      <DependentUpon>VehicleRouteOperationSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\VehicleRouteOperationSummary.aspx.designer.cs">
+      <DependentUpon>VehicleRouteOperationSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\VehicleWiseSummary.aspx.cs">
+      <DependentUpon>VehicleWiseSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\TransportReports\VehicleWiseSummary.aspx.designer.cs">
+      <DependentUpon>VehicleWiseSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\VehicleInOperation.aspx.cs">
+      <DependentUpon>VehicleInOperation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\VehicleInOperation.aspx.designer.cs">
+      <DependentUpon>VehicleInOperation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\VehicleMaintenance.aspx.cs">
+      <DependentUpon>VehicleMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\VehicleMaintenance.aspx.designer.cs">
+      <DependentUpon>VehicleMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\VehicleOperations.aspx.cs">
+      <DependentUpon>VehicleOperations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\VehicleOperations.aspx.designer.cs">
+      <DependentUpon>VehicleOperations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\VehicleRouteMap.aspx.cs">
+      <DependentUpon>VehicleRouteMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\VehicleRouteMap.aspx.designer.cs">
+      <DependentUpon>VehicleRouteMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\VehicleTarifDetails.aspx.cs">
+      <DependentUpon>VehicleTarifDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\TransportModule\VehicleTarifDetails.aspx.designer.cs">
+      <DependentUpon>VehicleTarifDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\BindAgentSlab.asmx.cs">
+      <DependentUpon>BindAgentSlab.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Content Include="App_Code\Global.cs" />
+    <Compile Include="Print.aspx.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Print.aspx.designer.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\LoginT.aspx.cs">
+      <DependentUpon>LoginT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\LoginT.aspx.designer.cs">
+      <DependentUpon>LoginT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testwithMaster.aspx.cs">
+      <DependentUpon>testwithMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testwithMaster.aspx.designer.cs">
+      <DependentUpon>testwithMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Head.ascx.cs">
+      <DependentUpon>Head.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Head.ascx.designer.cs">
+      <DependentUpon>Head.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SiteMenu.ascx.cs">
+      <DependentUpon>SiteMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\SiteMenu.ascx.designer.cs">
+      <DependentUpon>SiteMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ThemesSetting.ascx.cs">
+      <DependentUpon>ThemesSetting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ThemesSetting.ascx.designer.cs">
+      <DependentUpon>ThemesSetting.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Release\" />
+    <Folder Include="Theme\obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\Dairy.csprojResolveAssemblyReference.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="packages.config" />
+    <Content Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <Content Include="DairyerpDataSet.xsc">
+      <DependentUpon>DairyerpDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="AgentSchemeReport.xsc">
+      <DependentUpon>AgentSchemeReport.xsd</DependentUpon>
+    </None>
+    <None Include="AgentSchemeReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AgentSchemeReport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AgentSchemeReport.xss">
+      <DependentUpon>AgentSchemeReport.xsd</DependentUpon>
+    </None>
+    <None Include="AgentSeameWiseReports.xsc">
+      <DependentUpon>AgentSeameWiseReports.xsd</DependentUpon>
+    </None>
+    <None Include="AgentSeameWiseReports.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AgentSeameWiseReports.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AgentSeameWiseReports.xss">
+      <DependentUpon>AgentSeameWiseReports.xsd</DependentUpon>
+    </None>
+    <None Include="DairyerpDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DairyerpDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DairyerpDataSet.xss">
+      <DependentUpon>DairyerpDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="DairyerpDataSetnew.xsc">
+      <DependentUpon>DairyerpDataSetnew.xsd</DependentUpon>
+    </Content>
+    <None Include="DairyerpDataSetnew.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DairyerpDataSetnew.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DairyerpDataSetnew.xss">
+      <DependentUpon>DairyerpDataSetnew.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="Dsbills.xsc">
+      <DependentUpon>Dsbills.xsd</DependentUpon>
+    </None>
+    <None Include="Dsbills.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dsbills.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dsbills.xss">
+      <DependentUpon>Dsbills.xsd</DependentUpon>
+    </None>
+    <None Include="packages\EntityFramework.5.0.0\Content\App.config.transform" />
+    <None Include="packages\EntityFramework.5.0.0\Content\Web.config.transform" />
+    <None Include="packages\EntityFramework.5.0.0\EntityFramework.5.0.0.nupkg" />
+    <None Include="packages\EntityFramework.5.0.0\tools\EntityFramework.PS3.psd1" />
+    <None Include="packages\EntityFramework.5.0.0\tools\EntityFramework.psd1" />
+    <None Include="packages\EntityFramework.5.0.0\tools\EntityFramework.psm1" />
+    <None Include="packages\EntityFramework.5.0.0\tools\init.ps1" />
+    <None Include="packages\EntityFramework.5.0.0\tools\install.ps1" />
+    <Content Include="packages\EntityFramework.5.0.0\tools\Redirect.config" />
+    <Content Include="packages\EntityFramework.5.0.0\tools\Redirect.VS11.config" />
+    <None Include="Properties\PublishProfiles\amol.pubxml" />
+    <None Include="Properties\PublishProfiles\DairyERP.pubxml" />
+    <None Include="Properties\PublishProfiles\sharad_mahajan.pubxml" />
+    <Content Include="Reports\ReportDataSet\PartywiseScheme.xsc">
+      <DependentUpon>PartywiseScheme.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\ReportDataSet\PartywiseScheme.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PartywiseScheme.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\ReportDataSet\PartywiseScheme.xss">
+      <DependentUpon>PartywiseScheme.xsd</DependentUpon>
+    </Content>
+    <Content Include="Reports\ReportDataSet\StaffACCSaleSummary.xsc">
+      <DependentUpon>StaffACCSaleSummary.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\ReportDataSet\StaffACCSaleSummary.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StaffACCSaleSummary.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Reports\ReportDataSet\StaffACCSaleSummary.xss">
+      <DependentUpon>StaffACCSaleSummary.xsd</DependentUpon>
+    </Content>
+    <Content Include="Tabs\Reception\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Theme\build\bootstrap-less\mixins.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\alerts.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\background-variant.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\border-radius.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\buttons.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\center-block.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\clearfix.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\forms.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\gradients.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\grid-framework.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\grid.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\hide-text.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\image.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\labels.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\list-group.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\nav-divider.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\nav-vertical-align.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\opacity.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\pagination.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\panels.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\progress-bar.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\reset-filter.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\resize.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\responsive-visibility.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\size.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\tab-focus.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\table-row.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\text-emphasis.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\text-overflow.less" />
+    <Content Include="Theme\build\bootstrap-less\mixins\vendor-prefixes.less" />
+    <Content Include="Theme\build\bootstrap-less\variables.less" />
+    <Content Include="Theme\build\less\.csslintrc" />
+    <Content Include="Theme\build\less\404_500_errors.less" />
+    <Content Include="Theme\build\less\AdminLTE.less" />
+    <Content Include="Theme\build\less\alerts.less" />
+    <Content Include="Theme\build\less\bootstrap-social.less" />
+    <Content Include="Theme\build\less\boxes.less" />
+    <Content Include="Theme\build\less\buttons.less" />
+    <Content Include="Theme\build\less\callout.less" />
+    <Content Include="Theme\build\less\carousel.less" />
+    <Content Include="Theme\build\less\control-sidebar.less" />
+    <Content Include="Theme\build\less\core.less" />
+    <Content Include="Theme\build\less\direct-chat.less" />
+    <Content Include="Theme\build\less\dropdown.less" />
+    <Content Include="Theme\build\less\forms.less" />
+    <Content Include="Theme\build\less\fullcalendar.less" />
+    <Content Include="Theme\build\less\header.less" />
+    <Content Include="Theme\build\less\info-box.less" />
+    <Content Include="Theme\build\less\invoice.less" />
+    <Content Include="Theme\build\less\labels.less" />
+    <Content Include="Theme\build\less\lockscreen.less" />
+    <Content Include="Theme\build\less\login_and_register.less" />
+    <Content Include="Theme\build\less\mailbox.less" />
+    <Content Include="Theme\build\less\miscellaneous.less" />
+    <Content Include="Theme\build\less\mixins.less" />
+    <Content Include="Theme\build\less\modal.less" />
+    <Content Include="Theme\build\less\navs.less" />
+    <Content Include="Theme\build\less\print.less" />
+    <Content Include="Theme\build\less\products.less" />
+    <Content Include="Theme\build\less\profile.less" />
+    <Content Include="Theme\build\less\progress-bars.less" />
+    <Content Include="Theme\build\less\select2.less" />
+    <Content Include="Theme\build\less\sidebar-mini.less" />
+    <Content Include="Theme\build\less\sidebar.less" />
+    <Content Include="Theme\build\less\skins\skin-black-light.less" />
+    <Content Include="Theme\build\less\skins\skin-black.less" />
+    <Content Include="Theme\build\less\skins\skin-blue-light.less" />
+    <Content Include="Theme\build\less\skins\skin-blue.less" />
+    <Content Include="Theme\build\less\skins\skin-green-light.less" />
+    <Content Include="Theme\build\less\skins\skin-green.less" />
+    <Content Include="Theme\build\less\skins\skin-purple-light.less" />
+    <Content Include="Theme\build\less\skins\skin-purple.less" />
+    <Content Include="Theme\build\less\skins\skin-red-light.less" />
+    <Content Include="Theme\build\less\skins\skin-red.less" />
+    <Content Include="Theme\build\less\skins\skin-yellow-light.less" />
+    <Content Include="Theme\build\less\skins\skin-yellow.less" />
+    <Content Include="Theme\build\less\skins\_all-skins.less" />
+    <Content Include="Theme\build\less\small-box.less" />
+    <Content Include="Theme\build\less\social-widgets.less" />
+    <Content Include="Theme\build\less\table.less" />
+    <Content Include="Theme\build\less\timeline.less" />
+    <Content Include="Theme\build\less\users-list.less" />
+    <Content Include="Theme\build\less\variables.less" />
+    <Content Include="Theme\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="Theme\plugins\ckeditor\CHANGES.md" />
+    <Content Include="Theme\plugins\ckeditor\LICENSE.md" />
+    <Content Include="Theme\plugins\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Theme\plugins\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Theme\plugins\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Theme\plugins\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Theme\plugins\ckeditor\README.md" />
+    <Content Include="Theme\plugins\ckeditor\skins\moono\readme.md" />
+    <Content Include="Theme\plugins\datatables\extensions\ColReorder\Readme.md" />
+    <Content Include="Theme\plugins\datatables\extensions\ColVis\Readme.md" />
+    <Content Include="Theme\plugins\datatables\extensions\FixedColumns\Readme.md" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\css\dataTables.responsive.scss" />
+    <Content Include="Theme\plugins\datatables\extensions\Responsive\Readme.md" />
+    <Content Include="Theme\plugins\datatables\extensions\Scroller\examples\data\ssp.php" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\psd\collection.psd" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\psd\copy document.psd" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\psd\file_types.psd" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\images\psd\printer.psd" />
+    <Content Include="Theme\plugins\datatables\extensions\TableTools\Readme.md" />
+    <Content Include="Theme\plugins\input-mask\phone-codes\phone-be.json" />
+    <Content Include="Theme\plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="Theme\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Theme\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Theme\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Theme\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Theme\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Tabs\Sales\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Tabs\Despatch\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bussiness\Bussiness.csproj">
+      <Project>{ff64e7e8-f4e3-4387-ab1d-5f86240a1ab9}</Project>
+      <Name>Bussiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comman\Comman.csproj">
+      <Project>{a7e84000-16b5-4e4c-880e-3a638a219ab4}</Project>
+      <Name>Comman</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{5161f5f9-6a71-4ae6-b5da-a9d54cb1cbfd}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{b65377a4-21df-46ff-8d40-9ed50cd64547}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProductWiaseSales.rdlc" />
+    <EmbeddedResource Include="Reports\rdlcFiles\AgentSchemeReport.rdlc" />
+    <EmbeddedResource Include="Reports\rdlcFiles\BillsReports.rdlc" />
+    <EmbeddedResource Include="Reports\rdlcFiles\PartywiseScheme.rdlc" />
+    <EmbeddedResource Include="Reports\rdlcFiles\ProductWiseSeals.rdlc" />
+    <EmbeddedResource Include="Reports\rdlcFiles\StaffACCSaleSummary.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1873</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

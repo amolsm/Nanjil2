@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="AgentSchemeReport">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>0a091777-621c-4322-9c62-53d3f6b0df6e</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="OrderDetailsId">
+          <DataField>OrderDetailsId</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="OrderId">
+          <DataField>OrderId</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="TypeID">
+          <DataField>TypeID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ProductID">
+          <DataField>ProductID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Qty">
+          <DataField>Qty</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="UnitCost">
+          <DataField>UnitCost</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Dispatched">
+          <DataField>Dispatched</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="OrderID1">
+          <DataField>OrderID1</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="OrderCode">
+          <DataField>OrderCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OrderDate">
+          <DataField>OrderDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AgentID">
+          <DataField>AgentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SelesEmployeeId">
+          <DataField>SelesEmployeeId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ShcemheApplied">
+          <DataField>ShcemheApplied</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="TotalBill">
+          <DataField>TotalBill</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="OrderType">
+          <DataField>OrderType</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RouteID">
+          <DataField>RouteID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeID">
+          <DataField>EmployeeID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Custom5">
+          <DataField>Custom5</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="custom4">
+          <DataField>custom4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CreatedDate">
+          <DataField>CreatedDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Orderstatus">
+          <DataField>Orderstatus</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="OrdeDispatchby">
+          <DataField>OrdeDispatchby</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="AgentID1">
+          <DataField>AgentID1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="AgentCode">
+          <DataField>AgentCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RouteID1">
+          <DataField>RouteID1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="AgentName">
+          <DataField>AgentName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DateofJoining">
+          <DataField>DateofJoining</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AppriveBy">
+          <DataField>AppriveBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Isactive">
+          <DataField>Isactive</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeID1">
+          <DataField>EmployeeID1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Agensytype">
+          <DataField>Agensytype</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address1">
+          <DataField>Address1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address2">
+          <DataField>Address2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address3">
+          <DataField>Address3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TelephoneNo">
+          <DataField>TelephoneNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MobileNo">
+          <DataField>MobileNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Districk">
+          <DataField>Districk</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="State">
+          <DataField>State</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Country">
+          <DataField>Country</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BillingMethod">
+          <DataField>BillingMethod</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PaymentMode">
+          <DataField>PaymentMode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DepositeAmount">
+          <DataField>DepositeAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Bankname">
+          <DataField>Bankname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AccountNo">
+          <DataField>AccountNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AccountType">
+          <DataField>AccountType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IFScode">
+          <DataField>IFScode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Volume">
+          <DataField>Volume</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NoTrays">
+          <DataField>NoTrays</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DoorToDoor">
+          <DataField>DoorToDoor</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="FreezerAvailable">
+          <DataField>FreezerAvailable</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Deactivedate">
+          <DataField>Deactivedate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeactiveReason">
+          <DataField>DeactiveReason</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AmountReturned">
+          <DataField>AmountReturned</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TraysReturned">
+          <DataField>TraysReturned</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="IsArchive">
+          <DataField>IsArchive</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="SchemeAmount">
+          <DataField>SchemeAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalSchemeAmount">
+          <DataField>TotalSchemeAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CreatedBy1">
+          <DataField>CreatedBy1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Createddate1">
+          <DataField>Createddate1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedBy">
+          <DataField>ModifiedBy</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedDate">
+          <DataField>ModifiedDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FreezerRetrun">
+          <DataField>FreezerRetrun</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AgentSchemeReport</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>AgentSchemeReport</rd:DataSetName>
+        <rd:SchemaPath>E:\test\New folder (3)\02March\Dairy\AgentSchemeReport.xsd</rd:SchemaPath>
+        <rd:TableName>Reports_AgentSeameWiseReports</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>Reports_AgentSeameWiseReportsTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix2">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>5.40625in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>1.67708in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="Rectangle2">
+                      <ReportItems>
+                        <Tablix Name="Tablix3">
+                          <TablixBody>
+                            <TablixColumns>
+                              <TablixColumn>
+                                <Width>1.51736in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>1.11111in</Width>
+                              </TablixColumn>
+                            </TablixColumns>
+                            <TablixRows>
+                              <TablixRow>
+                                <Height>0.20833in</Height>
+                                <TablixCells>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Textbox1">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>Order Date</Value>
+                                                <Style />
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Textbox1</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>LightGrey</Color>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Textbox3">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>Total</Value>
+                                                <Style />
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Textbox3</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>LightGrey</Color>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                </TablixCells>
+                              </TablixRow>
+                              <TablixRow>
+                                <Height>0.20833in</Height>
+                                <TablixCells>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="OrderDate">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=Fields!OrderDate.Value</Value>
+                                                <Style />
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>OrderDate</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>LightGrey</Color>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Total">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=Fields!Total.Value</Value>
+                                                <Style />
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Total</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>LightGrey</Color>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                </TablixCells>
+                              </TablixRow>
+                              <TablixRow>
+                                <Height>0.25in</Height>
+                                <TablixCells>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Textbox27">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>Total</Value>
+                                                <Style>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Textbox27</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>LightGrey</Color>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Total1">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=Sum(Fields!Total.Value)</Value>
+                                                <Style>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style />
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Total1</rd:DefaultName>
+                                        <Style>
+                                          <Border>
+                                            <Color>LightGrey</Color>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                </TablixCells>
+                              </TablixRow>
+                            </TablixRows>
+                          </TablixBody>
+                          <TablixColumnHierarchy>
+                            <TablixMembers>
+                              <TablixMember />
+                              <TablixMember />
+                            </TablixMembers>
+                          </TablixColumnHierarchy>
+                          <TablixRowHierarchy>
+                            <TablixMembers>
+                              <TablixMember>
+                                <KeepWithGroup>After</KeepWithGroup>
+                              </TablixMember>
+                              <TablixMember>
+                                <Group Name="Details1" />
+                              </TablixMember>
+                              <TablixMember>
+                                <KeepWithGroup>Before</KeepWithGroup>
+                              </TablixMember>
+                            </TablixMembers>
+                          </TablixRowHierarchy>
+                          <DataSetName>DataSet1</DataSetName>
+                          <Top>0.49097in</Top>
+                          <Left>0.38542in</Left>
+                          <Height>0.66667in</Height>
+                          <Width>2.62847in</Width>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Tablix>
+                        <Textbox Name="Textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Opning bal.</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Top>0.3in</Top>
+                          <Left>1.12847in</Left>
+                          <Height>0.12153in</Height>
+                          <Width>0.75347in</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="RouteID">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=" RouteID" &amp; Fields!RouteID.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>RouteID</rd:DefaultName>
+                          <Left>0.38542in</Left>
+                          <Height>0.17028in</Height>
+                          <Width>1.01736in</Width>
+                          <ZIndex>2</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox10">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="Agency Code" &amp; First(Fields!AgentCode.Value)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Top>0.18417in</Top>
+                          <Left>2.73611in</Left>
+                          <Height>0.08805in</Height>
+                          <Width>1.41319in</Width>
+                          <ZIndex>3</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Textbox>
+                        <Line Name="Line2">
+                          <Top>0.18417in</Top>
+                          <Left>0.38542in</Left>
+                          <Height>0in</Height>
+                          <Width>3.76389in</Width>
+                          <ZIndex>4</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </Line>
+                        <Textbox Name="TotalSchemeAmount">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!TotalSchemeAmount.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>TotalSchemeAmount</rd:DefaultName>
+                          <Top>0.3in</Top>
+                          <Left>2.87153in</Left>
+                          <Height>0.12153in</Height>
+                          <Width>1.01944in</Width>
+                          <ZIndex>5</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>="Agency Name :"&amp;First(Fields!AgentName.Value)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Top>0.18417in</Top>
+                          <Left>0.38542in</Left>
+                          <Height>0.10361in</Height>
+                          <Width>2.06944in</Width>
+                          <ZIndex>6</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Textbox>
+                        <Line Name="Line3">
+                          <Top>0.3in</Top>
+                          <Left>0.38542in</Left>
+                          <Height>0in</Height>
+                          <Width>3.76389in</Width>
+                          <ZIndex>7</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </Line>
+                      </ReportItems>
+                      <KeepTogether>true</KeepTogether>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Details">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!AgentID.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.06944in</Top>
+        <Left>0.21542in</Left>
+        <Height>1.67708in</Height>
+        <Width>5.40625in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>2in</Height>
+    <Style />
+  </Body>
+  <Width>7.77791in</Width>
+  <Page>
+    <PageHeader>
+      <Height>1.02778in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox13">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Nanjil Milk Plant, Mulagumoodu - 629 167</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextDecoration>None</TextDecoration>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox13</rd:DefaultName>
+          <Top>0.10431in</Top>
+          <Left>0.81958in</Left>
+          <Height>0.03in</Height>
+          <Width>6.95833in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingTop>12pt</PaddingTop>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox14">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Agents Welfare Scheme</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <TextDecoration>None</TextDecoration>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox14</rd:DefaultName>
+          <Top>0.12597in</Top>
+          <Left>0.81958in</Left>
+          <Height>0.11806in</Height>
+          <Width>1.72917in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line68">
+          <Height>0in</Height>
+          <Width>5.62167in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <rd:ReportID>14eb1edb-6239-4f94-a714-e2c858c2d263</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>
