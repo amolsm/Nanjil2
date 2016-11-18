@@ -130,6 +130,24 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.DropDownList dpRoute;
         
         /// <summary>
+        /// dpBankName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpBankName;
+        
+        /// <summary>
+        /// dpIfscCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpIfscCode;
+        
+        /// <summary>
         /// btnGeneratereport control.
         /// </summary>
         /// <remarks>

@@ -218,7 +218,7 @@
                            <td><asp:TextBox runat="server" ID="txtNetAmt" ToolTip="Net Amount" style="width: 100px" Text=""/></td>
 
                          <td>
-
+                             <asp:HiddenField id="hfSupplierID" runat="server" value='<%#Eval("SupplierID") %>' /> 
                              <asp:LinkButton ID="lbEdite" AlternateText="Save" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
                                                                     ToolTip="Save" runat="server" CommandArgument='<%#Eval("SupplierID") %>'
                                                                     CommandName="Edit"><i class="btn btn-primary"></i></asp:LinkButton>
@@ -253,7 +253,7 @@
                     </FooterTemplate>
                                              
            </asp:Repeater>
-                    <asp:HiddenField id="hfSupplierID" runat="server" />
+                    <asp:HiddenField id="hfsuppliersID" runat="server" />
              
                 
                   

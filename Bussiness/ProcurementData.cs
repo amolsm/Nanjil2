@@ -63,7 +63,12 @@ namespace Bussiness
 
         public int AllIncentiveTariff(Procurement p)
         {
-           return pdb.AllIncentiveTariff(p);
+            return pdb.AllIncentiveTariff(p);
+        }
+
+        public DataSet MilkCollectionTransportBill(Procurement p)
+        {
+            return pdb.MilkCollectionTransportBill(p);
         }
 
         public int InsertSupplierBankDetails(Procurement p)
@@ -71,6 +76,11 @@ namespace Bussiness
 
             return pdb.InsertSupplierBankDetails(p);
         }
+
+        public DataSet MonthlyRawMilkPurchaseSummary(Procurement p)
+        {
+            return pdb.MonthlyRawMilkPurchaseSummary(p);
+         }
 
         public DataSet GetTransactionDetails(Procurement p)
         {
@@ -279,7 +289,7 @@ namespace Bussiness
             return pdb.GetBatchWiseMilkCollectionDetailsbyID(milkcollectionid);
         }
 
-        public DataSet GetOpeningClosingBal(DateTime date,int centerid)
+        public DataSet GetOpeningClosingBal(DateTime date, int centerid)
         {
             return pdb.GetOpeningClosingBal(date, centerid);
         }

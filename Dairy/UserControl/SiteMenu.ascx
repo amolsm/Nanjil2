@@ -28,7 +28,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                  <li><a href="/Tabs/Administration/CreateUser.aspx"><i class="fa fa-user-plus"></i> Create User</a></li>
+                <li><a href="/Tabs/Administration/CreateUser.aspx"><i class="fa fa-user-plus"></i> Create User</a></li>
                   <li><a href="/Tabs/Administration/UserLog.aspx"><i class="fa fa-user-plus"></i> User Log</a></li>
                   <li><a href="/Tabs/Administration/BoothLog.aspx"><i class="fa fa-user"></i> Booth Log</a></li>
                   <li><a href="/Tabs/Administration/EmployeeInfo.aspx"><i class="fa fa-circle-o"></i> Employee Information</a></li>                 
@@ -269,7 +269,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                  <li><a href="/Tabs/Procurement/VehicleType.aspx"><i class="fa fa-circle-o"></i>Vehicle Model</a></li>
+                   <li><a href="/Tabs/Procurement/VehicleType.aspx"><i class="fa fa-circle-o"></i>Vehicle Model</a></li>
                     <li><a href="/Tabs/Procurement/VehicleMaster.aspx"><i class="fa fa-circle-o"></i>VehicleMaster</a></li>
                   <li><a href="/Tabs/Procurement/ReceiveDisposalheadmaster.aspx"><i class="fa fa-circle-o"></i>Receive & Dispose Master</a></li>
                 
@@ -293,6 +293,10 @@
               
                   <li><a href="/Tabs/Procurement/RawMilkStockRegister.aspx"><i class="fa fa-circle-o"></i>MilkReceiving/Disposing Details</a></li>
                    <li><a href="/Tabs/Procurement/Supplierwiserawmilkqtyqlty.aspx"><i class="fa fa-circle-o"></i>Supplier Wise Raw Milk Qty and Qlty. Report</a></li>
+                  <li><a href="/Tabs/Procurement/RawMilkPaymentListViaBank.aspx"><i class="fa fa-circle-o"></i>Raw Milk Payment List Via Bank</a></li>
+                    <li><a href="/Tabs/Procurement/Transaction.aspx"><i class="fa fa-circle-o"></i>Transaction</a></li>
+                   <li><a href="/Tabs/Procurement/MonthlyRawMilkPurchaseSummary.aspx"><i class="fa fa-circle-o"></i>Monthly Raw Milk Purchase Summary</a></li>
+                      <li><a href="/Tabs/Procurement/MilkCollectionTransportBill.aspx"><i class="fa fa-circle-o"></i>Milk Collection Transport Bill</a></li>
               </ul>
             </li>
             

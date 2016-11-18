@@ -27,8 +27,23 @@ namespace Dairy.Tabs.Procurement
             {
                 dpRoute.DataSource = DS;
                 dpRoute.DataBind();
-                dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
+                dpRoute.Items.Insert(0, new ListItem("--All Route  --", "0"));
 
+            }
+            DS = BindCommanData.BindCommanDropDwonDistinct("ID", "BankName as Name", "BankDetails", "ID is not null");
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpBankName.DataSource = DS;
+                dpBankName.DataBind();
+                dpBankName.Items.Insert(0, new ListItem("--All Bank Name--", "0"));
+            }
+
+            DS = BindCommanData.BindCommanDropDwonDistinct("ID", "IFSCCode as Name", "BankDetails", "ID is not null");
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpIfscCode.DataSource = DS;
+                dpIfscCode.DataBind();
+                dpIfscCode.Items.Insert(0, new ListItem("--All Ifsc Code--", "0"));
             }
         }
         protected void btnGeneratereport_Click(object sender, EventArgs e)
@@ -39,6 +54,12 @@ namespace Dairy.Tabs.Procurement
             p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.FomDate = Convert.ToDateTime(txtStartDate.Text);
             p.ToDate = Convert.ToDateTime(txtEndDate.Text);
+            if(dpBankName.SelectedItem.Value=="0")
+            { p.BankName = "0"; }
+            else { p.BankName = dpBankName.SelectedItem.Text; }
+           if(dpIfscCode.SelectedItem.Value=="0")
+            { p.IFSCCode = "0"; }
+            else { p.IFSCCode = dpIfscCode.SelectedItem.Text; }
             DataSet DS1 = new DataSet();
             DS1 = pd.RawMilkPaymentListViaBank(p);
             string result = string.Empty;
@@ -69,7 +90,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
-                sb.Append("<u>Supplier Wise Milk Qty. & Qlty.</u> <br/>");
+                sb.Append("<u>Raw Milk Payment List Via Bank</u> <br/>");
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
@@ -116,7 +137,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<b>Loan A/C No.</b>");
                 sb.Append("</td>");
                 sb.Append("<td>");
-                sb.Append("<b>AccountHolder Name</b>");
+                sb.Append("<b>A/C Name</b>");
                 sb.Append("</td>");
                 sb.Append("<td>");
                 sb.Append("<b>Bank Loan</b>");
@@ -129,9 +150,16 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("<tr>");
+                int count=0;
+                double netamt=0;
+                double loanamt=0;
+                double loanpaid=0;
+                double totalnetamt=0;
+                double totalloanamt=0;
+                double totalloanpaid=0;
                 foreach (DataRow row in DS1.Tables[0].Rows)
                 {
-
+                    count++;
                     sb.Append("<td>");
                     sb.Append(row["SupplierCode"].ToString());
                     sb.Append("</td>");
@@ -148,17 +176,43 @@ namespace Dairy.Tabs.Procurement
                     sb.Append(row["LoanAccountNo"].ToString());
                     sb.Append("</td>");
                     sb.Append("<td>");
+                    try { loanamt = Convert.ToDouble(row["LoanAmount"]); }
+                    catch { loanamt = 0.00; }
+                    totalloanamt += loanamt;
                     sb.Append(row["LoanAmount"].ToString());
                     sb.Append("</td>");
                     sb.Append("<td>");
+                    try { loanpaid = Convert.ToDouble(row["LoanAmtPaid"]); }
+                    catch { loanpaid = 0.00; }
+                    totalloanpaid += loanpaid;
                     sb.Append(row["LoanAmtPaid"].ToString());
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append("");
+                    netamt = loanamt - loanpaid;
+                    totalnetamt += netamt;
+                    sb.Append(netamt);
                     sb.Append("</td>");
 
                     sb.Append("</tr>");
                 }
+                sb.Append("<tr style='border-bottom:1px solid'><td colspan='8'></td></tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<td  style='text-align:left'>");
+                sb.Append("<b>Total</b>");
+                sb.Append("</td>");
+                sb.Append("<td colspan='4' style='text-align:left'>");
+                sb.Append("<b>"+count+"</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>"+totalloanamt+"</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>"+totalloanpaid+"</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>"+totalnetamt+"</b>");
+                sb.Append("</td>");
+                sb.Append("</tr>");
                 result = sb.ToString();
                 Payment.Text = result;
 

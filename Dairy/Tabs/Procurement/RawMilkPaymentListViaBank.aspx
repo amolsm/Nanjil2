@@ -105,6 +105,33 @@
                           
                       </div> 
 
+              <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                    Bank 
+                      </div>
+                      <asp:DropDownList  ID="dpBankName" ToolTip="Select Bank " class="form-control" DataTextField="Name"  runat="server"  > 
+                       </asp:DropDownList>                          
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div> 
+
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                    IFSC Code 
+                      </div>
+                      <asp:DropDownList  ID="dpIfscCode" ToolTip="Select IFSC Code " class="form-control" DataTextField="Name"  runat="server"  > 
+                       </asp:DropDownList>                          
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div> 
           
          
             

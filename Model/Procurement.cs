@@ -280,15 +280,15 @@ namespace Model
         private int _BatchWiseMilkCollectionID;
         public decimal Temp
         {
-        get { return _Temp; }
-        set { _Temp = value; }
+            get { return _Temp; }
+            set { _Temp = value; }
         }
         private decimal _Temp;
 
         public decimal Acidity
         {
-        get { return _Acidity; }
-        set { _Acidity = value; }
+            get { return _Acidity; }
+            set { _Acidity = value; }
         }
         private decimal _Acidity;
 
@@ -307,16 +307,16 @@ namespace Model
 
         public int CollectionID
         {
-        get { return _CollectionID; }
-        set { _CollectionID = value; }
+            get { return _CollectionID; }
+            set { _CollectionID = value; }
         }
         private int _CollectionID;
 
 
         public decimal MilkInKG
         {
-        get { return _MilkInKG; }
-        set { _MilkInKG = value; }
+            get { return _MilkInKG; }
+            set { _MilkInKG = value; }
         }
         private decimal _MilkInKG;
 
@@ -324,8 +324,8 @@ namespace Model
 
         public decimal MilkInLtr
         {
-        get { return _MilkInLtr; }
-        set { _MilkInLtr = value; }
+            get { return _MilkInLtr; }
+            set { _MilkInLtr = value; }
         }
         private decimal _MilkInLtr;
 
@@ -339,8 +339,8 @@ namespace Model
 
         public decimal FATPercentage
         {
-        get { return _FATPercentage; }
-        set { _FATPercentage = value; }
+            get { return _FATPercentage; }
+            set { _FATPercentage = value; }
         }
         private decimal _FATPercentage;
 
@@ -348,8 +348,8 @@ namespace Model
 
         public decimal CLRReading
         {
-        get { return _CLRReading; }
-        set { _CLRReading = value; }
+            get { return _CLRReading; }
+            set { _CLRReading = value; }
         }
         private decimal _CLRReading;
 
@@ -357,24 +357,24 @@ namespace Model
 
         public decimal FATInKG
         {
-        get { return _FATInKG; }
-        set { _FATInKG = value; }
+            get { return _FATInKG; }
+            set { _FATInKG = value; }
         }
         private decimal _FATInKG;
 
 
         public decimal SNF
         {
-        get { return _SNF; }
-        set { _SNF = value; }
+            get { return _SNF; }
+            set { _SNF = value; }
         }
         private decimal _SNF;
 
 
         public decimal SNFPercentage
         {
-        get { return _SNFPercentage; }
-        set { _SNFPercentage = value; }
+            get { return _SNFPercentage; }
+            set { _SNFPercentage = value; }
         }
         private decimal _SNFPercentage;
 
@@ -382,16 +382,16 @@ namespace Model
 
         public decimal SNFInKG
         {
-        get { return _SNFInKG; }
-        set { _SNFInKG = value; }
+            get { return _SNFInKG; }
+            set { _SNFInKG = value; }
         }
         private decimal _SNFInKG;
 
 
         public decimal TSPercentage
         {
-        get { return _TSPercentage; }
-        set { _TSPercentage = value; }
+            get { return _TSPercentage; }
+            set { _TSPercentage = value; }
         }
         private decimal _TSPercentage;
 
@@ -479,7 +479,7 @@ namespace Model
         }
         private int _VehicleType;
 
-   
+
 
         public string DriverName
         {
@@ -488,7 +488,7 @@ namespace Model
         }
         private string _DriverName;
 
-     
+
 
         public string DriverMobileNo
         {
@@ -515,22 +515,22 @@ namespace Model
 
         public int RawMilkTarrifID
         {
-        get { return _RawMilkTarrifID; }
-        set { _RawMilkTarrifID = value; }
+            get { return _RawMilkTarrifID; }
+            set { _RawMilkTarrifID = value; }
         }
         private int _RawMilkTarrifID;
 
         public int Category
         {
-        get { return _Category; }
-        set { _Category = value; }
+            get { return _Category; }
+            set { _Category = value; }
         }
         private int _Category;
 
         public decimal TSL
         {
-        get { return _TSL; }
-        set { _TSL = value; }
+            get { return _TSL; }
+            set { _TSL = value; }
         }
         private decimal _TSL;
 
@@ -538,8 +538,8 @@ namespace Model
 
         public decimal TSH
         {
-        get { return _TSH; }
-        set { _TSH = value; }
+            get { return _TSH; }
+            set { _TSH = value; }
         }
         private decimal _TSH;
 
@@ -547,8 +547,8 @@ namespace Model
 
         public decimal TSRATE
         {
-        get { return _TSRATE; }
-        set { _TSRATE = value; }
+            get { return _TSRATE; }
+            set { _TSRATE = value; }
         }
         private decimal _TSRATE;
 
@@ -556,8 +556,8 @@ namespace Model
 
         public int TS_INCR
         {
-        get { return _TS_INCR; }
-        set { _TS_INCR = value; }
+            get { return _TS_INCR; }
+            set { _TS_INCR = value; }
         }
         private int _TS_INCR;
 
@@ -565,8 +565,8 @@ namespace Model
 
         public int Incentive
         {
-        get { return _Incentive; }
-        set { _Incentive = value; }
+            get { return _Incentive; }
+            set { _Incentive = value; }
         }
         private int _Incentive;
 
@@ -574,8 +574,8 @@ namespace Model
 
         public int IN_FAT
         {
-        get { return _IN_FAT; }
-        set { _IN_FAT = value; }
+            get { return _IN_FAT; }
+            set { _IN_FAT = value; }
         }
         private int _IN_FAT;
 
@@ -583,8 +583,8 @@ namespace Model
 
         public int IN_SNF
         {
-        get { return _IN_SNF; }
-        set { _IN_SNF = value; }
+            get { return _IN_SNF; }
+            set { _IN_SNF = value; }
         }
         private int _IN_SNF;
 
@@ -592,8 +592,8 @@ namespace Model
 
         public int IN_TS
         {
-        get { return _IN_TS; }
-        set { _IN_TS = value; }
+            get { return _IN_TS; }
+            set { _IN_TS = value; }
         }
         private int _IN_TS;
 
@@ -601,8 +601,8 @@ namespace Model
 
         public decimal Scheme
         {
-        get { return _Scheme; }
-        set { _Scheme = value; }
+            get { return _Scheme; }
+            set { _Scheme = value; }
         }
         private decimal _Scheme;
 
@@ -610,8 +610,8 @@ namespace Model
 
         public decimal Bonus1
         {
-        get { return _Bonus1; }
-        set { _Bonus1 = value; }
+            get { return _Bonus1; }
+            set { _Bonus1 = value; }
         }
         private decimal _Bonus1;
 
@@ -619,8 +619,8 @@ namespace Model
 
         public DateTime WEF_DATE
         {
-        get { return _WEF_DATE; }
-        set { _WEF_DATE = value; }
+            get { return _WEF_DATE; }
+            set { _WEF_DATE = value; }
         }
         private DateTime _WEF_DATE;
 
@@ -734,7 +734,7 @@ namespace Model
                 _RDID = value;
             }
         }
-        public string  RDStartDate
+        public string RDStartDate
         {
             get
             {
@@ -1507,5 +1507,17 @@ namespace Model
         public double casloan { get; set; }
         public double bankloan { get; set; }
         public double netamt { get; set; }
+        public decimal TSStartPercentage
+        {
+            get { return _TSStartPercentage; }
+            set { _TSStartPercentage = value; }
+        }
+        private decimal _TSStartPercentage;
+        public decimal TSEndPercentage
+        {
+            get { return _TSEndPercentage; }
+            set { _TSEndPercentage = value; }
+        }
+        private decimal _TSEndPercentage;
     }
 }

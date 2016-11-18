@@ -180,7 +180,7 @@ namespace Dairy.Tabs.Procurement
             if (hdfID != null)
             {
                 Model.Procurement p = new Model.Procurement();
-                p.SupplierID = Convert.ToInt32(hfSupplierID.Value);
+                p.SupplierID = Convert.ToInt32(hdfID.Value);
                 p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
                 p.PaymentDateTime = txtpaymentdate.Text;
                 p.FomDate = Convert.ToDateTime(txtfromdate.Text);
@@ -215,7 +215,7 @@ namespace Dairy.Tabs.Procurement
                 if (hdfID != null)
                 {
                     Model.Procurement p = new Model.Procurement();
-                    p.SupplierID = Convert.ToInt32(hfSupplierID.Value);
+                    p.SupplierID = Convert.ToInt32(hdfID.Value);
                     p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
                     p.PaymentDateTime = txtpaymentdate.Text;
                     p.FomDate = Convert.ToDateTime(txtfromdate.Text);
@@ -263,7 +263,7 @@ namespace Dairy.Tabs.Procurement
 
         protected void btnAddNew_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Tabs/Procurement/Transaction.aspx");
         }
     }
 }

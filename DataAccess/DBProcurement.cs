@@ -61,6 +61,42 @@ namespace DataAccess
             return result;
         }
 
+        public DataSet MilkCollectionTransportBill(Procurement p)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+             
+                paramCollection.Add(new DBParameter("@StartDate", p.FomDate));
+                paramCollection.Add(new DBParameter("@EndDate", p.ToDate));
+                paramCollection.Add(new DBParameter("@VehicalNo", p.VehicleNo));
+                DS = _DBHelper.ExecuteDataSet("Proc_SP_MilkCollectionTransportBill", paramCollection, CommandType.StoredProcedure);
+            }
+            catch(Exception e)
+            { string msg = e.ToString(); }
+          
+            return DS;
+        }
+
+        public DataSet MonthlyRawMilkPurchaseSummary(Procurement p)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@CenterId", p.CenterID));
+                paramCollection.Add(new DBParameter("@StartDate", p.FomDate));
+                paramCollection.Add(new DBParameter("@EndDate", p.ToDate));
+                paramCollection.Add(new DBParameter("@TSStart", p.TSStartPercentage));
+                paramCollection.Add(new DBParameter("@TSEnd", p.TSEndPercentage));
+                paramCollection.Add(new DBParameter("@TSAll", p.IsActive));
+                DS = _DBHelper.ExecuteDataSet("Proc_SP_MonthlyRawMilkPurchaseSummary", paramCollection, CommandType.StoredProcedure);
+            }
+            catch { }
+            return DS;
+        }
+
         public DataSet GetTransactionDetails(Procurement p)
         {
             DataSet DS = new DataSet();
@@ -74,7 +110,7 @@ namespace DataAccess
             }
             catch { }
             return DS;
-            }
+        }
 
         public DataSet GetIncentivetariff()
         {
@@ -114,17 +150,20 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@fromdate", p.FomDate));
                 paramCollection.Add(new DBParameter("@todate", p.ToDate));
                 paramCollection.Add(new DBParameter("@Routeid", p.RouteID));
+                paramCollection.Add(new DBParameter("@BankName", p.BankName));
+                paramCollection.Add(new DBParameter("@IFSCCode", p.IFSCCode));
                 DS = _DBHelper.ExecuteDataSet("Proc_sp_RawMilkPaymentListViaBank", paramCollection, CommandType.StoredProcedure);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
+                string msg = ex.ToString();
 
             }
             return DS;
         }
-   
+
 
         public DataSet SupplierWiseMilkqtyandQlty(Procurement p)
         {
@@ -244,7 +283,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@Scheme", p.Scheme));
                 paramCollection.Add(new DBParameter("@RDAmount", p.RDAmount));
                 paramCollection.Add(new DBParameter("@canloan", p.canloan));
-                paramCollection.Add(new DBParameter("@casloan", p.casloan));
+                paramCollection.Add(new DBParameter("@cashloan", p.casloan));
                 paramCollection.Add(new DBParameter("@bankloan", p.bankloan));
                 paramCollection.Add(new DBParameter("@netamt", p.netamt));
                 result = _DBHelper.ExecuteNonQuery("Proc_SP_AddTransaction", paramCollection, CommandType.StoredProcedure);
@@ -312,7 +351,7 @@ namespace DataAccess
             {
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
-                DS= _DBHelper.ExecuteDataSet("Proc_Sp_GetAllCenterDetails", paramCollection, CommandType.StoredProcedure);
+                DS = _DBHelper.ExecuteDataSet("Proc_Sp_GetAllCenterDetails", paramCollection, CommandType.StoredProcedure);
 
             }
             catch (Exception)
@@ -360,8 +399,8 @@ namespace DataAccess
 
             }
             return DS;
-       
-    }
+
+        }
 
         public DataSet GetAllBatchWiseMilkCollectionDetail()
         {
@@ -398,7 +437,7 @@ namespace DataAccess
 
             }
             return DS;
-      
+
         }
 
 
@@ -479,7 +518,7 @@ namespace DataAccess
 
             }
             return DS;
-       
+
         }
         public DataSet GetSupplierProfilebyID(int SupplierID)
         {
@@ -1089,7 +1128,7 @@ namespace DataAccess
         {
             DataSet DS = new DataSet();
             DBParameterCollection paramCollection = new DBParameterCollection();
-           
+
             paramCollection.Add(new DBParameter("@Category", p.Category));
             paramCollection.Add(new DBParameter("@TSL", p.TSL));
             paramCollection.Add(new DBParameter("@TSH", p.TSH));
@@ -1229,12 +1268,12 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@SNFPercentage", p.SNFPercentage));
                 paramCollection.Add(new DBParameter("@FATPercentage", p.FATPercentage));
                 //paramCollection.Add(new DBParameter("@Time", p.Time));
-               // paramCollection.Add(new DBParameter("@Disposal", p.Disposal));
+                // paramCollection.Add(new DBParameter("@Disposal", p.Disposal));
                 //paramCollection.Add(new DBParameter("@HandlingExcess", p.HandlingExcess));
-               // paramCollection.Add(new DBParameter("@HandlingLoss", p.HandlingLoss));
-               // paramCollection.Add(new DBParameter("@InternameConsumption", p.InternameConsumption));
-               // paramCollection.Add(new DBParameter("@DamageMilk", p.DamageMilk));
-              //  paramCollection.Add(new DBParameter("@Other", p.Other));
+                // paramCollection.Add(new DBParameter("@HandlingLoss", p.HandlingLoss));
+                // paramCollection.Add(new DBParameter("@InternameConsumption", p.InternameConsumption));
+                // paramCollection.Add(new DBParameter("@DamageMilk", p.DamageMilk));
+                //  paramCollection.Add(new DBParameter("@Other", p.Other));
                 paramCollection.Add(new DBParameter("@CreatedBy", p.CreatedBy));
                 paramCollection.Add(new DBParameter("@CreatedDate", p.Createddate));
                 paramCollection.Add(new DBParameter("@ModifiedBy", p.ModifiedBy));
@@ -1264,9 +1303,9 @@ namespace DataAccess
             {
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
-                paramCollection.Add(new DBParameter("@Date",p.Date));
-                paramCollection.Add(new DBParameter("@CenterID",p.CenterID));
-                paramCollection.Add(new DBParameter("@flag",p.flag));
+                paramCollection.Add(new DBParameter("@Date", p.Date));
+                paramCollection.Add(new DBParameter("@CenterID", p.CenterID));
+                paramCollection.Add(new DBParameter("@flag", p.flag));
                 DS = _DBHelper.ExecuteDataSet("Proc_Sp_GetAllBatchWiseMilkCollectionDetails", paramCollection, CommandType.StoredProcedure);
 
             }
@@ -1286,7 +1325,7 @@ namespace DataAccess
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
                 paramCollection.Add(new DBParameter("@MilkCollectionID", milkcollectionid));
-                
+
                 DS = _DBHelper.ExecuteDataSet("Proc_Sp_GetBatchWiseMilkCollectionDetailsbyID", paramCollection, CommandType.StoredProcedure);
 
             }
@@ -1298,7 +1337,7 @@ namespace DataAccess
             return DS;
         }
 
-        public DataSet GetOpeningClosingBal(DateTime date,int centerid)
+        public DataSet GetOpeningClosingBal(DateTime date, int centerid)
         {
             DataSet DS = new DataSet();
             try
@@ -1394,12 +1433,12 @@ namespace DataAccess
         public DataSet ViewMilkCollectionDetails(Procurement p)
         {
             DataSet DS = new DataSet();
-           
+
             try
             {
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
-              
+
                 paramCollection.Add(new DBParameter("@Date", p.Date));
                 paramCollection.Add(new DBParameter("@RouteID", p.RouteID));
                 paramCollection.Add(new DBParameter("@Session", p.Session));
@@ -1460,7 +1499,7 @@ namespace DataAccess
             catch { }
             return result;
 
-            }
+        }
 
     }
 }

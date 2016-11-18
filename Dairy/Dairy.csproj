@@ -167,6 +167,8 @@
     <Content Include="Tabs\Procurement\InsertBatchWiseMilk.aspx" />
     <Content Include="Tabs\Procurement\MilkCollectionDetails.aspx" />
     <Content Include="Tabs\Procurement\MilkCollectionTransport.aspx" />
+    <Content Include="Tabs\Procurement\MilkCollectionTransportBill.aspx" />
+    <Content Include="Tabs\Procurement\MonthlyRawMilkPurchaseSummary.aspx" />
     <Content Include="Tabs\Procurement\PaymentSummary.aspx" />
     <Content Include="Tabs\Procurement\RawMilkPaymentListViaBank.aspx" />
     <Content Include="Tabs\Procurement\RawMilkStockRegister.aspx" />
@@ -1695,6 +1697,20 @@
     </Compile>
     <Compile Include="Tabs\Procurement\MilkCollectionTransport.aspx.designer.cs">
       <DependentUpon>MilkCollectionTransport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\MilkCollectionTransportBill.aspx.cs">
+      <DependentUpon>MilkCollectionTransportBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\MilkCollectionTransportBill.aspx.designer.cs">
+      <DependentUpon>MilkCollectionTransportBill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\MonthlyRawMilkPurchaseSummary.aspx.cs">
+      <DependentUpon>MonthlyRawMilkPurchaseSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\MonthlyRawMilkPurchaseSummary.aspx.designer.cs">
+      <DependentUpon>MonthlyRawMilkPurchaseSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Procurement\PaymentSummary.aspx.cs">
       <DependentUpon>PaymentSummary.aspx</DependentUpon>
