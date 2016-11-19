@@ -320,7 +320,7 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("</td>");
                     sb.Append("</tr>");
                 }
-                sb.Append("<tr style='border-bottom:1px solid'><td colspan='11'></td></tr>");
+                sb.Append("<tr style='border-bottom:1px solid'><td colspan='12'></td></tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td colspan='4'>");
                 sb.Append("<b>Total</b>");

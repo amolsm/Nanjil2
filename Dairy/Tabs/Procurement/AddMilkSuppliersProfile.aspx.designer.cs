@@ -112,6 +112,24 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.TextBox txtSupplierCode;
         
         /// <summary>
+        /// dpCenter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpCenter;
+        
+        /// <summary>
+        /// Req_ID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Req_ID;
+        
+        /// <summary>
         /// dpRoute control.
         /// </summary>
         /// <remarks>

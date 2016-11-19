@@ -451,7 +451,7 @@ namespace DataAccess
                 DBParameterCollection paramCollection = new DBParameterCollection();
                 paramCollection.Add(new DBParameter("@SupplierID", p.SupplierID));
                 paramCollection.Add(new DBParameter("@SupplierCode", p.SupplierCode));
-                //paramCollection.Add(new DBParameter("@CenterID", p.CenterID));
+                paramCollection.Add(new DBParameter("@CenterID", p.CenterID));
                 paramCollection.Add(new DBParameter("@RouteID", p.RouteID));
                 paramCollection.Add(new DBParameter("@SupplierName", p.SupplierName));
                 paramCollection.Add(new DBParameter("@SupplierAlias", p.SupplierAliasName));

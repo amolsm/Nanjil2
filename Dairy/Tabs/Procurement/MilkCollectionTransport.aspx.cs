@@ -317,5 +317,10 @@ namespace Dairy.Tabs.Procurement
             EveningKM= string.IsNullOrEmpty(txtEveningKM.Text) ? 0 : Convert.ToInt32(txtEveningKM.Text);
             txtTotalKM.Text = Convert.ToString(MorningKM + EveningKM);
         }
+
+        protected void btnAddNew_Click(object sender, EventArgs e)
+        {
+           Response.Redirect("~/Tabs/Procurement/MilkCollectionTransport.aspx");
+        }
     }
 }

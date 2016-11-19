@@ -23,6 +23,7 @@ namespace Dairy.Tabs.Procurement
                 btnSupplierUpdate.Visible = false;
                 dpState.Text = "TamilNadu";
                 dpCountry.Text = "India";
+                
 
             }
         }
@@ -53,13 +54,13 @@ namespace Dairy.Tabs.Procurement
             dpCountry.DataBind();
             dpCountry.Items.Insert(0, new ListItem("--Select Country--", "0"));
 
-            //DS = BindCommanData.BindCommanDropDwon("CenterID ", "CenterCode +' '+CenterName as Name  ", "tbl_MilkCollectionCenter", "IsActive=1 ");
-            //if (!Comman.Comman.IsDataSetEmpty(DS))
-            //{
-            //    dpCenter.DataSource = DS;
-            //    dpCenter.DataBind();
-            //    dpCenter.Items.Insert(0, new ListItem("--Select Center  --", "0"));
-            //}
+            DS = BindCommanData.BindCommanDropDwon("CenterID ", "CenterCode +' '+CenterName as Name  ", "tbl_MilkCollectionCenter", "IsActive=1 ");
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpCenter.DataSource = DS;
+                dpCenter.DataBind();
+                dpCenter.Items.Insert(0, new ListItem("--Select Center  --", "0"));
+            }
 
             RouteData routeData = new RouteData();
             DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "Proc_MilkCollectionRoute", "IsActive=1 ");
@@ -90,7 +91,7 @@ namespace Dairy.Tabs.Procurement
             p.SupplierID = 0;
             p.SupplierCode = txtSupplierCode.Text;
             p.SupplierName = txtSupplierName.Text;
-            //p.CenterID = Convert.ToInt32(dpCenter.SelectedValue);
+            p.CenterID = Convert.ToInt32(dpCenter.SelectedValue);
             p.RouteID = Convert.ToInt32(dpRoute.SelectedValue);
             p.SupplierAliasName = txtSupplierAliasName.Text;
             p.JoiningDate = txtJoiningDate.Text;
@@ -166,7 +167,7 @@ namespace Dairy.Tabs.Procurement
             p.SupplierID = string.IsNullOrEmpty(hfprofileID.Value) ? 0 : Convert.ToInt32(hfprofileID.Value);
             p.SupplierCode = txtSupplierCode.Text;
             p.SupplierName = txtSupplierName.Text;
-            //p.CenterID = Convert.ToInt32(dpCenter.SelectedValue);
+            p.CenterID = Convert.ToInt32(dpCenter.SelectedValue);
             p.RouteID = Convert.ToInt32(dpRoute.SelectedValue);
             p.SupplierAliasName = txtSupplierAliasName.Text;
             p.JoiningDate = txtJoiningDate.Text;
@@ -241,7 +242,7 @@ namespace Dairy.Tabs.Procurement
         {
             txtSupplierCode.Text = string.Empty;
             txtSupplierName.Text = string.Empty;
-            //dpCenter.ClearSelection();
+            dpCenter.ClearSelection();
             dpRoute.ClearSelection();
             txtSupplierAliasName.Text = string.Empty;
             txtJoiningDate.Text = string.Empty;
@@ -344,18 +345,18 @@ namespace Dairy.Tabs.Procurement
             {
                 txtSupplierCode.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SupplierCode"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SupplierCode"].ToString();
                 txtSupplierName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SupplierName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SupplierName"].ToString();
-                //dpCenter.ClearSelection();
-                //if (dpCenter.Items.FindByValue(DS.Tables[0].Rows[0]["CenterID"].ToString()) != null)
-                //{
-                //    dpCenter.Items.FindByValue(DS.Tables[0].Rows[0]["CenterID"].ToString()).Selected = true;
-                //}
+                dpCenter.ClearSelection();
+                if (dpCenter.Items.FindByValue(DS.Tables[0].Rows[0]["CenterID"].ToString()) != null)
+                {
+                    dpCenter.Items.FindByValue(DS.Tables[0].Rows[0]["CenterID"].ToString()).Selected = true;
+                }
                 dpRoute.ClearSelection();
                 if (dpRoute.Items.FindByValue(DS.Tables[0].Rows[0]["RouteID"].ToString()) != null)
                 {
                     dpRoute.Items.FindByValue(DS.Tables[0].Rows[0]["RouteID"].ToString()).Selected = true;
                 }
                 txtSupplierAliasName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SupplierAliasName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SupplierAliasName"].ToString();
-                txtJoiningDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["JoiningDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["JoiningDate"].ToString();
+                txtJoiningDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["JoiningDate"].ToString()) ? string.Empty : Convert.ToDateTime(DS.Tables[0].Rows[0]["JoiningDate"]).ToString("yyyy-MM-dd");
                 txtAddress1.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Address1"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Address1"].ToString();
                 txtAddress2.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Address2"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Address2"].ToString();
                 txtAddress3.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Address3"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Address3"].ToString();
@@ -431,7 +432,7 @@ namespace Dairy.Tabs.Procurement
             p.SupplierID = string.IsNullOrEmpty(hfprofileID.Value) ? 0 : Convert.ToInt32(hfprofileID.Value);
             p.SupplierCode = string.Empty;
             p.SupplierName = string.Empty;
-            //p.CenterID = 0;
+            p.CenterID = 0;
             p.RouteID = 0;
             p.SupplierAliasName = string.Empty;
             p.JoiningDate = string.Empty;
@@ -499,6 +500,16 @@ namespace Dairy.Tabs.Procurement
         protected void btnClick_btnAddNew(object sender, EventArgs e)
         {
             Response.Redirect("~/Tabs/Procurement/AddMilkSuppliersProfile.aspx");
+        }
+
+        protected void dpCenter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dpRoute.ClearSelection();
+            DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "Proc_MilkCollectionRoute", "IsActive=1 and CenterID=" + dpCenter.SelectedItem.Value);
+
+            dpRoute.DataSource = DS;
+            dpRoute.DataBind();
+            dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
         }
     }
 }

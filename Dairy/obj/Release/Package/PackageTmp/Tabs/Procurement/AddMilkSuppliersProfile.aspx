@@ -1,17 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddMilkSuppliersProfile.aspx.cs" Inherits="Dairy.Tabs.Procurement.AddMilkSuppliersProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+     
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-      <script type="text/javascript">
-
-        $(function () {
-            $("#MainContent_txtJoiningDate").datepicker({ dateFormat: 'dd/mm/yy' });
-           
-        })
-    </script>
+ 
      <script type="text/javascript">
          Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
          function InIEvent() {
@@ -94,12 +87,34 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtSupplierCode" class="form-control" placeholder="SupplierCode" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtSupplierCode" class="form-control" placeholder="SupplierCode" runat="server" ToolTip="Supplier Code" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
                           
+                      </div>
+            
+              <div class="col-lg-3">
+                  <div class="form-group" style="margin-bottom:1px">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                      <asp:DropDownList ID="dpCenter" class="form-control" DataTextField="Name" DataValueField="CenterID" runat="server" selected ToolTip="Select Center" OnSelectedIndexChanged="dpCenter_SelectedIndexChanged" AutoPostBack="true"> 
+                       </asp:DropDownList>  
+                 
+                    </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator InitialValue="0" ID="Req_ID" Display="Dynamic" 
+                            ValidationGroup="Save" runat="server" ControlToValidate="dpCenter"
+                            Text="Please Select Center" ErrorMessage="Please Select Center" ForeColor="Red"></asp:RequiredFieldValidator>
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
                       </div> 
+             
              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -144,7 +159,7 @@
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtJoiningDate" class="form-control" placeholder="Joining Date" type="text" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtJoiningDate" class="form-control" placeholder="Joining Date"  type="date" runat="server" ToolTip="Joining Date" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -159,7 +174,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="DropDownList1" class="form-control" runat="server">
+                      <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" ToolTip="Select Status">
 
                            <asp:ListItem Value="0">---Select Status---</asp:ListItem>
                            <asp:ListItem Value="1">Active</asp:ListItem>
@@ -190,7 +205,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-map-marker"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAddress1" class="form-control" placeholder="Address 1" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtAddress1" class="form-control" placeholder="Address 1" runat="server" ToolTip="Address 1" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -206,7 +221,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-map-marker"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAddress2" class="form-control" placeholder="Address 2" runat="server"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAddress2" class="form-control" placeholder="Address 2" runat="server" ToolTip="Address 2"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -221,7 +236,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-map-marker"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAddress3" class="form-control" placeholder="Address 3" runat="server"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAddress3" class="form-control" placeholder="Address 3" runat="server" ToolTip="Address 3"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -239,7 +254,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-envelope-o"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtEmail" class="form-control" placeholder="Email" runat="server"  AutoCompleteType="Email"></asp:TextBox>                        
+                       <asp:TextBox ID="txtEmail" class="form-control" placeholder="Email" runat="server"  AutoCompleteType="Email" ToolTip="Email"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -250,7 +265,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-mobile"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtMobile" class="form-control" placeholder="Mobile No" runat="server"  Type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtMobile" class="form-control" placeholder="Mobile No" runat="server"  Type="number" ToolTip="MobileNo."></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -265,7 +280,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-phone"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtTelephone" class="form-control" placeholder="Telephone No" runat="server"  Type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtTelephone" class="form-control" placeholder="Telephone No" runat="server"  Type="number" ToolTip="Telephone No."></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -477,7 +492,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="DropDownList2" class="form-control" runat="server">
+                      <asp:DropDownList ID="DropDownList2" class="form-control" runat="server" ToolTip="Account Type">
 
                            <asp:ListItem >---Select Account Type---</asp:ListItem>
                            <asp:ListItem>Current</asp:ListItem>
@@ -599,11 +614,12 @@
                           <th>Supplier Code</th>
                         <th>Supplier Name</th>
                         <th>Joining Date </th>
-                        <th>Email</th> 
+                         <th>Collection Center</th> 
+                        <th>Route</th> 
                         <th>MobileNo</th>
                           <th>IsActive</th>
                            <th>Edit</th>
-                          <th>Delete</th>
+                         <%-- <th>Delete</th>--%>
                       </tr>
                     </thead>
                     <tbody>
@@ -615,7 +631,8 @@
                          <td><%# Eval("SupplierCode")%></td>
                       <td><%# Eval("SupplierName")%></td>
                       <td><%# Eval("JoiningDate")%></td>
-                      <td><%# Eval("Email")%></td>
+                         <td><%# Eval("CenterCode")%>&nbsp;&nbsp;<%# Eval("CenterName")%></td>
+                      <td><%# Eval("RouteCode")%>&nbsp;&nbsp;<%# Eval("RouteName")%></td>
                      
                       <td><%# Eval("Mobile")%></td>
                        <td><%# Eval("IsActive")%></td>
@@ -626,10 +643,10 @@
                                                                     CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
 
                          </td>
-                         <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
+                       <%--  <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
                                                                     ToolTip="Delete" runat="server" CommandArgument='<%#Eval("SupplierID") %>'
                                                                     CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>
+</td>--%>
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
@@ -641,12 +658,13 @@
                            <th>Supplier Code</th>
                         <th>Supplier Name</th>
                           <th>Joining Date</th>
-                        <th>Email</th>
+                       <th>Collection Center</th> 
+                        <th>Route</th> 
                         <th>Mobile No</th>
                        <th>IsActive</th>
                        
                            <th>Edit</th>
-                          <th>Delete</th>
+                      <%--    <th>Delete</th>--%>
                       </tr>
                     </tfoot>
 
@@ -679,4 +697,14 @@
             </asp:UpdateProgress>           
           </div><!-- /.box -->
         </section>
+    <script type="text/javascript">
+    
+          $(document).ready(function () {
+              $('#example1').dataTable({
+                  "bPaginate": false,
+                  "paging": false
+
+              });
+          });
+        </script>
 </asp:Content>
