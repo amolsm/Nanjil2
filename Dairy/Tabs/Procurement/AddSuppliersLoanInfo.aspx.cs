@@ -338,12 +338,12 @@ namespace Dairy.Tabs.Procurement
             dpSupplier.ClearSelection();
             int routeid=Convert.ToInt32(dpRoute.SelectedItem.Value);
             DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 and RouteID="+routeid);
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
+            //if (!Comman.Comman.IsDataSetEmpty(DS))
+            //{
                 dpSupplier.DataSource = DS;
                 dpSupplier.DataBind();
                 dpSupplier.Items.Insert(0, new ListItem("--Select Supplier  --", "0"));
-            }
+            //}
 
         }
 

@@ -71,7 +71,8 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
-                sb.Append("<u>Supplier Wise Milk Qty. & Qlty.</u> <br/>");
+                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
+            
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
@@ -81,8 +82,8 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td class='tg-yw4l' colspan='6' style='text-align:center'>");
-                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
+                sb.Append("<td class='tg-baqh' colspan='6' style='text-align:center'>");
+                sb.Append("<b><u>Supplierwise Raw Milk Quantity & Quality Report</u> </b><br/>");
 
                 sb.Append("</td>");
 
@@ -94,14 +95,15 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append(" <td colspan='2' style='text-align:left'>");
-                sb.Append("Date : " + DateTime.Now.ToString());
+                sb.Append(dpRoute.SelectedItem.Text.ToString());
+              
                 sb.Append("</td>");
 
                 sb.Append("<td colspan='2'>");
-                sb.Append(dpRoute.SelectedItem.Text.ToString());
+                sb.Append(DateTime.Now.ToString());
                 sb.Append("</td>");
                 sb.Append("<td colspan='2'>");
-                sb.Append("Date : " + Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
+                sb.Append("From : " + Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("<td colspan='2'>");
                 sb.Append("To : " + Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
@@ -111,56 +113,145 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<td colspan='2' style='text-align:center'>");
                 sb.Append("<b>Supplier</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>MilkInLtr</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
-                sb.Append("<b>FATPercentage</b>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>FAT %</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
-                sb.Append("<b>SNFPercentage</b>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>SNF %</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
-                sb.Append("<b>TSPercentage</b>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>TS %</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>Rate</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>Amount</b>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("<tr>");
+                int count = 0;
+                decimal milkinLtr = 0;
+                decimal totalmilkinLtr = 0;
+                double fatpercentage = 0.00;
+                double totalfatpercentage = 0.00;
+                double snfpercentage = 0.00;
+                double totalsnfpercentage = 0.00;
+                double tspercentage = 0.00;
+                double totaltspercentage = 0.00;
+                double rate = 0.00;
+                double totalrate = 0.00;
+                double amt = 0.00;
+                double totalamt = 0.00;
+
                 foreach (DataRow row in DS1.Tables[0].Rows)
                 {
-
+                    count++;
                     sb.Append("<td>");
                     sb.Append(row["SupplierCode"].ToString());
                     sb.Append("</td>");
                     sb.Append("<td>");
                     sb.Append(row["SupplierName"].ToString());
                     sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append(row["MilkInLtr"].ToString());
+                    sb.Append("<td style='text-align:right'>");
+                    try { milkinLtr = Convert.ToDecimal(row["MilkInLtr"]); } catch { milkinLtr = 0; }
+
+                    totalmilkinLtr += milkinLtr;
+                    sb.Append(Convert.ToDecimal(milkinLtr).ToString("0.0"));
                     sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append(row["FATPercentage"].ToString());
+                    sb.Append("<td style='text-align:right'>");
+                    try { fatpercentage = Convert.ToDouble(row["FATPercentage"]); } catch { fatpercentage = 0.00; }
+
+                    totalfatpercentage += fatpercentage;
+                    sb.Append(Convert.ToDecimal(fatpercentage).ToString("0.00"));
                     sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append(row["SNFPercentage"].ToString());
+                    sb.Append("<td style='text-align:right'>");
+                    try { snfpercentage = Convert.ToDouble(row["SNFPercentage"]); } catch { snfpercentage = 0.00; }
+
+                    totalsnfpercentage += snfpercentage;
+                    sb.Append(Convert.ToDecimal(snfpercentage).ToString("0.00"));
+                   
                     sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append(row["TSPercentage"].ToString());
+                    sb.Append("<td style='text-align:right'>");
+                    try { tspercentage = Convert.ToDouble(row["TSPercentage"]); } catch { tspercentage = 0.00; }
+
+                    totaltspercentage += tspercentage;
+                    sb.Append(Convert.ToDecimal(tspercentage).ToString("0.00"));
+
+                   
                     sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append(row["Rate"].ToString());
+                    sb.Append("<td style='text-align:right'>");
+                    try { rate = Convert.ToDouble(row["Rate"]); } catch { rate = 0.00; }
+
+                    totalrate += rate;
+                    sb.Append(Convert.ToDecimal(rate).ToString("0.00"));
+
+                 
                     sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append(row["Amount"].ToString());
+                    sb.Append("<td style='text-align:right'>");
+                    try { amt = Convert.ToDouble(row["Amount"]); } catch { amt = 0.00; }
+
+                    totalamt += amt;
+                    sb.Append(Convert.ToDecimal(amt).ToString("0.00"));
+                  
                     sb.Append("</td>");
 
                     sb.Append("</tr>");
+                  
                 }
+                sb.Append("<tr style='border-bottom:1px solid'><td colspan='8'></td></tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<td colspan='3'>");
+                sb.Append("<b>Average</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>"+Convert.ToDecimal(totalfatpercentage/count).ToString("0.00")+"</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalsnfpercentage /count).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totaltspercentage /count).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalrate /count).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:left'>");
+                sb.Append("/ Lt.");
+                sb.Append("</td>");
+               
+                sb.Append("</tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<td>");
+                sb.Append("<b>Total</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>"+count+"</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + totalmilkinLtr + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalfatpercentage).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalsnfpercentage).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totaltspercentage).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalrate).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalamt).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+             
+
+                sb.Append("</tr>");
                 result = sb.ToString();
                 Payment.Text = result;
 

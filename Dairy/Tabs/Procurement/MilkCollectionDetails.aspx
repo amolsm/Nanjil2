@@ -202,7 +202,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                   Fat Perc.
+                   Fat %.
                       </div>
                        <asp:TextBox ID="txtFATPercentage" class="form-control" placeholder="FAT %" runat="server" AutoPostBack="true"  OnTextChanged="txtCLRReading_TextChanged"   ToolTip="FAT %" Type="number" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -217,9 +217,10 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                   Milk Ltr.
+                           Actual Milk Ltr.
+                 
                       </div>
-                       <asp:TextBox ID="txtMilkInLtr" class="form-control" placeholder="Milk In Liter" runat="server"  ToolTip="Milk In Liter" readonly ></asp:TextBox>                        
+                       <asp:TextBox ID="txtMilkInLtr" class="form-control" placeholder="Actual Milk In Liter" runat="server"  ToolTip="Actual Milk In Liter" readonly ></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -227,9 +228,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                  Actual Milk Ltr.
+                   Milk Ltr.
                       </div>
-                       <asp:TextBox ID="txtActualMilkInLtr" class="form-control" placeholder="Actual Milk In Liter" runat="server"  ToolTip="Actual Milk In Liter" readonly ></asp:TextBox>                        
+                       <asp:TextBox ID="txtActualMilkInLtr" class="form-control" placeholder="Milk In Liter" runat="server"  ToolTip="Milk In Liter" readonly ></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -478,9 +479,9 @@
                           <td><%#  Convert.ToDateTime(Eval("_Date")).ToString("dd-MM-yyyy")%></td>
                          <td><%# Eval("SupplierCode")%>&nbsp;&nbsp;<%# Eval("SupplierName")%></td>
                       <td><%# Eval("RouteCode")%>&nbsp;&nbsp;<%# Eval("RouteName")%></td>
-                      <td><%# Eval("MilkInKG")%></td>
-                         <td><%# Eval("MilkInLtr")%></td>
-                      <td><%# Eval("FATPercentage")%></td>
+                      <td><%# Convert.ToDecimal(Eval("MilkInKG")).ToString("0.0")%></td>
+                         <td><%# Convert.ToDecimal(Eval("MilkInLtr")).ToString("0.0")%></td>
+                      <td><%# Convert.ToDecimal(Eval("FATPercentage")).ToString("0.0")%></td>
                      
                       <td><%# Eval("FATInKG")%></td>
                         

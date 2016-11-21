@@ -253,7 +253,8 @@
                     
                       
                               <asp:Button ID="btnAddRout" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnAddRout_Click" />     
-                        <asp:Button ID="btnupdateroute" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnupdateroute_Click" />           
+                        <asp:Button ID="btnupdateroute" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnupdateroute_Click" />    
+                        &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />                             
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

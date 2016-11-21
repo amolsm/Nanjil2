@@ -341,5 +341,10 @@ namespace Dairy.Tabs.Procurement
             }
 
             }
+
+        protected void btnAddNew_Click(object sender, EventArgs e)
+        {
+           Response.Redirect("~/Tabs/Procurement/AddMilkCollectionRoute.aspx");
+        }
     }
 }

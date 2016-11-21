@@ -45,6 +45,9 @@ namespace Dairy.Tabs.Procurement
             p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             p.FomDate = Convert.ToDateTime(txtFromDate.Text);
             p.ToDate = Convert.ToDateTime(txtToDate.Text);
+            if (dpSession.SelectedItem.Value == "0")
+            { p.Session = null; }
+            else { p.Session = dpSession.SelectedItem.Text.ToString(); }
             p.ModifiedBy = App_code.GlobalInfo.Userid;
             p.ModifiedDate = DateTime.Now.ToString();
 
@@ -68,6 +71,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
 
                 sb.Append("</colgroup>");
 
@@ -76,7 +80,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
                 sb.Append("</th>");
 
-                sb.Append("<th class='tg-baqh' colspan='5' style='text-align:center'>");
+                sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
                 sb.Append("<u>Check List </u> <br/>");
                 sb.Append("</th>");
 
@@ -87,7 +91,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td class='tg-yw4l' colspan='5' style='text-align:center'>");
+                sb.Append("<td class='tg-yw4l' colspan='6' style='text-align:center'>");
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
 
                 sb.Append("</td>");
@@ -99,8 +103,11 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append(" <td colspan='2' style='text-align:left'>");
-                sb.Append("Date : " + DateTime.Now.ToString());
+                sb.Append(" <td  style='text-align:left'>");
+                sb.Append("Session :" + dpSession.SelectedItem.Text);
+                sb.Append("</td>");
+                sb.Append(" <td colspan='2' style='text-align:center'>");
+                sb.Append(DateTime.Now.ToString());
                 sb.Append("</td>");
                 sb.Append("<td colspan='2'  style='text-align:center'>");
                 sb.Append(App_code.GlobalInfo.UserName);
@@ -119,22 +126,20 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<td>");
                 sb.Append("<b>Date</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
-                sb.Append("<b>Session</b>");
-                sb.Append("</td>");
-                sb.Append("<td>");
+             
+                sb.Append("<td colspan='3'>");
                 sb.Append("<b>Supplier</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>MilkInLtr</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>Fat Perc.</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>SNF Perc.</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>TS Perc.</b>");
                 sb.Append("</td>");
 
@@ -156,31 +161,31 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("<td>");
                     sb.Append(Convert.ToDateTime(row["_Date"]).ToString("dd-MM-yyyy"));
                     sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append(row["_Session"].ToString());
-                    sb.Append("</td>");
-                    sb.Append("<td>");
+                    //sb.Append("<td>");
+                    //sb.Append(row["_Session"].ToString());
+                    //sb.Append("</td>");
+                    sb.Append("<td colspan='3'>");
                     sb.Append(row["Supplier"].ToString());
                     sb.Append("</td>");
-                    sb.Append("<td>");
+                    sb.Append("<td style='text-align:right'>");
                     milkinltr = Convert.ToDouble(row["MilkInLtr"]);
                     totalmilklter += milkinltr;
                     sb.Append(milkinltr.ToString());
                     sb.Append("</td>");
                    
-                    sb.Append("<td>");
+                    sb.Append("<td style='text-align:right'> ");
                     fatpercent = Convert.ToDouble(row["FATPercentage"]);
                     totalfatpercent += fatpercent;
                     sb.Append(fatpercent.ToString());
                     sb.Append("</td>");
                  
-                    sb.Append("<td>");
+                    sb.Append("<td style='text-align:right'>");
                     snfpercent = Convert.ToDouble(row["SNFPercentage"]);
                     totalsnfpercent += snfpercent;
                     sb.Append(snfpercent.ToString());
                     sb.Append("</td>");
                    
-                    sb.Append("<td>");
+                    sb.Append("<td style='text-align:right'>");
                     tspercent = Convert.ToDouble(row["TSPercentage"]);
                     totaltspercent += tspercent;
                     sb.Append(tspercent.ToString());
@@ -189,27 +194,27 @@ namespace Dairy.Tabs.Procurement
 
                     sb.Append("</tr>");
                 }
-                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '7'> &nbsp; </td> </tr>");
+                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '8'> &nbsp; </td> </tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td>");
                 sb.Append("<b>Count</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td colspan='2'>");
                 sb.Append("<b>"+count+"</b>");
                 sb.Append("</td>");
                 sb.Append("<td>");
                 sb.Append("");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>"+totalmilklter+"</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>"+totalfatpercent+"</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>"+totalsnfpercent+"</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>"+totaltspercent+"</b>");
                 sb.Append("</td>");
 

@@ -95,7 +95,7 @@ namespace Dairy.Tabs.Procurement
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
 
-                sb.Append("TIN:330761667331<br>");
+                sb.Append("<br>");
                 sb.Append("</th>");
                 sb.Append("</tr>");
 
@@ -169,23 +169,26 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("<td>");
                     sb.Append(row["AccountNo"].ToString());
                     sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append(row["AccountName"].ToString());
-                    sb.Append("</td>");
+                  
                     sb.Append("<td>");
                     sb.Append(row["LoanAccountNo"].ToString());
                     sb.Append("</td>");
+
+                    sb.Append("<td>");
+                    sb.Append(row["AccountName"].ToString());
+                    sb.Append("</td>");
+
                     sb.Append("<td>");
                     try { loanamt = Convert.ToDouble(row["LoanAmount"]); }
                     catch { loanamt = 0.00; }
                     totalloanamt += loanamt;
-                    sb.Append(row["LoanAmount"].ToString());
+                    sb.Append(loanamt);
                     sb.Append("</td>");
                     sb.Append("<td>");
                     try { loanpaid = Convert.ToDouble(row["LoanAmtPaid"]); }
                     catch { loanpaid = 0.00; }
                     totalloanpaid += loanpaid;
-                    sb.Append(row["LoanAmtPaid"].ToString());
+                    sb.Append(loanpaid);
                     sb.Append("</td>");
                     sb.Append("<td>");
                     netamt = loanamt - loanpaid;

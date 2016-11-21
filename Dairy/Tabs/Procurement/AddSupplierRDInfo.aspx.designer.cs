@@ -112,6 +112,15 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.DropDownList dpRoute;
         
         /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        
+        /// <summary>
         /// dpSupplier control.
         /// </summary>
         /// <remarks>
@@ -119,6 +128,15 @@ namespace Dairy.Tabs.Procurement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dpSupplier;
+        
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
         /// txtRDStartDate control.
@@ -130,6 +148,15 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.TextBox txtRDStartDate;
         
         /// <summary>
+        /// RequiredFieldValidator6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        
+        /// <summary>
         /// txtRDMaturityDate control.
         /// </summary>
         /// <remarks>
@@ -139,6 +166,15 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.TextBox txtRDMaturityDate;
         
         /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        
+        /// <summary>
         /// txtRDAmount control.
         /// </summary>
         /// <remarks>
@@ -146,6 +182,15 @@ namespace Dairy.Tabs.Procurement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRDAmount;
+        
+        /// <summary>
+        /// RequiredFieldValidator4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
         /// txtRDRepaymentAmount control.
@@ -164,6 +209,15 @@ namespace Dairy.Tabs.Procurement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        
+        /// <summary>
+        /// RequiredFieldValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
         
         /// <summary>
         /// txtRDPaymentDate control.
