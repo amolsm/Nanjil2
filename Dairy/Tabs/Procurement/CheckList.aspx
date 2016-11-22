@@ -123,17 +123,32 @@
                           
                       </div>
             
+                        <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                Shift
+                      </div>
+                        <asp:DropDownList ID="dpSession" class="form-control"  runat="server" selected ToolTip="Select Session"> 
+                            <asp:ListItem Value="0">All Session</asp:ListItem>
+                            <asp:ListItem Value="1">Morning</asp:ListItem>
+                            <asp:ListItem Value="2">Evening</asp:ListItem>
+                       </asp:DropDownList>                          
+                    </div><!-- /.input group -->
 
+                  </div><!-- /.form group --> 
+                          
+                      </div> 
              
             
-              <div class="col-lg-3">
+              <div class="col-lg-3 pull-right">
                   <div class="form-group">
                     <div class="input-group">
                       
                     
                       
                               <asp:Button ID="btnCalculate" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnCalculate_Click"   Text="GenerateCheckList" ValidationGroup="Save" />     
-                        
+                         &nbsp;&nbsp;&nbsp; <asp:Button ID="Button1" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClientClick="PrintPanel()" Text="Print"  />                 
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -144,14 +159,9 @@
                       </div> 
             
                   
-                    <div class="col-lg-2 ">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <asp:Button ID="Button1" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClientClick="PrintPanel()" Text="Print"  />                 
-                     </div><!-- /.input group -->
-                    </div><!-- /.form group -->
-                    </div>  
-              
+                  
+                    
+                    
                   </div>
           
               

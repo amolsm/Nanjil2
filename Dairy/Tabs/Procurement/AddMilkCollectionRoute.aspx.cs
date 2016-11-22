@@ -322,5 +322,29 @@ namespace Dairy.Tabs.Procurement
 
             }
         }
+
+        protected void dpCenter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataSet DS = new DataSet();
+            RouteData routeDate = new RouteData();
+            DS = routeDate.GetAllMilkCollectionRouteDetails();
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                foreach(DataRow row in DS.Tables[0].Rows)
+                {
+                    if (row["RouteName"].ToString() == txtRouteName.Text.Trim().ToString() && row["CenterID"].ToString() == dpCenter.SelectedItem.Value.ToString())
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('RouteName Already Available on this Center')", true);
+                        dpCenter.ClearSelection();
+                    }
+                }
+            }
+
+            }
+
+        protected void btnAddNew_Click(object sender, EventArgs e)
+        {
+           Response.Redirect("~/Tabs/Procurement/AddMilkCollectionRoute.aspx");
+        }
     }
 }

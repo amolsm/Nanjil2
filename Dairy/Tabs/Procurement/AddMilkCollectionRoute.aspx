@@ -78,27 +78,28 @@
           <h3 class="box-title">Milk Collection Route Information </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
+            <div class="row">
             <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtRouteCode" class="form-control" placeholder="Route Code" runat="server" required ></asp:TextBox>                        
+                       <asp:TextBox ID="txtRouteCode" class="form-control" placeholder="Route Code" runat="server"  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
                           
                       </div> 
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtRouteName" class="form-control" placeholder="Route Name" runat="server" required ToolTip="Route Name"></asp:TextBox>                        
+                       <asp:TextBox ID="txtRouteName" class="form-control" placeholder="Route Name" runat="server"  ToolTip="Route Name"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Please Enter RouteName" ControlToValidate="txtRouteName" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -106,12 +107,12 @@
                           
                       </div> 
             <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="dpCenter" class="form-control" DataTextField="Name" DataValueField="CenterID" runat="server" selected ToolTip="Select Center"> 
+                      <asp:DropDownList ID="dpCenter" class="form-control" DataTextField="Name" DataValueField="CenterID" runat="server" selected ToolTip="Select Center" OnSelectedIndexChanged="dpCenter_SelectedIndexChanged" AutoPostBack="true"> 
                        </asp:DropDownList>  
                  
                     </div><!-- /.input group -->
@@ -125,21 +126,21 @@
                        
                           
                       </div> 
-             <div class="col-lg-3">
-                  <div class="form-group">
+                   <div class="col-lg-3">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtRouteDescription" class="form-control" placeholder="Route Distance" runat="server" required ToolTip="Route Distance"></asp:TextBox>                        
+                       <asp:TextBox ID="txtRouteDescription" class="form-control" placeholder="Route Distance" runat="server" type="number" step="any"  ToolTip="Route Distance"></asp:TextBox>                        
                     </div><!-- /.input group -->
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Please Enter Route Distance" ControlToValidate="txtRouteDescription" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->                   
                   </div>  
-                  
-
-
-                        <div class="col-lg-3">
-                  <div class="form-group">
+                </div>
+               <div class="row">
+            <div class="col-lg-3">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                       <span style="color:red">&nbsp;*</span>
@@ -163,13 +164,12 @@
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtDesc" class="form-control" placeholder="Route Description" runat="server" required ToolTip="Route Description"></asp:TextBox>                        
+                       <asp:TextBox ID="txtDesc" class="form-control" placeholder="Route Description" runat="server"  ToolTip="Route Description"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
-          
-            <div class="col-lg-3">
-                  <div class="form-group">
+                     <div class="col-lg-3">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
@@ -199,7 +199,7 @@
                       </div>  
 
                <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
@@ -217,9 +217,13 @@
                        
                           
                       </div>  
+                   </div>
+               <div class="row">
+          
+          
 
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
@@ -241,15 +245,16 @@
                      
                        
                           
-                      </div>     
-                   <div class="col-lg-3">
+                      </div>  
+                     <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       
                     
                       
                               <asp:Button ID="btnAddRout" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnAddRout_Click" />     
-                        <asp:Button ID="btnupdateroute" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnupdateroute_Click" />           
+                        <asp:Button ID="btnupdateroute" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnupdateroute_Click" />    
+                        &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />                             
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -257,7 +262,8 @@
                      
                        
                           
-                      </div>            
+                      </div>     
+                   </div>
            
         </div><!-- /.box-body -->
 
@@ -299,13 +305,14 @@
                       <tr>
                           <th>Route Code</th>
                         <th>Route Name</th>
-                        <th>Distance</th>
+                        <th>Collection Center</th>
                         <th>ASOID</th>
                         <th>Category</th>
                           <th>IsActive</th>
                         <th>Created Date</th>
                            <th>Edit</th>
-                          <th>Delete</th>
+                         <%--  <th>Delete</th>--%>
+                        
                       </tr>
                     </thead>
                     <tbody>
@@ -316,7 +323,7 @@
                     <tr>
                          <td><%# Eval("Routecode")%></td>
                       <td><%# Eval("RouteName")%></td>
-                      <td><%# Eval("RouteDesc")%></td>
+                      <td><%# Eval("CenterCode")%>&nbsp;&nbsp;<%# Eval("CenterName")%></td>
                       <td><%# Eval("ASOID")%></td>
                         <td><%# Eval("Category") %></td>
                      <td><%# Eval("IsActive") %></td>
@@ -328,10 +335,10 @@
                                                                     CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
 
                          </td>
-                         <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
+                        <%-- <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
                                                                     ToolTip="Delete" runat="server" CommandArgument='<%#Eval("routeid") %>'
                                                                     CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>
+</td>--%>
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
@@ -342,13 +349,13 @@
                       <tr>
                            <th>Route Code</th>
                         <th>Route Name</th>
-                        <th>Distance</th>
-                        <th>ASOID</th>
+                        <th>Collection Center</th>
+                          <th>ASOID</th>
                         <th>Category</th>
                           <th>IsActive</th>
                         <th>Created Date</th>
                            <th>Edit</th>
-                          <th>Delete</th>
+                         <%-- <th>Delete</th>--%>
                       </tr>
                     </tfoot>
 

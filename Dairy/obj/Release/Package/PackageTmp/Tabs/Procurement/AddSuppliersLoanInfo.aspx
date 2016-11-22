@@ -133,7 +133,7 @@
                       <div class="input-group-addon">
                       Loan Type
                       </div>
-                      <asp:DropDownList ID="ddLoanType" class="form-control" runat="server">
+                      <asp:DropDownList ID="ddLoanType" class="form-control" runat="server" OnSelectedIndexChanged="ddLoanType_SelectedIndexChanged" AutoPostBack="true">
 
                            <asp:ListItem>---Select LoanType---</asp:ListItem>
                            <asp:ListItem>Can</asp:ListItem>

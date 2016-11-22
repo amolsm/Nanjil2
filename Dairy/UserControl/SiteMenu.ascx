@@ -283,6 +283,7 @@
                      <li><a href="/Tabs/Procurement/CheckList.aspx"><i class="fa fa-circle-o"></i>Check List </a></li>
                     <li><a href="/Tabs/Procurement/CalulateRawMilkPurchase.aspx"><i class="fa fa-circle-o"></i>Raw Milk Rate Calculation</a></li>
                 <%--<li><a href="/Tabs/Procurement/AddSupplierBankDetails.aspx"><i class="fa fa-circle-o"></i>Add Supplier Bank Details</a></li> --%>
+                    <li><a href="/Tabs/Procurement/Supplierwiserawmilkqtyqlty.aspx"><i class="fa fa-circle-o"></i>Supplier Wise Raw Milk Qty and Qlty. Report</a></li>
                 <li><a href="/Tabs/Procurement/AddSupplierSchemeBonus.aspx"><i class="fa fa-circle-o"></i>Yearwise Scheme Bonus</a></li> 
                 <li><a href="/Tabs/Procurement/SupplierAdvanceInfo.aspx"><i class="fa fa-circle-o"></i> Vehicle Advance Info</a></li> 
                   <li><a href="/Tabs/Procurement/AddSupplierRDInfo.aspx"><i class="fa fa-circle-o"></i> Supplier RD Info</a></li>
@@ -292,7 +293,7 @@
                   <li><a href="/Tabs/Procurement/MilkCollectionTransport.aspx"><i class="fa fa-circle-o"></i>Vehicle IN-Out Entry</a></li>
               
                   <li><a href="/Tabs/Procurement/RawMilkStockRegister.aspx"><i class="fa fa-circle-o"></i>MilkReceiving/Disposing Details</a></li>
-                   <li><a href="/Tabs/Procurement/Supplierwiserawmilkqtyqlty.aspx"><i class="fa fa-circle-o"></i>Supplier Wise Raw Milk Qty and Qlty. Report</a></li>
+                 
                   <li><a href="/Tabs/Procurement/RawMilkPaymentListViaBank.aspx"><i class="fa fa-circle-o"></i>Raw Milk Payment List Via Bank</a></li>
                     <li><a href="/Tabs/Procurement/Transaction.aspx"><i class="fa fa-circle-o"></i>Transaction</a></li>
                    <li><a href="/Tabs/Procurement/MonthlyRawMilkPurchaseSummary.aspx"><i class="fa fa-circle-o"></i>Monthly Raw Milk Purchase Summary</a></li>

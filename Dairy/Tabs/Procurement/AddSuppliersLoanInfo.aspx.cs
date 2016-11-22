@@ -338,12 +338,12 @@ namespace Dairy.Tabs.Procurement
             dpSupplier.ClearSelection();
             int routeid=Convert.ToInt32(dpRoute.SelectedItem.Value);
             DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 and RouteID="+routeid);
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
+            //if (!Comman.Comman.IsDataSetEmpty(DS))
+            //{
                 dpSupplier.DataSource = DS;
                 dpSupplier.DataBind();
                 dpSupplier.Items.Insert(0, new ListItem("--Select Supplier  --", "0"));
-            }
+            //}
 
         }
 
@@ -351,5 +351,23 @@ namespace Dairy.Tabs.Procurement
         {
             Response.Redirect("~/Tabs/Procurement/AddSuppliersLoanInfo.aspx");
         }
+
+        protected void ddLoanType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ProcurementData pd = new ProcurementData();
+            DataSet DS = new DataSet();
+            DS = pd.GetAllSupplierLoanInfo();
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                foreach (DataRow row in DS.Tables[0].Rows)
+                {
+                    if (row["SupplierID"].ToString() == dpSupplier.SelectedItem.Value && row["LoanType"].ToString() == ddLoanType.SelectedItem.Text.ToString() && row["LoanStatus"].ToString()=="Open")
+                    {
+                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Supplier Loan Already Exists')", true);
+                        ddLoanType.ClearSelection();
+                    }
+                }
+            }
+            }
     }
 }

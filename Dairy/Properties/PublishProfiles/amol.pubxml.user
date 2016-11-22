@@ -22,16 +22,27 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
+<<<<<<< HEAD
       <publishTime>11/21/2016 11:32:46</publishTime>
+=======
+      <publishTime>11/19/2016 14:56:35</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="bin/Comman.dll">
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
+<<<<<<< HEAD
       <publishTime>11/21/2016 11:32:53</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
       <publishTime>11/21/2016 11:32:46</publishTime>
+=======
+      <publishTime>11/21/2016 16:35:19</publishTime>
+    </File>
+    <File Include="bin/DataAccess.dll">
+      <publishTime>11/19/2016 14:56:35</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:52</publishTime>
@@ -409,10 +420,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/14/2016 13:50:26</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddMilkCollectionRoute.aspx">
+<<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddMilkSuppliersProfile.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
+=======
+      <publishTime>11/21/2016 11:25:46</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/AddMilkSuppliersProfile.aspx">
+      <publishTime>11/19/2016 15:15:01</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/AddSupplierAdvanceDetails.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
@@ -424,19 +442,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSupplierRDInfo.aspx">
+<<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
+=======
+      <publishTime>11/21/2016 12:28:57</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/AddSupplierSchemeBonus.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSuppliersLoanInfo.aspx">
+<<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
+=======
+      <publishTime>11/19/2016 14:38:47</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/CalulateRawMilkPurchase.aspx">
       <publishTime>11/17/2016 11:18:32</publishTime>
     </File>
     <File Include="Tabs/Procurement/CheckList.aspx">
+<<<<<<< HEAD
       <publishTime>11/11/2016 10:53:00</publishTime>
+=======
+      <publishTime>11/21/2016 13:11:46</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/ConsolidatePaymentSummary.aspx">
       <publishTime>11/17/2016 11:18:32</publishTime>
@@ -448,10 +478,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionDetails.aspx">
+<<<<<<< HEAD
       <publishTime>11/17/2016 11:18:32</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionTransport.aspx">
       <publishTime>11/12/2016 11:08:40</publishTime>
+=======
+      <publishTime>11/21/2016 11:58:55</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/MilkCollectionTransport.aspx">
+      <publishTime>11/19/2016 12:02:54</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/MilkCollectionTransportBill.aspx">
       <publishTime>11/19/2016 09:55:06</publishTime>
@@ -3451,7 +3488,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
+<<<<<<< HEAD
       <publishTime>11/21/2016 11:27:03</publishTime>
+=======
+      <publishTime>11/21/2016 12:03:27</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>11/11/2016 10:53:02</publishTime>

@@ -97,7 +97,7 @@
                       <div class="input-group-addon">
                       Collection Date
                       </div>
-                       <asp:TextBox ID="txtDate" class="form-control" placeholder="Collection Date" runat="server" type="date" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtDate" class="form-control" placeholder="Collection Date" runat="server" type="date" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -142,7 +142,7 @@
                       <div class="input-group-addon">
                     Morning KM
                       </div>
-                       <asp:TextBox ID="txtMorningKM" class="form-control" placeholder="Morning KM" runat="server" type="number" step="any" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtMorningKM" class="form-control" placeholder="Morning KM" runat="server" type="number" step="any" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -155,7 +155,7 @@
                       <div class="input-group-addon">
                      Morning In Time
                       </div>
-                       <asp:TextBox ID="txtMorningInTime" class="form-control" placeholder="Morning In Time" runat="server" type="time" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtMorningInTime" class="form-control" placeholder="Morning In Time" runat="server" type="time" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -168,7 +168,7 @@
                       <div class="input-group-addon">
                      Morning In Can 
                       </div>
-                       <asp:TextBox ID="txtMCanIn" class="form-control" placeholder="Morning In Can" runat="server" type="number" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtMCanIn" class="form-control" placeholder="Morning In Can" runat="server" type="number" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -180,7 +180,7 @@
                       <div class="input-group-addon">
                      Morning Out Time
                       </div>
-                       <asp:TextBox ID="txtMorningOutTime" class="form-control" placeholder="Morning Out Time" runat="server" type="time" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtMorningOutTime" class="form-control" placeholder="Morning Out Time" runat="server" type="time" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -192,7 +192,7 @@
                       <div class="input-group-addon">
                      Morning Out Can
                       </div>
-                       <asp:TextBox ID="txtMCanOut" class="form-control" placeholder="Morning Out Can" runat="server" type="number" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtMCanOut" class="form-control" placeholder="Morning Out Can" runat="server" type="number" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -206,7 +206,7 @@
                       <div class="input-group-addon">
                        Evening KM
                       </div>
-                       <asp:TextBox ID="txtEveningKM" class="form-control" placeholder="Evening KM" runat="server" type="number" step="any" required ToolTip="Evening KM" OnTextChanged="txtEveningKM_TextChanged" AutoPostBack="true"></asp:TextBox>                        
+                       <asp:TextBox ID="txtEveningKM" class="form-control" placeholder="Evening KM" runat="server" type="number" step="any"  ToolTip="Evening KM" OnTextChanged="txtEveningKM_TextChanged" AutoPostBack="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div> 
@@ -217,7 +217,7 @@
                       <div class="input-group-addon">
                      Evening In Time
                       </div>
-                       <asp:TextBox ID="txtEveningInTime" class="form-control" placeholder="Evening In Time" runat="server" type="time" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtEveningInTime" class="form-control" placeholder="Evening In Time" runat="server" type="time" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -229,7 +229,7 @@
                       <div class="input-group-addon">
                      Evening Out Time
                       </div>
-                       <asp:TextBox ID="txtEveningOutTime" class="form-control" placeholder="Evening Out Time" runat="server" type="time" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtEveningOutTime" class="form-control" placeholder="Evening Out Time" runat="server" type="time" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -242,7 +242,7 @@
                       <div class="input-group-addon">
                    Driver Name
                       </div>
-                       <asp:TextBox ID="txtDriverName" class="form-control" placeholder="DriverName"  runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtDriverName" class="form-control" placeholder="DriverName"  runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -267,7 +267,7 @@
                       <div class="input-group-addon">
                        Amount
                       </div>
-                       <asp:TextBox ID="txtAmount" class="form-control" placeholder="Amount" type="number" step="any" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtAmount" class="form-control" placeholder="Amount" type="number" step="any" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -282,7 +282,7 @@
                       <div class="input-group-addon">
                     Bata
                       </div>
-                       <asp:TextBox ID="txtBata" class="form-control" placeholder="Bata" runat="server" type="number" step="any" required ToolTip="Bata"></asp:TextBox>                        
+                       <asp:TextBox ID="txtBata" class="form-control" placeholder="Bata" runat="server" type="number" step="any"  ToolTip="Bata"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -308,7 +308,8 @@
                     
                       
                               <asp:Button ID="btnAddMilkTransport" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnAddMilkCollection_Click"   Text="Add" ValidationGroup="Save" />     
-                        <asp:Button ID="btnupdateMilkTransport" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnupdateMilkCollection_Click"  Text="Update" ValidationGroup="Save" />           
+                        <asp:Button ID="btnupdateMilkTransport" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnupdateMilkCollection_Click"  Text="Update" ValidationGroup="Save" />  
+                          &nbsp;&nbsp;&nbsp; <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />                               
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

@@ -88,10 +88,13 @@
                       <div class="input-group-addon">
                       Route
                       </div>
-                      <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route" AutoPostBack="true" OnSelectedIndexChanged="dpRoute_SelectedIndexChanged"> 
+                      <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server"  ToolTip="Select Route" AutoPostBack="true" OnSelectedIndexChanged="dpRoute_SelectedIndexChanged"> 
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                         <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator2" Display="Dynamic" 
+                            ValidationGroup="Save" runat="server" ControlToValidate="dpRoute"
+                            Text="Please Select Route" ErrorMessage="Please Select Route" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -104,10 +107,12 @@
                       <div class="input-group-addon">
                        Supplier
                       </div>
-                       <asp:DropDownList ID="dpSupplier" class="form-control" DataTextField="Name" DataValueField="SupplierID" runat="server" selected ToolTip="Select supplier"> 
+                       <asp:DropDownList ID="dpSupplier" class="form-control" DataTextField="Name" DataValueField="SupplierID" runat="server"  ToolTip="Select supplier"> 
                        </asp:DropDownList>                               
                     </div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator1" Display="Dynamic" 
+                            ValidationGroup="Save" runat="server" ControlToValidate="dpSupplier"
+                            Text="Please Select Supplier" ErrorMessage="Please Select Supplier" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div><!-- /.form group --> 
                           
                       </div> 
@@ -120,7 +125,7 @@
                       </div>
                        <asp:TextBox ID="txtRDStartDate" class="form-control" placeholder="RD Start Date" runat="server"  ToolTip="RD Start Date" type="date"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Please Enter RD Start Date" ControlToValidate="txtRDStartDate" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -135,7 +140,7 @@
                       </div>
                        <asp:TextBox ID="txtRDMaturityDate" class="form-control" placeholder="RD Maturity Date"  runat="server"  ToolTip="RD Maturity Date" type="date"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Please Enter RD Maturity Date" ControlToValidate="txtRDMaturityDate" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -150,6 +155,7 @@
                       </div>
                        <asp:TextBox ID="txtRDAmount" class="form-control" placeholder="RD Amount" runat="server"  ToolTip="RD AMount" Type="number" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Please Enter RD Amount" ControlToValidate="txtRDAmount" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->                   
                   </div>  
        
@@ -185,6 +191,9 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                       <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator5" Display="Dynamic" 
+                            ValidationGroup="Save" runat="server" ControlToValidate="DropDownList1"
+                            Text="Please Select RD Status" ErrorMessage="Please Select RD Status" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -351,7 +360,7 @@
                           <th>RD RePaymentDate</th>
                             <th>RD STatus</th>
                            <th>Edit</th>
-                          <th>Delete</th>
+                       <%--   <th>Delete</th>--%>
                       </tr>
                     </thead>
                     <tbody>
@@ -374,10 +383,10 @@
                                                                     CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
 
                          </td>
-                         <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
+                         <%--<td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
                                                                     ToolTip="Delete" runat="server" CommandArgument='<%#Eval("RDID") %>'
                                                                     CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>
+</td>--%>
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
@@ -395,7 +404,7 @@
                        
                        
                            <th>Edit</th>
-                          <th>Delete</th>
+                         <%-- <th>Delete</th>--%>
                       </tr>
                     </tfoot>
 
@@ -428,4 +437,13 @@
             </asp:UpdateProgress>           
           </div>
         </section>
+    <script type="text/javascript">
+     $(document).ready(function () {
+              $('#example1').dataTable({
+                  "bPaginate": false,
+                  "paging": false
+
+              });
+          });
+    </script>
 </asp:Content>

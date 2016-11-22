@@ -235,14 +235,14 @@ namespace Dairy.Tabs.Procurement
             {
                 txtCLRReading.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["CLRReading"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["CLRReading"].ToString();
                 txtFATInKG.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["FATInKG"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["FATInKG"].ToString();
-                txtFATPercentage.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["FATPercentage"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["FATPercentage"].ToString();
+                txtFATPercentage.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["FATPercentage"].ToString()) ? string.Empty : Convert.ToDecimal(DS.Tables[0].Rows[0]["FATPercentage"]).ToString("0.0");
                 txtMilkInKG.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MilkInKG"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MilkInKG"].ToString();
-                txtMilkInLtr.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MilkInLtr"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MilkInLtr"].ToString();
-                txtActualMilkInLtr.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ActualMilkInLtr"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ActualMilkInLtr"].ToString();
+                txtMilkInLtr.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MilkInLtr"].ToString()) ? string.Empty : Convert.ToDecimal(DS.Tables[0].Rows[0]["MilkInLtr"]).ToString("0.0");
+                txtActualMilkInLtr.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ActualMilkInLtr"].ToString()) ? string.Empty : Convert.ToDecimal(DS.Tables[0].Rows[0]["ActualMilkInLtr"]).ToString("0.0");
                 //txtSNF.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SNF"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SNF"].ToString();
                 txtSNFInKG.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SNFInKG"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SNFInKG"].ToString();
-                txtSNFPercentage.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SNFPercentage"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SNFPercentage"].ToString();
-                txtTSPercentage.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TSPercentage"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TSPercentage"].ToString();
+                txtSNFPercentage.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SNFPercentage"].ToString()) ? string.Empty : Convert.ToDecimal(DS.Tables[0].Rows[0]["SNFPercentage"]).ToString("0.0");
+                txtTSPercentage.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TSPercentage"].ToString()) ? string.Empty : Convert.ToDecimal(DS.Tables[0].Rows[0]["TSPercentage"]).ToString("0.0");
                 dpRoute.ClearSelection();
                 if (dpRoute.Items.FindByValue(DS.Tables[0].Rows[0]["RouteID"].ToString()) != null)
                 {
