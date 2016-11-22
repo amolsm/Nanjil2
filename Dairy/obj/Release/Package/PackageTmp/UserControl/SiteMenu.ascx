@@ -324,7 +324,8 @@
              <%--   <li><a href="/Tabs/Reception/GenrateBill.aspx"><i class="fa fa-circle-o"></i> Generate Bill</a></li>--%>
                 <li><a href="/Tabs/Reception/DuplicateBillForAgent.aspx"><i class="fa fa-circle-o"></i>Orderwise Sales Bill</a></li>
            <%--     <li><a href="/Tabs/Administration/BillSequence.aspx"><i class="fa fa-circle-o"></i> Bill Sequence</a></li>--%>
-                <li><a href="/Tabs/Reception/ItemwiseOrderSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Order Summary</a></li>
+                <li><a href="/Tabs/Marketing/AgentListNotPlacedOrder.aspx"><i class="fa fa-circle-o"></i>Agent Not Placed Order</a></li>
+                  <li><a href="/Tabs/Reception/ItemwiseOrderSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Order Summary</a></li>
                 <li><a href="/Tabs/Reception/RatewiseOrderSummary.aspx"><i class="fa fa-circle-o"></i>Ratewise Order Summary</a></li>
                 
               </ul>

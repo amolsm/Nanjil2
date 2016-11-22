@@ -185,6 +185,7 @@
     <Content Include="Tabs\Purchase\ApprovedRequestItems.aspx" />
     <Content Include="Tabs\Purchase\Categories.aspx" />
     <Content Include="Tabs\Purchase\ComparativeStatement.aspx" />
+    <Content Include="Tabs\Purchase\dash1.aspx" />
     <Content Include="Tabs\Purchase\Dashboard.aspx" />
     <Content Include="Tabs\Purchase\IndentMaterial.aspx" />
     <Content Include="Tabs\Purchase\ItemRates.aspx" />
@@ -195,6 +196,7 @@
     <Content Include="Tabs\Purchase\RackSections.aspx" />
     <Content Include="Tabs\Purchase\VendorRegistration.aspx" />
     <Content Include="Tabs\Purchase\ViewPurchaseOrder.aspx" />
+    <Content Include="Tabs\Reception\AgentListNotPlacedOrder.aspx" />
     <Content Include="Tabs\Reception\CancelOrder.aspx" />
     <Content Include="Tabs\Reception\EditOrder.aspx" />
     <Content Include="Tabs\Reception\GenrateBillThermal.aspx" />
@@ -1824,6 +1826,13 @@
     <Compile Include="Tabs\Purchase\ComparativeStatement.aspx.designer.cs">
       <DependentUpon>ComparativeStatement.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Purchase\dash1.aspx.cs">
+      <DependentUpon>dash1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\dash1.aspx.designer.cs">
+      <DependentUpon>dash1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Purchase\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1893,6 +1902,13 @@
     </Compile>
     <Compile Include="Tabs\Purchase\ViewPurchaseOrder.aspx.designer.cs">
       <DependentUpon>ViewPurchaseOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Reception\AgentListNotPlacedOrder.aspx.cs">
+      <DependentUpon>AgentListNotPlacedOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Reception\AgentListNotPlacedOrder.aspx.designer.cs">
+      <DependentUpon>AgentListNotPlacedOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Reception\CancelOrder.aspx.cs">
       <DependentUpon>CancelOrder.aspx</DependentUpon>
