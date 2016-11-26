@@ -335,9 +335,9 @@ namespace Bussiness
             return pdb.GetBatchWiseMilkCollection(milkcollectionid, flag);
         }
 
-        public int AddTransaction(Model.Procurement p)
+        public int AddTransaction(int SupplierID, int RouteID, string PaymentDateTime, DateTime FomDate, DateTime ToDate, double Amount, double Bonus, decimal Scheme, double RDAmount, double canloan, double casloan, double bankloan, double netamt)
         {
-            return pdb.AddTransaction(p);
+            return pdb.AddTransaction(SupplierID, RouteID, PaymentDateTime, FomDate, ToDate, Amount, Bonus, Scheme, RDAmount, canloan, casloan, bankloan, netamt);
         }
     }
 }

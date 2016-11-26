@@ -48,6 +48,26 @@ namespace DataAccess
             return DS;
         }
 
+        public DataSet GetRoutewiseReturnTraysReport(string startdate, string enddate, int routeid)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@DispatchBeginDate", startdate));
+                paramCollection.Add(new DBParameter("@DispatchEndDate", enddate));
+                paramCollection.Add(new DBParameter("@RouteID", routeid));
+                DS = _DBHelper.ExecuteDataSet("sp_GetRoutewiseReturnTraysReport", paramCollection, CommandType.StoredProcedure);
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return DS;
+        }
+
         public DataSet GetDispatchByAgentID(Dispatch dispatch)
         {
             DataSet DS = new DataSet();

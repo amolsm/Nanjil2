@@ -7,19 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Dairy.Tabs.Procurement {
+namespace Dairy.Tabs.Despatch {
     
     
-    public partial class Transaction {
-        
-        /// <summary>
-        /// lblHeaderTab control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHeaderTab;
+    public partial class RoutewiseReturnTraysReport {
         
         /// <summary>
         /// pnlError control.
@@ -85,13 +76,13 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.Label lblSuccess;
         
         /// <summary>
-        /// lblTabName control.
+        /// lbltital control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTabName;
+        protected global::System.Web.UI.WebControls.Label lbltital;
         
         /// <summary>
         /// upMain control.
@@ -103,6 +94,24 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.UpdatePanel upMain;
         
         /// <summary>
+        /// txtStartDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtStartDate;
+        
+        /// <summary>
+        /// txtEndDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEndDate;
+        
+        /// <summary>
         /// dpRoute control.
         /// </summary>
         /// <remarks>
@@ -112,102 +121,39 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.DropDownList dpRoute;
         
         /// <summary>
-        /// txtpaymentdate control.
+        /// btngenrateBill control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpaymentdate;
+        protected global::System.Web.UI.WebControls.Button btngenrateBill;
         
         /// <summary>
-        /// txtfromdate control.
+        /// btnPrint control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfromdate;
+        protected global::System.Web.UI.WebControls.Button btnPrint;
         
         /// <summary>
-        /// txttodate control.
+        /// pnlBill control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txttodate;
+        protected global::System.Web.UI.WebControls.Panel pnlBill;
         
         /// <summary>
-        /// btnShow control.
+        /// genratedBIll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnShow;
-        
-        /// <summary>
-        /// btnAddTransaction control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddTransaction;
-        
-        /// <summary>
-        /// btnAddNew control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddNew;
-        
-        /// <summary>
-        /// uprouteList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel uprouteList;
-        
-        /// <summary>
-        /// rpRouteList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpRouteList;
-        
-        /// <summary>
-        /// hfsuppliersID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfsuppliersID;
-        
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// UpdateProgress2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdateProgress UpdateProgress2;
+        protected global::System.Web.UI.WebControls.Literal genratedBIll;
     }
 }

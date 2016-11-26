@@ -38,6 +38,7 @@ namespace Dairy.Tabs.Procurement
 
         protected void btnShow_Click(object sender, EventArgs e)
         {
+           
             DataSet ds = new DataSet();
             ProcurementData pd = new ProcurementData();
             Model.Procurement p = new Model.Procurement();
@@ -46,124 +47,136 @@ namespace Dairy.Tabs.Procurement
             p.ToDate = Convert.ToDateTime(txttodate.Text);
             DataSet DS = new DataSet();
             DS = pd.GetTransactionDetails(p);
-            if (!Comman.Comman.IsDataSetEmpty(DS))
+            try
             {
-                try
+                if (DS.Tables[0].Rows[0].ToString() != null)
                 {
-                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["SupplierID"] };
-                }
-                catch (Exception) { }
-               
-                try
-                {
-                    DS.Tables[2].PrimaryKey = new[] { DS.Tables[2].Columns["SupplierID"] };
-                }
-                catch (Exception) { }
-                try
-                {
-                    DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["SupplierID"] };
-                }
-                catch (Exception) { }
-                try
-                {
-                    DS.Tables[4].PrimaryKey = new[] { DS.Tables[4].Columns["SupplierID"] };
-                }
-                catch (Exception) { }
-                try
-                {
-                    DS.Tables[5].PrimaryKey = new[] { DS.Tables[5].Columns["SupplierID"] };
-                }
-                catch (Exception) { }
-
-                try
-                {
-                    DS.Tables[0].Merge(DS.Tables[2], false, MissingSchemaAction.Add);
-                }
-                catch (Exception) { }
-                try
-                {
-                    DS.Tables[0].Merge(DS.Tables[3], false, MissingSchemaAction.Add);
-                }
-                catch (Exception) { }
-                try
-                {
-                    DS.Tables[0].Merge(DS.Tables[4], false, MissingSchemaAction.Add);
-                }
-                catch (Exception) { }
-                try
-                {
-                    DS.Tables[0].Merge(DS.Tables[5], false, MissingSchemaAction.Add);
-                }
-                catch (Exception) { }
-
-                try
-                {
-                    DS.Tables[0].Columns.Add("Scheme", typeof(decimal));
-                    DS.Tables[0].Columns.Add("Bonus", typeof(decimal));
-                    foreach (DataRow row in DS.Tables[0].Rows)
+                    try
                     {
-                        foreach (DataRow rows in DS.Tables[1].Rows)
+                        DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["SupplierID"] };
+                    }
+                    catch (Exception) { }
+
+                    try
+                    {
+                        DS.Tables[2].PrimaryKey = new[] { DS.Tables[2].Columns["SupplierID"] };
+                    }
+                    catch (Exception) { }
+                    try
+                    {
+                        DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["SupplierID"] };
+                    }
+                    catch (Exception) { }
+                    try
+                    {
+                        DS.Tables[4].PrimaryKey = new[] { DS.Tables[4].Columns["SupplierID"] };
+                    }
+                    catch (Exception) { }
+                    try
+                    {
+                        DS.Tables[5].PrimaryKey = new[] { DS.Tables[5].Columns["SupplierID"] };
+                    }
+                    catch (Exception) { }
+
+                    try
+                    {
+                        DS.Tables[0].Merge(DS.Tables[2], false, MissingSchemaAction.Add);
+                    }
+                    catch (Exception) { }
+                    try
+                    {
+                        DS.Tables[0].Merge(DS.Tables[3], false, MissingSchemaAction.Add);
+                    }
+                    catch (Exception) { }
+                    try
+                    {
+                        DS.Tables[0].Merge(DS.Tables[4], false, MissingSchemaAction.Add);
+                    }
+                    catch (Exception) { }
+                    try
+                    {
+                        DS.Tables[0].Merge(DS.Tables[5], false, MissingSchemaAction.Add);
+                    }
+                    catch (Exception) { }
+
+                    try
+                    {
+                        DS.Tables[0].Columns.Add("Scheme", typeof(decimal));
+                        DS.Tables[0].Columns.Add("Bonus", typeof(decimal));
+                        foreach (DataRow row in DS.Tables[0].Rows)
                         {
-                            if (row["Category"].ToString() == rows["Category"].ToString())
+                            foreach (DataRow rows in DS.Tables[1].Rows)
                             {
-                                row["Scheme"] = rows["Scheme"];
-                                row["Bonus"] = rows["Bonus"];
+                                if (row["Category"].ToString() == rows["Category"].ToString())
+                                {
+                                    row["Scheme"] = rows["Scheme"];
+                                    row["Bonus"] = rows["Bonus"];
+                                }
                             }
                         }
+
+                        rpRouteList.DataSource = DS;
+                        rpRouteList.DataBind();
+                        //rpBrandInfo.Visible = true;
+                        uprouteList.Update();
+                        foreach (RepeaterItem item in rpRouteList.Items)
+                        {
+                            double amt;
+                            double bonus;
+                            double scheme;
+                            double rd;
+                            double canloan;
+                            double cashloan;
+                            double bankloan;
+                            double netamt;
+                            TextBox txtAmt = item.FindControl("txtAmt") as TextBox;
+                            try { amt = Convert.ToDouble(txtAmt.Text); }
+                            catch { amt = 0.00; }
+
+                            TextBox txtBonus = item.FindControl("txtBonus") as TextBox;
+                            try { bonus = Convert.ToDouble(txtBonus.Text); }
+                            catch { bonus = 0.00; }
+
+                            TextBox txtScheme = item.FindControl("txtScheme") as TextBox;
+                            scheme = Convert.ToDouble(txtScheme.Text);
+
+                            TextBox txtRD = item.FindControl("txtRD") as TextBox;
+                            try { rd = Convert.ToDouble(txtRD.Text); }
+                            catch { rd = 0.00; }
+
+                            TextBox txtcanloan = item.FindControl("txtcanloan") as TextBox;
+                            try { canloan = Convert.ToDouble(txtcanloan.Text); }
+                            catch { canloan = 0.00; }
+
+                            TextBox txtcashloan = item.FindControl("txtcashloan") as TextBox;
+                            try { cashloan = Convert.ToDouble(txtcashloan.Text); }
+                            catch { cashloan = 0.00; }
+
+                            TextBox txtbankloan = item.FindControl("txtbankloan") as TextBox;
+                            try { bankloan = Convert.ToDouble(txtbankloan.Text); }
+                            catch { bankloan = 0.00; }
+
+                            TextBox txtNetAmt = item.FindControl("txtNetAmt") as TextBox;
+                            netamt = 0.00;
+                            netamt = amt - (scheme + rd + canloan + cashloan + bankloan);
+                            txtNetAmt.Text = Convert.ToString(netamt);
+
+                        }
                     }
-                    
-                    rpRouteList.DataSource = DS;
-                    rpRouteList.DataBind();
-                    //rpBrandInfo.Visible = true;
-                    uprouteList.Update();
-                    foreach (RepeaterItem item in rpRouteList.Items)
-                    {
-                        double amt;
-                        double bonus;
-                        double scheme;
-                        double rd;
-                        double canloan;
-                        double cashloan;
-                        double bankloan;
-                        double netamt;
-                        TextBox txtAmt = item.FindControl("txtAmt") as TextBox;
-                        try { amt = Convert.ToDouble(txtAmt.Text); }
-                        catch { amt = 0.00; }
-                         
-                        TextBox txtBonus = item.FindControl("txtBonus") as TextBox;
-                        try { bonus = Convert.ToDouble(txtBonus.Text); }
-                        catch { bonus = 0.00; }
+                    catch { }
 
-                        TextBox txtScheme = item.FindControl("txtScheme") as TextBox;
-                         scheme = Convert.ToDouble(txtScheme.Text);
-
-                        TextBox txtRD = item.FindControl("txtRD") as TextBox;
-                        try { rd = Convert.ToDouble(txtRD.Text); }
-                        catch { rd = 0.00; }
-                        
-                        TextBox txtcanloan = item.FindControl("txtcanloan") as TextBox;
-                        try { canloan = Convert.ToDouble(txtcanloan.Text); }
-                        catch { canloan = 0.00; }
-
-                        TextBox txtcashloan = item.FindControl("txtcashloan") as TextBox;
-                        try { cashloan = Convert.ToDouble(txtcashloan.Text); }
-                        catch { cashloan = 0.00; }
-
-                        TextBox txtbankloan = item.FindControl("txtbankloan") as TextBox;
-                        try { bankloan = Convert.ToDouble(txtbankloan.Text); }
-                        catch { bankloan = 0.00; }
-
-                        TextBox txtNetAmt = item.FindControl("txtNetAmt") as TextBox;
-                         netamt = 0.00;
-                        netamt = amt - (bonus + scheme + rd + canloan+cashloan+bankloan);
-                        txtNetAmt.Text = Convert.ToString(netamt);
-
-                    }
                 }
-                catch { }
 
             }
-        }
+            catch (Exception) {
+                rpRouteList.DataSource = null;
+                rpRouteList.DataBind();
+                Label1.Visible = true;
+                uprouteList.Update();
+
+            }
+            
+        } 
 
         protected void rpRouteList_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
@@ -179,22 +192,21 @@ namespace Dairy.Tabs.Procurement
             HiddenField hdfID = e.Item.FindControl("hfSupplierID") as HiddenField;
             if (hdfID != null)
             {
-                Model.Procurement p = new Model.Procurement();
-                p.SupplierID = Convert.ToInt32(hdfID.Value);
-                p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
-                p.PaymentDateTime = txtpaymentdate.Text;
-                p.FomDate = Convert.ToDateTime(txtfromdate.Text);
-                p.ToDate = Convert.ToDateTime(txttodate.Text);
-                p.Amount = string.IsNullOrEmpty(txtAmt.Text) ? 0 : Convert.ToDouble(txtAmt.Text);
-                p.Bonus = string.IsNullOrEmpty(txtBonus.Text) ? 0 : Convert.ToDouble(txtBonus.Text);
-                p.Scheme = string.IsNullOrEmpty(txtScheme.Text) ? 0 : Convert.ToDecimal(txtScheme.Text);
-                p.RDAmount = string.IsNullOrEmpty(txtRD.Text) ? 0 : Convert.ToDouble(txtRD.Text);
-                p.canloan = string.IsNullOrEmpty(txtcanloan.Text) ? 0 : Convert.ToDouble(txtcanloan.Text);
-                p.casloan = string.IsNullOrEmpty(txtcashloan.Text) ? 0 : Convert.ToDouble(txtcashloan.Text);
-                p.bankloan = string.IsNullOrEmpty(txtbankloan.Text) ? 0 : Convert.ToDouble(txtbankloan.Text);
-                p.netamt = string.IsNullOrEmpty(txtNetAmt.Text) ? 0 : Convert.ToDouble(txtNetAmt.Text);
+                int SupplierID = Convert.ToInt32(hdfID.Value);
+                int RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
+                string PaymentDateTime = txtpaymentdate.Text;
+                DateTime FomDate = Convert.ToDateTime(txtfromdate.Text);
+                DateTime ToDate = Convert.ToDateTime(txttodate.Text);
+                double Amount = string.IsNullOrEmpty(txtAmt.Text) ? 0 : Convert.ToDouble(txtAmt.Text);
+                double Bonus = string.IsNullOrEmpty(txtBonus.Text) ? 0 : Convert.ToDouble(txtBonus.Text);
+                decimal Scheme = string.IsNullOrEmpty(txtScheme.Text) ? 0 : Convert.ToDecimal(txtScheme.Text);
+                double RDAmount = string.IsNullOrEmpty(txtRD.Text) ? 0 : Convert.ToDouble(txtRD.Text);
+                double canloan = string.IsNullOrEmpty(txtcanloan.Text) ? 0 : Convert.ToDouble(txtcanloan.Text);
+                double casloan = string.IsNullOrEmpty(txtcashloan.Text) ? 0 : Convert.ToDouble(txtcashloan.Text);
+                double bankloan = string.IsNullOrEmpty(txtbankloan.Text) ? 0 : Convert.ToDouble(txtbankloan.Text);
+                double netamt = string.IsNullOrEmpty(txtNetAmt.Text) ? 0 : Convert.ToDouble(txtNetAmt.Text);
 
-                UpdateRecord(p);
+                UpdateRecord(SupplierID, RouteID, PaymentDateTime, FomDate, ToDate, Amount, Bonus, Scheme, RDAmount, canloan, casloan, bankloan, netamt);
             }
         }
 
@@ -214,30 +226,30 @@ namespace Dairy.Tabs.Procurement
                 HiddenField hdfID = item.FindControl("hfSupplierID") as HiddenField;
                 if (hdfID != null)
                 {
-                    Model.Procurement p = new Model.Procurement();
-                    p.SupplierID = Convert.ToInt32(hdfID.Value);
-                    p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
-                    p.PaymentDateTime = txtpaymentdate.Text;
-                    p.FomDate = Convert.ToDateTime(txtfromdate.Text);
-                    p.ToDate = Convert.ToDateTime(txttodate.Text);
-                    p.Amount = string.IsNullOrEmpty(txtAmt.Text) ? 0 : Convert.ToDouble(txtAmt.Text);
-                    p.Bonus = string.IsNullOrEmpty(txtBonus.Text) ? 0 : Convert.ToDouble(txtBonus.Text);
-                    p.Scheme = string.IsNullOrEmpty(txtScheme.Text) ? 0 : Convert.ToDecimal(txtScheme.Text);
-                    p.RDAmount = string.IsNullOrEmpty(txtRD.Text) ? 0 : Convert.ToDouble(txtRD.Text);
-                    p.canloan = string.IsNullOrEmpty(txtcanloan.Text) ? 0 : Convert.ToDouble(txtcanloan.Text);
-                    p.casloan = string.IsNullOrEmpty(txtcashloan.Text) ? 0 : Convert.ToDouble(txtcashloan.Text);
-                    p.bankloan = string.IsNullOrEmpty(txtbankloan.Text) ? 0 : Convert.ToDouble(txtbankloan.Text);
-                    p.netamt = string.IsNullOrEmpty(txtNetAmt.Text) ? 0 : Convert.ToDouble(txtNetAmt.Text);
                    
-                    UpdateRecord(p);
+                    int SupplierID = Convert.ToInt32(hdfID.Value);
+                    int RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
+                    string PaymentDateTime = txtpaymentdate.Text;
+                    DateTime FomDate = Convert.ToDateTime(txtfromdate.Text);
+                    DateTime ToDate = Convert.ToDateTime(txttodate.Text);
+                    double Amount = string.IsNullOrEmpty(txtAmt.Text) ? 0 : Convert.ToDouble(txtAmt.Text);
+                    double Bonus = string.IsNullOrEmpty(txtBonus.Text) ? 0 : Convert.ToDouble(txtBonus.Text);
+                    decimal Scheme = string.IsNullOrEmpty(txtScheme.Text) ? 0 : Convert.ToDecimal(txtScheme.Text);
+                    double RDAmount = string.IsNullOrEmpty(txtRD.Text) ? 0 : Convert.ToDouble(txtRD.Text);
+                    double canloan = string.IsNullOrEmpty(txtcanloan.Text) ? 0 : Convert.ToDouble(txtcanloan.Text);
+                    double casloan = string.IsNullOrEmpty(txtcashloan.Text) ? 0 : Convert.ToDouble(txtcashloan.Text);
+                    double bankloan = string.IsNullOrEmpty(txtbankloan.Text) ? 0 : Convert.ToDouble(txtbankloan.Text);
+                    double netamt = string.IsNullOrEmpty(txtNetAmt.Text) ? 0 : Convert.ToDouble(txtNetAmt.Text);
+                   
+                    UpdateRecord(SupplierID,RouteID,PaymentDateTime,FomDate,ToDate,Amount,Bonus,Scheme,RDAmount,canloan,casloan,bankloan,netamt);
                 }
             }
         }
-        private void UpdateRecord(Model.Procurement p)
+        private void UpdateRecord(int SupplierID, int RouteID, string PaymentDateTime, DateTime FomDate, DateTime ToDate, double Amount, double Bonus, decimal Scheme, double RDAmount, double canloan, double casloan, double bankloan, double netamt)
         {
             int result = 0;
             ProcurementData pd = new ProcurementData();
-            result = pd.AddTransaction(p);
+            result = pd.AddTransaction(SupplierID, RouteID, PaymentDateTime, FomDate, ToDate, Amount, Bonus, Scheme, RDAmount, canloan, casloan, bankloan, netamt);
             if (result > 0)
             {
 
@@ -265,5 +277,171 @@ namespace Dairy.Tabs.Procurement
         {
             Response.Redirect("~/Tabs/Procurement/Transaction.aspx");
         }
+
+        protected void txtRD_TextChanged(object sender, EventArgs e)
+        {
+            double amt;
+            double bonus;
+            double scheme;
+            double rd;
+            double canloan;
+            double cashloan;
+            double bankloan;
+            double netamt;
+            TextBox tb1 = ((TextBox)(sender));
+
+            RepeaterItem rp1 = ((RepeaterItem)(tb1.NamingContainer));
+            TextBox txtAmt = (TextBox)rp1.FindControl("txtAmt");
+            try { amt = Convert.ToDouble(txtAmt.Text); }
+            catch { amt = 0.00; }
+            TextBox txtBonus = (TextBox)rp1.FindControl("txtBonus");
+            try { bonus = Convert.ToDouble(txtBonus.Text); }
+            catch { bonus = 0.00; }
+            TextBox txtScheme = (TextBox)rp1.FindControl("txtScheme");
+            try { scheme = Convert.ToDouble(txtScheme.Text); }
+            catch { scheme = 0.00; }
+            TextBox txtRD = (TextBox)rp1.FindControl("txtRD");
+            try { rd = Convert.ToDouble(txtRD.Text); }
+            catch { rd = 0.00; }
+            TextBox txtcanloan = (TextBox)rp1.FindControl("txtcanloan");
+            try { canloan = Convert.ToDouble(txtcanloan.Text); }
+            catch { canloan = 0.00; }
+            TextBox txtcashloan = (TextBox)rp1.FindControl("txtcashloan");
+            try { cashloan = Convert.ToDouble(txtcashloan.Text); }
+            catch { cashloan = 0.00; }
+            TextBox txtbankloan = (TextBox)rp1.FindControl("txtbankloan");
+            try { bankloan = Convert.ToDouble(txtbankloan.Text); }
+            catch { bankloan = 0.00; }
+            TextBox txtNetAmt = (TextBox)rp1.FindControl("txtNetAmt");
+            
+            netamt = amt - (scheme + rd + canloan + cashloan + bankloan);
+            txtNetAmt.Text = Convert.ToString(netamt);
+           
+        }
+
+        protected void txtcanloan_TextChanged(object sender, EventArgs e)
+        {
+            double amt;
+            double bonus;
+            double scheme;
+            double rd;
+            double canloan;
+            double cashloan;
+            double bankloan;
+            double netamt;
+            TextBox tb1 = ((TextBox)(sender));
+
+            RepeaterItem rp1 = ((RepeaterItem)(tb1.NamingContainer));
+            TextBox txtAmt = (TextBox)rp1.FindControl("txtAmt");
+            try { amt = Convert.ToDouble(txtAmt.Text); }
+            catch { amt = 0.00; }
+            TextBox txtBonus = (TextBox)rp1.FindControl("txtBonus");
+            try { bonus = Convert.ToDouble(txtBonus.Text); }
+            catch { bonus = 0.00; }
+            TextBox txtScheme = (TextBox)rp1.FindControl("txtScheme");
+            try { scheme = Convert.ToDouble(txtScheme.Text); }
+            catch { scheme = 0.00; }
+            TextBox txtRD = (TextBox)rp1.FindControl("txtRD");
+            try { rd = Convert.ToDouble(txtRD.Text); }
+            catch { rd = 0.00; }
+            TextBox txtcanloan = (TextBox)rp1.FindControl("txtcanloan");
+            try { canloan = Convert.ToDouble(txtcanloan.Text); }
+            catch { canloan = 0.00; }
+            TextBox txtcashloan = (TextBox)rp1.FindControl("txtcashloan");
+            try { cashloan = Convert.ToDouble(txtcashloan.Text); }
+            catch { cashloan = 0.00; }
+            TextBox txtbankloan = (TextBox)rp1.FindControl("txtbankloan");
+            try { bankloan = Convert.ToDouble(txtbankloan.Text); }
+            catch { bankloan = 0.00; }
+            TextBox txtNetAmt = (TextBox)rp1.FindControl("txtNetAmt");
+
+            netamt = amt - (scheme + rd + canloan + cashloan + bankloan);
+            txtNetAmt.Text = Convert.ToString(netamt);
+
+        }
+
+        protected void txtcashloan_TextChanged(object sender, EventArgs e)
+        {
+            double amt;
+            double bonus;
+            double scheme;
+            double rd;
+            double canloan;
+            double cashloan;
+            double bankloan;
+            double netamt;
+            TextBox tb1 = ((TextBox)(sender));
+
+            RepeaterItem rp1 = ((RepeaterItem)(tb1.NamingContainer));
+            TextBox txtAmt = (TextBox)rp1.FindControl("txtAmt");
+            try { amt = Convert.ToDouble(txtAmt.Text); }
+            catch { amt = 0.00; }
+            TextBox txtBonus = (TextBox)rp1.FindControl("txtBonus");
+            try { bonus = Convert.ToDouble(txtBonus.Text); }
+            catch { bonus = 0.00; }
+            TextBox txtScheme = (TextBox)rp1.FindControl("txtScheme");
+            try { scheme = Convert.ToDouble(txtScheme.Text); }
+            catch { scheme = 0.00; }
+            TextBox txtRD = (TextBox)rp1.FindControl("txtRD");
+            try { rd = Convert.ToDouble(txtRD.Text); }
+            catch { rd = 0.00; }
+            TextBox txtcanloan = (TextBox)rp1.FindControl("txtcanloan");
+            try { canloan = Convert.ToDouble(txtcanloan.Text); }
+            catch { canloan = 0.00; }
+            TextBox txtcashloan = (TextBox)rp1.FindControl("txtcashloan");
+            try { cashloan = Convert.ToDouble(txtcashloan.Text); }
+            catch { cashloan = 0.00; }
+            TextBox txtbankloan = (TextBox)rp1.FindControl("txtbankloan");
+            try { bankloan = Convert.ToDouble(txtbankloan.Text); }
+            catch { bankloan = 0.00; }
+            TextBox txtNetAmt = (TextBox)rp1.FindControl("txtNetAmt");
+
+            netamt = amt - (scheme + rd + canloan + cashloan + bankloan);
+            txtNetAmt.Text = Convert.ToString(netamt);
+
+        }
+
+        protected void txtbankloan_TextChanged(object sender, EventArgs e)
+        {
+            double amt;
+            double bonus;
+            double scheme;
+            double rd;
+            double canloan;
+            double cashloan;
+            double bankloan;
+            double netamt;
+            TextBox tb1 = ((TextBox)(sender));
+
+            RepeaterItem rp1 = ((RepeaterItem)(tb1.NamingContainer));
+            TextBox txtAmt = (TextBox)rp1.FindControl("txtAmt");
+            try { amt = Convert.ToDouble(txtAmt.Text); }
+            catch { amt = 0.00; }
+            TextBox txtBonus = (TextBox)rp1.FindControl("txtBonus");
+            try { bonus = Convert.ToDouble(txtBonus.Text); }
+            catch { bonus = 0.00; }
+            TextBox txtScheme = (TextBox)rp1.FindControl("txtScheme");
+            try { scheme = Convert.ToDouble(txtScheme.Text); }
+            catch { scheme = 0.00; }
+            TextBox txtRD = (TextBox)rp1.FindControl("txtRD");
+            try { rd = Convert.ToDouble(txtRD.Text); }
+            catch { rd = 0.00; }
+            TextBox txtcanloan = (TextBox)rp1.FindControl("txtcanloan");
+            try { canloan = Convert.ToDouble(txtcanloan.Text); }
+            catch { canloan = 0.00; }
+            TextBox txtcashloan = (TextBox)rp1.FindControl("txtcashloan");
+            try { cashloan = Convert.ToDouble(txtcashloan.Text); }
+            catch { cashloan = 0.00; }
+            TextBox txtbankloan = (TextBox)rp1.FindControl("txtbankloan");
+            try { bankloan = Convert.ToDouble(txtbankloan.Text); }
+            catch { bankloan = 0.00; }
+            TextBox txtNetAmt = (TextBox)rp1.FindControl("txtNetAmt");
+
+            netamt = amt - (scheme + rd + canloan + cashloan + bankloan);
+            txtNetAmt.Text = Convert.ToString(netamt);
+
+        }
+
+     
     }
 }
