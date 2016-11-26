@@ -397,13 +397,13 @@ namespace DataAccess
             paramCollection.Add(new DBParameter("@BrandID", BrandID));
             return _DBHelper.ExecuteDataSet("SpGetOrdersForEdit", paramCollection, CommandType.StoredProcedure);
         }
-        public DataSet GetOrdersForCancel(string Date, int routeID)
+        public DataSet GetOrdersForCancel(string Date, int routeID, int flag)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
             paramCollection.Add(new DBParameter("@OrderDate", Date));
             paramCollection.Add(new DBParameter("@RouteID", routeID));
             paramCollection.Add(new DBParameter("@OrderId", 0));
-            paramCollection.Add(new DBParameter("@Flag", 0));
+            paramCollection.Add(new DBParameter("@Flag", flag));
             return _DBHelper.ExecuteDataSet("SpOrdersCancel", paramCollection, CommandType.StoredProcedure);
         }
         public DataSet GetOrdersbyOrderDetailsId(int id, int flag, double quantity)
@@ -436,14 +436,14 @@ namespace DataAccess
             return result;
         }
 
-        public int CancelOrderById(int id, int flag, int CancelBy)
+        public int CancelOrderById(int id, int flag, int CancelBy, string flag2)
         {
             int result = 0;
             try
             {
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
-                paramCollection.Add(new DBParameter("@OrderDate", string.Empty));
+                paramCollection.Add(new DBParameter("@OrderDate", flag2));
                 paramCollection.Add(new DBParameter("@OrderId", id));
                 paramCollection.Add(new DBParameter("@RouteId", CancelBy));
                 paramCollection.Add(new DBParameter("@flag", flag));

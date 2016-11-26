@@ -90,6 +90,7 @@
                   <li><a href="/Tabs/Administration/PlaceOrder.aspx"><i class="fa fa-circle-o"></i>  Daily Agency Order</a></li>
                   <li><a href="/Tabs/Administration/EditOrder.aspx"><i class="fa fa-circle-o"></i>Edit Order</a></li>
                   <li><a href="/Tabs/Administration/OrderQuantity.aspx"><i class="fa fa-circle-o"></i>Order Summary</a></li>
+                  <li><a href="/Tabs/Administration/CancelOrderM.aspx"><i class="fa fa-circle-o"></i>Cancel Orders</a></li>
                   <li><a href="/Tabs/Administration/BillSequence.aspx"><i class="fa fa-circle-o"></i> Bill Sequence</a></li>
                   <li><a href="/Tabs/Administration/GenrateBillThermal.aspx"><i class="fa fa-circle-o"></i>Generate Thermal Bill</a></li>
                   <li><a href="/Tabs/Administration/GenrateBill.aspx"><i class="fa fa-circle-o"></i> Generate Bill</a></li> 

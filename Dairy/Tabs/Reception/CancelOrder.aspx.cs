@@ -43,7 +43,7 @@ namespace Dairy.Tabs.Reception
             billdata = new BillData();
             DS = new DataSet();
 
-            DS = billdata.GetOrdersForCancel((Convert.ToDateTime(txtDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
+            DS = billdata.GetOrdersForCancel((Convert.ToDateTime(txtDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value),0);
 
 
             rpOrderList.DataSource = DS;
@@ -82,7 +82,7 @@ namespace Dairy.Tabs.Reception
             billdata = new BillData();
             int flag = 1;
             int CancelBy = GlobalInfo.Userid;
-            int result = billdata.CancelOrderById(id, flag, CancelBy);
+            int result = billdata.CancelOrderById(id, flag, CancelBy,string.Empty);
             if (result > 0)
             {
 

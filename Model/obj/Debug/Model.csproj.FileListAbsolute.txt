@@ -1,23 +1,5 @@
-D:\NanjilCode\Model\bin\Model.dll
-D:\NanjilCode\Model\bin\Model.pdb
-D:\NanjilCode\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
-D:\NanjilCode\Model\obj\Debug\Model.dll
-D:\NanjilCode\Model\obj\Debug\Model.pdb
-D:\NanjilCode\Nanjil\Model\bin\Model.dll
-D:\NanjilCode\Nanjil\Model\bin\Model.pdb
-D:\NanjilCode\Nanjil\Model\obj\Debug\Model.dll
-D:\NanjilCode\Nanjil\Model\obj\Debug\Model.pdb
-D:\NanjilCode\Nanjil\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
-D:\NanjilCode2\Nanjil2\Model\bin\Model.dll
-D:\NanjilCode2\Nanjil2\Model\bin\Model.pdb
-D:\NanjilCode2\Nanjil2\Model\obj\Debug\Model.dll
-D:\NanjilCode2\Nanjil2\Model\obj\Debug\Model.pdb
-<<<<<<< HEAD
 D:\NanjilCode2\Nanjil\Model\bin\Model.dll
 D:\NanjilCode2\Nanjil\Model\bin\Model.pdb
-D:\NanjilCode2\Nanjil\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\NanjilCode2\Nanjil\Model\obj\Debug\Model.dll
 D:\NanjilCode2\Nanjil\Model\obj\Debug\Model.pdb
-=======
-D:\NanjilCode2\Nanjil2\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
->>>>>>> origin/master
+D:\NanjilCode2\Nanjil\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
