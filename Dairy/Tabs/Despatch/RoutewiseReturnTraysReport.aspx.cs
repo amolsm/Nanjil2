@@ -33,7 +33,9 @@ namespace Dairy.Tabs.Despatch
         protected void btngenrateBill_Click(object sender, EventArgs e)
         {
             string result = string.Empty;
-            DS = dispatchData.GetRoutewiseReturnTraysReport((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
+
+            int flag = 1;
+            DS = dispatchData.GetRoutewiseReturnTraysReport((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value),flag);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 StringBuilder sb = new StringBuilder();
@@ -50,9 +52,9 @@ namespace Dairy.Tabs.Despatch
                 sb.Append("<col style = 'width:200px'>");
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:100px'>");
-                sb.Append("<col style = 'width:100px'>");
-                sb.Append("<col style = 'width:100px'>");
-           
+               
+
+
                 sb.Append("</colgroup>");
 
                 sb.Append("<tr>");
@@ -60,7 +62,7 @@ namespace Dairy.Tabs.Despatch
                 sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
                 sb.Append("</th>");
 
-                sb.Append("<th class='tg-baqh' colspan='5' style='text-align:center'>");
+                sb.Append("<th class='tg-baqh' colspan='3' style='text-align:center'>");
                 sb.Append("<u>RouteWise Return Trays Report</u> <br/>");
                 sb.Append("</th>");
 
@@ -71,7 +73,7 @@ namespace Dairy.Tabs.Despatch
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td class='tg-yw4l' colspan='5' style='text-align:center'>");
+                sb.Append("<td class='tg-yw4l' colspan='3' style='text-align:center'>");
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
 
                 sb.Append("</td>");
@@ -83,14 +85,14 @@ namespace Dairy.Tabs.Despatch
                 sb.Append("</td>");
 
                 sb.Append("<tr>");
-                sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
                 sb.Append("Start Date:" + Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l' colspan='3' style='text-align:right'>");
                 sb.Append("End Date:" + Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("<tr style='border-bottom:2px solid'>");
-                sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
 
                 if (Convert.ToInt32(dpRoute.SelectedItem.Value) == 0)
                 {
@@ -113,130 +115,207 @@ namespace Dairy.Tabs.Despatch
                 sb.Append("<b>Dispatch Date </b>");
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
-                sb.Append("<b>First Salesman</b>");
-                sb.Append("</td>");
+              
 
-                sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
-                sb.Append("<b>Second Salesman</b>");
-                sb.Append("</td>");
+              
 
                 sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
-                sb.Append("<b>Trays</b>");
+                sb.Append("<b>Out</b>");
                 sb.Append("</td>");
 
 
 
                 sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
-                sb.Append("<b>IceBox</b>");
+                sb.Append("<b>In</b>");
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
-                sb.Append("<b>Cartons</b>");
+                sb.Append("<b>Excess</b>");
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
-                sb.Append("<b>Other</b>");
+                sb.Append("<b>Short</b>");
                 sb.Append("</td>");
 
                 sb.Append("</tr>");
-                int count = 0;
-                int trays = 0;
-                int totaltrays = 0;
-                int icebox = 0;
-                int totalicebox = 0;
-                int carton = 0;
-                int totalcarton = 0;
-                int other = 0;
-                int totalother = 0;
+                int count1 = 0;
+                int outtrays1 = 0;
+                int intrays1 = 0;
+                int excesstrays1 = 0;
+                int shorttrays1 = 0;
+                int totalouttrays1 = 0;
+                int totalintrays1 = 0;
+                int totalexcesstrays1 = 0;
+                int totalshorttrays1 = 0;
+
                 foreach (DataRow row in DS.Tables[0].Rows)
                 {
-                    count++;
-                    sb.Append("<tr>");
+                    count1++;
+                    sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '5'> &nbsp; </td> </tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
 
 
-                    sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
-                    sb.Append(row["DispatchDate"].ToString());
+                    sb.Append("<td class='tg-yw4l' colspan='5'  style='text-align:left'>");
+                    sb.Append("<b>" + row["RouteCode"] + "</b>");
+                    sb.Append("&nbsp;&nbsp;");
+                    sb.Append("<b>" + row["RouteName"] + "</b>");
                     sb.Append("</td>");
+                    int count = 0;
+                    int outtrays = 0;
+                    int intrays = 0;
+                    int excesstrays = 0;
+                    int shorttrays = 0;
+                    int totalouttrays = 0;
+                    int totalintrays = 0;
+                    int totalexcesstrays = 0;
+                    int totalshorttrays = 0;
+                    foreach (DataRow rows in DS.Tables[1].Rows)
+                    {
+                        if (row["RouteCode"].ToString() == rows["RouteCode"].ToString())
+                        {
+                            count++;
+                            sb.Append("<tr>");
 
-                    sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                    sb.Append(row["FirstSalesman"].ToString());
+
+                            sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
+                            sb.Append(rows["DispatchDate"].ToString());
+                            sb.Append("</td>");
+
+
+
+
+                            sb.Append("<td class='tg-yw4l' style='text-align:right'>");
+                            try
+                            {
+                                outtrays = Convert.ToInt32(rows["TraysDispached"]);
+                            }
+                            catch { outtrays = 0; }
+
+                            sb.Append(outtrays.ToString());
+                            totalouttrays += outtrays;
+                            sb.Append("</td>");
+
+                            sb.Append("<td class='tg-yw4l' style='text-align:right'>");
+                            try
+                            {
+                                intrays = Convert.ToInt32(rows["TraysReturned"]);
+                            }
+                            catch { intrays = 0; }
+
+                            sb.Append(intrays.ToString());
+                            totalintrays += intrays;
+                            sb.Append("</td>");
+
+                            sb.Append("<td class='tg-yw4l' style='text-align:right'>");
+                            try
+                            {
+                                excesstrays = intrays - outtrays;
+                            }
+                            catch { excesstrays = 0; }
+                            if (excesstrays < 0)
+                            { excesstrays = 0; }
+                            sb.Append(excesstrays.ToString());
+                            totalexcesstrays += excesstrays;
+                            sb.Append("</td>");
+
+                            sb.Append("<td class='tg-yw4l' style='text-align:right'>");
+                            try
+                            {
+                                shorttrays = outtrays - intrays;
+                            }
+                            catch { shorttrays = 0; }
+                            if (shorttrays < 0)
+                            { shorttrays = 0; }
+                            sb.Append(shorttrays.ToString());
+                            totalshorttrays += shorttrays;
+                            sb.Append("</td>");
+
+                            sb.Append("</tr>");
+
+                        }
+                    }
+                    sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '5'> &nbsp; </td> </tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<td class='tg-yw4l' style='text-align:left'>");
+                    sb.Append("<b>"+"SubTotal&nbsp;&nbsp;"+count1.ToString()+"</b>");
                     sb.Append("</td>");
+                    sb.Append("<td class='tg-yw4l' style='text-align:right'>");
+                    try
+                    {
+                        outtrays1 = Convert.ToInt32(row["TraysDispached"]);
+                    }
+                    catch { outtrays1 = 0; }
 
-                    sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                    sb.Append(row["SecondSalesman"].ToString());
+                    sb.Append("<b>"+outtrays1.ToString()+"</b>");
+                    totalouttrays1 += outtrays1;
                     sb.Append("</td>");
 
                     sb.Append("<td class='tg-yw4l' style='text-align:right'>");
                     try
                     {
-                        trays = Convert.ToInt32(row["TraysReturned"]);
+                        intrays1 = Convert.ToInt32(row["TraysReturned"]);
                     }
-                    catch { trays = 0; }
-                    totaltrays += trays;
-                    sb.Append(trays.ToString());
+                    catch { intrays1 = 0; }
+
+                    sb.Append("<b>"+intrays1.ToString()+ "</b>");
+                    totalintrays1 += intrays1;
                     sb.Append("</td>");
 
                     sb.Append("<td class='tg-yw4l' style='text-align:right'>");
                     try
                     {
-                        icebox = Convert.ToInt32(row["IceBoxReturned"]);
+                        excesstrays1 = intrays1 - outtrays1;
                     }
-                    catch { icebox = 0; }
-
-                    sb.Append(icebox.ToString());
+                    catch { excesstrays1 = 0; }
+                    if (excesstrays1 < 0)
+                    { excesstrays1 = 0; }
+                    sb.Append("<b>"+excesstrays1.ToString()+ "</b>");
+                    totalexcesstrays1 += excesstrays1;
                     sb.Append("</td>");
 
                     sb.Append("<td class='tg-yw4l' style='text-align:right'>");
                     try
                     {
-                        carton = Convert.ToInt32(row["CartonsReturned"]);
+                        shorttrays1 = outtrays1 - intrays1;
                     }
-                    catch { carton = 0; }
-                    sb.Append(carton.ToString());
-                    sb.Append("</td>");
-
-                    sb.Append("<td class='tg-yw4l' style='text-align:right'>");
-                    try
-                    {
-                        other = Convert.ToInt32(row["OtherReturned"]);
-                    }
-                    catch { other = 0; }
-                    sb.Append(other.ToString());
+                    catch { shorttrays1 = 0; }
+                    if (shorttrays1 < 0)
+                    { shorttrays1 = 0; }
+                    sb.Append("<b>"+shorttrays1.ToString()+ "</b>");
+                    totalshorttrays1 += shorttrays1;
                     sb.Append("</td>");
 
                     sb.Append("</tr>");
 
+
                 }
+                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '5'> &nbsp; </td> </tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
 
+              
 
                 sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
-                sb.Append("<b>Total</b>");
-                sb.Append("</td>");
-
-                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:center'>");
-                sb.Append("<b>"+count+"</b>");
+                sb.Append("<b>" + "Total&nbsp;&nbsp;" + count1.ToString() + "</b>");
                 sb.Append("</td>");
 
           
 
                 sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
-                sb.Append("<b>Trays</b>");
+                sb.Append("<b>"+totalouttrays1+"</b>");
                 sb.Append("</td>");
 
 
 
                 sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
-                sb.Append("<b>IceBox</b>");
+                sb.Append("<b>"+totalintrays1+"</b>");
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
-                sb.Append("<b>Cartons</b>");
+                sb.Append("<b>"+totalexcesstrays1+"</b>");
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
-                sb.Append("<b>Other</b>");
+                sb.Append("<b>"+totalshorttrays1+"</b>");
                 sb.Append("</td>");
 
                 sb.Append("</tr>");

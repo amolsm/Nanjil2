@@ -48,7 +48,28 @@ namespace DataAccess
             return DS;
         }
 
-        public DataSet GetRoutewiseReturnTraysReport(string startdate, string enddate, int routeid)
+        public DataSet GetSalesManWiseReturnedTraysReport(string startdate, string enddate, int salesmanid,int flag)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@DispatchBeginDate", startdate));
+                paramCollection.Add(new DBParameter("@DispatchEndDate", enddate));
+                paramCollection.Add(new DBParameter("@SalesmanId", salesmanid));
+                paramCollection.Add(new DBParameter("@flag", flag));
+                DS = _DBHelper.ExecuteDataSet("sp_SalesmanwiseReturnedTraysReport", paramCollection, CommandType.StoredProcedure);
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return DS;
+        }
+
+        public DataSet GetRoutewiseReturnTraysReport(string startdate, string enddate, int routeid,int flag)
         {
             DataSet DS = new DataSet();
             try
@@ -58,6 +79,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@DispatchBeginDate", startdate));
                 paramCollection.Add(new DBParameter("@DispatchEndDate", enddate));
                 paramCollection.Add(new DBParameter("@RouteID", routeid));
+                paramCollection.Add(new DBParameter("@flag", flag));
                 DS = _DBHelper.ExecuteDataSet("sp_GetRoutewiseReturnTraysReport", paramCollection, CommandType.StoredProcedure);
             }
             catch (Exception)

@@ -49,9 +49,14 @@ namespace Bussiness
             return dbDispatch.GenerateDispatchSummary(id);
         }
 
-        public DataSet GetRoutewiseReturnTraysReport(string startdate, string enddate, int routeid)
+        public DataSet GetSalesManWiseReturnedTraysReport(string startdate, string enddate, int salesmanid,int flag)
         {
-            return dbDispatch.GetRoutewiseReturnTraysReport(startdate,enddate,routeid);
+            return dbDispatch.GetSalesManWiseReturnedTraysReport(startdate, enddate, salesmanid,flag);
+        }
+
+        public DataSet GetRoutewiseReturnTraysReport(string startdate, string enddate, int routeid,int flag)
+        {
+            return dbDispatch.GetRoutewiseReturnTraysReport(startdate,enddate,routeid,flag);
         }
 
         public DataSet GetDispatchLists(Dispatch disp)
