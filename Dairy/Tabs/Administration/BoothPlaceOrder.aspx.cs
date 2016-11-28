@@ -32,7 +32,7 @@ namespace Dairy.Tabs.Administration
             //this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('You clicked YES!')", true);
             Invoice invocie = new Invoice();
             InvoiceData invicedata = new InvoiceData();
-            PlaceOrder po = new PlaceOrder();
+            // PlaceOrder po = new PlaceOrder();
             //invocie.AgencyID = Convert.ToInt32(dpAgent.SelectedItem.Value);
             //invocie.AgencyID = Convert.ToInt32(po.txtAgentId.Text);
             invocie.AgencyID = id;
@@ -52,7 +52,7 @@ namespace Dairy.Tabs.Administration
                 dpagentRoute.DataBind();
                 dpagentRoute.Items.Insert(0, new ListItem("--Select Agent Route  --", "0"));
 
-               
+
 
             }
 
@@ -71,7 +71,7 @@ namespace Dairy.Tabs.Administration
                 dpBrand.DataBind();
                 dpBrand.Items.Insert(0, new ListItem("--Select Brand  --", "0"));
             }
-              DS.Clear();
+            DS.Clear();
             DS = BindCommanData.BindCommanDropDwon("TypeID", "TypeName", "TypeMaster", "IsArchive=1 ");
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
@@ -87,7 +87,7 @@ namespace Dairy.Tabs.Administration
 
             //  DS = BindCommanData.BindTypeDropDwon("Products.productId", "ProductName+' '+Productcode as product", " TypeMaster ", " BindSlab", " TypeMaster.TypeID = BindSlab.TypeID ", "BindSlab.AgentID = 110 ");
 
-            DS = BindCommanData.BindTypeDropDwon("Products.productId", "Products.ProductName+' '+Products.Productcode as product", "Products", "BindSlab", "Products.TypeID = Bindslab.TypeID", "Products.TypeID =" + Convert.ToInt32(dpAgentProductType.SelectedItem.Value) + " and BindSlab.AgentID =" + Convert.ToInt32(dpAgent.SelectedItem.Value) + " and BindSlab.SlabID = Products.SlabID  Order by Products.ProductName");
+            DS = BindCommanData.BindTypeDropDwon("Products.productId", "Products.ProductName+' '+Products.Productcode as product", "Products", "BindSlab", "Products.TypeID = Bindslab.TypeID", "Products.TypeID =" + Convert.ToInt32(dpAgentProductType.SelectedItem.Value) + " and BindSlab.AgentID =" + Convert.ToInt32(dpAgent.SelectedItem.Value) + " and BindSlab.SlabID = Products.SlabID order by Products.ProductName");
 
             // DS = BindCommanData.BindCommanDropDwon("Products.ProductID", "Commodity.CommodityName+' '+Products.ProductName as product", "Commodity, Products", "   Products.CommodityID = Commodity.CommodityID");
 
@@ -99,7 +99,7 @@ namespace Dairy.Tabs.Administration
 
 
         }
-         protected void dpAgentpre_SelectedIndexChanged(object sender, EventArgs e)
+        protected void dpAgentpre_SelectedIndexChanged(object sender, EventArgs e)
         {
             Invoice invocie = new Invoice();
             InvoiceData invicedata = new InvoiceData();
@@ -133,30 +133,30 @@ namespace Dairy.Tabs.Administration
 
 
         }
-         public void BindAgntTempItam(Invoice invocie)
-         {
-             InvoiceData invicedata = new InvoiceData();
-             rpAgentOrderdetails.DataSource = invicedata.GetTempItam(invocie);
-             rpAgentOrderdetails.DataBind();
-         }
+        public void BindAgntTempItam(Invoice invocie)
+        {
+            InvoiceData invicedata = new InvoiceData();
+            rpAgentOrderdetails.DataSource = invicedata.GetTempItam(invocie);
+            rpAgentOrderdetails.DataBind();
+        }
 
-         protected void btnAddAgentProductItem_click(object sender, EventArgs e)
-         {
+        protected void btnAddAgentProductItem_click(object sender, EventArgs e)
+        {
 
-             Invoice invocie = new Invoice();
-             InvoiceData invicedata = new InvoiceData();
-             invocie.TokanId = hftokanno.Value;
-             invocie.UserID = GlobalInfo.Userid;
-             invocie.TypeID = Convert.ToInt32(dpAgentProductType.SelectedItem.Value);
-             invocie.ProductID = Convert.ToInt32(dpAgentProductdetaisl.SelectedItem.Value);
-             invocie.qty = Convert.ToDouble(txtagentOrderqty.Text);
-             invocie.UnitCost = Convert.ToDouble(hfAgentProductUnitPrice.Value);
-             invocie.totalCoast = Convert.ToDouble(txtagentOrderqty.Text) * Convert.ToDouble(hfAgentProductUnitPrice.Value);
-
+            Invoice invocie = new Invoice();
+            InvoiceData invicedata = new InvoiceData();
+            invocie.TokanId = hftokanno.Value;
+            invocie.UserID = GlobalInfo.Userid;
+            invocie.TypeID = Convert.ToInt32(dpAgentProductType.SelectedItem.Value);
+            invocie.ProductID = Convert.ToInt32(dpAgentProductdetaisl.SelectedItem.Value);
+            invocie.qty = Convert.ToDouble(txtagentOrderqty.Text);
+            invocie.UnitCost = Convert.ToDouble(hfAgentProductUnitPrice.Value);
+            invocie.totalCoast = Convert.ToDouble(txtagentOrderqty.Text) * Convert.ToDouble(hfAgentProductUnitPrice.Value);
             int flag = 1;
             bool result = invicedata.CheckTempInvoiceItam(invocie, flag);
             if (!result)
             {
+                txtagentOrderqty.Text = string.Empty;
                 invicedata.InsertTempInvoiceItam(invocie);
                 BindAgntTempItam(invocie);
             }
@@ -165,185 +165,179 @@ namespace Dairy.Tabs.Administration
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Item already exists')", true);
             }
         }
-         public void dpAgentProductdetaisl_SelectedIndexChanged(object sender, EventArgs e)
-         {
-             hfAgentProductUnitPrice.Value = "0";
-         }
-         public void btnAgentORderSubmit_click(object sender, EventArgs e)
-         {
-             int result = 0;
-             Invoice inovice = new Invoice();
-             InvoiceData invoiceData = new InvoiceData();
-             inovice.orderDate = (Convert.ToDateTime(txtGentOrderDate.Text)).ToString("dd-MM-yyyy");
-             inovice.AgencyID = Convert.ToInt32(dpAgent.SelectedItem.Value);
+        public void dpAgentProductdetaisl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            hfAgentProductUnitPrice.Value = "0";
+        }
+        public void btnAgentORderSubmit_click(object sender, EventArgs e)
+        {
+            int result = 0;
+            Invoice inovice = new Invoice();
+            InvoiceData invoiceData = new InvoiceData();
+            inovice.orderDate = (Convert.ToDateTime(txtGentOrderDate.Text)).ToString("dd-MM-yyyy");
+            inovice.AgencyID = Convert.ToInt32(dpAgent.SelectedItem.Value);
 
-             inovice.ROuteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
-             inovice.SaleEmployeeId = 0;//Convert.ToInt32(dpAgentSelasEMployee.SelectedItem.Value);
-             inovice.totalCoast = string.IsNullOrEmpty(hftotalAmout.Value) ? 0 : Comman.Comman.IsValidInteger(hftotalAmout.Value) ? Convert.ToDouble(hftotalAmout.Value) : 0;
-             inovice.CreatedBy = GlobalInfo.Userid;
-             inovice.CreatedDate = DateTime.Now.ToString("MM-dd-yyyy");
-             inovice.TokanId = hftokanno.Value;
+            inovice.ROuteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
+            inovice.SaleEmployeeId = 0;//Convert.ToInt32(dpAgentSelasEMployee.SelectedItem.Value);
+            inovice.totalCoast = string.IsNullOrEmpty(hftotalAmout.Value) ? 0 : Comman.Comman.IsValidInteger(hftotalAmout.Value) ? Convert.ToDouble(hftotalAmout.Value) : 0;
+            inovice.CreatedBy = GlobalInfo.Userid;
+            inovice.CreatedDate = DateTime.Now.ToString("MM-dd-yyyy");
+            inovice.TokanId = hftokanno.Value;
             inovice.TotalSchemeAmount = 0;
 
             inovice.ShecemeApplied = false;
 
-             inovice.orderType = 1;// Agent order
-            DataSet chkds = new DataSet();
-            int chkflg = 2;
-            chkds = invoiceData.CheckBoothTemp(inovice, chkflg);
-            if (!Comman.Comman.IsDataSetEmpty(chkds))
+            inovice.orderType = 1;// Agent order
+            result = invoiceData.InsertOrder(inovice);
+            if (result > 0)
             {
-                result = invoiceData.InsertOrder(inovice);
+                clearAgentValues();
+                BindAgntTempItam(inovice);
+                divDanger.Visible = false;
+                divwarning.Visible = false;
+                divSusccess.Visible = true;
+                pnlError.Update();
+                upMain.Update();
             }
-             if (result > 0)
-             {
-                 clearAgentValues();
-                 BindAgntTempItam(inovice);
-                 divDanger.Visible = false;
-                 divwarning.Visible = false;
-                 divSusccess.Visible = true;
-                 pnlError.Update();
-                 upMain.Update();
-             }
-             else
-             {
-                 divDanger.Visible = false;
-                 divwarning.Visible = true;
-                 divSusccess.Visible = false;
-                 lblwarning.Text = "Please Contact to Site Admin";
-                 pnlError.Update();
-             }
+            else
+            {
+                divDanger.Visible = false;
+                divwarning.Visible = true;
+                divSusccess.Visible = false;
+                lblwarning.Text = "Please Contact to Site Admin";
+                pnlError.Update();
+            }
 
 
 
-         }
-         public void clearAgentValues()
-         {
-             txtagentOrderqty.Text = string.Empty;
-             // txtGentOrderDate.Text = string.Empty;
-             //dpAgentSelasEMployee.ClearSelection();
-             //dpagentRoute.ClearSelection();
-             dpAgent.ClearSelection();
-             dpAgentProductdetaisl.ClearSelection();
-             dpAgentProductType.ClearSelection();
-            
+        }
+        public void clearAgentValues()
+        {
+            txtagentOrderqty.Text = string.Empty;
+            // txtGentOrderDate.Text = string.Empty;
+            //dpAgentSelasEMployee.ClearSelection();
+            //dpagentRoute.ClearSelection();
+            dpAgent.ClearSelection();
+            dpAgentProductdetaisl.ClearSelection();
+            dpAgentProductType.ClearSelection();
 
 
-         }
-         public void btnagentItamsremove_click(object sender, EventArgs e)
-         {
-             RemoveAllItam();
-         }
-         public void btnAgentNewOrder_clcik(object sender, EventArgs e)
-         {
-             clearAgentValues();
-             RemoveAllItam();
-             upMain.Update();
 
-             divDanger.Visible = false;
-             divwarning.Visible = false;
-             divSusccess.Visible = false;
-             pnlError.Update();
+        }
+        public void btnagentItamsremove_click(object sender, EventArgs e)
+        {
+            RemoveAllItam();
+        }
+        public void btnAgentNewOrder_clcik(object sender, EventArgs e)
+        {
+            clearAgentValues();
+            RemoveAllItam();
+            upMain.Update();
 
-
-         }
-         protected void rpOrderitam_OnDataBinding(object sender, RepeaterItemEventArgs e)
-         {
-             RepeaterItem item = e.Item;
-             if (item.ItemType == ListItemType.AlternatingItem || item.ItemType == ListItemType.Item)
-             {
-                 // HtmlGenericControl li = (HtmlGenericControl)item.FindControl("li");
-                 Label lbltotal = (Label)item.FindControl("lbltotal");
-                 //Label lblType = (Label)item.FindControl("lblType");
-                 //if (lblType != null && string.IsNullOrEmpty(lblType.Text))
-                 //{
-                 //    lblType.Text = "Scheme Amount";
-                 //}
-                 if (lbltotal != null)
-                 {
-                     total = total + (string.IsNullOrEmpty(lbltotal.Text) ? 0 : Convert.ToDouble(lbltotal.Text));
-                 }
-             }
-             if (item.ItemType == ListItemType.Footer || item.ItemType == ListItemType.Item)
-             {
-                 // HtmlGenericControl li = (HtmlGenericControl)item.FindControl("li");
-                 Label lblFInaltotal = (Label)item.FindControl("lblFInaltotal");
-                 if (lblFInaltotal != null)
-                 {
-                     lblFInaltotal.Text = total.ToString("#0.00");
-                     hftotalAmout.Value = total.ToString("#0.00");
-                 }
-
-             }
-         }
-         public void RemoveAllItam()
-         {
-             Invoice invocie = new Invoice();
-             InvoiceData invicedata = new InvoiceData();
-             invocie.TokanId = hftokanno.Value;
-             invocie.UserID = GlobalInfo.Userid;
-             invicedata.DeleteItes(invocie);
-             BindAgntTempItam(invocie);
-             upMain.Update();
-         }
-         protected void RemoveTempID(int tempID)
-         {
-             InvoiceData invicedata = new InvoiceData();
-             invicedata.TempDelete(tempID);
-
-         }
-
-         protected void dpagentRoute_SelectedIndexChanged(object sender, EventArgs e)
-         {
-
-             DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentCode+' '+AgentName as Name", "AgentMaster", "RouteID=" + dpagentRoute.SelectedItem.Value.ToString()+ "and IsArchive=0 and Agensytype='Booth'");
-             if (!Comman.Comman.IsDataSetEmpty(DS))
-             {
-                 dpAgent.ClearSelection();
-                 dpAgent.DataSource = DS;
-                 dpAgent.DataBind();
-                 dpAgent.Items.Insert(0, new ListItem("--Select Agent  --", "0"));
-                 dpAgent.Focus();
-             }
-
-         }
-         protected void dpBrand_SelectedIndexChanged(object sender, EventArgs e)
-         {
-
-             DS = BindCommanData.BindCommanDropDwon("TypeID", "TypeName", "TypeMaster", "IsArchive=1 and CategoryId =" + dpBrand.SelectedItem.Value.ToString());
-             if (!Comman.Comman.IsDataSetEmpty(DS))
-             {
-                 dpAgentProductType.ClearSelection();
-                 dpAgentProductType.DataSource = DS;
-                 dpAgentProductType.DataBind();
-                 dpAgentProductType.Items.Insert(0, new ListItem("--Select Product Type  --", "0"));
-                 dpAgentProductType.Focus();
-
-             }
-         }
-         protected void rpOrderitam_ItemCommand(object sender, RepeaterCommandEventArgs e)
-         {
-
-             int TempID = 0;
-             TempID = Convert.ToInt32(e.CommandArgument);
-             switch (e.CommandName)
-             {
-                 case ("delete"):
-                     {
+            divDanger.Visible = false;
+            divwarning.Visible = false;
+            divSusccess.Visible = false;
+            pnlError.Update();
 
 
-                         Invoice invocie = new Invoice();
-                         RemoveTempID(TempID);
-                         invocie.TokanId = hftokanno.Value;
-                         invocie.UserID = GlobalInfo.Userid;
-                         BindAgntTempItam(invocie);
-                         upMain.Update();
+        }
+        protected void rpOrderitam_OnDataBinding(object sender, RepeaterItemEventArgs e)
+        {
+            RepeaterItem item = e.Item;
+            if (item.ItemType == ListItemType.AlternatingItem || item.ItemType == ListItemType.Item)
+            {
+                // HtmlGenericControl li = (HtmlGenericControl)item.FindControl("li");
+                Label lbltotal = (Label)item.FindControl("lbltotal");
+                //Label lblType = (Label)item.FindControl("lblType");
+                //if (lblType != null && string.IsNullOrEmpty(lblType.Text))
+                //{
+                //    lblType.Text = "Scheme Amount";
+                //}
+                if (lbltotal != null)
+                {
+                    total = total + (string.IsNullOrEmpty(lbltotal.Text) ? 0 : Convert.ToDouble(lbltotal.Text));
+                }
+            }
+            if (item.ItemType == ListItemType.Footer || item.ItemType == ListItemType.Item)
+            {
+                // HtmlGenericControl li = (HtmlGenericControl)item.FindControl("li");
+                Label lblFInaltotal = (Label)item.FindControl("lblFInaltotal");
+                if (lblFInaltotal != null)
+                {
+                    lblFInaltotal.Text = total.ToString("#0.00");
+                    hftotalAmout.Value = total.ToString("#0.00");
+                }
 
-                         break;
-                     }
+            }
+        }
+        public void RemoveAllItam()
+        {
+            Invoice invocie = new Invoice();
+            InvoiceData invicedata = new InvoiceData();
+            invocie.TokanId = hftokanno.Value;
+            invocie.UserID = GlobalInfo.Userid;
+            invicedata.DeleteItes(invocie);
+            BindAgntTempItam(invocie);
+            upMain.Update();
+        }
+        protected void RemoveTempID(int tempID)
+        {
+            InvoiceData invicedata = new InvoiceData();
+            invicedata.TempDelete(tempID);
 
-             }
-         }
+        }
+
+        protected void dpagentRoute_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentCode+' '+AgentName as Name", "AgentMaster", "RouteID=" + dpagentRoute.SelectedItem.Value.ToString() + "and IsArchive=0 and Agensytype='Booth'");
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpAgent.ClearSelection();
+                dpAgent.DataSource = DS;
+                dpAgent.DataBind();
+                dpAgent.Items.Insert(0, new ListItem("--Select Agent  --", "0"));
+                dpAgent.Focus();
+            }
+
+        }
+        protected void dpBrand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            DS = BindCommanData.BindCommanDropDwon("TypeID", "TypeName", "TypeMaster", "IsArchive=1 and CategoryId =" + dpBrand.SelectedItem.Value.ToString());
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpAgentProductType.ClearSelection();
+                dpAgentProductType.DataSource = DS;
+                dpAgentProductType.DataBind();
+                dpAgentProductType.Items.Insert(0, new ListItem("--Select Product Type  --", "0"));
+                dpAgentProductType.Focus();
+
+            }
+        }
+        protected void rpOrderitam_ItemCommand(object sender, RepeaterCommandEventArgs e)
+        {
+
+            int TempID = 0;
+            TempID = Convert.ToInt32(e.CommandArgument);
+            switch (e.CommandName)
+            {
+                case ("delete"):
+                    {
+
+
+                        Invoice invocie = new Invoice();
+                        RemoveTempID(TempID);
+                        invocie.TokanId = hftokanno.Value;
+                        invocie.UserID = GlobalInfo.Userid;
+                        BindAgntTempItam(invocie);
+                        upMain.Update();
+
+                        break;
+                    }
+
+            }
+        }
     }
 
 }

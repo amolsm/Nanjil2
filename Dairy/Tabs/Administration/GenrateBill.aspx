@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GenrateBill.aspx.cs" Inherits="Dairy.Tabs.Administration.GenrateBill" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link rel="stylesheet" href="http://localhost:2367/code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-            <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-            <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   <%--  <script type="text/javascript">
@@ -30,10 +30,10 @@
         <section class="content-header">
           <h1>
              Generate Bill
-            <small>Administration</small>    
+            <small>Reception</small>    
           </h1> 
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Reception</a></li>
             <li class="active">Generate bill Info</li>
           </ol>
         </section>

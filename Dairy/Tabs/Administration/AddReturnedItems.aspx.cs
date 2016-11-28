@@ -43,7 +43,31 @@ namespace Dairy.Tabs.Administration
 
         }
 
-
+        //[WebMethod]
+        //public static string[] GetCustomers(string prefix)
+        //{
+        //    List<string> customers = new List<string>();
+        //    using (SqlConnection conn = new SqlConnection())
+        //    {
+        //        conn.ConnectionString = ConfigurationManager.ConnectionStrings["projectConnection"].ConnectionString;
+        //        using (SqlCommand cmd = new SqlCommand())
+        //        {
+        //            cmd.CommandText = "select AgentName, AgentID from AgentMaster where AgentName like @SearchText + '%'";
+        //            cmd.Parameters.AddWithValue("@SearchText", prefix);
+        //            cmd.Connection = conn;
+        //            conn.Open();
+        //            using (SqlDataReader sdr = cmd.ExecuteReader())
+        //            {
+        //                while (sdr.Read())
+        //                {
+        //                    customers.Add(string.Format("{0}-{1}", sdr["AgentName"], sdr["AgentID"]));
+        //                }
+        //            }
+        //            conn.Close();
+        //        }
+        //    }
+        //    return customers.ToArray();
+        //}
 
         protected void btnClick_btnSearch(object sender, EventArgs e)
         {
@@ -126,7 +150,7 @@ namespace Dairy.Tabs.Administration
             disp.ReturnGoodQuality = string.IsNullOrEmpty(txtGoodQuality.Text) ? 0 : Convert.ToDouble(txtGoodQuality.Text);
             if (disp.ReturnSample >= 0 && disp.ReturnSpotDamage >= 0 && disp.ReturnGoodQuality >= 0)
             {
-                if (temp <= (disp.ReturnSample + disp.ReturnGoodQuality + disp.ReturnSpotDamage))
+                if (temp < (disp.ReturnSample + disp.ReturnGoodQuality + disp.ReturnSpotDamage))
                 {
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
                 }

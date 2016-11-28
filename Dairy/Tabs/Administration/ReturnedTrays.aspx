@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ReturnedTrays.aspx.cs" Inherits="Dairy.Tabs.Administration.ReturnedTrays" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+   <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
     
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   
@@ -14,7 +14,7 @@
           </h1>
 
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Dispatch</a></li>
             <li class="active">Manage Returned Items</li>
           </ol>
         </section>
@@ -70,7 +70,7 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <%--<i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
+                       <%-- <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
                           <asp:Label runat="server" Text="Trays"></asp:Label>
                       </div>
                        <asp:TextBox ID="txtTraysReturn" class="form-control" ToolTip="Trays Return"  placeholder="Trays Return" runat="server" ValidationGroup="edit" ></asp:TextBox>                        
@@ -98,7 +98,7 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <%--<i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
+                       <%-- <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
                           <asp:Label runat="server" Text="Cartons"></asp:Label>
                       </div>
                        <asp:TextBox ID="txtCartonsReturn" ToolTip="Cartons Return" class="form-control" ValidationGroup="edit"  placeholder="Cartons Return" runat="server" ></asp:TextBox>                        
@@ -112,7 +112,7 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                     <%--   <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
+                        <%--<i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
                           <asp:Label runat="server" Text="Others"></asp:Label>
                       </div>
                        <asp:TextBox ID="txtOtherReturn" class="form-control" ValidationGroup="edit" ToolTip="Other Return" placeholder="Other Return" runat="server" ></asp:TextBox>                        

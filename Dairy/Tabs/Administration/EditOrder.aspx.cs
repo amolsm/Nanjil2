@@ -102,15 +102,45 @@ namespace Dairy.Tabs.Administration
             DS = billdata.GetOrdersbyOrderDetailsId(id, flag, qty);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                txtName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["EmployeeName"].ToString()) ? DS.Tables[0].Rows[0]["AgentName"].ToString() : DS.Tables[0].Rows[0]["EmployeeName"].ToString();
-                txtProductName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ProductName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ProductName"].ToString();
-                txtPrvQuantity.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Qty"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Qty"].ToString();
-                //txtIfsc.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IFSCcode"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["IFSCcode"].ToString();
-                txtNewQuantity.Text = string.Empty;
+                if (!string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ProductName"].ToString()))
+                {
+                    txtName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["EmployeeName"].ToString()) ? DS.Tables[0].Rows[0]["AgentName"].ToString() : DS.Tables[0].Rows[0]["EmployeeName"].ToString();
+                    txtProductName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ProductName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ProductName"].ToString();
+                    txtPrvQuantity.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Qty"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Qty"].ToString();
+                    txtNewQuantity.Text = string.Empty;
+                    //txtIfsc.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IFSCcode"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["IFSCcode"].ToString();
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                }
+                else
+                {
 
+                    flag = 3;
+
+                    int result = billdata.EditOrders(id, flag, qty);
+                    if (result > 0)
+                    {
+
+                        divDanger.Visible = false;
+                        divwarning.Visible = false;
+                        divSusccess.Visible = true;
+                        lblSuccess.Text = "Edited  Successfully";
+                        pnlError.Update();
+                        bindList();
+                        uprouteList.Update();
+                    }
+                    else
+                    {
+                        divDanger.Visible = false;
+                        divwarning.Visible = true;
+                        divSusccess.Visible = false;
+                        lblwarning.Text = "Please Contact to Site Admin";
+                        pnlError.Update();
+
+                    }
+                }
 
             }
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+
         }
 
         protected void btnCloseModal_Click(object sender, EventArgs e)
@@ -120,38 +150,45 @@ namespace Dairy.Tabs.Administration
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            string confirmValue = Request.Form["confirm_value"];
-            if (confirmValue == "Yes")
+
+            DS = new DataSet();
+            billdata = new BillData();
+            int id = Convert.ToInt32(hbankId.Value);
+            int result = 0;
+
+            double qty = string.IsNullOrEmpty(txtNewQuantity.Text) ? 0 : Convert.ToDouble(txtNewQuantity.Text);
+            if (qty != 0)
+            {
+                int flag = 2;
+                result = billdata.EditOrders(id, flag, qty);
+            }
+            else
+            {
+                int flag = 4;
+                result = billdata.EditOrders(id, flag, qty);
+            }
+
+            if (result > 0)
             {
 
-
-                DS = new DataSet();
-                billdata = new BillData();
-                int id = Convert.ToInt32(hbankId.Value);
-                int flag = 2;
-                double qty = Convert.ToDouble(txtNewQuantity.Text);
-                int result = billdata.EditOrders(id, flag, qty);
-                if (result > 0)
-                {
-
-                    divDanger.Visible = false;
-                    divwarning.Visible = false;
-                    divSusccess.Visible = true;
-                    lblSuccess.Text = "Edited  Successfully";
-                    pnlError.Update();
-                    bindList();
-                    uprouteList.Update();
-                }
-                else
-                {
-                    divDanger.Visible = false;
-                    divwarning.Visible = true;
-                    divSusccess.Visible = false;
-                    lblwarning.Text = "Please Contact to Site Admin";
-                    pnlError.Update();
-
-                }
+                divDanger.Visible = false;
+                divwarning.Visible = false;
+                divSusccess.Visible = true;
+                lblSuccess.Text = "Edited  Successfully";
+                pnlError.Update();
+                bindList();
+                uprouteList.Update();
             }
+            else
+            {
+                divDanger.Visible = false;
+                divwarning.Visible = true;
+                divSusccess.Visible = false;
+                lblwarning.Text = "Please Contact to Site Admin";
+                pnlError.Update();
+
+            }
+
         }
     }
 }

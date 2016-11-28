@@ -1,11 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddReturnedItems.aspx.cs" Inherits="Dairy.Tabs.Administration.AddReturnedItems" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
-    
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+     <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
+     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   <script type="text/javascript">
@@ -25,14 +24,14 @@
           });
       }
     </script>
-   
+   <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
     <section class="content-header">
           <h1>
              Manage Returned Items
           </h1>
 
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Dispatch</a></li>
             <li class="active">Manage Returned Items</li>
           </ol>
         </section>
@@ -132,7 +131,56 @@
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
                          </div>
-       
+       <%--        <div class="col-lg-3">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:TextBox ID="txtCatsearch" class="form-control" ValidationGroup="edit" ToolTip="Sample Return" placeholder="Sample Return" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+    
+                      </div>        <!-- -->
+            <div class="col-lg-3">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:TextBox ID="hfCustomerId" class="form-control" ValidationGroup="edit" ToolTip="Sample Return" placeholder="Sample Return" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+    
+                      </div>        <!-- -->--%>
+            
+            <%--<div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                      <asp:DropDownList ID="dpAgent" class="form-control" DataTextField="Name" DataValueField="AgentID" runat="server" AutoPostBack="true"  > 
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div>--%>
+
+           <%-- <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                      <asp:DropDownList ID="dpagentRoute" ValidationGroup="search" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server"  > 
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div>--%>
 
              <div class="col-lg-3">
                   <div class="form-group">
@@ -331,7 +379,7 @@
                           <th>Gift/Other</th>
                           <th>Return</th>
                           <th>Spot Damaged</th>
-                          
+                          <th>Edit</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -375,9 +423,10 @@
                           <th>Product Name</th>                        
                         
                           <th>Dispatched Quantity</th>
-                         <th>Gift/Other</th>
+                           <th>Gift/Other</th>
                           <th>Return</th>
                           <th>Spot Damaged</th>
+                           <th>Edit</th>
                       </tr>
                     </tfoot>
 
@@ -518,17 +567,16 @@
             var sd = document.getElementById('<%=txtSpotDamaged.ClientID %>').value;
             var dq = document.getElementById('<%=txtDispQuantity.ClientID %>').value;
             var temp = (sample + Gq + sd);
-            if (sample < 0 || Gq < 0 || sd < 0)
-            {
-                alert("Please enter valid quantity");
-                return false;
-            }
 
-            if (temp > dq )
-            {
+            if (sample < 0 || Gq < 0 || sd < 0) {
                 alert("Please enter valid quantity");
                 return false;
             }--%>
+            //if (temp > dq )
+            //{
+            //    alert("Please enter valid quantity");
+            //    return false;
+            //}
 
             if (confirm("Do you want to save data?")) {
                 confirm_value.value = "Yes";

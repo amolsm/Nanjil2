@@ -49,14 +49,14 @@ namespace Dairy.Tabs.Administration
             DS = invoiceData.GetSchemeRoutewise(invoice);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                
+
                 rpRouteList.DataSource = DS;
                 rpRouteList.DataBind();
                 rpRouteList.Visible = true;
-                            
+
 
                 uprouteList.Update();
-
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "av", "$('#example1').DataTable();", true);
             }
             else
             {
@@ -80,7 +80,7 @@ namespace Dairy.Tabs.Administration
             {
                 case ("Return"):
                     {
-                       // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "confirmMsg", "Confirm() { var confirm_value = document.createElement('INPUT'); confirm_value.type = 'hidden'; confirm_value.name = 'confirm_value'; if (confirm('Do you want to save data?')) { confirm_value.value = 'Yes';} else { confirm_value.value = 'No'; } document.forms[0].appendChild(confirm_value); }", true);
+                        // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "confirmMsg", "Confirm() { var confirm_value = document.createElement('INPUT'); confirm_value.type = 'hidden'; confirm_value.name = 'confirm_value'; if (confirm('Do you want to save data?')) { confirm_value.value = 'Yes';} else { confirm_value.value = 'No'; } document.forms[0].appendChild(confirm_value); }", true);
 
                         string confirmValue = Request.Form["confirm_value"];
                         if (confirmValue == "Yes")
@@ -92,9 +92,9 @@ namespace Dairy.Tabs.Administration
 
 
                         }
-                       
-                        
-                        
+
+
+
                         // uprouteList.Update();
                         //  upModal.Update();
                         break;
@@ -111,13 +111,13 @@ namespace Dairy.Tabs.Administration
         private void deleteScheme(int orderid)
         {
             InvoiceData invoiceData = new InvoiceData();
-            bool result = false ;
+            bool result = false;
             result = invoiceData.returnSchemeAmount(orderid);
 
             if (result)
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Scheme returned successfully..!!')", true);
-                
+
                 DataSet DS = new DataSet();
                 Invoice invoice = new Invoice();
                 //InvoiceData invoiceData = new InvoiceData();
@@ -137,7 +137,8 @@ namespace Dairy.Tabs.Administration
                     uprouteList.Update();
 
                 }
-                else {
+                else
+                {
                     rpRouteList.Visible = false;
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No Scheme Available')", true);
                 }

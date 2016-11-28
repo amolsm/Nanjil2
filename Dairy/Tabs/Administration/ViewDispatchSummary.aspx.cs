@@ -19,7 +19,7 @@ namespace Dairy.Tabs.Administration
             {
                 BindDropDwon();
                 txtOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
-                
+
             }
         }
 
@@ -60,7 +60,7 @@ namespace Dairy.Tabs.Administration
                 rpRouteList.DataBind();
                 uprouteList.Update();
             }
-            }
+        }
 
         protected void rpRouteList_ItemCommand(object sender, RepeaterCommandEventArgs e)
         {

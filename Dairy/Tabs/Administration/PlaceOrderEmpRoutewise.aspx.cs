@@ -19,7 +19,7 @@ using System.Configuration;
 namespace Dairy.Tabs.Administration
 {
     public partial class PlaceOrderEmpRoutewise : System.Web.UI.Page
-    { 
+    {
         string result = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -54,68 +54,68 @@ namespace Dairy.Tabs.Administration
             DS = invoiceData.GetPreviousDayOrderRouteWiseEmp(invoice);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                 rpAgentOrderdetails.Visible = true;
-                 foreach (DataRow row in DS.Tables[0].Rows)
-                 {
-                     DataSet DS2 = new DataSet();
-                     Product product = new Product();
-                     ProductData productData = new ProductData();
-                     product.AgencyID = 1;
-                     product.EmployeeId = string.IsNullOrEmpty(row["EmployeeID"].ToString()) ? 0 : Convert.ToInt32(row["EmployeeID"]);
-                     product.orderDate = DateTime.Now.ToString("dd-MM-yyyy").ToString();
-                     DS2 = productData.GetTotalCount(product);
-                     if (!Comman.Comman.IsDataSetEmpty(DS2))
-                     {
-                         consume = string.IsNullOrEmpty(DS2.Tables[0].Rows[0]["count"].ToString()) ? 0 : Convert.ToDouble(DS2.Tables[0].Rows[0]["count"]);
-                     }
-                     else
-                     {
-                         consume = 0;
-                     }
-                     invocie.TokanId = hftokanno.Value;
-                     invocie.UserID = GlobalInfo.Userid;
-                     invocie.AgentName = Convert.ToString(row["EmployeeName"]);
-                     invocie.ProductID = string.IsNullOrEmpty(row["ProductID"].ToString()) ? 0 : Convert.ToInt32(row["ProductID"]);
-                     invocie.qty = string.IsNullOrEmpty(row["Qty"].ToString()) ? 0 : Convert.ToDouble(row["Qty"]);
-                                            
-                     invocie.TypeID = string.IsNullOrEmpty(row["TypeID"].ToString()) ? 0 : Convert.ToInt32(row["TypeID"]);
-                     invocie.AgencyID = string.IsNullOrEmpty(row["EmployeeID"].ToString()) ? 0 : string.IsNullOrEmpty(row["EmployeeID"].ToString()) ? 0 : Convert.ToInt32(row["EmployeeID"]);
-                     invocie.orderid = string.IsNullOrEmpty(row["OrderID"].ToString()) ? 0 : Convert.ToInt32(row["OrderID"]);
-                     invocie.ROuteID = string.IsNullOrEmpty(row["RouteID"].ToString()) ? 0 : Convert.ToInt32(row["RouteID"]);
-                     invocie.ShecemeApplied = Convert.ToBoolean(row["ShcemheApplied"]);
-                     invocie.AgentCode = string.IsNullOrEmpty(row["EmployeeCode"].ToString()) ? string.Empty : Convert.ToString(row["EmployeeCode"]);
+                rpAgentOrderdetails.Visible = true;
+                foreach (DataRow row in DS.Tables[0].Rows)
+                {
+                    DataSet DS2 = new DataSet();
+                    Product product = new Product();
+                    ProductData productData = new ProductData();
+                    product.AgencyID = 1;
+                    product.EmployeeId = string.IsNullOrEmpty(row["EmployeeID"].ToString()) ? 0 : Convert.ToInt32(row["EmployeeID"]);
+                    product.orderDate = DateTime.Now.ToString("dd-MM-yyyy").ToString();
+                    DS2 = productData.GetTotalCount(product);
+                    if (!Comman.Comman.IsDataSetEmpty(DS2))
+                    {
+                        consume = string.IsNullOrEmpty(DS2.Tables[0].Rows[0]["count"].ToString()) ? 0 : Convert.ToDouble(DS2.Tables[0].Rows[0]["count"]);
+                    }
+                    else
+                    {
+                        consume = 0;
+                    }
+                    invocie.TokanId = hftokanno.Value;
+                    invocie.UserID = GlobalInfo.Userid;
+                    invocie.AgentName = Convert.ToString(row["EmployeeName"]);
+                    invocie.ProductID = string.IsNullOrEmpty(row["ProductID"].ToString()) ? 0 : Convert.ToInt32(row["ProductID"]);
+                    invocie.qty = string.IsNullOrEmpty(row["Qty"].ToString()) ? 0 : Convert.ToDouble(row["Qty"]);
+
+                    invocie.TypeID = string.IsNullOrEmpty(row["TypeID"].ToString()) ? 0 : Convert.ToInt32(row["TypeID"]);
+                    invocie.AgencyID = string.IsNullOrEmpty(row["EmployeeID"].ToString()) ? 0 : string.IsNullOrEmpty(row["EmployeeID"].ToString()) ? 0 : Convert.ToInt32(row["EmployeeID"]);
+                    invocie.orderid = string.IsNullOrEmpty(row["OrderID"].ToString()) ? 0 : Convert.ToInt32(row["OrderID"]);
+                    invocie.ROuteID = string.IsNullOrEmpty(row["RouteID"].ToString()) ? 0 : Convert.ToInt32(row["RouteID"]);
+                    invocie.ShecemeApplied = Convert.ToBoolean(row["ShcemheApplied"]);
+                    invocie.AgentCode = string.IsNullOrEmpty(row["EmployeeCode"].ToString()) ? string.Empty : Convert.ToString(row["EmployeeCode"]);
                     invocie.BillSeq = string.IsNullOrEmpty(row["BillSeq"].ToString()) ? 0 : Convert.ToInt32(row["BillSeq"]);
                     if (consume > 30)
-                     {
-                         double price = 0;
-                         double qty = 0;
-                         Invoice inv = new Invoice();
-                         DataSet ds4 = new DataSet();
-                         inv.ProductID = string.IsNullOrEmpty(row["ProductID"].ToString()) ? 0 : Convert.ToInt32(row["ProductID"]);
-                         ds4 = invoiceData.getBulkEmpSlabPrice(inv);
-                         if (!Comman.Comman.IsDataSetEmpty(ds4))
-                         {
-                             price = string.IsNullOrEmpty(ds4.Tables[0].Rows[0]["price"].ToString()) ? 0 : Convert.ToDouble(ds4.Tables[0].Rows[0]["price"]);
+                    {
+                        double price = 0;
+                        double qty = 0;
+                        Invoice inv = new Invoice();
+                        DataSet ds4 = new DataSet();
+                        inv.ProductID = string.IsNullOrEmpty(row["ProductID"].ToString()) ? 0 : Convert.ToInt32(row["ProductID"]);
+                        ds4 = invoiceData.getBulkEmpSlabPrice(inv);
+                        if (!Comman.Comman.IsDataSetEmpty(ds4))
+                        {
+                            price = string.IsNullOrEmpty(ds4.Tables[0].Rows[0]["price"].ToString()) ? 0 : Convert.ToDouble(ds4.Tables[0].Rows[0]["price"]);
 
-                         }
-                         qty = string.IsNullOrEmpty(row["Qty"].ToString()) ? 0 : Convert.ToDouble(row["Qty"]);
+                        }
+                        qty = string.IsNullOrEmpty(row["Qty"].ToString()) ? 0 : Convert.ToDouble(row["Qty"]);
 
 
-                         invocie.UnitCost = price;
-                         invocie.totalCoast = price * qty;
-                     
-                     }
-                     else
-                     {
-                         invocie.UnitCost = string.IsNullOrEmpty(row["UnitCost"].ToString()) ? 0 : Convert.ToDouble(row["UnitCost"]);
-                         invocie.totalCoast = string.IsNullOrEmpty(row["Total"].ToString()) ? 0 : Convert.ToDouble(row["Total"]);
-                     
-                     }
+                        invocie.UnitCost = price;
+                        invocie.totalCoast = price * qty;
 
-                     invoiceData.InsertTempBulkItam(invocie);
-                     BindAgntTempItam(invocie);
+                    }
+                    else
+                    {
+                        invocie.UnitCost = string.IsNullOrEmpty(row["UnitCost"].ToString()) ? 0 : Convert.ToDouble(row["UnitCost"]);
+                        invocie.totalCoast = string.IsNullOrEmpty(row["Total"].ToString()) ? 0 : Convert.ToDouble(row["Total"]);
 
-                 }
+                    }
+
+                    invoiceData.InsertTempBulkItam(invocie);
+                    BindAgntTempItam(invocie);
+
+                }
             }
         }
 
@@ -290,13 +290,13 @@ namespace Dairy.Tabs.Administration
                     {
                         getBulkOrderDetailsForEdit(Id);
                         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "<script type='text/javascript'> $('#myModal').modal('show'); </script>", false);
-                        
+
                         break;
                     }
                 case ("delete"):
                     {
 
-                        
+
                         DeleteOrderItems(Id);
                         //upMain.Update();
                         break;

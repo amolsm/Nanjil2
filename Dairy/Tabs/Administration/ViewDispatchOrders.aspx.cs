@@ -13,7 +13,7 @@ using Dairy.App_code;
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace Dairy.Tabs.Administration 
+namespace Dairy.Tabs.Administration
 {
     public partial class ViewDispatchOrders : System.Web.UI.Page
     {
@@ -88,7 +88,7 @@ namespace Dairy.Tabs.Administration
 
         }
 
-        
+
 
         private void insertDispatchTemp(DataSet dS)
         {
@@ -233,7 +233,7 @@ namespace Dairy.Tabs.Administration
             txtQuantity.Text = string.Empty;
             txtAgentName.Text = string.Empty;
             txtCommodityName.Text = string.Empty;
-           // txtOrderDate.Text = string.Empty;
+            // txtOrderDate.Text = string.Empty;
             txtOrderDetailsId.Text = string.Empty;
             txtOrderID.Text = string.Empty;
         }
@@ -320,7 +320,7 @@ namespace Dairy.Tabs.Administration
                 //txtOrderDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["OrderDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[Row]["OrderDate"].ToString();
                 txtQuantity.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["Qty"].ToString()) ? string.Empty : DS.Tables[0].Rows[Row]["Qty"].ToString();
                 txtCommodityName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["CommodityName"].ToString()) ? string.Empty : DS.Tables[0].Rows[Row]["CommodityName"].ToString();
-                //txtAgentName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["AgentName"].ToString()) ? string.Empty : DS.Tables[0].Rows[Row]["AgentName"].ToString();
+                txtAgentName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["AgentName"].ToString()) ? DS.Tables[0].Rows[Row]["EmployeeName"].ToString() : DS.Tables[0].Rows[Row]["AgentName"].ToString();
 
             }
         }

@@ -12,25 +12,25 @@
     <script type = "text/javascript">
         function PrintPanel() {
             var panel = document.getElementById("<%=pnlBill.ClientID %>");
-            var printWindow = window.open('', '', 'height=400,width=1000');
-            printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size:16px; font-family: Arial, Helvetica,sans-serif;font-weight: bold;line-height:25px;}</style>");
-            printWindow.document.write('</head><body >');
-            printWindow.document.write(panel.innerHTML);
-            printWindow.document.write('</body></html>');
-            printWindow.document.close();
-            setTimeout(function () {
-            printWindow.print();
-            }, 500);
-            return true;
+           var printWindow = window.open('', '', 'height=400,width=800');
+           printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size:16px; }</style>");
+           printWindow.document.write('</head><body style="width:400px">');
+           printWindow.document.write(panel.innerHTML);
+           printWindow.document.write('</body></html>');
+           printWindow.document.close();
+           setTimeout(function () {
+               printWindow.print();
+           }, 500);
+           return true;
         }
     </script>
         <section class="content-header">
           <h1>
              Generate Bill
-            <small>Administration</small>    
+            <small>Reception</small>    
           </h1> 
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Reception</a></li>
             <li class="active">Generate bill Info</li>
           </ol>
         </section>

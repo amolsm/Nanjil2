@@ -35,8 +35,8 @@ namespace Dairy.Tabs.Administration
 
                 //btnAddRoute.Visible = true;
                 //btnupdateroute.Visible = false;
-               
-              
+
+
             }
 
         }
@@ -107,9 +107,9 @@ namespace Dairy.Tabs.Administration
         {
             Dispatch disp = new Dispatch();
             DispatchData dispatchData = new DispatchData();
-           
 
-            disp.DispatchId = string.IsNullOrEmpty(txtHidden.Text) ? 0: Convert.ToInt32(txtHidden.Text);
+
+            disp.DispatchId = string.IsNullOrEmpty(txtHidden.Text) ? 0 : Convert.ToInt32(txtHidden.Text);
             disp.Trays = string.IsNullOrEmpty(txtTraysReturn.Text) ? 0 : Convert.ToInt32(txtTraysReturn.Text);
             disp.Cartons = string.IsNullOrEmpty(txtCartonsReturn.Text) ? 0 : Convert.ToInt32(txtCartonsReturn.Text);
             disp.IceBox = string.IsNullOrEmpty(txtIceBoxReturn.Text) ? 0 : Convert.ToInt32(txtIceBoxReturn.Text);
@@ -118,7 +118,7 @@ namespace Dairy.Tabs.Administration
             //disp.Quantity = Convert.ToInt32(txtQuantity.Text);
 
             DS = dispatchData.GetDispatchByID(disp.DispatchId);
-           int trays = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TraysDispached"].ToString()) ? 0 : Convert.ToInt32( DS.Tables[0].Rows[0]["TraysDispached"]);
+            int trays = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TraysDispached"].ToString()) ? 0 : Convert.ToInt32(DS.Tables[0].Rows[0]["TraysDispached"]);
             int icebox = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IceBoxDispached"].ToString()) ? 0 : Convert.ToInt32(DS.Tables[0].Rows[0]["IceBoxDispached"]);
             int cartons = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["CartonsDispached"].ToString()) ? 0 : Convert.ToInt32(DS.Tables[0].Rows[0]["CartonsDispached"]);
             int other = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["OtherDispached"].ToString()) ? 0 : Convert.ToInt32(DS.Tables[0].Rows[0]["OtherDispached"]);
@@ -133,7 +133,8 @@ namespace Dairy.Tabs.Administration
                     DataSet ds = new DataSet();
                     result = dispatchData.updateReturnTrays(disp);
                 }
-                else {
+                else
+                {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Please Enter Valid Quantity')", true);
                 }
             }

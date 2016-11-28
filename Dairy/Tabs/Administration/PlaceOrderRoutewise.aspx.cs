@@ -93,7 +93,7 @@ namespace Dairy.Tabs.Administration
         {
             DataSet DS = new DataSet();
             //Invoice invoice = new Invoice();
-            
+
             InvoiceData invoiceData = new InvoiceData();
 
             DS = invoiceData.getBulkOrderDetailsForEdit(Id);
@@ -105,11 +105,11 @@ namespace Dairy.Tabs.Administration
                 txtUnitPrice.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["UnitCost"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["UnitCost"].ToString();
                 txtQuantity.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Qty"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Qty"].ToString();
                 txtHidden.Text = Id.ToString();
-                
+
             }
         }
 
-        
+
 
         private void DeleteOrderItems(int Id)
         {
@@ -138,7 +138,7 @@ namespace Dairy.Tabs.Administration
         protected void rpOrderitam_OnDataBinding(object sender, RepeaterItemEventArgs e)
         {
 
-            
+
         }
 
         protected void btnGetPreviousOrder_Click(object sender, EventArgs e)
@@ -237,7 +237,7 @@ namespace Dairy.Tabs.Administration
 
         private void submitOrders()
         {
-             DataSet DS = new DataSet();
+            DataSet DS = new DataSet();
             Invoice invoice = new Invoice();
             Invoice invocie = new Invoice();
             InvoiceData invoiceData = new InvoiceData();
@@ -320,8 +320,8 @@ namespace Dairy.Tabs.Administration
                     invoiceData.updateBulkFlag(routeids, ordertype);
                 }
                 catch (Exception ex)
-                { 
-                    string e = ex.ToString(); 
+                {
+                    string e = ex.ToString();
                 }
 
                 divDanger.Visible = false;
@@ -358,12 +358,12 @@ namespace Dairy.Tabs.Administration
                     DS.Tables[0].Rows[i]["NewOrderID"] = newID;
                     newID++;
                 }
-            
+
                 foreach (DataRow row in DS.Tables[0].Rows)
                 {
                     int ids = Convert.ToInt32(row["OrderID"]);
                     int newid = Convert.ToInt32(row["NewOrderID"]);
-                    bool x = invoiceData.UpdateOrderID(ids,newid);
+                    bool x = invoiceData.UpdateOrderID(ids, newid);
                 }
             }
         }
@@ -372,9 +372,9 @@ namespace Dairy.Tabs.Administration
         {
             DataSet DS = new DataSet();
             Invoice invoice = new Invoice();
-            
+
             InvoiceData invoiceData = new InvoiceData();
-            
+
             invoice.ID = Convert.ToInt32(txtHidden.Text);
             invoice.qty = Convert.ToDouble(txtQuantity.Text);
             invoice.totalCoast = Convert.ToDouble(txtUnitPrice.Text) * Convert.ToDouble(txtQuantity.Text);

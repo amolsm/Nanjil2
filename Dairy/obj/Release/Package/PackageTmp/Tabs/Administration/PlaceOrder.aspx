@@ -3,9 +3,10 @@
 <%@ Page Title="" Language="C#" MasterPageFile="/Site.Master" AutoEventWireup="true" CodeBehind="PlaceOrder.aspx.cs" Inherits="Dairy.Tabs.Administration.PlaceOrder" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-  <link rel="stylesheet" href="http://localhost:4888/code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+ 
+    <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -22,11 +23,11 @@
         <section class="content-header">
           <h1>
              Place Order
-            <small>Administration</small> 
+            <small>Reception</small> 
 
           </h1>
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Reception</a></li>
             <li class="active">Place Order</li>
           </ol>
         </section>
@@ -63,8 +64,8 @@
                 <div class="box ">
             <div class="box-header with-border">
             
-           <asp:RadioButton ID="rbAgent" Checked="true"   runat="server" OnCheckedChanged="rbAgent_chamged" Text="Agent" GroupName="ordertype" AutoPostBack="true"> </asp:RadioButton>&nbsp
-            <asp:RadioButton ID="rbEmployee"  OnCheckedChanged="rbEmployee_chamged" runat="server" Text="Employee" GroupName="ordertype" AutoPostBack="true"></asp:RadioButton>
+             <asp:RadioButton ID="rbAgent" Checked="true"   runat="server" OnCheckedChanged="rbAgent_chamged" Text="Agent" GroupName="ordertype" AutoPostBack="true"> </asp:RadioButton>&nbsp
+             <asp:RadioButton ID="rbEmployee"  OnCheckedChanged="rbEmployee_chamged" runat="server" Text="Employee" GroupName="ordertype" AutoPostBack="true"></asp:RadioButton>
             </div>
             <div class="box-body">
                
@@ -92,6 +93,7 @@
                           
                       </div> 
 
+ 
                         <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -104,8 +106,6 @@
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
                          </div>
-
-                              
 
                               <div class="col-lg-3">
                   <div class="form-group">
@@ -323,7 +323,7 @@
                         <th></th>
                           <th></th>
                         <th style="text-align:right">Total</th> 
-                        <th style="text-align:right"><asp:Label ID="lblFInaltotal" runat="server" Text='<%# string.Format("{0:##,###.00}",Eval("Total"))%>'></asp:Label></th> 
+                        <th style="text-align:right"><asp:Label ID="lblFInaltotal" runat="server" Text='<%# Convert.ToDouble( Eval("Total")).ToString("#0.00")%>'></asp:Label></th> 
                       </tr>
                     </tfoot>
 
@@ -714,9 +714,7 @@
 
             });
         });
-       
     </script>
-  
 
      
     
@@ -738,7 +736,6 @@
         }
     </script>--%>
 <script type = "text/javascript">
-   
     $("#btnAgentNewOrder").click(function (e) {
     // prevent from going to the page
     e.preventDefault();
@@ -758,8 +755,7 @@
             // get the href
             var href = $(this).attr("href");
             $("#pnlError").load(href, function () {
-                // do something after content has been 
-                
+                // do something after content has been loaded
             });
         });
     </script>

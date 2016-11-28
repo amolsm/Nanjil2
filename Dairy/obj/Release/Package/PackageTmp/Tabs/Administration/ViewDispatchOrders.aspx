@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewDispatchOrders.aspx.cs" Inherits="Dairy.Tabs.Administration.ViewDispatchOrders" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link rel="stylesheet" href="http://localhost:2367/code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
     
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
      <script type="text/javascript">
          Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
          function InIEvent() {
@@ -33,7 +33,7 @@
           </h1>
 
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Dispatch</a></li>
             <li class="active">View Dispatch Orders</li>
           </ol>
         </section>
@@ -84,18 +84,9 @@
                <div class="box box-solid box-default" style="margin-bottom:5px !important;" >
                  <div class="box-body">
 
-                <div class="col-lg-2">
-                  <div class="form-group" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                       <asp:TextBox ID="txtOrderID" class="form-control" ToolTip="Order Id"  placeholder="Order ID" runat="server" ValidationGroup="edit" ReadOnly="true" ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-    
-                      </div>        <!-- --> 
+               
+                       <asp:TextBox ID="txtOrderID" class="form-control" ToolTip="Order Id"  placeholder="Order ID" runat="server" ValidationGroup="edit" ReadOnly="true" Visible="false" ></asp:TextBox>                        
+                    
 
                 <div class="col-lg-3">
                   <div class="form-group" >
@@ -110,7 +101,7 @@
     
                       </div>        <!-- -->
 
-                <div class="col-lg-2">
+                <div class="col-lg-3">
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -123,7 +114,7 @@
     
                       </div>        <!-- -->
 
-                <div class="col-lg-2">
+                <div class="col-lg-3">
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -507,7 +498,7 @@
                <HeaderTemplate>
                   <thead>
                       <tr>
-                          <th>Order ID</th>
+                          <%--<th>Order ID</th>--%>
                           <th>Order Date</th>
                           <th>Route Name</th>
                           <th>Agent/Employee Name</th>
@@ -523,12 +514,12 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
-                        <td><%# Eval("OrderId")%></td>
+                        <%--<td><%# Eval("OrderId")%></td>--%>
                         <td><%# Eval("OrderDate")%></td>
                         <td><%# Eval("RouteName")%></td>
                         <%--<td><%# Eval("AgentName")%></td>--%>
-
-                       <td> <%#(String.IsNullOrEmpty(Eval("AgentName").ToString()) ? Eval("EmployeeName") : Eval("AgentName"))%></td>
+                        <% %>
+                       <td> <%#  String.IsNullOrEmpty(Eval("AgentName").ToString()) ? Eval("EmployeeName") : Eval("AgentName") %></td>
                         <td><%# Eval("ProductName")%></td>
                         <td><%# Eval("CommodityName")%></td>
                         <td><%# Eval("Qty")%></td>
@@ -548,7 +539,7 @@
 
                     <tfoot>
                       <tr>
-                          <th>Order ID</th>
+                         <%-- <th>Order ID</th>--%>
                           <th>Order Date</th>
                           <th>Route Name</th>
                            <th>Agent/Employee Name</th>

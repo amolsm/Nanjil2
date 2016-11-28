@@ -1,18 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditOrder.aspx.cs" Inherits="Dairy.Tabs.Administration.EditOrder" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
- 
-     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
- 
-  
+     <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
+     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
       <section class="content-header">
           <h1>
              Edit Orders
-             <small>Administration</small>   
+            <small>Reception</small> 
 
           </h1> <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Reception</a></li>
             <li class="active">Edit Orders</li>
           </ol>
         </section>
@@ -132,6 +134,7 @@
                <HeaderTemplate>
                   <thead>
                       <tr>
+                           <th>Sr.No.</th> 
                           <th>Route</th>              
                           <th>Agent/Employee</th>
                                         <th>Product</th>
@@ -149,12 +152,12 @@
                <ItemTemplate>
                     <tr>
                             
-
+                                <td><%# Container.ItemIndex + 1 %> </td>
                                 <td><%# Eval("RouteName")%></td>
-                                <td><%# (String.IsNullOrEmpty(Eval("AgentName").ToString()) ? Eval("EmployeeName") : Eval("AgentName"))%></td>
-                                <td><%# Eval("ProductName")%></td>
+                                <td><%# (String.IsNullOrEmpty(Eval("AgentName").ToString()) ? Eval("EmployeeCode") +" "+ Eval("EmployeeName") : Eval("AgentCode") +" "+  Eval("AgentName"))%></td>
+                                <td><%# (String.IsNullOrEmpty(Eval("ProductName").ToString()) ? "Scheme" : Eval("ProductName"))%></td>
                                 <td><%# Eval("TypeName")%></td>
-                                <td><%# Eval("Qty")%></td>
+                                <td><%# ((Eval("Qty").ToString()=="0") ? "-" : Eval("Qty"))%></td>
                                        
                                         
                                         
@@ -163,7 +166,10 @@
                          <td>
                              <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
                                                                     ToolTip="Edit" runat="server" CommandArgument='<%#Eval("OrderDetailsId") %>'
-                                                                    CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
+                                                                    CommandName="Edit">
+                                 <%#  (String.IsNullOrEmpty(Eval("ProductName").ToString()) ? "Remove" : "Edit" ) %> 
+                                 
+                             </asp:LinkButton>
 
                          </td>
                          <%--<td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
@@ -181,6 +187,7 @@
 
                     <tfoot>
                       <tr>
+                            <th>Sr.No.</th> 
                          <th>Route</th>              
                           <th>Agent/Employee</th>
                            <th>Product</th>
@@ -242,7 +249,7 @@
                   <div class="form-group frmgrp" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <asp:Label ID="Label1" runat="server" Text="Name"></asp:Label>
+                        <asp:Label runat="server" Text="Name"></asp:Label>
                       </div>
                        <asp:TextBox ID="txtName" class="form-control" ToolTip="Name"  placeholder="Name" runat="server" disabled></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -254,7 +261,7 @@
                   <div class="form-group frmgrp" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <asp:Label ID="Label2" runat="server" Text="Product"></asp:Label>
+                        <asp:Label runat="server" Text="Product"></asp:Label>
                       </div>
                        <asp:TextBox ID="txtProductName" class="form-control" ToolTip="Product"  placeholder="Product" runat="server" disabled></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -266,7 +273,7 @@
                   <div class="form-group frmgrp" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <asp:Label ID="Label3" runat="server" Text="Prv Quantity"></asp:Label>
+                        <asp:Label runat="server" Text="Prv Quantity"></asp:Label>
                       </div>
                        <asp:TextBox ID="txtPrvQuantity" class="form-control" ToolTip="Prv Quantity"  placeholder="Prv Quantity" runat="server" disabled></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -278,12 +285,13 @@
                   <div class="form-group frmgrp" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <asp:Label ID="Label4" runat="server" Text="Quantity"></asp:Label>
+                        <asp:Label runat="server" Text="Quantity"></asp:Label>
                       </div>
                        <asp:TextBox ID="txtNewQuantity" class="form-control" ToolTip="Quantity"  placeholder="Quantity" runat="server" type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtNewQuantity"
         ErrorMessage="Quantity Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
+                  <%--<asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="txtNewQuantity" ErrorMessage="Quantity Must be &gt; 0" Operator="GreaterThan" Type="Double" ValueToCompare="0" ValidationGroup="Save" ForeColor="#cc0000"/>--%>
                   </div><!-- /.form group -->
     
                       </div>        <!-- --> 
@@ -294,7 +302,7 @@
       <div class="modal-footer">
         <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
        <asp:Button ID="btnCloseModal" class="btn btn-default" runat="server" ValidationGroup="none" OnClick="btnCloseModal_Click" Text="Close" UseSubmitBehavior="false"  data-dismiss="modal"/>       
-          <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="Save" OnClick="btnSubmit_Click" Text="Save" UseSubmitBehavior="true" OnClientClick = "Confirm()"/>       
+          <asp:Button ID="btnSubmit" class="btn btn-primary" runat="server" ValidationGroup="Save" OnClick="btnSubmit_Click" Text="Save" UseSubmitBehavior="true"  OnClientClick = "return Confirm('Are u Sure ?)" />       
                 
       </div>
     </div>
@@ -304,33 +312,20 @@
                   </ContentTemplate>
              </asp:UpdatePanel> 
          </section>
-      <script type = "text/javascript">
-          function Confirm() {
-              var confirm_value = document.createElement("INPUT");
-              confirm_value.type = "hidden";
-              confirm_value.name = "confirm_value";
-              if (confirm("Do you want to save data?")) {
-                  confirm_value.value = "Yes";
-                  document.forms[0].appendChild(confirm_value);
-                  
-              } else {
-                  confirm_value.value = "No";
-                  document.forms[1].appendChild(confirm_value);
-              }
-             
-          
-             
-          }
-   
-          $(document).ready(function () {
-              $('#example1').dataTable({
-                  "bPaginate": false,
-                  "paging": false
-                     
-              });
-          });
-          //-->
-      </script>
-    
-</asp:Content>
+     <script type = "text/javascript">
+        
 
+
+         //-->
+
+         $(document).ready(function () {
+             $('#example1').dataTable({
+                 "bPaginate": false,
+                 "paging": false
+
+             });
+         });
+    </script>
+  
+  
+</asp:Content>

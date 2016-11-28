@@ -37,6 +37,7 @@ namespace Dairy.Tabs.Administration
                     dpBrand.Items.Insert(0, new ListItem("--All Brand--", "0"));
                 }
                 txtDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+
             }
         }
 
@@ -65,6 +66,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("<col style = 'width:140px'>");
 
                 sb.Append("</colgroup>");
+
                 sb.Append("<tr>");
                 sb.Append("<th class='tg-yw4l' rowspan='2' >");
                 sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
@@ -93,8 +95,11 @@ namespace Dairy.Tabs.Administration
 
 
 
+
+
+
                 sb.Append("<tr style='border-bottom:2px solid'>");
-                sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
 
                 if (Convert.ToInt32(dpRoute.SelectedItem.Value) == 0)
                 {
@@ -105,7 +110,7 @@ namespace Dairy.Tabs.Administration
                     sb.Append("Route : " + dpRoute.SelectedItem.Text.ToString());
                 }
                 sb.Append("</td>");
-                sb.Append("<td>&nbsp;</td>");
+                // sb.Append("<td>&nbsp;</td>");
                 sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
                 sb.Append(Convert.ToDateTime(txtDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
@@ -128,11 +133,11 @@ namespace Dairy.Tabs.Administration
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
 
-                sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
                 sb.Append("<b>ITEM </b>");
                 sb.Append("</td>");
 
-                sb.Append("<td>&nbsp;</td>");
+                //sb.Append("<td>&nbsp;</td>");
 
                 sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
                 sb.Append("<b>Quantity</b>");
@@ -154,15 +159,15 @@ namespace Dairy.Tabs.Administration
 
 
 
-                    sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
+                    sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:left'>");
                     sb.Append(row["ITEM"].ToString());
                     sb.Append("</td>");
 
-                    sb.Append("<td>&nbsp;</td>");
+                    //sb.Append("<td>&nbsp;</td>");
 
                     sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
-                    sb.Append(row["Quantity"].ToString()); 
-                        //+ " " + row["UnitName"].ToString());
+                    sb.Append(row["Quantity"].ToString());
+                    //+ " " + row["UnitName"].ToString());
                     TotQuantity = TotQuantity + Convert.ToDouble(row["Quantity"]);
                     sb.Append("</td>");
 
@@ -183,11 +188,9 @@ namespace Dairy.Tabs.Administration
                 sb.Append(DateTime.Now.ToString("dd/MM/yyyy hh:mm"));
                 sb.Append("</td>");
                 sb.Append("<td colspan='2' style='text-align:right' >");
-                sb.Append("Total:" + TotQuantity.ToString() );
+                sb.Append("Total:" + TotQuantity.ToString());
                 sb.Append("</td>");
                 sb.Append("</tr>");
-            
-
 
 
 

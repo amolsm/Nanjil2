@@ -1,16 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrderQuantity.aspx.cs" Inherits="Dairy.Tabs.Administration.OrderQuantity" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+     <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
      
       <section class="content-header">
           <h1>
-            Order Summary
-             <small>Administration</small>  
+             Order Summary
+            <small>Reception</small>    
           </h1> 
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
-            <li class="active"> Order Summary</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Reception</a></li>
+            <li class="active">Order Summary</li>
           </ol>
         </section>
 
@@ -49,7 +52,7 @@
 
            <div class="box  ">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="Order Summary"></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text=" Order Summary"></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -64,8 +67,7 @@
              
 
              <div class="row">
-                 
-                             <div class="col-lg-3">
+                     <div class="col-lg-3">
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -80,6 +82,7 @@
                        
                           
                       </div>       
+                                 
                      <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -141,8 +144,8 @@
 
     </section>
      <script type = "text/javascript">
-         function PrintPanel() {
-             var panel = document.getElementById("<%=pnlBill.ClientID %>");
+          function PrintPanel() {
+              var panel = document.getElementById("<%=pnlBill.ClientID %>");
               var printWindow = window.open('', '', 'height=600,width=800');
               printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif;}</style>");
               printWindow.document.write('</head><body >');

@@ -148,7 +148,7 @@ namespace Dairy.Tabs.Administration
                     sb.Append("<td colspan='2'>");
                     sb.Append("Route : " + dpRoute.SelectedItem.Text.ToString());
                     sb.Append("</td>");
-                    
+
                     sb.Append("<td colspan='2' style='text-align:right'>");
 
                     //sb.Append(row["OrderCode"].ToString());
@@ -235,13 +235,6 @@ namespace Dairy.Tabs.Administration
 
                             //style='border-bottom:1px solid #000'
                             // sb.Append("<div class='col-md-12'  >");
-                            //count = count + 1;
-
-                            //sb.Append("<div class='col-md-2'>");
-                            // sb.Append(" ");
-                            //  sb.Append("</div>");
-                            //  sb.Append("<div class='col-md-1'>");
-
                             sb.Append("<tr>");
                             if (row1["total"].ToString() != "0.0000")
                             {
@@ -315,6 +308,7 @@ namespace Dairy.Tabs.Administration
 
                     }
 
+
                     sb.Append("</div>");
 
 
@@ -362,7 +356,7 @@ namespace Dairy.Tabs.Administration
                     sb.Append("</td>");
 
                     sb.Append("<td style='text-align: right'>");
-                    sb.Append("<b>" +(Convert.ToDecimal(row["totalBill"]).ToString("#.00") + "</b>"));
+                    sb.Append("<b>" + (Convert.ToDecimal(row["totalBill"]).ToString("#.00") + "</b>"));
                     sb.Append("</td>");
 
                     sb.Append("</div>");
@@ -396,7 +390,7 @@ namespace Dairy.Tabs.Administration
 
                     sb.Append("</div>");
                     sb.Append("</tr>");
-                    
+
 
 
                     // om.orderID,om.orderCode,om.totalBill,
@@ -415,6 +409,8 @@ namespace Dairy.Tabs.Administration
                 //Session["ctrl"] = sb.ToString();
                 Session["ctrl"] = pnlBill;
                 //Response.Redirect("/print.aspx", true);
+
+
 
             }
             else
