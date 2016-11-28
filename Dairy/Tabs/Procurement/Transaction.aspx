@@ -174,7 +174,7 @@
 
                  
 
-                <asp:Repeater ID="rpRouteList" runat="server" OnItemCommand="rpRouteList_ItemCommand">
+                <asp:Repeater ID="rpRouteList" runat="server" OnItemCommand="rpRouteList_ItemCommand" >
                 
                <HeaderTemplate>
                   <thead>
@@ -207,15 +207,15 @@
                             <td><%# txtfromdate.Text%></td>
                             <td><%# txttodate.Text%></td>--%>
                           
-                             <td><asp:TextBox runat="server" ID="txtAmt" style="width: 100px" ToolTip="Amount" class="txt" Text='<%#Eval("Amount")%>'/></td>
-                             <td><asp:TextBox runat="server" ID="txtBonus" ToolTip="Bonus" style="width: 100px" class="txt" Text='<%#Eval("Bonus")%>'/></td>
-                            <td><asp:TextBox runat="server" ID="txtScheme" ToolTip="Scheme" style="width: 100px" class="txt" Text='<%#Eval("Scheme")%>'/></td>
-                            <td><asp:TextBox runat="server" ID="txtRD" ToolTip="RD" style="width: 100px" class="txt" Text='<%#Eval("RDAmount")%>'/></td>
-                         <td><asp:TextBox runat="server" ID="txtcanloan" ToolTip="Can Loan" style="width: 100px" class="txt" Text='<%#Eval("CanLoan")%>'/></td>
-                         <td><asp:TextBox runat="server" ID="txtcashloan" ToolTip="Can Loan" style="width: 100px" class="txt" Text='<%#Eval("CashLoan")%>'/></td>
-                         <td><asp:TextBox runat="server" ID="txtbankloan" ToolTip="Can Loan" style="width: 100px" class="txt" Text='<%#Eval("BankLoan")%>'/></td>
+                             <td><asp:TextBox runat="server" ID="txtAmt" style="width: 100px" ToolTip="Amount" class="txt" ReadOnly="true" Text='<%#Eval("Amount")%>'/></td>
+                             <td><asp:TextBox runat="server" ID="txtBonus" ToolTip="Bonus" style="width: 100px" class="txt" ReadOnly="true" Text='<%#Eval("Bonus")%>'/></td>
+                            <td><asp:TextBox runat="server" ID="txtScheme" ToolTip="Scheme" style="width: 100px" class="txt" ReadOnly="true" Text='<%#Eval("Scheme")%>'/></td>
+                            <td><asp:TextBox runat="server" ID="txtRD" ToolTip="RD" style="width: 100px" class="txt" Text='<%#Eval("RDAmount")%>' OnTextChanged="txtRD_TextChanged" AutoPostBack="true"/></td>
+                         <td><asp:TextBox runat="server" ID="txtcanloan" ToolTip="Can Loan" style="width: 100px" class="txt" Text='<%#Eval("CanLoan")%>' OnTextChanged="txtcanloan_TextChanged" AutoPostBack="true" /></td>
+                         <td><asp:TextBox runat="server" ID="txtcashloan" ToolTip="Can Loan" style="width: 100px" class="txt" Text='<%#Eval("CashLoan")%>' OnTextChanged="txtcashloan_TextChanged" AutoPostBack="true"/></td>
+                         <td><asp:TextBox runat="server" ID="txtbankloan" ToolTip="Can Loan" style="width: 100px" class="txt" Text='<%#Eval("BankLoan")%>' OnTextChanged="txtbankloan_TextChanged"  AutoPostBack="true"/></td>
                    
-                           <td><asp:TextBox runat="server" ID="txtNetAmt" ToolTip="Net Amount" style="width: 100px" Text=""/></td>
+                           <td><asp:TextBox runat="server" ID="txtNetAmt" ToolTip="Net Amount" style="width: 100px" Text="" ReadOnly="true"/></td>
 
                          <td>
                              <asp:HiddenField id="hfSupplierID" runat="server" value='<%#Eval("SupplierID") %>' /> 
@@ -228,7 +228,7 @@
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
-
+                       
                          </tbody>
 
                     <tfoot>
@@ -260,7 +260,7 @@
                      
                    
                   </table>
-               
+             <asp:Label ID="Label1" runat="server" Text="No Records Found" Visible="false"></asp:Label>
                 
                         </ContentTemplate>
                 </asp:UpdatePanel>
@@ -279,31 +279,15 @@
             </asp:UpdateProgress>           
           </div><!-- /.box -->
         </section>
-    <script>
-        $(document).ready(function(){
-            $(".txt").each(function() {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example1').dataTable({
+                "bPaginate": false,
+                "paging": false
 
-                $(this).keyup(function(){
-                    calculateSum();
-                });
             });
-
         });
-        function calculateSum() {
-            var sum = 0;
-            var netamt = 0;
-            //iterate through each textboxes and add the values
-            $(".txt").each(function () {
-
-                //add only if the value is number
-                if (!isNaN(this.value) && this.value.length != 0) {
-                    sum += parseFloat(this.value);
-                }
-
-            });
-            //.toFixed() method will roundoff the final sum to 2 decimal places
-            $("#txtNetAmt.Text").html(sum.toFixed(2));
-        }
+       
            </script>
 </asp:Content>
 
