@@ -17,6 +17,7 @@ namespace Dairy.Tabs.Despatch
 
             if (!IsPostBack)
             {
+               // Page.ClientScript.RegisterStartupScript(this.GetType(), "open", "window.open('ReturnScheme.aspx','','fullscreen=yes');", true);
                 bindDropDown();
                 txtOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             }

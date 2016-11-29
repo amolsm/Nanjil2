@@ -11,6 +11,21 @@ namespace DataAccess
     public class DBDispatch
     {
         DBHelper _DBHelper = new DBHelper();
+
+        public static void DispatchSceme(string id)
+        {
+            int result = 0;
+
+            DBHelper _DBHelper = new DBHelper();
+            DBParameterCollection paramCollection = new DBParameterCollection();
+
+            paramCollection.Add(new DBParameter("@Id", id));
+            //paramCollection.Add(new DBParameter("@DispatchDateTime", dispatch.DispatchDateTime));
+            result = _DBHelper.ExecuteNonQuery("sp_DispatchSceme", paramCollection, CommandType.StoredProcedure);
+
+
+
+        }
         public DataSet GetAllOrdersDetails()
         {
             DataSet DS = new DataSet();
@@ -47,6 +62,8 @@ namespace DataAccess
             }
             return DS;
         }
+
+        
 
         public DataSet GetSalesManWiseReturnedTraysReport(string startdate, string enddate, int salesmanid,int flag)
         {

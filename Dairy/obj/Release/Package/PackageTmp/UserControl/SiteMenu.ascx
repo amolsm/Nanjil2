@@ -135,6 +135,16 @@
                  <li><a href="/Tabs/Administration/AddReturnedItems.aspx"><i class="fa fa-circle-o"></i> Returned Products</a></li>
                  <li><a href="/Tabs/Administration/ReturnedTrays.aspx"><i class="fa fa-circle-o"></i> Returned Trays</a></li>
                    <li><a href="/Tabs/Administration/ReturnScheme.aspx"><i class="fa fa-circle-o"></i> Returned Scheme</a></li>
+                      <li><a href="/Tabs/Despatch/RoutewiseReturnTraysReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Trays Report</a></li>
+                    <li><a href="/Tabs/Despatch/RoutewiseReturnIceBoxReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return IceBox Report</a></li>
+                  <li><a href="/Tabs/Despatch/RoutewiseReturnCartonReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Carton Report</a></li>
+                 <li><a href="/Tabs/Despatch/RoutewiseReturnOtherReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Other Report</a></li>
+
+                   <li><a href="/Tabs/Despatch/SalesmanwiseReturnTraysReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Trays Report</a></li>
+                    <li><a href="/Tabs/Despatch/SalesmanwiseReturnIceBoxReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return IceBox Report</a></li>
+                  <li><a href="/Tabs/Despatch/SalesmanwiseCartonReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Carton Report</a></li>
+                 <li><a href="/Tabs/Despatch/SalesmanwiseOtherReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Other Report</a></li>
+
            <li  class="treeview">
                <a href="#">
                 <i class="fa fa-file"></i>
@@ -147,7 +157,8 @@
                    <li><a href="/Tabs/Reports/RoutewiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Summary Route wise </a></li>
                   <li><a href="/Tabs/Reports/SalesAnalysisItemwise.aspx"><i class="fa fa-circle-o"></i>Sales Analysis Item wise</a></li>
                   </ul> </li>
-                
+
+                 
                
               </ul>
             </li> 
@@ -382,7 +393,16 @@
                  <li><a href="/Tabs/Reports/BillwiseSaleSummary.aspx"><i class="fa fa-circle-o"></i>Bill Wise Sales Summary</a></li> 
                   <li><a href="/Tabs/Reports/SalesAnalysisItemwise.aspx"><i class="fa fa-circle-o"></i>Sales Analysis-Itemwise</a></li>
                    <li><a href="/Tabs/Despatch/RoutewiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Routewise Sales Summary</a></li> 
-               
+
+                <li><a href="/Tabs/Despatch/RoutewiseReturnTraysReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Trays Report</a></li>
+                    <li><a href="/Tabs/Despatch/RoutewiseReturnIceBoxReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return IceBox Report</a></li>
+                  <li><a href="/Tabs/Despatch/RoutewiseReturnCartonReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Carton Report</a></li>
+                 <li><a href="/Tabs/Despatch/RoutewiseReturnOtherReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Other Report</a></li>
+
+                    <li><a href="/Tabs/Despatch/SalesmanwiseReturnTraysReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Trays Report</a></li>
+                    <li><a href="/Tabs/Despatch/SalesmanwiseReturnIceBoxReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return IceBox Report</a></li>
+                  <li><a href="/Tabs/Despatch/SalesmanwiseCartonReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Carton Report</a></li>
+                 <li><a href="/Tabs/Despatch/SalesmanwiseOtherReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Other Report</a></li>
                
               </ul>
             </li> 
