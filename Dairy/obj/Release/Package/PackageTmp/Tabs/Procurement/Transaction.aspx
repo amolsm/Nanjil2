@@ -18,7 +18,8 @@
                 });
             });
         }
-    </script>   <section class="content-header">
+    </script>  
+     <section class="content-header">
           <h1>
             Transaction
             <small>Procurement</small>
@@ -74,7 +75,7 @@
 
         <div class="box box-solid box-default" style="margin-bottom:5px !important;" >
         <div class="box-header" style="padding:0px 0px 0px 10px !important">
-          <h3 class="box-title"> Transaction List</h3>
+          <h3 class="box-title"> Transaction Summary</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
            
@@ -137,7 +138,7 @@
                     <div class="input-group">
                            <asp:Button ID="btnShow" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnShow_Click"   Text="Show" ValidationGroup="Save" /> 
                           &nbsp;  &nbsp; <asp:Button ID="btnAddTransaction" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Save All" ValidationGroup="Save" OnClick="btnAddTransaction_Click" />     
-                         &nbsp;  &nbsp;<asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />     
+                         &nbsp;  &nbsp;<asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Refresh"  OnClick="btnAddNew_Click" />     
                         </div>
                       </div>
                   </div>
@@ -155,7 +156,7 @@
 
         <div class="box ">
             <div class="box-header with-border">
-              <h3 class="box-title"> Transaction List</h3>
+              <h3 class="box-title"> Transaction Summary</h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 

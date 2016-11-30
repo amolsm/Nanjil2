@@ -203,6 +203,30 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("</tr>");
                 }
                 sb.Append("<tr style='border-bottom:1px solid'><td colspan='8'></td></tr>");
+              
+                sb.Append("<td colspan='2' style='text-align:left'>");
+                sb.Append("<b>Average :</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("&nbsp;");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalmilkltr/count).ToString("0.0") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalfatinkg/count).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalsnfinkg/count).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totaltsinkg/count).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalamt/count).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("</tr>");
+                sb.Append("<tr style='border-bottom:1px solid'><td colspan='8'></td></tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td colspan='2' style='text-align:left'>");
                 sb.Append("<b>Total :</b>");

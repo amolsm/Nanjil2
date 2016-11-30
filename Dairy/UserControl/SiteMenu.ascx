@@ -46,7 +46,7 @@
                    <li><a href="/Tabs/Procurement/ConsolidatePaymentSummary.aspx"><i class="fa fa-circle-o"></i>Consolidate Payment Summary</a></li>
              
                     <li><a href="/Tabs/Procurement/AddMilkCollectionCenter.aspx"><i class="fa fa-circle-o"></i>Milk Collection Center Profile</a></li>
-   <li><a href="/Tabs/Procurement/IncentiveTarrif.aspx"><i class="fa fa-circle-o"></i>Incentive Tarrif</a></li>
+   <li><a href="/Tabs/Procurement/IncentiveTarrif.aspx"><i class="fa fa-circle-o"></i>Procurement Incentive Tarrif</a></li>
               </ul>
             </li>
               <li class="treeview">
@@ -307,7 +307,7 @@
                   <li><a href="/Tabs/Procurement/RawMilkStockRegister.aspx"><i class="fa fa-circle-o"></i>MilkReceiving/Disposing Details</a></li>
                  
                   <li><a href="/Tabs/Procurement/RawMilkPaymentListViaBank.aspx"><i class="fa fa-circle-o"></i>Raw Milk Payment List Via Bank</a></li>
-                    <li><a href="/Tabs/Procurement/Transaction.aspx"><i class="fa fa-circle-o"></i>Transaction</a></li>
+                    <li><a href="/Tabs/Procurement/Transaction.aspx"><i class="fa fa-circle-o"></i>Transaction Summary</a></li>
                    <li><a href="/Tabs/Procurement/MonthlyRawMilkPurchaseSummary.aspx"><i class="fa fa-circle-o"></i>Monthly Raw Milk Purchase Summary</a></li>
                       <li><a href="/Tabs/Procurement/MilkCollectionTransportBill.aspx"><i class="fa fa-circle-o"></i>Milk Collection Transport Bill</a></li>
               </ul>
