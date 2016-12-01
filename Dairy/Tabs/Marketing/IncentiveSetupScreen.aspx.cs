@@ -120,6 +120,13 @@ namespace Dairy.Tabs.Marketing
                 //rpBrandInfo.Visible = true;
                 uprouteList.Update();
             }
+            else
+            {
+                rpBrandInfo.DataSource = ds;
+                rpBrandInfo.DataBind();
+                //rpBrandInfo.Visible = true;
+                uprouteList.Update();
+            }
         }
 
         protected void rpRouteList_ItemCommand(object sender, RepeaterCommandEventArgs e)

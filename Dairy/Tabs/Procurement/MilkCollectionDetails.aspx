@@ -164,7 +164,7 @@
                       <div class="input-group-addon">
                 No of Milk Can
                       </div>
-                       <asp:TextBox ID="txtMilkCan" class="form-control" placeholder="No Of Cans" runat="server"  ToolTip="No Of Cans" Type="number" step="any"></asp:TextBox>                        
+                       <asp:TextBox ID="txtMilkCan" class="form-control" placeholder="No Of Cans" runat="server"  ToolTip="No Of Cans" Type="number" min="0"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div> 
@@ -174,7 +174,7 @@
                       <div class="input-group-addon">
                  Milk Kg.
                       </div>
-                       <asp:TextBox ID="txtMilkInKG" class="form-control" placeholder="Milk In Kg" runat="server" ToolTip="Milk In KG" AutoPostBack="true" OnTextChanged="txtMilkInKG_TextChanged"  Type="number" step="any" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtMilkInKG" class="form-control Tab"  placeholder="Milk In Kg" runat="server" ToolTip="Milk In KG" AutoPostBack="true" OnTextChanged="txtMilkInKG_TextChanged"  Type="number" min="0" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -188,7 +188,7 @@
                       <div class="input-group-addon">
                       CLR Reading
                       </div>
-                       <asp:TextBox ID="txtCLRReading" class="form-control" placeholder="CLR Reading"  runat="server" ToolTip="CLR Reading" Type="number" step="any"></asp:TextBox>                        
+                       <asp:TextBox ID="txtCLRReading" class="form-control Tab" onFocus="this.select()" placeholder="CLR Reading"  runat="server" ToolTip="CLR Reading" Type="number" min="0"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -204,7 +204,7 @@
                       <div class="input-group-addon">
                    Fat %.
                       </div>
-                       <asp:TextBox ID="txtFATPercentage" class="form-control" placeholder="FAT %" runat="server" AutoPostBack="true"  OnTextChanged="txtCLRReading_TextChanged"   ToolTip="FAT %" Type="number" step="any"></asp:TextBox>                        
+                       <asp:TextBox ID="txtFATPercentage" class="form-control Tab" onFocus="this.select()" placeholder="FAT %" runat="server" AutoPostBack="true"  OnTextChanged="txtCLRReading_TextChanged"   ToolTip="FAT %" Type="number" min="0"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -463,6 +463,7 @@
                         <th>Route</th>
                         <th>MilkInKG </th>
                             <th>MilkInLtr </th>
+                            <th>CLR</th>
                         <th>FATPercentage</th> 
                         <th>FATInKG</th>
     
@@ -481,6 +482,7 @@
                       <td><%# Eval("RouteCode")%>&nbsp;&nbsp;<%# Eval("RouteName")%></td>
                       <td><%# Convert.ToDecimal(Eval("MilkInKG")).ToString("0.0")%></td>
                          <td><%# Convert.ToDecimal(Eval("MilkInLtr")).ToString("0.0")%></td>
+                         <td><%# Convert.ToDecimal(Eval("CLRReading")).ToString("0.0")%></td>
                       <td><%# Convert.ToDecimal(Eval("FATPercentage")).ToString("0.0")%></td>
                      
                       <td><%# Eval("FATInKG")%></td>
@@ -508,6 +510,7 @@
                         <th>Route</th>
                         <th>MilkInKG </th>
                            <th>MilkInLtr </th>
+                           <th>CLR</th>
                         <th>FATPercentage</th> 
                         <th>FATInKG</th>
                           
@@ -567,5 +570,28 @@
 
               });
           });
+
+          $('#txtMilkInKG').bind('keyup', function (e) {
+
+              if (e.keyCode === 13) { // 13 is enter key
+
+                  document.getElementById("txtCLRReading").focus();
+
+              }
+
+          });
+
+          $('#txtCLRReading').bind('keyup', function (e) {
+
+              if (e.keyCode === 13) { // 13 is enter key
+
+                  document.getElementById("txtFATPercentage").focus();
+
+              }
+
+          });
     </script>
+   
+  
+
 </asp:Content>

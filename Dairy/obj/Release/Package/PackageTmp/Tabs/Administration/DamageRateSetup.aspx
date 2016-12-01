@@ -67,7 +67,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                         <asp:DropDownList ID="dpRoute" data-live-search="true" class="selectpicker form-control" data-toggle="dropdown" DataTextField="Name" DataValueField="RouteID" runat="server" AutoPostBack="true" OnSelectedIndexChanged = "dpRoute_SelectedIndexChanged" ToolTip="Please Select Route" > 
+                         <asp:DropDownList ID="dpRoute" class="form-control"  DataTextField="Name" DataValueField="RouteID" runat="server" AutoPostBack="true" OnSelectedIndexChanged = "dpRoute_SelectedIndexChanged" ToolTip="Please Select Route" > 
                        </asp:DropDownList>
                     </div><!-- /.input group -->
                            <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="dpRoute"
@@ -345,13 +345,7 @@
         });
     });
    </script>
-    <script type="text/javascript">
-        function pageLoad() {
-            $("#<% =dpRoute.ClientID %>").addClass("form-control");
-        }
-
-
-</script> 
+  
   
   
 </asp:Content>

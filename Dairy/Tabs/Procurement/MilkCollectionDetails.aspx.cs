@@ -63,6 +63,7 @@ namespace Dairy.Tabs.Procurement
             // txtActualMilkInLtr.Text = System.Math.Round(milkInLtr, 1,
             //MidpointRounding.ToEven).ToString(); // Rounds to even
             txtCLRReading.Focus();
+           
 
         }
 
@@ -85,11 +86,14 @@ namespace Dairy.Tabs.Procurement
         {
            
             txtFATInKG.Text = System.Math.Round(((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtFATPercentage.Text)) / 100),2).ToString();
-            txtSNFPercentage.Text = System.Math.Round((Convert.ToDouble(txtCLRReading.Text) / 4 + (0.2 * Convert.ToDouble(txtFATPercentage.Text)) + 0.36),2).ToString();
+            string snfpercentage = System.Math.Round((Convert.ToDouble(txtCLRReading.Text) / 4 + (0.2 * Convert.ToDouble(txtFATPercentage.Text)) + 0.36),2).ToString();
+            string outsnfpercentage = BreakUpSingleDecimalPlace(snfpercentage);
+            txtSNFPercentage.Text = outsnfpercentage;
             txtSNFInKG.Text = System.Math.Round(((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtSNFPercentage.Text)) / 100),2).ToString();
             string tsPercent = System.Math.Round((Convert.ToDouble(txtFATPercentage.Text) + Convert.ToDouble(txtSNFPercentage.Text)),2).ToString();
             string outtspercent = BreakUpSingleDecimalPlace(tsPercent);
             txtTSPercentage.Text = outtspercent;
+           
             txtTSKG.Text = System.Math.Round((Convert.ToDouble(txtFATInKG.Text) + Convert.ToDouble(txtSNFInKG.Text)),2).ToString();
             txtFATInKG.Focus();
            

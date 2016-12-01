@@ -104,7 +104,10 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append(" <td  style='text-align:left'>");
-                sb.Append("Session :" + dpSession.SelectedItem.Text);
+                if (dpSession.SelectedItem.Value == "0")
+                { sb.Append("Shift : All"); }
+                else { sb.Append("Shift :" + dpSession.SelectedItem.Text); }
+               
                 sb.Append("</td>");
                 sb.Append(" <td colspan='2' style='text-align:center'>");
                 sb.Append(DateTime.Now.ToString());
@@ -155,44 +158,75 @@ namespace Dairy.Tabs.Procurement
                 double totalsnfpercent = 0.00;
                 double tspercent = 0.00;
                 double totaltspercent = 0.00;
-                foreach (DataRow row in DS1.Tables[0].Rows)
+                foreach (DataRow rows in DS1.Tables[1].Rows)
                 {
-                    count++;
-                    sb.Append("<td>");
-                    sb.Append(Convert.ToDateTime(row["_Date"]).ToString("dd-MM-yyyy"));
+                    sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '8'> &nbsp; </td> </tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<td  colspan='8'>");
+                    sb.Append(rows["_Session"].ToString());
                     sb.Append("</td>");
-                    //sb.Append("<td>");
-                    //sb.Append(row["_Session"].ToString());
-                    //sb.Append("</td>");
-                    sb.Append("<td colspan='3'>");
-                    sb.Append(row["Supplier"].ToString());
-                    sb.Append("</td>");
-                    sb.Append("<td style='text-align:right'>");
-                    milkinltr = Convert.ToDouble(row["MilkInLtr"]);
-                    totalmilklter += milkinltr;
-                    sb.Append(milkinltr.ToString());
-                    sb.Append("</td>");
-                   
-                    sb.Append("<td style='text-align:right'> ");
-                    fatpercent = Convert.ToDouble(row["FATPercentage"]);
-                    totalfatpercent += fatpercent;
-                    sb.Append(fatpercent.ToString());
-                    sb.Append("</td>");
-                 
-                    sb.Append("<td style='text-align:right'>");
-                    snfpercent = Convert.ToDouble(row["SNFPercentage"]);
-                    totalsnfpercent += snfpercent;
-                    sb.Append(snfpercent.ToString());
-                    sb.Append("</td>");
-                   
-                    sb.Append("<td style='text-align:right'>");
-                    tspercent = Convert.ToDouble(row["TSPercentage"]);
-                    totaltspercent += tspercent;
-                    sb.Append(tspercent.ToString());
-                    sb.Append("</td>");
-                
-
                     sb.Append("</tr>");
+                    foreach (DataRow row in DS1.Tables[0].Rows)
+                    {
+                        if (rows["_Session"].ToString() == row["_Session"].ToString())
+                        {
+                            count++;
+                            sb.Append("<td>");
+                            sb.Append(Convert.ToDateTime(row["_Date"]).ToString("dd-MM-yyyy"));
+                            sb.Append("</td>");
+                            //sb.Append("<td>");
+                            //sb.Append(row["_Session"].ToString());
+                            //sb.Append("</td>");
+                            sb.Append("<td colspan='3'>");
+                            sb.Append(row["Supplier"].ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td style='text-align:right'>");
+                            milkinltr = Convert.ToDouble(row["MilkInLtr"]);
+                            totalmilklter += milkinltr;
+                            sb.Append(milkinltr.ToString());
+                            sb.Append("</td>");
+
+                            sb.Append("<td style='text-align:right'> ");
+                            fatpercent = Convert.ToDouble(row["FATPercentage"]);
+                            totalfatpercent += fatpercent;
+                            sb.Append(fatpercent.ToString());
+                            sb.Append("</td>");
+
+                            sb.Append("<td style='text-align:right'>");
+                            snfpercent = Convert.ToDouble(row["SNFPercentage"]);
+                            totalsnfpercent += snfpercent;
+                            sb.Append(snfpercent.ToString());
+                            sb.Append("</td>");
+
+                            sb.Append("<td style='text-align:right'>");
+                            tspercent = Convert.ToDouble(row["TSPercentage"]);
+                            totaltspercent += tspercent;
+                            sb.Append(tspercent.ToString());
+                            sb.Append("</td>");
+
+
+                            sb.Append("</tr>");
+                        }
+                    }
+                    sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '8'> &nbsp; </td> </tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<td colspan='4'>");
+                    sb.Append("Total : ");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append(rows["MilkInLtr"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append(rows["FATPercentage"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append(rows["SNFPercentage"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append(rows["TSPercentage"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("</tr>");
+
                 }
                 sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '8'> &nbsp; </td> </tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");

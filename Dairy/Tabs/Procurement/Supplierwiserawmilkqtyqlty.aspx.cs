@@ -70,14 +70,14 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
                 sb.Append("</th>");
 
-                sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
+                sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center;font-size: 120%';>");
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
             
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
 
-                sb.Append("TIN:330761667331<br>");
+                sb.Append("<br>");
                 sb.Append("</th>");
                 sb.Append("</tr>");
 
@@ -89,7 +89,7 @@ namespace Dairy.Tabs.Procurement
 
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");
 
-                sb.Append("PH:248370,248605");
+                sb.Append("");
 
                 sb.Append("</td>");
                 sb.Append("</tr>");

@@ -121,6 +121,13 @@ namespace Dairy.Tabs.Administration
                     //rpBrandInfo.Visible = true;
                     uprouteList.Update();
                 }
+                else
+                {
+                    rpBrandInfo.DataSource = ds;
+                    rpBrandInfo.DataBind();
+                    //rpBrandInfo.Visible = true;
+                    uprouteList.Update();
+                }
             }
         }
 
