@@ -12,6 +12,7 @@ using System.Text;
 using Dairy.App_code;
 using System.Configuration;
 using System.Data.SqlClient;
+using DataAccess;
 
 namespace Dairy.Tabs.Administration
 {
@@ -82,6 +83,8 @@ namespace Dairy.Tabs.Administration
 
                 //string str = DS.GetXml();
                 //insertDispatchTemp(DS);
+                //Test
+
 
             }
 
@@ -383,6 +386,24 @@ namespace Dairy.Tabs.Administration
                 int id = 0;
                 string nm = GlobalInfo.UserName.ToString();
                 ds.ReadXml(Server.MapPath("~/Tabs/Dispatch/temp" + nm + ".xml"));
+
+                DataSet ds1 = new DataSet();
+                if (dpCategory.SelectedItem.Value == "1")
+                {
+                    DataTable dt = new DataTable();
+                    ds1.ReadXml(Server.MapPath("~/Tabs/Dispatch/temp" + nm + ".xml"));
+
+                    var query = from a in ds1.Tables[0].AsEnumerable()
+                                select a.Field<string>("OrderID");
+
+                    var qur = query.AsEnumerable().Distinct();
+                    foreach (var item in qur)
+                    {
+                        DBDispatch.DispatchSceme(item);
+                    }
+                }
+
+
                 ds.Tables[0].Columns.Add("DispatchInfoId", typeof(int));
                 id = Convert.ToInt32(ds.Tables[1].Rows[0]["id"]);
                 id = id + 1;

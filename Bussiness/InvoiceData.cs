@@ -26,9 +26,9 @@ namespace Bussiness
         {
             return dbinvoice.DeleteBulkOrderItems(id);
         }
-        public bool returnSchemeAmount(int orderid)
+        public bool returnSchemeAmount(int orderid, int returnBy)
         {
-            return dbinvoice.returnSchemeAmount(orderid);
+            return dbinvoice.returnSchemeAmount(orderid, returnBy);
         }
         
         public bool UpdateOrderID(int ids, int newid)

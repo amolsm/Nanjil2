@@ -1,4 +1,5 @@
 ﻿using Bussiness;
+using Dairy.App_code;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -112,7 +113,8 @@ namespace Dairy.Tabs.Administration
         {
             InvoiceData invoiceData = new InvoiceData();
             bool result = false;
-            result = invoiceData.returnSchemeAmount(orderid);
+            int returnBy = GlobalInfo.Userid;
+            result = invoiceData.returnSchemeAmount(orderid, returnBy);
 
             if (result)
             {

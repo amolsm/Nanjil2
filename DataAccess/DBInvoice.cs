@@ -131,7 +131,7 @@ namespace DataAccess
                 return false;
         }
 
-        public bool returnSchemeAmount(int orderid)
+        public bool returnSchemeAmount(int orderid, int returnBy)
         {
             int result = 0;
             try
@@ -140,7 +140,7 @@ namespace DataAccess
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
                 paramCollection.Add(new DBParameter("@orderid", orderid));
-
+                paramCollection.Add(new DBParameter("@ReturnBy", returnBy));
                 result = _DBHelper.ExecuteNonQuery("Sp_returnSchemeAmount", paramCollection, CommandType.StoredProcedure);
                 //  result = _DBHelper.ExecuteNonQuery("test1", paramCollection, CommandType.StoredProcedure);
 

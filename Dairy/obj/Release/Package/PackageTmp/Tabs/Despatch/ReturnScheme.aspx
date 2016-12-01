@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ReturnScheme.aspx.cs" Inherits="Dairy.Tabs.Despatch.ReturnScheme" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
     <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
     <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
     <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
