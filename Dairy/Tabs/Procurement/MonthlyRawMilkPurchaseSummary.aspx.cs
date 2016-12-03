@@ -73,8 +73,8 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
                 sb.Append("</th>");
 
-                sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
-                sb.Append("<u>Monthly Raw Milk Purchase Summary</u> <br/>");
+                sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center;font-size: 120%;'>");
+                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
@@ -85,8 +85,8 @@ namespace Dairy.Tabs.Procurement
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='6' style='text-align:center'>");
-                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
-
+               
+                sb.Append("<b><u>Monthly Raw Milk Purchase Summary</u></b> <br/>");
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");
@@ -205,30 +205,6 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<tr style='border-bottom:1px solid'><td colspan='8'></td></tr>");
               
                 sb.Append("<td colspan='2' style='text-align:left'>");
-                sb.Append("<b>Average :</b>");
-                sb.Append("</td>");
-                sb.Append("<td>");
-                sb.Append("&nbsp;");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalmilkltr/count).ToString("0.0") + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalfatinkg/count).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalsnfinkg/count).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totaltsinkg/count).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalamt/count).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-                sb.Append("</tr>");
-                sb.Append("<tr style='border-bottom:1px solid'><td colspan='8'></td></tr>");
-                sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td colspan='2' style='text-align:left'>");
                 sb.Append("<b>Total :</b>");
                 sb.Append("</td>");
                 sb.Append("<td>");
@@ -250,6 +226,31 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<b>" + Convert.ToDecimal(totalamt).ToString("0.00") + "</b>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
+                sb.Append("<tr style='border-bottom:1px solid'><td colspan='8'></td></tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<td colspan='2' style='text-align:left'>");
+                sb.Append("<b>Average :</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("&nbsp;");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalmilkltr/count).ToString("0.0") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalfatinkg/count).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalsnfinkg/count).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totaltsinkg/count).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + Convert.ToDecimal(totalamt/count).ToString("0.00") + "</b>");
+                sb.Append("</td>");
+                sb.Append("</tr>");
+             
                 result = sb.ToString();
                     Payment.Text = result;
 

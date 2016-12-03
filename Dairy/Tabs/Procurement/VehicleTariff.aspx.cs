@@ -266,5 +266,25 @@ namespace Dairy.Tabs.Procurement
         {
             Response.Redirect("~/Tabs/Procurement/VehicleTariff.aspx");
         }
+
+    
+
+        protected void txtKMHigh_TextChanged(object sender, EventArgs e)
+        {
+            ProcurementData pd = new ProcurementData();
+            DataSet DS = new DataSet();
+            DS = pd.GetAllVehicleMasterDetails();
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                foreach (DataRow row in DS.Tables[0].Rows)
+                {
+                    if (Convert.ToDecimal(row["KMLow"]).ToString("#.##") == txtKMLow.Text.ToString() && Convert.ToDecimal(row["KMHigh"]).ToString("#.##") == txtKMHigh.Text.ToString() && row["Vehicle"].ToString() == dpVehicleType.SelectedItem.Value)
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Already exists')", true);
+                        txtKMHigh.Text = string.Empty;
+                    }
+                }
+            }
+        }
     }
 }
