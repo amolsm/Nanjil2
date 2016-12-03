@@ -22,6 +22,7 @@ namespace Dairy.Tabs.Procurement
                 BindDropDown();
                 btnAddMilkTransport.Visible = true;
                 btnupdateMilkTransport.Visible = false;
+                txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             }
         }
 
@@ -209,52 +210,56 @@ namespace Dairy.Tabs.Procurement
         public void DeleteMilkCollectionTransportbyID(int collectionid)
         {
 
-            //Model.Procurement p = new Model.Procurement();
-            //ProcurementData pd = new ProcurementData();
-            //p.VehicleMasterID = string.IsNullOrEmpty(hfMilkCollectionID.Value) ? 0 : Convert.ToInt32(hfMilkCollectionID.Value);
-            //p.MilkInKG = Convert.ToDecimal(txtMilkInKG.Text);
-            //p.MilkInLtr = Convert.ToDecimal(txtMilkInLtr.Text);
-            //p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
-            //p.SupplierID = Convert.ToInt32(dpSupplier.SelectedItem.Value);
-            //p.FATPercentage = Convert.ToDecimal(txtFATPercentage.Text);
-            //p.FATInKG = Convert.ToDecimal(txtFATInKG.Text);
-            //p.CLRReading = Convert.ToDecimal(txtCLRReading.Text);
-            //p.SNF = Convert.ToDecimal(txtSNF.Text);
-            //p.SNFPercentage = Convert.ToDecimal(txtSNFPercentage.Text);
-            //p.SNFInKG = Convert.ToDecimal(txtSNFInKG.Text);
-            //p.TSPercentage = Convert.ToDecimal(txtTSPercentage.Text);
-            //p.IsActive = false;
 
-            //p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
-            //p.ModifiedBy = App_code.GlobalInfo.Userid;
-            //p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
-            //p.flag = "Delete";
-            //int Result = 0;
-            //Result = pd.InsertVehicleDetails(p);
-            //if (Result > 0)
-            //{
+            Model.Procurement p = new Model.Procurement();
+            ProcurementData pd = new ProcurementData();
+            p.MilkCollectionTransportID = string.IsNullOrEmpty(hfMilkCollectionID.Value) ? 0 : Convert.ToInt32(hfMilkCollectionID.Value); ;
+            p.Date = Convert.ToDateTime(txtDate.Text);
+            p.VehicleNo = dpVehicleNo.SelectedItem.Text;
+            p.RouteID = 0;
+            p.MorningKM = 0;
+            p.EveningKM = 0;
+            p.Bata = 0;
+            p.InstallmentAmount = 0;
+            p.MorningInTime = txtMorningInTime.Text;
+            p.MorningOutTime = txtMorningOutTime.Text;
+            p.EveningInTime = txtEveningInTime.Text;
+            p.EveningOutTime = txtEveningOutTime.Text;
+            p.MorningInCan = txtMCanIn.Text;
+            p.MorningOutCan = txtMCanOut.Text;
+            p.DriverName = txtDriverName.Text;
+            p.Remarks = txtRemarks.Text;
+            p.CreatedBy = App_code.GlobalInfo.Userid;
+            p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
+            p.ModifiedBy = App_code.GlobalInfo.Userid;
+            p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
+            p.flag = "Delete";
+            int Result = 0;
+            Result = pd.InsertMilkCollectionTransportDetails(p);
+            if (Result > 0)
+            {
+                //lbltital.Text = "Add Route";
+                divDanger.Visible = false;
+                divwarning.Visible = false;
+                divSusccess.Visible = true;
+                lblSuccess.Text = "Milk Collection Record Deleted  Successfully";
+                ClearTextBox();
+                BindMilkCollectionList();
+                pnlError.Update();
+                btnAddMilkTransport.Visible = true;
+                btnupdateMilkTransport.Visible = false;
+                upMain.Update();
+                uprouteList.Update();
+            }
+            else
+            {
+                divDanger.Visible = false;
+                divwarning.Visible = true;
+                divSusccess.Visible = false;
+                lblwarning.Text = "Please Contact to Site Admin";
+                pnlError.Update();
 
-            //    divDanger.Visible = false;
-            //    divwarning.Visible = false;
-            //    divSusccess.Visible = true;
-            //    lblSuccess.Text = "Delete Updated  Successfully";
-            //    ClearTextBox();
-            //    BindMilkCollectionList();
-            //    pnlError.Update();
-            //    btnAddMilkCollection.Visible = true;
-            //    btnupdateMilkCollection.Visible = false;
-            //    upMain.Update();
-            //    uprouteList.Update();
-            //}
-            //else
-            //{
-            //    divDanger.Visible = false;
-            //    divwarning.Visible = true;
-            //    divSusccess.Visible = false;
-            //    lblwarning.Text = "Please Contact to Site Admin";
-            //    pnlError.Update();
-
-            //}
+            }
         }
         protected void btnupdateMilkCollection_Click(object sender, EventArgs e)
         {

@@ -62,7 +62,7 @@
         <div class="box-body">
 
           
-            
+            <div class="row">
              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -104,7 +104,7 @@
                   </div><!-- /.form group --> 
                           
                       </div> 
-
+           
               <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -118,7 +118,8 @@
                   </div><!-- /.form group --> 
                           
                       </div> 
-
+             </div>
+              <div class="row">
                 <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -135,14 +136,16 @@
           
          
             
-               <div class="col-lg-3">
+               <div class="col-lg-9">
                   <div class="form-group">
                     <div class="input-group">
                       
                     
                       
                               <asp:Button ID="btnGeneratereport" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnGeneratereport_Click"   Text="Generate Report" ValidationGroup="Save" />     &nbsp;&nbsp;
-                        <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="PrintPanel()"   Text="Print" ValidationGroup="Save" />           
+                        <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="PrintPanel()"   Text="Print" ValidationGroup="Save" />      &nbsp;&nbsp;    
+                          <asp:Button ID="btnExporttoexcell" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnExporttoexcell_Click"   Text="Download as Excell file" ValidationGroup="Save" visible="false"/>     &nbsp;&nbsp;
+                          <asp:Button ID="btnExportinText" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnExportinText_Click"   Text="Download as Text File" ValidationGroup="Save"  visible="false"/>      
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -151,6 +154,7 @@
                        
                           
                       </div> 
+                  </div>
         </div><!-- /.box-body -->
       </div>
 

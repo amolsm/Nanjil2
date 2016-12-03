@@ -80,7 +80,7 @@
           <h3 class="box-title">Supplier Information </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
-
+            <div class="row">
              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -89,13 +89,15 @@
                       </div>
                        <asp:TextBox ID="txtSupplierCode" class="form-control" placeholder="SupplierCode" runat="server" ToolTip="Supplier Code" ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       <asp:RequiredFieldValidator  ID="RequiredFieldValidator7" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtSupplierCode" ForeColor="Red"
+    ErrorMessage="Please Enter SupplierCode "></asp:RequiredFieldValidator>
                   </div><!-- /.form group --> 
                           
                       </div>
             
               <div class="col-lg-3">
-                  <div class="form-group" style="margin-bottom:1px">
+                  <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
@@ -125,6 +127,9 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator1" Display="Dynamic" 
+                            ValidationGroup="Save" runat="server" ControlToValidate="dpRoute"
+                            Text="Please Select Route" ErrorMessage="Please Select Route" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -139,9 +144,13 @@
                       </div>
                        <asp:TextBox ID="txtSupplierName" class="form-control" placeholder="Supplier Name" runat="server"  ToolTip="Supplier Name"></asp:TextBox>                        
                     </div><!-- /.input group -->
+                       <asp:RequiredFieldValidator  ID="RequiredFieldValidator8" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtSupplierName" ForeColor="Red"
+    ErrorMessage="Please Enter SupplierName "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->                   
                   </div>  
-
+            </div>
+                <div class="row">
             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -154,14 +163,16 @@
                   </div>  
              
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
                       </div>
                        <asp:TextBox ID="txtJoiningDate" class="form-control" placeholder="Joining Date"  type="date" runat="server" ToolTip="Joining Date" ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       <asp:RequiredFieldValidator  ID="RequiredFieldValidator9" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtJoiningDate" ForeColor="Red"
+    ErrorMessage="Please Enter JoiningDate "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -169,7 +180,7 @@
                           
                       </div>  
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
@@ -183,13 +194,16 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator2" Display="Dynamic" 
+                            ValidationGroup="Save" runat="server" ControlToValidate="DropDownList1"
+                            Text="Please Select Status" ErrorMessage="Please Select Status" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
                        
                           
                       </div>     
-          
+          </div>
               
         </div><!-- /.box-body -->
       </div>
@@ -199,15 +213,18 @@
           <h3 class="box-title">Contact Information </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
+            <div class="row">
             <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-map-marker"></i><span style="color:red">&nbsp;*</span>
                       </div>
                        <asp:TextBox ID="txtAddress1" class="form-control" placeholder="Address 1" runat="server" ToolTip="Address 1" ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       <asp:RequiredFieldValidator  ID="RequiredFieldValidator10" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtAddress1" ForeColor="Red"
+    ErrorMessage="Please Enter Address "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                 
 
@@ -223,7 +240,7 @@
                       </div>
                        <asp:TextBox ID="txtAddress2" class="form-control" placeholder="Address 2" runat="server" ToolTip="Address 2"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      
                   </div><!-- /.form group -->
 
                      
@@ -245,9 +262,9 @@
                        
                           
                       </div> 
-            
+            </div>
  
-
+           <div class="row">
               <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
@@ -260,14 +277,16 @@
                   </div><!-- /.form group --> 
                    </div> 
                         <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-mobile"></i><span style="color:red">&nbsp;*</span>
                       </div>
                        <asp:TextBox ID="txtMobile" class="form-control" placeholder="Mobile No" runat="server"  Type="number" ToolTip="MobileNo."></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       <asp:RequiredFieldValidator  ID="RequiredFieldValidator11" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="txtMobile" ForeColor="Red"
+    ErrorMessage="Please Enter Mobile No. "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -289,17 +308,19 @@
                        
                           
                       </div>  
-
-
+               </div>
+            <div class="row">
                         <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group"style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-globe"></i><span style="color:red">&nbsp;*</span>
                       </div>                      
                        <asp:DropDownList  ID="dpCity" ToolTip="Select City" class="form-control" DataTextField="Name"  runat="server"  > 
                        </asp:DropDownList></div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator3" Display="Dynamic" 
+                            ValidationGroup="Save" runat="server" ControlToValidate="dpCity"
+                            Text="Please Select City" ErrorMessage="Please Select City" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -307,14 +328,16 @@
                           
                       </div> 
                                <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-globe"></i><span style="color:red">&nbsp;*</span>
                       </div>
                       <asp:DropDownList  ID="dpDistrict" ToolTip="Select District" class="form-control" DataTextField="Name"  runat="server"  > 
                        </asp:DropDownList></div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator4" Display="Dynamic" 
+                            ValidationGroup="Save" runat="server" ControlToValidate="dpDistrict"
+                            Text="Please Select District" ErrorMessage="Please Select District" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -324,7 +347,7 @@
                       
                       
                   <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
@@ -333,6 +356,9 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                        <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator5" Display="Dynamic" 
+                            ValidationGroup="Save" runat="server" ControlToValidate="dpState"
+                            Text="Please Select State" ErrorMessage="Please Select State" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -341,7 +367,7 @@
                       </div>  
             
                 <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
@@ -350,12 +376,16 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                        <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator6" Display="Dynamic" 
+                            ValidationGroup="Save" runat="server" ControlToValidate="dpCountry"
+                            Text="Please Select Country" ErrorMessage="Please Select Country" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
                        
                           
-                      </div>  
+                      </div> 
+                </div> 
              <%--<div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">

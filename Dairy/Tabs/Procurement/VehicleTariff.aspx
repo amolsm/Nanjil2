@@ -115,7 +115,7 @@
                       <div class="input-group-addon">
                  KM Low
                       </div>        
-                     <asp:TextBox ID="txtKMLow" class="form-control" placeholder="Low KM" runat="server"  ToolTip="Low KM"></asp:TextBox>                        
+                     <asp:TextBox ID="txtKMLow" class="form-control" placeholder="Low KM" runat="server"  ToolTip="Low KM" Type="number" min="0" step="any" ></asp:TextBox>                        
 
                   </div><!-- /.form group -->
 
@@ -129,8 +129,8 @@
                     <div class="input-group">
                       <div class="input-group-addon">
                     KM High
-                      </div>
-                       <asp:TextBox ID="txtKMHigh" class="form-control" placeholder="High KM" runat="server"  ToolTip="High KM"></asp:TextBox>                        
+                      </div> 
+                       <asp:TextBox ID="txtKMHigh" class="form-control" placeholder="High KM" runat="server"  ToolTip="High KM" Type="number" min="0" step="any" AutoPostBack="true" OnTextChanged="txtKMHigh_TextChanged"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -142,7 +142,7 @@
                       <div class="input-group-addon">
                      Amount
                       </div>
-                      <asp:TextBox ID="txtAmount" class="form-control" placeholder="Amount" runat="server"  ToolTip="Amount"></asp:TextBox>                        
+                      <asp:TextBox ID="txtAmount" class="form-control" placeholder="Amount" runat="server"  ToolTip="Amount" Type="number" min="0" step="any"></asp:TextBox>                        
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -158,7 +158,7 @@
                       <div class="input-group-addon">
                   Bata
                       </div>
-                       <asp:TextBox ID="txtBata" class="form-control" placeholder="Bata" runat="server"  ToolTip="Bata"></asp:TextBox>                        
+                       <asp:TextBox ID="txtBata" class="form-control" placeholder="Bata" runat="server"  ToolTip="Bata" Type="number" min="0" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -274,7 +274,7 @@
                           <th>Amount</th>
                           <th>Discription</th>
                            <th>Edit</th>
-                          <th>Delete</th>
+                         <%-- <th>Delete</th>--%>
                       </tr>
                     </thead>
                     <tbody>
@@ -285,8 +285,8 @@
                     <tr>
                       <%--   <td><%# Eval("SrNo")%></td>--%>
                       <td><%# Eval("VehicleType")%></td>
-                          <td><%# Eval("KMLow")%></td>
-                        <td><%# Eval("KMHigh") %></td>
+                          <td><%# Convert.ToDecimal(Eval("KMLow")).ToString("#.##")%></td>
+                        <td><%# Convert.ToDecimal(Eval("KMHigh")).ToString("#.##") %></td>
                       <td><%# Eval("Bata")%></td>
                           <td><%# Eval("Amount")%></td>
                     
@@ -300,10 +300,10 @@
                                                                     CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
 
                          </td>
-                         <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
+                      <%--   <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
                                                                     ToolTip="Delete" runat="server" CommandArgument='<%#Eval("VahicleID") %>'
                                                                     CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>
+</td>--%>
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
@@ -321,7 +321,7 @@
                           <th>Amount</th>
                           <th>Discription</th>
                            <th>Edit</th>
-                          <th>Delete</th>
+                         <%-- <th>Delete</th>--%>
                       </tr>
                     </tfoot>
 

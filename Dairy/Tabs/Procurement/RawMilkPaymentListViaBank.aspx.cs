@@ -7,6 +7,8 @@ using System.Data;
 using System.Web.UI.WebControls;
 using Bussiness;
 using System.Text;
+using System.IO;
+
 
 namespace Dairy.Tabs.Procurement
 {
@@ -229,6 +231,57 @@ namespace Dairy.Tabs.Procurement
 
             }
             uprouteList.Update();
+
+        }
+
+        protected void btnExporttoexcell_Click(object sender, EventArgs e)
+        {
+            Model.Procurement p = new Model.Procurement();
+            ProcurementData pd = new ProcurementData();
+
+            p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
+            p.FomDate = Convert.ToDateTime(txtStartDate.Text);
+            p.ToDate = Convert.ToDateTime(txtEndDate.Text);
+            if (dpBankName.SelectedItem.Value == "0")
+            { p.BankName = "0"; }
+            else { p.BankName = dpBankName.SelectedItem.Text; }
+            if (dpIfscCode.SelectedItem.Value == "0")
+            { p.IFSCCode = "0"; }
+            else { p.IFSCCode = dpIfscCode.SelectedItem.Text; }
+            DataSet DS = new DataSet();
+            DS = pd.RawMilkPaymentListViaBank(p);
+            string result = string.Empty;
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                Response.ClearContent();
+                Response.Buffer = true;
+                Response.AddHeader("content-disposition", string.Format("attachment; filename={0}", "Customers.xls"));
+                Response.ContentType = "application/ms-excel";
+                DataTable dt = DS.Tables[0];
+                string str = string.Empty;
+                foreach (DataColumn dtcol in dt.Columns)
+                {
+                    Response.Write(str + dtcol.ColumnName);
+                    str = "\t";
+                }
+                Response.Write("\n");
+                foreach (DataRow dr in dt.Rows)
+                {
+                    str = "";
+                    for (int j = 0; j < dt.Columns.Count; j++)
+                    {
+                        Response.Write(str + Convert.ToString(dr[j]));
+                        str = "\t";
+                    }
+                    Response.Write("\n");
+                }
+                Response.End();
+            }
+
+        }
+
+        protected void btnExportinText_Click(object sender, EventArgs e)
+        {
 
         }
     }

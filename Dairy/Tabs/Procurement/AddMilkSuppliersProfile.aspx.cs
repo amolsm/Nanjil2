@@ -283,7 +283,7 @@ namespace Dairy.Tabs.Procurement
                     int count = Convert.ToInt32(DS.Tables[1].Rows[0]["id"]);
                     count = count + 1;
                     txtSupplierCode.Text = string.Format("S{0:0000}", count);
-                    txtSupplierCode.ReadOnly = false;
+                    txtSupplierCode.ReadOnly = true;
                     rpSupplierProfList.DataSource = DS;
                     rpSupplierProfList.DataBind();
                 }
@@ -344,6 +344,7 @@ namespace Dairy.Tabs.Procurement
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 txtSupplierCode.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SupplierCode"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SupplierCode"].ToString();
+                txtSupplierCode.ReadOnly = false;
                 txtSupplierName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SupplierName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SupplierName"].ToString();
                 dpCenter.ClearSelection();
                 if (dpCenter.Items.FindByValue(DS.Tables[0].Rows[0]["CenterID"].ToString()) != null)
