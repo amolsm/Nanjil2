@@ -110,6 +110,7 @@
     <Content Include="Tabs\Administration\GenrateBillThermal.aspx" />
     <Content Include="Tabs\Administration\IncentiveSetup.aspx" />
     <Content Include="Tabs\Administration\OrderQuantity.aspx" />
+    <Content Include="Tabs\Administration\Shift.aspx" />
     <Content Include="Tabs\Administration\UserLog.aspx" />
     <Content Include="Tabs\Administration\ViewDispatchSummary.aspx" />
     <Content Include="Tabs\Administration\ViewDispatchSummaryUsers.aspx" />
@@ -1311,6 +1312,13 @@
     </Compile>
     <Compile Include="Tabs\Administration\OrderQuantity.aspx.designer.cs">
       <DependentUpon>OrderQuantity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\Shift.aspx.cs">
+      <DependentUpon>Shift.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\Shift.aspx.designer.cs">
+      <DependentUpon>Shift.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Administration\UserLog.aspx.cs">
       <DependentUpon>UserLog.aspx</DependentUpon>

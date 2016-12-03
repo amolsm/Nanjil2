@@ -26,6 +26,14 @@ namespace Dairy.Authentication
                     dpAgent.DataBind();
                     dpAgent.Items.Insert(0, new ListItem("--Select Booth--", "0"));
                 }
+                DS.Clear();
+                DS = BindCommanData.BindCommanDropDwon("ShiftId as Id", "ShiftName as Name", "ShiftMaster", "IsActive = 1");
+                if (!Comman.Comman.IsDataSetEmpty(DS))
+                {
+                    dpShift.DataSource = DS;
+                    dpShift.DataBind();
+                    dpShift.Items.Insert(0, new ListItem("--Select Shift--", "0"));
+                }
 
             }
         }
@@ -43,7 +51,16 @@ namespace Dairy.Authentication
 
                     PNLLOGIN.Visible = false;
                     PNLSELECTBOTH.Visible = true;
+                    pnlSelectShift.Visible = false;
                    // CreateAutinticationTikit(user, string.Empty);
+                }
+                else if (user.RoleID.ToString() == "Despatch")
+                {
+
+                    PNLLOGIN.Visible = false;
+                    PNLSELECTBOTH.Visible = false;
+                    pnlSelectShift.Visible = true;
+                    // CreateAutinticationTikit(user, string.Empty);
                 }
                 else
                 {
@@ -166,6 +183,11 @@ namespace Dairy.Authentication
             }
             Session["BoothLoggedIn"] = dpAgent.SelectedItem.Text;
             return true;
+        }
+
+        protected void dpShift_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     }
