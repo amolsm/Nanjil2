@@ -339,5 +339,10 @@ namespace Bussiness
         {
             return pdb.AddTransaction(SupplierID, RouteID, PaymentDateTime, FomDate, ToDate, Amount, Bonus, Scheme, RDAmount, canloan, casloan, bankloan, netamt);
         }
+
+        public DataSet GetBataandAmountOfVehicleonbasisofmodelid(int modelid,int vehicleno)
+        {
+            return pdb.GetBataandAmountOfVehicleonbasisofmodelid(modelid, vehicleno);
+        }
     }
 }

@@ -109,7 +109,7 @@
                       <div class="input-group-addon">
                        Vehicle No.
                       </div>
-                        <asp:DropDownList ID="dpVehicleNo" class="form-control" DataTextField="VehicleNo" DataValueField="VehicleMasterID" ToolTip="Select Vehicle No." runat="server" selected> 
+                        <asp:DropDownList ID="dpVehicleNo" class="form-control" DataTextField="VehicleNo" DataValueField="VehicleMasterID" ToolTip="Select Vehicle No." runat="server" OnSelectedIndexChanged="dpVehicleNo_SelectedIndexChanged" AutoPostBack="true"> 
                        </asp:DropDownList>                     
                     </div><!-- /.input group -->
 
@@ -223,6 +223,20 @@
                   </div><!-- /.form group --> 
                           
                       </div>
+
+              <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     Evening In Can 
+                      </div>
+                       <asp:TextBox ID="txtEInCan" class="form-control" placeholder="Evening In Can" runat="server" type="number" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div>
+
              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -235,6 +249,20 @@
                   </div><!-- /.form group --> 
                           
                       </div>
+
+              <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     Evening Out Can 
+                      </div>
+                       <asp:TextBox ID="txtEOutCan" class="form-control" placeholder="Evening Out Can" runat="server" type="number" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div>
+
 
                <div class="col-lg-3">
                   <div class="form-group">

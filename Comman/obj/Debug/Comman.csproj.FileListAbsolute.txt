@@ -7,3 +7,4 @@ D:\NanjilCode2\Nanjil2\Comman\bin\Comman.dll
 D:\NanjilCode2\Nanjil2\Comman\bin\Comman.pdb
 D:\NanjilCode2\Nanjil2\Comman\obj\Debug\Comman.dll
 D:\NanjilCode2\Nanjil2\Comman\obj\Debug\Comman.pdb
+D:\NanjilCode2\Nanjil2\Comman\obj\Debug\Comman.csprojResolveAssemblyReference.cache
