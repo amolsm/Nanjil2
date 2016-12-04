@@ -79,7 +79,9 @@
                         
                          
                     </div><!-- /.input group -->
+                   </div>
            </asp:Panel>
+
                 <asp:Panel runat="server" ID="pnlSelectShift" Visible="false">
                <div class="form-group">
                     <div class="input-group">
@@ -91,6 +93,7 @@
                         
                          
                     </div><!-- /.input group -->
+                   </div>
            </asp:Panel>
         </form>
 

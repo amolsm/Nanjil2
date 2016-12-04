@@ -2593,6 +2593,7 @@
     <Folder Include="bin\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="obj\Release\" />
+    <Folder Include="Tabs\DespatchM\" />
     <Folder Include="Theme\obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>

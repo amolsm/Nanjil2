@@ -66,7 +66,7 @@ namespace Dairy.Authentication
                 {
                     PNLLOGIN.Visible = true;
                     PNLSELECTBOTH.Visible = false;
-                    CreateAutinticationTikit(user, string.Empty);
+                    CreateAutinticationTikit(user, string.Empty, string.Empty);
 
 
                 }
@@ -100,11 +100,11 @@ namespace Dairy.Authentication
             Session["UserLoggedIn"] = user.UserName;
             return true;
         }
-          public void CreateAutinticationTikit(User user,string bothID)
+          public void CreateAutinticationTikit(User user,string bothID, string ShiftId)
         {
                 FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, txtUsername.Text,
                 DateTime.Now, DateTime.Now.AddMinutes(60),
-                true, user.UserID.ToString() + ";" + user.RoleID.ToString() + ";" + user.UserName.ToString() + ";" + user.privilege.ToString() + ";" + user.LastLogin+ ";" + bothID,
+                true, user.UserID.ToString() + ";" + user.RoleID.ToString() + ";" + user.UserName.ToString() + ";" + user.privilege.ToString() + ";" + user.LastLogin+ ";" + bothID + ";" + ShiftId,
                 FormsAuthentication.FormsCookiePath);
                 string hash = FormsAuthentication.Encrypt(ticket);
                 HttpCookie cookie = new HttpCookie(
@@ -153,15 +153,15 @@ namespace Dairy.Authentication
             }
               protected void dpAgentpre_SelectedIndexChanged(object sender, EventArgs e)
            {
-            if(dpAgent.SelectedItem.Value != "0")
-            { 
-            UserData userData = new UserData();
-            user.UserName = txtUsername.Text;
-            user.PassWord = ViewState["txtpassword"].ToString();//txtpassword.Text;// FormsAuthentication.HashPasswordForStoringInConfigFile(txtpassword.Text, "MD5");
-            if (userData.Isauthenticat(user) && boothLoggedIn())
+            if (dpShift.SelectedItem.Value != "0")
             {
-                CreateAutinticationTikit(user, dpAgent.SelectedItem.Value);
-            }
+                UserData userData = new UserData();
+                user.UserName = txtUsername.Text;
+                user.PassWord = ViewState["txtpassword"].ToString();//txtpassword.Text;// FormsAuthentication.HashPasswordForStoringInConfigFile(txtpassword.Text, "MD5");
+                if (userData.Isauthenticat(user) && boothLoggedIn())
+                {
+                    CreateAutinticationTikit(user, dpAgent.SelectedItem.Value, string.Empty);
+                }
             }
         }
 
@@ -187,7 +187,16 @@ namespace Dairy.Authentication
 
         protected void dpShift_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (dpShift.SelectedItem.Value != "0")
+            {
+                UserData userData = new UserData();
+                user.UserName = txtUsername.Text;
+                user.PassWord = ViewState["txtpassword"].ToString();//txtpassword.Text;// FormsAuthentication.HashPasswordForStoringInConfigFile(txtpassword.Text, "MD5");
+                if (userData.Isauthenticat(user))
+                {
+                    CreateAutinticationTikit(user, string.Empty, dpShift.SelectedItem.Value);
+                }
+            }
         }
     }
     }

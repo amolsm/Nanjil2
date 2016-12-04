@@ -38,6 +38,8 @@ namespace Dairy.Tabs.Despatch
                 //btnAddRoute.Visible = true;
                 //btnupdateroute.Visible = false;
                 txtOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+
+               // int shiftId = GlobalInfo.ShiftId;
             }
 
         }
