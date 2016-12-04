@@ -1518,6 +1518,10 @@ namespace Model
             get { return _TSEndPercentage; }
             set { _TSEndPercentage = value; }
         }
+
+        public string EveningInCan { get; set; }
+        public string EveningOutCan { get; set; }
+
         private decimal _TSEndPercentage;
     }
 }

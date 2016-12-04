@@ -228,6 +228,26 @@ namespace DataAccess
             return DS;
         }
 
+        public DataSet GetBataandAmountOfVehicleonbasisofmodelid(int modelid, int vehicleno)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@modelid", modelid));
+                paramCollection.Add(new DBParameter("@vehicleno", vehicleno));
+                DS = _DBHelper.ExecuteDataSet("Proc_sp_GetBataandAmountOfVehicle", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception ex)
+            {
+
+                string msg = ex.ToString();
+            }
+            return DS;
+        }
+
         public DataSet GetReceiveDisposeHeadMaster()
         {
             DataSet DS = new DataSet();
@@ -1378,6 +1398,8 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@MorningOutCan", p.MorningOutCan));
                 paramCollection.Add(new DBParameter("@EveningInTime", p.EveningInTime));
                 paramCollection.Add(new DBParameter("@EveningOutTime", p.EveningOutTime));
+                paramCollection.Add(new DBParameter("@EveningInCan", p.EveningInCan));
+                paramCollection.Add(new DBParameter("@EveningOutCan", p.EveningOutCan));
                 paramCollection.Add(new DBParameter("@DriverName", p.DriverName));
                 paramCollection.Add(new DBParameter("@Remarks", p.Remarks));
                 paramCollection.Add(new DBParameter("@CreatedBy", p.CreatedBy));
@@ -1388,9 +1410,9 @@ namespace DataAccess
                 result = _DBHelper.ExecuteNonQuery("Proc_sp_MilkCollectionTransport", paramCollection, CommandType.StoredProcedure);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                string msg = ex.ToString();
 
             }
             return result;

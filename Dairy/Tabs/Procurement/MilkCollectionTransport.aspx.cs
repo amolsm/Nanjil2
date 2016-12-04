@@ -117,6 +117,8 @@ namespace Dairy.Tabs.Procurement
             p.EveningOutTime = txtEveningOutTime.Text;
             p.MorningInCan = txtMCanIn.Text;
             p.MorningOutCan = txtMCanOut.Text;
+            p.EveningInCan = txtEInCan.Text;
+            p.EveningOutCan = txtEOutCan.Text;
             p.DriverName = txtDriverName.Text;
             p.Remarks = txtRemarks.Text;
             p.CreatedBy = App_code.GlobalInfo.Userid;
@@ -169,6 +171,8 @@ namespace Dairy.Tabs.Procurement
             txtEveningInTime.Text = string.Empty;
             txtEveningOutTime.Text = string.Empty;
             txtDriverName.Text = string.Empty;
+            txtEInCan.Text = string.Empty;
+            txtEOutCan.Text = string.Empty;
 
         }
 
@@ -194,6 +198,8 @@ namespace Dairy.Tabs.Procurement
                 txtMorningOutTime.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MorningOutTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MorningOutTime"].ToString();
                 txtMCanIn.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MorningInCan"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MorningInCan"].ToString();
                 txtMCanOut.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MorningOutCan"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MorningOutCan"].ToString();
+                txtEInCan.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["EveningInCan"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["EveningInCan"].ToString();
+                txtEOutCan.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["EveningOutCan"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["EveningOutCan"].ToString();
 
                 txtEveningInTime.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["EveningInTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["EveningInTime"].ToString();
                 txtEveningOutTime.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["EveningOutTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["EveningOutTime"].ToString();
@@ -227,6 +233,8 @@ namespace Dairy.Tabs.Procurement
             p.EveningOutTime = txtEveningOutTime.Text;
             p.MorningInCan = txtMCanIn.Text;
             p.MorningOutCan = txtMCanOut.Text;
+            p.EveningInCan = txtEInCan.Text;
+            p.EveningOutCan = txtEOutCan.Text;
             p.DriverName = txtDriverName.Text;
             p.Remarks = txtRemarks.Text;
             p.CreatedBy = App_code.GlobalInfo.Userid;
@@ -279,6 +287,8 @@ namespace Dairy.Tabs.Procurement
             p.EveningOutTime = txtEveningOutTime.Text;
             p.MorningInCan = txtMCanIn.Text;
             p.MorningOutCan = txtMCanOut.Text;
+            p.EveningInCan = txtEInCan.Text;
+            p.EveningOutCan = txtEOutCan.Text;
             p.DriverName = txtDriverName.Text;
             p.Remarks = txtRemarks.Text;
             p.CreatedBy = App_code.GlobalInfo.Userid;
@@ -318,14 +328,54 @@ namespace Dairy.Tabs.Procurement
         {
             int MorningKM;
             int EveningKM;
+            double totalkm;
+
             MorningKM= string.IsNullOrEmpty(txtMorningKM.Text) ? 0 : Convert.ToInt32(txtMorningKM.Text);
             EveningKM= string.IsNullOrEmpty(txtEveningKM.Text) ? 0 : Convert.ToInt32(txtEveningKM.Text);
-            txtTotalKM.Text = Convert.ToString(MorningKM + EveningKM);
+            totalkm = Convert.ToDouble(MorningKM + EveningKM);
+            txtTotalKM.Text = totalkm.ToString();
+            DS = BindCommanData.BindCommanDropDwon("VehicleMasterID ", "VehicleType", "Proc_VehicleMaster", "IsActive=1 and VehicleMasterID=" + dpVehicleNo.SelectedItem.Value);
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                int modelid;
+                double tds;
+                double amt;
+                var vehiclemodelid = DS.Tables[0].AsEnumerable().Select(r => r.Field<int>("VehicleType")).ToList();
+                modelid = Convert.ToInt32(vehiclemodelid[0]);
+                DataSet ds = new DataSet();
+                ProcurementData pd = new ProcurementData();
+                ds = pd.GetBataandAmountOfVehicleonbasisofmodelid(modelid,Convert.ToInt32(dpVehicleNo.SelectedItem.Value));
+                if (!Comman.Comman.IsDataSetEmpty(DS))
+                {
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        if (Convert.ToDouble(row["KMLow"]) < totalkm && Convert.ToDouble(row["KMHigh"]) > totalkm)
+                        {
+                            txtBata.Text = Convert.ToDecimal(row["Bata"]).ToString("#.##");
+                        }
+                    }
+                    tds= Convert.ToDouble(ds.Tables[1].Rows[0]["TDS"]);
+                    amt = totalkm+(totalkm * tds/100) ;
+                    txtAmount.Text = amt.ToString();
+                }
+
+                }
         }
 
         protected void btnAddNew_Click(object sender, EventArgs e)
         {
            Response.Redirect("~/Tabs/Procurement/MilkCollectionTransport.aspx");
+        }
+
+        protected void dpVehicleNo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DS = BindCommanData.BindCommanDropDwon("VehicleMasterID ", "DriverName", "Proc_VehicleMaster", "IsActive=1 and VehicleMasterID="+dpVehicleNo.SelectedItem.Value);
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+               
+                    var dname = DS.Tables[0].AsEnumerable().Select(r => r.Field<string>("DriverName")).ToList();
+                    txtDriverName.Text = dname[0].ToString();
+            }
         }
     }
 }
