@@ -74,11 +74,26 @@
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:DropDownList ID="dpAgent" class="form-control" DataTextField="Name" DataValueField="AgentID" runat="server" AutoPostBack="true" OnSelectedIndexChanged = "dpAgentpre_SelectedIndexChanged"   > 
+                       <asp:DropDownList ID="dpAgent" class="form-control" DataTextField="Name" DataValueField="AgentID" runat="server" AutoPostBack="true" OnTextChanged="dpAgent_TextChanged"   > 
                        </asp:DropDownList>
                         
                          
                     </div><!-- /.input group -->
+                   </div>
+           </asp:Panel>
+
+                <asp:Panel runat="server" ID="pnlSelectShift" Visible="false">
+               <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <asp:Label runat="server" Text="Shift"></asp:Label>
+                      </div>
+                       <asp:DropDownList ID="dpShift" class="form-control" DataTextField="Name" DataValueField="Id" runat="server" AutoPostBack="true" OnSelectedIndexChanged ="dpShift_SelectedIndexChanged"   > 
+                       </asp:DropDownList>
+                        
+                         
+                    </div><!-- /.input group -->
+                   </div>
            </asp:Panel>
         </form>
 
