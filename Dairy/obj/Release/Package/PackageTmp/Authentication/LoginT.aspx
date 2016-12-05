@@ -74,7 +74,7 @@
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:DropDownList ID="dpAgent" class="form-control" DataTextField="Name" DataValueField="AgentID" runat="server" AutoPostBack="true" OnSelectedIndexChanged = "dpAgentpre_SelectedIndexChanged"   > 
+                       <asp:DropDownList ID="dpAgent" class="form-control" DataTextField="Name" DataValueField="AgentID" runat="server" AutoPostBack="true" OnTextChanged="dpAgent_TextChanged"   > 
                        </asp:DropDownList>
                         
                          

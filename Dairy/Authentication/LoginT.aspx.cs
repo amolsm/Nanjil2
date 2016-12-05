@@ -151,20 +151,7 @@ namespace Dairy.Authentication
             }               
 
             }
-              protected void dpAgentpre_SelectedIndexChanged(object sender, EventArgs e)
-           {
-            if (dpShift.SelectedItem.Value != "0")
-            {
-                UserData userData = new UserData();
-                user.UserName = txtUsername.Text;
-                user.PassWord = ViewState["txtpassword"].ToString();//txtpassword.Text;// FormsAuthentication.HashPasswordForStoringInConfigFile(txtpassword.Text, "MD5");
-                if (userData.Isauthenticat(user) && boothLoggedIn())
-                {
-                    CreateAutinticationTikit(user, dpAgent.SelectedItem.Value, string.Empty);
-                }
-            }
-        }
-
+              
         public bool boothLoggedIn()
         {
             List<string> d = Application["BoothLoggedIn"] as List<string>;
@@ -195,6 +182,20 @@ namespace Dairy.Authentication
                 if (userData.Isauthenticat(user))
                 {
                     CreateAutinticationTikit(user, string.Empty, dpShift.SelectedItem.Value);
+                }
+            }
+        }
+
+        protected void dpAgent_TextChanged(object sender, EventArgs e)
+        {
+            if (dpAgent.SelectedItem.Value != "0")
+            {
+                UserData userData = new UserData();
+                user.UserName = txtUsername.Text;
+                user.PassWord = ViewState["txtpassword"].ToString();//txtpassword.Text;// FormsAuthentication.HashPasswordForStoringInConfigFile(txtpassword.Text, "MD5");
+                if (userData.Isauthenticat(user) && boothLoggedIn())
+                {
+                    CreateAutinticationTikit(user, dpAgent.SelectedItem.Value, string.Empty);
                 }
             }
         }
