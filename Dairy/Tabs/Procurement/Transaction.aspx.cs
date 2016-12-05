@@ -40,6 +40,7 @@ namespace Dairy.Tabs.Procurement
         {
            
             DataSet ds = new DataSet();
+           
             ProcurementData pd = new ProcurementData();
             Model.Procurement p = new Model.Procurement();
             p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
@@ -49,8 +50,7 @@ namespace Dairy.Tabs.Procurement
             DS = pd.GetTransactionDetails(p);
             try
             {
-                if (DS.Tables[0].Rows[0].ToString() != null)
-                {
+               
                     try
                     {
                         DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["SupplierID"] };
@@ -80,7 +80,7 @@ namespace Dairy.Tabs.Procurement
 
                     try
                     {
-                        DS.Tables[0].Merge(DS.Tables[2], false, MissingSchemaAction.Add);
+                        DS.Tables[0].Merge(DS.Tables[2], true, MissingSchemaAction.Add);
                     }
                     catch (Exception) { }
                     try
@@ -101,25 +101,53 @@ namespace Dairy.Tabs.Procurement
 
                     try
                     {
-                        DS.Tables[0].Columns.Add("Scheme", typeof(decimal));
-                        DS.Tables[0].Columns.Add("Bonus", typeof(decimal));
-                        foreach (DataRow row in DS.Tables[0].Rows)
-                        {
-                            foreach (DataRow rows in DS.Tables[1].Rows)
-                            {
-                                if (row["Category"].ToString() == rows["Category"].ToString())
-                                {
-                                    row["Scheme"] = rows["Scheme"];
-                                    row["Bonus"] = rows["Bonus"];
-                                }
-                            }
-                        }
 
-                        rpRouteList.DataSource = DS;
-                        rpRouteList.DataBind();
-                        //rpBrandInfo.Visible = true;
-                        uprouteList.Update();
-                        foreach (RepeaterItem item in rpRouteList.Items)
+                      DataSet tds = new DataSet();
+                    //Create transaction details  DataTable.
+                       DataTable tbl=new DataTable();
+                      // tbl = ds.Tables.Add("Transaction");
+                       tbl.Columns.Add("SupplierID", typeof(int));
+                     //  tbl.PrimaryKey = new DataColumn[] { tbl.Columns["SupplierID"] };
+
+                        tbl.Columns.Add("SupplierCode", typeof(string));
+                        tbl.Columns.Add("Amount", typeof(decimal));
+                        tbl.Columns.Add("Bonus", typeof(decimal));
+                        tbl.Columns.Add("Scheme", typeof(decimal));
+                        tbl.Columns.Add("RDAmount", typeof(double));
+                        tbl.Columns.Add("CanLoan", typeof(double));
+                        tbl.Columns.Add("CashLoan", typeof(double));
+                        tbl.Columns.Add("BankLoan", typeof(double));
+
+                    foreach (DataRow row in DS.Tables[0].Rows)
+                    {
+                        foreach (DataRow rows in DS.Tables[1].Rows)
+                       {
+                      
+                            if (row["SupplierID"].ToString() == rows["SupplierID"].ToString())
+                                {
+                                    DataRow trow = tbl.NewRow();
+                                    trow["SupplierID"] = row["SupplierID"] ;
+                                    trow["SupplierCode"] = row["SupplierCode"];
+                                    trow["Amount"] = row["Amount"];
+                                    trow["Bonus"] = rows["Bonus"];
+                                    trow["Scheme"] = rows["Scheme"];
+                                    trow["RDAmount"] = row["RDAmount"];
+                                    trow["CanLoan"] = row["CanLoan"];
+                                    trow["CashLoan"] = row["CashLoan"];
+                                    trow["BankLoan"] = row["BankLoan"];
+                                    tbl.Rows.Add(trow);
+                                   
+                                  }
+                           
+                        }
+                        }
+                    tds.Tables.Add(tbl);
+                    rpRouteList.DataSource = tds;
+                    rpRouteList.DataBind();
+                    //rpBrandInfo.Visible = true;
+                    uprouteList.Update();
+
+                    foreach (RepeaterItem item in rpRouteList.Items)
                         {
                             double amt;
                             double bonus;
@@ -167,7 +195,7 @@ namespace Dairy.Tabs.Procurement
 
                 }
 
-            }
+          
             catch (Exception) {
                 rpRouteList.DataSource = null;
                 rpRouteList.DataBind();
@@ -212,36 +240,44 @@ namespace Dairy.Tabs.Procurement
 
         protected void btnAddTransaction_Click(object sender, EventArgs e)
         {
-            foreach (RepeaterItem item in rpRouteList.Items)
+            string confirmValue = Request.Form["confirm_value"];
+            if (confirmValue == "Yes")
             {
-                TextBox txtAmt = item.FindControl("txtAmt") as TextBox;
-                TextBox txtBonus = item.FindControl("txtBonus") as TextBox;
-                TextBox txtScheme = item.FindControl("txtScheme") as TextBox;
-                TextBox txtRD = item.FindControl("txtRD") as TextBox;
-                TextBox txtcanloan = item.FindControl("txtcanloan") as TextBox;
-                TextBox txtcashloan = item.FindControl("txtcashloan") as TextBox;
-                TextBox txtbankloan = item.FindControl("txtbankloan") as TextBox;
-                TextBox txtNetAmt = item.FindControl("txtNetAmt") as TextBox;
 
-                HiddenField hdfID = item.FindControl("hfSupplierID") as HiddenField;
-                if (hdfID != null)
+                foreach (RepeaterItem item in rpRouteList.Items)
                 {
-                   
-                    int SupplierID = Convert.ToInt32(hdfID.Value);
-                    int RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
-                    string PaymentDateTime = txtpaymentdate.Text;
-                    DateTime FomDate = Convert.ToDateTime(txtfromdate.Text);
-                    DateTime ToDate = Convert.ToDateTime(txttodate.Text);
-                    double Amount = string.IsNullOrEmpty(txtAmt.Text) ? 0 : Convert.ToDouble(txtAmt.Text);
-                    double Bonus = string.IsNullOrEmpty(txtBonus.Text) ? 0 : Convert.ToDouble(txtBonus.Text);
-                    decimal Scheme = string.IsNullOrEmpty(txtScheme.Text) ? 0 : Convert.ToDecimal(txtScheme.Text);
-                    double RDAmount = string.IsNullOrEmpty(txtRD.Text) ? 0 : Convert.ToDouble(txtRD.Text);
-                    double canloan = string.IsNullOrEmpty(txtcanloan.Text) ? 0 : Convert.ToDouble(txtcanloan.Text);
-                    double casloan = string.IsNullOrEmpty(txtcashloan.Text) ? 0 : Convert.ToDouble(txtcashloan.Text);
-                    double bankloan = string.IsNullOrEmpty(txtbankloan.Text) ? 0 : Convert.ToDouble(txtbankloan.Text);
-                    double netamt = string.IsNullOrEmpty(txtNetAmt.Text) ? 0 : Convert.ToDouble(txtNetAmt.Text);
-                   
-                    UpdateRecord(SupplierID,RouteID,PaymentDateTime,FomDate,ToDate,Amount,Bonus,Scheme,RDAmount,canloan,casloan,bankloan,netamt);
+
+                    TextBox txtAmt = item.FindControl("txtAmt") as TextBox;
+                    TextBox txtBonus = item.FindControl("txtBonus") as TextBox;
+                    TextBox txtScheme = item.FindControl("txtScheme") as TextBox;
+                    TextBox txtRD = item.FindControl("txtRD") as TextBox;
+                    TextBox txtcanloan = item.FindControl("txtcanloan") as TextBox;
+                    TextBox txtcashloan = item.FindControl("txtcashloan") as TextBox;
+                    TextBox txtbankloan = item.FindControl("txtbankloan") as TextBox;
+                    TextBox txtNetAmt = item.FindControl("txtNetAmt") as TextBox;
+
+                    HiddenField hdfID = item.FindControl("hfSupplierID") as HiddenField;
+                    if (hdfID != null)
+                    {
+
+                        int SupplierID = Convert.ToInt32(hdfID.Value);
+                        int RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
+                        string PaymentDateTime = txtpaymentdate.Text;
+                        DateTime FomDate = Convert.ToDateTime(txtfromdate.Text);
+                        DateTime ToDate = Convert.ToDateTime(txttodate.Text);
+                        double Amount = string.IsNullOrEmpty(txtAmt.Text) ? 0 : Convert.ToDouble(txtAmt.Text);
+                        double Bonus = string.IsNullOrEmpty(txtBonus.Text) ? 0 : Convert.ToDouble(txtBonus.Text);
+                        decimal Scheme = string.IsNullOrEmpty(txtScheme.Text) ? 0 : Convert.ToDecimal(txtScheme.Text);
+                        double RDAmount = string.IsNullOrEmpty(txtRD.Text) ? 0 : Convert.ToDouble(txtRD.Text);
+                        double canloan = string.IsNullOrEmpty(txtcanloan.Text) ? 0 : Convert.ToDouble(txtcanloan.Text);
+                        double casloan = string.IsNullOrEmpty(txtcashloan.Text) ? 0 : Convert.ToDouble(txtcashloan.Text);
+                        double bankloan = string.IsNullOrEmpty(txtbankloan.Text) ? 0 : Convert.ToDouble(txtbankloan.Text);
+                        double netamt = string.IsNullOrEmpty(txtNetAmt.Text) ? 0 : Convert.ToDouble(txtNetAmt.Text);
+
+                        UpdateRecord(SupplierID, RouteID, PaymentDateTime, FomDate, ToDate, Amount, Bonus, Scheme, RDAmount, canloan, casloan, bankloan, netamt);
+
+
+                    }
                 }
             }
         }

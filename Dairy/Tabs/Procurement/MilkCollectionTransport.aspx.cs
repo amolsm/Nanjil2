@@ -349,7 +349,7 @@ namespace Dairy.Tabs.Procurement
                 {
                     foreach (DataRow row in ds.Tables[0].Rows)
                     {
-                        if (Convert.ToDouble(row["KMLow"]) < totalkm && Convert.ToDouble(row["KMHigh"]) > totalkm)
+                        if (Convert.ToDouble(row["KMLow"]) <= totalkm && Convert.ToDouble(row["KMHigh"]) >= totalkm)
                         {
                             txtBata.Text = Convert.ToDecimal(row["Bata"]).ToString("#.##");
                         }
