@@ -16,37 +16,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Authentication/LoginT.aspx">
-<<<<<<< HEAD
-      <publishTime>12/04/2016 16:50:43</publishTime>
-=======
       <publishTime>12/05/2016 16:30:40</publishTime>
->>>>>>> origin/master
     </File>
     <File Include="Authentication/LogOut.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
-<<<<<<< HEAD
-      <publishTime>12/04/2016 16:52:14</publishTime>
-=======
-      <publishTime>12/05/2016 16:32:18</publishTime>
->>>>>>> origin/master
+      <publishTime>12/06/2016 12:57:14</publishTime>
     </File>
     <File Include="bin/Comman.dll">
       <publishTime>11/28/2016 11:19:11</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
-<<<<<<< HEAD
-      <publishTime>12/04/2016 16:52:17</publishTime>
+      <publishTime>12/06/2016 12:57:32</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
-      <publishTime>12/04/2016 16:52:14</publishTime>
-=======
-      <publishTime>12/05/2016 16:32:52</publishTime>
-    </File>
-    <File Include="bin/DataAccess.dll">
-      <publishTime>12/05/2016 16:32:15</publishTime>
->>>>>>> origin/master
+      <publishTime>12/06/2016 12:57:12</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:52</publishTime>
@@ -73,11 +58,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/24/2012 13:52:52</publishTime>
     </File>
     <File Include="bin/Model.dll">
-<<<<<<< HEAD
-      <publishTime>12/04/2016 16:52:14</publishTime>
-=======
-      <publishTime>12/05/2016 16:32:12</publishTime>
->>>>>>> origin/master
+      <publishTime>12/06/2016 12:57:05</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:50</publishTime>
@@ -282,9 +263,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Tabs/Administration/Shift.aspx">
       <publishTime>12/03/2016 17:58:01</publishTime>
-    </File>
-    <File Include="Tabs/Administration/Shift.aspx">
-      <publishTime>12/04/2016 10:27:46</publishTime>
     </File>
     <File Include="Tabs/Administration/UnitMaster.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
@@ -500,14 +478,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionDetails.aspx">
-      <publishTime>12/01/2016 18:44:01</publishTime>
+      <publishTime>12/06/2016 10:38:06</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionTransport.aspx">
-<<<<<<< HEAD
-      <publishTime>12/04/2016 11:08:29</publishTime>
-=======
       <publishTime>12/04/2016 16:53:20</publishTime>
->>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/MilkCollectionTransportBill.aspx">
       <publishTime>11/19/2016 09:55:06</publishTime>
@@ -537,7 +511,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Procurement/Transaction.aspx">
-      <publishTime>12/01/2016 18:44:01</publishTime>
+      <publishTime>12/06/2016 10:38:06</publishTime>
     </File>
     <File Include="Tabs/Procurement/VehicleMaster.aspx">
       <publishTime>11/15/2016 12:00:10</publishTime>
@@ -3510,11 +3484,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
-<<<<<<< HEAD
-      <publishTime>12/04/2016 10:27:46</publishTime>
-=======
-      <publishTime>12/03/2016 17:58:01</publishTime>
->>>>>>> origin/master
+      <publishTime>12/06/2016 11:41:09</publishTime>
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>11/11/2016 10:53:02</publishTime>

@@ -124,7 +124,7 @@ namespace Dairy.Tabs.Administration
                 divSusccess.Visible = true;
                 lblSuccess.Text = "Order Cancelled Successfully";
                 pnlError.Update();
-                bindList();
+                
                 uprouteList.Update();
             }
             else

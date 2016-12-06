@@ -137,7 +137,7 @@
                   <div class="form-group">
                     <div class="input-group">
                            <asp:Button ID="btnShow" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnShow_Click"   Text="Show" ValidationGroup="Save" /> 
-                          &nbsp;  &nbsp; <asp:Button ID="btnAddTransaction" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Save All" ValidationGroup="Save" OnClick="btnAddTransaction_Click" />     
+                          &nbsp;  &nbsp; <asp:Button ID="btnAddTransaction" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Save All" ValidationGroup="Save" OnClick="btnAddTransaction_Click" OnClientClick = "Confirm()" />     
                          &nbsp;  &nbsp;<asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Refresh"  OnClick="btnAddNew_Click" />     
                         </div>
                       </div>
@@ -153,7 +153,7 @@
                 
             </div><!-- /.box-body -->            
           </div><!-- /.box -->
-
+      
         <div class="box ">
             <div class="box-header with-border">
               <h3 class="box-title"> Transaction Summary</h3>
@@ -181,7 +181,8 @@
                   <thead>
                       <tr>
                          
-                        <th>SupplierID</th>
+                       
+                          <th>SupplierCode</th>
                       <%--  <th>PaymentDate</th>
                         <th>FromDate</th>
                         <th>ToDate</th>--%>
@@ -203,7 +204,8 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
-                            <td><%# Eval("SupplierID")%></td>
+                            
+                         <td><%# Eval("SupplierCode")%></td>
                           <%--  <td><%# txtpaymentdate.Text%></td>
                             <td><%# txtfromdate.Text%></td>
                             <td><%# txttodate.Text%></td>--%>
@@ -235,7 +237,8 @@
                     <tfoot>
                       <tr>
                         
-                      <th>SupplierID</th>
+                     
+                           <th>SupplierCode</th>
                      <%--   <th>PaymentDate</th>
                         <th>FromDate</th>
                         <th>ToDate</th>--%>
@@ -256,7 +259,7 @@
            </asp:Repeater>
                     <asp:HiddenField id="hfsuppliersID" runat="server" />
              
-                
+                  <asp:HiddenField id="hconfirm" runat="server" />
                   
                      
                    
@@ -288,7 +291,20 @@
 
             });
         });
-       
+         
+        function Confirm() {
+            var confirm_value = document.createElement("INPUT");
+            confirm_value.type = "hidden";
+            confirm_value.name = "confirm_value";
+            if (confirm("Do you want to save data?")) {
+                confirm_value.value = "Yes";
+            } else {
+                confirm_value.value = "No";
+            }
+            document.forms[0].appendChild(confirm_value);
+        }
+   
+        
            </script>
 </asp:Content>
 
