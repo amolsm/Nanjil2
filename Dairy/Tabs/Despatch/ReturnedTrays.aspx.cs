@@ -127,16 +127,16 @@ namespace Dairy.Tabs.Despatch
 
             if (disp.IceBox >= 0 && disp.Trays >= 0 && disp.Cartons >= 0 && disp.OtherDisp >= 0)
             {
-                if (disp.IceBox <= icebox && disp.Trays <= trays && disp.Cartons <= cartons && disp.OtherDisp <= other)
-                {
+                //if (disp.IceBox <= icebox && disp.Trays <= trays && disp.Cartons <= cartons && disp.OtherDisp <= other)
+                //{
 
                     DataSet ds = new DataSet();
                     result = dispatchData.updateReturnTrays(disp);
-                }
-                else
-                {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Please Enter Valid Quantity')", true);
-                }
+                //}
+                //else
+                //{
+                //    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Please Enter Valid Quantity')", true);
+                //}
             }
             else
             {
