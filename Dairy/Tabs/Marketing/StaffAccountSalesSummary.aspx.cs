@@ -99,8 +99,12 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<td>");
                 sb.Append("<b>Staff Code</b>");
                 sb.Append("</td>");
-                sb.Append("<td colspan = '4'>");
+                sb.Append("<td colspan = '2'>");
                 sb.Append("<b>Staff Name</b>");
+                sb.Append("</td>");
+
+                sb.Append("<td colspan = '2'>");
+                sb.Append("<b>Designation</b>");
                 sb.Append("</td>");
 
                 sb.Append("<td  style='text-align:right'>");
@@ -120,10 +124,14 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("<td>");
                     sb.Append(row["EmployeeCode"].ToString());
                     sb.Append("</td>");
-                    sb.Append("<td colspan = '4'>");
+                    sb.Append("<td colspan = '2'>");
                     sb.Append(row["EmployeeName"].ToString());
                     sb.Append("</td>");
-                   
+
+                    sb.Append("<td colspan = '2'>");
+                    sb.Append(row["Designation"].ToString());
+                    sb.Append("</td>");
+
                     sb.Append("<td style='text-align:right'>");
                     if (string.IsNullOrEmpty(row["totalreturnAmount"].ToString()))
                     {
