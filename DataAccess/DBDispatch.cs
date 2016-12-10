@@ -335,7 +335,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@DispatchDate", dispatch.DispatchDate));
                 paramCollection.Add(new DBParameter("@DispatchBy", dispatch.UserID));
                 paramCollection.Add(new DBParameter("@BrandId", dispatch.CategoryId));
-                //paramCollection.Add(new DBParameter("@DispatchDateTime", dispatch.DispatchDateTime));
+                paramCollection.Add(new DBParameter("@ShiftId", dispatch.ShiftId));
                 result = _DBHelper.ExecuteNonQuery("Sp_AddDispatchInfo", paramCollection, CommandType.StoredProcedure);
 
             }

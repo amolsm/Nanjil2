@@ -7,7 +7,7 @@ namespace Model
 {
     public class Dispatch : User
     {
-        public int OrderId { get; set; }
+        public int ShiftId { get; set; }
         public int OrderDetailsId { get; set; }
         public int CategoryId { get; set; }
         public string DispatchDate { get; set; }

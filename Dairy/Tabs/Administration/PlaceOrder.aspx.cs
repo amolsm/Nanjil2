@@ -24,9 +24,9 @@ namespace Dairy.Tabs.Administration
         double total = 0;
         double totsum = 0;
         //double schemeTemp = 0;
-        public static double schemeTemp = 0;
-        public static bool schemeApplied = false;
-        public static int PrvAgentID = 0;
+        public  double schemeTemp = 0;
+        public  bool schemeApplied = false;
+        public  int PrvAgentID = 0;
         //public int PrvOrderID = 0;
 
         protected void Page_Load(object sender, EventArgs e)

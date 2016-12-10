@@ -16,22 +16,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/18/2016 11:59:15</publishTime>
     </File>
     <File Include="Authentication/LoginT.aspx">
+<<<<<<< HEAD
       <publishTime>12/05/2016 17:32:45</publishTime>
+=======
+      <publishTime>12/05/2016 16:30:40</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Authentication/LogOut.aspx">
       <publishTime>11/18/2016 11:59:15</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
+<<<<<<< HEAD
       <publishTime>12/05/2016 17:32:45</publishTime>
+=======
+      <publishTime>12/06/2016 12:57:14</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="bin/Comman.dll">
       <publishTime>11/30/2016 10:27:44</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
+<<<<<<< HEAD
       <publishTime>12/05/2016 17:39:39</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
       <publishTime>12/05/2016 17:32:45</publishTime>
+=======
+      <publishTime>12/06/2016 12:57:32</publishTime>
+    </File>
+    <File Include="bin/DataAccess.dll">
+      <publishTime>12/06/2016 12:57:12</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:52</publishTime>
@@ -58,7 +73,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/24/2012 13:52:52</publishTime>
     </File>
     <File Include="bin/Model.dll">
+<<<<<<< HEAD
       <publishTime>12/05/2016 17:32:45</publishTime>
+=======
+      <publishTime>12/06/2016 12:57:05</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:50</publishTime>
@@ -260,9 +279,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Tabs/Administration/ReturnScheme.aspx">
       <publishTime>11/30/2016 10:27:44</publishTime>
-    </File>
-    <File Include="Tabs/Administration/Shift.aspx">
-      <publishTime>12/04/2016 10:27:46</publishTime>
     </File>
     <File Include="Tabs/Administration/UnitMaster.aspx">
       <publishTime>11/18/2016 11:59:15</publishTime>
@@ -478,10 +494,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/25/2016 10:59:47</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionDetails.aspx">
+<<<<<<< HEAD
       <publishTime>12/05/2016 17:32:41</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionTransport.aspx">
       <publishTime>12/04/2016 11:08:29</publishTime>
+=======
+      <publishTime>12/06/2016 10:38:06</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/MilkCollectionTransport.aspx">
+      <publishTime>12/04/2016 16:53:20</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/MilkCollectionTransportBill.aspx">
       <publishTime>11/18/2016 16:00:08</publishTime>
@@ -511,7 +534,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/02/2016 13:27:15</publishTime>
     </File>
     <File Include="Tabs/Procurement/Transaction.aspx">
+<<<<<<< HEAD
       <publishTime>12/05/2016 17:32:41</publishTime>
+=======
+      <publishTime>12/06/2016 10:38:06</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Procurement/VehicleMaster.aspx">
       <publishTime>11/14/2016 15:01:45</publishTime>
@@ -3484,7 +3511,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/18/2016 11:59:16</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
+<<<<<<< HEAD
       <publishTime>12/04/2016 10:27:46</publishTime>
+=======
+      <publishTime>12/06/2016 11:41:09</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>11/18/2016 11:59:16</publishTime>

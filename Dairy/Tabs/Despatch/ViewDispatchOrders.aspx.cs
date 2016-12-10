@@ -463,6 +463,7 @@ namespace Dairy.Tabs.Despatch
                 dispatch.UserID = GlobalInfo.Userid;
                 dispatch.CategoryId = Convert.ToInt32(dpCategory.SelectedItem.Value);
                 dispatch.DispatchDateTime = DateTime.Now;
+                dispatch.ShiftId = GlobalInfo.ShiftId;
                 int result = 0;
                 result = dispatchData.AddDispatchInfo(dispatch);
                 if (result > 0)
