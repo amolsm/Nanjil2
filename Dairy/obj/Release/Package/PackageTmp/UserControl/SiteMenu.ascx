@@ -195,23 +195,24 @@
               <ul class="treeview-menu">
                 <li><a href="/Tabs/Marketing/AgentSchemeDetails.aspx"><i class="fa fa-circle-o"></i> Agency Scheme Details</a></li>
                   <li><a href="/Tabs/Marketing/AgentSchemeSummary.aspx"><i class="fa fa-circle-o"></i> Agency Scheme Summary</a></li>
-                   <li><a href="/Tabs/Marketing/SalesComparison.aspx"><i class="fa fa-circle-o"></i> Sales Comparison Summary</a></li>
-                  <li><a href="/Tabs/Marketing/DespatchComparisonReport.aspx"><i class="fa fa-circle-o"></i> Dispatch Comparison Summary</a></li>
-                  <li><a href="/Tabs/Marketing/ReturnComparisonReport.aspx"><i class="fa fa-circle-o"></i> Return Comparison Summary</a></li>
-                 <li><a href="/Tabs/Marketing/SpotDamageComparisonReport.aspx"><i class="fa fa-circle-o"></i> Spot-Damage Comparison Summary</a></li>
-                  <li><a href="/Tabs/Marketing/BillwiseSalesSummaryforMarketing.aspx"><i class="fa fa-circle-o"></i> Bill Wise Sales Summary</a></li>
+                    <li><a href="/Tabs/Marketing/SchemeRefund.aspx"><i class="fa fa-circle-o"></i>Agency SchemeRefund  </a></li>
+                 
+                 
+                 
+                     <li><a href="/Tabs/Marketing/ItemwiseSalesSummaryForMarketing.aspx"><i class="fa fa-circle-o"></i>Itemwise Sales Summary  </a></li>
                  <li><a href="/Tabs/Marketing/StaffAccountSalesSummary.aspx"><i class="fa fa-circle-o"></i> Staff A/C Sales Summary</a></li>
+                   <li><a href="/Tabs/Marketing/BillwiseSalesSummaryforMarketing.aspx"><i class="fa fa-circle-o"></i> Bill Wise Sales Summary</a></li>
                  <%--  <li><a href="/Tabs/Marketing/IncentiveSetupScreen.aspx"><i class="fa fa-circle-o"></i> Incentive Rate Setup </a></li>--%>
                   <li><a href="/Tabs/Marketing/PartywiseIncentiveSummary.aspx"><i class="fa fa-circle-o"></i>Partywise Incentive Summary </a></li>
                   <li><a href="/Tabs/Marketing/MarketingSalesAnalysisItemwise.aspx"><i class="fa fa-circle-o"></i>Sales Analysis Itemwise </a></li>
                   <li><a href="/Tabs/Marketing/AgencyCloserScreen.aspx"><i class="fa fa-circle-o"></i>Agency Closer  </a></li>
-                     <li><a href="/Tabs/Marketing/SchemeRefund.aspx"><i class="fa fa-circle-o"></i>Agency SchemeRefund  </a></li>
+                   
                 <%--<li><a href="/Tabs/Marketing/DamageReplacementRateSetup.aspx"><i class="fa fa-circle-o"></i>Damage Replacement RateSetup  </a></li>--%>
                    <li><a href="/Tabs/Marketing/BillwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Billwise Staff Sales Summary  </a></li>
-                  <li><a href="/Tabs/Marketing/ItemwiseSalesSummaryForMarketing.aspx"><i class="fa fa-circle-o"></i>Itemwise Sales Summary  </a></li>
+               
                   <li><a href="/Tabs/Marketing/ItemwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Staff Sales Summary  </a></li>
                    <li><a href="/Tabs/Marketing/RefundSchemeSummary.aspx"><i class="fa fa-circle-o"></i>Refund Scheme Summary  </a></li>
-                  <li><a href="/Tabs/Marketing/DispatchReturnComparison.aspx"><i class="fa fa-circle-o"></i>Dispatch Agency Return Comparison  </a></li>
+               
                    <li><a href="/Tabs/Marketing/AgentListNotPlacedOrder.aspx"><i class="fa fa-circle-o"></i>AgentList Not Placed Order  </a></li>
                   <li><a href="/Tabs/Marketing/NewAgentList.aspx"><i class="fa fa-circle-o"></i>New Agent List  </a></li>
                   <li><a href="/Tabs/Marketing/AgentSlabReportList.aspx"><i class="fa fa-circle-o"></i>AgentList Basis of Slab</a></li>
@@ -219,7 +220,19 @@
                     <li><a href="/Tabs/Marketing/PartywiseDamageReplacementSummary.aspx"><i class="fa fa-circle-o"></i>Partywise DamageReplacement Summary</a></li>
                    <li><a href="/Tabs/Marketing/ItemwisePurchaseAgentList.aspx"><i class="fa fa-circle-o"></i>ItemWise PurchaseAgent List  </a></li>
                     <li><a href="/Tabs/Marketing/AmountwiseIceCreamReport.aspx"><i class="fa fa-circle-o"></i>Amount Wise IceCream PurchaseAgent List  </a></li>
-              
+               <li  class="treeview">
+               <a href="#">
+                <i class="fa fa-file"></i>
+                <span>Comparison Report</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+               <ul class="treeview-menu">
+                     <li><a href="/Tabs/Marketing/SalesComparison.aspx"><i class="fa fa-circle-o"></i> Sales Comparison Summary</a></li>
+                    <li><a href="/Tabs/Marketing/DespatchComparisonReport.aspx"><i class="fa fa-circle-o"></i> Dispatch Comparison Summary</a></li>
+                  <li><a href="/Tabs/Marketing/ReturnComparisonReport.aspx"><i class="fa fa-circle-o"></i> Return Comparison Summary</a></li>
+                 <li><a href="/Tabs/Marketing/SpotDamageComparisonReport.aspx"><i class="fa fa-circle-o"></i> Spot-Damage Comparison Summary</a></li>
+                      <li><a href="/Tabs/Marketing/DispatchReturnComparison.aspx"><i class="fa fa-circle-o"></i>Dispatch Agency Return Comparison  </a></li>
+                   </ul>
               </ul>
             </li> 
         

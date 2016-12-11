@@ -41,7 +41,7 @@ namespace Dairy.Tabs.Marketing
 
 
             DS = marketingdata.ViewNewAgentList((Convert.ToDateTime(txtDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
-            if (!Comman.Comman.IsDataSetEmpty(DS))
+            if (!Comman.Comman.IsDataSetEmpty(DS) && DS.Tables[1].Rows.Count != 0)
             {
                 StringBuilder sb = new StringBuilder();
 
@@ -189,7 +189,7 @@ namespace Dairy.Tabs.Marketing
 
 
 
-
+             
                 result = sb.ToString();
                 genratedBIll.Text = result;
                 //Session["ctrl"] = sb.ToString();
