@@ -96,7 +96,7 @@ namespace Dairy.Tabs.Marketing
                 }
                 sb.Append("</td>");
                 sb.Append("<td colspan='4' style='text-align:right'>");
-                sb.Append(DateTime.Now.ToString("dd-mm-yyyy HH:mm"));
+                sb.Append(DateTime.Now.ToString("dd-MM-yyyy HH:mm"));
                 sb.Append("</td>");
                 sb.Append("</tr>");
 
@@ -120,49 +120,70 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<b>Status</b>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
-                int srno = 0;
-              
-                foreach (DataRow row in DS.Tables[0].Rows)
+                foreach (DataRow rows in DS.Tables[1].Rows)
                 {
+                    sb.Append("<tr> ");
+                    sb.Append("<td colsapn='7'> ");
+                    sb.Append("&nbsp;");
+                    sb.Append("</td>");
+                    sb.Append("</tr> ");
+                    sb.Append("<tr style='border-bottom:1px solid'><td colspan='7'></td></tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
 
+                    sb.Append("<td colspan='2'>");
+                    sb.Append(rows["RouteCode"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td colspan = '5'>");
+                    sb.Append(rows["RouteName"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("</tr>");
+                
+                    int srno = 0;
 
-
-                         srno++;
-                        sb.Append("<tr>");
-                        sb.Append("<td>");
-                        sb.Append(srno.ToString());
-                        sb.Append("</td>");
-                        sb.Append("<td>");
-                        sb.Append(row["AgentCode"].ToString());
-                        sb.Append("</td>");
-                        sb.Append("<td colspan = '2'>");
-                        sb.Append(row["AgentName"].ToString());
-                        sb.Append("</td>");
-                        sb.Append("<td>");
-                        sb.Append(Convert.ToDateTime(row["DateofJoining"]).ToString("dd-MM-yyyy"));
-                        sb.Append("</td>");
-                        sb.Append("<td style='text-align:right'>");
-                        sb.Append(row["Name"].ToString());
-                        sb.Append("</td>");
-                        sb.Append("<td style='text-align:right'>");
-                        if (row["Isactive"].ToString() == "True")
-                        {
-                            sb.Append("Active");
-                        }
-                        else { sb.Append("InActive"); }
+                    foreach (DataRow row in DS.Tables[0].Rows)
+                    {
                       
-                        sb.Append("</td>");
-                        sb.Append("</tr>");
 
+                        if (rows["RouteId"].ToString() == row["RouteId"].ToString())
+                        {
+                          
+                            srno++;
+                            sb.Append("<tr>");
+                            sb.Append("<td>");
+                            sb.Append(srno.ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            sb.Append(row["AgentCode"].ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td colspan = '2'>");
+                            sb.Append(row["AgentName"].ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            sb.Append(Convert.ToDateTime(row["DateofJoining"]).ToString("dd-MM-yyyy"));
+                            sb.Append("</td>");
+                            sb.Append("<td style='text-align:right'>");
+                            sb.Append(row["Name"].ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td style='text-align:right'>");
+                            if (row["Isactive"].ToString() == "True")
+                            {
+                                sb.Append("Active");
+                            }
+                            else { sb.Append("InActive"); }
+
+                            sb.Append("</td>");
+                            sb.Append("</tr>");
+                           
+
+                        }
                        
 
 
 
-                    
+
+                    }
 
                 }
-           
-             
 
 
 

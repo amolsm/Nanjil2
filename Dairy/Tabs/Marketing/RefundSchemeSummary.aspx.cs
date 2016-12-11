@@ -48,14 +48,13 @@ namespace Dairy.Tabs.Marketing
 
         protected void dpRoute_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentCode+' '+AgentName as Name", "AgentMaster", "RouteID=" + dpRoute.SelectedItem.Value.ToString() + "and IsArchive=0 and Agensytype='Agency' Order by AgentCode");
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
+            DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentCode+' '+AgentName as Name", "AgentMaster", "RouteID=" + dpRoute.SelectedItem.Value.ToString() + "and IsArchive=0 and Agensytype='Agency' and TotalSchemeAmount <> 0 Order by AgentCode");
+            
                 dpAgent.ClearSelection();
                 dpAgent.DataSource = DS;
                 dpAgent.DataBind();
                 dpAgent.Items.Insert(0, new ListItem("--All Agent  --", "0"));
-            }
+           
             dpRoute.Focus();
         }
 

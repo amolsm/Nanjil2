@@ -154,7 +154,7 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("Brand :" + "&nbsp;" + dpBrand.SelectedItem.Text);
                     sb.Append("</td>");
                     sb.Append("<td  style='text-align:right'>");
-                    sb.Append(DateTime.Now.ToString("dd-mm-yyyy HH:mm"));
+                    sb.Append(DateTime.Now.ToString("dd-MM-yyyy HH:mm"));
                     sb.Append("</td>");
                     sb.Append("</tr>");
 
