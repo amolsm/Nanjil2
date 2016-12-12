@@ -38,7 +38,7 @@ namespace Dairy.Tabs.Marketing
             {
                 dpEmployee.DataSource = DS;
                 dpEmployee.DataBind();
-                dpEmployee.Items.Insert(0, new ListItem("--Select Employee  --", "0"));
+                dpEmployee.Items.Insert(0, new ListItem("--All Employee  --", "0"));
 
             }
         }
@@ -146,7 +146,9 @@ namespace Dairy.Tabs.Marketing
                 {
                     int count = 0;
                     double totalquantity = 0;
-                    sb.Append("<tr style='border-bottom:1px solid' style='page-break-inside:avoid; align:center;'> <td colspan = '9'> &nbsp; </td> </tr>");
+                    sb.Append("<tr  style='page-break-inside:avoid; align:center;'> <td colspan = '9' > &nbsp; </td> </tr>");
+                    sb.Append("<tr  style='page-break-inside:avoid; align:center;'> <td colspan = '9' > &nbsp; </td> </tr>");
+                    sb.Append("<tr  style='page-break-inside:avoid; align:center;'> <td colspan = '9' > &nbsp; </td> </tr>");
                     sb.Append("<tr>");
                     sb.Append("<td>");
                     sb.Append("<b>" + row2["OrderDate"].ToString() + "</b>");
@@ -155,24 +157,24 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("&nbsp;");
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    if (row2["OrderType"].ToString() == "1")
+                    if (dpEmployee.SelectedItem.Value == "0")
                     {
                         sb.Append(row2["EmployeeCode"].ToString());
                     }
 
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    if (row2["OrderType"].ToString() == "1")
+                    if (dpEmployee.SelectedItem.Value == "0")
                     {
                         sb.Append(row2["Employee"].ToString());
                     }
 
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append("&nbsp;");
+                    sb.Append(row2["RouteCode"].ToString());
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append("&nbsp;");
+                    sb.Append(row2["RouteName"].ToString());
                     sb.Append("</td>");
 
                     sb.Append("<td style='text-align:right'>");
@@ -315,7 +317,9 @@ namespace Dairy.Tabs.Marketing
                     {
                         int count = 0;
                         double totalquantity = 0;
-                        sb.Append("<tr style='border-bottom:1px solid' style='page-break-inside:avoid; align:center;'> <td colspan = '9'> &nbsp; </td> </tr>");
+                        sb.Append("<tr  style='page-break-inside:avoid; align:center;'> <td colspan = '9' > &nbsp; </td> </tr>");
+                        sb.Append("<tr  style='page-break-inside:avoid; align:center;'> <td colspan = '9' > &nbsp; </td> </tr>");
+                        sb.Append("<tr  style='page-break-inside:avoid; align:center;'> <td colspan = '9' > &nbsp; </td> </tr>");
                         sb.Append("<tr>");
                         sb.Append("<td>");
                         sb.Append("<b>" + row3["OrderDate"].ToString() + "</b>");
@@ -324,24 +328,24 @@ namespace Dairy.Tabs.Marketing
                         sb.Append("&nbsp;");
                         sb.Append("</td>");
                         sb.Append("<td>");
-                        if (row3["OrderType"].ToString() == "1")
+                        if (dpEmployee.SelectedItem.Value=="0")
                         {
                             sb.Append(row3["EmployeeCode"].ToString());
                         }
 
                         sb.Append("</td>");
                         sb.Append("<td>");
-                        if (row3["OrderType"].ToString() == "1")
+                        if (dpEmployee.SelectedItem.Value == "0")
                         {
                             sb.Append(row3["Employee"].ToString());
                         }
 
                         sb.Append("</td>");
                         sb.Append("<td>");
-                        sb.Append("&nbsp;");
+                        sb.Append(row3["RouteCode"].ToString());
                         sb.Append("</td>");
                         sb.Append("<td>");
-                        sb.Append("&nbsp;");
+                        sb.Append(row3["RouteName"].ToString());
                         sb.Append("</td>");
 
                         sb.Append("<td style='text-align:right'>");

@@ -76,13 +76,20 @@ namespace Dairy.Tabs.Marketing
         protected void dpType_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataSet DS = new DataSet();
+          
             DS = BindCommanData.BindCommanDropDwon("CommodityID", "CommodityName as Name", "Commodity", "IsArchive=0  and " + "TypeID=" + Convert.ToInt32(dpType.SelectedItem.Value));
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
+                if (dpType.SelectedItem.Text == "Milk")
+                {
+                    dpCommodity.Items.Clear();
+                    dpCommodity.Items.Insert(0, new ListItem("All Commodity", "0"));
+                }
+                else { 
                 dpCommodity.DataSource = DS;
                 dpCommodity.DataBind();
-                dpCommodity.Items.Insert(0, new ListItem("All Commodity", "0"));
-
+              
+                }
             }
 
         }

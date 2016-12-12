@@ -168,10 +168,16 @@ namespace Dairy.Tabs.Marketing
                    
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append("&nbsp;");
+                    if (dpRoute.SelectedItem.Value=="0")
+                    {
+                        sb.Append(row2["RouteCode"].ToString());
+                    }
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append("&nbsp;");
+                    if (dpRoute.SelectedItem.Value == "0")
+                    {
+                        sb.Append(row2["RouteName"].ToString());
+                    }
                     sb.Append("</td>");
 
                     sb.Append("<td style='text-align:right'>");
@@ -391,10 +397,16 @@ namespace Dairy.Tabs.Marketing
 
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append("&nbsp;");
+                    if (dpRoute.SelectedItem.Value == "0")
+                    {
+                        sb.Append(row3["RouteCode"].ToString());
+                    }
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append("&nbsp;");
+                    if (dpRoute.SelectedItem.Value == "0")
+                    {
+                        sb.Append(row3["RouteName"].ToString());
+                    }
                     sb.Append("</td>");
 
                     sb.Append("<td style='text-align:right'>");
