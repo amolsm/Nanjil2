@@ -43,7 +43,7 @@ namespace Dairy.Tabs.Marketing
 
 
             DS = marketingdata.ViewAgentListNotPlacedOrder((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
-            if (!Comman.Comman.IsDataSetEmpty(DS) && DS.Tables[1].Rows.Count!=0)
+            if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 StringBuilder sb = new StringBuilder();
 
@@ -130,44 +130,20 @@ namespace Dairy.Tabs.Marketing
                         sb.Append(rowr["RouteName"].ToString());
                         sb.Append("</td>");
                         sb.Append("</tr>");
+
+                    foreach (DataRow row in DS.Tables[0].Rows)
+                    {
+
+
                         foreach (DataRow rows in DS.Tables[1].Rows)
                         {
 
-                            if (DS.Tables[0].Rows.Count != 0)
+                            if (rowr["RouteId"].ToString() == rows["RouteId"].ToString())
                             {
-                                foreach (DataRow row in DS.Tables[0].Rows)
-                                {
+                                if (rows["AgentId"].ToString() == row["AgentId"].ToString())
 
-                                    if (rowr["RouteId"].ToString() == rows["RouteId"].ToString())
-                                    {
-                                        if (rows["AgentId"].ToString() == row["AgentId"].ToString())
-
-                                        { }
-                                        else
-                                        {
-                                            srno++;
-                                            sb.Append("<tr>");
-                                            sb.Append("<td>");
-                                            sb.Append(srno.ToString());
-                                            sb.Append("</td>");
-                                            sb.Append("<td>");
-                                            sb.Append(rows["AgentCode"].ToString());
-                                            sb.Append("</td>");
-                                            sb.Append("<td colspan = '2'>");
-                                            sb.Append(rows["AgentName"].ToString());
-                                            sb.Append("</td>");
-
-                                            sb.Append("</tr>");
-                                        }
-
-                                    }
-                                }
-                            }
-                            else
-                            {
-
-
-                                if (rowr["RouteId"].ToString() == rows["RouteId"].ToString())
+                                { }
+                                else
                                 {
                                     srno++;
                                     sb.Append("<tr>");
@@ -183,9 +159,13 @@ namespace Dairy.Tabs.Marketing
 
                                     sb.Append("</tr>");
                                 }
-                            }
 
+                            }
                         }
+                    }
+                           
+
+                     
 
 
 
