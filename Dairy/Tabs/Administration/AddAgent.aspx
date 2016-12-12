@@ -2,9 +2,9 @@
     CodeBehind="AddAgent.aspx.cs" Inherits="Dairy.Tabs.Administration.AddAgent" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-       <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+       <%--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
             <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-            <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+            <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
    
@@ -380,7 +380,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-phone"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtTelephone" class="form-control" ToolTip="Enter Telephone No"  placeholder="Telephone No" runat="server" required Type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtTelephone" class="form-control" ToolTip="Enter Telephone No"  placeholder="Telephone No" runat="server" Type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
