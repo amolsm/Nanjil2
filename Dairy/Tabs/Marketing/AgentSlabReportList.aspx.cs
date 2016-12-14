@@ -115,7 +115,7 @@ namespace Dairy.Tabs.Marketing
                 }
                 sb.Append("</td>");
                 sb.Append("<td  colspan='2' style='text-align:right'>");
-                sb.Append(DateTime.Now.ToString("dd-mm-yyyy HH:mm"));
+                sb.Append(DateTime.Now.ToString("dd-MM-yyyy HH:mm"));
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
