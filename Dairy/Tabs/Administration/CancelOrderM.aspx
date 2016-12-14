@@ -91,7 +91,7 @@
                     <div class="input-group">
                                <asp:Button ID="btnSearch" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnSearch_Click"  Text="Search"    />     
                      
-                             
+                             &nbsp; <asp:Button ID="btnRefresh" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnRefresh_Click"  Text="Refresh"    />     
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

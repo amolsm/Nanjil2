@@ -354,7 +354,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-envelope-o"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtEmail" class="form-control" placeholder="Email" ToolTip="Enter Email" runat="server" required AutoCompleteType="Email"></asp:TextBox>                        
+                       <asp:TextBox ID="txtEmail" class="form-control" placeholder="Email" ToolTip="Enter Email" runat="server" AutoCompleteType="Email"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -513,7 +513,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-inr"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtDepositeAmount" class="form-control" placeholder="Deposit Amount" runat="server" required type="number" ToolTip="Enter Deposit Amount"></asp:TextBox>                        
+                       <asp:TextBox ID="txtDepositeAmount" class="form-control" placeholder="Deposit Amount" runat="server" type="number" ToolTip="Enter Deposit Amount"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -552,7 +552,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-bars"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAccountNo" class="form-control" placeholder="Account No" runat="server" required type="number" ToolTip="Enter Bank Account No"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAccountNo" class="form-control" placeholder="Account No" runat="server" type="number" ToolTip="Enter Bank Account No"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
