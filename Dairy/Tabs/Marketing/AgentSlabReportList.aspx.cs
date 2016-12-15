@@ -88,7 +88,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='2' style='text-align:center'>");
-                sb.Append("<u>AgentList Basis Of Slab Report</u> <br/>");
+                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                 sb.Append("</th>");
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
                 sb.Append("TIN:330761667331<br>");
@@ -97,7 +97,8 @@ namespace Dairy.Tabs.Marketing
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:center'>");
-                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
+              
+                sb.Append("<b><u>AgentList Basis Of Slab Report</u> </b><br/>");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");
                 sb.Append("PH:248370,248605");

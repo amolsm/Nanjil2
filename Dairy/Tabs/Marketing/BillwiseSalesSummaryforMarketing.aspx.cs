@@ -81,7 +81,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
-                sb.Append("<u>Billwise Sales Summary </u> <br/>");
+                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
@@ -92,8 +92,8 @@ namespace Dairy.Tabs.Marketing
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='6' style='text-align:center'>");
-                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
-
+               
+                sb.Append("<b><u>Billwise Sales Summary </u></b> <br/>");
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");
@@ -217,7 +217,7 @@ namespace Dairy.Tabs.Marketing
                         if (row2["BillNumber"].ToString() == row["BillNo"].ToString())
                         {
                             count = count + 1;
-                            sb.Append("<tr>");
+                            sb.Append("<tr style='page-break-inside:avoid;'>");
                             sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
                             sb.Append(row["ProductCode"].ToString());
                             sb.Append("</td>");
@@ -270,7 +270,7 @@ namespace Dairy.Tabs.Marketing
                     DS1 = billdata.GetSchemeAmountForBillwiseSalesSummary(row2["BillNumber"]);
                     if (!Comman.Comman.IsDataSetEmpty(DS1))
                     {
-                        sb.Append("<tr>");
+                        sb.Append("<tr style='page-break-inside:avoid;'>");
                         sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
                         sb.Append("&nbsp;");
                         sb.Append("</td>");
@@ -290,7 +290,7 @@ namespace Dairy.Tabs.Marketing
                       
                     }
 
-                    sb.Append("<tr style='border-bottom:1px dotted'> <td colspan = '9'> &nbsp; </td> </tr>");
+                    sb.Append("<tr style='border-bottom:1px dotted;page-break-inside:avoid;'> <td colspan = '9'> &nbsp; </td> </tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
                     sb.Append(row2["Salesman"].ToString());
@@ -340,7 +340,7 @@ namespace Dairy.Tabs.Marketing
                 }
 
 
-                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'>");
 
 
                 sb.Append("<td class='tg-yw4l' style='text-align:left'> ");
@@ -374,6 +374,7 @@ namespace Dairy.Tabs.Marketing
                 {
                     int count = 0;
                     double totalquantity = 0;
+                  
                     sb.Append("<tr style='border-bottom:1px solid' style='page-break-inside:avoid; align:center;'> <td colspan = '9'> &nbsp; </td> </tr>");
                     sb.Append("<tr>");
                     sb.Append("<td>");
@@ -397,16 +398,14 @@ namespace Dairy.Tabs.Marketing
 
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    if (dpRoute.SelectedItem.Value == "0")
-                    {
-                        sb.Append(row3["RouteCode"].ToString());
-                    }
+                   
+                    sb.Append(row3["BoothCode"].ToString());
+                   
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    if (dpRoute.SelectedItem.Value == "0")
-                    {
-                        sb.Append(row3["RouteName"].ToString());
-                    }
+                   
+                    sb.Append(row3["BoothName"].ToString());
+                    
                     sb.Append("</td>");
 
                     sb.Append("<td style='text-align:right'>");
@@ -446,7 +445,7 @@ namespace Dairy.Tabs.Marketing
                         if (row3["BillNumber"].ToString() == row4["BillNo"].ToString())
                         {
                             count = count + 1;
-                            sb.Append("<tr>");
+                            sb.Append("<tr style='page-break-inside:avoid;'>");
                             sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
                             sb.Append(row4["ProductCode"].ToString());
                             sb.Append("</td>");
@@ -485,7 +484,7 @@ namespace Dairy.Tabs.Marketing
                     DS1 = billdata.GetSchemeAmountForBillwiseSalesSummary(row3["BillNumber"]);
                     if (!Comman.Comman.IsDataSetEmpty(DS1))
                     {
-                        sb.Append("<tr>");
+                        sb.Append("<tr style='page-break-inside:avoid;'>");
                         sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
                         sb.Append("&nbsp;");
                         sb.Append("</td>");
@@ -505,7 +504,7 @@ namespace Dairy.Tabs.Marketing
 
                     }
 
-                    sb.Append("<tr style='border-bottom:1px dotted'> <td colspan = '9'> &nbsp; </td> </tr>");
+                    sb.Append("<tr style='border-bottom:1px dotted; page-break-inside:avoid;'> <td colspan = '9'> &nbsp; </td> </tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
                     sb.Append(row3["Salesman"].ToString());
@@ -548,7 +547,7 @@ namespace Dairy.Tabs.Marketing
                 }
 
 
-                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<tr style='border-bottom:1px solid ;page-break-inside:avoid;' >");
 
 
                 sb.Append("<td class='tg-yw4l' style='text-align:left'> ");

@@ -92,7 +92,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='3' style='text-align:center; font-size: 80%;'>");
-                sb.Append("<u> Scheme Refund </u> <br/>");
+                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt. Ph:248370,248605</b>");
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l'  style='text-align:right; font-size: 80%;'>");
@@ -102,8 +102,8 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='5' style='text-align:Left'>");
-                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.  Ph:248370, 248605</b>");
-
+               
+                sb.Append("<b><u> Scheme Refund </u> </b><br/>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
 

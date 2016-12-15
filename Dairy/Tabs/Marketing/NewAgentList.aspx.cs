@@ -28,8 +28,8 @@ namespace Dairy.Tabs.Marketing
                     dpRoute.DataBind();
                     dpRoute.Items.Insert(0, new ListItem("--All Route--", "0"));
                 }
-               
                 txtDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             }
         }
 
@@ -40,7 +40,7 @@ namespace Dairy.Tabs.Marketing
             DS = new DataSet();
 
 
-            DS = marketingdata.ViewNewAgentList((Convert.ToDateTime(txtDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
+            DS = marketingdata.ViewNewAgentList((Convert.ToDateTime(txtDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
             if (!Comman.Comman.IsDataSetEmpty(DS) && DS.Tables[1].Rows.Count != 0)
             {
                 StringBuilder sb = new StringBuilder();
@@ -69,7 +69,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='5' style='text-align:center'>");
-                sb.Append("<u>New Agent List Report </u> <br/>");
+                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>"); 
                 sb.Append("</th>");
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
                 sb.Append("TIN:330761667331<br>");
@@ -78,7 +78,7 @@ namespace Dairy.Tabs.Marketing
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='5' style='text-align:center'>");
-                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
+                sb.Append("<b><u>New Agent List Report </u></b> <br/>");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");
                 sb.Append("PH:248370,248605");
@@ -104,11 +104,11 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<td>");
                 sb.Append("<b>Sr.No.</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
-                sb.Append("<b>Agency Code</b>");
+                sb.Append("<td colspan='2' style='text-align:center' >");
+                sb.Append("<b>Agency</b>");
                 sb.Append("</td>");
-                sb.Append("<td colspan = '2'>");
-                sb.Append("<b>Agency Name</b>");
+                sb.Append("<td>");
+                sb.Append("&nbsp;");
                 sb.Append("</td>");
                 sb.Append("<td>");
                 sb.Append("<b>JoiningDate</b>");
@@ -152,12 +152,13 @@ namespace Dairy.Tabs.Marketing
                             sb.Append("<td>");
                             sb.Append(srno.ToString());
                             sb.Append("</td>");
-                            sb.Append("<td>");
+                            sb.Append("<td style='text-align:center'>");
                             sb.Append(row["AgentCode"].ToString());
                             sb.Append("</td>");
                             sb.Append("<td colspan = '2'>");
                             sb.Append(row["AgentName"].ToString());
                             sb.Append("</td>");
+                           
                             sb.Append("<td>");
                             sb.Append(Convert.ToDateTime(row["DateofJoining"]).ToString("dd-MM-yyyy"));
                             sb.Append("</td>");

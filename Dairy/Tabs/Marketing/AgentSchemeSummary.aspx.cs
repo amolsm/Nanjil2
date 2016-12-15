@@ -64,7 +64,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='4' style='text-align:center'>");
-                sb.Append("<u>  Agency Scheme Summary </u> <br/>");
+                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                 sb.Append("</th>");
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
                 sb.Append("TIN:330761667331<br>");
@@ -73,7 +73,8 @@ namespace Dairy.Tabs.Marketing
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:center'>");
-                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
+                
+                sb.Append("<b><u>  Agency Scheme Summary </u> </b><br/>");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");
                 sb.Append("PH:248370,248605");
@@ -84,7 +85,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append(dpRoute.SelectedItem.Text);
                 sb.Append("</td>");
                 sb.Append("<td colspan='3' style='text-align:right'>");
-                sb.Append(DateTime.Now.ToString("dd-mm-yyyy HH:mm"));
+                sb.Append(DateTime.Now.ToString("dd-MM-yyyy HH:mm"));
                 sb.Append("</td>");
                 sb.Append("</tr>");
 

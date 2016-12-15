@@ -163,7 +163,7 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("</th>");
 
                     sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
-                    sb.Append("<u>Itemwise Staff Sales Summary </u> <br/>");
+                    sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                     sb.Append("</th>");
 
                     sb.Append("<th class='tg-yw4l' style='text-align:right'>");
@@ -174,8 +174,8 @@ namespace Dairy.Tabs.Marketing
 
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td class='tg-yw4l' colspan='6' style='text-align:center'>");
-                    sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
-
+                   
+                    sb.Append("<b><u>Itemwise Staff Sales Summary </u><b> <br/>");
                     sb.Append("</td>");
 
                     sb.Append("<td class='tg-yw4l' style='text-align:right'>");
