@@ -106,6 +106,7 @@
     <Content Include="Tabs\Administration\BoothLog.aspx" />
     <Content Include="Tabs\Administration\CancelOrderM.aspx" />
     <Content Include="Tabs\Administration\DamageRateSetup.aspx" />
+    <Content Include="Tabs\Administration\EditDispatchs.aspx" />
     <Content Include="Tabs\Administration\EditOrder.aspx" />
     <Content Include="Tabs\Administration\GenrateBillThermal.aspx" />
     <Content Include="Tabs\Administration\IncentiveSetup.aspx" />
@@ -1284,6 +1285,13 @@
     </Compile>
     <Compile Include="Tabs\Administration\DamageRateSetup.aspx.designer.cs">
       <DependentUpon>DamageRateSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\EditDispatchs.aspx.cs">
+      <DependentUpon>EditDispatchs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\EditDispatchs.aspx.designer.cs">
+      <DependentUpon>EditDispatchs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Administration\EditOrder.aspx.cs">
       <DependentUpon>EditOrder.aspx</DependentUpon>

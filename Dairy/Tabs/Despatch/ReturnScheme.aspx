@@ -5,6 +5,7 @@
     <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
     <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
      <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
+ 
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -240,7 +241,16 @@
             </asp:UpdateProgress>       
           </div><!-- /.box -->
         </section>
-    
+    <script type="text/javascript">
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
+        function InIEvent() {
+
+            $(function () {
+                $("#example1").DataTable();
+               
+            });
+        }
+    </script>
      
     <script type="text/javascript">
 

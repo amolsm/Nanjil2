@@ -189,5 +189,24 @@ namespace Dairy.Tabs.Administration
                 lblCancelBooth.Text = string.Empty;
             }
         }
+
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            divDanger.Visible = false;
+            divwarning.Visible = false;
+            divSusccess.Visible = false;
+            
+            pnlError.Update();
+
+            DS = new DataSet();
+            rpOrderList.DataSource = DS;
+            rpOrderList.DataBind();
+
+            lblBoothName.Text = "No Order Found";
+            lblName.Text = string.Empty;
+            lblCreatedBy.Text = string.Empty;
+            lblTotalBill.Text = string.Empty;
+            lblCancelBooth.Text = string.Empty;
+        }
     }
 }
