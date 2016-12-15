@@ -74,7 +74,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtStartDate" class="form-control"  type="date" placeholder="Date" runat="server" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtStartDate" class="form-control"  type="date" placeholder="Start Date" runat="server" ToolTip="Start Date" required  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -90,7 +90,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtEndDate" class="form-control"  type="date" placeholder="Date" runat="server" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtEndDate" class="form-control"  type="date" placeholder="End Date" ToolTip="End Date" runat="server" required  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -150,7 +150,7 @@
           function PrintPanel() {
               var panel = document.getElementById("<%=pnlBill.ClientID %>");
               var printWindow = window.open('', '', 'height=400,width=800');
-              printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif;}</style>");
+              printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 14px; font-family: sans-serif;}</style>");
               printWindow.document.write('</head><body >');
               printWindow.document.write(panel.innerHTML);
               printWindow.document.write('</body></html>');
