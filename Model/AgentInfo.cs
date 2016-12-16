@@ -45,7 +45,7 @@ namespace Model
         private int _TraysReturned;
         private double _SchemeAmount;
         private double _Catoagery;
-
+        public string ASO { get; set; }
 
         public int AgentID
         {

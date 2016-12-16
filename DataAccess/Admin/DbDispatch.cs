@@ -45,6 +45,16 @@ namespace DataAccess.Admin
                 paramCollection.Add(new DBParameter("@Id", d.DispatchId));
                 paramCollection.Add(new DBParameter("@Quantity", d.Quantity));
                 paramCollection.Add(new DBParameter("@Flag", d.Flag));
+                paramCollection.Add(new DBParameter("@EditedBy", d.EditedBy));
+                paramCollection.Add(new DBParameter("@Salesman1", d.Salesman1));
+                paramCollection.Add(new DBParameter("@Salesman2", d.Salesman2));
+                paramCollection.Add(new DBParameter("@Driver1", d.Driver1));
+                paramCollection.Add(new DBParameter("@Driver2", d.Driver2));
+                paramCollection.Add(new DBParameter("@Vehicle", d.VehicleId));
+                paramCollection.Add(new DBParameter("@Trays", d.Trays));
+                paramCollection.Add(new DBParameter("@Cartons", d.Cartons));
+                paramCollection.Add(new DBParameter("@IceBox", d.IceBox));
+                paramCollection.Add(new DBParameter("@Others", d.Others));
                 result = _DBHelper.ExecuteNonQuery("Disp_EditDispatch", paramCollection, CommandType.StoredProcedure);
 
             }
@@ -55,6 +65,8 @@ namespace DataAccess.Admin
             }
             return result;
         }
+
+        
 
     }
 }

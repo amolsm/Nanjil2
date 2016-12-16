@@ -57,7 +57,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@Deactivedate", agentinfo.Deactivedate));
                 paramCollection.Add(new DBParameter("@DeactiveReason", agentinfo.DeactiveReason));
                 paramCollection.Add(new DBParameter("@AmountReturned", agentinfo.AmountReturned));
-
+                paramCollection.Add(new DBParameter("@AsoId", agentinfo.ASOID));
                 paramCollection.Add(new DBParameter("@TraysReturned", agentinfo.TraysReturned));
                 paramCollection.Add(new DBParameter("@IsArchive", agentinfo.IsArchive));
                 paramCollection.Add(new DBParameter("@SchemeAmount", agentinfo.SchemeAmount));

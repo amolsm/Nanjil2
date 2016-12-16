@@ -2,7 +2,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     
      <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
-   
+   <%-- <style type="text/css">
+        .listboxl {
+            height:100px !important;
+        }
+       .frmgrp {
+       margin-bottom:1px;
+       }
+       .frmgrp2 {
+       margin-bottom:15px;
+       }
+    </style>--%>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -94,7 +104,7 @@
              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
-                      <asp:Button ID="btnSearch" class="btn btn-primary" ValidationGroup="search" runat="server" CommandName="MoveNext" Text="Search" OnClick="btnSearch_Click" />     
+                      <asp:Button ID="btnSearch" class="btn btn-primary" ValidationGroup="asdf" runat="server" CommandName="MoveNext" Text="Search" OnClick="btnSearch_Click" />     
                         
                                                
                     
@@ -110,7 +120,7 @@
                 <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
-                     <asp:Button ID="btnSubmitOne" class="btn btn-primary" ValidationGroup="none" runat="server" CommandName="MoveNext" Text="Submit" Visible="false" OnClick="btnSubmitOne_Click" />                       
+                     <asp:Button ID="btnSubmitOne" class="btn btn-primary" ValidationGroup="nones" runat="server" CommandName="MoveNext" Text="Submit" Visible="false" OnClick="btnSubmitOne_Click" />                       
                     
                     </div><!-- /.input group -->
 
@@ -321,7 +331,7 @@
     <asp:UpdatePanel ID="upModal" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -330,8 +340,9 @@
       </div>
       <div class="modal-body">
           <div class="box-body">
+              <div class="row">
               <div class="col-lg-6">
-                  <div class="form-group">
+                  <div class="form-group ">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
@@ -340,11 +351,14 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <%-- <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator1" Display="Dynamic" 
+    ValidationGroup="disp" runat="server" ControlToValidate="dpSalesman" ForeColor="Red"
+    ErrorMessage="Please Select Salesman "></asp:RequiredFieldValidator>--%>
                   </div><!-- /.form group -->
                          </div>
 
               <div class="col-lg-6">
-                  <div class="form-group">
+                  <div class="form-group ">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
@@ -355,9 +369,10 @@
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
                          </div>
-
+              </div>
+              <div class="row">
               <div class="col-lg-6">
-                  <div class="form-group">
+                  <div class="form-group ">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
@@ -366,11 +381,14 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                     <%-- <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator2" Display="Dynamic" 
+    ValidationGroup="disp" runat="server" ControlToValidate="dpDriver" ForeColor="Red"
+    ErrorMessage="Please Select Driver "></asp:RequiredFieldValidator>--%>
                   </div><!-- /.form group -->
                          </div>
 
               <div class="col-lg-6">
-                  <div class="form-group">
+                  <div class="form-group ">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
@@ -381,9 +399,10 @@
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
                          </div>
-
+</div>
+              <div class="row">
               <div class="col-lg-6">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
@@ -392,22 +411,27 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                     <%-- <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator3" Display="Dynamic" 
+    ValidationGroup="disp" runat="server" ControlToValidate="dpVehicle" ForeColor="Red"
+    ErrorMessage="Please Select Vehicle "></asp:RequiredFieldValidator>--%>
                   </div><!-- /.form group -->
                          </div>
 
               <div class="col-lg-6">
-                  <div class="form-group" >
+                  <div class="form-group frmgrp" >
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
                       </div>
                        <asp:TextBox ID="txtTraysDispached" ValidationGroup="mgrp" class="form-control" Type="number"  ToolTip="Trays Dispatched" placeholder="Trays Dispatched" runat="server"  ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                     <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtTraysDispached"
+        ErrorMessage="Trays Required" ValidationGroup="disp" ForeColor="Red"></asp:RequiredFieldValidator>--%>
                   </div><!-- /.form group -->
     
                       </div>        <!-- -->
-
+                  </div>
+              <div class="row">
               <div class="col-lg-6">
                   <div class="form-group" >
                     <div class="input-group">
@@ -433,7 +457,8 @@
                   </div><!-- /.form group -->
     
                       </div>        <!-- -->
-
+</div>
+              <div class="row">
               <div class="col-lg-6">
                   <div class="form-group" >
                     <div class="input-group">
@@ -445,20 +470,15 @@
 
                   </div><!-- /.form group -->
     
-                      </div>        <!-- -->
-           <%--   <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="txtTraysDispached" runat="server" ErrorMessage="Trays Required"  ValidationGroup="mgrp" ForeColor="#cc0000"></asp:RequiredFieldValidator>
-           <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="txtTraysDispached" ErrorMessage="Trays Must be &gt; 0" Operator="GreaterThan" Type="Double" ValueToCompare="0" ValidationGroup="mgrp" ForeColor="#cc0000"/>
-         --%>  
+                      </div>    
+                  </div>
             </div>
-         <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="dpSalesman" InitialValue="0" runat="server" ErrorMessage="Please select Salesman"  ValidationGroup="mgrp" ForeColor="#cc0000"></asp:RequiredFieldValidator>
-           <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="dpDriver" InitialValue="0" runat="server" ErrorMessage="Please select Driver"  ValidationGroup="mgrp" ForeColor="#cc0000"></asp:RequiredFieldValidator>
-           <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="dpVehicle" InitialValue="0" runat="server" ErrorMessage="Please select Vehicle"  ValidationGroup="mgrp" ForeColor="#cc0000"></asp:RequiredFieldValidator>
-     --%>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <%--<button type="button" class="btn btn-primary" >Save changes</button>--%>
-          <asp:Button ID="btnSubmitModal" class="btn btn-primary" runat="server" ValidationGroup="saved" OnClick="btnSubmitModal_Click" Text="Save changes" UseSubmitBehavior="false" OnClientClick="Confirms()" data-dismiss="modal"/>     
+          <asp:Button ID="btnSubmitModal" class="btn btn-primary" runat="server" ValidationGroup="disp" OnClick="btnSubmitModal_Click" Text="Save changes" OnClientClick="return confirm('Are you sure ?');" />     
       </div>
     </div>
   </div>
@@ -468,9 +488,9 @@
     </asp:UpdatePanel>
     <script type="text/javascript">
 
-        $(function showmodal() {
+        function showmodal() {
             $('#myModal').modal();
-        })
+        };
     </script>
 
    

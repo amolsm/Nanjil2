@@ -71,10 +71,11 @@ namespace Dairy.Tabs.Despatch
 
                 uprouteList.Update();
 
-                // DS.WriteXml(Server.MapPath("~/Tabs/Dispatch/temp.xml"));
-
-                //string str = DS.GetXml();
-                //insertDispatchTemp(DS);
+                divDanger.Visible = false;
+                divwarning.Visible = false;
+                divSusccess.Visible = false;
+               
+                pnlError.Update();
 
             }
 

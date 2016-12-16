@@ -5,6 +5,17 @@
        <%--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
             <script src="//code.jquery.com/jquery-1.10.2.js"></script>
             <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>--%>
+    <style type="text/css">
+        .listboxl {
+            height:100px !important;
+        }
+       .frmgrp {
+       margin-bottom:1px;
+       }
+       .frmgrp2 {
+       margin-bottom:15px;
+       }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
    
@@ -125,15 +136,17 @@
           <h3 class="box-title">Agent Information </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
+            <div class="row">
             <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-lightbulb-o"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAgentCode"  class="form-control" placeholder="Agent Code" runat="server" required ToolTip="Agent Code"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAgentCode"  class="form-control" placeholder="Agent Code" runat="server"  ToolTip="Agent Code"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtAgentCode"
+        ErrorMessage="AgentCode Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
 
                      
@@ -141,11 +154,8 @@
                           
                       </div>                        
              
-   
-
-                  
-                  <div class="col-lg-3">
-                  <div class="form-group">
+            <div class="col-lg-3">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
@@ -162,14 +172,16 @@
                       </div>  
             
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-user"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAgentName" class="form-control" placeholder="Agent Name" runat="server" required ToolTip="Enter Agent Name"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAgentName" class="form-control" placeholder="Agent Name" runat="server"  ToolTip="Enter Agent Name"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtAgentName"
+        ErrorMessage="Agentname Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
+                  
                   </div><!-- /.form group -->
 
                      
@@ -177,7 +189,7 @@
                           
                       </div>  
             <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
@@ -197,15 +209,19 @@
                        
                           
                       </div>   
+                </div>
+             <div class="row">
               <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-calendar"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtDateOfJoing" class="form-control" type = "date" placeholder="Date of Joining" runat="server" required ToolTip="Date of Joining"></asp:TextBox>                        
+                       <asp:TextBox ID="txtDateOfJoing" class="form-control" type = "date" placeholder="Date of Joining" runat="server"  ToolTip="Date of Joining"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDateOfJoing"
+        ErrorMessage="Joining Date Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
+                  
                   </div><!-- /.form group -->
 
                      
@@ -213,14 +229,15 @@
                           
                       </div> 
               <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-check"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtApprovedBy" class="form-control" placeholder="Approved By" runat="server" required ToolTip="Approved By"></asp:TextBox>                        
+                       <asp:TextBox ID="txtApprovedBy" class="form-control" placeholder="Approved By" runat="server"  ToolTip="Approved By"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtApprovedBy"
+        ErrorMessage=" Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
 
                      
@@ -229,7 +246,7 @@
                       </div>       
             
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
@@ -251,7 +268,7 @@
                       </div> 
 
                   <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
@@ -271,14 +288,15 @@
                        
                           
                       </div> 
-
-                 <%--           <div class="col-lg-3">
+                  </div>
+             <div class="row">
+                            <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="dpEmployeeID" class="form-control" runat="server" DataTextField="EmployeeName" DataValueField="EmployeeID" >
+                      <asp:DropDownList ID="dpASO" class="form-control" runat="server" DataTextField="Name" DataValueField="Id" >
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
@@ -287,8 +305,8 @@
                      
                        
                           
-                      </div> --%>
-  
+                      </div> 
+  </div>
         </div><!-- /.box-body -->
       </div>
                      
@@ -298,15 +316,18 @@
           <h3 class="box-title">Contact Information </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
+             
+             <div class="row">
             <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-map-marker"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAddress1" class="form-control" placeholder="Address 1" runat="server" required ToolTip="Address 1"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAddress1" class="form-control" placeholder="Address 1" runat="server"  ToolTip="Address 1"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtAddress1"
+        ErrorMessage=" Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
                 
 
@@ -315,7 +336,7 @@
                           
                       </div>                        
                  <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-map-marker"></i><span style="color:red">&nbsp;*</span>
@@ -331,7 +352,7 @@
                       </div>  
 
             <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-map-marker"></i><span style="color:red">&nbsp;*</span>
@@ -346,10 +367,11 @@
                           
                       </div> 
             
- 
+  </div>
+             <div class="row">
 
               <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-envelope-o"></i><span style="color:red">&nbsp;*</span>
@@ -360,14 +382,15 @@
                   </div><!-- /.form group --> 
                    </div> 
                         <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-mobile"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtMobile" class="form-control" ToolTip="Enter Mobile No" placeholder="Mobile No" runat="server" required Type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtMobile" class="form-control" ToolTip="Enter Mobile No" placeholder="Mobile No" runat="server"  Type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtMobile"
+        ErrorMessage=" Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
 
                      
@@ -375,7 +398,7 @@
                           
                       </div>                        
                  <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-phone"></i><span style="color:red">&nbsp;*</span>
@@ -389,7 +412,8 @@
                        
                           
                       </div>  
-
+                  </div>
+             <div class="row">
 
                         <div class="col-lg-3">
                   <div class="form-group">
@@ -473,7 +497,8 @@
                        
                           
                       </div>
-            
+             </div>
+             
         </div><!-- /.box-body -->
       </div>
 
@@ -484,7 +509,8 @@
         </div><!-- /.box-header -->
         <div class="box-body">
 
-
+             
+             <div class="row">
                
                <div class="col-lg-3">
                   <div class="form-group">
@@ -545,7 +571,7 @@
                           
                       </div>    
 
-
+                  
               <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -561,7 +587,8 @@
                        
                           
                       </div> 
-            
+             </div>
+             <div class="row">
              <div class="col-lg-3">
 
                   <div class="form-group">
@@ -600,7 +627,8 @@
                        
                           
                       </div> 
-                    
+                     </div>
+            
         </div><!-- /.box-body -->
       </div>
 
@@ -611,6 +639,8 @@
           <h3 class="box-title">Service Information </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
+            
+             <div class="row">
             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -687,7 +717,8 @@
                           
                       </div>    
 
-       
+        </div>
+             
         
         </div><!-- /.box-body -->
       </div>
@@ -697,6 +728,8 @@
           <h3 class="box-title">De-active  Information </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
+           
+             <div class="row">
             <div class="col-lg-2">
                   <div class="form-group">
                     <div class="input-group">
@@ -781,7 +814,8 @@
                           
                       </div>
           
-        
+         </div>
+             
         </div><!-- /.box-body -->
       </div>
 
@@ -790,6 +824,8 @@
           <h3 class="box-title">Scheme  Information </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
+            
+             <div class="row">
             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -829,7 +865,9 @@
                       
                               <asp:Button ID="btnAddagent" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnAddagent_click"  />     
                       &nbsp;&nbsp;  <asp:Button ID="btnupdateagent" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save"  OnClick="btnUpdate_click"  />           
-                    </div><!-- /.input group -->
+                      &nbsp;&nbsp;  <asp:Button ID="btnRefresh" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Refresh" ValidationGroup="none"  OnClick="btnRefresh_Click"  />           
+                   
+                         </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
 
@@ -839,7 +877,8 @@
                       </div> 
          
                   
-
+                  </div>
+             
 
         
         </div><!-- /.box-body -->
@@ -1056,7 +1095,7 @@
             </div>
         </div>
 
-
+    
     <script>
         yepnope({ // or Modernizr.load
             test: Modernizr.inputtypes.date,

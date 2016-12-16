@@ -115,15 +115,15 @@ namespace Dairy.Tabs.Administration
                 dpSlab.Items.Insert(0, new ListItem("--Select SlabName  --", "0"));
 
             }
-          
-            //EmployeeData empData = new EmployeeData();
-            //DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "routeMaster", "IsArchive=0");
-            //if (!Comman.Comman.IsDataSetEmpty(DS))
-            //{
-            //    dpEmployeeID.DataSource = DS;
-            //    dpEmployeeID.DataBind();
-            //    dpEmployeeID.Items.Insert(0, new ListItem("--Select Employee  --", "0"));
-            //}
+
+           // EmployeeData empData = new EmployeeData();
+            DS = BindCommanData.BindCommanDropDwon("EmployeeId as Id ", "EmployeeCode +' '+EmployeeName as Name  ", "EmployeeMaster", "IsArchive=0 and Designation='A.S.O.'" );
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpASO.DataSource = DS;
+                dpASO.DataBind();
+                dpASO.Items.Insert(0, new ListItem("--Select ASO--", "0"));
+            }
         }
         protected void BinDAgentInfo()
         {
@@ -224,6 +224,7 @@ namespace Dairy.Tabs.Administration
             agentInfo.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             agentInfo.ModifiedBy = GlobalInfo.Userid;
             agentInfo.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
+            agentInfo.ASOID = Convert.ToInt32(dpASO.SelectedItem.Value);
             agentInfo.flag = "Insert";
             Result = agentData.InsertAgentInfo(agentInfo);
             if (Result > 0)
@@ -336,6 +337,7 @@ namespace Dairy.Tabs.Administration
             agentInfo.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             agentInfo.ModifiedBy = GlobalInfo.Userid;
             agentInfo.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
+            agentInfo.ASOID = Convert.ToInt32(dpASO.SelectedItem.Value);
             agentInfo.flag = "Update";
             Result = agentData.InsertAgentInfo(agentInfo);
             if (Result > 0)
@@ -660,6 +662,12 @@ namespace Dairy.Tabs.Administration
                 txtAmountRetrun.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["AmountReturned"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["AmountReturned"].ToString();
                 txtTraysReturned.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TraysReturned"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TraysReturned"].ToString();
                 txtSchemeAmount.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SchemeAmount"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SchemeAmount"].ToString();
+
+                dpASO.ClearSelection();
+                if (dpASO.Items.FindByValue(DS.Tables[0].Rows[0]["AsoEmpId"].ToString()) != null)
+                {
+                    dpASO.Items.FindByValue(DS.Tables[0].Rows[0]["AsoEmpId"].ToString()).Selected = true;
+                }
                 txtSchemeTotalAmount.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TotalSchemeAmount"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TotalSchemeAmount"].ToString();
 
             }
@@ -677,7 +685,7 @@ namespace Dairy.Tabs.Administration
 
             dpAgencyType.ClearSelection();
 
-
+            dpASO.ClearSelection();
             txtAddress1.Text = string.Empty;
             txtAddress2.Text = string.Empty;
             txtAddress3.Text = string.Empty;
@@ -727,6 +735,16 @@ namespace Dairy.Tabs.Administration
 
         }
 
-
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            divDanger.Visible = false;
+            divwarning.Visible = false;
+            divSusccess.Visible = false;
+            
+            btnAddagent.Visible = true;
+            btnupdateagent.Visible = false;
+            //BinDAgentInfo();
+            pnlError.Update();
+        }
     }
 }
