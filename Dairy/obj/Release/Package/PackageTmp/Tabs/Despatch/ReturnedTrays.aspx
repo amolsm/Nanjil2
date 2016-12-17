@@ -128,7 +128,7 @@
                 <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
-                       <asp:Button ID="btnUpdate" class="btn btn-primary" ValidationGroup="edit" runat="server" CommandName="MoveNext" Text="Update" OnClick="btnClick_btnUpdate"/>     
+                       <asp:Button ID="btnUpdate" class="btn btn-primary" ValidationGroup="edit" runat="server" CommandName="MoveNext" Text="Update" OnClick="btnClick_btnUpdate" OnClientClick="return confirm('Are you sure ?')"/>     
                        
                     </div><!-- /.input group -->
 

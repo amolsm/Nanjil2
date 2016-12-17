@@ -130,6 +130,7 @@
                  <%--  <li><a href="/Tabs/Administration/GenerateBillForBooth.aspx"><i class="fa fa-circle-o"></i>  Gnerate Bill</a></li>--%>
                   <%--<li><a href="/Tabs/Administration/ViewDispatchOrders.aspx"><i class="fa fa-circle-o"></i> View Dispatch Order</a></li>--%>
                    <li><a href="/Tabs/Administration/ViewDispatchSummary.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary</a></li>
+                    <li><a href="/Tabs/Administration/EditDispatchs.aspx"><i class="fa fa-circle-o"></i> Edit Dispatch </a></li>
                   <li><a href="/Tabs/Administration/ViewDispatchSummaryUsers.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary Shiftwise</a></li>
                     <li><a href="/Tabs/Administration/ViewDispatchUserShiftwise.aspx"><i class="fa fa-circle-o"></i> View Dispatch UserShiftwise</a></li>
                  <li><a href="/Tabs/Administration/AddReturnedItems.aspx"><i class="fa fa-circle-o"></i> Returned Products</a></li>

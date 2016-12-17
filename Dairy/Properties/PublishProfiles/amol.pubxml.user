@@ -22,16 +22,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/18/2016 11:59:15</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
-      <publishTime>12/11/2016 15:44:24</publishTime>
+      <publishTime>12/17/2016 11:52:31</publishTime>
     </File>
     <File Include="bin/Comman.dll">
-      <publishTime>11/30/2016 10:27:44</publishTime>
+      <publishTime>12/17/2016 11:52:30</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
-      <publishTime>12/11/2016 15:44:27</publishTime>
+      <publishTime>12/17/2016 18:17:13</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
-      <publishTime>12/11/2016 10:59:34</publishTime>
+      <publishTime>12/17/2016 11:52:30</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:52</publishTime>
@@ -58,7 +58,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/24/2012 13:52:52</publishTime>
     </File>
     <File Include="bin/Model.dll">
-      <publishTime>12/10/2016 11:11:02</publishTime>
+      <publishTime>12/17/2016 11:52:30</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:50</publishTime>
@@ -160,7 +160,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2016 10:27:44</publishTime>
     </File>
     <File Include="Tabs/Administration/AddAgent.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/17/2016 10:43:01</publishTime>
     </File>
     <File Include="Tabs/Administration/AddBank.aspx">
       <publishTime>11/18/2016 11:59:15</publishTime>
@@ -172,7 +172,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/18/2016 11:59:15</publishTime>
     </File>
     <File Include="Tabs/Administration/AddDesignation.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 11:04:18</publishTime>
     </File>
     <File Include="Tabs/Administration/AddLocation.aspx">
       <publishTime>11/18/2016 11:59:15</publishTime>
@@ -205,7 +205,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2016 10:27:44</publishTime>
     </File>
     <File Include="Tabs/Administration/CancelOrderM.aspx">
-      <publishTime>11/26/2016 10:37:45</publishTime>
+      <publishTime>12/15/2016 11:04:18</publishTime>
     </File>
     <File Include="Tabs/Administration/CashierBoothSettlement.aspx">
       <publishTime>11/18/2016 11:59:15</publishTime>
@@ -214,7 +214,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/18/2016 11:59:15</publishTime>
     </File>
     <File Include="Tabs/Administration/CreateUser.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 11:04:18</publishTime>
     </File>
     <File Include="Tabs/Administration/DamageRateSetup.aspx">
       <publishTime>11/30/2016 11:19:09</publishTime>
@@ -224,6 +224,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Tabs/Administration/DuplicateBillForAgent.aspx">
       <publishTime>11/30/2016 10:27:44</publishTime>
+    </File>
+    <File Include="Tabs/Administration/EditDispatchs.aspx">
+      <publishTime>12/17/2016 10:43:01</publishTime>
     </File>
     <File Include="Tabs/Administration/EditOrder.aspx">
       <publishTime>11/30/2016 10:27:44</publishTime>
@@ -286,7 +289,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/18/2016 11:59:15</publishTime>
     </File>
     <File Include="Tabs/Administration/ViewDispatchUserShiftwise.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/17/2016 10:43:01</publishTime>
     </File>
     <File Include="Tabs/Administration/Web.config">
       <publishTime>11/18/2016 11:59:15</publishTime>
@@ -301,10 +304,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/18/2016 11:59:15</publishTime>
     </File>
     <File Include="Tabs/Despatch/ReturnedTrays.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/17/2016 10:43:01</publishTime>
     </File>
     <File Include="Tabs/Despatch/ReturnScheme.aspx">
-      <publishTime>11/30/2016 10:27:44</publishTime>
+      <publishTime>12/15/2016 11:04:18</publishTime>
     </File>
     <File Include="Tabs/Despatch/RoutewiseReturnCartonReport.aspx">
       <publishTime>11/27/2016 16:01:34</publishTime>
@@ -358,82 +361,82 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/18/2016 11:59:15</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgentListNotPlacedOrder.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:47:48</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgentSchemeDetails.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:45:16</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgentSchemeSummary.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:43:50</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgentSlabReportList.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:37:50</publishTime>
     </File>
     <File Include="Tabs/Marketing/AmountwiseIceCreamReport.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:36:09</publishTime>
     </File>
     <File Include="Tabs/Marketing/BillwiseSalesSummaryforMarketing.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:30:26</publishTime>
     </File>
     <File Include="Tabs/Marketing/BillwiseStaffSalesSummary.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:28:19</publishTime>
     </File>
     <File Include="Tabs/Marketing/DamageReplacementRateSetup.aspx">
       <publishTime>11/30/2016 11:15:43</publishTime>
     </File>
     <File Include="Tabs/Marketing/DeactivateAgentList.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:26:22</publishTime>
     </File>
     <File Include="Tabs/Marketing/DespatchComparisonReport.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:24:16</publishTime>
     </File>
     <File Include="Tabs/Marketing/DispatchReturnComparison.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:20:53</publishTime>
     </File>
     <File Include="Tabs/Marketing/IncentiveSetupScreen.aspx">
       <publishTime>11/30/2016 11:13:48</publishTime>
     </File>
     <File Include="Tabs/Marketing/ItemwisePurchaseAgentList.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:18:52</publishTime>
     </File>
     <File Include="Tabs/Marketing/ItemwiseSalesSummaryForMarketing.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:16:39</publishTime>
     </File>
     <File Include="Tabs/Marketing/ItemwiseStaffSalesSummary.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:11:04</publishTime>
     </File>
     <File Include="Tabs/Marketing/MarketingSalesAnalysisItemwise.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:02:27</publishTime>
     </File>
     <File Include="Tabs/Marketing/NewAgentList.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 17:00:38</publishTime>
     </File>
     <File Include="Tabs/Marketing/PartywiseDamageReplacementSummary.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 16:57:33</publishTime>
     </File>
     <File Include="Tabs/Marketing/PartywiseIncentiveSummary.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 16:54:45</publishTime>
     </File>
     <File Include="Tabs/Marketing/ProductIncentive.aspx">
       <publishTime>11/18/2016 11:59:15</publishTime>
     </File>
     <File Include="Tabs/Marketing/RefundSchemeSummary.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 16:52:46</publishTime>
     </File>
     <File Include="Tabs/Marketing/ReturnComparisonReport.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 16:43:48</publishTime>
     </File>
     <File Include="Tabs/Marketing/SalesComparison.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 16:41:46</publishTime>
     </File>
     <File Include="Tabs/Marketing/SchemeRefund.aspx">
       <publishTime>11/18/2016 11:59:15</publishTime>
     </File>
     <File Include="Tabs/Marketing/SpotDamageComparisonReport.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 16:35:15</publishTime>
     </File>
     <File Include="Tabs/Marketing/StaffAccountSalesSummary.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>12/15/2016 16:29:14</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddMilkCollectionCenter.aspx">
       <publishTime>11/12/2016 16:38:05</publishTime>
@@ -3484,13 +3487,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/18/2016 11:59:16</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
-      <publishTime>12/10/2016 17:07:52</publishTime>
+      <publishTime>12/17/2016 11:06:01</publishTime>
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>11/18/2016 11:59:16</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/11/2016 15:44:29</publishTime>
+      <publishTime>12/17/2016 11:52:35</publishTime>
     </File>
     <File Include="WebService/BindAgentSlab.asmx">
       <publishTime>11/18/2016 11:59:16</publishTime>

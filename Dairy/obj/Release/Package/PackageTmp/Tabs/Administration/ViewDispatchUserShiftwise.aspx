@@ -184,17 +184,7 @@
               </div><!-- /.box -->
         </section>
     
-    <script type="text/javascript">
-
-        $(function () {
-            //$("#MainContent_txtOrderDate").datepicker({ dateFormat: 'dd/mm/yy' });
-            // $("#MainContent_txtEmployeeOrderDate").datepicker({ dateFormat: 'dd/mm/yy' });
-            // $("#MainContent_txtCustamerorderDate").datepicker({ dateFormat: 'dd/mm/yy' });
-            $('#myModal').on('shown.bs.modal', function () {
-                $('#myInput').focus()
-            })
-        })
-    </script>
+    
     <script type = "text/javascript">
         function PrintPanel() {
             var panel = document.getElementById("<%=pnlDispatchSummary.ClientID %>");

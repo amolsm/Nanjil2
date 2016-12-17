@@ -12,7 +12,7 @@ namespace DataAccess.Admin
     {
         DBHelper _DBHelper = new DBHelper();
         DataSet DS;
-        public DataSet GetDispatchById(DispatchVM d)
+        public DataSet GetDispatchById(Model.Admin.DispatchVM disp)
         {
             DS = new DataSet();
 
@@ -20,9 +20,9 @@ namespace DataAccess.Admin
             try
             {
                 DBParameterCollection paramCollection = new DBParameterCollection();
-                paramCollection.Add(new DBParameter("@Id", d.DispatchId));
-                paramCollection.Add(new DBParameter("@Quantity", d.Quantity));
-                paramCollection.Add(new DBParameter("@Flag", d.Flag));
+                paramCollection.Add(new DBParameter("@Id", disp.DispatchId));
+                paramCollection.Add(new DBParameter("@Quantity", disp.Quantity));
+                paramCollection.Add(new DBParameter("@Flag", disp.Flag));
                 
                 DS = _DBHelper.ExecuteDataSet("Disp_EditDispatch", paramCollection, CommandType.StoredProcedure);
             }
@@ -35,26 +35,26 @@ namespace DataAccess.Admin
             return DS;
         }
 
-        public int updateDispatch(DispatchVM d)
+        public int updateDispatch(Model.Admin.DispatchVM disp)
         {
             int result = 0;
             try
             {
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
-                paramCollection.Add(new DBParameter("@Id", d.DispatchId));
-                paramCollection.Add(new DBParameter("@Quantity", d.Quantity));
-                paramCollection.Add(new DBParameter("@Flag", d.Flag));
-                paramCollection.Add(new DBParameter("@EditedBy", d.EditedBy));
-                paramCollection.Add(new DBParameter("@Salesman1", d.Salesman1));
-                paramCollection.Add(new DBParameter("@Salesman2", d.Salesman2));
-                paramCollection.Add(new DBParameter("@Driver1", d.Driver1));
-                paramCollection.Add(new DBParameter("@Driver2", d.Driver2));
-                paramCollection.Add(new DBParameter("@Vehicle", d.VehicleId));
-                paramCollection.Add(new DBParameter("@Trays", d.Trays));
-                paramCollection.Add(new DBParameter("@Cartons", d.Cartons));
-                paramCollection.Add(new DBParameter("@IceBox", d.IceBox));
-                paramCollection.Add(new DBParameter("@Others", d.Others));
+                paramCollection.Add(new DBParameter("@Id", disp.DispatchId));
+                paramCollection.Add(new DBParameter("@Quantity", disp.Quantity));
+                paramCollection.Add(new DBParameter("@Flag", disp.Flag));
+                paramCollection.Add(new DBParameter("@EditedBy", disp.EditedBy));
+                paramCollection.Add(new DBParameter("@Salesman1", disp.Salesman1));
+                paramCollection.Add(new DBParameter("@Salesman2", disp.Salesman2));
+                paramCollection.Add(new DBParameter("@Driver1", disp.Driver1));
+                paramCollection.Add(new DBParameter("@Driver2", disp.Driver2));
+                paramCollection.Add(new DBParameter("@Vehicle", disp.VehicleId));
+                paramCollection.Add(new DBParameter("@Trays", disp.Trays));
+                paramCollection.Add(new DBParameter("@Cartons", disp.Cartons));
+                paramCollection.Add(new DBParameter("@IceBox", disp.IceBox));
+                paramCollection.Add(new DBParameter("@Others", disp.Others));
                 result = _DBHelper.ExecuteNonQuery("Disp_EditDispatch", paramCollection, CommandType.StoredProcedure);
 
             }
