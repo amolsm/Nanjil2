@@ -192,21 +192,22 @@ namespace Dairy.Tabs.Administration
 
         protected void btnRefresh_Click(object sender, EventArgs e)
         {
-            divDanger.Visible = false;
-            divwarning.Visible = false;
-            divSusccess.Visible = false;
+            Response.Redirect("/Tabs/Administration/CancelOrderM.aspx");
+            //divDanger.Visible = false;
+            //divwarning.Visible = false;
+            //divSusccess.Visible = false;
             
-            pnlError.Update();
+            //pnlError.Update();
 
-            DS = new DataSet();
-            rpOrderList.DataSource = DS;
-            rpOrderList.DataBind();
+            //DS = new DataSet();
+            //rpOrderList.DataSource = DS;
+            //rpOrderList.DataBind();
 
-            lblBoothName.Text = "No Order Found";
-            lblName.Text = string.Empty;
-            lblCreatedBy.Text = string.Empty;
-            lblTotalBill.Text = string.Empty;
-            lblCancelBooth.Text = string.Empty;
+            //lblBoothName.Text = "No Order Found";
+            //lblName.Text = string.Empty;
+            //lblCreatedBy.Text = string.Empty;
+            //lblTotalBill.Text = string.Empty;
+            //lblCancelBooth.Text = string.Empty;
         }
     }
 }
