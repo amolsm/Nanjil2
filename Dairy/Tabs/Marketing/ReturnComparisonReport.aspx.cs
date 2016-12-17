@@ -141,7 +141,7 @@ namespace Dairy.Tabs.Marketing
 
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td class='tg-yw4l' colspan='7' style='text-align:center'>");
-                    sb.Append("<u>Return Comparison Reports </u> <br/>");
+                    sb.Append("<b><u>Return Comparison Reports </u> </b><br/>");
                 
                     sb.Append("</td>");
                     sb.Append("<td class='tg-yw4l' style='text-align:right'>");

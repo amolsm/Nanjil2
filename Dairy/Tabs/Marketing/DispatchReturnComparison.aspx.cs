@@ -133,17 +133,17 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                     sb.Append("</th>");
                     sb.Append("<th class='tg-yw4l' style='text-align:right'>");
-                    sb.Append("TIN:" + DS.Tables[2].Rows[0]["TinNumber"].ToString() + "<br>");
+                   // sb.Append("TIN:" + DS.Tables[2].Rows[0]["TinNumber"].ToString() + "<br>");
                     sb.Append("</th>");
                     sb.Append("</tr>");
 
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td class='tg-yw4l' colspan='7' style='text-align:center'>");
                   
-                    sb.Append("<u>AgentWise Return Comparison Reports </u> <br/>");
+                    sb.Append("<b><u>AgentWise Return Comparison Reports </u></b> <br/>");
                     sb.Append("</td>");
                     sb.Append("<td class='tg-yw4l' style='text-align:right'>");
-                    sb.Append("PH:248370,248605");
+                   // sb.Append("PH:248370,248605");
                     sb.Append("</td> </tr>");
 
                     sb.Append("<tr style='border-bottom:1px solid'>");

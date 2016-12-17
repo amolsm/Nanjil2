@@ -70,9 +70,9 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                       Start Amount
+                      Order Date
                       </div>
-                       <asp:TextBox ID="txtDate" class="form-control"   type="date" placeholder="Date" runat="server" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtDate" class="form-control"   type="date" placeholder=" Order Date" runat="server" required  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -167,7 +167,7 @@
          function PrintPanel() {
              var panel = document.getElementById("<%=pnlBill.ClientID %>");
              var printWindow = window.open('', '', 'height=600,width=800');
-             printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif;}</style>");
+             printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 14px; font-family: sans-serif;}</style>");
              printWindow.document.write('</head><body >');
              printWindow.document.write(panel.innerHTML);
              printWindow.document.write('</body></html>');

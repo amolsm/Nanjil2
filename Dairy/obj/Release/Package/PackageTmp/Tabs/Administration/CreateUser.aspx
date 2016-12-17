@@ -285,6 +285,7 @@
                           
                            <th>Created By</th>
                             <th>Created Date</th>
+                          <th>Edit</th>
                            
                       </tr>
                     </thead>
@@ -325,7 +326,8 @@
                                     <th>Role</th>
                                      
                                     <th>Created By</th>
-                                    <th>Created Date</th>                           
+                                    <th>Created Date</th>  
+                          <th>Edit</th>                         
                       </tr>
                     </tfoot>
 
