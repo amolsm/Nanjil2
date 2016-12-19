@@ -40,9 +40,9 @@ namespace Dairy.Tabs.Marketing
             marketingdata = new MarketingData();
             DS = new DataSet();
 
-     
 
-        DS = marketingdata.ViewAgentListNotPlacedOrder((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
+
+            DS = marketingdata.ViewAgentListNotPlacedOrder((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 StringBuilder sb = new StringBuilder();
@@ -71,12 +71,12 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<th class='tg-baqh' colspan='3' style='text-align:center'>");
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.PH:248370,248605 </b>");
                 sb.Append("</th>");
-                
+
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:center'>");
-                
+
                 sb.Append("<b><u>Agent List Not Placed Order </u></b> <br/>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
@@ -111,6 +111,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</td>");
 
                 sb.Append("</tr>");
+
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td>");
                 sb.Append("<b>Sr.No.</b>");
@@ -133,29 +134,29 @@ namespace Dairy.Tabs.Marketing
                 dt.Columns.Add("AgentName");
                 foreach (DataRow rowr in DS.Tables[2].Rows)
                 {
-                    
 
-                 
-                    foreach (DataRow rows in DS.Tables[1].Rows )
-                        {
-                      
+
+
+                    foreach (DataRow rows in DS.Tables[1].Rows)
+                    {
+
                         foreach (DataRow row in DS.Tables[0].Rows)
                         {
                             DataRow dr = dt.NewRow();
-                           
+
                             if (rowr["RouteId"].ToString() == rows["RouteId"].ToString() && rows["AgentId"].ToString() != row["AgentId"].ToString())
                             {
-                              
-                                dt.Rows.Add(rows["RouteId"],rows["AgentId"],rows["AgentCode"],rows["AgentName"]);
+
+                                dt.Rows.Add(rows["RouteId"], rows["AgentId"], rows["AgentCode"], rows["AgentName"]);
                                 dt.Rows.Add(dr);
                             }
-                          
+
 
 
 
                         }
                     }
-                  
+
                 }
                 DataView view = new DataView(dt);
                 DataTable distinctValues = view.ToTable(true, "RouteId", "AgentId", "AgentCode", "AgentName");
@@ -182,8 +183,8 @@ namespace Dairy.Tabs.Marketing
                     int srno = 0;
                     foreach (DataRow nagent in distinctValues.Rows)
                     {
-                        
-                       
+
+
                         if (rowr["RouteId"].ToString() == nagent["RouteId"].ToString())
                         {
                             count++;
@@ -202,7 +203,7 @@ namespace Dairy.Tabs.Marketing
                             sb.Append("</tr>");
                         }
 
-                        }
+                    }
                 }
 
 
@@ -236,7 +237,7 @@ namespace Dairy.Tabs.Marketing
 
 
             }
-    
+
 
             else
             {
@@ -244,7 +245,6 @@ namespace Dairy.Tabs.Marketing
                 genratedBIll.Text = result;
 
             }
-
         }
        
     }

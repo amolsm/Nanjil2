@@ -49,6 +49,9 @@ namespace Dairy.Tabs.Marketing
             double totalScheme = 0;
             double totalamt = 0;
             double totalboothamt = 0;
+            double totalrouteagentqty = 0;
+            double totalboothqty = 0;
+            double totalqty = 0;
             double total = 0;
             string result = string.Empty;
             DS = billdata.MarketingBillwiseSalesSummarybyDate((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpAgent.SelectedItem.Value));
@@ -303,6 +306,7 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("</td>");
                     sb.Append("<td class='tg-yw4l'  colspan='2'    style='text-align:left'>");
                     sb.Append(totalquantity.ToString());
+                    totalrouteagentqty += totalquantity;
                     sb.Append("</td>");
                    
                     double amt = 0;
@@ -350,13 +354,15 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("&nbsp;");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l' colspan='2'style='text-align:right'> ");
-                sb.Append("&nbsp;");
+                sb.Append("<b>" + "Total Quantity" + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
                 sb.Append("&nbsp;");
                 sb.Append("</td>");
-
-                sb.Append("<td class='tg-yw4l'  colspan='2'  style='text-align:right'> ");
+                sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
+                sb.Append("<b>" + totalrouteagentqty + "</b>");
+                sb.Append("</td>");
+                sb.Append("<td class='tg-yw4l'    style='text-align:right'> ");
                 sb.Append("<b>" + "Total Amount" + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
@@ -517,6 +523,7 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("</td>");
                     sb.Append("<td class='tg-yw4l'  colspan='2'    style='text-align:left'>");
                     sb.Append(totalquantity.ToString());
+                    totalboothqty += totalquantity;
                     sb.Append("</td>");
 
                     double amt = 0;
@@ -557,13 +564,16 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("&nbsp;");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l' colspan='2'style='text-align:right'> ");
-                sb.Append("&nbsp;");
+                sb.Append("<b>" + "Total Quantity" + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
                 sb.Append("&nbsp;");
                 sb.Append("</td>");
+                sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
+                sb.Append("<b>"+totalboothqty+ "</b>");
+                sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l'  colspan='2'  style='text-align:right'> ");
+                sb.Append("<td class='tg-yw4l'    style='text-align:right'> ");
                 sb.Append("<b>" + "Total Amount" + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
@@ -586,11 +596,13 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("&nbsp;");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
+              
                 sb.Append("&nbsp;");
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l'  colspan='2'  style='text-align:right'> ");
-                sb.Append("<b>" + " " + "</b>");
+                sb.Append("<td class='tg-yw4l'  colspan='2'  style='text-align:left'> ");
+                totalqty = totalrouteagentqty + totalboothqty;
+                sb.Append("<b>" + totalqty + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
                 total = totalamt + totalboothamt;

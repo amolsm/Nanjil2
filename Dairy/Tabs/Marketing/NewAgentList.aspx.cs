@@ -28,7 +28,7 @@ namespace Dairy.Tabs.Marketing
                     dpRoute.DataBind();
                     dpRoute.Items.Insert(0, new ListItem("--All Route--", "0"));
                 }
-                txtDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                 txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             }
         }
@@ -39,8 +39,8 @@ namespace Dairy.Tabs.Marketing
             marketingdata = new MarketingData();
             DS = new DataSet();
 
-
-            DS = marketingdata.ViewNewAgentList((Convert.ToDateTime(txtDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
+          
+            DS = marketingdata.ViewNewAgentList((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
             if (!Comman.Comman.IsDataSetEmpty(DS) && DS.Tables[1].Rows.Count != 0)
             {
                 StringBuilder sb = new StringBuilder();
@@ -85,14 +85,15 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</td> </tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td colspan='3'>");
+               
+                sb.Append("<td colspan='4'>");
                 if (dpRoute.SelectedItem.Value == "0")
                 {
-                    sb.Append("All Route");
+                    sb.Append("Route : All");
                 }
                 else
                 {
-                    sb.Append(dpRoute.SelectedItem.Text);
+                    sb.Append("");
                 }
                 sb.Append("</td>");
                 sb.Append("<td colspan='4' style='text-align:right'>");
@@ -100,7 +101,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</td>");
                 sb.Append("</tr>");
 
-                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<tr>");
                 sb.Append("<td>");
                 sb.Append("<b>Sr.No.</b>");
                 sb.Append("</td>");

@@ -33,7 +33,7 @@ namespace Dairy.Tabs.Marketing
             {
                 dpRoute.DataSource = DS;
                 dpRoute.DataBind();
-                dpRoute.Items.Insert(0, new ListItem("--All Route  --", "0"));
+                dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
 
             }
             DS = BindCommanData.BindCommanDropDwon("CategoryId", "CategoryName as Name", "Category", "IsActive=1");
@@ -81,10 +81,17 @@ namespace Dairy.Tabs.Marketing
             DS = BindCommanData.BindCommanDropDwon("CommodityID", "CommodityName as Name", "Commodity", "IsArchive=0  and " + "TypeID=" + Convert.ToInt32(dpType.SelectedItem.Value));
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                dpCommodity.DataSource = DS;
-                dpCommodity.DataBind();
-                dpCommodity.Items.Insert(0, new ListItem("All Commodity", "0"));
+                if (dpType.SelectedItem.Text == "Milk")
+                {
+                    dpCommodity.Items.Clear();
+                    dpCommodity.Items.Insert(0, new ListItem("All Commodity", "0"));
+                }
+                else
+                {
+                    dpCommodity.DataSource = DS;
+                    dpCommodity.DataBind();
 
+                }
             }
 
         }
@@ -141,10 +148,18 @@ namespace Dairy.Tabs.Marketing
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td colspan='3'>");
-                sb.Append(dpRoute.SelectedItem.Text);
+                sb.Append("Route : "+dpRoute.SelectedItem.Text);
                 sb.Append("</td>");
                 sb.Append("<td colspan='4' style='text-align:right'>");
                 sb.Append(DateTime.Now.ToString("dd-MM-yyyy HH:mm"));
+                sb.Append("</td>");
+                sb.Append("</tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<td colspan='3'>");
+                sb.Append("Start Date : " + Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
+                sb.Append("</td>");
+                sb.Append("<td colspan='4' style='text-align:right'>");
+                sb.Append("End Date : "+Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("</tr>");
 
@@ -174,6 +189,7 @@ namespace Dairy.Tabs.Marketing
                 double totalqty=0.00;
                 double totalavg=0.00;
                 double totalinsamt=0.00;
+                double totalamt = 0;
                 DateTime olddate = Convert.ToDateTime(txtStartDate.Text);
                 DateTime newdate = Convert.ToDateTime(txtEndDate.Text);
                 TimeSpan ts = newdate - olddate;
@@ -233,6 +249,7 @@ namespace Dairy.Tabs.Marketing
                             {
                                 totalinsamt = (Convert.ToDouble(qty) * Convert.ToDouble(rows["IncentiveAmt"]));
                                 sb.Append(Convert.ToDecimal(totalinsamt).ToString("#0.00"));
+                                    totalamt += totalinsamt;
                             }
                             catch { }
 
@@ -245,8 +262,27 @@ namespace Dairy.Tabs.Marketing
                 }
                 sb.Append("</td>");
                 sb.Append("</tr>");
-                sb.Append("<tr> <td colspan = '7'> &nbsp; </td> </tr>");
-
+                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '7'> &nbsp; </td> </tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<td>");
+                sb.Append("<b>Total : </b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>Agency: </b>");
+                sb.Append("</td>");
+                sb.Append("<td colspan = '2'>");
+                sb.Append("<b>"+srno+"</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>"+totalqty+"</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>"+ Convert.ToDecimal(totalavg).ToString("#0.00") +"</b>");
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>"+ totalamt + "</b>");
+                sb.Append("</td>");
+                sb.Append("</tr>");
 
                 result = sb.ToString();
                 genratedBIll.Text = result;

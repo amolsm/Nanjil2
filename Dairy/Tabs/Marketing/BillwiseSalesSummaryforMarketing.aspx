@@ -144,7 +144,7 @@
              
             
                  
-                 <div class="col-lg-3">
+                 <div class="col-lg-3 pull-right">
                   <div class="form-group">
                     <div class="input-group">
                                <asp:Button ID="btngenrateBill" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btngenrateBill_click"   Text="ViewReport"    />     

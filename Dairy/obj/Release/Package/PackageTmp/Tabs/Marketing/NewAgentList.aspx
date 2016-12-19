@@ -69,9 +69,9 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                       Date
+                       Start Date
                       </div>
-                       <asp:TextBox ID="txtDate" class="form-control"  type="date" placeholder="Start Date" tooltip="Start Date" runat="server" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtStartDate" class="form-control"  type="date" placeholder="Date" runat="server" required  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -81,13 +81,13 @@
                           
                       </div>       
                 
-                   <div class="col-lg-3">
+                      <div class="col-lg-3">
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                       Date
+                       End Date
                       </div>
-                       <asp:TextBox ID="txtEndDate" class="form-control"  type="date" placeholder="End Date" runat="server" tooltip="End Date" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtEndDate" class="form-control"  type="date" placeholder="Date" runat="server" required  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -95,7 +95,7 @@
                      
                        
                           
-                      </div>    
+                      </div>   
                                   
            <div class="col-lg-3">
                   <div class="form-group">
