@@ -132,8 +132,7 @@ namespace Dairy.Tabs.Marketing
                 dt.Columns.Add("AgentId");
                 dt.Columns.Add("AgentCode");
                 dt.Columns.Add("AgentName");
-                foreach (DataRow rowr in DS.Tables[2].Rows)
-                {
+               
 
 
 
@@ -143,12 +142,13 @@ namespace Dairy.Tabs.Marketing
                         foreach (DataRow row in DS.Tables[0].Rows)
                         {
                             DataRow dr = dt.NewRow();
-
-                            if (rowr["RouteId"].ToString() == rows["RouteId"].ToString() && rows["AgentId"].ToString() != row["AgentId"].ToString())
+                           
+                            if (rows["AgentId"].ToString() == row["AgentId"].ToString())
                             {
-
-                                dt.Rows.Add(rows["RouteId"], rows["AgentId"], rows["AgentCode"], rows["AgentName"]);
-                                dt.Rows.Add(dr);
+                               
+                                    dt.Rows.Add(rows["RouteId"], rows["AgentId"], rows["AgentCode"], rows["AgentName"]);
+                                    dt.Rows.Add(dr);
+                              
                             }
 
 
@@ -157,7 +157,7 @@ namespace Dairy.Tabs.Marketing
                         }
                     }
 
-                }
+                
                 DataView view = new DataView(dt);
                 DataTable distinctValues = view.ToTable(true, "RouteId", "AgentId", "AgentCode", "AgentName");
                 int count = 0;

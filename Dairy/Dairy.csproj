@@ -154,6 +154,7 @@
     <Content Include="Tabs\Marketing\ItemwiseStaffSalesSummary.aspx" />
     <Content Include="Tabs\Marketing\MarketingSalesAnalysisItemwise.aspx" />
     <Content Include="Tabs\Marketing\NewAgentList.aspx" />
+    <Content Include="Tabs\Marketing\NewAgentlistSummary.aspx" />
     <Content Include="Tabs\Marketing\PartywiseDamageReplacementSummary.aspx" />
     <Content Include="Tabs\Marketing\PartywiseIncentiveSummary.aspx" />
     <Content Include="Tabs\Marketing\ProductIncentive.aspx" />
@@ -1613,6 +1614,13 @@
     </Compile>
     <Compile Include="Tabs\Marketing\NewAgentList.aspx.designer.cs">
       <DependentUpon>NewAgentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\NewAgentlistSummary.aspx.cs">
+      <DependentUpon>NewAgentlistSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\NewAgentlistSummary.aspx.designer.cs">
+      <DependentUpon>NewAgentlistSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Marketing\PartywiseDamageReplacementSummary.aspx.cs">
       <DependentUpon>PartywiseDamageReplacementSummary.aspx</DependentUpon>
