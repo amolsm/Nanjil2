@@ -149,7 +149,7 @@ namespace Dairy.Tabs.Administration
             {
                 lblBoothName.Text = DS.Tables[0].Rows[0]["Bname"].ToString();
                 lblCreatedBy.Text = DS.Tables[0].Rows[0]["ename"].ToString();
-                lblTotalBill.Text = DS.Tables[0].Rows[0]["TotalBill"].ToString();
+                lblTotalBill.Text = Convert.ToDecimal(DS.Tables[0].Rows[0]["TotalBill"]).ToString("#0.00");
                 hfBoothOrderId.Value = DS.Tables[0].Rows[0]["OrderId"].ToString();
                 lblCancelBooth.Text = "Cancel";
                 string empname;

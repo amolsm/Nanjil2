@@ -20,6 +20,9 @@ namespace Dairy.Tabs.Despatch
         {
             if (!IsPostBack)
             {
+                txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+
                 DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "routeMaster", "IsArchive=1");
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {

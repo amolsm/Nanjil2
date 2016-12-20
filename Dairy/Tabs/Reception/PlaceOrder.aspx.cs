@@ -534,7 +534,16 @@ namespace Dairy.Tabs.Reception
             //dpagentRoute.DataSource = Ds;
             //dpagentRoute.DataBind();
             dpAgentProductdetaisl.Items.Clear();
-            RemoveAllItam();
+            //RemoveAllItam();
+            Invoice invocie = new Invoice();
+            InvoiceData invicedata = new InvoiceData();
+            invocie.TokanId = hftokanno.Value;
+            invocie.UserID = GlobalInfo.Userid;
+            invocie.Country = "NewOrder";
+            invicedata.DeleteItes(invocie);
+            BindAgntTempItam(invocie);
+            upMain.Update();
+
             divDanger.Visible = false;
             divwarning.Visible = false;
             divSusccess.Visible = false;
