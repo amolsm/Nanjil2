@@ -310,6 +310,7 @@ namespace DataAccess
             DBParameterCollection paramCollection = new DBParameterCollection();
             paramCollection.Add(new DBParameter("@Userid ", invoice.UserID));
             paramCollection.Add(new DBParameter("@tokanID ", invoice.TokanId));
+            paramCollection.Add(new DBParameter("@Flag ", invoice.Country));
             return _DBHelper.ExecuteNonQuery("Sp_DeleteTempItems", paramCollection, CommandType.StoredProcedure);
             
         }

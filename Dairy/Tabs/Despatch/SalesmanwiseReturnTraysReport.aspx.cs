@@ -20,7 +20,9 @@ namespace Dairy.Tabs.Despatch
         {
             if (!IsPostBack)
             {
-               
+                txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+
                 DS = BindCommanData.BindCommanDropDwon("EmployeeID", "EmployeeCode+' '+EmployeeName as Name", "employeemaster", "IsArchive=0 and (Designation='Sales Man')");
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {
