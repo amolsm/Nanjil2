@@ -270,7 +270,9 @@ namespace Dairy.Tabs.Administration
                     int res = string.IsNullOrEmpty(DS.Tables[1].Rows[0]["CountTemp"].ToString()) ? 0 : Convert.ToInt32(DS.Tables[1].Rows[0]["CountTemp"]);
                     if (result == 0 && res == 0)
                     {
-                        AddAgentShemeDetails(Convert.ToInt32(dpAgent.SelectedItem.Value)); }
+                        AddAgentShemeDetails(Convert.ToInt32(dpAgent.SelectedItem.Value));
+                        dpAgent.Enabled = false;
+                    }
                     else
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Scheme Already Deposited')", true);
