@@ -173,7 +173,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<td colspan = '2'>");
                 sb.Append("<b>Agency Name</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>TotalQty</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
@@ -215,7 +215,7 @@ namespace Dairy.Tabs.Marketing
 
                       
 
-                            sb.Append("<td>");
+                            sb.Append("<td style='text-align:right'>");
                             try
                             {
                                 qty = Convert.ToDouble(row["Quantity"]);
@@ -273,14 +273,14 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<td colspan = '2'>");
                 sb.Append("<b>"+srno+"</b>");
                 sb.Append("</td>");
-                sb.Append("<td>");
+                sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>"+totalqty+"</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>"+ Convert.ToDecimal(totalavg).ToString("#0.00") +"</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>"+ totalamt + "</b>");
+                sb.Append("<b>"+ Convert.ToDecimal(totalamt).ToString("#0.00") + "</b>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
 
