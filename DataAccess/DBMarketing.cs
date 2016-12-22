@@ -173,9 +173,11 @@ namespace DataAccess
 
         }
 
-        public DataSet ViewAgentSlabReportList(int RouteID, int SlabId, int TypeId)
+        public DataSet ViewAgentSlabReportList(string StartDate, string EndDate, int RouteID, int SlabId, int TypeId)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@StartDate", StartDate));
+            paramCollection.Add(new DBParameter("@EndDate", EndDate));
             paramCollection.Add(new DBParameter("@RouteID", RouteID));
             paramCollection.Add(new DBParameter("@SlabId", SlabId));
             paramCollection.Add(new DBParameter("@TypeId", TypeId));

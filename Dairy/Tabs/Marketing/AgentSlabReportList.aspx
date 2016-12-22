@@ -65,6 +65,37 @@
 
              <div class="row">
 
+                    <div class="col-lg-3">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       Start Date
+                      </div>
+                       <asp:TextBox ID="txtStartDate" class="form-control"  type="date" placeholder="Date" runat="server"  ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>       
+                
+                      <div class="col-lg-3">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       End Date
+                      </div>
+                       <asp:TextBox ID="txtEndDate" class="form-control"  type="date" placeholder="Date" runat="server"   ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>       
 
                   <div class="col-lg-3">
                   <div class="form-group">
@@ -78,7 +109,8 @@
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
                          </div>
-                 
+                 </div>
+                      <div class="row">
                                 <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">

@@ -99,10 +99,10 @@ namespace Bussiness
             return dbMarketing.ViewDeactiveAgentList(StartDate, EndDate, RouteID);
         }
 
-        public DataSet ViewAgentSlabReportList(int RouteID, int SlabId, int TypeId)
+        public DataSet ViewAgentSlabReportList(string StartDate,string EndDate, int RouteID, int SlabId, int TypeId)
         {
             dbMarketing = new DBMarketing();
-            return dbMarketing.ViewAgentSlabReportList(RouteID, SlabId, TypeId);
+            return dbMarketing.ViewAgentSlabReportList(StartDate, EndDate,RouteID, SlabId, TypeId);
         }
 
         public DataSet ViewItemwisePurchaseAgentList(string StartDate, string EndDate, int RouteID, int TypeID, int CommodityID)
