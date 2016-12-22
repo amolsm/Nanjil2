@@ -60,7 +60,7 @@ namespace Dairy.Tabs.Marketing
             DS = new DataSet();
 
 
-            DS = marketingdata.ViewAgentSlabReportList(Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpSlab.SelectedItem.Value), Convert.ToInt32(dpProductType.SelectedItem.Value));
+            DS = marketingdata.ViewAgentSlabReportList((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpSlab.SelectedItem.Value), Convert.ToInt32(dpProductType.SelectedItem.Value));
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 StringBuilder sb = new StringBuilder();
