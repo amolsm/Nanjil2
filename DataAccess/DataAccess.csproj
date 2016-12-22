@@ -64,13 +64,17 @@
   <ItemGroup>
     <Compile Include="Admin\DbDispatch.cs" />
     <Compile Include="Admin\DBShift.cs" />
+    <Compile Include="DBActiveInactiveIssues.cs" />
     <Compile Include="DBBill.cs" />
     <Compile Include="DBBindComman.cs" />
+    <Compile Include="DBCorrectiveActionOnIssue.cs" />
     <Compile Include="DBDispatch.cs" />
     <Compile Include="DBEmployee.cs" />
     <Compile Include="DBInsertAgentInfo.cs" />
     <Compile Include="DBInvoice.cs" />
+    <Compile Include="DBIssueRegistration.cs" />
     <Compile Include="DBMarketing.cs" />
+    <Compile Include="DBMassIssue.cs" />
     <Compile Include="DBProcurement.cs" />
     <Compile Include="DBProduct.cs" />
     <Compile Include="DBPurchase.cs" />

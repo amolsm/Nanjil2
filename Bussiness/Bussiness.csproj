@@ -62,13 +62,17 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActiveInactiveIssuesData.cs" />
     <Compile Include="AgentInfoData.cs" />
     <Compile Include="BillData.cs" />
     <Compile Include="BindCommanData.cs" />
+    <Compile Include="CorrectiveActionOnIssuesData.cs" />
     <Compile Include="DispatchData.cs" />
     <Compile Include="EmployeeData.cs" />
     <Compile Include="InvoiceData.cs" />
+    <Compile Include="IssuesRegistrationData.cs" />
     <Compile Include="MarketingData.cs" />
+    <Compile Include="MassIssueData.cs" />
     <Compile Include="ProcurementData.cs" />
     <Compile Include="ProductData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

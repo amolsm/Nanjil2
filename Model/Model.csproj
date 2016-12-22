@@ -65,10 +65,13 @@
     <Compile Include="Admin\DispatchVM.cs" />
     <Compile Include="Admin\Shift.cs" />
     <Compile Include="AgentInfo.cs" />
+    <Compile Include="CorrectiveActionOnIssuesModel.cs" />
     <Compile Include="Dispatch.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Invoice.cs" />
+    <Compile Include="IssueRegistrationModel.cs" />
     <Compile Include="Marketings.cs" />
+    <Compile Include="MassIssueModel.cs" />
     <Compile Include="Procurement.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

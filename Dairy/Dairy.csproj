@@ -135,6 +135,7 @@
     <Content Include="Tabs\Despatch\ViewDispatchSummaryUsers.aspx" />
     <Content Include="Tabs\Despatch\ViewDispatchUserShiftwise.aspx" />
     <Content Include="Tabs\Dispatch\DoNotDelete.xml" />
+    <Content Include="Tabs\Marketing\ActiveInactiveIssues.aspx" />
     <Content Include="Tabs\Marketing\AgencyCloserScreen.aspx" />
     <Content Include="Tabs\Marketing\AgencyIcentivePayment.aspx" />
     <Content Include="Tabs\Marketing\AgentListNotPlacedOrder.aspx" />
@@ -144,15 +145,18 @@
     <Content Include="Tabs\Marketing\AmountwiseIceCreamReport.aspx" />
     <Content Include="Tabs\Marketing\BillwiseSalesSummaryforMarketing.aspx" />
     <Content Include="Tabs\Marketing\BillwiseStaffSalesSummary.aspx" />
+    <Content Include="Tabs\Marketing\CorrectiveActionOnIssue.aspx" />
     <Content Include="Tabs\Marketing\DamageReplacementRateSetup.aspx" />
     <Content Include="Tabs\Marketing\DeactivateAgentList.aspx" />
     <Content Include="Tabs\Marketing\DespatchComparisonReport.aspx" />
     <Content Include="Tabs\Marketing\DispatchReturnComparison.aspx" />
     <Content Include="Tabs\Marketing\IncentiveSetupScreen.aspx" />
+    <Content Include="Tabs\Marketing\IssuesRegistration.aspx" />
     <Content Include="Tabs\Marketing\ItemwisePurchaseAgentList.aspx" />
     <Content Include="Tabs\Marketing\ItemwiseSalesSummaryForMarketing.aspx" />
     <Content Include="Tabs\Marketing\ItemwiseStaffSalesSummary.aspx" />
     <Content Include="Tabs\Marketing\MarketingSalesAnalysisItemwise.aspx" />
+    <Content Include="Tabs\Marketing\Mass Issue.aspx" />
     <Content Include="Tabs\Marketing\NewAgentList.aspx" />
     <Content Include="Tabs\Marketing\NewAgentlistSummary.aspx" />
     <Content Include="Tabs\Marketing\PartywiseDamageReplacementSummary.aspx" />
@@ -1482,6 +1486,13 @@
     <Compile Include="Tabs\Despatch\ViewDispatchUserShiftwise.aspx.designer.cs">
       <DependentUpon>ViewDispatchUserShiftwise.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Marketing\ActiveInactiveIssues.aspx.cs">
+      <DependentUpon>ActiveInactiveIssues.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\ActiveInactiveIssues.aspx.designer.cs">
+      <DependentUpon>ActiveInactiveIssues.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Marketing\AgencyCloserScreen.aspx.cs">
       <DependentUpon>AgencyCloserScreen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1545,6 +1556,13 @@
     <Compile Include="Tabs\Marketing\BillwiseStaffSalesSummary.aspx.designer.cs">
       <DependentUpon>BillwiseStaffSalesSummary.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Marketing\CorrectiveActionOnIssue.aspx.cs">
+      <DependentUpon>CorrectiveActionOnIssue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\CorrectiveActionOnIssue.aspx.designer.cs">
+      <DependentUpon>CorrectiveActionOnIssue.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Marketing\DamageReplacementRateSetup.aspx.cs">
       <DependentUpon>DamageReplacementRateSetup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1580,6 +1598,13 @@
     <Compile Include="Tabs\Marketing\IncentiveSetupScreen.aspx.designer.cs">
       <DependentUpon>IncentiveSetupScreen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Marketing\IssuesRegistration.aspx.cs">
+      <DependentUpon>IssuesRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\IssuesRegistration.aspx.designer.cs">
+      <DependentUpon>IssuesRegistration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Marketing\ItemwisePurchaseAgentList.aspx.cs">
       <DependentUpon>ItemwisePurchaseAgentList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1607,6 +1632,13 @@
     </Compile>
     <Compile Include="Tabs\Marketing\MarketingSalesAnalysisItemwise.aspx.designer.cs">
       <DependentUpon>MarketingSalesAnalysisItemwise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\Mass Issue.aspx.cs">
+      <DependentUpon>Mass Issue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\Mass Issue.aspx.designer.cs">
+      <DependentUpon>Mass Issue.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Marketing\NewAgentList.aspx.cs">
       <DependentUpon>NewAgentList.aspx</DependentUpon>
