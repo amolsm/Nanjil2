@@ -64,7 +64,21 @@ namespace Dairy.Tabs.Marketing
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 StringBuilder sb = new StringBuilder();
+                try
+                {
+                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["AgentID"] };
+                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["AgentCode"] };
+                    DS.Tables[1].PrimaryKey = new[] { DS.Tables[0].Columns["AgentID"] };
+                    DS.Tables[1].PrimaryKey = new[] { DS.Tables[0].Columns["AgentCode"] };
+                }
+                catch (Exception) { }
 
+                try
+                {
+                    DS.Tables[0].Merge(DS.Tables[1], false, MissingSchemaAction.Add);
+
+                }
+                catch (Exception) { }
 
                 sb.Append("<style type='text / css'>");
                 sb.Append(".tg  { border - collapse:collapse; border - spacing:0; border: none; }");
@@ -78,7 +92,9 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:160px'>");
                 sb.Append("<col style = 'width:100px'>");
-             
+                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
+
 
                 sb.Append("</colgroup>");
 
@@ -87,7 +103,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
                 sb.Append("</th>");
 
-                sb.Append("<th class='tg-baqh' colspan='2' style='text-align:center'>");
+                sb.Append("<th class='tg-baqh' colspan='4' style='text-align:center'>");
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                 sb.Append("</th>");
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
@@ -96,7 +112,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:center'>");
+                sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:center'>");
               
                 sb.Append("<b><u>AgentList Basis Of Slab Report</u> </b><br/>");
                 sb.Append("</td>");
@@ -116,15 +132,23 @@ namespace Dairy.Tabs.Marketing
                 }
                 sb.Append("</td>");
                 sb.Append("<td  colspan='2' style='text-align:right'>");
-                sb.Append(DateTime.Now.ToString("dd-MM-yyyy HH:mm"));
+                sb.Append(Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
+                sb.Append("</td>");
+                sb.Append("<td  colspan='2' style='text-align:right'>");
+                sb.Append(Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
+             
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td colspan='2' style='text-align:left'>");
                 sb.Append(dpSlab.SelectedItem.Text);
                 sb.Append("</td>");
-                sb.Append("<td colspan='2' style='text-align:right'>");
+                sb.Append("<td colspan='2' style='text-align:left'>");
                 sb.Append(dpProductType.SelectedItem.Text);
+                sb.Append("</td>");
+                sb.Append("<td colspan='2' style='text-align:right'>");
+                sb.Append(DateTime.Now.ToString("dd-MM-yyyy HH:mm"));
+               
                 sb.Append("</td>");
                 sb.Append("</tr>");
 
@@ -140,34 +164,56 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<td colspan = '2'>");
                 sb.Append("<b>Agency Name</b>");
                 sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>TotalQty.</b>");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append("<b>Average</b>");
+                sb.Append("</td>");
 
-          
 
                 sb.Append("</tr>");
                 int srno = 0;
-
+                DateTime olddate = Convert.ToDateTime(txtStartDate.Text);
+                DateTime newdate = Convert.ToDateTime(txtEndDate.Text);
+                TimeSpan ts = newdate - olddate;
+                int differenceInDays = ts.Days + 1;
                 foreach (DataRow row in DS.Tables[0].Rows)
                 {
 
+                    if (row["AgentName"].ToString() != "")
+                    {
+                        srno++;
+                        sb.Append("<tr>");
+                        sb.Append("<td>");
+                        sb.Append(srno.ToString());
+                        sb.Append("</td>");
+                        sb.Append("<td>");
+                        sb.Append(row["AgentCode"].ToString());
+                        sb.Append("</td>");
+                        sb.Append("<td colspan = '2'>");
+                        sb.Append(row["AgentName"].ToString());
+                        sb.Append("</td>");
+                        sb.Append("<td>");
+                        sb.Append(row["Quantity"].ToString());
+                        sb.Append("</td>");
+                        sb.Append("<td>");
+                        try
+                        {
+                            double qty = 0;
+                            double avg = 0;
+                            qty = Convert.ToDouble(row["Quantity"]);
+                            avg = qty / differenceInDays;
+                            sb.Append(Convert.ToDecimal(avg).ToString("#.##"));
+                        }
+                        catch { sb.Append("&nbsp;"); }
+
+                        sb.Append("</td>");
+
+                        sb.Append("</tr>");
 
 
-                    srno++;
-                    sb.Append("<tr>");
-                    sb.Append("<td>");
-                    sb.Append(srno.ToString());
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append(row["AgentCode"].ToString());
-                    sb.Append("</td>");
-                    sb.Append("<td colspan = '2'>");
-                    sb.Append(row["AgentName"].ToString());
-                    sb.Append("</td>");
-
-              
-                    sb.Append("</tr>");
-
-
-
+                    }
 
 
 

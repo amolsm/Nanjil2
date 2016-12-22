@@ -36,7 +36,7 @@ namespace Dairy.Tabs.Marketing
 
 
             string result = string.Empty;
-            DS = billdata.AgentSchemeDetails(Convert.ToInt32(dpRoute.SelectedItem.Value));
+            DS = billdata.AgentSchemeSummaryOpeningClosing((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpAgent.SelectedItem.Value));
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 StringBuilder sb = new StringBuilder();
