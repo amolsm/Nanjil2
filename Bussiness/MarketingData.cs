@@ -82,10 +82,10 @@ namespace Bussiness
             return dbMarketing.ReturnComparisionreportbyDate(Start1Date, End1Date, Start2Date, End2Date,  AgentID, BrandID);
         }
 
-        public DataSet ViewNewAgentList(string Date, string EndDate, int RouteID)
+        public DataSet ViewNewAgentList(string StartDate, string EndDate, int RouteID)
         {
             dbMarketing = new DBMarketing();
-            return dbMarketing.ViewNewAgentList(Date, EndDate,RouteID);
+            return dbMarketing.ViewNewAgentList(StartDate, EndDate,RouteID);
         }
 
         public DataSet ViewAgentListNotPlacedOrder(string StartDate, string EndDate, int RouteID)

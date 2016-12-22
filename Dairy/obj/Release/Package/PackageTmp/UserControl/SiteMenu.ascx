@@ -35,6 +35,7 @@
                    <li><a href="/Tabs/Administration/AddRoute.aspx"><i class="fa fa-circle-o"></i> Route Information</a></li>
                   <li><a href="/Tabs/Administration/AddAgent.aspx"><i class="fa fa-circle-o"></i> Agent Information</a></li>
                   <li><a href="/Tabs/Administration/AddLocation.aspx"><i class="fa fa-circle-o"></i> Location Information</a></li>
+                 <li><a href="/Tabs/Administration/Shift.aspx"><i class="fa fa-circle-o"></i> Shifts</a></li> 
                   <li><a href="/Tabs/Administration/AddBank.aspx"><i class="fa fa-circle-o"></i> Bank Information</a></li>
                   <li><a href="/Tabs/Administration/Department.aspx"><i class="fa fa-circle-o"></i> Department Information</a></li>
                    <li><a href="/Tabs/Administration/AddDesignation.aspx"><i class="fa fa-circle-o"></i> Designation Information</a></li>

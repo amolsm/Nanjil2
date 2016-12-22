@@ -35,16 +35,18 @@ namespace Dairy.Tabs.Marketing
 
         protected void btnViewDetails_Click(object sender, EventArgs e)
         {
+           
             string result = string.Empty;
             marketingdata = new MarketingData();
             DS = new DataSet();
 
-          
+            
             DS = marketingdata.ViewNewAgentList((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
+          
             if (!Comman.Comman.IsDataSetEmpty(DS) && DS.Tables[1].Rows.Count != 0)
             {
                 StringBuilder sb = new StringBuilder();
-
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage3", "alert('Hit inside')", true);
 
                 sb.Append("<style type='text / css'>");
                 sb.Append(".tg  { border - collapse:collapse; border - spacing:0; border: none; }");

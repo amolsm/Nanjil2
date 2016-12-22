@@ -144,10 +144,10 @@ namespace DataAccess
             return _DBHelper.ExecuteDataSet("mk_DispatchReturnAgencywiseComparisonReport", paramCollection, CommandType.StoredProcedure);
         }
 
-        public DataSet ViewNewAgentList(string Date, string EndDate, int RouteID)
+        public DataSet ViewNewAgentList(string StartDate, string EndDate, int RouteID)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
-            paramCollection.Add(new DBParameter("@StartDate", Date));
+            paramCollection.Add(new DBParameter("@StartDate", StartDate));
             paramCollection.Add(new DBParameter("@EndDate", EndDate));
             paramCollection.Add(new DBParameter("@RouteID", RouteID));
             return _DBHelper.ExecuteDataSet("mk_ViewNewAgentList", paramCollection, CommandType.StoredProcedure);

@@ -47,7 +47,19 @@ namespace Dairy.Tabs.Reception
             {
                 StringBuilder sb = new StringBuilder();
 
+                try
+                {
+                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["BillSeq"] };
+                    DS.Tables[1].PrimaryKey = new[] { DS.Tables[0].Columns["SeqId"] };
+                }
+                catch (Exception) { }
 
+                try
+                {
+                    DS.Tables[1].Merge(DS.Tables[0], false, MissingSchemaAction.Add);
+
+                }
+                catch (Exception) { }
                 sb.Append("<style type='text / css'>");
                 sb.Append(".tg  { border - collapse:collapse; border - spacing:0; border: none; }");
                 sb.Append(".tg .tg-yw4l{vertical-align:top}");
@@ -132,32 +144,31 @@ namespace Dairy.Tabs.Reception
                 dt.Columns.Add("AgentId");
                 dt.Columns.Add("AgentCode");
                 dt.Columns.Add("AgentName");
-                foreach (DataRow rowr in DS.Tables[2].Rows)
+
+
+
+
+                foreach (DataRow rows in DS.Tables[1].Rows)
                 {
 
 
+                    DataRow dr = dt.NewRow();
 
-                    foreach (DataRow rows in DS.Tables[1].Rows)
+                    if (rows["AgentId1"].ToString() != rows["AgentId"].ToString())
                     {
 
-                        foreach (DataRow row in DS.Tables[0].Rows)
-                        {
-                            DataRow dr = dt.NewRow();
+                        dt.Rows.Add(rows["RouteId1"], rows["AgentId1"], rows["AgentCode1"], rows["AgentName1"]);
+                        dt.Rows.Add(dr);
 
-                            if (rowr["RouteId"].ToString() == rows["RouteId"].ToString() && rows["AgentId"].ToString() != row["AgentId"].ToString())
-                            {
-
-                                dt.Rows.Add(rows["RouteId"], rows["AgentId"], rows["AgentCode"], rows["AgentName"]);
-                                dt.Rows.Add(dr);
-                            }
-
-
-
-
-                        }
                     }
 
+
+
+
+
                 }
+
+
                 DataView view = new DataView(dt);
                 DataTable distinctValues = view.ToTable(true, "RouteId", "AgentId", "AgentCode", "AgentName");
                 int count = 0;
