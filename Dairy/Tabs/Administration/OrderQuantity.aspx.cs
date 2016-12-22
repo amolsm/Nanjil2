@@ -59,7 +59,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append(".tg .tg-yw4l{vertical-align:top}");
                 sb.Append(".tg .tg-baqh{text-align:center;vertical-align:top}");
                 sb.Append("</style>");
-                sb.Append("<table class='tg style1' style='page-break-inside:avoid; align:center;'>");
+                sb.Append("<table class='tg style1' style='page-break-inside:avoid;font-size: 23px;align:center;'>");
                 sb.Append("<colgroup>");
                 sb.Append("<col style = 'width:150px'>");
                 sb.Append("<col style = 'width:160px'>");
@@ -85,7 +85,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("<tr style='border-bottom:1px solid'>");
 
 
-                sb.Append("<td class='tg-yw4l' colspan='3' style='text-align:Left'>");
+                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:Left'>");
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu,K.K.Dt.Ph:248370,248605</b>");
                 sb.Append("</th>");
 
@@ -139,7 +139,7 @@ namespace Dairy.Tabs.Administration
 
                 //sb.Append("<td>&nbsp;</td>");
 
-                sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
+                sb.Append("<td class='tg-yw4l'   style='text-align:center'>");
                 sb.Append("<b>Quantity</b>");
                 sb.Append("</td>");
 
@@ -165,7 +165,7 @@ namespace Dairy.Tabs.Administration
 
                     //sb.Append("<td>&nbsp;</td>");
 
-                    sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
+                    sb.Append("<td class='tg-yw4l'   style='text-align:center'>");
                     sb.Append(row["Quantity"].ToString());
                     //+ " " + row["UnitName"].ToString());
                     TotQuantity = TotQuantity + Convert.ToDouble(row["Quantity"]);
@@ -184,10 +184,10 @@ namespace Dairy.Tabs.Administration
 
 
                 sb.Append("<tr style='border-top:1px solid'>");
-                sb.Append("<td style='text-align:left;font-size: 80%'>");
+                sb.Append("<td colspan='2' style='text-align:left;font-size: 80%'>");
                 sb.Append(DateTime.Now.ToString("dd/MM/yyyy hh:mm"));
                 sb.Append("</td>");
-                sb.Append("<td colspan='2' style='text-align:right' >");
+                sb.Append("<td  style='text-align:center' >");
                 sb.Append("Total:" + TotQuantity.ToString());
                 sb.Append("</td>");
                 sb.Append("</tr>");

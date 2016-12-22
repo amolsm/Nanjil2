@@ -88,9 +88,6 @@
     <Content Include="Authentication\ForgotPassword.aspx" />
     <Content Include="Authentication\LoginT.aspx" />
     <Content Include="Authentication\LogOut.aspx" />
-    <Content Include="obj\Debug\Dairy.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\Dairy.dll" />
-    <Content Include="obj\Debug\Dairy.pdb" />
     <Content Include="Tabs\Administration\AddAgent.aspx" />
     <Content Include="Tabs\Administration\AddBank.aspx" />
     <Content Include="Tabs\Administration\AddBrand.aspx" />
@@ -2638,9 +2635,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="bin\" />
-    <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="obj\Release\" />
     <Folder Include="Tabs\DespatchM\" />
     <Folder Include="Theme\obj\Debug\TempPE\" />
   </ItemGroup>
@@ -2648,8 +2642,6 @@
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="obj\Debug\Dairy.csprojResolveAssemblyReference.cache" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="packages.config" />
     <Content Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

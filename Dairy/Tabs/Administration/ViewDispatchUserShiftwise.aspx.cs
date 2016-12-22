@@ -61,10 +61,10 @@ namespace Dairy.Tabs.Administration
                 sb.Append("<col style = 'width:80px'>");
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:120px'>");
+                sb.Append("<col style = 'width:180px'>");
                 sb.Append("<col style = 'width:120px'>");
                 sb.Append("<col style = 'width:120px'>");
-                sb.Append("<col style = 'width:100px'>");
-                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:80px'>");
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("</colgroup>");
 
@@ -74,7 +74,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
-                sb.Append("<u>  Dispatch Summary (Duplicate) </u> <br/>");
+                sb.Append("<b>Nanjil Integrated Dairy Development ,Mulagumoodu, K.K.Dt.</b> <br/>");
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
@@ -85,7 +85,7 @@ namespace Dairy.Tabs.Administration
 
                 sb.Append("<tr style='border-bottom:1px solid !important'>");
                 sb.Append("<td class='tg-yw4l' colspan='6' style='text-align:center'>");
-                sb.Append("<b>Nanjil Integrated Dairy Development ,Mulagumoodu, K.K.Dt.</b>");
+                sb.Append("<u>  User ShiftWise Report </u>");
 
                 sb.Append("</td>");
 
@@ -123,7 +123,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("<b> Sr. No: </b> ");
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
                 sb.Append("<b>Product Name </b>");
                 sb.Append("</td>");
 
@@ -139,9 +139,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("<b>Unit Type </b>");
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
-                //sb.Append("<b>Spot Damage </b>");
-                sb.Append("</td>");
+
 
                 sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
                 //sb.Append("<b>Sales </b>");
@@ -163,7 +161,7 @@ namespace Dairy.Tabs.Administration
                     sb.Append(cnt.ToString());
                     sb.Append("</td>");
 
-                    sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
+                    sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
                     sb.Append(row["ProductName"].ToString());
                     sb.Append("</td>");
 
@@ -179,9 +177,7 @@ namespace Dairy.Tabs.Administration
                     sb.Append(row["UnitName"].ToString());
                     sb.Append("</td>");
 
-                    sb.Append("<td class='tg-yw4l' style='text-align:left'>");
-                    sb.Append(" ");
-                    sb.Append("</td>");
+
 
                     sb.Append("<td class='tg-yw4l' style='text-align:left'>");
                     sb.Append(" ");
@@ -312,17 +308,17 @@ namespace Dairy.Tabs.Administration
 
 
                 sb.Append("<tr>");
-                sb.Append("<td class='tg-yw4l'  colspan='3' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l'  colspan='4' style='text-align:left'>");
                 sb.Append("Dispatch Clerk ");
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l'  colspan='2' style='text-align:center'>");
+                sb.Append("<td class='tg-yw4l'  colspan='4' style='text-align:right'>");
                 sb.Append("Production Manager ");
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l'  colspan='3' style='text-align:right'>");
-                sb.Append("Sales Man ");
-                sb.Append("</td>");
+                //sb.Append("<td class='tg-yw4l'  colspan='3' style='text-align:right'>");
+                //sb.Append("Sales Man ");
+                //sb.Append("</td>");
                 sb.Append("</tr>");
 
 
