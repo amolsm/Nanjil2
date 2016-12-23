@@ -95,8 +95,8 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                    <asp:DropDownList ID="dpIssueArisedBy" class="form-control" runat="server" selected ToolTip="Issue Arised From">
-                           <asp:ListItem Value="0">---Issue ArisedFrom---</asp:ListItem>
+                    <asp:DropDownList ID="dpIssueArisedBy" class="form-control" runat="server" required="required" ToolTip="Issue Arised From">
+                           <asp:ListItem Value="">---Issue ArisedFrom---</asp:ListItem>
                            <asp:ListItem Value="1">Agent </asp:ListItem>
                            <asp:ListItem Value="2">Costomer</asp:ListItem>
                             <asp:ListItem Value="3">Consumer</asp:ListItem>
@@ -121,8 +121,8 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                    <asp:DropDownList ID="dpIssues" class="form-control" runat="server" selected ToolTip="Select Issue">
-                           <asp:ListItem Value="0">---Select Issue---</asp:ListItem>
+                    <asp:DropDownList ID="dpIssues" class="form-control" runat="server" required="required" ToolTip="Select Issue">
+                           <asp:ListItem Value="">---Select Issue---</asp:ListItem>
                            <asp:ListItem Value="1">Taste </asp:ListItem>
                            <asp:ListItem Value="2">Leakage</asp:ListItem>
                            <asp:ListItem Value="3">Aroma</asp:ListItem>
@@ -140,8 +140,8 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                    <asp:DropDownList ID="dpIssueType" class="form-control" runat="server" selected ToolTip="Select Issue Type">
-                           <asp:ListItem Value="0">---Issue Type---</asp:ListItem>
+                    <asp:DropDownList ID="dpIssueType" class="form-control" runat="server" required="required" ToolTip="Select Issue Type">
+                           <asp:ListItem Value="">---Issue Type---</asp:ListItem>
                            <asp:ListItem Value="1">Minor</asp:ListItem>
                            <asp:ListItem Value="2">Major</asp:ListItem>                               
                        </asp:DropDownList>       
@@ -154,7 +154,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                    <asp:DropDownList ID="dpBrand" class="form-control" runat="server" DataValueField="CategoryID" DataTextField="Name" selected ToolTip="Select Brand" AutoPostBack="true"    
+                    <asp:DropDownList ID="dpBrand" class="form-control" runat="server" DataValueField="CategoryID" DataTextField="Name" required="required" ToolTip="Select Brand" AutoPostBack="true"    
     OnSelectedIndexChanged="dpBrand_OnSelectedIndexChanged"  >                                                   
                        </asp:DropDownList>       
                     </div><!-- /.input group -->
@@ -166,7 +166,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                    <asp:DropDownList ID="dpProductType" class="form-control" runat="server" DataValueField="TypeID" DataTextField="Name" selected ToolTip="Select Product">   
+                    <asp:DropDownList ID="dpProductType" class="form-control" runat="server" required="required" DataValueField="TypeID" AutoPostBack="true"  OnSelectedIndexChanged="dpProductType_OnSelectedIndexChanged"  DataTextField="Name" selected ToolTip="Select Product">   
                        </asp:DropDownList>       
                     </div><!-- /.input group -->
                   </div><!-- /.form group --> 
@@ -177,7 +177,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                    <asp:DropDownList ID="dpCommodity" class="form-control" runat="server" DataValueField="CommodityID" DataTextField="Name" selected ToolTip="Select Commodity">
+                    <asp:DropDownList ID="dpCommodity" class="form-control" runat="server" DataValueField="CommodityID" DataTextField="Name"  required="required" ToolTip="Select Commodity">
                        </asp:DropDownList>       
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->  
@@ -198,8 +198,8 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                    <asp:DropDownList ID="dpVerifiedBy" class="form-control" runat="server" selected ToolTip="VerifiedBy">
-                           <asp:ListItem Value="0">---VerifiedBy---</asp:ListItem>  
+                    <asp:DropDownList ID="dpVerifiedBy" class="form-control" runat="server" required="required" ToolTip="VerifiedBy">
+                           <asp:ListItem Value="">---VerifiedBy---</asp:ListItem>  
                             <asp:ListItem Value="1">ASO</asp:ListItem>  
                          <asp:ListItem Value="2">QC</asp:ListItem>  
                          <asp:ListItem Value="3">Other</asp:ListItem>   
@@ -213,8 +213,8 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                    <asp:DropDownList ID="dpIssueForwaredTo" class="form-control" runat="server" selected ToolTip="Issue Forward To">
-                           <asp:ListItem Value="0">---Issue Forward To---</asp:ListItem>  
+                    <asp:DropDownList ID="dpIssueForwaredTo" class="form-control" runat="server" required="required" ToolTip="Issue Forward To">
+                           <asp:ListItem Value="">---Issue Forward To---</asp:ListItem>  
                             <asp:ListItem Value="1">Marketing</asp:ListItem>  
                          <asp:ListItem Value="2">Production</asp:ListItem>
                          <asp:ListItem Value="3">QC</asp:ListItem> 

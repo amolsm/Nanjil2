@@ -32,7 +32,7 @@ namespace Dairy.Tabs.Marketing
                 {
                     dpAgent.DataSource = DS;
                     dpAgent.DataBind();
-                    dpAgent.Items.Insert(0, new ListItem("--Select Agency  --", "0"));
+                    dpAgent.Items.Insert(0, new ListItem("--All Agency  --", "0"));
                 }
             }
         }
@@ -266,7 +266,7 @@ namespace Dairy.Tabs.Marketing
             {
                 dpAgent.DataSource = DS;
                 dpAgent.DataBind();
-                dpAgent.Items.Insert(0, new ListItem("--Select Agency  --", "0"));
+                dpAgent.Items.Insert(0, new ListItem("--All Agency  --", "0"));
             }
             
         }

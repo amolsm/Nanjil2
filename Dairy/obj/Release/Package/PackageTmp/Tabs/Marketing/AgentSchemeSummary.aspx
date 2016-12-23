@@ -106,7 +106,7 @@
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server"  > 
+                      <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" OnSelectedIndexChanged="dpRoute_SelectedIndexChanged" AutoPostBack="true" > 
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
