@@ -384,8 +384,8 @@ namespace Dairy.Tabs.Reception
                 PrvAgentID = Convert.ToInt32(DS.Tables[0].Rows[0]["AgentID"]);
                 Session["PrvOrderID"] = Convert.ToInt32(DS.Tables[0].Rows[0]["OrderID"]);
                 // PrvOrderID = Convert.ToInt32(DS.Tables[0].Rows[0]["OrderID"]);
+                //dpAgent.Enabled = false;
                 dpAgent.Enabled = false;
-
                 foreach (DataRow row in DS.Tables[0].Rows)
                 {
                     invocie.TokanId = hftokanno.Value;
