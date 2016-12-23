@@ -41,6 +41,18 @@ namespace DataAccess
             paramCollection.Add(new DBParameter("@brandid", brandid));
             return _DBHelper.ExecuteDataSet("sp_BoothReportSalesAnalysisUser", paramCollection, CommandType.StoredProcedure);
         }
+
+        public DataSet AgentSchemeSummaryOpeningClosing(string startDate, string endDate, int routeId, int agentId)
+        {
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@startDate", startDate));
+            paramCollection.Add(new DBParameter("@endDate", endDate));
+            paramCollection.Add(new DBParameter("@routeId", routeId));
+            paramCollection.Add(new DBParameter("@agentId", agentId));
+            return _DBHelper.ExecuteDataSet("mk_AgentSchemeSummaryOpeningClosing", paramCollection, CommandType.StoredProcedure);
+
+        }
+
         public DataSet GenrateBIllDetailsID(int orderid)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();

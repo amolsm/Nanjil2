@@ -33,6 +33,12 @@ namespace Bussiness
         {
             return dbbill.BillwiseSalesSummaryByDate(StartDate, EndDate, routeID);
         }
+
+        public DataSet AgentSchemeSummaryOpeningClosing(string StartDate, string EndDate, int RouteId, int AgentId)
+        {
+            return dbbill.AgentSchemeSummaryOpeningClosing(StartDate, EndDate, RouteId, AgentId);
+        }
+
         public DataSet AgentSchemeDetails(int routeID)
         {
             return dbbill.AgentSchemeDetails( routeID);

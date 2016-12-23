@@ -112,9 +112,17 @@
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
                          </div>
-          
-             
-            
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                      </div>
+               <asp:DropDownList ID="dpAgent" class="form-control"     DataTextField="Name" DataValueField="AgentID"  runat="server"> 
+                       </asp:DropDownList>
+              </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div>
                  
                  <div class="col-lg-3">
                   <div class="form-group">
