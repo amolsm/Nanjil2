@@ -340,7 +340,7 @@
                       
                        <asp:Button ID="btnAgentORderSubmit" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnAgentORderSubmit_click"   Text="Submit" ValidationGroup="Submit"   />                    
                         &nbsp;
-                         <asp:Button ID="btnagentItamsremove" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnagentItamsremove_click"     Text="Remove Item" ValidationGroup=""   />  
+                         <asp:Button ID="btnagentItamsremove" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnagentItamsremove_click"     Text="Remove Item" ValidationGroup="" Visible="false"  />  
                         
                         
                     </div><!-- /.input group -->

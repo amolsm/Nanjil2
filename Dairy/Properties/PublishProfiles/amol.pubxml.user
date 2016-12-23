@@ -22,27 +22,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
-<<<<<<< HEAD
-      <publishTime>12/22/2016 15:38:31</publishTime>
-=======
-      <publishTime>12/22/2016 18:37:09</publishTime>
->>>>>>> origin/master
+      <publishTime>12/23/2016 11:40:03</publishTime>
     </File>
     <File Include="bin/Comman.dll">
-      <publishTime>12/22/2016 15:05:38</publishTime>
+      <publishTime>12/23/2016 11:40:02</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
-<<<<<<< HEAD
-      <publishTime>12/22/2016 15:38:43</publishTime>
+      <publishTime>12/23/2016 17:39:58</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
-      <publishTime>12/22/2016 15:38:31</publishTime>
-=======
-      <publishTime>12/22/2016 18:37:13</publishTime>
-    </File>
-    <File Include="bin/DataAccess.dll">
-      <publishTime>12/22/2016 18:37:09</publishTime>
->>>>>>> origin/master
+      <publishTime>12/23/2016 11:40:03</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:52</publishTime>
@@ -69,7 +58,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/24/2012 13:52:52</publishTime>
     </File>
     <File Include="bin/Model.dll">
-      <publishTime>12/22/2016 15:06:00</publishTime>
+      <publishTime>12/23/2016 11:40:02</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:50</publishTime>
@@ -207,7 +196,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/BindSlab.aspx">
-      <publishTime>11/11/2016 10:53:00</publishTime>
+      <publishTime>12/23/2016 15:27:31</publishTime>
     </File>
     <File Include="Tabs/Administration/BoothLog.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
@@ -273,7 +262,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/28/2016 10:31:35</publishTime>
     </File>
     <File Include="Tabs/Administration/ReturnScheme.aspx">
-      <publishTime>11/28/2016 10:31:35</publishTime>
+      <publishTime>12/23/2016 15:55:52</publishTime>
     </File>
     <File Include="Tabs/Administration/Shift.aspx">
       <publishTime>12/03/2016 17:58:01</publishTime>
@@ -381,11 +370,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/17/2016 00:55:33</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgentSchemeSummary.aspx">
-<<<<<<< HEAD
-      <publishTime>12/17/2016 00:55:33</publishTime>
-=======
-      <publishTime>12/22/2016 17:19:34</publishTime>
->>>>>>> origin/master
+      <publishTime>12/23/2016 11:24:32</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgentSlabReportList.aspx">
       <publishTime>12/22/2016 12:45:49</publishTime>
@@ -3523,7 +3508,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/22/2016 16:26:43</publishTime>
+      <publishTime>12/23/2016 17:40:03</publishTime>
     </File>
     <File Include="WebService/BindAgentSlab.asmx">
       <publishTime>11/11/2016 10:53:02</publishTime>

@@ -8,6 +8,8 @@ using System.Web.Security;
 using Model;
 using Bussiness;
 using System.Data;
+using Dairy.App_code;
+
 namespace Dairy.Authentication
 {
     public partial class LoginT : System.Web.UI.Page
@@ -90,9 +92,23 @@ namespace Dairy.Authentication
                 {
                     if (d.Contains(user.UserName))
                     {
-                        // User is already logged in!!!
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('User already logged in')", true);
-                        return false;
+                        Int32 temp = 0;
+                        try
+                        {
+                            temp = GlobalInfo.Userid;
+                        }
+                        catch (Exception) { }
+
+                        if (user.UserID == temp)
+                        { 
+                            return true;
+                        }
+                        else
+                        { // User is already logged in!!!
+                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('User already logged in')", true);
+                            return false;
+                        }
+                        
                     }
                     d.Add(user.UserName);
                 }

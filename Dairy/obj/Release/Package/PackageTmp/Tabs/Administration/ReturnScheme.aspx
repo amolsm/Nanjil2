@@ -346,6 +346,32 @@
 
     </script>
 
-    
+       <script type = "text/javascript">
+        
+
+
+         //-->
+
+           $(document).ready(function () {
+               $('#example1').empty();
+             $('#example1').dataTable({
+                 "bPaginate": false,
+                 "paging": false
+
+             });
+         });
+         Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
+         function InIEvent() {
+
+             $(function () {
+                
+                 $('#example1').dataTable({
+                     "bPaginate": false,
+                     "paging": false
+
+                 });
+             });
+         }
+    </script>
   
 </asp:Content>

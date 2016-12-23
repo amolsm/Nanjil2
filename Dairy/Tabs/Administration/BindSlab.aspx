@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BindSlab.aspx.cs" Inherits="Dairy.Tabs.Administration.BindSlab" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script type="text/javascript">
+   <%-- <script type="text/javascript">
         Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
         function InIEvent() {
 
@@ -17,7 +17,7 @@
                 });
             });
         }
-    </script>
+    </script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <section class="content-header">
@@ -293,4 +293,18 @@
             </asp:UpdateProgress>        
           </div><!-- /.box -->
         </section>
+       <script type = "text/javascript">
+        
+
+
+         //-->
+
+         $(document).ready(function () {
+             $('#example1').dataTable({
+                 "bPaginate": false,
+                 "paging": false
+
+             });
+         });
+    </script>
 </asp:Content>
