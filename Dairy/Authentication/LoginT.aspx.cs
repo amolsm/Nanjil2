@@ -66,6 +66,16 @@ namespace Dairy.Authentication
                 }
                 else
                 {
+                    HttpCookie myCookie = new HttpCookie("myCookie");
+
+                    //Add key-values in the cookie
+                    myCookie.Values.Add("username", txtUsername.Text.ToString());
+
+                    //set cookie expiry date-time. Made it to last for next 12 hours.
+                    myCookie.Expires = DateTime.Now.AddHours(12);
+
+                    //Most important, write the cookie to client.
+                    Response.Cookies.Add(myCookie);
                     PNLLOGIN.Visible = true;
                     PNLSELECTBOTH.Visible = false;
                     CreateAutinticationTikit(user, string.Empty, string.Empty);
@@ -82,10 +92,19 @@ namespace Dairy.Authentication
                 lblmsg.Visible = true;
             }
         }
-
-       public bool checkLoggedIn()
+        string username = string.Empty;
+        public bool checkLoggedIn()
         {
-            List<string> d = Application["UsersLoggedIn"] as List<string>;
+            
+            HttpCookie myCookie = Request.Cookies["myCookie"];
+            if (myCookie != null)
+            {
+                if (!string.IsNullOrEmpty(myCookie.Values["username"]))
+                {
+                    username = myCookie.Values["username"].ToString();
+                }
+            }
+          List<string> d = Application["UsersLoggedIn"] as List<string>;
             if (d != null)
             {
                 lock (d)
@@ -100,7 +119,11 @@ namespace Dairy.Authentication
                         catch (Exception) { }
 
                         if (user.UserID == temp)
-                        { 
+                        {
+                            return true;
+                        }
+                        else if (txtUsername.Text== username)
+                        {
                             return true;
                         }
                         else

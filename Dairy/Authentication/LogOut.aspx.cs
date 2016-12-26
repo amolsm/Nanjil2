@@ -12,6 +12,7 @@ namespace Dairy.Authentication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             FormsAuthentication.SignOut();
             Session.Abandon();
 
@@ -24,6 +25,11 @@ namespace Dairy.Authentication
             HttpCookie cookie2 = new HttpCookie("ASP.NET_SessionId", "");
             cookie2.Expires = DateTime.Now.AddYears(-1);
             Response.Cookies.Add(cookie2);
+
+            if (Request.Cookies["myCookie"] != null)
+            {
+                Response.Cookies["myCookie"].Expires = DateTime.Now.AddDays(-1);
+            }
 
             FormsAuthentication.RedirectToLoginPage();
         }

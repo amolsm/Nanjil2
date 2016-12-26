@@ -145,7 +145,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                 sb.Append("</th>");
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
-                sb.Append("TIN:330761667331<br>");
+                sb.Append("&nbsp;<br>");
                 sb.Append("</th>");
                 sb.Append("</tr>");
 
