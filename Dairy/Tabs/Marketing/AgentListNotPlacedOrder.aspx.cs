@@ -50,7 +50,7 @@ namespace Dairy.Tabs.Marketing
                 try
                 {
                     DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["BillSeq"] };
-                    DS.Tables[1].PrimaryKey = new[] { DS.Tables[0].Columns["SeqId"] };
+                    DS.Tables[1].PrimaryKey = new[] { DS.Tables[1].Columns["BillSeq"] };
                 }
                 catch (Exception) { }
                

@@ -73,6 +73,7 @@
     <Compile Include="IssuesRegistrationData.cs" />
     <Compile Include="MarketingData.cs" />
     <Compile Include="MassIssueData.cs" />
+    <Compile Include="OrderDemandStatementData.cs" />
     <Compile Include="ProcurementData.cs" />
     <Compile Include="ProductData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
