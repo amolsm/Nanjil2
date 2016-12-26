@@ -116,7 +116,6 @@
     <Content Include="Tabs\Administration\ViewDispatchSummary.aspx" />
     <Content Include="Tabs\Administration\ViewDispatchSummaryUsers.aspx" />
     <Content Include="Tabs\Administration\ViewDispatchUserShiftwise.aspx" />
-    <Content Include="Tabs\Administration\WebForm1.aspx" />
     <Content Include="Tabs\Despatch\AddReturnedItems.aspx" />
     <Content Include="Tabs\Despatch\BoothPlaceOrder.aspx" />
     <Content Include="Tabs\Despatch\ItemwiseSalesSummary.aspx" />
@@ -1380,13 +1379,6 @@
     </Compile>
     <Compile Include="Tabs\Administration\ViewDispatchUserShiftwise.aspx.designer.cs">
       <DependentUpon>ViewDispatchUserShiftwise.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Administration\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Administration\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Despatch\AddReturnedItems.aspx.cs">
       <DependentUpon>AddReturnedItems.aspx</DependentUpon>
