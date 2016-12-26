@@ -18,7 +18,7 @@ namespace Dairy.Tabs.Marketing
         {
             if (!IsPostBack)
             {
-                DS = new DataSet();
+              
                 DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "routeMaster", "IsArchive=1");
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {
@@ -35,12 +35,9 @@ namespace Dairy.Tabs.Marketing
         {
             string result = string.Empty;
             marketingdata = new MarketingData();
-            DS = new DataSet();
-
-
-
-            DS = marketingdata.ViewNewAgentList((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
-            if (!Comman.Comman.IsDataSetEmpty(DS))
+            DataSet DS1 = new DataSet();
+            DS1 = marketingdata.ViewNewAgentList((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
+            if (!Comman.Comman.IsDataSetEmpty(DS1))
             {
 
                 StringBuilder sb = new StringBuilder();
@@ -72,7 +69,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                 sb.Append("</th>");
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
-                sb.Append("TIN:330761667331<br>");
+                sb.Append("&nbsp;<br>");
                 sb.Append("</th>");
                 sb.Append("</tr>");
 
@@ -96,11 +93,21 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("");
                 }
                 sb.Append("</td>");
-                sb.Append("<td colspan='4' style='text-align:right'>");
+                sb.Append("<td colspan='3' style='text-align:right'>");
                 sb.Append(DateTime.Now.ToString("dd-MM-yyyy HH:mm"));
                 sb.Append("</td>");
                 sb.Append("</tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
 
+                sb.Append("<td colspan='4'>");
+
+                sb.Append(Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
+               
+                sb.Append("</td>");
+                sb.Append("<td colspan='3' style='text-align:right'>");
+                sb.Append(Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
+                sb.Append("</td>");
+                sb.Append("</tr>");
                 sb.Append("<tr>");
                 sb.Append("<td>");
                 sb.Append("<b>Sr.No.</b>");
@@ -121,8 +128,11 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<b>Status</b>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
-                foreach (DataRow rows in DS.Tables[1].Rows)
+                int routcount = 0;
+                int count = 0;
+                foreach (DataRow rows in DS1.Tables[1].Rows)
                 {
+                    routcount++;
                     sb.Append("<tr> ");
                     sb.Append("<td colsapn='7'> ");
                     sb.Append("&nbsp;");
@@ -140,8 +150,8 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("</tr>");
 
                     int srno = 0;
-
-                    foreach (DataRow row in DS.Tables[0].Rows)
+                    
+                    foreach (DataRow row in DS1.Tables[0].Rows)
                     {
 
 
@@ -149,6 +159,7 @@ namespace Dairy.Tabs.Marketing
                         {
 
                             srno++;
+                            count++;
                             sb.Append("<tr>");
                             sb.Append("<td>");
                             sb.Append(srno.ToString());
@@ -185,8 +196,29 @@ namespace Dairy.Tabs.Marketing
 
                     }
 
-                }
+                
 
+                }
+                sb.Append("<tr> ");
+                sb.Append("<td colsapn='7'> ");
+                sb.Append("&nbsp;");
+                sb.Append("</td>");
+                sb.Append("</tr> ");
+                sb.Append("<tr style='border-bottom:1px solid'><td colspan='7'></td></tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<td colspan='2'>");
+                sb.Append("Total Route : ");
+                sb.Append("</td>");
+                sb.Append("<td>");
+                sb.Append(routcount.ToString());
+                sb.Append("</td>");
+                sb.Append("<td colspan='2'>");
+                sb.Append(" New Agents :");
+                sb.Append("</td>");
+                sb.Append("<td colspan='2'>");
+                sb.Append(count.ToString());
+                sb.Append("</td>");
+                sb.Append("</tr>");
 
 
 
