@@ -105,6 +105,8 @@
     <Content Include="Tabs\Administration\DamageRateSetup.aspx" />
     <Content Include="Tabs\Administration\EditDispatchs.aspx" />
     <Content Include="Tabs\Administration\EditOrder.aspx" />
+    <Content Include="Tabs\Administration\EditReturnedProducts.aspx" />
+    <Content Include="Tabs\Administration\EditReturnedTrays.aspx" />
     <Content Include="Tabs\Administration\GenrateBillThermal.aspx" />
     <Content Include="Tabs\Administration\IncentiveSetup.aspx" />
     <Content Include="Tabs\Administration\OrderQuantity.aspx" />
@@ -1301,6 +1303,20 @@
     </Compile>
     <Compile Include="Tabs\Administration\EditOrder.aspx.designer.cs">
       <DependentUpon>EditOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\EditReturnedProducts.aspx.cs">
+      <DependentUpon>EditReturnedProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\EditReturnedProducts.aspx.designer.cs">
+      <DependentUpon>EditReturnedProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\EditReturnedTrays.aspx.cs">
+      <DependentUpon>EditReturnedTrays.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\EditReturnedTrays.aspx.designer.cs">
+      <DependentUpon>EditReturnedTrays.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Administration\GenrateBillThermal.aspx.cs">
       <DependentUpon>GenrateBillThermal.aspx</DependentUpon>

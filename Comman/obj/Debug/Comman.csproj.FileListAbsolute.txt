@@ -3,3 +3,8 @@ D:\NanjilCode2\Nanjil2\Comman\bin\Comman.pdb
 D:\NanjilCode2\Nanjil2\Comman\obj\Debug\Comman.csprojResolveAssemblyReference.cache
 D:\NanjilCode2\Nanjil2\Comman\obj\Debug\Comman.dll
 D:\NanjilCode2\Nanjil2\Comman\obj\Debug\Comman.pdb
+D:\NanjilCode2\Nanjil\Comman\bin\Comman.dll
+D:\NanjilCode2\Nanjil\Comman\bin\Comman.pdb
+D:\NanjilCode2\Nanjil\Comman\obj\Debug\Comman.csprojResolveAssemblyReference.cache
+D:\NanjilCode2\Nanjil\Comman\obj\Debug\Comman.dll
+D:\NanjilCode2\Nanjil\Comman\obj\Debug\Comman.pdb

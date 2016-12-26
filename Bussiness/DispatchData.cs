@@ -86,10 +86,10 @@ namespace Bussiness
             return dbDispatch.CashierGetDetailsId(id);
         }
         
-        public DataSet GetDispatchByID(int id)
+        public DataSet GetDispatchByID(int id , string flag ="None")
         {
 
-            return dbDispatch.GetDispatchByID(id);
+            return dbDispatch.GetDispatchByID(id, flag);
         }
         
         public int AddDispatchInfo(Dispatch dispatch)

@@ -117,6 +117,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@RouteID", dispatch.RouteID));
                 paramCollection.Add(new DBParameter("@DispatchDate", dispatch.DispatchDate));
                 paramCollection.Add(new DBParameter("@CategoryId", dispatch.CategoryId));
+                paramCollection.Add(new DBParameter("@flag", dispatch.flag));
                 DS = _DBHelper.ExecuteDataSet("sp_getDispatchByRoute", paramCollection, CommandType.StoredProcedure);
             }
             catch (Exception)
@@ -294,7 +295,7 @@ namespace DataAccess
             return DS;
         }
         
-        public DataSet GetDispatchByID(int id)
+        public DataSet GetDispatchByID(int id, string flag)
         {
             DataSet DS = new DataSet();
             try
@@ -302,7 +303,7 @@ namespace DataAccess
                 //int result = 0;
                 DBParameterCollection paramCollection = new DBParameterCollection();
                 paramCollection.Add(new DBParameter("@id", id));
-
+                paramCollection.Add(new DBParameter("@flag", flag));
                 DS = _DBHelper.ExecuteDataSet("sp_getDispatchbyid", paramCollection, CommandType.StoredProcedure);
             }
             catch (Exception)

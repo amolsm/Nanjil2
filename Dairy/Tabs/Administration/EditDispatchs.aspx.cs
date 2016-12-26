@@ -155,6 +155,19 @@ namespace Dairy.Tabs.Administration
                     pnlError.Update();
 
                     txtNewQuantity.Text = string.Empty;
+
+                    disp.DispatchId = Convert.ToInt32(txtDispatchId.Text);
+                    disp.Flag = "GetById";
+
+                    DS = db.GetDispatchById(disp);
+                    if (!Comman.Comman.IsDataSetEmpty(DS))
+                    {
+                        rpRouteList.DataSource = DS;
+                        rpRouteList.DataBind();
+                        uprouteList.Update();
+
+                                               
+                    }
                 }
             }
             else
