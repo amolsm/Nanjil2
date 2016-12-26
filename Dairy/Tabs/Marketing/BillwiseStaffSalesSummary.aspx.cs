@@ -143,183 +143,185 @@ namespace Dairy.Tabs.Marketing
 
 
 
-               
 
-
-                foreach (DataRow row2 in DS.Tables[1].Rows)
+                if ((DS.Tables[1].Rows.Count != 0) && (DS.Tables[0].Rows.Count != 0))
                 {
-                    int count = 0;
-                    double totalquantity = 0;
-                    sb.Append("<tr  style='page-break-inside:avoid; align:center;'> <td colspan = '9' > &nbsp; </td> </tr>");
-                   // sb.Append("<tr  style='page-break-inside:avoid; align:center;'> <td colspan = '9' > &nbsp; </td> </tr>");
-                 
-                    sb.Append("<tr>");
-                    sb.Append("<td>");
-                    sb.Append("<b>" + row2["OrderDate"].ToString() + "</b>");
+
+                    foreach (DataRow row2 in DS.Tables[1].Rows)
+                    {
+                        int count = 0;
+                        double totalquantity = 0;
+                        sb.Append("<tr  style='page-break-inside:avoid; align:center;'> <td colspan = '9' > &nbsp; </td> </tr>");
+                        // sb.Append("<tr  style='page-break-inside:avoid; align:center;'> <td colspan = '9' > &nbsp; </td> </tr>");
+
+                        sb.Append("<tr>");
+                        sb.Append("<td>");
+                        sb.Append("<b>" + row2["OrderDate"].ToString() + "</b>");
+                        sb.Append("</td>");
+                        sb.Append("<td>");
+                        sb.Append("&nbsp;");
+                        sb.Append("</td>");
+                        sb.Append("<td>");
+                        if (dpEmployee.SelectedItem.Value == "0")
+                        {
+                            sb.Append(row2["EmployeeCode"].ToString());
+                        }
+
+                        sb.Append("</td>");
+                        sb.Append("<td>");
+                        if (dpEmployee.SelectedItem.Value == "0")
+                        {
+                            sb.Append(row2["Employee"].ToString());
+                        }
+
+                        sb.Append("</td>");
+                        sb.Append("<td>");
+                        sb.Append(row2["RouteCode"].ToString());
+                        sb.Append("</td>");
+                        sb.Append("<td>");
+                        sb.Append(row2["RouteName"].ToString());
+                        sb.Append("</td>");
+
+                        sb.Append("<td style='text-align:right'>");
+                        sb.Append("<b>" + "Bill No :" + "</b>");
+                        sb.Append("</td>");
+                        sb.Append("<td style='text-align:right'>");
+                        sb.Append("<b>" + row2["BillNumber"].ToString() + "</b>");
+                        sb.Append("</td>");
+                        sb.Append("</tr>");
+                        sb.Append("<tr style='border-bottom:1px dotted'style='page-break-inside:avoid; align:center;'> <td colspan = '9'></td> </tr>");
+
+                        sb.Append("<tr>");
+                        sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
+                        sb.Append("<b> </b> ");
+                        sb.Append("</td>");
+
+                        sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
+                        sb.Append("<b>ITEM</b>");
+                        sb.Append("</td>");
+
+                        sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
+                        sb.Append("<b>Rate</b>");
+                        sb.Append("</td>");
+
+                        sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
+                        sb.Append("<b>Quantity</b>");
+                        sb.Append("</td>");
+                        sb.Append("<td>");
+                        sb.Append("<b>Unit Type</b>");
+                        sb.Append("</td>");
+                        sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
+                        sb.Append("<b>Amount</b>");
+                        sb.Append("</td>");
+                        sb.Append("</tr>");
+                        foreach (DataRow row in DS.Tables[0].Rows)
+                        {
+                            if (row2["BillNumber"].ToString() == row["BillNo"].ToString())
+                            {
+                                count = count + 1;
+                                sb.Append("<tr>");
+                                sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
+                                sb.Append(row["ProductCode"].ToString());
+                                sb.Append("</td>");
+
+                                sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:left'>");
+                                sb.Append(row["ITEM"].ToString());
+                                sb.Append("</td>");
+
+                                sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
+                                sb.Append((Convert.ToDecimal(row["Rate"]).ToString("#.00")));
+
+                                sb.Append("</td>");
+                                sb.Append("<td>");
+                                sb.Append("");
+                                sb.Append("</td>");
+                                sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
+
+                                totalquantity += Convert.ToDouble(row["Quantity"]);
+                                sb.Append(row["Quantity"].ToString());
+
+
+
+                                sb.Append("</td>");
+                                sb.Append("<td>");
+                                sb.Append(row["UnitType"].ToString());
+                                sb.Append("</td>");
+                                sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
+
+                                sb.Append((Convert.ToDecimal(row["Amount"]).ToString("#.00")));
+
+
+                                sb.Append("</td>");
+                                sb.Append("</tr>");
+                            }
+                            else { }
+
+                        }
+
+                        sb.Append("<tr style='border-bottom:1px dotted'> <td colspan = '9'> &nbsp; </td> </tr>");
+                        sb.Append("<tr style='border-bottom:1px solid'>");
+                        sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
+                        sb.Append(row2["Salesman"].ToString());
+                        sb.Append("</td>");
+                        sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
+                        sb.Append(count.ToString());
+                        sb.Append("</td>");
+                        sb.Append("<td class='tg-yw4l' colspan='3'  style='text-align:left'>");
+                        sb.Append("Total");
+                        sb.Append("</td>");
+                        sb.Append("<td class='tg-yw4l'  colspan='2'    style='text-align:left'>");
+                        sb.Append(totalquantity.ToString());
+                        totalrouteagentqty += totalquantity;
+                        sb.Append("</td>");
+
+                        double amt = 0;
+
+                        amt = (Convert.ToDouble(row2["Amount"]));
+
+                        sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
+
+                        sb.Append((Convert.ToDecimal(amt).ToString("#.00")));
+                        totalamt += amt;
+                        sb.Append("</td>");
+
+
+
+                    }
+
+
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+
+
+                    sb.Append("<td class='tg-yw4l' style='text-align:left'> ");
+                    sb.Append("<b>" + "Grand Total" + "</b>");
                     sb.Append("</td>");
-                    sb.Append("<td>");
+                    sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
                     sb.Append("&nbsp;");
                     sb.Append("</td>");
-                    sb.Append("<td>");
-                    if (dpEmployee.SelectedItem.Value == "0")
-                    {
-                        sb.Append(row2["EmployeeCode"].ToString());
-                    }
 
+                    sb.Append("<td class='tg-yw4l' colspan='2'style='text-align:right'> ");
+                    sb.Append("<b>" + "Total Quantity" + "</b>");
                     sb.Append("</td>");
-                    sb.Append("<td>");
-                    if (dpEmployee.SelectedItem.Value == "0")
-                    {
-                        sb.Append(row2["Employee"].ToString());
-                    }
-
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append(row2["RouteCode"].ToString());
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append(row2["RouteName"].ToString());
-                    sb.Append("</td>");
-
-                    sb.Append("<td style='text-align:right'>");
-                    sb.Append("<b>" + "Bill No :" + "</b>");
-                    sb.Append("</td>");
-                    sb.Append("<td style='text-align:right'>");
-                    sb.Append("<b>" + row2["BillNumber"].ToString() + "</b>");
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
-                    sb.Append("<tr style='border-bottom:1px dotted'style='page-break-inside:avoid; align:center;'> <td colspan = '9'></td> </tr>");
-
-                    sb.Append("<tr>");
-                    sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
-                    sb.Append("<b> </b> ");
-                    sb.Append("</td>");
-
-                    sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
-                    sb.Append("<b>ITEM</b>");
-                    sb.Append("</td>");
-
-                    sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
-                    sb.Append("<b>Rate</b>");
-                    sb.Append("</td>");
-
-                    sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
-                    sb.Append("<b>Quantity</b>");
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append("<b>Unit Type</b>");
-                    sb.Append("</td>");
-                    sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
-                    sb.Append("<b>Amount</b>");
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
-                    foreach (DataRow row in DS.Tables[0].Rows)
-                    {
-                        if (row2["BillNumber"].ToString() == row["BillNo"].ToString())
-                        {
-                            count = count + 1;
-                            sb.Append("<tr>");
-                            sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
-                            sb.Append(row["ProductCode"].ToString());
-                            sb.Append("</td>");
-
-                            sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:left'>");
-                            sb.Append(row["ITEM"].ToString());
-                            sb.Append("</td>");
-
-                            sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
-                            sb.Append((Convert.ToDecimal(row["Rate"]).ToString("#.00")));
-
-                            sb.Append("</td>");
-                            sb.Append("<td>");
-                            sb.Append("");
-                            sb.Append("</td>");
-                            sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
-
-                            totalquantity += Convert.ToDouble(row["Quantity"]);
-                            sb.Append(row["Quantity"].ToString());
-
-
-
-                            sb.Append("</td>");
-                            sb.Append("<td>");
-                            sb.Append(row["UnitType"].ToString());
-                            sb.Append("</td>");
-                            sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
-
-                            sb.Append((Convert.ToDecimal(row["Amount"]).ToString("#.00")));
-
-
-                            sb.Append("</td>");
-                            sb.Append("</tr>");
-                        }
-                        else { }
-
-                    }
-
-                    sb.Append("<tr style='border-bottom:1px dotted'> <td colspan = '9'> &nbsp; </td> </tr>");
-                    sb.Append("<tr style='border-bottom:1px solid'>");
-                    sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
-                    sb.Append(row2["Salesman"].ToString());
+                    sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
+                    sb.Append("&nbsp;");
                     sb.Append("</td>");
                     sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
-                    sb.Append(count.ToString());
-                    sb.Append("</td>");
-                    sb.Append("<td class='tg-yw4l' colspan='3'  style='text-align:left'>");
-                    sb.Append("Total");
-                    sb.Append("</td>");
-                    sb.Append("<td class='tg-yw4l'  colspan='2'    style='text-align:left'>");
-                    sb.Append(totalquantity.ToString());
-                    totalrouteagentqty += totalquantity;
+                    sb.Append("<b>" + totalrouteagentqty + "</b>");
                     sb.Append("</td>");
 
-                    double amt = 0;
+                    sb.Append("<td class='tg-yw4l'    style='text-align:right'> ");
+                    sb.Append("<b>" + "Total Amount" + "</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
 
-                    amt = (Convert.ToDouble(row2["Amount"]));
+                    sb.Append("<b>" + (Convert.ToDecimal(totalamt).ToString("#.00")) + "</b>");
 
-                    sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
 
-                    sb.Append((Convert.ToDecimal(amt).ToString("#.00")));
-                    totalamt += amt;
+
                     sb.Append("</td>");
 
-
-
+                    sb.Append("</tr>");
                 }
-
-
-                sb.Append("<tr style='border-bottom:1px solid'>");
-
-
-                sb.Append("<td class='tg-yw4l' style='text-align:left'> ");
-                sb.Append("<b>" + "Grand Total" + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
-                sb.Append("&nbsp;");
-                sb.Append("</td>");
-             
-                sb.Append("<td class='tg-yw4l' colspan='2'style='text-align:right'> ");
-                sb.Append("<b>" + "Total Quantity" + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
-                sb.Append("&nbsp;");
-                sb.Append("</td>");
-                sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
-                sb.Append("<b>" + totalrouteagentqty + "</b>");
-                sb.Append("</td>");
-
-                sb.Append("<td class='tg-yw4l'    style='text-align:right'> ");
-                sb.Append("<b>" + "Total Amount" + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
-
-                sb.Append("<b>" + (Convert.ToDecimal(totalamt).ToString("#.00")) + "</b>");
-
-              
-
-                sb.Append("</td>");
-
-                sb.Append("</tr>");
                 if ((DS.Tables[3].Rows.Count != 0) && (DS.Tables[2].Rows.Count != 0))
                 {
                     foreach (DataRow row3 in DS.Tables[3].Rows)

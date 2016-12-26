@@ -75,6 +75,7 @@
     <Compile Include="DBIssueRegistration.cs" />
     <Compile Include="DBMarketing.cs" />
     <Compile Include="DBMassIssue.cs" />
+    <Compile Include="DBOrderDemandStatement.cs" />
     <Compile Include="DBProcurement.cs" />
     <Compile Include="DBProduct.cs" />
     <Compile Include="DBPurchase.cs" />

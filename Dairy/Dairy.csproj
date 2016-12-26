@@ -109,6 +109,7 @@
     <Content Include="Tabs\Administration\EditReturnedTrays.aspx" />
     <Content Include="Tabs\Administration\GenrateBillThermal.aspx" />
     <Content Include="Tabs\Administration\IncentiveSetup.aspx" />
+    <Content Include="Tabs\Administration\OrderDemandStatement.aspx" />
     <Content Include="Tabs\Administration\OrderQuantity.aspx" />
     <Content Include="Tabs\Administration\Shift.aspx" />
     <Content Include="Tabs\Administration\UserLog.aspx" />
@@ -1331,6 +1332,13 @@
     </Compile>
     <Compile Include="Tabs\Administration\IncentiveSetup.aspx.designer.cs">
       <DependentUpon>IncentiveSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\OrderDemandStatement.aspx.cs">
+      <DependentUpon>OrderDemandStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\OrderDemandStatement.aspx.designer.cs">
+      <DependentUpon>OrderDemandStatement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Administration\OrderQuantity.aspx.cs">
       <DependentUpon>OrderQuantity.aspx</DependentUpon>
