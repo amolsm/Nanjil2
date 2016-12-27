@@ -84,7 +84,7 @@ namespace Dairy.Tabs.Administration
             DataSet DS = new DataSet();
             StringBuilder sb = new StringBuilder();
 
-
+            dispatch.flag = "none";
 
             DS = dispatchData.GetDispatchByAgentID(dispatch);
 
@@ -220,7 +220,7 @@ namespace Dairy.Tabs.Administration
             dispatch.RouteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
             dispatch.CategoryId = Convert.ToInt32(dpCategory.SelectedItem.Value);
             DispatchData dispatchData = new DispatchData();
-
+            dispatch.flag = "none";
             DS = dispatchData.GetDispatchByAgentID(dispatch);
 
             if (!Comman.Comman.IsDataSetEmpty(DS))
@@ -272,24 +272,7 @@ namespace Dairy.Tabs.Administration
             //txtOrderDetailsId.Text = string.Empty;
             //txtOrderID.Text = string.Empty;
         }
-        public void BindRouteList()
-        {
-            DispatchData dispatchData = new DispatchData();
-            DataSet DS = new DataSet();
-            StringBuilder sb = new StringBuilder();
-            RouteData routeDate = new RouteData();
-
-
-            DS = dispatchData.GetAllOrdersDetails();
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
-                int count = Convert.ToInt32(DS.Tables[1].Rows[0]["Id"]);
-                count = count + 1;
-                //txtRouteCode.Text = string.Format("R{0:0000}", count);
-                rpRouteList.DataSource = DS;
-                rpRouteList.DataBind();
-            }
-        }
+        
 
         protected void rpRouteList_ItemCommand(object sender, RepeaterCommandEventArgs e)
         {
