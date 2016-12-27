@@ -5,6 +5,6 @@ D:\NanjilCode2\Nanjil2\Model\obj\Debug\Model.dll
 D:\NanjilCode2\Nanjil2\Model\obj\Debug\Model.pdb
 D:\NanjilCode2\Nanjil\Model\bin\Model.dll
 D:\NanjilCode2\Nanjil\Model\bin\Model.pdb
-D:\NanjilCode2\Nanjil\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\NanjilCode2\Nanjil\Model\obj\Debug\Model.dll
 D:\NanjilCode2\Nanjil\Model\obj\Debug\Model.pdb
+D:\NanjilCode2\Nanjil\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

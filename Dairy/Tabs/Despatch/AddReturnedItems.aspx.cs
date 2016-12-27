@@ -83,7 +83,7 @@ namespace Dairy.Tabs.Despatch
             DispatchData dispatchData = new DispatchData();
             DataSet DS = new DataSet();
             StringBuilder sb = new StringBuilder();
-
+            dispatch.flag = "none";
 
 
             DS = dispatchData.GetDispatchByAgentID(dispatch);
@@ -220,7 +220,7 @@ namespace Dairy.Tabs.Despatch
             dispatch.RouteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
             dispatch.CategoryId = Convert.ToInt32(dpCategory.SelectedItem.Value);
             DispatchData dispatchData = new DispatchData();
-
+            dispatch.flag = "none";
             DS = dispatchData.GetDispatchByAgentID(dispatch);
 
             if (!Comman.Comman.IsDataSetEmpty(DS))

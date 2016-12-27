@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditReturnedProducts.aspx.cs" Inherits="Dairy.Tabs.Administration.EditReturnedProducts" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-
+    <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript">
       Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
       function InIEvent() {
@@ -133,7 +134,7 @@
                     <div class="input-group">
                       <asp:Button ID="btnSearch" class="btn btn-primary" ValidationGroup="search" runat="server" CommandName="MoveNext" Text="Search" OnClick="btnSearch_Click" />     
                        &nbsp; &nbsp;
-                         <asp:Button ID="btnFinalSubmit" class="btn btn-primary" ValidationGroup="search" runat="server" CommandName="MoveNext" Text="Submit" OnClick="btnFinalSubmit_Click" OnClientClick="ConfirmFinal()"/>     
+                         <%--<asp:Button ID="btnFinalSubmit" class="btn btn-primary" ValidationGroup="search" runat="server" CommandName="MoveNext" Text="Submit" OnClick="btnFinalSubmit_Click" OnClientClick="ConfirmFinal()"/>     --%>
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
