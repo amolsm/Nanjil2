@@ -21,8 +21,10 @@ namespace Dairy.Tabs.Marketing
             if (!IsPostBack)
             {
                 BindDropDownList();
+                txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
 
-               
+
             }
         }
         public void BindDropDownList()
@@ -107,7 +109,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                 sb.Append("</th>");
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
-                sb.Append("TIN:330761667331<br>");
+                sb.Append("&nbsp;<br>");
                 sb.Append("</th>");
                 sb.Append("</tr>");
 
@@ -178,48 +180,82 @@ namespace Dairy.Tabs.Marketing
                 DateTime newdate = Convert.ToDateTime(txtEndDate.Text);
                 TimeSpan ts = newdate - olddate;
                 int differenceInDays = ts.Days + 1;
-                foreach (DataRow row in DS.Tables[0].Rows)
+                int routsno = 0;
+                foreach (DataRow rows in DS.Tables[2].Rows)
                 {
-
-                    if (row["AgentName"].ToString() != "")
+                    routsno++;
+                    sb.Append("<tr><td colspan='6'>&nbsp;</td></tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'></td></tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<td>");
+                    sb.Append(routsno.ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td>");
+                    sb.Append(rows["RouteCode"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td colspan = '4'>");
+                    sb.Append(rows["RouteName"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("</tr>");
+                    double qty = 0;
+                    double avg = 0;
+                    double totalqty = 0;
+                    double totalavg = 0;
+                    foreach (DataRow row in DS.Tables[0].Rows)
                     {
-                        srno++;
-                        sb.Append("<tr>");
-                        sb.Append("<td>");
-                        sb.Append(srno.ToString());
-                        sb.Append("</td>");
-                        sb.Append("<td>");
-                        sb.Append(row["AgentCode"].ToString());
-                        sb.Append("</td>");
-                        sb.Append("<td colspan = '2'>");
-                        sb.Append(row["AgentName"].ToString());
-                        sb.Append("</td>");
-                        sb.Append("<td>");
-                        sb.Append(row["Quantity"].ToString());
-                        sb.Append("</td>");
-                        sb.Append("<td>");
-                        try
+
+                        if (row["AgentName"].ToString() != "" && rows["RouteID"].ToString()== row["RouteID"].ToString())
                         {
-                            double qty = 0;
-                            double avg = 0;
-                            qty = Convert.ToDouble(row["Quantity"]);
-                            avg = qty / differenceInDays;
-                            sb.Append(Convert.ToDecimal(avg).ToString("#.##"));
+                            srno++;
+                            sb.Append("<tr>");
+                            sb.Append("<td>");
+                            sb.Append(srno.ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            sb.Append(row["AgentCode"].ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td colspan = '2'>");
+                            sb.Append(row["AgentName"].ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            sb.Append(row["Quantity"].ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            try
+                            {
+                              
+                                qty = Convert.ToDouble(row["Quantity"]);
+                                totalqty += qty;
+                                avg = qty / differenceInDays;
+                                totalavg += avg;
+                                sb.Append(Convert.ToDecimal(avg).ToString("#.##"));
+                            }
+                            catch { sb.Append("&nbsp;");qty = 0;avg = 0; }
+
+                            sb.Append("</td>");
+
+                            sb.Append("</tr>");
+
+
                         }
-                        catch { sb.Append("&nbsp;"); }
 
-                        sb.Append("</td>");
-
-                        sb.Append("</tr>");
+                        
 
 
                     }
-
-
-
-
+                    sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'></td></tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<td colspan = '4'>");
+                    sb.Append(srno.ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td >");
+                    sb.Append(Convert.ToDecimal(totalqty).ToString("#.##"));
+                    sb.Append("</td>");
+                    sb.Append("<td >");
+                    sb.Append(Convert.ToDecimal(totalavg).ToString("#.##"));
+                    sb.Append("</td>");
+                    sb.Append("</tr>");
                 }
-
 
 
 

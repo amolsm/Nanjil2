@@ -20,7 +20,8 @@ namespace Dairy.Tabs.Marketing
         {
             if (!Page.IsPostBack)
             {
-              
+                txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             }
         }
        

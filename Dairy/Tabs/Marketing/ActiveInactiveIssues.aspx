@@ -6,13 +6,7 @@
             <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-     <script type="text/javascript">
-
-        $(function () {
-            $("#MainContent_txtDate").datepicker({ dateFormat: 'dd/mm/yy' });
-           
-        })
-    </script>
+    
    <script type = "text/javascript">
         function PrintPanel() {
             var panel = document.getElementById("<%=pnlBill.ClientID %>");
@@ -100,7 +94,7 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class=""></i><span style="color:red">&nbsp;*</span>
+                        Start Date
                       </div>
                        <asp:TextBox ID="txtStartDate" class="form-control" type="date" runat="server" ToolTip="Start Date" required  ></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -117,7 +111,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                      End Date
                       </div>
                            <asp:TextBox ID="txtEndDate" class="form-control" type="date" runat="server" ToolTip="End Date" required  ></asp:TextBox>                        
                    
@@ -129,7 +123,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                      Issue Status
                       </div>
                       <asp:DropDownList ID="dpIssue" class="form-control" runat="server" DataValueField="IssueID" DataTextField="Issues"  ToolTip="Select Issue Status"  > 
                        <asp:ListItem Value="0">---SelectIssueStatus---</asp:ListItem>

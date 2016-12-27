@@ -27,6 +27,9 @@ namespace Dairy.Tabs.Marketing
                 //    dpRoute.Items.Insert(0, new ListItem("--All Route  --", "0"));
                 //}
 
+                txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+
             }
         }
 

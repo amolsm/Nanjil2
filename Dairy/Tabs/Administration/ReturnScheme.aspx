@@ -119,29 +119,10 @@
                        
                           
                       </div> 
-
-            
-                  
-        </div><!-- /.box-body -->
+              </div><!-- /.box-body -->
       </div>
-                     
-                    </ContentTemplate>
-                </asp:UpdatePanel>
-                 
-           </div><!-- /.box-body --> 
-                       <asp:UpdateProgress ID="UpdateProgress2" runat="server" AssociatedUpdatePanelID="UpdatePanel1">
-            <ProgressTemplate>
-                
-                <div class="overlay">
-                  <i class="fa fa-refresh fa-spin"></i>
-                </div>
 
-            </ProgressTemplate>
-            </asp:UpdateProgress>
-
-         
-                       
-                <div class="box-body" id="datalist">
+               <div id="datalist">
 
                 <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
                     <ContentTemplate>
@@ -238,6 +219,26 @@
 
             </ProgressTemplate>
             </asp:UpdateProgress>       
+                  
+      
+                     
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                 
+           </div><!-- /.box-body --> 
+                    <%--   <asp:UpdateProgress ID="UpdateProgress2" runat="server" AssociatedUpdatePanelID="UpdatePanel1">
+            <ProgressTemplate>
+                
+                <div class="overlay">
+                  <i class="fa fa-refresh fa-spin"></i>
+                </div>
+
+            </ProgressTemplate>
+            </asp:UpdateProgress>
+
+         --%>
+                       
+             
           </div><!-- /.box -->
         </section>
     
@@ -252,9 +253,9 @@
                 $('#myInput').focus()
             })
         })
-    </script>
     
-    <script type="text/javascript">
+    
+  
         yepnope({ // or Modernizr.load
             test: Modernizr.inputtypes.date,
             nope: [
@@ -310,9 +311,9 @@
                 }
             }
         }); // end Modernizr.load
-        </script>
+       
 
-    <script type = "text/javascript">
+    
         function Confirm() {
             var confirm_value = document.createElement("INPUT");
             confirm_value.type = "hidden";
@@ -327,9 +328,9 @@
 
         
 
-    </script>
+    
      
-    <script type = "text/javascript">
+   
         function ConfirmFinal() {
             var confirm_value = document.createElement("INPUT");
             confirm_value.type = "hidden";
@@ -344,12 +345,9 @@
 
 
 
-    </script>
+   
 
-       <script type = "text/javascript">
-        
-
-
+      
          //-->
 
            $(document).ready(function () {

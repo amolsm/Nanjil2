@@ -47,7 +47,7 @@
 
 
 
-           <div class="box  ">
+           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text=" Agent Slab Report List "></asp:Label> </h3>
               <div class="box-tools pull-right">

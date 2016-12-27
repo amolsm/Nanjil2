@@ -50,7 +50,7 @@ namespace Dairy.Authentication
             {
                  if (user.RoleID.ToString() == "Sales")
                 {
-
+                    AddCookies();
                     PNLLOGIN.Visible = false;
                     PNLSELECTBOTH.Visible = true;
                     pnlSelectShift.Visible = false;
@@ -58,7 +58,7 @@ namespace Dairy.Authentication
                 }
                 else if (user.RoleID.ToString() == "Despatch")
                 {
-
+                    AddCookies();
                     PNLLOGIN.Visible = false;
                     PNLSELECTBOTH.Visible = false;
                     pnlSelectShift.Visible = true;
@@ -66,16 +66,7 @@ namespace Dairy.Authentication
                 }
                 else
                 {
-                    HttpCookie myCookie = new HttpCookie("myCookie");
-
-                    //Add key-values in the cookie
-                    myCookie.Values.Add("username", txtUsername.Text.ToString());
-
-                    //set cookie expiry date-time. Made it to last for next 12 hours.
-                    myCookie.Expires = DateTime.Now.AddHours(12);
-
-                    //Most important, write the cookie to client.
-                    Response.Cookies.Add(myCookie);
+                    AddCookies();
                     PNLLOGIN.Visible = true;
                     PNLSELECTBOTH.Visible = false;
                     CreateAutinticationTikit(user, string.Empty, string.Empty);
@@ -237,6 +228,20 @@ namespace Dairy.Authentication
                     CreateAutinticationTikit(user, dpAgent.SelectedItem.Value, string.Empty);
                 }
             }
+        }
+
+        public void AddCookies()
+        {
+            HttpCookie myCookie = new HttpCookie("myCookie");
+
+            //Add key-values in the cookie
+            myCookie.Values.Add("username", txtUsername.Text.ToString());
+
+            //set cookie expiry date-time. Made it to last for next 12 hours.
+            myCookie.Expires = DateTime.Now.AddHours(12);
+
+            //Most important, write the cookie to client.
+            Response.Cookies.Add(myCookie);
         }
     }
     }

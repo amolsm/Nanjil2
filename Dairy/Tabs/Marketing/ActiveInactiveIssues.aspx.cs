@@ -17,6 +17,8 @@ namespace Dairy.Tabs.Marketing
         {
             if (!Page.IsPostBack)
             {
+                txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             }
 
             }
@@ -126,7 +128,7 @@ namespace Dairy.Tabs.Marketing
 
                     sb.Append("<td>");
                     //sb.Append("Date");
-                    sb.Append(row["IssueDateTime"].ToString());
+                    sb.Append(Convert.ToDateTime(row["IssueDateTime"]).ToString("dd-MM-yyyy"));
                     sb.Append("</td>");
 
                     sb.Append("<td>");

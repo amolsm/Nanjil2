@@ -34,6 +34,10 @@ namespace Dairy.Tabs.Marketing
                     dpAgent.DataBind();
                     dpAgent.Items.Insert(0, new ListItem("--All Agency  --", "0"));
                 }
+
+                txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+
             }
         }
 
