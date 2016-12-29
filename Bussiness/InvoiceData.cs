@@ -87,6 +87,12 @@ namespace Bussiness
         {
             return dbinvoice.GetPreviousDayOrderRouteWise(invoice);
         }
+
+        public bool AddSchemeOnRollback(int orderid)
+        {
+            return dbinvoice.AddSchemeOnRollback(orderid);
+        }
+
         public DataSet GetPreviousDayOrderRouteWiseEmp(Invoice invoice)
         {
             return dbinvoice.GetPreviousDayOrderRouteWiseEmp(invoice);

@@ -69,7 +69,27 @@ namespace DataAccess
             else
                 return false;
         }
-        
+
+        public bool AddSchemeOnRollback(int orderid)
+        {
+            int result = 0;
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@OrderId ", orderid));
+                result = _DBHelper.ExecuteNonQuery("sp_AddSchemeOnRollback", paramCollection, CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                string e = ex.ToString();
+            }
+            if (result > 0)
+                return true;
+            else
+                return false;
+        }
+       
+
         public bool InsertTempBulkItam(Invoice invoice)
         {
             int result = 0;

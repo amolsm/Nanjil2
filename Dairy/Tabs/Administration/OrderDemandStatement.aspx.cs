@@ -48,9 +48,6 @@ namespace Dairy
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 StringBuilder sb = new StringBuilder();
-
-
-
                 sb.Append("<style type='text/css'>");
                 sb.Append(".tg  {border-collapse:collapse;border-spacing:0;}");
                 sb.Append(".tg td{font-family:Arial, sans-serif;font-size:15px;padding:1px 1px;border-style:solid;border-width:0.2px;overflow:hidden;word-break:normal;border-bottom: solid 0.2px; align: center; }");
@@ -76,8 +73,8 @@ namespace Dairy
                 sb.Append("</tr>");
 
                 sb.Append(" <tr>");
-                sb.Append("<td class='tg-031e'  rowspan='2' align='center'>Agt.ID<br><br>SeqNo</td>");
-                sb.Append(" <td class='tg-031e'rowspan='2' align='center' width='35%'>Agency Name</td>");
+                sb.Append("<td class='tg-031e'  rowspan='2' align='center'>Agt.ID / Emp.ID<br><br>SeqNo</td>");
+                sb.Append(" <td class='tg-031e'rowspan='2' align='center' width='35%'>Agency Name /<br>Employee Name</td>");
                 sb.Append("<td class='tg-031e' colspan='2' align='center'>T.M.[Lts]</td>");
 
                 sb.Append("<td class='tg-031e' colspan='3' align='center'>D.T.M.[Lts]</td>");
@@ -117,13 +114,35 @@ namespace Dairy
 
                     sb.Append("<tr style='page-break-inside:avoid;'> ");
                     sb.Append("<td class='tg-031e'>");
-                    sb.Append(row["AgentCode"].ToString() + "<br>");
+
+                    if (string.IsNullOrEmpty(row["AgentCode"].ToString()))
+                    {
+                        sb.Append(row["EmployeeCode"].ToString() + "<br>");
+                    }
+                    else
+                    {
+                        sb.Append(row["AgentCode"].ToString() + "<br>");
+                    }
                     sb.Append(row["SeqId"].ToString() + "<br>");
                     sb.Append("</td>");
                     sb.Append("<td class='tg-031e'>");
-                    sb.Append(row["AgentName"].ToString() + "<br>");
-
-                    sb.Append("<sub style='text-align:left'>" + row["MobileNo"].ToString() + "</sub>");
+                    //sb.Append(row["AgentName"].ToString() + "<br>");
+                    if (string.IsNullOrEmpty(row["AgentName"].ToString()))
+                    {
+                        sb.Append(row["EmployeeName"].ToString() + "<br>");
+                    }
+                    else
+                    {
+                        sb.Append(row["AgentName"].ToString() + "<br>");
+                    }
+                    if (string.IsNullOrEmpty(row["MobileNo"].ToString()))
+                    {
+                        sb.Append(row["mobile"].ToString() + "<br>");
+                    }
+                    else
+                    {
+                        sb.Append("<sub style='text-align:left'>" + row["MobileNo"].ToString() + "</sub>");
+                    }
                     sb.Append("</td>");
                     sb.Append(" <td class='tg-031e'><hr>");
                     //sb.Append("</td>");
@@ -143,10 +162,19 @@ namespace Dairy
                     sb.Append("<td class='tg-031e'><hr>");
                     sb.Append("<td class='tg-031e'><hr>");
                     sb.Append("</tr>");
-                    count++;
-                    if (count % 23 == 0 && count != 0)
-                    {
 
+                    count++;
+                    if (count % 22 == 0 && count != 0)
+                    {
+                        //sb.Append("<tr style='page-break-inside:avoid;' > ");
+                        //sb.Append("<th class='tg-baqh' colspan='18'> ");
+                        //sb.Append("</th> ");
+                        //sb.Append("</tr>");
+                        //sb.Append("<tr>");
+                        //sb.Append("<th class='tg-baqh' colspan='2' style= 'text-align:left';>" + DateTime.Now.ToString("dd-MM-yyyy") + "</th>");
+                        //sb.Append("<th class='tg-baqh' colspan='8' style= 'text-align:left'>Prepared By</th>");
+                        //sb.Append("<th class='tg-baqh' colspan='8' style= 'text-align:left'>Verified By</th>");
+                        //sb.Append("</tr>");
                         sb.Append("<style type='text/css'>");
                         sb.Append(".tg  {border-collapse:collapse;border-spacing:0;}");
                         sb.Append(".tg td{font-family:Arial, sans-serif;font-size:15px;padding:1px 1px;border-style:solid;border-width:0.2px;overflow:hidden;word-break:normal;border-bottom: solid 0.2px; align: center; }");
@@ -172,8 +200,8 @@ namespace Dairy
                         sb.Append("</tr>");
 
                         sb.Append(" <tr>");
-                        sb.Append("<td class='tg-031e'  rowspan='2' align='center'>Agt.ID<br><br>SeqNo</td>");
-                        sb.Append(" <td class='tg-031e'rowspan='2' align='center' width='35%'>Agency Name</td>");
+                        sb.Append("<td class='tg-031e'  rowspan='2' align='center'>Agt.ID / Emp.ID<br><br>SeqNo</td>");
+                        sb.Append(" <td class='tg-031e'rowspan='2' align='center' width='35%'>Agency Name /<br>Employee Name</td>");
                         sb.Append("<td class='tg-031e' colspan='2' align='center'>T.M.[Lts]</td>");
 
                         sb.Append("<td class='tg-031e' colspan='3' align='center'>D.T.M.[Lts]</td>");
@@ -208,6 +236,7 @@ namespace Dairy
                         sb.Append("<td class='tg-031e'>125</td>");
                         sb.Append("</tr>");
 
+
                     }
 
 
@@ -216,7 +245,15 @@ namespace Dairy
 
 
 
-
+                //sb.Append("<tr style='page-break-inside:avoid;' > ");
+                //sb.Append("<th class='tg-baqh' colspan='18'> ");
+                //sb.Append("</th> ");
+                //sb.Append("</tr>");
+                //sb.Append("<tr>");
+                //sb.Append("<th class='tg-baqh' colspan='2' style= 'text-align:left';>" + DateTime.Now.ToString("dd-MM-yyyy") + "</th>");
+                //sb.Append("<th class='tg-baqh' colspan='8' style= 'text-align:left'>Prepared By</th>");
+                //sb.Append("<th class='tg-baqh' colspan='8' style= 'text-align:left'>Verified By</th>");
+                //sb.Append("</tr>");
                 sb.Append("</table>");
                 result = sb.ToString();
                 genratedBIll.Text = result;
@@ -229,6 +266,7 @@ namespace Dairy
                 genratedBIll.Text = result;
 
             }
+
         }
 
     }
