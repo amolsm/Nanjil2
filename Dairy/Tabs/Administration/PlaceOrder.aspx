@@ -7,17 +7,22 @@
     <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
     <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
     <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
+
+    <style type="text/css">
+        .listboxl {
+            height:100px !important;
+        }
+       .frmgrp {
+       margin-bottom:1px;
+       }
+       .frmgrp2 {
+       margin-bottom:15px;
+       }
+    </style>
      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<%--    <script type="text/javascript">
 
-        $(function () {
-            $("#MainContent_txtGentOrderDate").datepicker({ dateFormat: 'dd/mm/yy' });
-            $("#MainContent_txtEmployeeOrderDate").datepicker({ dateFormat: 'dd/mm/yy' });
-
-        })
-    </script>--%>
     
 
         <section class="content-header">
@@ -78,14 +83,14 @@
 
                           <div class="col-md-12">
                         <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
                        <asp:TextBox ID="txtGentOrderDate" class="form-control" type="date"  runat="server" required></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      
                   </div><!-- /.form group -->
 
                      
@@ -95,7 +100,7 @@
 
  
                         <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
@@ -104,11 +109,12 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator9" ControlToValidate="dpagentRoute" InitialValue="0" runat="server" ErrorMessage="Please select Route" ValidationGroup="Add" ForeColor="#cc0000"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>
 
                               <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
@@ -117,13 +123,14 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator10" ControlToValidate="dpAgent" InitialValue="0" runat="server" ErrorMessage="Please select Type" ValidationGroup="Add" ForeColor="#cc0000"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>
 
                               
 
                               <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
@@ -132,21 +139,11 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator11" ControlToValidate="dpBrand" InitialValue="0" runat="server" ErrorMessage="Please select Brand" ValidationGroup="Add" ForeColor="#cc0000"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>
 
-                        <%--             <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                      <asp:DropDownList ID="dpAgentSelasEMployee" class="form-control" DataTextField="Name" DataValueField="employeeID" runat="server"  > 
-                       </asp:DropDownList>
-                         
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-                         </div>--%> 
+                       
 
                           </div>
                     <div class="col-md-12">
@@ -161,14 +158,12 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator12" ControlToValidate="dpAgentProductType" InitialValue="0" runat="server" ErrorMessage="Please select Type" ValidationGroup="Add" ForeColor="#cc0000"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>
 
                         
-                                              
-                        
-                          
-                        
+                     
                           <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -179,6 +174,7 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator13" ControlToValidate="dpAgentProductdetaisl" InitialValue="0" runat="server" ErrorMessage="Please select Product" ValidationGroup="Add" ForeColor="#cc0000"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>
               
@@ -188,10 +184,14 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtagentOrderqty" class="form-control"   placeholder="Quantity " runat="server" ValidationGroup="Add"></asp:TextBox>                        
+                       <asp:TextBox ID="txtagentOrderqty" class="form-control"   placeholder="Quantity " runat="server" ValidationGroup="Add" Type="number" step="0.00"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="txtagentOrderqty"
+        ErrorMessage="Quantity Required" ValidationGroup="Add" ForeColor="Red"></asp:RequiredFieldValidator> 
+                                 <asp:CompareValidator ID="CompareValidator3" runat="server" ControlToValidate="txtagentOrderqty" ErrorMessage="Quantity Must be &gt; 0" Operator="GreaterThan" Type="Double" ValueToCompare="0" ValidationGroup="Add" ForeColor="#cc0000"/>
+                                 
                  </div> 
 
                     <div class="col-lg-3">
@@ -245,19 +245,17 @@
 
                               </div>
                              <div class="col-lg-4 ">
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="dpAgentProductdetaisl" InitialValue="0" runat="server" ErrorMessage="Please select Product" ValidationGroup="Add" ForeColor="#cc0000"></asp:RequiredFieldValidator>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="dpAgentProductType" InitialValue="0" runat="server" ErrorMessage="Please select Type" ValidationGroup="Add" ForeColor="#cc0000"></asp:RequiredFieldValidator>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="dpAgent" InitialValue="0" runat="server" ErrorMessage="Please select Agent" ValidationGroup="Add" ForeColor="#cc0000"></asp:RequiredFieldValidator>
-                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="dpBrand" InitialValue="0" runat="server" ErrorMessage="Please select Brand" ValidationGroup="Add" ForeColor="#cc0000"></asp:RequiredFieldValidator>
-                                 <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="txtagentOrderqty" ErrorMessage="Quantity Must be &gt; 0" Operator="GreaterThan" Type="Double" ValueToCompare="0" ValidationGroup="Add" ForeColor="#cc0000"/>
-                              </div>
+                                 
+                             
+                             </div>
                              <div class="col-lg-3  pull-right">
                   <div class="form-group">
                     <div class="input-group">
                       
                    
                        
-                        <asp:Button ID="btnAddAgentProductItem" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnAddAgentProductItem_click"   Text="Add" ValidationGroup="Add"   />                    
+                        <asp:Button ID="btnAddAgentProductItem" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnAddAgentProductItem_click"   Text="Add" ValidationGroup="Add"  />     
+                                    
                      &nbsp;   <asp:Button ID="btnAgentNewOrder" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnAgentNewOrder_clcik"    Text="New Order" ValidationGroup="sb"   />                    
                         
                     </div><!-- /.input group -->
@@ -340,7 +338,7 @@
                       
                        <asp:Button ID="btnAgentORderSubmit" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnAgentORderSubmit_click"   Text="Submit" ValidationGroup="Submit"   />                    
                         &nbsp;
-                         <asp:Button ID="btnagentItamsremove" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnagentItamsremove_click"     Text="Remove Item" ValidationGroup=""   Visible="false"/>  
+                         <asp:Button ID="btnagentItamsremove" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnagentItamsremove_click"     Text="Remove Item" ValidationGroup=""   />  
                         
                         
                     </div><!-- /.input group -->
@@ -375,7 +373,7 @@
                           
                       </div> 
                             <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
@@ -384,11 +382,12 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="dpEmploueeRoute" InitialValue="0" runat="server" ErrorMessage="Please select Route" ValidationGroup="EMployyeOrder" ForeColor="#cc0000"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>
 
       <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
@@ -397,23 +396,11 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate="dpEmployee" InitialValue="0" runat="server" ErrorMessage="Please select Employee" ValidationGroup="EMployyeOrder" ForeColor="#cc0000"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>
 
-   <%--    <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                      <asp:DropDownList ID="dpEmploueeSalesPErsion" class="form-control" DataTextField="Name" DataValueField="employeeID" runat="server"  > 
-                       </asp:DropDownList>
-                         
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-                         </div>--%>
-                       
-           
+ 
             
                         
               
@@ -430,6 +417,7 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate="dpEmployeeProductType" InitialValue="0" runat="server" ErrorMessage="Please select Type" ValidationGroup="EMployyeOrder" ForeColor="#cc0000"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>
            
@@ -444,6 +432,7 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="dpEmployeeProductDetails" InitialValue="0" runat="server" ErrorMessage="Please select Product" ValidationGroup="EMployyeOrder" ForeColor="#cc0000"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>
 
@@ -455,7 +444,8 @@
                       </div>
                        <asp:TextBox ID="txtQtyEmployee" class="form-control"   placeholder="Quantity " runat="server" ValidationGroup="EMployyeOrder"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtQtyEmployee" runat="server" ErrorMessage="Enter Quantity" ValidationGroup="EMployyeOrder" ForeColor="#cc0000"></asp:RequiredFieldValidator>
+                      <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToValidate="txtQtyEmployee" ErrorMessage="Quantity Must be &gt; 0" Operator="GreaterThan" Type="Double" ValueToCompare="0" ValidationGroup="EMployyeOrder" ForeColor="#cc0000"/>
                   </div><!-- /.form group -->
 
                      
@@ -474,11 +464,11 @@
 
                               </div>
                              <div class="col-lg-4 ">
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="dpEmployeeProductDetails" InitialValue="0" runat="server" ErrorMessage="Please select Product" ValidationGroup="EMployyeOrder" ForeColor="#cc0000"></asp:RequiredFieldValidator>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate="dpEmployeeProductType" InitialValue="0" runat="server" ErrorMessage="Please select Type" ValidationGroup="EMployyeOrder" ForeColor="#cc0000"></asp:RequiredFieldValidator>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate="dpEmployee" InitialValue="0" runat="server" ErrorMessage="Please select Employee" ValidationGroup="EMployyeOrder" ForeColor="#cc0000"></asp:RequiredFieldValidator>
+                                 
+                                 
+                                
                                 <%--  <asp:RequiredFieldValidator ID="RequiredFieldValidator8" ControlToValidate="dpBrand" InitialValue="0" runat="server" ErrorMessage="Please select Brand" ValidationGroup="EMployyeOrder" ForeColor="#cc0000"></asp:RequiredFieldValidator>--%>
-                                 <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToValidate="txtQtyEmployee" ErrorMessage="Quantity Must be &gt; 0" Operator="GreaterThan" Type="Double" ValueToCompare="0" ValidationGroup="EMployyeOrder" ForeColor="#cc0000"/>
+                                 
                               </div>
       <div class="col-lg-4 pull-right" style="text-align:right">
                   <div class="form-group">
