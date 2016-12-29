@@ -132,8 +132,10 @@
                   <%--<li><a href="/Tabs/Administration/ViewDispatchOrders.aspx"><i class="fa fa-circle-o"></i> View Dispatch Order</a></li>--%>
                    <li><a href="/Tabs/Administration/ViewDispatchSummary.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary</a></li>
                     <li><a href="/Tabs/Administration/EditDispatchs.aspx"><i class="fa fa-circle-o"></i> Edit Dispatch </a></li>
-                   <li><a href="../Tabs/Administration/EditReturnedTrays.aspx"><i class="fa fa-circle-o"></i>Edit Returned Trays</a></li>
-                  <li><a href="../Tabs/Administration/EditReturnedProducts.aspx"><i class="fa fa-circle-o"></i>Edit Returned Products</a></li>
+                 
+                   <li><a href="/Tabs/Administration/EditReturnedTrays.aspx"><i class="fa fa-circle-o"></i>Edit Returned Trays</a></li>
+                   <li><a href="/Tabs/Administration/EditReturnScheme.aspx"><i class="fa fa-circle-o"></i>Edit Return Scheme</a></li>
+                  <li><a href="/Tabs/Administration/EditReturnedProducts.aspx"><i class="fa fa-circle-o"></i>Edit Returned Products</a></li>
                   <li><a href="/Tabs/Administration/ViewDispatchSummaryUsers.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary Shiftwise</a></li>
                     <li><a href="/Tabs/Administration/ViewDispatchUserShiftwise.aspx"><i class="fa fa-circle-o"></i> View Dispatch UserShiftwise</a></li>
                  <li><a href="/Tabs/Administration/AddReturnedItems.aspx"><i class="fa fa-circle-o"></i> Returned Products</a></li>
@@ -215,7 +217,8 @@
                    <li><a href="/Tabs/Marketing/RefundSchemeSummary.aspx"><i class="fa fa-circle-o"></i>Refund Scheme Summary  </a></li>
                
                    <li><a href="/Tabs/Marketing/AgentListNotPlacedOrder.aspx"><i class="fa fa-circle-o"></i>AgentList Not Placed Order  </a></li>
-                  <li><a href="/Tabs/Marketing/NewAgentlistSummary.aspx"><i class="fa fa-circle-o"></i>New Agent List  </a></li>
+                 <%-- <li><a href="/Tabs/Marketing/NewAgentlistSummary.aspx"><i class="fa fa-circle-o"></i>New Agent List  </a></li>--%>
+                   <li><a href="/Tabs/Marketing/NewAgentList.aspx"><i class="fa fa-circle-o"></i>New Agent List  </a></li>
                   <li><a href="/Tabs/Marketing/AgentSlabReportList.aspx"><i class="fa fa-circle-o"></i>AgentList Basis of Slab</a></li>
                    <li><a href="/Tabs/Marketing/DeactivateAgentList.aspx"><i class="fa fa-circle-o"></i>Deactivate Agent List  </a></li>
                     <li><a href="/Tabs/Marketing/PartywiseDamageReplacementSummary.aspx"><i class="fa fa-circle-o"></i>Partywise DamageReplacement Summary</a></li>

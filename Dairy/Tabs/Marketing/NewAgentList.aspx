@@ -1,22 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NewAgentlistSummary.aspx.cs" Inherits="Dairy.Tabs.Marketing.NewAgentlistSummary" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NewAgentList.aspx.cs" Inherits="Dairy.Tabs.Marketing.NewAgentList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-     <section class="content-header">
+      <section class="content-header">
           <h1>
         New Agent List
              <small>Administration</small>  
           </h1> 
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
-            <li class="active">   New Agent List </li>
+            <li class="active">    New Agent List </li>
           </ol>
         </section>
-
-
-
-       <section class="content">
-
+      <section class="content">
             <div class="row">
                 <asp:UpdatePanel runat="server" ID="pnlError" UpdateMode="Conditional">
                     <ContentTemplate>
@@ -44,8 +40,7 @@
                 </asp:UpdatePanel>
             </div>
 
-
-
+          
            <div class="box  ">
             <div class="box-header with-border">
               <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text=" New Agent List "></asp:Label> </h3>
@@ -58,11 +53,9 @@
                
               
                       <asp:UpdatePanel runat="server" ID="upMain" UpdateMode="Conditional">
-                    <ContentTemplate>           
-        
-             
+                    <ContentTemplate>      
 
-             <div class="row">
+                           <div class="row">
                  
                              <div class="col-lg-3">
                   <div class="form-group" >
@@ -70,7 +63,7 @@
                       <div class="input-group-addon">
                        Start Date
                       </div>
-                       <asp:TextBox ID="txtStartDate" class="form-control"  type="date" placeholder="Date" runat="server" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtStartDate" class="form-control"  type="date" placeholder="Date" runat="server"  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -78,15 +71,15 @@
                      
                        
                           
-                      </div>       
-                
-                      <div class="col-lg-3">
+                      </div>     
+
+                                <div class="col-lg-3">
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
                        End Date
                       </div>
-                       <asp:TextBox ID="txtEndDate" class="form-control"  type="date" placeholder="Date" runat="server" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtEndDate" class="form-control"  type="date" placeholder="Date" runat="server"   ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -95,8 +88,8 @@
                        
                           
                       </div>       
-                                  
-           <div class="col-lg-3">
+
+                                   <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -108,11 +101,7 @@
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
                          </div>
-          
-             
-            
-                 
-                 <div class="col-lg-3">
+              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                                <asp:Button ID="btnViewDetails" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnViewDetails_Click"  Text="View Details"    />     
@@ -126,8 +115,7 @@
                        
                           
                       </div> 
-                        
-                        </div>
+                                </div>
                         <asp:Panel runat="server" ID="pnlBill">
                         <asp:Literal runat="server" ID="genratedBIll"></asp:Literal>
               </asp:Panel>
@@ -140,9 +128,9 @@
             </div><!-- /.box-body -->            
           </div><!-- /.box -->
           
-
-    </section>
-     <script type = "text/javascript">
+                        
+       </section>
+      <script type = "text/javascript">
          function PrintPanel() {
              var panel = document.getElementById("<%=pnlBill.ClientID %>");
              var printWindow = window.open('', '', 'height=600,width=800');
@@ -157,7 +145,7 @@
              return false;
          }
     </script>
-    <script>
+     <script>
          yepnope({ // or Modernizr.load
              test: Modernizr.inputtypes.date,
              nope: [

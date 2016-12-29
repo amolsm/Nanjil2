@@ -157,7 +157,7 @@
              return false;
          }
     </script>
-     <script>
+    <script>
          yepnope({ // or Modernizr.load
              test: Modernizr.inputtypes.date,
              nope: [

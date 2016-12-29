@@ -71,6 +71,11 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ErrorPages\404.jpg" />
+    <Content Include="ErrorPages\designi.jpg" />
+    <Content Include="ErrorPages\customcss.css" />
+    <Content Include="ErrorPages\Oops.aspx" />
+    <Content Include="ErrorPages\PageNotFound.aspx" />
     <Content Include="packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll" />
     <Content Include="packages\EntityFramework.5.0.0\lib\net40\EntityFramework.xml" />
     <Content Include="packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll" />
@@ -107,6 +112,7 @@
     <Content Include="Tabs\Administration\EditOrder.aspx" />
     <Content Include="Tabs\Administration\EditReturnedProducts.aspx" />
     <Content Include="Tabs\Administration\EditReturnedTrays.aspx" />
+    <Content Include="Tabs\Administration\EditReturnScheme.aspx" />
     <Content Include="Tabs\Administration\GenrateBillThermal.aspx" />
     <Content Include="Tabs\Administration\IncentiveSetup.aspx" />
     <Content Include="Tabs\Administration\OrderDemandStatement.aspx" />
@@ -157,6 +163,7 @@
     <Content Include="Tabs\Marketing\ItemwiseStaffSalesSummary.aspx" />
     <Content Include="Tabs\Marketing\MarketingSalesAnalysisItemwise.aspx" />
     <Content Include="Tabs\Marketing\Mass Issue.aspx" />
+    <Content Include="Tabs\Marketing\NewAgentList.aspx" />
     <Content Include="Tabs\Marketing\NewAgentlistSummary.aspx" />
     <Content Include="Tabs\Marketing\PartywiseDamageReplacementSummary.aspx" />
     <Content Include="Tabs\Marketing\PartywiseIncentiveSummary.aspx" />
@@ -1141,6 +1148,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dsbills.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ErrorPages\Oops.aspx.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\Oops.aspx.designer.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\PageNotFound.aspx.cs">
+      <DependentUpon>PageNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\PageNotFound.aspx.designer.cs">
+      <DependentUpon>PageNotFound.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reports\AgentSchemeReport.aspx.cs">
       <DependentUpon>AgentSchemeReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1317,6 +1338,13 @@
     </Compile>
     <Compile Include="Tabs\Administration\EditReturnedTrays.aspx.designer.cs">
       <DependentUpon>EditReturnedTrays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\EditReturnScheme.aspx.cs">
+      <DependentUpon>EditReturnScheme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\EditReturnScheme.aspx.designer.cs">
+      <DependentUpon>EditReturnScheme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Administration\GenrateBillThermal.aspx.cs">
       <DependentUpon>GenrateBillThermal.aspx</DependentUpon>
@@ -1659,6 +1687,13 @@
     </Compile>
     <Compile Include="Tabs\Marketing\Mass Issue.aspx.designer.cs">
       <DependentUpon>Mass Issue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\NewAgentList.aspx.cs">
+      <DependentUpon>NewAgentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\NewAgentList.aspx.designer.cs">
+      <DependentUpon>NewAgentList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Marketing\NewAgentlistSummary.aspx.cs">
       <DependentUpon>NewAgentlistSummary.aspx</DependentUpon>

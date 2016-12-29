@@ -10,15 +10,15 @@ using System.Web.UI.WebControls;
 
 namespace Dairy.Tabs.Marketing
 {
-    public partial class NewAgentlistSummary : System.Web.UI.Page
+    public partial class NewAgentList : System.Web.UI.Page
     {
         DataSet DS;
-        MarketingData marketingdata;
+        MarketingData marketingdatas;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-              
+
                 DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "routeMaster", "IsArchive=1");
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {
@@ -29,21 +29,17 @@ namespace Dairy.Tabs.Marketing
                 txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                 txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             }
+
         }
 
         protected void btnViewDetails_Click(object sender, EventArgs e)
         {
             string result = string.Empty;
-            marketingdata = new MarketingData();
-            DataSet DS1 = new DataSet();
-            DateTime date1 = Convert.ToDateTime(txtStartDate.Text,
-          System.Globalization.CultureInfo.GetCultureInfo("hi-IN").DateTimeFormat);
-            DateTime date2 = Convert.ToDateTime(txtEndDate.Text,
-         System.Globalization.CultureInfo.GetCultureInfo("hi-IN").DateTimeFormat);
-            DS1 = marketingdata.ViewNewAgentList((Convert.ToDateTime(date1)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(date2)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
-            if (!Comman.Comman.IsDataSetEmpty(DS1))
+            marketingdatas = new MarketingData();
+            DS = new DataSet();
+            DS = marketingdatas.NewAgentListDetails((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
+            if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-
                 StringBuilder sb = new StringBuilder();
 
 
@@ -106,7 +102,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<td colspan='4'>");
 
                 sb.Append(Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
-               
+
                 sb.Append("</td>");
                 sb.Append("<td colspan='3' style='text-align:right'>");
                 sb.Append(Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
@@ -134,7 +130,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</tr>");
                 int routcount = 0;
                 int count = 0;
-                foreach (DataRow rows in DS1.Tables[1].Rows)
+                foreach (DataRow rows in DS.Tables[1].Rows)
                 {
                     routcount++;
                     sb.Append("<tr> ");
@@ -154,8 +150,8 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("</tr>");
 
                     int srno = 0;
-                    
-                    foreach (DataRow row in DS1.Tables[0].Rows)
+
+                    foreach (DataRow row in DS.Tables[0].Rows)
                     {
 
 
@@ -200,7 +196,7 @@ namespace Dairy.Tabs.Marketing
 
                     }
 
-                
+
 
                 }
                 sb.Append("<tr> ");
@@ -230,9 +226,9 @@ namespace Dairy.Tabs.Marketing
 
                 result = sb.ToString();
                 genratedBIll.Text = result;
-             
+
                 Session["ctrl"] = pnlBill;
-               
+
 
             }
             else
@@ -241,6 +237,7 @@ namespace Dairy.Tabs.Marketing
                 genratedBIll.Text = result;
 
             }
+
         }
     }
-}
+    }

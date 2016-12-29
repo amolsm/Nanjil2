@@ -49,7 +49,7 @@
 
            <div class="box  ">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text=" New Agent List "></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text=" Agent List Not Placed Order "></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 

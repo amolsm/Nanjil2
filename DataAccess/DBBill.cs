@@ -42,6 +42,15 @@ namespace DataAccess
             return _DBHelper.ExecuteDataSet("sp_BoothReportSalesAnalysisUser", paramCollection, CommandType.StoredProcedure);
         }
 
+        public DataSet GetEditReturnSchemeDetails(string date, int routeId, int flag)
+        {
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@OrderDate", date));
+            paramCollection.Add(new DBParameter("@RouteID", routeId));
+            paramCollection.Add(new DBParameter("@flag", flag));
+            return _DBHelper.ExecuteDataSet("sp_EditReturnSchemeRoleback", paramCollection, CommandType.StoredProcedure);
+        }
+
         public DataSet AgentSchemeSummaryOpeningClosing(string startDate, string endDate, int routeId, int agentId)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();

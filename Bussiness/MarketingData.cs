@@ -61,6 +61,12 @@ namespace Bussiness
             return dbMarketing.AgentRefundSchemeSummary(StartDate, EndDate, RouteID, AgentID);
         }
 
+        public DataSet NewAgentListDetails(string startdate, string enddate, int routeid)
+        {
+            return dbMarketing.NewAgentListDetails(startdate, enddate, routeid);
+
+        }
+
         public DataSet ItemWiseStaffSalesSummarybyDate(string StartDate, string EndDate, int EmployeID)
         {
             return dbMarketing.ItemWiseStaffSalesSummarybyDate(StartDate, EndDate, EmployeID);
