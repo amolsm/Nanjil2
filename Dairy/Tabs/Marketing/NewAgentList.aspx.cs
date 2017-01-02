@@ -37,9 +37,11 @@ namespace Dairy.Tabs.Marketing
             string result = string.Empty;
             marketingdatas = new MarketingData();
             DS = new DataSet();
+          
             DS = marketingdatas.NewAgentListDetails((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
+               
                 StringBuilder sb = new StringBuilder();
 
 
@@ -172,7 +174,7 @@ namespace Dairy.Tabs.Marketing
                             sb.Append("</td>");
 
                             sb.Append("<td>");
-                            sb.Append(Convert.ToDateTime(row["DateofJoining"]).ToString("dd-MM-yyyy"));
+                            sb.Append(row["DateofJoining"].ToString());
                             sb.Append("</td>");
                             sb.Append("<td style='text-align:right'>");
                             sb.Append(row["Name"].ToString());

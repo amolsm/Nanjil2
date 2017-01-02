@@ -65,7 +65,7 @@
                       </div>
                        <asp:TextBox ID="txtStartDate" class="form-control"  type="date" placeholder="Date" runat="server"  ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                     
                   </div><!-- /.form group -->
 
                      
@@ -81,9 +81,9 @@
                       </div>
                        <asp:TextBox ID="txtEndDate" class="form-control"  type="date" placeholder="Date" runat="server"   ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                 
                   </div><!-- /.form group -->
-
+                                   
                      
                        
                           
@@ -99,6 +99,7 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                    
                   </div><!-- /.form group -->
                          </div>
               <div class="col-lg-3">
@@ -110,7 +111,7 @@
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
-
+              
                      
                        
                           

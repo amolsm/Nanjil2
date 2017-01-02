@@ -140,7 +140,7 @@
                                 <td><%# Eval("RouteCode")+" "+ Eval("RouteName")%></td>
                                 <td><%#  Eval("AgentCode") +" "+  Eval("AgentName")%></td>
                                
-                                <td><%# Eval("schemeAmount").ToString()%></td>
+                                <td><%# Convert.ToDecimal(Eval("schemeAmount")).ToString("0.00")%></td>
                                        
                                         
                                         

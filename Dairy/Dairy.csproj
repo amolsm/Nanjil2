@@ -71,7 +71,6 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ErrorPages\404.jpg" />
     <Content Include="ErrorPages\designi.jpg" />
     <Content Include="ErrorPages\customcss.css" />
     <Content Include="ErrorPages\Oops.aspx" />

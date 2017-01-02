@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Oops.aspx.cs" Inherits="Dairy.ErrorPages.Opps" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-     <link href="customcss.css" rel="stylesheet" />
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 
-
+  
     <div class="header-div">
         <div class="overlay">
 
@@ -15,8 +15,8 @@
                        
                     </div>
                     <div class="col-md-8 ">
-                        <h1> <strong>Oops ! </strong>An Error Has Occurred</h1>
-                        <h2>An unexpected error occurred on our website.The website administrator has been notified.</h2>
+                        <h1> <strong>Oops ! </strong>Something went wrong</h1>
+                        <h2>An unexpected error occurred on our website.Please contact to admin.</h2>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                         </li>
                         <li>The page has been deleted for some reason.
                         </li>
-                        <li>There are also some other reasons that can't be disclosed here so you should contact admin at 
+                        <li>There are also some other reasons that can't be disclosed here so you should contact admin . 
                        
                         </li>
                     </ul>
@@ -48,7 +48,7 @@
                 <div class="col-md-3 text-center">
                     <h2>Quick Links</h2>
                     <hr />
-                    <a href="../Authentication/LoginT.aspx" class="btn btn-info">Navigate to Home Page</a>
+                    <a href="/Authentication/LoginT.aspx" class="btn btn-info">Navigate to Home Page</a>
                     <hr />
                     <a href="#" class="btn  btn-warning">Launch a Quick e-mail</a>
                 </div>
@@ -105,5 +105,5 @@
 
 <script type="text/javascript">/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script>
 
-
+      
 </asp:Content>

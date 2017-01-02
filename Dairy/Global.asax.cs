@@ -53,8 +53,9 @@ namespace Dairy
             //Response.Write("<h2>Global Page Error</h2>\n");
             //Response.Write(
             //    "<p>" + exc.Message + "</p>\n");
-            //Response.Write("Return to the <a href='Default.aspx'>" +
+            //Response.Write("Return to the <a href='/Authentication/LoginT.aspx'>" +
             //    "Default Page</a>\n");
+           
 
             //// Log the exception and notify system operators
             //ExceptionUtility.LogException(exc, "DefaultPage");

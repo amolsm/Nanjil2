@@ -123,7 +123,8 @@ namespace Dairy
                     {
                         sb.Append(row["AgentCode"].ToString() + "<br>");
                     }
-                    sb.Append(row["SeqId"].ToString() + "<br>");
+                    //sb.Append(row["SeqId"].ToString() + "<br>");
+                    sb.Append(count.ToString() + "<br>");
                     sb.Append("</td>");
                     sb.Append("<td class='tg-031e'>");
                     //sb.Append(row["AgentName"].ToString() + "<br>");

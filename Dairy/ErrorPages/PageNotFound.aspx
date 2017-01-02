@@ -60,7 +60,7 @@
                 <div class="col-md-3 text-center">
                     <h2>Quick Links</h2>
                     <hr />
-                    <a href="../Authentication/LoginT.aspx" class="btn btn-info">Navigate to Home Page</a>
+                     <a href="/Authentication/LoginT.aspx" class="btn btn-info">Navigate to Home Page</a>
                     <hr />
                     <a href="#" class="btn  btn-warning">Launch a Quick e-mail</a>   </div>
             </div>

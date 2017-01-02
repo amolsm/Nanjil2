@@ -175,7 +175,7 @@
                         <td><%# Eval("AgentCode")%></td>
                           
                           <td><%# Eval("AgentName")%></td>
-                        <td style="text-align:right"><%# Eval("Total")%></td>
+                        <td style="text-align:right"><%# Convert.ToDecimal(Eval("Total")).ToString("0.00")%></td>
                       
                         <td style="text-align:center">
 

@@ -29,7 +29,7 @@ namespace Dairy.Tabs.Administration
                 btnAddagent.Visible = true;
                 btnupdateagent.Visible = false;
                 //txtAgentCode.Enabled = false;
-                txtDateOfJoing.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                txtDateOfJoing.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 
             }
 
