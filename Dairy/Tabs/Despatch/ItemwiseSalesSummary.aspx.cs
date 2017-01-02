@@ -59,7 +59,7 @@ namespace Dairy.Tabs.Despatch
                 sb.Append(".tg .tg-yw4l{vertical-align:top}");
                 sb.Append(".tg .tg-baqh{text-align:center;vertical-align:top}");
                 sb.Append("</style>");
-                sb.Append("<table class='tg style1' style='page-break-inside:avoid; align:center;'>");
+                sb.Append("<table class='tg style1' style='align:center;'>");
                 sb.Append("<colgroup>");
                 sb.Append("<col style = 'width:120px'>");
                 sb.Append("<col style = 'width:160px'>");
@@ -163,8 +163,8 @@ namespace Dairy.Tabs.Despatch
 
                 foreach (DataRow row2 in DS.Tables[2].Rows)
                 {
-                    sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '7'> &nbsp; </td> </tr>");
-                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'> <td colspan = '7'> &nbsp; </td> </tr>");
+                    sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'>");
 
 
                     sb.Append("<td class='tg-yw4l' colspan='4'  style='text-align:left'>");
@@ -256,8 +256,8 @@ namespace Dairy.Tabs.Despatch
 
                 }
 
-                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '7'> &nbsp; </td> </tr>");
-                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'> <td colspan = '7'> &nbsp; </td> </tr>");
+                sb.Append("<tr style='border-bottom:1px solid';page-break-inside:avoid;>");
 
 
                 sb.Append("<td class='tg-yw4l' colspan='4'  style='text-align:left'>");
@@ -319,7 +319,7 @@ namespace Dairy.Tabs.Despatch
 
                 if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1 || Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
                 {
-                    sb.Append("<tr>");
+                    sb.Append("<tr style='page-break-inside:avoid;'>");
                     sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:left'>");
                     sb.Append("<b>Scheme<b>");
                     sb.Append("</td>");
@@ -335,8 +335,8 @@ namespace Dairy.Tabs.Despatch
 
                     sb.Append("</tr>");
                 }
-                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '7'> &nbsp; </td> </tr>");
-                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'> <td colspan = '7'> &nbsp; </td> </tr>");
+                sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'>");
                 sb.Append("<td  colspan='3' class='tg-yw4l'  style='text-align:left'>");
                 //totalamount = (string.IsNullOrEmpty(DS.Tables[1].Rows[0]["TotalAmount"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[1].Rows[0]["TotalAmount"]));
                 totalamount += totalscheme;

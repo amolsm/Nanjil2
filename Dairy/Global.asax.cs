@@ -55,12 +55,12 @@ namespace Dairy
             //    "<p>" + exc.Message + "</p>\n");
             //Response.Write("Return to the <a href='/Authentication/LoginT.aspx'>" +
             //    "Default Page</a>\n");
-           
+
 
             //// Log the exception and notify system operators
             //ExceptionUtility.LogException(exc, "DefaultPage");
             //ExceptionUtility.NotifySystemOps(exc);
-
+            Server.Transfer("~/ErrorPages/Oops.aspx");
             // Clear the error from the server
             Server.ClearError();
 

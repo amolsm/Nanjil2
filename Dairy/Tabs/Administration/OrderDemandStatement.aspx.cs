@@ -106,11 +106,13 @@ namespace Dairy
                 sb.Append("<td class='tg-031e'>200</td>");
                 sb.Append("<td class='tg-031e'>500</td>");
                 sb.Append("<td class='tg-031e'>60</td>");
-                sb.Append("<td class='tg-031e'>125</td>");
+                sb.Append("<td class='tg-031e'>100</td>");
                 sb.Append("</tr>");
                 int count = 0;
+                int billseq = 0;
                 foreach (DataRow row in DS.Tables[0].Rows)
                 {
+                    billseq++;
 
                     sb.Append("<tr style='page-break-inside:avoid;'> ");
                     sb.Append("<td class='tg-031e'>");
@@ -124,7 +126,7 @@ namespace Dairy
                         sb.Append(row["AgentCode"].ToString() + "<br>");
                     }
                     //sb.Append(row["SeqId"].ToString() + "<br>");
-                    sb.Append(count.ToString() + "<br>");
+                    sb.Append(billseq.ToString() + "<br>");
                     sb.Append("</td>");
                     sb.Append("<td class='tg-031e'>");
                     //sb.Append(row["AgentName"].ToString() + "<br>");

@@ -7,6 +7,7 @@
      <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript">
       Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
       function InIEvent() {
@@ -24,7 +25,7 @@
           });
       }
     </script>
-   <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
+  
     <section class="content-header">
           <h1>
              Manage Returned Items
@@ -644,4 +645,20 @@
             });
         });
     </script>--%>
+     <script type = "text/javascript">
+        
+
+
+         //-->
+
+         $(document).ready(function () {
+             
+             $('#example1').dataTable({
+                 "bPaginate": false,
+                 "paging": false
+
+             });
+
+         });
+    </script>
 </asp:Content>

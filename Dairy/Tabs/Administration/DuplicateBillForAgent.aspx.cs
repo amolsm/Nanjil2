@@ -35,17 +35,17 @@ namespace Dairy.Tabs.Administration
 
             string result = string.Empty;
             string BeginBillNo;
-            string EndBillNo;
-            if (txtBeginBillNo.Text == "" && txtEndBillNo.Text == "")
+          
+            if (txtBeginBillNo.Text == "")
             {
-                BeginBillNo = txtBeginBillNo.Text = "0";
-                EndBillNo = txtEndBillNo.Text = "0";
+                BeginBillNo ="0";
+               
 
             }
             else
             {
                 BeginBillNo = txtBeginBillNo.Text;
-                EndBillNo = txtEndBillNo.Text;
+               
             }
 
             DS = billdata.GenrateAgencyDuplicateBillByDate((Convert.ToDateTime(txtDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), BeginBillNo, BeginBillNo);

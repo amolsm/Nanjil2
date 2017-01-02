@@ -137,7 +137,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
-                sb.Append("<u>  Dispatch Summary (Duplicate) </u> <br/>");
+                sb.Append("<u>  Dispatch Summary & GatePass (Duplicate) </u> <br/>");
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
