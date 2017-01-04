@@ -86,6 +86,27 @@ namespace DataAccess
             return DS;
         }
 
+        public DataSet GetCashier(string date, int routeid, int salesmanid)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@RouteID", routeid));
+                paramCollection.Add(new DBParameter("@DispatchDate", date));
+                paramCollection.Add(new DBParameter("@SalesmanId", salesmanid));
+
+                DS = _DBHelper.ExecuteDataSet("sp_CashierRoutewiseSalesman", paramCollection, CommandType.StoredProcedure);
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return DS;
+        }
+
         public DataSet GetRoutewiseReturnTraysReport(string startdate, string enddate, int routeid,int flag)
         {
             DataSet DS = new DataSet();

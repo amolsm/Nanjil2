@@ -73,7 +73,7 @@
                        <%-- <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
                           <asp:Label runat="server" Text="Trays"></asp:Label>
                       </div>
-                       <asp:TextBox ID="txtTraysReturn" class="form-control" ToolTip="Trays Return"  placeholder="Trays Return" runat="server" ValidationGroup="edit" type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtTraysReturn" class="form-control" ToolTip="Trays Return"  placeholder="Trays Return" runat="server" ValidationGroup="edit" type="number" min="0"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -87,7 +87,7 @@
                        <%-- <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
                           <asp:Label runat="server" Text="IceBox"></asp:Label>
                       </div>
-                       <asp:TextBox ID="txtIceBoxReturn" class="form-control" ValidationGroup="edit" ToolTip="Ice Box Return" placeholder="Ice Box Return" runat="server" type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtIceBoxReturn" class="form-control" ValidationGroup="edit" ToolTip="Ice Box Return" placeholder="Ice Box Return" runat="server" type="number" min="0"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -101,7 +101,7 @@
                        <%-- <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
                           <asp:Label runat="server" Text="Cartons"></asp:Label>
                       </div>
-                       <asp:TextBox ID="txtCartonsReturn" ToolTip="Cartons Return" class="form-control" ValidationGroup="edit"  placeholder="Cartons Return" runat="server" type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtCartonsReturn" ToolTip="Cartons Return" class="form-control" ValidationGroup="edit"  placeholder="Cartons Return" runat="server" type="number" min="0"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -115,7 +115,7 @@
                         <%--<i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
                           <asp:Label runat="server" Text="Others"></asp:Label>
                       </div>
-                       <asp:TextBox ID="txtOtherReturn" class="form-control" ValidationGroup="edit" ToolTip="Other Return" placeholder="Other Return" runat="server" type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtOtherReturn" class="form-control" ValidationGroup="edit" ToolTip="Other Return" placeholder="Other Return" runat="server" type="number" min="0"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -189,7 +189,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtDispatchId" class="form-control"   placeholder="Dispatch Id" ToolTip="Dispatch Id" runat="server" required ValidationGroup="search"></asp:TextBox>                        
+                       <asp:TextBox ID="txtDispatchId" class="form-control"   placeholder="Dispatch Id" ToolTip="Dispatch Id" runat="server" required ValidationGroup="search" type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -327,7 +327,7 @@
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtTraysDispached" ValidationGroup="none" class="form-control" Type="number"  ToolTip="Trays Dispatched" placeholder="Trays Dispatched" runat="server"  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtTraysDispached" ValidationGroup="none" class="form-control" type="number" min="0"  ToolTip="Trays Dispatched" placeholder="Trays Dispatched" runat="server"  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -340,7 +340,7 @@
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtIceBox" ValidationGroup="none" class="form-control" Type="number"  ToolTip="Ice Box Dispatched" placeholder="Ice Box Dispatched" runat="server"  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtIceBox" ValidationGroup="none" class="form-control" type="number" min="0" ToolTip="Ice Box Dispatched" placeholder="Ice Box Dispatched" runat="server"  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -353,7 +353,7 @@
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtCartons" ValidationGroup="none" class="form-control" Type="number"  ToolTip="Cartons/Ice Pads Dispatched" placeholder="Cartons/Ice Pads Dispatched" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtCartons" ValidationGroup="none" class="form-control" type="number" min="0" ToolTip="Cartons/Ice Pads Dispatched" placeholder="Cartons/Ice Pads Dispatched" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -366,7 +366,7 @@
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtOthers" ValidationGroup="none" class="form-control" Type="number" ToolTip="Others Dispatched" placeholder="Others Dispatched" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtOthers" ValidationGroup="none" class="form-control" type="number" min="0" ToolTip="Others Dispatched" placeholder="Others Dispatched" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

@@ -186,7 +186,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtDispatchId" class="form-control"   placeholder="Dispatch Id" ToolTip="Dispatch Id" runat="server" required ValidationGroup="search"></asp:TextBox>                        
+                       <asp:TextBox ID="txtDispatchId" class="form-control"   placeholder="Dispatch Id" ToolTip="Dispatch Id" runat="server" required ValidationGroup="search" type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

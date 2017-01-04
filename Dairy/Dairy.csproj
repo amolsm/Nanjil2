@@ -106,6 +106,7 @@
     <Content Include="Tabs\Administration\BillSequence.aspx" />
     <Content Include="Tabs\Administration\BoothLog.aspx" />
     <Content Include="Tabs\Administration\CancelOrderM.aspx" />
+    <Content Include="Tabs\Administration\Cashier.aspx" />
     <Content Include="Tabs\Administration\DamageRateSetup.aspx" />
     <Content Include="Tabs\Administration\EditDispatchs.aspx" />
     <Content Include="Tabs\Administration\EditOrder.aspx" />
@@ -1302,6 +1303,13 @@
     </Compile>
     <Compile Include="Tabs\Administration\CancelOrderM.aspx.designer.cs">
       <DependentUpon>CancelOrderM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\Cashier.aspx.cs">
+      <DependentUpon>Cashier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\Cashier.aspx.designer.cs">
+      <DependentUpon>Cashier.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Administration\DamageRateSetup.aspx.cs">
       <DependentUpon>DamageRateSetup.aspx</DependentUpon>

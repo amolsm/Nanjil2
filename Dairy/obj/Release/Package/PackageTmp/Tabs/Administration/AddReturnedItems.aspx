@@ -644,4 +644,20 @@
             });
         });
     </script>--%>
+      <script type = "text/javascript">
+        
+
+
+         //-->
+
+         $(document).ready(function () {
+             
+             $('#example1').dataTable({
+                 "bPaginate": false,
+                 "paging": false
+
+             });
+
+         });
+    </script>
 </asp:Content>
