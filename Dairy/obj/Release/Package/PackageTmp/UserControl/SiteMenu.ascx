@@ -130,27 +130,62 @@
                    <li><a href="/Tabs/Administration/BoothPlaceOrder.aspx"><i class="fa fa-circle-o"></i>  Place Booth Order</a></li>
                  <%--  <li><a href="/Tabs/Administration/GenerateBillForBooth.aspx"><i class="fa fa-circle-o"></i>  Gnerate Bill</a></li>--%>
                   <%--<li><a href="/Tabs/Administration/ViewDispatchOrders.aspx"><i class="fa fa-circle-o"></i> View Dispatch Order</a></li>--%>
-                   <li><a href="/Tabs/Administration/ViewDispatchSummary.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary</a></li>
-                    <li><a href="/Tabs/Administration/EditDispatchs.aspx"><i class="fa fa-circle-o"></i> Edit Dispatch </a></li>
-                 
+                   <li  class="treeview">
+               <a href="#">
+                <i class="fa fa-file"></i>
+                <span>Admin override</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+               <ul class="treeview-menu">
+                 <li><a href="/Tabs/Administration/EditDispatchs.aspx"><i class="fa fa-circle-o"></i> Edit Dispatch </a></li>
+  
                    <li><a href="/Tabs/Administration/EditReturnedTrays.aspx"><i class="fa fa-circle-o"></i>Edit Returned Trays</a></li>
                    <li><a href="/Tabs/Administration/EditReturnScheme.aspx"><i class="fa fa-circle-o"></i>Edit Return Scheme</a></li>
-                  <li><a href="/Tabs/Administration/EditReturnedProducts.aspx"><i class="fa fa-circle-o"></i>Edit Returned Products</a></li>
-                  <li><a href="/Tabs/Administration/ViewDispatchSummaryUsers.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary Shiftwise</a></li>
+                     <li><a href="/Tabs/Administration/EditReturnedProducts.aspx"><i class="fa fa-circle-o"></i>Edit Returned Products</a></li>
+                  </ul> </li>
+                   <li  class="treeview">
+                    <a href="#">
+                <i class="fa fa-file"></i>
+                <span>Shiftwise Report</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+               <ul class="treeview-menu">
+               <li><a href="/Tabs/Administration/ViewDispatchSummary.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary</a></li>
+                   <li><a href="/Tabs/Administration/ViewDispatchSummaryUsers.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary Shiftwise</a></li>
                     <li><a href="/Tabs/Administration/ViewDispatchUserShiftwise.aspx"><i class="fa fa-circle-o"></i> View Dispatch UserShiftwise</a></li>
-                 <li><a href="/Tabs/Administration/AddReturnedItems.aspx"><i class="fa fa-circle-o"></i> Returned Products</a></li>
-                 <li><a href="/Tabs/Administration/ReturnedTrays.aspx"><i class="fa fa-circle-o"></i> Returned Trays</a></li>
-                   <li><a href="/Tabs/Administration/ReturnScheme.aspx"><i class="fa fa-circle-o"></i> Returned Scheme</a></li>
-                      <li><a href="/Tabs/Despatch/RoutewiseReturnTraysReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Trays Report</a></li>
-                    <li><a href="/Tabs/Despatch/RoutewiseReturnIceBoxReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return IceBox Report</a></li>
-                  <li><a href="/Tabs/Despatch/RoutewiseReturnCartonReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Carton Report</a></li>
-                 <li><a href="/Tabs/Despatch/RoutewiseReturnOtherReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Other Report</a></li>
 
-                   <li><a href="/Tabs/Despatch/SalesmanwiseReturnTraysReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Trays Report</a></li>
-                    <li><a href="/Tabs/Despatch/SalesmanwiseReturnIceBoxReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return IceBox Report</a></li>
-                  <li><a href="/Tabs/Despatch/SalesmanwiseCartonReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Carton Report</a></li>
-                 <li><a href="/Tabs/Despatch/SalesmanwiseOtherReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Other Report</a></li>
-                 
+               </ul> </li>
+
+                    <li  class="treeview">
+               <a href="#">
+                <i class="fa fa-file"></i>
+                <span>Return</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+               <ul class="treeview-menu" style="width:220px">
+                <li><a href="/Tabs/Administration/AddReturnedItems.aspx"><i class="fa fa-circle-o"></i> Returned Products</a></li>
+                    <li><a href="/Tabs/Administration/ReturnScheme.aspx"><i class="fa fa-circle-o"></i> Returned Scheme</a></li>
+                   <li><a href="/Tabs/Administration/ReturnedTrays.aspx"><i class="fa fa-circle-o"></i> Returned Trays</a></li>
+               </ul> </li>
+
+                    <li  class="treeview">
+               <a href="#">
+                <i class="fa fa-file"></i>
+                <span>Tray Reports</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+               <ul class="treeview-menu">
+                <li><a href="/Tabs/Despatch/RoutewiseReturnTraysReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Trays</a></li>
+                    <li><a href="/Tabs/Despatch/RoutewiseReturnIceBoxReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return IceBox</a></li>
+                  <li><a href="/Tabs/Despatch/RoutewiseReturnCartonReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Carton</a></li>
+                 <li><a href="/Tabs/Despatch/RoutewiseReturnOtherReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Other</a></li>
+
+                   <li><a href="/Tabs/Despatch/SalesmanwiseReturnTraysReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Trays</a></li>
+                    <li><a href="/Tabs/Despatch/SalesmanwiseReturnIceBoxReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return IceBox</a></li>
+                  <li><a href="/Tabs/Despatch/SalesmanwiseCartonReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Carton</a></li>
+                 <li><a href="/Tabs/Despatch/SalesmanwiseOtherReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Other</a></li>
+               </ul> </li>
+
            <li  class="treeview">
                <a href="#">
                 <i class="fa fa-file"></i>
@@ -176,7 +211,9 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/Tabs/Administration/CashierSettlement.aspx"><i class="fa fa-circle-o"></i> Cashier Settlement</a></li>
-                  
+                 <li><a href="/Tabs/Marketing/BillwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Billwise Staff Sales Summary  </a></li>
+                 <li><a href="/Tabs/Marketing/ItemwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Staff Sales Summary  </a></li>
+                 <li><a href="/Tabs/Marketing/StaffAccountSalesSummary.aspx"><i class="fa fa-circle-o"></i> Staff A/C Sales Summary</a></li>
                <li  class="treeview">
                <a href="#">
                 <i class="fa fa-file"></i>
@@ -199,22 +236,44 @@
                 <i class="fa fa-line-chart pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/Tabs/Marketing/AgentSchemeDetails.aspx"><i class="fa fa-circle-o"></i> Agency Scheme Details</a></li>
+
+                    <li  class="treeview">
+               <a href="#">
+                <i class="fa fa-file"></i>
+                <span>Scheme</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+                       <ul class="treeview-menu">
+                      <li><a href="/Tabs/Marketing/AgentSchemeDetails.aspx"><i class="fa fa-circle-o"></i> Agency Scheme Details</a></li>
                   <li><a href="/Tabs/Marketing/AgentSchemeSummary.aspx"><i class="fa fa-circle-o"></i>Agency Scheme Summary</a></li>
                     <li><a href="/Tabs/Marketing/SchemeRefund.aspx"><i class="fa fa-circle-o"></i>Agency SchemeRefund  </a></li>
-              <li><a href="/Tabs/Marketing/ItemwiseSalesSummaryForMarketing.aspx"><i class="fa fa-circle-o"></i>Itemwise Sales Summary  </a></li>
-                
-                   <li><a href="/Tabs/Marketing/BillwiseSalesSummaryforMarketing.aspx"><i class="fa fa-circle-o"></i> Bill Wise Sales Summary</a></li>
+                  <li><a href="/Tabs/Marketing/RefundSchemeSummary.aspx"><i class="fa fa-circle-o"></i>Refund Scheme Summary  </a></li>
+                       </ul>
+                    </li>
+             
+                    <li  class="treeview">
+               <a href="#">
+                <i class="fa fa-file"></i>
+                <span>Sales Summary</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+                       <ul class="treeview-menu">
+                             <li><a href="/Tabs/Marketing/ItemwiseSalesSummaryForMarketing.aspx"><i class="fa fa-circle-o"></i>Itemwise Sales Summary  </a></li>
+                              <li><a href="/Tabs/Marketing/BillwiseSalesSummaryforMarketing.aspx"><i class="fa fa-circle-o"></i> Bill Wise Sales Summary</a></li>
+                              <li><a href="/Tabs/Marketing/MarketingSalesAnalysisItemwise.aspx"><i class="fa fa-circle-o"></i>Sales Analysis Itemwise </a></li>
+                       </ul>
+                    </li>
+         
                  <%--  <li><a href="/Tabs/Marketing/IncentiveSetupScreen.aspx"><i class="fa fa-circle-o"></i> Incentive Rate Setup </a></li>--%>
                   <li><a href="/Tabs/Marketing/PartywiseIncentiveSummary.aspx"><i class="fa fa-circle-o"></i>Partywise Incentive Summary </a></li>
-                  <li><a href="/Tabs/Marketing/MarketingSalesAnalysisItemwise.aspx"><i class="fa fa-circle-o"></i>Sales Analysis Itemwise </a></li>
-                  <li><a href="/Tabs/Marketing/AgencyCloserScreen.aspx"><i class="fa fa-circle-o"></i>Agency Closer  </a></li>
+              
+             
                    
                 <%--<li><a href="/Tabs/Marketing/DamageReplacementRateSetup.aspx"><i class="fa fa-circle-o"></i>Damage Replacement RateSetup  </a></li>--%>
                   
                
                
-                   <li><a href="/Tabs/Marketing/RefundSchemeSummary.aspx"><i class="fa fa-circle-o"></i>Refund Scheme Summary  </a></li>
+                 
                
                 
                  <%-- <li><a href="/Tabs/Marketing/NewAgentlistSummary.aspx"><i class="fa fa-circle-o"></i>New Agent List  </a></li>--%>
@@ -225,20 +284,8 @@
                    <li><a href="/Tabs/Marketing/ItemwisePurchaseAgentList.aspx"><i class="fa fa-circle-o"></i>ItemWise PurchaseAgent List  </a></li>
                     <li><a href="/Tabs/Marketing/AmountwiseIceCreamReport.aspx"><i class="fa fa-circle-o"></i>Amount Wise IceCream PurchaseAgent List  </a></li>
                      <li><a href="/Tabs/Marketing/AgentListNotPlacedOrder.aspx"><i class="fa fa-circle-o"></i>AgentList Not Placed Order  </a></li>
-                <li  class="treeview">
-               <a href="#">
-                <i class="fa fa-file"></i>
-                <span>Staff Sales</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-                       <ul class="treeview-menu">
-                     <li><a href="/Tabs/Marketing/BillwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Billwise Staff Sales Summary  </a></li>
-                    
-                      <li><a href="/Tabs/Marketing/ItemwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Staff Sales Summary  </a></li>
-                         <li><a href="/Tabs/Marketing/StaffAccountSalesSummary.aspx"><i class="fa fa-circle-o"></i> Staff A/C Sales Summary</a></li>
-
-                       </ul>
-                    </li>
+                       <li><a href="/Tabs/Marketing/AgencyCloserScreen.aspx"><i class="fa fa-circle-o"></i>Agency Closer  </a></li>
+            
                   <li  class="treeview">
                <a href="#">
                 <i class="fa fa-file"></i>
@@ -458,10 +505,12 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
                        <ul class="treeview-menu">
-                 <li><a href="/Tabs/Despatch/ItemwiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Sales Summary</a></li> 
+             
+                   <li><a href="/Tabs/Despatch/RoutewiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Routewise Sales Summary</a></li> 
                  <li><a href="/Tabs/Reports/BillwiseSaleSummary.aspx"><i class="fa fa-circle-o"></i>Bill Wise Sales Summary</a></li> 
                   <li><a href="/Tabs/Reports/SalesAnalysisItemwise.aspx"><i class="fa fa-circle-o"></i>Sales Analysis-Itemwise</a></li>
-                   <li><a href="/Tabs/Despatch/RoutewiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Routewise Sales Summary</a></li> 
+                               <li><a href="/Tabs/Despatch/ItemwiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Sales Summary</a></li> 
+                  
 
                        </ul>
                     </li>
@@ -502,7 +551,20 @@
               <ul class="treeview-menu">
                 <li><a href="/Tabs/Administration/CashierSettlement.aspx"><i class="fa fa-circle-o"></i> Cashier Settlement</a></li>
                   
-               
+                   <li  class="treeview">
+               <a href="#">
+                <i class="fa fa-file"></i>
+                <span>Staff Sales</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+                       <ul class="treeview-menu">
+                     <li><a href="/Tabs/Marketing/BillwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Billwise Staff Sales Summary  </a></li>
+                    
+                      <li><a href="/Tabs/Marketing/ItemwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Staff Sales Summary  </a></li>
+                         <li><a href="/Tabs/Marketing/StaffAccountSalesSummary.aspx"><i class="fa fa-circle-o"></i> Staff A/C Sales Summary</a></li>
+
+                       </ul>
+                    </li>
               </ul>
             </li> 
 
@@ -574,6 +636,92 @@
 
      </ul>
 </asp:Panel> 
+            <asp:Panel ID="pnlMarketing" runat="server" Visible="false">
+                  <ul class="sidebar-menu">
+                    <li class="treeview">
+              <a href="#">
+                <i class="fa fa-tag fax2"></i>
+                <span>Marketing</span>
+                <i class="fa fa-line-chart pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+
+                    <li  class="treeview">
+               <a href="#">
+                <i class="fa fa-file"></i>
+                <span>Scheme</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+                       <ul class="treeview-menu">
+                      <li><a href="/Tabs/Marketing/AgentSchemeDetails.aspx"><i class="fa fa-circle-o"></i> Agency Scheme Details</a></li>
+                  <li><a href="/Tabs/Marketing/AgentSchemeSummary.aspx"><i class="fa fa-circle-o"></i>Agency Scheme Summary</a></li>
+                    <li><a href="/Tabs/Marketing/SchemeRefund.aspx"><i class="fa fa-circle-o"></i>Agency SchemeRefund  </a></li>
+                  <li><a href="/Tabs/Marketing/RefundSchemeSummary.aspx"><i class="fa fa-circle-o"></i>Refund Scheme Summary  </a></li>
+                       </ul>
+                    </li>
+             
+                    <li  class="treeview">
+               <a href="#">
+                <i class="fa fa-file"></i>
+                <span>Sales Summary</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+                       <ul class="treeview-menu">
+                             <li><a href="/Tabs/Marketing/ItemwiseSalesSummaryForMarketing.aspx"><i class="fa fa-circle-o"></i>Itemwise Sales Summary  </a></li>
+                              <li><a href="/Tabs/Marketing/BillwiseSalesSummaryforMarketing.aspx"><i class="fa fa-circle-o"></i> Bill Wise Sales Summary</a></li>
+                              <li><a href="/Tabs/Marketing/MarketingSalesAnalysisItemwise.aspx"><i class="fa fa-circle-o"></i>Sales Analysis Itemwise </a></li>
+                       </ul>
+                    </li>
+
+                   <li  class="treeview">
+               <a href="#">
+                <i class="fa fa-file"></i>
+                <span>Staff Sales</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+                       <ul class="treeview-menu">
+                     <li><a href="/Tabs/Marketing/BillwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Billwise Staff Sales Summary  </a></li>
+                    
+                      <li><a href="/Tabs/Marketing/ItemwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Staff Sales Summary  </a></li>
+                         <li><a href="/Tabs/Marketing/StaffAccountSalesSummary.aspx"><i class="fa fa-circle-o"></i> Staff A/C Sales Summary</a></li>
+
+                       </ul>
+                    </li>
+          <li><a href="/Tabs/Marketing/PartywiseIncentiveSummary.aspx"><i class="fa fa-circle-o"></i>Partywise Incentive Summary </a></li>
+               <li><a href="/Tabs/Marketing/NewAgentList.aspx"><i class="fa fa-circle-o"></i>New Agent List  </a></li>
+                  <li><a href="/Tabs/Marketing/AgentSlabReportList.aspx"><i class="fa fa-circle-o"></i>AgentList Basis of Slab</a></li>
+                   <li><a href="/Tabs/Marketing/DeactivateAgentList.aspx"><i class="fa fa-circle-o"></i>Deactivate Agent List  </a></li>
+                    <li><a href="/Tabs/Marketing/PartywiseDamageReplacementSummary.aspx"><i class="fa fa-circle-o"></i>Partywise DamageReplacement Summary</a></li>
+                   <li><a href="/Tabs/Marketing/ItemwisePurchaseAgentList.aspx"><i class="fa fa-circle-o"></i>ItemWise PurchaseAgent List  </a></li>
+                    <li><a href="/Tabs/Marketing/AmountwiseIceCreamReport.aspx"><i class="fa fa-circle-o"></i>Amount Wise IceCream PurchaseAgent List  </a></li>
+                     <li><a href="/Tabs/Marketing/AgentListNotPlacedOrder.aspx"><i class="fa fa-circle-o"></i>AgentList Not Placed Order  </a></li>
+                       <li><a href="/Tabs/Marketing/AgencyCloserScreen.aspx"><i class="fa fa-circle-o"></i>Agency Closer  </a></li>
+            
+                  <li  class="treeview">
+               <a href="#">
+                <i class="fa fa-file"></i>
+                <span>Comparison Report</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+               <ul class="treeview-menu">
+                     <li><a href="/Tabs/Marketing/SalesComparison.aspx"><i class="fa fa-circle-o"></i> Sales Comparison Summary</a></li>
+                    <li><a href="/Tabs/Marketing/DespatchComparisonReport.aspx"><i class="fa fa-circle-o"></i> Dispatch Comparison Summary</a></li>
+                  <li><a href="/Tabs/Marketing/ReturnComparisonReport.aspx"><i class="fa fa-circle-o"></i> Return Comparison Summary</a></li>
+                 <li><a href="/Tabs/Marketing/SpotDamageComparisonReport.aspx"><i class="fa fa-circle-o"></i> Spot-Damage Comparison Summary</a></li>
+                      <li><a href="/Tabs/Marketing/DispatchReturnComparison.aspx"><i class="fa fa-circle-o"></i>Dispatch Agency Return Comparison  </a></li>
+                   </ul>
+                       <li><a href="/Tabs/Marketing/ActiveInactiveIssues.aspx"><i class="fa fa-circle-o"></i>Active Inactive Issue</a></li>
+                   <li><a href="/Tabs/Marketing/CorrectiveActionOnIssue.aspx"><i class="fa fa-circle-o"></i>Corrective Action On Issue</a></li>
+                   <li><a href="/Tabs/Marketing/IssuesRegistration.aspx"><i class="fa fa-circle-o"></i>Issue Registration</a></li>
+                    <li><a href="/Tabs/Marketing/Mass Issue.aspx"><i class="fa fa-circle-o"></i>Mass Issue</a></li>
+
+                    
+              </ul>
+                 
+            </li> 
+                      </ul>
+                
+            </asp:Panel>
         </section>
         <!-- /.sidebar -->
       </aside>

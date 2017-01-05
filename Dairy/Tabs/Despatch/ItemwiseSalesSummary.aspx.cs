@@ -404,7 +404,7 @@ namespace Dairy.Tabs.Despatch
                     }
                     else
                     {
-                        totalagentcreditamount = (Convert.ToDouble(DS.Tables[4].Rows[0]["Amount"]) - Convert.ToDouble(DS.Tables[6].Rows[4]["totalreturnAmount"]));
+                        totalagentcreditamount = (Convert.ToDouble(DS.Tables[4].Rows[0]["Amount"]) - Convert.ToDouble(DS.Tables[4].Rows[0]["totalreturnAmount"]));
                         //sb.Append("<b>" + (Convert.ToDecimal(totalagentcreditamount).ToString("#0.00")) + "</b>");
                     }
                    
