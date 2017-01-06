@@ -495,6 +495,17 @@ namespace Dairy.Tabs.Administration
             }
         }
 
-      
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            divDanger.Visible = false;
+            divwarning.Visible = false;
+            divSusccess.Visible = false;
+
+            btnEmpadd.Visible = true;
+            btnEmpUpdate.Visible = false;
+            //BinDAgentInfo();
+            pnlError.Update();
+
+        }
     }
 }

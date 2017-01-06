@@ -74,11 +74,30 @@ namespace Dairy.Tabs.Despatch
                 divDanger.Visible = false;
                 divwarning.Visible = false;
                 divSusccess.Visible = false;
-               
+
                 pnlError.Update();
 
             }
+            else {
+                DataTable dt = new DataTable();
+                this.BindRepeater(dt);
+                rpRouteList.Visible = true;
+                uprouteList.Update();
+            }
+           
 
+
+        }
+        private void BindRepeater(DataTable dt)
+        {
+            rpRouteList.DataSource = dt;
+            rpRouteList.DataBind();
+
+            if (dt.Rows.Count == 0)
+            {
+                Control FooterTemplate = rpRouteList.Controls[rpRouteList.Controls.Count - 1].Controls[0];
+                FooterTemplate.FindControl("trEmpty").Visible = true;
+            }
 
         }
 

@@ -102,19 +102,7 @@
                           
                       </div> 
 
-            <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                       <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                      <asp:DropDownList ID="dpagentRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" OnSelectedIndexChanged="dpagentRoute_SelectedIndexChanged" AutoPostBack="true" > 
-                       </asp:DropDownList>
-                         
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-                         </div>
-
+           
               <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -339,22 +327,16 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
-                       <td> 
-                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                         </td>
-                        <td>
-                    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-
-                        </td>
-                        <td> 
-                        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-                         </td>
+                       <td><%# Eval("TotalSaleAmount")%></td>
+                        
+                         <td><%# Eval("StaffAccount")%></td>
+                         <td><%# Eval("AgentAccount")%></td>
                        
                     
                         <td>
 
                              <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
-                                                                    ToolTip="Edit" runat="server" CommandArgument='<%#(((RepeaterItem)Container).ItemIndex+1).ToString()%>'
+                                                                    ToolTip="Edit" runat="server" CommandArgument='<%# Eval("SalesmanId")%>'
                                                                     CommandName="Edit" ><i class="fa fa-edit"></i></asp:LinkButton>
 
                          </td>
@@ -362,7 +344,7 @@
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
-
+                         <tr id="trEmpty" runat="server" visible="false"><td  align = "left" colspan="4"><h5>  No records found.</h5></td> </tr>
                          </tbody>
 
                     <tfoot>

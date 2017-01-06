@@ -63,12 +63,30 @@ namespace Dairy.Tabs.Administration
                 rpRouteList.DataSource = DS;
                 rpRouteList.DataBind();
                 rpRouteList.Visible = true;
-
-                uprouteList.Update();
+              
+               uprouteList.Update();
                 
             }
-            else { rpRouteList.Visible = false; uprouteList.Update(); }
+            else
+            {
+                DataTable dt = new DataTable();
+                this.BindRepeater(dt);
+                rpRouteList.Visible = true;
+                uprouteList.Update();
+            }
 
+
+        }
+        private void BindRepeater(DataTable dt)
+        {
+            rpRouteList.DataSource = dt;
+            rpRouteList.DataBind();
+
+            if (dt.Rows.Count == 0)
+            {
+                Control FooterTemplate = rpRouteList.Controls[rpRouteList.Controls.Count - 1].Controls[0];
+                FooterTemplate.FindControl("trEmpty").Visible = true;
+            }
 
         }
         public void ClearTextBox()

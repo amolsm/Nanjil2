@@ -71,9 +71,9 @@ namespace Bussiness
             return dbDispatch.GetDispatchListsUser(disp);
         }
 
-        public DataSet GetCashier(string date, int routeid, int salesmanid)
+        public DataSet GetCashier(string date, int salesmanid)
         {
-            return dbDispatch.GetCashier(date,routeid,salesmanid);
+            return dbDispatch.GetCashier(date,salesmanid);
         }
 
         public DataSet getStock(int id)

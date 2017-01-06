@@ -3,7 +3,7 @@
    <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
     <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
     <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
-    
+      <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   
@@ -189,7 +189,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtDispatchId" class="form-control"   placeholder="Dispatch Id" ToolTip="Dispatch Id" runat="server" required ValidationGroup="search"></asp:TextBox>                        
+                       <asp:TextBox ID="txtDispatchId" class="form-control"   placeholder="Dispatch Id" ToolTip="Dispatch Id" runat="server" required ValidationGroup="search" type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -451,7 +451,7 @@
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
-
+                          <tr id="trEmpty" runat="server" visible="false"><td  align = "left" colspan="9"><h5> Return Tray Process is completed for this Dispatch ID Or No records found. Please contact Admin.</h5></td> </tr>
                          </tbody>
 
                     <tfoot>

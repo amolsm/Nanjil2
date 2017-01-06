@@ -1,7 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateUser.aspx.cs" Inherits="Dairy.Authentication.CreateUser" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    
+    <style type="text/css">
+        .listboxl {
+            height:100px !important;
+        }
+       .frmgrp {
+       margin-bottom:1px;
+       }
+       .frmgrp2 {
+       margin-bottom:15px;
+       }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <script type="text/javascript">
@@ -78,32 +88,37 @@
         </div><!-- /.box-header -->
         <div class="box-body">
 
-
+            <div class="row">
             <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-user"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtName" class="form-control" placeholder="Name" runat="server" required ToolTip="Enter Name"></asp:TextBox>                        
+                       <asp:TextBox ID="txtName" class="form-control" placeholder="Name" runat="server"  ToolTip="Enter Name"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtName"
+        ErrorMessage="Name is   Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
+              
                   </div><!-- /.form group -->
 
                      
                        
                           
-                      </div>  
+                      </div> 
+                 
 
              <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-envelope-o"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtEmail" class="form-control" placeholder="Email" type="Email" runat="server"  required ToolTip="Enter Email"></asp:TextBox>                        
+                       <asp:TextBox ID="txtEmail" class="form-control" placeholder="Email" type="Email" runat="server"   ToolTip="Enter Email"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtEmail"
+        ErrorMessage="Email  Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
+              
                   </div><!-- /.form group -->
 
                      
@@ -113,7 +128,7 @@
             
          
             <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
@@ -122,11 +137,15 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="dpEmployee"
+        ErrorMessage="Employee name is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group -->
                          </div>
-            
+            </div>
+              <div class="row">
               <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
@@ -138,6 +157,9 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                        <asp:CompareValidator ID="CompareValidator" runat="server" ControlToValidate="dpIsActive"
+        ErrorMessage="Status is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group -->
 
                      
@@ -146,14 +168,16 @@
                       </div>  
         
                <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-key"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtPassword" class="form-control" placeholder="Password" type="password" runat="server" required ToolTip="Enter Password"></asp:TextBox>                        
+                       <asp:TextBox ID="txtPassword" class="form-control" placeholder="Password" type="password" runat="server"  ToolTip="Enter Password"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPassword"
+        ErrorMessage="Password  Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
+              
                   </div><!-- /.form group -->
 
                      
@@ -162,23 +186,26 @@
                       </div>  
 
               <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-key"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtConfromPasword" class="form-control" placeholder="Confirm Password" type="password" runat="server" required ToolTip="Enter Confirm Password"></asp:TextBox>                        
+                       <asp:TextBox ID="txtConfromPasword" class="form-control" placeholder="Confirm Password" type="password" runat="server"  ToolTip="Enter Confirm Password"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtConfromPasword"
+        ErrorMessage="Conform Password  Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
+              
                   </div><!-- /.form group -->
 
                      
                        
                           
                       </div>  
-
+                  </div>
+            <div class="row">
              <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
@@ -196,6 +223,9 @@
                           
                        </asp:DropDownList> 
                     </div><!-- /.input group -->
+                       <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToValidate="dpEmployee"
+        ErrorMessage="Employee name is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group -->
 
                      
@@ -231,7 +261,8 @@
                     
                       
                         <asp:Button ID="btnAddRoute" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnaddUser_click" /> &nbsp;    
-                        <asp:Button ID="btnupdateroute" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnUpdateUser_click" />           
+                        <asp:Button ID="btnupdateroute" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnUpdateUser_click" /> 
+                            &nbsp;&nbsp;  <asp:Button ID="btnRefresh" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Refresh" ValidationGroup="none"  OnClick="btnRefresh_Click"  />                     
                         <asp:CompareValidator ID="vldPassword" runat="server" ErrorMessage="Confirm Password & Password does not match" ControlToValidate="txtConfromPasword" ControlToCompare="txtPassword" Operator="Equal" Type="String" ForeColor="#0066cc" ValidationGroup="Save"></asp:CompareValidator>
                     </div><!-- /.input group -->
 
@@ -241,7 +272,7 @@
                        
                           
                       </div> 
-
+                </div>
 
               
         </div><!-- /.box-body -->

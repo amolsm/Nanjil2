@@ -256,5 +256,17 @@ namespace Dairy.Authentication
 
             }
         }
+
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            divDanger.Visible = false;
+            divwarning.Visible = false;
+            divSusccess.Visible = false;
+
+            btnAddRoute.Visible = true;
+            btnupdateroute.Visible = false;
+            //BinDAgentInfo();
+            pnlError.Update();
+        }
     }
 }

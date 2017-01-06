@@ -19,6 +19,7 @@ namespace Dairy.Tabs.Administration
     {
         DataSet DS = new DataSet();
         static int Row = -1;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -77,10 +78,29 @@ namespace Dairy.Tabs.Administration
                 //insertDispatchTemp(DS);
 
             }
+            else
+            {
+                DataTable dt = new DataTable();
+                this.BindRepeater(dt);
+                rpRouteList.Visible = true;
+                uprouteList.Update();
+            }
 
+             
+
+    }
+        private void BindRepeater(DataTable dt)
+        {
+            rpRouteList.DataSource = dt;
+            rpRouteList.DataBind();
+
+            if (dt.Rows.Count == 0)
+            {
+                Control FooterTemplate = rpRouteList.Controls[rpRouteList.Controls.Count - 1].Controls[0];
+                FooterTemplate.FindControl("trEmpty").Visible = true;
+            }
 
         }
-
         private void insertDispatchTemp(DataSet dS)
         {
             string consString = ConfigurationManager.ConnectionStrings["projectConnection"].ConnectionString;
@@ -102,6 +122,9 @@ namespace Dairy.Tabs.Administration
                 }
             }
         }
+
+
+      
 
         protected void btnClick_btnUpdate(object sender, EventArgs e)
         {

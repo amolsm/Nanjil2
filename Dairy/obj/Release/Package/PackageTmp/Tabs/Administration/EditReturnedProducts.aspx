@@ -132,7 +132,7 @@
              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
-                      <asp:Button ID="btnSearch" class="btn btn-primary" ValidationGroup="search" runat="server" CommandName="MoveNext" Text="Search" OnClick="btnSearch_Click" />     
+                      <asp:Button ID="btnSearch" class="btn btn-primary" ValidationGroup="search" runat="server" CommandName="MoveNext" Text="Search" OnClick="btnSearch_Click"/>     
                        &nbsp; &nbsp;
                          <%--<asp:Button ID="btnFinalSubmit" class="btn btn-primary" ValidationGroup="search" runat="server" CommandName="MoveNext" Text="Submit" OnClick="btnFinalSubmit_Click" OnClientClick="ConfirmFinal()"/>     --%>
                     </div><!-- /.input group -->
@@ -167,7 +167,7 @@
 
                 <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
                     <ContentTemplate>
-
+                  
                 <table id="example1" class="table table-bordered table-striped">
                    
 
@@ -220,7 +220,7 @@
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
-
+                         <tr id="trEmpty" runat="server" visible="false"><td  align = "left" colspan="9"><h5> No records found.</h5></td> </tr>
                          </tbody>
 
                     <tfoot>
@@ -450,5 +450,45 @@
         }); // end Modernizr.load
         </script>
 
-   
+     <script type = "text/javascript">
+        
+
+
+         //-->
+
+         $(document).ready(function () {
+             $('#example1').dataTable({
+                 "bPaginate": false,
+                 "paging": false
+
+             });
+             $(".search").keyup(function () {
+                 var searchTerm = $(".search").val();
+                 var listItem = $('.results tbody').children('tr');
+                 var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
+
+                 $.extend($.expr[':'], {
+                     'containsi': function (elem, i, match, array) {
+                         return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+                     }
+                 });
+
+                 $(".results tbody tr").not(":containsi('" + searchSplit + "')").each(function (e) {
+                     $(this).attr('visible', 'false');
+                 });
+
+                 $(".results tbody tr:containsi('" + searchSplit + "')").each(function (e) {
+                     $(this).attr('visible', 'true');
+                 });
+
+                 var jobCount = $('.results tbody tr[visible="true"]').length;
+                 $('.counter').text(jobCount + ' item');
+
+                 if (jobCount == '0') { $('.no-result').show(); }
+                 else { $('.no-result').hide(); }
+             });
+         });
+
+        
+    </script>
 </asp:Content>

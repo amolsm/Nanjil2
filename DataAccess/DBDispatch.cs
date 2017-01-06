@@ -86,14 +86,14 @@ namespace DataAccess
             return DS;
         }
 
-        public DataSet GetCashier(string date, int routeid, int salesmanid)
+        public DataSet GetCashier(string date,  int salesmanid)
         {
             DataSet DS = new DataSet();
             try
             {
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
-                paramCollection.Add(new DBParameter("@RouteID", routeid));
+             
                 paramCollection.Add(new DBParameter("@DispatchDate", date));
                 paramCollection.Add(new DBParameter("@SalesmanId", salesmanid));
 

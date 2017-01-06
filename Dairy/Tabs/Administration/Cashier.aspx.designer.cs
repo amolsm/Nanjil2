@@ -94,15 +94,6 @@ namespace Dairy.Tabs.Administration {
         protected global::System.Web.UI.WebControls.TextBox txtOrderDate;
         
         /// <summary>
-        /// dpagentRoute control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpagentRoute;
-        
-        /// <summary>
         /// dpSalesman control.
         /// </summary>
         /// <remarks>
