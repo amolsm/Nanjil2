@@ -1,14 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CashierSettlement.aspx.cs" Inherits="Dairy.Tabs.Administration.CashierSettlement" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cashier.aspx.cs" Inherits="Dairy.Tabs.Administration.Cashier" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-      <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
+     <script type="text/javascript">
       Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
       function InIEvent() {
 
@@ -70,7 +65,7 @@
 
                <div class="box ">
             <div class="box-header with-border">
-                <h3 class="box-title"> Orders List </h3>
+                <h3 class="box-title"> Sales List </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 
@@ -113,7 +108,20 @@
                       <div class="input-group-addon">
                        <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="dpagentRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server"  > 
+                      <asp:DropDownList ID="dpagentRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" OnSelectedIndexChanged="dpagentRoute_SelectedIndexChanged" AutoPostBack="true" > 
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div>
+
+              <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                      <asp:DropDownList ID="dpSalesman" class="form-control" DataTextField="Name" DataValueField="EmployeeId" runat="server"  > 
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
@@ -173,7 +181,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAgentName" class="form-control" ToolTip="Agent Name"  placeholder="Agent Name" runat="server" ValidationGroup="edit" ></asp:TextBox>                        
+                       <asp:TextBox ID="txt2000" class="form-control" ToolTip="Agent Name"  placeholder="Agent Name" runat="server" ValidationGroup="edit" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -186,7 +194,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtPaymentMode" class="form-control" ValidationGroup="edit" ToolTip="Payment Mode" placeholder="Payment Mode" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txt500" class="form-control" ValidationGroup="edit" ToolTip="Payment Mode" placeholder="Payment Mode" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -199,7 +207,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtTotalBill" ToolTip="Total Bill" class="form-control" ValidationGroup="edit"  placeholder="Total Bill" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txt100" ToolTip="Total Bill" class="form-control" ValidationGroup="edit"  placeholder="Total Bill" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -212,7 +220,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtPendingBill" class="form-control" ValidationGroup="edit" ToolTip="Pending Bill" placeholder="Pending Bill" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txt50" class="form-control" ValidationGroup="edit" ToolTip="Pending Bill" placeholder="Pending Bill" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -225,13 +233,60 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtReceivedAmount" class="form-control" ValidationGroup="edit" ToolTip="Received Amount" placeholder="Received Amount" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txt20" class="form-control" ValidationGroup="edit" ToolTip="Received Amount" placeholder="Received Amount" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
     
                       </div>        <!-- -->
+               <div class="col-lg-6">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:TextBox ID="txt10" class="form-control" ValidationGroup="edit" ToolTip="Received Amount" placeholder="Received Amount" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
 
+                  </div><!-- /.form group -->
+    
+                      </div>        <!-- -->
+                <div class="col-lg-6">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:TextBox ID="txtCoin" class="form-control" ValidationGroup="edit" ToolTip="Received Amount" placeholder="Received Amount" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+    
+                      </div>        <!-- -->
+                   <div class="col-lg-6">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:TextBox ID="txtNetAmt" class="form-control" ValidationGroup="edit" ToolTip="Received Amount" placeholder="Received Amount" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+    
+                      </div>        <!-- -->
+                  <div class="col-lg-6">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:TextBox ID="txttotalPay" class="form-control" ValidationGroup="edit" ToolTip="Received Amount" placeholder="Received Amount" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+    
+                      </div>        <!-- -->
               
                      <div class="col-lg-6">
                   <div class="form-group" >
@@ -272,16 +327,10 @@
                <HeaderTemplate>
                   <thead>
                       <tr>
-                          <th>Dispatch No</th>
-                          <th>Order Id</th>
-                          <th>Agent Id</th>
-                          <th>Agent Name</th>                        
-                          <th>Payment Mode</th>
-                          <th>Total Amount</th>
-                          <th>Received Amount</th>
-                          <th>Pending Amount</th>
-                          
-                          
+                          <th>Total Sales Amt</th>
+                          <th>Staff A/C</th>
+                          <th>Agent A/C</th>
+                          <th>Pay</th>                        
                       </tr>
                     </thead>
                     <tbody>
@@ -289,20 +338,23 @@
                    
                </HeaderTemplate>
                <ItemTemplate>
-                    <tr style="text-align:center">
-                        <td>DS<%# Eval("DispatchId")%></td>
-                        <td><%# Eval("OrderId")%></td>
-                        <td><%# Eval("AgentId")%></td>
-                        <td><%# Eval("AgentName")%></td>
-                        <td><%# Eval("BillingType")%></td>
-                        <td><%# Eval("FinalBillingAmount")%></td>
-                        <td><%# Eval("ReceivedAmount")%></td>
-                        <td><%# Eval("PendingAmount")%></td>
+                    <tr>
+                       <td> 
+                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                         </td>
+                        <td>
+                    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+
+                        </td>
+                        <td> 
+                        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                         </td>
                        
+                    
                         <td>
 
                              <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
-                                                                    ToolTip="Edit" runat="server" CommandArgument='<%#Eval("SettlementId") %>'
+                                                                    ToolTip="Edit" runat="server" CommandArgument='<%#(((RepeaterItem)Container).ItemIndex+1).ToString()%>'
                                                                     CommandName="Edit" ><i class="fa fa-edit"></i></asp:LinkButton>
 
                          </td>
@@ -315,14 +367,10 @@
 
                     <tfoot>
                       <tr>
-                         <th>Dispatch No</th>
-                          <th>Order Id</th>
-                          <th>Agent Id</th>
-                          <th>Agent Name</th>                        
-                          <th>Payment Mode</th>
-                          <th>Total Amount</th>
-                          <th>Received Amount</th>
-                          <th>Pending Amount</th>
+                         <th>Total Sales Amt</th>
+                          <th>Staff A/C</th>
+                          <th>Agent A/C</th>
+                          <th>Pay</th>   
                       </tr>
                     </tfoot>
 
@@ -468,6 +516,4 @@
 
 
     </script>
-
-
 </asp:Content>

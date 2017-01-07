@@ -23,6 +23,7 @@ namespace Dairy.UserControl
                             pnlDesptach.Visible = false;
                             pnlTransport.Visible = false;
                             pnlPurchase.Visible = false;
+                            pnlMarketing.Visible = false;
                             break;                             
                         }
                     case "Reception":
@@ -33,6 +34,7 @@ namespace Dairy.UserControl
                             pnlDesptach.Visible = false;
                             pnlTransport.Visible = false;
                             pnlPurchase.Visible = false;
+                            pnlMarketing.Visible = false;
                             break;
                         }
                     case "Sales":
@@ -43,6 +45,7 @@ namespace Dairy.UserControl
                             pnlDesptach.Visible = false;
                             pnlTransport.Visible = false;
                             pnlPurchase.Visible = false;
+                            pnlMarketing.Visible = false;
                             break;
                         }
                     case "Despatch":
@@ -53,6 +56,7 @@ namespace Dairy.UserControl
                             pnlDesptach.Visible = true;
                             pnlTransport.Visible = false;
                             pnlPurchase.Visible = false;
+                            pnlMarketing.Visible = false;
                             break;
                         }
                     case "Transport":
@@ -62,7 +66,9 @@ namespace Dairy.UserControl
                             pnlSales.Visible = false;
                             pnlDesptach.Visible = false;
                             pnlPurchase.Visible = false;
+                            pnlMarketing.Visible = false;
                             pnlTransport.Visible = true;
+
                             break;
                         }
                     case "Purchase":
@@ -72,7 +78,19 @@ namespace Dairy.UserControl
                             pnlSales.Visible = false;
                             pnlDesptach.Visible = false;
                             pnlTransport.Visible = false;
+                            pnlMarketing.Visible = false;
                             pnlPurchase.Visible = true;
+                            break;
+                        }
+                    case "Marketing":
+                        {
+                            pnlAddminitration.Visible = false;
+                            pnlReception.Visible = false;
+                            pnlSales.Visible = false;
+                            pnlDesptach.Visible = false;
+                            pnlTransport.Visible = false;
+                            pnlPurchase.Visible = false;
+                            pnlMarketing.Visible = true;
                             break;
                         }
                 }

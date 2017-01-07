@@ -178,6 +178,11 @@ namespace Dairy.Authentication
                                 Response.Redirect("/Tabs/Purchase/Dashboard.aspx");
                                 break;
                             }
+                       case "Marketing":
+                            {
+                                Response.Redirect("/Tabs/Marketing/AgentSchemeDetails.aspx");
+                                break;
+                            }
             }               
 
             }

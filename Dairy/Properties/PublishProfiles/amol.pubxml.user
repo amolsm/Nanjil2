@@ -22,16 +22,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/18/2016 11:59:15</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
-      <publishTime>12/29/2016 19:01:48</publishTime>
+      <publishTime>01/03/2017 18:35:48</publishTime>
     </File>
     <File Include="bin/Comman.dll">
       <publishTime>12/29/2016 19:01:46</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
-      <publishTime>01/03/2017 11:31:07</publishTime>
+      <publishTime>01/04/2017 16:57:02</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
-      <publishTime>12/29/2016 19:01:48</publishTime>
+      <publishTime>01/03/2017 18:35:48</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:52</publishTime>
@@ -222,14 +222,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Tabs/Administration/CancelOrderM.aspx">
       <publishTime>12/20/2016 18:24:07</publishTime>
     </File>
+    <File Include="Tabs/Administration/Cashier.aspx">
+      <publishTime>01/03/2017 18:09:34</publishTime>
+    </File>
     <File Include="Tabs/Administration/CashierBoothSettlement.aspx">
       <publishTime>11/18/2016 11:59:15</publishTime>
     </File>
     <File Include="Tabs/Administration/CashierSettlement.aspx">
-      <publishTime>11/18/2016 11:59:15</publishTime>
+      <publishTime>01/03/2017 13:08:21</publishTime>
     </File>
     <File Include="Tabs/Administration/CreateUser.aspx">
-      <publishTime>12/15/2016 11:04:18</publishTime>
+      <publishTime>01/04/2017 16:00:24</publishTime>
     </File>
     <File Include="Tabs/Administration/DamageRateSetup.aspx">
       <publishTime>11/30/2016 11:19:09</publishTime>
@@ -3532,13 +3535,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/18/2016 11:59:16</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
-      <publishTime>01/02/2017 15:26:57</publishTime>
+      <publishTime>01/04/2017 16:54:50</publishTime>
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>11/18/2016 11:59:16</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/03/2017 12:38:58</publishTime>
+      <publishTime>01/04/2017 17:47:28</publishTime>
     </File>
     <File Include="WebService/BindAgentSlab.asmx">
       <publishTime>11/18/2016 11:59:16</publishTime>
