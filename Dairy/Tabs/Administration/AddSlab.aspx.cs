@@ -101,6 +101,13 @@ namespace Dairy.Tabs.Administration
             product.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             product.ModifiedBy = GlobalInfo.Userid;
             product.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
+            if (dpStatus.SelectedItem.Value == "1")
+            {
+                product.IsActive = false;
+            }
+            if (dpStatus.SelectedItem.Value == "2")
+            {  product.IsActive = true; }
+          
             product.flag = "Insert";
             int Result = 0;
             Result = productdata.AddSlabInfo(product);
@@ -147,6 +154,12 @@ namespace Dairy.Tabs.Administration
             product.ModifiedBy = GlobalInfo.Userid;
             product.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
             product.flag = "Update";
+            if (dpStatus.SelectedItem.Value == "1")
+            {
+                product.IsActive = false;
+            }
+            if (dpStatus.SelectedItem.Value == "2")
+            { product.IsActive = true; }
             int Result = 0;
             Result = productdata.AddSlabInfo(product);
 
@@ -190,6 +203,12 @@ namespace Dairy.Tabs.Administration
             product.ModifiedBy = GlobalInfo.Userid;
             product.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
             product.flag = "Delete";
+            if (dpStatus.SelectedItem.Value == "1")
+            {
+                product.IsActive = false;
+            }
+            if (dpStatus.SelectedItem.Value == "2")
+            { product.IsActive = true; }
             int Result = 0;
             Result = productdata.AddSlabInfo(product);
             if (Result > 0)
@@ -222,6 +241,7 @@ namespace Dairy.Tabs.Administration
         {
             txtSlab.Text = string.Empty;
             txtSlabDisc.Text = string.Empty;
+            dpStatus.ClearSelection();
         }
 
         public void GetSlabInfoByID(int SlabID)
@@ -232,9 +252,28 @@ namespace Dairy.Tabs.Administration
             {
                 txtSlab.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SlabName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SlabName"].ToString();
                 txtSlabDisc.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SlabDisc"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SlabDisc"].ToString();
-
+                dpStatus.ClearSelection();
+                if (DS.Tables[0].Rows[0]["IsArchive"].ToString() == "True")
+                {
+                    dpStatus.Items.FindByValue("2").Selected = true;
+                }
+                if (DS.Tables[0].Rows[0]["IsArchive"].ToString() == "False")
+                {
+                    dpStatus.Items.FindByValue("1").Selected = true;
+                }
             }
         }
 
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            divDanger.Visible = false;
+            divwarning.Visible = false;
+            divSusccess.Visible = false;
+            lblHeaderTab.Text = "Add Slab";
+            btnAddSlab.Visible = true;
+            btnupdateSlab.Visible = false;
+            ClearTextBox();
+            pnlError.Update();
+        }
     }
 }

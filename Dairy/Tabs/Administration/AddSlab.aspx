@@ -1,5 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddSlab.aspx.cs" Inherits="Dairy.Tabs.Administration.AddSlab" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+     <style type="text/css">
+        .listboxl {
+            height:100px !important;
+        }
+       .frmgrp {
+       margin-bottom:1px;
+       }
+       .frmgrp2 {
+       margin-bottom:15px;
+       }
+    </style>
       <script type="text/javascript">
           Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
           function InIEvent() {
@@ -78,14 +89,15 @@
 
                
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtSlab" class="form-control"   placeholder="Slab Name" ToolTip="Enter Slab Name"  runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtSlab" class="form-control"   placeholder="Slab Name" ToolTip="Enter Slab Name"  runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtSlab"
+        ErrorMessage=" Slab Name Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
 
                      
@@ -98,9 +110,36 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtSlabDisc" class="form-control"   placeholder="Slab Description" ToolTip="Enter Slab Description"  runat="server"  TextMode="MultiLine" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtSlabDisc" class="form-control"   placeholder="Slab Description" ToolTip="Enter Slab Description"  runat="server"  TextMode="MultiLine" ></asp:TextBox>                        
                     </div><!-- /.input group -->
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtSlabDisc"
+        ErrorMessage=" Slab Discription Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
+                 
+                  </div><!-- /.form group -->
 
+                     
+                       
+                          
+                      </div> 
+
+             <div class="col-lg-3">
+                  <div class="form-group frmgrp">
+                    <div class="input-group ">
+                      <div class="input-group-addon">
+                       <span style="color:red">&nbsp;*</span>
+                      </div>
+                      <asp:DropDownList ID="dpStatus" class="form-control" runat="server">
+
+                           <asp:ListItem Value="0">---Select Status---</asp:ListItem>
+                           <asp:ListItem Value="1">Active</asp:ListItem>
+                           <asp:ListItem Value="2">Deactive</asp:ListItem>
+                       
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                        <asp:CompareValidator ID="CompareValidator" runat="server" ControlToValidate="dpStatus"
+        ErrorMessage="Status is Required" Operator="NotEqual" ValidationGroup="Save" ForeColor="Red"
+        ValueToCompare="0"></asp:CompareValidator>
                   </div><!-- /.form group -->
 
                      
@@ -115,7 +154,8 @@
                     
                       
                               <asp:Button ID="btnAddSlab" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnClick_btnAddSlabID" />     
-                        <asp:Button ID="btnupdateSlab" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnClick_btnUpdateSlabID" />           
+                        <asp:Button ID="btnupdateSlab" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnClick_btnUpdateSlabID" />  
+                            &nbsp;&nbsp;  <asp:Button ID="btnRefresh" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Refresh" ValidationGroup="none"  OnClick="btnRefresh_Click"  />                    
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -168,8 +208,9 @@
                            <th>Slab Description</th>
                         <th>Created By</th>
                         <th>Created Date</th>
+                          <th>Deactive</th>
                            <th>Edit</th>
-                          <th>Delete</th>
+                         
                       </tr>
                     </thead>
                     <tbody>
@@ -182,6 +223,7 @@
                           <td><%# Eval("SlabDisc")%></td>
                        <td><%# Eval("Name")%></td>
                       <td><%# Eval("CreatedDate")%></td>
+                            <td><%# Eval("IsArchive")%></td>
                          <td>
 
                              <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
@@ -189,10 +231,7 @@
                                                                     CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
 
                          </td>
-                         <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
-                                                                    ToolTip="Delete" runat="server" CommandArgument='<%#Eval("SlabID") %>'
-                                                                    CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>
+                       
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
@@ -201,13 +240,15 @@
 
                     <tfoot>
                       <tr>
-                           <th>Slab Id</th>
-                        
+                          <th>Slab Id</th>
+                         
                           <th>Slab Name</th>
+                           <th>Slab Description</th>
                         <th>Created By</th>
                         <th>Created Date</th>
+                          <th>Deactive</th>
                            <th>Edit</th>
-                          <th>Delete</th>
+                         
                       </tr>
                     </tfoot>
                     </FooterTemplate>                                       

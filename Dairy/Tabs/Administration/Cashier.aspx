@@ -3,6 +3,7 @@
       <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+       <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
      <script type="text/javascript">
       Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
       function InIEvent() {
@@ -304,21 +305,38 @@
 
                 <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
                     <ContentTemplate>
+<asp:Panel ID="Panel1" runat="server">
+    <table class="table table-bordered table-striped">
+        <tr>
+<td> Total Sales Amount : <asp:Label ID="Label1" runat="server" > </asp:Label></td>
+ <td> Agent Cash Sales : <asp:Label ID="Label4" runat="server"></asp:Label></td>
+<td>Staff A/c :  <asp:Label ID="Label2" runat="server" >
+</asp:Label></td>
+ <td>  Agent A/C : <asp:Label ID="Label3" runat="server"></asp:Label></td>
+ 
+        </tr>
+         
+
+ 
+    </table>
+ 
+</asp:Panel>
 
                 <table id="example1" class="table table-bordered table-striped">
                    
-
-                 
+                   <caption><b>Cash Sales</b></caption>
 
                 <asp:Repeater ID="rpRouteList" runat="server" OnItemCommand="rpRouteList_ItemCommand">
-                
+                 
+                 
                <HeaderTemplate>
                   <thead>
                       <tr>
-                          <th>Total Sales Amt</th>
-                          <th>Staff A/C</th>
-                          <th>Agent A/C</th>
-                          <th>Pay</th>                        
+                       <th>Agent</th>
+                       <th>Sales Amount</th>
+                       <th>Pay Amount</th>
+                       <th>Pending Amount</th>
+                                            
                       </tr>
                     </thead>
                     <tbody>
@@ -327,19 +345,14 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
-                       <td><%# Eval("TotalSaleAmount")%></td>
+                       <td><%# Eval("AgentCode")%>&nbsp;<%# Eval("AgentName")%></td>
                         
-                         <td><%# Eval("StaffAccount")%></td>
-                         <td><%# Eval("AgentAccount")%></td>
-                       
+                        
+                         <td><%# Eval("AgencySale")%></td>
+                        <td><asp:TextBox ID="txtPayment" runat="server"></asp:TextBox></td>
+                         <td><asp:TextBox ID="txtPending" runat="server" ></asp:TextBox></td>
                     
-                        <td>
-
-                             <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
-                                                                    ToolTip="Edit" runat="server" CommandArgument='<%# Eval("SalesmanId")%>'
-                                                                    CommandName="Edit" ><i class="fa fa-edit"></i></asp:LinkButton>
-
-                         </td>
+                       
                          
                     </tr>
                </ItemTemplate>
@@ -349,10 +362,10 @@
 
                     <tfoot>
                       <tr>
-                         <th>Total Sales Amt</th>
-                          <th>Staff A/C</th>
-                          <th>Agent A/C</th>
-                          <th>Pay</th>   
+                       <th>Agent</th>
+                       <th>Sales Amount</th>
+                       <th>Pay Amount</th>
+                       <th>Pending Amount</th>
                       </tr>
                     </tfoot>
 

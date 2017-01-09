@@ -41,84 +41,51 @@ namespace Dairy.Tabs.Administration
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            double agentcredit = 0.00;
+            double emp = 0.00;
+            double agentcash = 0.00;
+            double totalsales = 0.00;
             DataSet ds = new DataSet();
             DispatchData dispatchData = new DispatchData();
             string Date = Convert.ToDateTime(txtOrderDate.Text).ToString("dd-MM-yyyy");
           
             int salesmanid = Convert.ToInt32(dpSalesman.SelectedItem.Value);
             ds = dispatchData.GetCashier(Date, salesmanid);
-            if (!Comman.Comman.IsDataSetEmpty(ds))
+            if (!Comman.Comman.IsDataSetEmpty(ds) )
             {
-                try
+                if (ds.Tables[3].Rows.Count != 0)
                 {
-                    ds.Tables[0].PrimaryKey = new[] { ds.Tables[0].Columns["DI_SalesmanFirstId"] };
-                }
-                catch (Exception) { }
-                try
-                {
-                    ds.Tables[1].PrimaryKey = new[] { ds.Tables[1].Columns["DI_SalesmanFirstId"] };
-                }
-                catch (Exception) { }
-
-                try
-                {
-                    ds.Tables[0].Merge(ds.Tables[1], false, MissingSchemaAction.Add);
-                }
-                catch (Exception) { }
-                if (ds.Tables[0].Rows.Count != 0)
-                {
-                    DataSet tds = new DataSet();
-                    //Create transaction details  DataTable.
-                    DataTable tbl = new DataTable();
-                    // tbl = ds.Tables.Add("Transaction");
-                    tbl.Columns.Add("SalesmanId", typeof(int));
-                    tbl.Columns.Add("StaffAccount", typeof(double));
-                    tbl.Columns.Add("AgentAccount", typeof(double));
-                    tbl.Columns.Add("TotalSaleAmount", typeof(double));
-
-                    foreach (DataRow row in ds.Tables[2].Rows)
-                    {
-                        foreach (DataRow rows in ds.Tables[0].Rows)
-                        {
-
-                            if (row["DI_SalesmanFirstId"].ToString() == rows["DI_SalesmanFirstId"].ToString())
-                            {
-                                double totalsalesamt = 0.00;
-                                double agentaccount = 0.00;
-                                double staffaccount = 0.00;
-                                DataRow trow = tbl.NewRow();
-                                trow["SalesmanId"] = rows["DI_SalesmanFirstId"];
-
-
-                                try { agentaccount = Convert.ToDouble(rows["AgencySale"]); }
-                                catch { agentaccount = 0.00; }
-                                trow["AgentAccount"] = agentaccount;
-                                totalsalesamt += agentaccount;
-
-                                try { staffaccount = Convert.ToDouble(rows["EmployeeSale"]); }
-                                catch { staffaccount = 0.00; }
-                                trow["StaffAccount"] = staffaccount;
-                                totalsalesamt += staffaccount;
-
-                                trow["TotalSaleAmount"] = totalsalesamt;
-
-
-
-                                tbl.Rows.Add(trow);
-
-                            }
-
-                        }
-                    }
-                    tds.Tables.Add(tbl);
-                    rpRouteList.DataSource = tds;
+                    rpRouteList.DataSource = ds.Tables[3];
                     rpRouteList.DataBind();
-                    //rpBrandInfo.Visible = true;
                     uprouteList.Update();
-
-
                 }
-               
+                else
+                {
+                    DataTable dt = new DataTable();
+                    this.BindRepeater(dt);
+                    rpRouteList.Visible = true;
+                    uprouteList.Update();
+                }
+             
+                
+                try {
+                    agentcredit = Convert.ToDouble(ds.Tables[0].Rows[0]["AgencySale"]);
+                } catch { agentcredit = 0.00; }
+                try
+                {
+                    agentcash = Convert.ToDouble(ds.Tables[1].Rows[0]["AgencySale"]);
+                }
+                catch { agentcash = 0.00; }
+                try
+                {
+                    emp = Convert.ToDouble(ds.Tables[2].Rows[0]["EmployeeSale"]);
+                }
+                catch { emp = 0.00; }
+                totalsales = agentcredit+agentcash + emp;
+                Label1.Text = totalsales.ToString();
+                Label2.Text = emp.ToString();
+                Label3.Text = agentcredit.ToString();
+                Label4.Text = agentcash.ToString();
 
             }
             else
@@ -127,10 +94,15 @@ namespace Dairy.Tabs.Administration
                 this.BindRepeater(dt);
                 rpRouteList.Visible = true;
                 uprouteList.Update();
-
+                Label1.Text = string.Empty;
+                Label2.Text = string.Empty;
+                Label3.Text = string.Empty;
+                Label4.Text = string.Empty ;
             }
 
         }
+
+       
 
         private void BindRepeater(DataTable dt)
         {

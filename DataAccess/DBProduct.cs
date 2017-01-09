@@ -286,6 +286,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@CreatedBy", product.CreatedBy));
                 paramCollection.Add(new DBParameter("@CreatedDate", product.Createddate));
                 paramCollection.Add(new DBParameter("@flag", product.flag));
+                paramCollection.Add(new DBParameter("@IsArchive", product.IsActive));
                 result = _DBHelper.ExecuteNonQuery("Sp_AddSlabInfo", paramCollection, CommandType.StoredProcedure);
 
             }
