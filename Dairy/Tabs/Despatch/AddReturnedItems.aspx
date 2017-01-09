@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddReturnedItems.aspx.cs" Inherits="Dairy.Tabs.Despatch.AddReturnedItems" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+<<<<<<< HEAD
 
    
     
@@ -25,6 +26,14 @@
           });
       }
     </script>
+=======
+     <script type="text/javascript" src="~/Theme/bootstrap/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="~/Theme/bootstrap/js/bootstrap-select.min.js"></script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+   
+   
+>>>>>>> origin/master
   
     <section class="content-header">
           <h1>
@@ -484,21 +493,7 @@
             })
         })
     </script>
-    <script type = "text/javascript">
-        function PrintPanel() {
-            var panel = document.getElementById("<%=pnlDispatchSummary.ClientID %>");
-            var printWindow = window.open('', '', 'height=400,width=800');
-            printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;}</style>");
-            printWindow.document.write('</head><body >');
-            printWindow.document.write(panel.innerHTML);
-            printWindow.document.write('</body></html>');
-            printWindow.document.close();
-            setTimeout(function () {
-                printWindow.print();
-            }, 500);
-            return false;
-        }
-    </script>
+  
     <script type="text/javascript">
         yepnope({ // or Modernizr.load
             test: Modernizr.inputtypes.date,
@@ -660,5 +655,20 @@
              });
 
          });
+    </script>
+      <script type = "text/javascript">
+        function PrintPanel() {
+            var panel = document.getElementById("<%=pnlDispatchSummary.ClientID %>");
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;}</style>");
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(panel.innerHTML);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            setTimeout(function () {
+                printWindow.print();
+            }, 500);
+            return false;
+        }
     </script>
 </asp:Content>

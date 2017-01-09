@@ -59,7 +59,7 @@ namespace Dairy.Tabs.Reception
                 sb.Append(".tg .tg-yw4l{vertical-align:top}");
                 sb.Append(".tg .tg-baqh{text-align:center;vertical-align:top}");
                 sb.Append("</style>");
-                sb.Append("<table class='tg style1' style='page-break-inside:avoid; align:center;'>");
+                sb.Append("<table class='tg style1'  align:center;'>");
                 sb.Append("<colgroup>");
                 sb.Append("<col style = 'width:120px'>");
                 sb.Append("<col style = 'width:160px'>");
@@ -173,7 +173,7 @@ namespace Dairy.Tabs.Reception
                 foreach (DataRow row2 in DS.Tables[2].Rows)
                 {
                     sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '9'> &nbsp; </td> </tr>");
-                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'>");
 
 
                     sb.Append("<td class='tg-yw4l' colspan='4'  style='text-align:left'>");
@@ -204,6 +204,7 @@ namespace Dairy.Tabs.Reception
                     {
                         if (row2["ProductName"].ToString() == row["ProductName"].ToString())
                         {
+                            sb.Append("<tr style='page-break-inside:avoid;'>");
                             sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:left'>");
                             sb.Append(row["ProductName"].ToString());
                             sb.Append("</td>");
@@ -248,7 +249,7 @@ namespace Dairy.Tabs.Reception
                 if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1 || Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
                 {
                     sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '9'> &nbsp; </td> </tr>");
-                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'>");
 
 
                     sb.Append("<td class='tg-yw4l' colspan='4'  style='text-align:left'>");
@@ -302,7 +303,7 @@ namespace Dairy.Tabs.Reception
 
 
                 sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '9'> &nbsp; </td> </tr>");
-                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'>");
 
 
                 sb.Append("<td class='tg-yw4l' style='text-align:left'>");
