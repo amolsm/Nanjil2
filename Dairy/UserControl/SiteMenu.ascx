@@ -471,14 +471,15 @@
                 <li><a href="/Tabs/Despatch/BoothPlaceOrder.aspx"><i class="fa fa-circle-o"></i>  Place Booth Order</a></li>
                    <%--<li><a href="/Tabs/Administration/GenerateBillForBooth.aspx"><i class="fa fa-circle-o"></i>  Gnerate Bill</a></li>--%>
                   <li><a href="/Tabs/Despatch/ViewDispatchOrders.aspx"><i class="fa fa-circle-o"></i> View Dispatch Order</a></li>
-
+                  </ul>
+              </li>
                       <li  class="treeview">
                <a href="#">
                 <i class="fa fa-file"></i>
-                <span>Shift Details</span>
+                <span style="width:220px">Shift Details</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-                       <ul class="treeview-menu">
+                       <ul class="treeview-menu" style="width:220px">
            <li><a href="/Tabs/Despatch/ViewDispatchUserShiftwise.aspx"><i class="fa fa-circle-o"></i>Shiftwise Item Summary</a></li>
                 <li><a href="/Tabs/Despatch/ViewDispatchSummary.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary</a></li>
                   <li><a href="/Tabs/Despatch/ViewDispatchSummaryUsers.aspx"><i class="fa fa-circle-o"></i> Dispatch Summary Routewise</a></li>
@@ -488,10 +489,10 @@
                      <li  class="treeview">
                <a href="#">
                 <i class="fa fa-file"></i>
-                <span>Returns</span>
+                <span style="width:200px">Returns</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-                       <ul class="treeview-menu">
+                       <ul class="treeview-menu" style="width:200px">
                   <li><a href="/Tabs/Despatch/AddReturnedItems.aspx"><i class="fa fa-circle-o"></i> Returned Products</a></li>
                 
                   <li><a href="/Tabs/Despatch/ReturnScheme.aspx"><i class="fa fa-circle-o"></i> Returned Scheme</a></li>
@@ -501,10 +502,10 @@
                    <li  class="treeview">
                <a href="#">
                 <i class="fa fa-file"></i>
-                <span>Sales Summary</span>
+                <span style="width:200px">Sales Summary</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-                       <ul class="treeview-menu">
+                       <ul class="treeview-menu" style="width:200px">
              
                    <li><a href="/Tabs/Despatch/RoutewiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Routewise Sales Summary</a></li> 
                  <li><a href="/Tabs/Reports/BillwiseSaleSummary.aspx"><i class="fa fa-circle-o"></i>Bill Wise Sales Summary</a></li> 
@@ -518,10 +519,10 @@
                      <li  class="treeview">
                <a href="#">
                 <i class="fa fa-file"></i>
-                <span>Trays Report</span>
+                <span style="width:260px">Trays Report</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-                       <ul class="treeview-menu">
+                       <ul class="treeview-menu" style="width:260px">
                  <li><a href="/Tabs/Despatch/RoutewiseReturnTraysReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Trays Report</a></li>
                     <li><a href="/Tabs/Despatch/RoutewiseReturnIceBoxReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return IceBox Report</a></li>
                   <li><a href="/Tabs/Despatch/RoutewiseReturnCartonReport.aspx"><i class="fa fa-circle-o"></i> Routewise Return Carton Report</a></li>

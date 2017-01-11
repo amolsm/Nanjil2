@@ -309,9 +309,11 @@
     <table class="table table-bordered table-striped">
         <tr>
 <td> Total Sales Amount : <asp:Label ID="Label1" runat="server" > </asp:Label></td>
+ <td> Agent Cash Sales : <asp:Label ID="Label4" runat="server"></asp:Label></td>
 <td>Staff A/c :  <asp:Label ID="Label2" runat="server" >
 </asp:Label></td>
  <td>  Agent A/C : <asp:Label ID="Label3" runat="server"></asp:Label></td>
+ 
         </tr>
          
 
@@ -322,18 +324,19 @@
 
                 <table id="example1" class="table table-bordered table-striped">
                    
-
-                 
+                   <caption><b>Cash Sales</b></caption>
 
                 <asp:Repeater ID="rpRouteList" runat="server" OnItemCommand="rpRouteList_ItemCommand">
-                
+                 
+                 
                <HeaderTemplate>
                   <thead>
                       <tr>
-                          <th>Agent</th>
-                          <th>Agent Type</th>
-                          <th>Sales Amount</th>
-                          <th>Pay</th>                        
+                       <th>Agent</th>
+                       <th>Sales Amount</th>
+                       <th>Pay Amount</th>
+                       <th>Pending Amount</th>
+                                            
                       </tr>
                     </thead>
                     <tbody>
@@ -344,17 +347,12 @@
                     <tr>
                        <td><%# Eval("AgentCode")%>&nbsp;<%# Eval("AgentName")%></td>
                         
-                         <td><%# Eval("PaymentMode")%></td>
+                        
                          <td><%# Eval("AgencySale")%></td>
-                       
+                        <td><asp:TextBox ID="txtPayment" runat="server"></asp:TextBox></td>
+                         <td><asp:TextBox ID="txtPending" runat="server" ></asp:TextBox></td>
                     
-                        <td>
-
-                             <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
-                                                                    ToolTip="Edit" runat="server" CommandArgument='<%# Eval("AgentID")%>'
-                                                                    CommandName="Edit" ><i class="fa fa-edit"></i></asp:LinkButton>
-
-                         </td>
+                       
                          
                     </tr>
                </ItemTemplate>
@@ -365,9 +363,9 @@
                     <tfoot>
                       <tr>
                        <th>Agent</th>
-                          <th>Agent Type</th>
-                          <th>Sales Amount</th>
-                          <th>Pay</th>     
+                       <th>Sales Amount</th>
+                       <th>Pay Amount</th>
+                       <th>Pending Amount</th>
                       </tr>
                     </tfoot>
 

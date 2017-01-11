@@ -1,39 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddReturnedItems.aspx.cs" Inherits="Dairy.Tabs.Despatch.AddReturnedItems" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-<<<<<<< HEAD
+
 
    
     
      <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-   
-     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-      Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
-      function InIEvent() {
 
-          $(function () {
-              $("#example1").DataTable();
-              $('#example2').DataTable({
-                  "paging": true,
-                  "lengthChange": false,
-                  "searching": false,
-                  "ordering": true,
-                  "info": true,
-                  "autoWidth": false
-              });
-          });
-      }
-    </script>
-=======
-     <script type="text/javascript" src="~/Theme/bootstrap/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="~/Theme/bootstrap/js/bootstrap-select.min.js"></script>
-</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
    
    
->>>>>>> origin/master
+
   
     <section class="content-header">
           <h1>
