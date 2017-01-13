@@ -361,17 +361,10 @@
                     <tr>
                        <td><%# Eval("AgentCode")%>&nbsp;<%# Eval("AgentName")%></td>
                         
-<<<<<<< HEAD
                         <td><asp:TextBox ID="txtAgencySales" runat="server" ReadOnly="true" Text='<%#Eval("AgencySale")%>' ></asp:TextBox></td>
                      
                         <td><asp:TextBox ID="txtPayment" runat="server" OnTextChanged="txtPayment_TextChanged" AutoPostBack="true"></asp:TextBox></td>
                          <td><asp:TextBox ID="txtPending" runat="server" ReadOnly="true" ></asp:TextBox></td>
-=======
-                        
-                         <td><%# Eval("AgencySale")%></td>
-                        <td><asp:TextBox ID="txtPayment" runat="server"></asp:TextBox></td>
-                         <td><asp:TextBox ID="txtPending" runat="server" ></asp:TextBox></td>
->>>>>>> origin/master
                     
                        
                          
