@@ -184,7 +184,7 @@ namespace Dairy.Tabs.Reception
 
                     sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:center'>");
 
-                    sb.Append("<b>" + row2["SubQuantity"] + "</b>");
+                    sb.Append("<b>" + row2["SubQuantity"] + "</b>" +" "+ row2["UnitName"]);
 
 
                     sb.Append("</td>");
@@ -219,7 +219,7 @@ namespace Dairy.Tabs.Reception
 
                             sb.Append("<td class='tg-yw4l' colspan='2'   style='text-align:center'>");
 
-                            sb.Append(row["Quantity"].ToString());
+                            sb.Append(row["Quantity"].ToString() + " " + row2["UnitName"]);
 
 
                             sb.Append("</td>");

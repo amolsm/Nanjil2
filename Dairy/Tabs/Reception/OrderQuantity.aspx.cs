@@ -166,8 +166,7 @@ namespace Dairy.Tabs.Reception
                     //sb.Append("<td>&nbsp;</td>");
 
                     sb.Append("<td class='tg-yw4l'   style='text-align:center'>");
-                    sb.Append(row["Quantity"].ToString());
-                    //+ " " + row["UnitName"].ToString());
+                    sb.Append(row["Quantity"].ToString()+ " " + row["UnitName"].ToString());
                     TotQuantity = TotQuantity + Convert.ToDouble(row["Quantity"]);
                     sb.Append("</td>");
 

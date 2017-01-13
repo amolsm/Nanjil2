@@ -184,7 +184,7 @@ namespace Dairy.Tabs.Reports
 
                     sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:center'>");
 
-                    sb.Append("<b>" + row2["SubQuantity"] + "</b>");
+                    sb.Append("<b>" + row2["SubQuantity"] + "</b>" + " " + row2["UnitName"]);
 
 
                     sb.Append("</td>");
@@ -220,7 +220,7 @@ namespace Dairy.Tabs.Reports
 
                             sb.Append("<td class='tg-yw4l' colspan='2'   style='text-align:center'>");
 
-                            sb.Append(row["Quantity"].ToString());
+                            sb.Append(row["Quantity"].ToString() + " " + row2["UnitName"]);
 
 
                             sb.Append("</td>");
@@ -247,7 +247,7 @@ namespace Dairy.Tabs.Reports
 
 
                 }
-                if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1|| Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
+                if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1 || Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
                 {
                     sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '9'> &nbsp; </td> </tr>");
                     sb.Append("<tr style='border-bottom:1px solid';page-break-inside:avoid;>");
