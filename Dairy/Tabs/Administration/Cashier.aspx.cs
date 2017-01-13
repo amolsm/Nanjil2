@@ -164,5 +164,30 @@ namespace Dairy.Tabs.Administration
 
             }
         }
+
+        protected void txtPayment_TextChanged(object sender, EventArgs e)
+        {
+            double salesamt;
+            double payamt;
+            double pendingamt;
+           
+            TextBox tb1 = ((TextBox)(sender));
+
+            RepeaterItem rp1 = ((RepeaterItem)(tb1.NamingContainer));
+            TextBox txtAgencySales = (TextBox)rp1.FindControl("txtAgencySales");
+            try { salesamt = Convert.ToDouble(txtAgencySales.Text); }
+            catch { salesamt = 0.00; }
+            TextBox txtPaymentamt = (TextBox)rp1.FindControl("txtPayment");
+            try { payamt = Convert.ToDouble(txtPaymentamt.Text); }
+            catch { payamt = 0.00; }
+            TextBox txtPending = (TextBox)rp1.FindControl("txtPending");
+            pendingamt = salesamt - payamt;
+            txtPending.Text = Convert.ToString(pendingamt);
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "<script type='text/javascript'> $('#myModal').modal('show'); </script>", false);
+        }
     }
 }

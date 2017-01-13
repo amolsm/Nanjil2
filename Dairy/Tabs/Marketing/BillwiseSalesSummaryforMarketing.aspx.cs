@@ -218,7 +218,7 @@ namespace Dairy.Tabs.Marketing
                         sb.Append("</tr>");
                         foreach (DataRow row in DS.Tables[0].Rows)
                         {
-                            if (row2["BillNumber"].ToString() == row["BillNo"].ToString())
+                            if (row2["OrderId"].ToString() == row["OrderId"].ToString())
                             {
                                 count = count + 1;
                                 sb.Append("<tr style='page-break-inside:avoid;'>");
@@ -271,7 +271,7 @@ namespace Dairy.Tabs.Marketing
                             }
                             else { }
                         }
-                        DS1 = billdata.GetSchemeAmountForBillwiseSalesSummary(row2["BillNumber"]);
+                        DS1 = billdata.GetSchemeAmountForBillwiseSalesSummary(row2["OrderId"]);
                         if (!Comman.Comman.IsDataSetEmpty(DS1))
                         {
                             sb.Append("<tr style='page-break-inside:avoid;'>");
@@ -452,7 +452,7 @@ namespace Dairy.Tabs.Marketing
                         sb.Append("</tr>");
                         foreach (DataRow row4 in DS.Tables[2].Rows)
                         {
-                            if (row3["BillNumber"].ToString() == row4["BillNo"].ToString())
+                            if (row3["OrderId"].ToString() == row4["OrderId"].ToString())
                             {
                                 count = count + 1;
                                 sb.Append("<tr style='page-break-inside:avoid;'>");
@@ -491,7 +491,7 @@ namespace Dairy.Tabs.Marketing
                             }
                             else { }
                         }
-                        DS1 = billdata.GetSchemeAmountForBillwiseSalesSummary(row3["BillNumber"]);
+                        DS1 = billdata.GetSchemeAmountForBillwiseSalesSummary(row3["OrderId"]);
                         if (!Comman.Comman.IsDataSetEmpty(DS1))
                         {
                             sb.Append("<tr style='page-break-inside:avoid;'>");

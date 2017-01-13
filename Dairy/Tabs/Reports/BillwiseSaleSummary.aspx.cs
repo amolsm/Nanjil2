@@ -204,7 +204,7 @@ namespace Dairy.Tabs.Reports
                     sb.Append("</tr>");
                     foreach (DataRow row in DS.Tables[0].Rows)
                     {
-                        if (row2["BillNumber"].ToString() == row["BillNo"].ToString())
+                        if (row2["OrderId"].ToString() == row["OrderId"].ToString())
                         {
                             sb.Append("<tr>");
                             sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
@@ -254,7 +254,7 @@ namespace Dairy.Tabs.Reports
                         }
                         else { }
                     }
-                    DS1 = billdata.GetSchemeAmountForBillwiseSalesSummary(row2["BillNumber"]);
+                    DS1 = billdata.GetSchemeAmountForBillwiseSalesSummary(row2["OrderId"]);
                     if (!Comman.Comman.IsDataSetEmpty(DS1))
                     {
                         sb.Append("<tr>");
