@@ -537,19 +537,21 @@
      
       <script type = "text/javascript">
           function Confirms() {
-              debugger;
+             
             var confirm_value = document.createElement("INPUT");
             confirm_value.type = "hidden";
             confirm_value.name = "confirm_value";
-            totalamt = document.getElementById('<%=lbltotalamt.ClientID %>').value;
-             totalpay = document.getElementById('<%=txttotalPay.ClientID %>').value;
+
+        <%--    var val10 = document.getElementById('<%=lbl10.ClientID %>').value;
+            var totalpay = document.getElementById('<%=txttotalPay.ClientID %>').value;
            
 
             if (totalamt != totalpay) {
                 alert("Please fill payment denomination equal to total payment");
-
+                totalamt = "";
+                totalamt = "";
                 return false;
-            }
+            }--%>
             
             
             if (confirm("Do you want to save data?")) {

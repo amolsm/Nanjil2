@@ -108,8 +108,26 @@ namespace Dairy.Tabs.Despatch
                 //insertDispatchTemp(DS);
 
             }
-            else { rpRouteList.Visible = false; uprouteList.Update(); }
+            else {
+                DataTable dt = new DataTable();
+                this.BindRepeater(dt);
+                rpRouteList.Visible = true;
+                uprouteList.Update();
+            }
 
+
+        }
+
+        private void BindRepeater(DataTable dt)
+        {
+            rpRouteList.DataSource = dt;
+            rpRouteList.DataBind();
+
+            if (dt.Rows.Count == 0)
+            {
+                Control FooterTemplate = rpRouteList.Controls[rpRouteList.Controls.Count - 1].Controls[0];
+                FooterTemplate.FindControl("trEmpty").Visible = true;
+            }
 
         }
 
@@ -473,6 +491,16 @@ namespace Dairy.Tabs.Despatch
                     }
                 }
             }
+        }
+
+        protected void dpagentRoute_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            clearlist();
+            divDanger.Visible = false;
+            divwarning.Visible = false;
+            divSusccess.Visible = false;
+            pnlError.Update();
+            uprouteList.Update();
         }
     }
 }

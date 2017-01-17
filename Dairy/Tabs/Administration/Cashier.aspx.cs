@@ -129,8 +129,8 @@ namespace Dairy.Tabs.Administration
                 cm.DispatchDate = Convert.ToDateTime(txtOrderDate.Text).ToString("dd-MM-yyyy");
                 cm.Salesmanid = Convert.ToInt32(dpSalesman.SelectedItem.Value);
                 cm.trDate = DateTime.Now.ToString("dd-MM-yyyy");
-                cm.netamt = string.IsNullOrEmpty(txtNetAmt.Text) ? 0 : Convert.ToInt32(txtNetAmt.Text);
-                cm.payamt = string.IsNullOrEmpty(txttotalPay.Text) ? 0 : Convert.ToInt32(txttotalPay.Text);
+                cm.netamt = string.IsNullOrEmpty(txtNetAmt.Text) ? 0 : Convert.ToDouble(txtNetAmt.Text);
+                cm.payamt = string.IsNullOrEmpty(txttotalPay.Text) ? 0 : Convert.ToDouble(txttotalPay.Text);
                 cm.rs2000 = string.IsNullOrEmpty(txt2000.Text) ? 0 : Convert.ToInt32(txt2000.Text);
                 cm.rs1000 = string.IsNullOrEmpty(txt1000.Text) ? 0 : Convert.ToInt32(txt1000.Text);
                 cm.rs500 = string.IsNullOrEmpty(txt500.Text) ? 0 : Convert.ToInt32(txt500.Text);

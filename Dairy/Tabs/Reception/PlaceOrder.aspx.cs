@@ -1027,7 +1027,40 @@ namespace Dairy.Tabs.Reception
             upMain.Update();
         }
 
+        protected void dpEmploueeRoute_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int count = 0;
+            DS = new DataSet();
+            Invoice inovicesa = new Invoice();
+            InvoiceData invoiceDatasa = new InvoiceData();
+            inovicesa.orderDate = (Convert.ToDateTime(txtEmployeeOrderDate.Text)).ToString("dd-MM-yyyy");
+            inovicesa.ROuteID = Convert.ToInt32(dpEmploueeRoute.SelectedItem.Value);
+            inovicesa.EmployeeID = Convert.ToInt32(dpEmployee.SelectedItem.Value);
+            inovicesa.orderType = 2;// employeeORder
+            DataSet ckpreviousemporder = new DataSet();
+            ckpreviousemporder = invoiceDatasa.Checkempduplicateorder(inovicesa);
+            if (!Comman.Comman.IsDataSetEmpty(ckpreviousemporder))
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('On This Route Employee Order Already exists')", true);
+                dpEmployee.ClearSelection();
+            }
+            Product product = new Product();
+            ProductData productData = new ProductData();
+            product.AgencyID = 1;
+            product.EmployeeId = Convert.ToInt32(dpEmployee.SelectedItem.Value);
+            product.orderDate = DateTime.Now.ToString("dd-MM-yyyy").ToString();
+            DS = productData.GetTotalCount(product);
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                hfTotalCansume.Value = DS.Tables[0].Rows[0]["count"].ToString();
 
+            }
+            else
+            {
+                hfTotalCansume.Value = "0";
+            }
+            dpEmployee.Focus();
 
+        }
     }
 }

@@ -181,11 +181,25 @@ namespace Dairy.Tabs.Administration
             }
             else
             {
-                rpAgentOrderdetails.Visible = false;
-                result = "No Previous Order For Milk";
-                prevorder.Text = result;
+                DataTable dt = new DataTable();
+                this.BindRepeater(dt);
+                rpAgentOrderdetails.Visible = true;
+                upMain.Update();
 
             }
+        }
+
+        private void BindRepeater(DataTable dt)
+        {
+            rpAgentOrderdetails.DataSource = dt;
+            rpAgentOrderdetails.DataBind();
+
+            if (dt.Rows.Count == 0)
+            {
+                Control FooterTemplate = rpAgentOrderdetails.Controls[rpAgentOrderdetails.Controls.Count - 1].Controls[0];
+                FooterTemplate.FindControl("trEmpty").Visible = true;
+            }
+
         }
 
         private void BindAgntTempItam(Invoice invocie)

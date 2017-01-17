@@ -167,7 +167,7 @@
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
-
+                             <tr id="trEmpty" runat="server" visible="false"><td  align = "left" colspan="10"><h5> Bulk Routewise Agent Order is completed for this Route Or No records found. Please contact Admin.</h5></td> </tr>
                          </tbody>
 
                     <tfoot>

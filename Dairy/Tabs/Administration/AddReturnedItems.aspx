@@ -112,7 +112,7 @@
                       <div class="input-group-addon">
                        <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="dpagentRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server"  > 
+                      <asp:DropDownList ID="dpagentRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" OnSelectedIndexChanged="dpagentRoute_SelectedIndexChanged" AutoPostBack="true"> 
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
@@ -413,7 +413,7 @@
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
-
+                         <tr id="trEmpty" runat="server" visible="false"><td  align = "left" colspan="9"><h5> Manage Return Item Process is completed for this Route  Or No records found. Please contact Admin.</h5></td> </tr>
                          </tbody>
 
                     <tfoot>
