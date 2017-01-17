@@ -122,7 +122,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <asp:Button ID="btnSearch" class="btn btn-primary" ValidationGroup="search" runat="server" CommandName="MoveNext" Text="Search" OnClick="btnSearch_Click" />     
-                        &nbsp;&nbsp;&nbsp; <asp:Button ID="btnSubmit" class="btn btn-primary"  runat="server" CommandName="MoveNext" Text="Payment" OnClick="btnSubmit_Click" />     
+                        &nbsp;&nbsp;&nbsp; <asp:Button ID="btnSubmit" class="btn btn-primary"  runat="server" CommandName="MoveNext"  Text="Payment" OnClick="btnSubmit_Click" />     
                        
                     </div><!-- /.input group -->
 
@@ -160,31 +160,51 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Submit Dispatch</h4>
+        <h4 class="modal-title" id="myModalLabel">Payment Denomination</h4>
       </div>
       <div class="modal-body">
           <div class="box-body">
-            
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server" >  
+              <ContentTemplate> 
+           
+              <table class="table table-bordered table-striped">
+                  <tr>
+                      <td colspan="9"><asp:Label ID="lblvalidate" ForeColor="Red" runat="server"> </asp:Label></td>
+                   
+                  </tr>
+        <tr>
+<td><asp:Label ID="lbl2000" runat="server"> </asp:Label></td>
+ <td><asp:Label ID="lbl1000" runat="server"></asp:Label></td>
+<td><asp:Label ID="lbl500" runat="server" ></asp:Label></td>
+ <td><asp:Label ID="lbl100" runat="server"></asp:Label></td>
+ <td><asp:Label ID="lbl50" runat="server"></asp:Label></td>
+ <td><asp:Label ID="lbl20" runat="server"></asp:Label></td>
+ <td><asp:Label ID="lbl10" runat="server"></asp:Label></td>
+ <td><asp:Label ID="lblcoins" runat="server"></asp:Label></td>
+ <td>Total Amount: <asp:Label ID="lbltotalamt" runat="server"></asp:Label></td>
+        </tr>
+                  </table>
+         
+              
                 <div class="col-lg-6">
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                     Rs.2000 *
                       </div>
-                       <asp:TextBox ID="txt2000" class="form-control" ToolTip="2000"  placeholder="2000" runat="server" ValidationGroup="Submit" ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
+                       <asp:TextBox ID="txt2000" class="form-control" ToolTip="Pieces" type="number" placeholder="Pieces" runat="server" OnTextChanged="txt2000_TextChanged"  AutoPostBack="true" > </asp:TextBox>                       
+                        </div><!-- /.input group -->
+                     </div><!-- /.form group -->
     
                       </div>        <!-- --> 
 
-                <div class="col-lg-6">
+                    <div class="col-lg-6">
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      Rs.1000 *
                       </div>
-                       <asp:TextBox ID="txt500" class="form-control" ValidationGroup="Submit" ToolTip="500" placeholder="500" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txt1000" class="form-control"  type="number"  ToolTip="Pieces" placeholder="Pieces" OnTextChanged="txt1000_TextChanged" runat="server"  AutoPostBack="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -195,9 +215,22 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                       Rs.500 *
                       </div>
-                       <asp:TextBox ID="txt100" ToolTip="100" class="form-control" ValidationGroup="Submit"  placeholder="100" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txt500" class="form-control" type="number"  ToolTip="Pieces" placeholder="Pieces" OnTextChanged="txt500_TextChanged" AutoPostBack="true" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+    
+                      </div>        <!-- -->
+
+                <div class="col-lg-6">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      Rs.100 *
+                      </div>
+                       <asp:TextBox ID="txt100" ToolTip="Pieces" type="number" class="form-control"   placeholder="Pieces" runat="server" OnTextChanged="txt100_TextChanged" AutoPostBack="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -208,9 +241,9 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                       Rs.50 *
                       </div>
-                       <asp:TextBox ID="txt50" class="form-control" ValidationGroup="Submit" ToolTip="50" placeholder="50" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txt50" class="form-control" type="number"  ToolTip="Pieces" placeholder="Pieces" runat="server" AutoPostBack="true" OnTextChanged="txt50_TextChanged"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -221,9 +254,9 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      Rs.20 *
                       </div>
-                       <asp:TextBox ID="txt20" class="form-control" ValidationGroup="Submit" ToolTip="20" placeholder="20" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txt20" class="form-control" type="number"  ToolTip="Pieces" placeholder="Pieces" runat="server" OnTextChanged="txt20_TextChanged" AutoPostBack="true" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -233,9 +266,9 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      Rs.10 *
                       </div>
-                       <asp:TextBox ID="txt10" class="form-control" ValidationGroup="Submit" ToolTip="10" placeholder="10" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txt10" class="form-control" type="number"  ToolTip="Pieces" placeholder="Pieces" runat="server" OnTextChanged="txt10_TextChanged" AutoPostBack="true" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -245,9 +278,9 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                   Coins
                       </div>
-                       <asp:TextBox ID="txtCoin" class="form-control" ValidationGroup="Submit" ToolTip="Coins" placeholder="Coins" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtCoin" class="form-control" type="number" step="any"  ToolTip="Coins" placeholder="Coins" runat="server" OnTextChanged="txtCoin_TextChanged" AutoPostBack="true" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -257,9 +290,9 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                       NetAmount
                       </div>
-                       <asp:TextBox ID="txtNetAmt" class="form-control" ValidationGroup="Submit" ToolTip="Net Amount" placeholder="Net Amount" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtNetAmt" class="form-control" type="number"   ToolTip="Net Amount" placeholder="Net Amount" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -269,9 +302,9 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                     PaymentAmount
                       </div>
-                       <asp:TextBox ID="txttotalPay" class="form-control" ValidationGroup="Submit" ToolTip="Total Pay Amount" placeholder="Pay Amount" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txttotalPay" class="form-control"  type="number"  ToolTip="Total Pay Amount" placeholder="Pay Amount" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -282,9 +315,9 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      Pending Amount
                       </div>
-                       <asp:TextBox ID="txtPendingTotal" class="form-control" ValidationGroup="Submit" ToolTip="Total Pending Amount" placeholder="Pending Amount" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtPendingTotal" class="form-control" type="number"  ToolTip="Total Pending Amount" placeholder="Pending Amount" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -300,13 +333,14 @@
                   </div><!-- /.form group -->
     
                       </div>        <!-- -->
-
+ </ContentTemplate>
+             </asp:UpdatePanel> 
             </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <%--<button type="button" class="btn btn-primary" >Save changes</button>--%>
-          <asp:Button ID="btnUpdate" class="btn btn-primary" runat="server" ValidationGroup="saved" OnClick="btnUpdate_Click" Text="Save changes" UseSubmitBehavior="false" OnClientClick="Confirm()" data-dismiss="modal"/>       
+          <asp:Button ID="btnUpdate" class="btn btn-primary" runat="server" ValidationGroup="saved" OnClick="btnUpdate_Click" Text="Save changes" UseSubmitBehavior="false" OnClientClick="Confirms()" data-dismiss="modal"/>       
       </div>
     </div>
   </div>
@@ -323,14 +357,18 @@
     <table class="table table-bordered table-striped">
         <tr>
 <td> Total Sales Amount : <asp:Label ID="Label1" runat="server" > </asp:Label></td>
- <td> Agent Cash Sales : <asp:Label ID="Label4" runat="server"></asp:Label></td>
+ <td> Agent Cash Sales : <asp:Label ID="Label4" runat="server" Font-Bold="True" ForeColor="#003300"></asp:Label></td>
 <td>Staff A/c :  <asp:Label ID="Label2" runat="server" >
 </asp:Label></td>
  <td>  Agent A/C : <asp:Label ID="Label3" runat="server"></asp:Label></td>
  
         </tr>
          
-
+        <tr>
+<td colspan="4"> <asp:Label ID="lblerrormsg" runat="server" ForeColor="Red" > </asp:Label></td>
+ 
+ 
+        </tr>
  
     </table>
  
@@ -341,7 +379,6 @@
                    <caption><b>Cash Sales</b></caption>
 
                 <asp:Repeater ID="rpRouteList" runat="server" OnItemCommand="rpRouteList_ItemCommand">
-                 
                  
                <HeaderTemplate>
                   <thead>
@@ -359,11 +396,14 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
+                         <asp:HiddenField id="hfAgentId" runat="server" value='<%#Eval("AgentID") %>' />  
                        <td><%# Eval("AgentCode")%>&nbsp;<%# Eval("AgentName")%></td>
                         
                         <td><asp:TextBox ID="txtAgencySales" runat="server" ReadOnly="true" Text='<%#Eval("AgencySale")%>' ></asp:TextBox></td>
                      
                         <td><asp:TextBox ID="txtPayment" runat="server" OnTextChanged="txtPayment_TextChanged" AutoPostBack="true"></asp:TextBox></td>
+                      
+                 
                          <td><asp:TextBox ID="txtPending" runat="server" ReadOnly="true" ></asp:TextBox></td>
                     
                        
@@ -417,7 +457,11 @@
             </asp:UpdateProgress>          
           </div><!-- /.box -->
         </section>
-    
+     <asp:UpdatePanel ID="hfupdate" runat="server">
+          <ContentTemplate>
+          <asp:HiddenField ID="hftokanno" runat="server" />
+              </ContentTemplate>
+      </asp:UpdatePanel>  
      
     <script type="text/javascript">
 
@@ -489,11 +533,25 @@
         }); // end Modernizr.load
         </script>
 
-    <script type = "text/javascript">
-        function Confirm() {
+   
+     
+      <script type = "text/javascript">
+          function Confirms() {
+              debugger;
             var confirm_value = document.createElement("INPUT");
             confirm_value.type = "hidden";
             confirm_value.name = "confirm_value";
+            totalamt = document.getElementById('<%=lbltotalamt.ClientID %>').value;
+             totalpay = document.getElementById('<%=txttotalPay.ClientID %>').value;
+           
+
+            if (totalamt != totalpay) {
+                alert("Please fill payment denomination equal to total payment");
+
+                return false;
+            }
+            
+            
             if (confirm("Do you want to save data?")) {
                 confirm_value.value = "Yes";
             } else {
@@ -506,23 +564,6 @@
             $('#myModal').modal('hide');
 
         }
-
-    </script>
-     
-    <script type = "text/javascript">
-        function ConfirmFinal() {
-            var confirm_value = document.createElement("INPUT");
-            confirm_value.type = "hidden";
-            confirm_value.name = "confirm_value";
-            if (confirm("Do you want to save data?")) {
-                confirm_value.value = "Yes";
-            } else {
-                confirm_value.value = "No";
-            }
-            document.forms[0].appendChild(confirm_value);
-        }
-
-
 
     </script>
 </asp:Content>

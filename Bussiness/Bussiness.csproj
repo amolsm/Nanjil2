@@ -66,6 +66,7 @@
     <Compile Include="AgentInfoData.cs" />
     <Compile Include="BillData.cs" />
     <Compile Include="BindCommanData.cs" />
+    <Compile Include="CashierData.cs" />
     <Compile Include="CorrectiveActionOnIssuesData.cs" />
     <Compile Include="DispatchData.cs" />
     <Compile Include="EmployeeData.cs" />

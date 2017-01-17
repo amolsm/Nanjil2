@@ -67,6 +67,7 @@
     <Compile Include="DBActiveInactiveIssues.cs" />
     <Compile Include="DBBill.cs" />
     <Compile Include="DBBindComman.cs" />
+    <Compile Include="DBCashier.cs" />
     <Compile Include="DBCorrectiveActionOnIssue.cs" />
     <Compile Include="DBDispatch.cs" />
     <Compile Include="DBEmployee.cs" />
