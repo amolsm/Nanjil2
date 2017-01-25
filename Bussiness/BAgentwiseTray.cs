@@ -18,6 +18,7 @@ namespace Bussiness
             return dat.GetAgentwiseTrayDetails(DispatchId, DDate);
         }
 
+
         public int AddAgentwiseTrayDetails(int dispatchid, int AgentId, int EmpId, int traydispatched, int returntrays, int salesmanid, int routeid, string date, int excesstrays, int shorttrays)
         {
             DAAgentwiseTray daagentwisetray = new DAAgentwiseTray();

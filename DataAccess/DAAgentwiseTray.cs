@@ -18,7 +18,7 @@ namespace DataAccess
 
             paramcollection.Add(new DBParameter("@DispatchId", DispatchId));
             paramcollection.Add(new DBParameter("@DisDate", DDate));
-            return _DBHelper.ExecuteDataSet("sp_AgentwiseTrayDetails1", paramcollection, CommandType.StoredProcedure);
+            return _DBHelper.ExecuteDataSet("sp_AgentwiseTrayDetails", paramcollection, CommandType.StoredProcedure);
         }
 
         public int AddAgentwiseTrayDetails(int dispatchid, int AgentId, int EmpId, int traydispatched, int returntrays, int salesmanid, int routeid, string date, int excesstrays, int shorttrays)
