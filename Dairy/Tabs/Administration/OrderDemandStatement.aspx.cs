@@ -76,7 +76,7 @@ namespace Dairy
 
                 sb.Append(" <tr>");
                 sb.Append("<td class='tg-031e'  rowspan='2' align='center'>Agt.ID /<br>Emp.ID<br><br>SeqNo</td>");
-                sb.Append(" <td class='tg-031e'rowspan='2' align='center' width='30%'>Agency Name /<br>Employee Name</td>");
+                sb.Append(" <td class='tg-031e'rowspan='2' align='center' width='27%'>Agency Name /<br>Employee Name</td>");
                 sb.Append("<td class='tg-031e' colspan='2' align='center'>T.M.[Lts]</td>");
 
                 sb.Append("<td class='tg-031e' colspan='3' align='center'>D.T.M.[Lts]</td>");
@@ -116,7 +116,7 @@ namespace Dairy
                 {
                     billseq++;
 
-                    sb.Append("<tr style='page-break-inside:avoid;'> ");
+                    sb.Append("<tr style='page-break-inside:avoid;' height='35' > ");
                     sb.Append("<td class='tg-031e'>");
 
                     if (string.IsNullOrEmpty(row["AgentCode"].ToString()))
@@ -151,8 +151,9 @@ namespace Dairy
                     sb.Append("</td>");
                     if (row["SchAmt"].ToString() == "")
 
-                    { sb.Append(" <td class='tg-031e' style='text-align:center'><hr  style='margin-top:20px; margin-bottom:20px; vertical-align:middle'>");
-                      sb.Append("</td>");
+                    {
+                        sb.Append(" <td class='tg-031e' style='text-align:center'><hr  style='margin-top:20px; margin-bottom:20px; vertical-align:middle'>");
+                        sb.Append("</td>");
                     }
                     else
                     {
@@ -160,7 +161,7 @@ namespace Dairy
                         sb.Append("</td>");
                     }
 
-                  
+
                     sb.Append(" <td class='tg-031e'><hr>");
                     sb.Append("<td class='tg-031e'><hr>");
                     sb.Append("<td class='tg-031e'><hr>");
@@ -179,7 +180,7 @@ namespace Dairy
                     sb.Append("</tr>");
 
                     count++;
-                    if (count % 21 == 0 && count != 0)
+                    if (count % 20 == 0 && count != 0)
                     {
 
                         sb.Append("<style type='text/css'>");
@@ -208,7 +209,7 @@ namespace Dairy
 
                         sb.Append(" <tr>");
                         sb.Append("<td class='tg-031e'  rowspan='2' align='center'>Agt.ID /<br>Emp.ID<br><br>SeqNo</td>");
-                        sb.Append(" <td class='tg-031e'rowspan='2' align='center' width='30%'>Agency Name /<br>Employee Name</td>");
+                        sb.Append(" <td class='tg-031e'rowspan='2' align='center' width='27%'>Agency Name /<br>Employee Name</td>");
                         sb.Append("<td class='tg-031e' colspan='2' align='center'>T.M.[Lts]</td>");
 
                         sb.Append("<td class='tg-031e' colspan='3' align='center'>D.T.M.[Lts]</td>");
@@ -268,5 +269,5 @@ namespace Dairy
 
         }
 
-        }
+    }
     }
