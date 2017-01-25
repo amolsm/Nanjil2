@@ -103,6 +103,8 @@
     <Content Include="Tabs\Administration\AddRoute.aspx" />
     <Content Include="Tabs\Administration\AddSlab.aspx" />
     <Content Include="Tabs\Administration\AddTypeInfo.aspx" />
+    <Content Include="Tabs\Administration\AgentwiseTray.aspx" />
+    <Content Include="Tabs\Administration\AgentwiseTraysReport.aspx" />
     <Content Include="Tabs\Administration\BillSequence.aspx" />
     <Content Include="Tabs\Administration\BoothLog.aspx" />
     <Content Include="Tabs\Administration\CancelOrderM.aspx" />
@@ -1283,6 +1285,20 @@
     </Compile>
     <Compile Include="Tabs\Administration\AddTypeInfo.aspx.designer.cs">
       <DependentUpon>AddTypeInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\AgentwiseTray.aspx.cs">
+      <DependentUpon>AgentwiseTray.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\AgentwiseTray.aspx.designer.cs">
+      <DependentUpon>AgentwiseTray.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\AgentwiseTraysReport.aspx.cs">
+      <DependentUpon>AgentwiseTraysReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\AgentwiseTraysReport.aspx.designer.cs">
+      <DependentUpon>AgentwiseTraysReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Administration\BillSequence.aspx.cs">
       <DependentUpon>BillSequence.aspx</DependentUpon>

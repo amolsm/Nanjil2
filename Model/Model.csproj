@@ -71,6 +71,7 @@
     <Compile Include="Employee.cs" />
     <Compile Include="Invoice.cs" />
     <Compile Include="IssueRegistrationModel.cs" />
+    <Compile Include="MAgentwiseTray.cs" />
     <Compile Include="Marketings.cs" />
     <Compile Include="MassIssueModel.cs" />
     <Compile Include="OrderDemand.cs" />

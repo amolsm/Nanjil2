@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="ActiveInactiveIssuesData.cs" />
     <Compile Include="AgentInfoData.cs" />
+    <Compile Include="BAgentwiseTray.cs" />
     <Compile Include="BillData.cs" />
     <Compile Include="BindCommanData.cs" />
     <Compile Include="CashierData.cs" />

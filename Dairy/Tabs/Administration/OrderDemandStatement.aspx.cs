@@ -142,15 +142,25 @@ namespace Dairy
                     }
                     if (string.IsNullOrEmpty(row["MobileNo"].ToString()))
                     {
-                        sb.Append("<sub style='text-align:left'>" + row["mobile"].ToString() +"</sub>");
+                        sb.Append("<sub style='text-align:left'>" + row["mobile"].ToString() + "</sub>");
                     }
                     else
                     {
                         sb.Append("<sub style='text-align:left'>" + row["MobileNo"].ToString() + "</sub>");
                     }
                     sb.Append("</td>");
-                    sb.Append(" <td class='tg-031e' style='text-align:center'><hr>" + "<sub style='font-size:10px'>" + row["SchAmt"].ToString()+ "</ sub >");   //// scheme
-                    //sb.Append("</td>");
+                    if (row["SchAmt"].ToString() == "")
+
+                    { sb.Append(" <td class='tg-031e' style='text-align:center'><hr  style='margin-top:20px; margin-bottom:20px; vertical-align:middle'>");
+                      sb.Append("</td>");
+                    }
+                    else
+                    {
+                        sb.Append(" <td class='tg-031e' style='text-align:center'><hr style='margin-top:20px; margin-bottom:0px; vertical-align:middle'>" + row["SchAmt"].ToString());   //// scheme
+                        sb.Append("</td>");
+                    }
+
+                  
                     sb.Append(" <td class='tg-031e'><hr>");
                     sb.Append("<td class='tg-031e'><hr>");
                     sb.Append("<td class='tg-031e'><hr>");

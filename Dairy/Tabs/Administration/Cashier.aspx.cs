@@ -53,26 +53,21 @@ namespace Dairy.Tabs.Administration
           
             int salesmanid = Convert.ToInt32(dpSalesman.SelectedItem.Value);
             ds = dispatchData.GetCashier(Date, salesmanid);
-            if (!Comman.Comman.IsDataSetEmpty(ds) )
+            if (!Comman.Comman.IsDataSetEmpty(ds))
             {
-                if (ds.Tables[3].Rows.Count != 0)
+
+                Label1.Text = string.Empty;
+                Label2.Text = string.Empty;
+                Label3.Text = string.Empty;
+                Label4.Text = string.Empty;
+
+
+
+                try
                 {
-                    rpRouteList.DataSource = ds.Tables[3];
-                    rpRouteList.DataBind();
-                    uprouteList.Update();
-                }
-                else
-                {
-                    DataTable dt = new DataTable();
-                    this.BindRepeater(dt);
-                    rpRouteList.Visible = true;
-                    uprouteList.Update();
-                }
-             
-                
-                try {
                     agentcredit = Convert.ToDouble(ds.Tables[0].Rows[0]["AgencySale"]);
-                } catch { agentcredit = 0.00; }
+                }
+                catch { agentcredit = 0.00; }
                 try
                 {
                     agentcash = Convert.ToDouble(ds.Tables[1].Rows[0]["AgencySale"]);
@@ -83,25 +78,62 @@ namespace Dairy.Tabs.Administration
                     emp = Convert.ToDouble(ds.Tables[2].Rows[0]["EmployeeSale"]);
                 }
                 catch { emp = 0.00; }
-                totalsales = agentcredit+agentcash + emp;
+                totalsales = agentcredit + agentcash + emp;
                 Label1.Text = totalsales.ToString();
                 Label2.Text = emp.ToString();
                 Label3.Text = agentcredit.ToString();
                 Label4.Text = agentcash.ToString();
-               
+                rpRouteList.Visible = true;
+                uprouteList.Update();
+
+                if (ds.Tables[3].Rows.Count != 0)
+                {
+                    rpRouteList.DataSource = ds.Tables[3];
+                    rpRouteList.DataBind();
+                    uprouteList.Update();
+                }
+                else if (ds.Tables[4].Rows.Count != 0)
+                {
+                    rpRouteList.DataSource = ds.Tables[4];
+                    rpRouteList.DataBind();
+                    uprouteList.Update();
+                }
+
+                else if (ds.Tables[4].Rows.Count == 0)
+                {
+                    DataTable dt = new DataTable();
+                    if (Label4.Text == "0" || Label4.Text == string.Empty)
+                    {
+                        this.BindRepeater(dt);
+                        rpRouteList.Visible = true;
+                        uprouteList.Update();
+
+                    }
+                    else
+                    {
+                        rpRouteList.DataSource = dt;
+                        rpRouteList.DataBind();
+                        Control FooterTemplate = rpRouteList.Controls[rpRouteList.Controls.Count - 1].Controls[0];
+                        FooterTemplate.FindControl("trEmpty1").Visible = true;
+                    }
+
+
+                }
+
 
             }
             else
             {
+                Label1.Text = string.Empty;
+                Label2.Text = string.Empty;
+                Label3.Text = string.Empty;
+                Label4.Text = string.Empty;
                 DataTable dt = new DataTable();
                 this.BindRepeater(dt);
                 rpRouteList.Visible = true;
                 uprouteList.Update();
-                Label1.Text = string.Empty;
-                Label2.Text = string.Empty;
-                Label3.Text = string.Empty;
-                Label4.Text = string.Empty ;
             }
+          
 
         }
 
@@ -122,7 +154,9 @@ namespace Dairy.Tabs.Administration
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             string confirmValue = Request.Form["confirm_value"];
-            if (confirmValue == "Yes")
+            string totalamt=lbltotalamt.Text.ToString();
+            string totalpayamt = txttotalPay.Text.ToString();
+            if (confirmValue == "Yes" && totalamt==totalpayamt)
             {
                 CashierData cd = new CashierData();
                 Model.Cashier cm = new Model.Cashier();
@@ -548,6 +582,11 @@ namespace Dairy.Tabs.Administration
             catch { }
             return result;
 
+        }
+
+        protected void btnRefress_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Tabs/Administration/Cashier.aspx");
         }
     }
 

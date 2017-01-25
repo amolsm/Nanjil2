@@ -166,6 +166,7 @@
                 <li><a href="/Tabs/Administration/AddReturnedItems.aspx"><i class="fa fa-circle-o"></i> Returned Products</a></li>
                     <li><a href="/Tabs/Administration/ReturnScheme.aspx"><i class="fa fa-circle-o"></i> Returned Scheme</a></li>
                    <li><a href="/Tabs/Administration/ReturnedTrays.aspx"><i class="fa fa-circle-o"></i> Returned Trays</a></li>
+                     <li><a href="/Tabs/Administration/AgentwiseTray.aspx"><i class="fa fa-circle-o"></i> Agent wise  Trays</a></li>
                </ul> </li>
 
                     <li  class="treeview">
@@ -184,6 +185,8 @@
                     <li><a href="/Tabs/Despatch/SalesmanwiseReturnIceBoxReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return IceBox</a></li>
                   <li><a href="/Tabs/Despatch/SalesmanwiseCartonReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Carton</a></li>
                  <li><a href="/Tabs/Despatch/SalesmanwiseOtherReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Other</a></li>
+
+                 <li><a href="/Tabs/Administration/AgentwiseTraysReport.aspx"><i class="fa fa-circle-o"></i>Agentwise Trays Report</a></li>
                </ul> </li>
 
            <li  class="treeview">
@@ -211,6 +214,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/Tabs/Administration/CashierSettlement.aspx"><i class="fa fa-circle-o"></i> Cashier Settlement</a></li>
+                   <li><a href="/Tabs/Administration/Cashier.aspx"><i class="fa fa-circle-o"></i>Agentwise Cash Settlement</a></li>
                  <li><a href="/Tabs/Marketing/BillwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Billwise Staff Sales Summary  </a></li>
                  <li><a href="/Tabs/Marketing/ItemwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Staff Sales Summary  </a></li>
                  <li><a href="/Tabs/Marketing/StaffAccountSalesSummary.aspx"><i class="fa fa-circle-o"></i> Staff A/C Sales Summary</a></li>
@@ -497,6 +501,7 @@
                 
                   <li><a href="/Tabs/Despatch/ReturnScheme.aspx"><i class="fa fa-circle-o"></i> Returned Scheme</a></li>
                    <li><a href="/Tabs/Despatch/ReturnedTrays.aspx"><i class="fa fa-circle-o"></i> Returned Trays</a></li>
+                       <li><a href="/Tabs/Administration/AgentwiseTray.aspx"><i class="fa fa-circle-o"></i> Agent wise  Trays</a></li>
                            </ul>
                     </li>
                    <li  class="treeview">
@@ -532,13 +537,13 @@
                     <li><a href="/Tabs/Despatch/SalesmanwiseReturnIceBoxReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return IceBox Report</a></li>
                   <li><a href="/Tabs/Despatch/SalesmanwiseCartonReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Carton Report</a></li>
                  <li><a href="/Tabs/Despatch/SalesmanwiseOtherReport.aspx"><i class="fa fa-circle-o"></i> Salesmanwise Return Other Report</a></li>
-                         </ul>
+                 <li><a href="/Tabs/Administration/AgentwiseTraysReport.aspx"><i class="fa fa-circle-o"></i>Agentwise Trays Report</a></li>
+
+                       </ul>
                     </li>
                
               </ul>
-            </li> 
-
-     </ul>
+           
 </asp:Panel>
             <asp:Panel runat="server" ID="pnlCashier" Visible="false">
 
@@ -551,7 +556,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/Tabs/Administration/CashierSettlement.aspx"><i class="fa fa-circle-o"></i> Cashier Settlement</a></li>
-                  
+                  <li><a href="/Tabs/Administration/Cashier.aspx"><i class="fa fa-circle-o"></i>Agentwise Cash Settlement</a></li>
                    <li  class="treeview">
                <a href="#">
                 <i class="fa fa-file"></i>
