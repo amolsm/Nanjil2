@@ -176,12 +176,12 @@ namespace Dairy.Tabs.Reports
                     sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:center'>");
                     if (row2["totalreturnQuantity"].ToString() == "")
                     {
-                        sb.Append("<b>" + row2["SubQuantity"] + "</b>");
+                        sb.Append("<b>" + row2["SubQuantity"] + " " + row2["UnitName"] + "</b>");
                     }
                     else
                     {
                         double subquantity = (Convert.ToDouble(row2["SubQuantity"]) - Convert.ToDouble(row2["totalreturnQuantity"]));
-                        sb.Append("<b>" + subquantity + "</b>");
+                        sb.Append("<b>" + subquantity + " " + row2["UnitName"] + "</b>");
                     }
 
                     sb.Append("</td>");
@@ -219,12 +219,12 @@ namespace Dairy.Tabs.Reports
                             sb.Append("<td class='tg-yw4l' colspan='2'   style='text-align:center'>");
                             if (row["totalreturnQuantity"].ToString() == "")
                             {
-                                sb.Append(row["Quantity"].ToString());
+                                sb.Append(row["Quantity"].ToString() + " " + row["UnitName"] );
                             }
                             else
                             {
                                 double quantity = (Convert.ToDouble(row["Quantity"]) - Convert.ToDouble(row["totalreturnQuantity"]));
-                                sb.Append(quantity);
+                                sb.Append(quantity.ToString() + " " + row["UnitName"]);
                             }
                             sb.Append("</td>");
 
@@ -270,7 +270,8 @@ namespace Dairy.Tabs.Reports
                 if (!DBNull.Value.Equals(DS.Tables[1].Rows[0]["totalreturnQuantity"]))
                 {
                     totalquantity = (string.IsNullOrEmpty(DS.Tables[1].Rows[0]["TotalQuantity"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[1].Rows[0]["TotalQuantity"]) - (string.IsNullOrEmpty(DS.Tables[1].Rows[0]["totalreturnQuantity"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[1].Rows[0]["totalreturnQuantity"])));
-                    sb.Append("<b>" + totalquantity + "</b>");
+                    sb.Append("<b>" + totalquantity + "</b>" );
+                    //sb.Append("<b>" + totalquantity + " " + DS.Tables[1].Rows[0]["UnitName"] + "</b>");
 
                 }
                 else
@@ -281,6 +282,7 @@ namespace Dairy.Tabs.Reports
                     {
                         totalquantity = (Convert.ToDouble(DS.Tables[1].Rows[0]["TotalQuantity"]));
                         sb.Append("<b>" + totalquantity + "</b>");
+                        //sb.Append("<b>" + totalquantity + " "+ DS.Tables[1].Rows[0]["UnitName"] + "</b>");
                     }
                     catch (Exception ex)
                     {

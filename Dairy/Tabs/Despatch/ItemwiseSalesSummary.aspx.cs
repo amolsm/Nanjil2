@@ -59,7 +59,7 @@ namespace Dairy.Tabs.Despatch
                 sb.Append(".tg .tg-yw4l{vertical-align:top}");
                 sb.Append(".tg .tg-baqh{text-align:center;vertical-align:top}");
                 sb.Append("</style>");
-                sb.Append("<table class='tg style1' style='align:center;'>");
+                sb.Append("<table class='tg style1' style=' align:center;'>");
                 sb.Append("<colgroup>");
                 sb.Append("<col style = 'width:120px'>");
                 sb.Append("<col style = 'width:160px'>");
@@ -176,12 +176,12 @@ namespace Dairy.Tabs.Despatch
                     sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:center'>");
                     if (row2["totalreturnQuantity"].ToString() == "")
                     {
-                        sb.Append("<b>" + row2["SubQuantity"] + "</b>");
+                        sb.Append("<b>" + row2["SubQuantity"] + " " + row2["UnitName"] + "</b>");
                     }
                     else
                     {
                         double subquantity = (Convert.ToDouble(row2["SubQuantity"]) - Convert.ToDouble(row2["totalreturnQuantity"]));
-                        sb.Append("<b>" + subquantity + "</b>");
+                        sb.Append("<b>" + subquantity + " " + row2["UnitName"] + "</b>");
                     }
 
                     sb.Append("</td>");
@@ -219,12 +219,12 @@ namespace Dairy.Tabs.Despatch
                             sb.Append("<td class='tg-yw4l' colspan='2'   style='text-align:center'>");
                             if (row["totalreturnQuantity"].ToString() == "")
                             {
-                                sb.Append(row["Quantity"].ToString());
+                                sb.Append(row["Quantity"].ToString() + " " + row["UnitName"]);
                             }
                             else
                             {
                                 double quantity = (Convert.ToDouble(row["Quantity"]) - Convert.ToDouble(row["totalreturnQuantity"]));
-                                sb.Append(quantity);
+                                sb.Append(quantity.ToString() + " " + row["UnitName"]);
                             }
                             sb.Append("</td>");
 
@@ -256,8 +256,8 @@ namespace Dairy.Tabs.Despatch
 
                 }
 
-                sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'> <td colspan = '7'> &nbsp; </td> </tr>");
-                sb.Append("<tr style='border-bottom:1px solid';page-break-inside:avoid;>");
+                sb.Append("<tr style='border-bottom:1px solid; page-break-inside:avoid;'> <td colspan = '7'> &nbsp; </td> </tr>");
+                sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'>");
 
 
                 sb.Append("<td class='tg-yw4l' colspan='4'  style='text-align:left'>");
@@ -271,6 +271,7 @@ namespace Dairy.Tabs.Despatch
                 {
                     totalquantity = (string.IsNullOrEmpty(DS.Tables[1].Rows[0]["TotalQuantity"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[1].Rows[0]["TotalQuantity"]) - (string.IsNullOrEmpty(DS.Tables[1].Rows[0]["totalreturnQuantity"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[1].Rows[0]["totalreturnQuantity"])));
                     sb.Append("<b>" + totalquantity + "</b>");
+                    //sb.Append("<b>" + totalquantity + " " + DS.Tables[1].Rows[0]["UnitName"] + "</b>");
 
                 }
                 else
@@ -281,6 +282,7 @@ namespace Dairy.Tabs.Despatch
                     {
                         totalquantity = (Convert.ToDouble(DS.Tables[1].Rows[0]["TotalQuantity"]));
                         sb.Append("<b>" + totalquantity + "</b>");
+                        //sb.Append("<b>" + totalquantity + " "+ DS.Tables[1].Rows[0]["UnitName"] + "</b>");
                     }
                     catch (Exception ex)
                     {
@@ -335,8 +337,8 @@ namespace Dairy.Tabs.Despatch
 
                     sb.Append("</tr>");
                 }
-                sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'> <td colspan = '7'> &nbsp; </td> </tr>");
-                sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'>");
+                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '7'> &nbsp; </td> </tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td  colspan='3' class='tg-yw4l'  style='text-align:left'>");
                 //totalamount = (string.IsNullOrEmpty(DS.Tables[1].Rows[0]["TotalAmount"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[1].Rows[0]["TotalAmount"]));
                 totalamount += totalscheme;
@@ -395,7 +397,7 @@ namespace Dairy.Tabs.Despatch
                 catch (Exception ex) { }
                 //totalstaffamount = (string.IsNullOrEmpty(DS.Tables[1].Rows[0]["StaffAmount"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[3].Rows[0]["StaffAmount"]));
                 try
-                    { 
+                {
                     if (DS.Tables[4].Rows[0]["totalreturnAmount"].ToString() == "")
                     {
 
@@ -407,13 +409,13 @@ namespace Dairy.Tabs.Despatch
                         totalagentcreditamount = (Convert.ToDouble(DS.Tables[4].Rows[0]["Amount"]) - Convert.ToDouble(DS.Tables[4].Rows[0]["totalreturnAmount"]));
                         //sb.Append("<b>" + (Convert.ToDecimal(totalagentcreditamount).ToString("#0.00")) + "</b>");
                     }
-                   
 
 
 
 
 
-                  
+
+
                 }
                 catch (Exception ex) { }
                 totalstaffamount += totalagentcreditamount;
