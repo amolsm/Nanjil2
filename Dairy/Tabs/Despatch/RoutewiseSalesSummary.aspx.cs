@@ -476,11 +476,11 @@ namespace Dairy.Tabs.Despatch
                 #region ItemwiseSummary
 
                 sb.Append("<tr>");
-                sb.Append("<td> &nbsp; <td>");
+                sb.Append("<td colspan ='6'> &nbsp; <td>");
                 sb.Append("</tr>");
                 
                 sb.Append("<tr>");
-                sb.Append("<td > <b> Itemwise Summary </b> <td>");
+                sb.Append("<td colspan ='6'> <b> Itemwise Sales Summary </b> <td>");
                 sb.Append("</tr>");
 
                 sb.Append("<tr  style='border-bottom:1px solid'>");

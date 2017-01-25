@@ -50,10 +50,10 @@ namespace Dairy
                 StringBuilder sb = new StringBuilder();
                 sb.Append("<style type='text/css'>");
                 sb.Append(".tg  {border-collapse:collapse;border-spacing:0;}");
-                sb.Append(".tg td{font-family:Arial, sans-serif;font-size:15px;padding:1px 1px;border-style:solid;border-width:0.2px;overflow:hidden;word-break:normal;border-bottom: solid 0.2px; align: center; }");
+                sb.Append(".tg td{font-family:Arial, sans-serif;font-size:15px;padding:1px 1px; width:30px; border-style:solid;border-width:0.2px;overflow:hidden;word-break:normal;border-bottom: solid 0.2px; align: center; }");
                 sb.Append(".tg th{font-family:Arial, sans-serif;font-size:15px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0.2px;overflow:hidden;word-break:normal;     border-style:none;}");
                 sb.Append(".tg .tg-baqh{text-align:center;vertical-align:top}");
-                //sb.Append(".tg .tg-031e{text-align:center;vertical-align:top}");
+                // sb.Append(".tg .tg-031e{text-align:center;vertical-align:top;}");   ////////
                 sb.Append(".tg .tg-yw4l{vertical-align:middle ; padding: 5px; border-right-style:hidden;}");
 
                 sb.Append("</style>");
@@ -75,8 +75,8 @@ namespace Dairy
                 sb.Append("</tr>");
 
                 sb.Append(" <tr>");
-                sb.Append("<td class='tg-031e'  rowspan='2' align='center'>Agt.ID /<br>Emp.ID<br><br>SeqNo</td>");
-                sb.Append(" <td class='tg-031e'rowspan='2' align='center' width='27%'>Agency Name /<br>Employee Name</td>");
+                sb.Append("<td class='tg-031e'  rowspan='2' align='left'>Agt.ID/<br>Emp.ID<br><br>SeqNo</td>");
+                sb.Append(" <td class='tg-031e'rowspan='2' align='left' width='30%'>Agency Name/<br>Employee Name</td>");
                 sb.Append("<td class='tg-031e' colspan='2' align='center'>T.M.[Lts]</td>");
 
                 sb.Append("<td class='tg-031e' colspan='3' align='center'>D.T.M.[Lts]</td>");
@@ -180,7 +180,7 @@ namespace Dairy
                     sb.Append("</tr>");
 
                     count++;
-                    if (count % 20 == 0 && count != 0)
+                    if (count % 17 == 0 && count != 0)
                     {
 
                         sb.Append("<style type='text/css'>");
@@ -208,8 +208,8 @@ namespace Dairy
                         sb.Append("</tr>");
 
                         sb.Append(" <tr>");
-                        sb.Append("<td class='tg-031e'  rowspan='2' align='center'>Agt.ID /<br>Emp.ID<br><br>SeqNo</td>");
-                        sb.Append(" <td class='tg-031e'rowspan='2' align='center' width='27%'>Agency Name /<br>Employee Name</td>");
+                        sb.Append("<td class='tg-031e'  rowspan='2' align='left'>Agt.ID/<br>Emp.ID<br><br>SeqNo</td>");
+                        sb.Append(" <td class='tg-031e'rowspan='2' align='left' width='30%'>Agency Name /<br>Employee Name</td>");
                         sb.Append("<td class='tg-031e' colspan='2' align='center'>T.M.[Lts]</td>");
 
                         sb.Append("<td class='tg-031e' colspan='3' align='center'>D.T.M.[Lts]</td>");
@@ -270,4 +270,4 @@ namespace Dairy
         }
 
     }
-    }
+}
