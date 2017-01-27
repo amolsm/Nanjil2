@@ -171,8 +171,11 @@ namespace Dairy.Tabs.Reception
 
 
 
-                    sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:center'>");
+                    sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
                     sb.Append(row["Quantity"].ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
+                    sb.Append(row["UnitName"].ToString());
                     sb.Append("</td>");
 
                     sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
@@ -272,10 +275,11 @@ namespace Dairy.Tabs.Reception
 
                     totalagentcreditamount = (string.IsNullOrEmpty(DS.Tables[5].Rows[0]["AgentCreditAmount"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[5].Rows[0]["AgentCreditAmount"]));
 
-                    totalstaffamount += totalagentcreditamount;
+
                 }
                 catch (Exception ex)
                 { string msg = ex.ToString(); }
+                totalstaffamount += totalagentcreditamount;
                 sb.Append("<b>" + (Convert.ToDecimal(totalstaffamount).ToString("#0.00")) + "</b>");
                 sb.Append("</td>");
 

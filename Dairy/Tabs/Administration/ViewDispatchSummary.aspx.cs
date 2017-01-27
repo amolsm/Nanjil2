@@ -136,7 +136,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
                 sb.Append("</th>");
 
-                sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
+                sb.Append("<th class='tg-baqh' colspan='7' style='text-align:center'>");
                 sb.Append("<u>  Dispatch Summary & GatePass (Duplicate) </u> <br/>");
                 sb.Append("</th>");
 
@@ -147,7 +147,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid !important'>");
-                sb.Append("<td class='tg-yw4l' colspan='6' style='text-align:center'>");
+                sb.Append("<td class='tg-yw4l' colspan='7' style='text-align:center'>");
                 sb.Append("<b>Nanjil Integrated Dairy Development ,Mulagumoodu, K.K.Dt.</b>");
 
                 sb.Append("</td>");
@@ -166,7 +166,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append(DS.Tables[0].Rows[0]["RouteName"].ToString());
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:center; border-bottom: 0px'>");
+                sb.Append("<td class='tg-yw4l' colspan='5' style='text-align:center; border-bottom: 0px'>");
                 sb.Append("<b><u> " + DS.Tables[0].Rows[0]["CategoryName"].ToString());
                 sb.Append("</b></u></td>");
 
@@ -179,14 +179,14 @@ namespace Dairy.Tabs.Administration
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:0.5px dotted'>");
-                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='3' style='text-align:left'>");
                 sb.Append("Driver : " + DS.Tables[0].Rows[0]["FirstDriver"].ToString());
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l' rowspan='2' colspan='2' style='text-align:center'>");
                 sb.Append("GatePass ID: <b> GP" + id.ToString() + "</b>");
                 sb.Append("</td>");
-
+                //sb.Append("<td rowspan='2'></td>");
                 sb.Append("<td class='tg-yw4l' colspan='2' rowspan='2' style='text-align:center'>");
                 sb.Append("Dispatch ID: <b> DS" + id.ToString() + "</b>");
                 sb.Append("</td>");
@@ -198,7 +198,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:0.5px dotted'>");
-                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='3' style='text-align:left'>");
                 sb.Append("Driver II : " + DS.Tables[0].Rows[0]["SecondDriver"].ToString());
                 sb.Append("</td>");
 
@@ -214,7 +214,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("Vehicle No: " + DS.Tables[0].Rows[0]["VehicleNo"].ToString());
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' colspan='3' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:left'>");
                 //sb.Append("Starting Time: " + DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss"));
                 sb.Append("</td>");
 
@@ -223,7 +223,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("</td>");
                 sb.Append("</tr>");
 
-                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '8'> &nbsp; </td> </tr>");
+                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '9'> &nbsp; </td> </tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' style='text-align:left'>");
@@ -259,7 +259,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l' style='text-align:left'>");
-                sb.Append(" ");
+                sb.Append("<b>Gift/Other<b>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 int cnt = 1;
@@ -306,7 +306,7 @@ namespace Dairy.Tabs.Administration
                     cnt++;
                 }
 
-                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '8'> &nbsp; </td> </tr>");
+                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '9'> &nbsp; </td> </tr>");
 
                 sb.Append("<tr style='border-Top:1px Solid;border-bottom:0.5px dotted'>");
 
@@ -332,7 +332,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("<b>Cartons/Ice Pad </b>");
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='3' style='text-align:left'>");
                 sb.Append("<b>Others </b>");
                 sb.Append("</td>");
 
@@ -362,7 +362,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append(DS.Tables[0].Rows[0]["CartonsDispached"].ToString());
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='3' style='text-align:left'>");
                 sb.Append(DS.Tables[0].Rows[0]["OtherDispached"].ToString());
                 sb.Append("</td>");
 
@@ -402,17 +402,17 @@ namespace Dairy.Tabs.Administration
                 sb.Append("</tr>");
 
                 sb.Append("<tr>");
-                sb.Append("<td class='tg-yw4l' colspan='8' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='9' style='text-align:left'>");
                 sb.Append("&nbsp;");
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("<tr>");
-                sb.Append("<td class='tg-yw4l' colspan='8' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='9' style='text-align:left'>");
                 sb.Append("&nbsp;");
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("<tr>");
-                sb.Append("<td class='tg-yw4l' colspan='8' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='9' style='text-align:left'>");
                 sb.Append("&nbsp;");
                 sb.Append("</td>");
                 sb.Append("</tr>");

@@ -229,86 +229,172 @@ namespace Dairy.Tabs.Reception
 
                         foreach (DataRow row1 in DS1.Tables[0].Rows)
                         {
-                            
-                            //style='border-bottom:1px solid #000'
-                            // sb.Append("<div class='col-md-12'  >");
-                            //count = count + 1;
-                          
-                            //sb.Append("<div class='col-md-2'>");
-                            // sb.Append(" ");
-                            //  sb.Append("</div>");
-                            //  sb.Append("<div class='col-md-1'>");
-
-                            sb.Append("<tr>");
-                            if (row1["total"].ToString() != "0.0000")
+                            if (row1["qty"].ToString() != "0")
                             {
-                                count = count + 1;
+                                //style='border-bottom:1px solid #000'
+                                // sb.Append("<div class='col-md-12'  >");
+                                //count = count + 1;
 
+                                //sb.Append("<div class='col-md-2'>");
+                                // sb.Append(" ");
+                                //  sb.Append("</div>");
+                                //  sb.Append("<div class='col-md-1'>");
 
-                                sb.Append("<td>");
-                                sb.Append("&nbsp");
-                                sb.Append("</td>");
-
-                                sb.Append("<td>");
-                                sb.Append("&nbsp");
-                                sb.Append("</td>");
-
-                                sb.Append("<td>");
-                                sb.Append(count);
-                                sb.Append("</td>");
-
-                                //if (count == 1 && row1["itam"].ToString() == "")
-                                //{
-                                //    sb.Append("<td colspan='2'>");
-                                //    sb.Append("Scheme");
-                                //    sb.Append("</td>");
-                                //}
-                                //else
-                                //{
-                                sb.Append("<td colspan='2'>");
-                                sb.Append(row1["itam"].ToString());
-                                if (row1["itam"].ToString() == "")
+                                sb.Append("<tr>");
+                                if (row1["total"].ToString() != "0.0000")
                                 {
-                                    sb.Append("Scheme");
+                                    count = count + 1;
+
+
+                                    sb.Append("<td>");
+                                    sb.Append("&nbsp");
+                                    sb.Append("</td>");
+
+                                    sb.Append("<td>");
+                                    sb.Append("&nbsp");
+                                    sb.Append("</td>");
+
+                                    sb.Append("<td>");
+                                    sb.Append(count);
+                                    sb.Append("</td>");
+
+                                    //if (count == 1 && row1["itam"].ToString() == "")
+                                    //{
+                                    //    sb.Append("<td colspan='2'>");
+                                    //    sb.Append("Scheme");
+                                    //    sb.Append("</td>");
+                                    //}
+                                    //else
+                                    //{
+                                    sb.Append("<td colspan='2'>");
+                                    sb.Append(row1["itam"].ToString());
+                                    if (row1["itam"].ToString() == "")
+                                    {
+                                        sb.Append("Scheme");
+                                    }
+                                    sb.Append("</td>");
+                                    //}
+
+
+                                    if (row1["qty"].ToString() == "0")
+                                    {
+                                        sb.Append("<td>");
+                                        sb.Append("&nbsp;");
+                                        sb.Append("</td>");
+
+                                        sb.Append("<td>");
+                                        sb.Append("&nbsp;");
+                                        sb.Append("</td>");
+
+                                        sb.Append("<td>");
+                                        sb.Append("&nbsp;");
+                                        sb.Append("</td>");
+                                    }
+                                    else
+                                    {
+                                        sb.Append("<td>");
+                                        sb.Append(row1["qty"].ToString());
+                                        qty = qty + Convert.ToDouble(row1["qty"].ToString());
+                                        sb.Append("</td>");
+                                        sb.Append("<td>");
+                                        sb.Append(row1["UnitName"]);
+                                        sb.Append("</td>");
+
+                                        sb.Append("<td>");
+                                        sb.Append((Convert.ToDecimal(row1["unitcost"]).ToString("#.00")));
+                                        sb.Append("</td>");
+                                    }
+
+                                    sb.Append("<td style='text-align:right'>");
+                                    sb.Append((Convert.ToDecimal(row1["total"]).ToString("#.00")));
+                                    sb.Append("</td>");
                                 }
-                                sb.Append("</td>");
-                                //}
-
-
-                                if (row1["qty"].ToString() == "0")
-                                {
-                                    sb.Append("<td>");
-                                    sb.Append("&nbsp;");
-                                    sb.Append("</td>");
-
-                                    sb.Append("<td>");
-                                    sb.Append("&nbsp;");
-                                    sb.Append("</td>");
-
-                                    sb.Append("<td>");
-                                    sb.Append("&nbsp;");
-                                    sb.Append("</td>");
-                                }
-                                else
-                                {
-                                    sb.Append("<td>");
-                                    sb.Append(row1["qty"].ToString());
-                                    qty = qty + Convert.ToDouble(row1["qty"].ToString());
-                                    sb.Append("</td>");
-                                    sb.Append("<td>");
-                                    sb.Append(row1["UnitName"]);
-                                    sb.Append("</td>");
-
-                                    sb.Append("<td>");
-                                    sb.Append((Convert.ToDecimal(row1["unitcost"]).ToString("#.00")));
-                                    sb.Append("</td>");
-                                }
-
-                                sb.Append("<td style='text-align:right'>");
-                                sb.Append((Convert.ToDecimal(row1["total"]).ToString("#.00")));
-                                sb.Append("</td>");
                             }
+                        }
+                        foreach (DataRow row1 in DS1.Tables[0].Rows)
+                        {
+                            if (row1["qty"].ToString() == "0")
+                            {
+                                //style='border-bottom:1px solid #000'
+                                // sb.Append("<div class='col-md-12'  >");
+                                //count = count + 1;
 
+                                //sb.Append("<div class='col-md-2'>");
+                                // sb.Append(" ");
+                                //  sb.Append("</div>");
+                                //  sb.Append("<div class='col-md-1'>");
+
+                                sb.Append("<tr>");
+                                if (row1["total"].ToString() != "0.0000")
+                                {
+                                    count = count + 1;
+
+
+                                    sb.Append("<td>");
+                                    sb.Append("&nbsp");
+                                    sb.Append("</td>");
+
+                                    sb.Append("<td>");
+                                    sb.Append("&nbsp");
+                                    sb.Append("</td>");
+
+                                    sb.Append("<td>");
+                                    sb.Append(count);
+                                    sb.Append("</td>");
+
+                                    //if (count == 1 && row1["itam"].ToString() == "")
+                                    //{
+                                    //    sb.Append("<td colspan='2'>");
+                                    //    sb.Append("Scheme");
+                                    //    sb.Append("</td>");
+                                    //}
+                                    //else
+                                    //{
+                                    sb.Append("<td colspan='2'>");
+                                    sb.Append(row1["itam"].ToString());
+                                    if (row1["itam"].ToString() == "")
+                                    {
+                                        sb.Append("Scheme");
+                                    }
+                                    sb.Append("</td>");
+                                    //}
+
+
+                                    if (row1["qty"].ToString() == "0")
+                                    {
+                                        sb.Append("<td>");
+                                        sb.Append("&nbsp;");
+                                        sb.Append("</td>");
+
+                                        sb.Append("<td>");
+                                        sb.Append("&nbsp;");
+                                        sb.Append("</td>");
+
+                                        sb.Append("<td>");
+                                        sb.Append("&nbsp;");
+                                        sb.Append("</td>");
+                                    }
+                                    else
+                                    {
+                                        sb.Append("<td>");
+                                        sb.Append(row1["qty"].ToString());
+                                        qty = qty + Convert.ToDouble(row1["qty"].ToString());
+                                        sb.Append("</td>");
+                                        sb.Append("<td>");
+                                        sb.Append(row1["UnitName"]);
+                                        sb.Append("</td>");
+
+                                        sb.Append("<td>");
+                                        sb.Append((Convert.ToDecimal(row1["unitcost"]).ToString("#.00")));
+                                        sb.Append("</td>");
+                                    }
+
+                                    sb.Append("<td style='text-align:right'>");
+                                    sb.Append((Convert.ToDecimal(row1["total"]).ToString("#.00")));
+                                    sb.Append("</td>");
+                                }
+
+                            }
                         }
 
                     }
@@ -392,7 +478,7 @@ namespace Dairy.Tabs.Reception
 
                     sb.Append("</div>");
                     sb.Append("</tr>");
-                    
+
 
 
                     // om.orderID,om.orderCode,om.totalBill,

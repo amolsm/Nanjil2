@@ -171,8 +171,11 @@ namespace Dairy.Tabs.Reports
 
 
 
-                    sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:center'>");
-                    sb.Append(row["Quantity"].ToString());
+                    sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
+                    sb.Append(row["Quantity"].ToString() );
+                    sb.Append("</td>");
+                    sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
+                    sb.Append( row["UnitName"].ToString());
                     sb.Append("</td>");
 
                     sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
