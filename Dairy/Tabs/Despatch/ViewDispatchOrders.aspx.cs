@@ -565,7 +565,7 @@ namespace Dairy.Tabs.Despatch
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='7' style='text-align:center'>");
-                sb.Append("<u>  Dispatch Summary </u> <br/>");
+                sb.Append("<u> Dispatch Summary </u> <br/>");
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
@@ -600,7 +600,7 @@ namespace Dairy.Tabs.Despatch
 
 
                 sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:right'>");
-                sb.Append("Date : " + DS.Tables[0].Rows[0]["DispatchDate"].ToString());
+                sb.Append("Date : " + DateTime.Now.ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
 
 
@@ -614,7 +614,7 @@ namespace Dairy.Tabs.Despatch
                 sb.Append("<td class='tg-yw4l' rowspan='2' colspan='2' style='text-align:center'>");
                 sb.Append("GatePass ID: <b> GP" + id.ToString() + "</b>");
                 sb.Append("</td>");
-                //sb.Append("<td rowspan='2'></td>");
+
                 sb.Append("<td class='tg-yw4l' colspan='2' rowspan='2' style='text-align:center'>");
                 sb.Append("Dispatch ID: <b> DS" + id.ToString() + "</b>");
                 sb.Append("</td>");
@@ -642,7 +642,7 @@ namespace Dairy.Tabs.Despatch
                 sb.Append("Vehicle No: " + DS.Tables[0].Rows[0]["VehicleNo"].ToString());
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='3' style='text-align:left'>");
                 sb.Append("Starting Time: " + DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss"));
                 sb.Append("</td>");
 
@@ -687,7 +687,7 @@ namespace Dairy.Tabs.Despatch
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l' style='text-align:left'>");
-                sb.Append("<b>Gift/Other<b>");
+                sb.Append("<b>Gift/Other</b>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 int cnt = 1;
@@ -840,7 +840,7 @@ namespace Dairy.Tabs.Despatch
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("<tr>");
-                sb.Append("<td class='tg-yw4l' colspan='9' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='8' style='text-align:left'>");
                 sb.Append("&nbsp;");
                 sb.Append("</td>");
                 sb.Append("</tr>");
@@ -871,7 +871,7 @@ namespace Dairy.Tabs.Despatch
                 //Session["ctrl"] = sb.ToString();
                 Session["ctrl"] = pnlDispatchSummary;
                 //Response.Redirect("/print.aspx", true);
-                upGatePass.Update();
+                upDispatchSummary.Update();
 
             }
             else

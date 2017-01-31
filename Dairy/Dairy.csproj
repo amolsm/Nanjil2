@@ -274,6 +274,7 @@
     <Content Include="Tabs\Reports\RatewiseOrderSummary.aspx" />
     <Content Include="Tabs\Reports\RoutewiseSalesSummary.aspx" />
     <Content Include="Tabs\Reports\SalesAnalysisItemwise.aspx" />
+    <Content Include="Tabs\Test\BindSlabExcel.aspx" />
     <Content Include="Tabs\TransportModule\Configure.aspx" />
     <Content Include="Tabs\TransportModule\FuelDetails.aspx" />
     <Content Include="Tabs\TransportModule\FuelPumpMaster.aspx" />
@@ -2452,6 +2453,13 @@
     </Compile>
     <Compile Include="Tabs\Reports\SalesAnalysisItemwise.aspx.designer.cs">
       <DependentUpon>SalesAnalysisItemwise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Test\BindSlabExcel.aspx.cs">
+      <DependentUpon>BindSlabExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Test\BindSlabExcel.aspx.designer.cs">
+      <DependentUpon>BindSlabExcel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\TransportModule\Configure.aspx.cs">
       <DependentUpon>Configure.aspx</DependentUpon>
