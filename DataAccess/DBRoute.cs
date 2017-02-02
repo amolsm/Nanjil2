@@ -39,6 +39,26 @@ namespace DataAccess
             }
             return result;
         }
+
+        public int ClearBindSlab()
+        {
+            int result = 0;
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                
+                paramCollection.Add(new DBParameter("@flag", 0));
+                result = _DBHelper.ExecuteNonQuery("Sp_ClearBindSlab", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return result;
+        }
         public DataSet GetAllRouteDetails()
         {
             DataSet DS = new DataSet();

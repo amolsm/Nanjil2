@@ -106,6 +106,7 @@
     <Content Include="Tabs\Administration\AgentwiseTray.aspx" />
     <Content Include="Tabs\Administration\AgentwiseTraysReport.aspx" />
     <Content Include="Tabs\Administration\BillSequence.aspx" />
+    <Content Include="Tabs\Administration\BindSlabExcelUpload.aspx" />
     <Content Include="Tabs\Administration\BoothLog.aspx" />
     <Content Include="Tabs\Administration\CancelOrderM.aspx" />
     <Content Include="Tabs\Administration\Cashier.aspx" />
@@ -1306,6 +1307,13 @@
     </Compile>
     <Compile Include="Tabs\Administration\BillSequence.aspx.designer.cs">
       <DependentUpon>BillSequence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\BindSlabExcelUpload.aspx.cs">
+      <DependentUpon>BindSlabExcelUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\BindSlabExcelUpload.aspx.designer.cs">
+      <DependentUpon>BindSlabExcelUpload.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Administration\BoothLog.aspx.cs">
       <DependentUpon>BoothLog.aspx</DependentUpon>

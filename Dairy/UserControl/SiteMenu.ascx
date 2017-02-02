@@ -74,6 +74,7 @@
                   <li><a href="/Tabs/Administration/Addslab.aspx"><i class="fa fa-circle-o"></i> Slab Maintenance </a></li>
                   <li><a href="/Tabs/Administration/AddProduct.aspx"><i class="fa fa-circle-o"></i> Rate Maintenance</a></li>    
                   <li><a href="/Tabs/Administration/BindSlab.aspx"><i class="fa fa-circle-o"></i> Agent Slab Maintenance</a></li>
+                  <li><a href="/Tabs/Administration/BindSlabExcelUpload.aspx"><i class="fa fa-circle-o"></i> BindSlab Excel</a></li>
               </ul>
             </li>
               
