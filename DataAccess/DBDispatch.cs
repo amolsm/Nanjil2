@@ -86,7 +86,7 @@ namespace DataAccess
             return DS;
         }
 
-        public DataSet GetCashier(string date,  int salesmanid)
+        public DataSet GetCashier(string date,  int salesmanid, int routeid, int brandid)
         {
             DataSet DS = new DataSet();
             try
@@ -96,7 +96,8 @@ namespace DataAccess
              
                 paramCollection.Add(new DBParameter("@DispatchDate", date));
                 paramCollection.Add(new DBParameter("@SalesmanId", salesmanid));
-
+                paramCollection.Add(new DBParameter("@RouteId", routeid));
+                paramCollection.Add(new DBParameter("@BrandId", brandid));
                 DS = _DBHelper.ExecuteDataSet("sp_CashierRoutewiseSalesman", paramCollection, CommandType.StoredProcedure);
             }
             catch (Exception)

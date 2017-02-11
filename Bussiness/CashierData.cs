@@ -16,9 +16,9 @@ namespace Bussiness
             return dbcashier.AddCashierInfo(cm);
         }
 
-        public int AddAgentCashSales(int trId, string agentId, double agencysales, double paymentsales)
+        public int AddAgentCashSales(int trId, string agentId, double agencysales, double paymentsales, string DdId)
         {
-            return dbcashier.AddAgentCashSales(trId, agentId, agencysales, paymentsales);
+            return dbcashier.AddAgentCashSales(trId, agentId, agencysales, paymentsales, DdId);
         }
     }
 }

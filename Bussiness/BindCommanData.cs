@@ -38,7 +38,12 @@ namespace Bussiness
             DBBindComman dbbindComman = new DBBindComman();
             return dbbindComman.GetAllActiveAndDeactiveCount(TableName, States);
         }
-        
+        public static DataSet GetDispSalesman(string Dates, int routeid, int BrandId)
+        {
+            DBBindComman dbbindComman = new DBBindComman();
+            return dbbindComman.GetDispSalesman( Dates,  routeid, BrandId);
+        }
+
 
     }
 }

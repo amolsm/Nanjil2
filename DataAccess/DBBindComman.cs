@@ -77,5 +77,16 @@ namespace DataAccess
 
         }
 
+        public DataSet GetDispSalesman(string Dates, int routeid, int BrandId)
+        {
+            DataSet DS = new DataSet();
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@Dates", Dates));
+            paramCollection.Add(new DBParameter("@routeid", routeid));
+            paramCollection.Add(new DBParameter("@BrandId", BrandId));
+            return _DBHelper.ExecuteDataSet("csh_getSalesmanbyroute", paramCollection, CommandType.StoredProcedure);
+
+        }
+
     }
 }

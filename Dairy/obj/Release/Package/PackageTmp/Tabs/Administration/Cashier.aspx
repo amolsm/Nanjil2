@@ -11,9 +11,9 @@
           $(function () {
               $("#example1").DataTable();
               $('#example2').DataTable({
-                  "paging": true,
+                  "paging": false,
                   "lengthChange": false,
-                  "searching": false,
+                  "searching": true,
                   "ordering": true,
                   "info": true,
                   "autoWidth": false
@@ -103,6 +103,31 @@
                           
                       </div> 
 
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                      <asp:DropDownList ID="dpBrand" class="form-control" DataTextField="Name" DataValueField="Id" runat="server" OnSelectedIndexChanged="dpBrand_SelectedIndexChanged" AutoPostBack="true" > 
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div>
+
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                      <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="Id" runat="server" OnSelectedIndexChanged="dpRoute_SelectedIndexChanged" AutoPostBack="true" > 
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div>
            
               <div class="col-lg-3">
                   <div class="form-group">
@@ -129,7 +154,7 @@
 
                   </div><!-- /.form group -->
 
-                     
+                     <asp:HiddenField ID="hfExcessFlag" runat="server" Value="0" />
                        
                           
                       </div> 
@@ -156,7 +181,7 @@
          <asp:UpdatePanel ID="upModal" runat="server" UpdateMode="Conditional" >  
               <ContentTemplate>         
                       <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -170,7 +195,7 @@
            
               <table class="table table-bordered table-striped">
                   <tr>
-                      <td colspan="9"><asp:Label ID="lblvalidate" ForeColor="Red" runat="server"> </asp:Label></td>
+                      <td colspan="10"><asp:Label ID="lblvalidate" ForeColor="Red" runat="server"> </asp:Label></td>
                    
                   </tr>
         <tr>
@@ -181,12 +206,50 @@
  <td><asp:Label ID="lbl50" runat="server"></asp:Label></td>
  <td><asp:Label ID="lbl20" runat="server"></asp:Label></td>
  <td><asp:Label ID="lbl10" runat="server"></asp:Label></td>
+ <td><asp:Label ID="lbl5" runat="server"></asp:Label></td>
+ <td><asp:Label ID="lbl2" runat="server"></asp:Label></td>
  <td><asp:Label ID="lblcoins" runat="server"></asp:Label></td>
  <td>Total Amount: <asp:Label ID="lbltotalamt" runat="server"></asp:Label></td>
         </tr>
                   </table>
          
-              
+               <div class="col-lg-6">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       NetAmt
+                      </div>
+                       <asp:TextBox ID="txtNetAmt" class="form-control" step="any" type="number"   ToolTip="Net Amount" placeholder="Net Amount" runat="server" disabled></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+    
+                      </div>        <!-- -->
+                  <div class="col-lg-6">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     PaidAmt
+                      </div>
+                       <asp:TextBox ID="txttotalPay" class="form-control" step="any"  type="number"  ToolTip="Total Pay Amount" placeholder="Pay Amount" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+    
+                      </div>        <!-- -->
+
+               <div class="col-lg-6">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      Pending
+                      </div>
+                       <asp:TextBox ID="txtPendingTotal" class="form-control" step="any" type="number"  ToolTip="Total Pending Amount" placeholder="Pending Amount" runat="server" disabled></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+    
+                      </div>
                 <div class="col-lg-6">
                   <div class="form-group" >
                     <div class="input-group">
@@ -275,25 +338,13 @@
                   </div><!-- /.form group -->
     
                       </div>        <!-- -->
-                <div class="col-lg-6">
+                  <div class="col-lg-6">
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                   Coins
+                      Rs.5 *
                       </div>
-                       <asp:TextBox ID="txtCoin" class="form-control" type="number" step="any"  ToolTip="Coins" placeholder="Coins" runat="server" OnTextChanged="txtCoin_TextChanged" AutoPostBack="true" ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-    
-                      </div>        <!-- -->
-                   <div class="col-lg-6">
-                  <div class="form-group" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                       NetAmount
-                      </div>
-                       <asp:TextBox ID="txtNetAmt" class="form-control" step="any" type="number"   ToolTip="Net Amount" placeholder="Net Amount" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txt5" class="form-control" type="number"   min="0"  ToolTip="Pieces" placeholder="Pieces" runat="server" OnTextChanged="txt5_TextChanged" AutoPostBack="true" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -303,27 +354,28 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                     PaymentAmount
+                      Rs.2 *
                       </div>
-                       <asp:TextBox ID="txttotalPay" class="form-control" step="any"  type="number"  ToolTip="Total Pay Amount" placeholder="Pay Amount" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txt2" class="form-control" type="number"   min="0"  ToolTip="Pieces" placeholder="Pieces" runat="server" OnTextChanged="txt2_TextChanged" AutoPostBack="true" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
     
                       </div>        <!-- -->
-
-               <div class="col-lg-6">
+                <div class="col-lg-6">
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                      Pending Amount
+                   Rs.1 *
                       </div>
-                       <asp:TextBox ID="txtPendingTotal" class="form-control" step="any" type="number"  ToolTip="Total Pending Amount" placeholder="Pending Amount" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtCoin" class="form-control" type="number" min="0"  ToolTip="Coins" placeholder="Coins" runat="server" OnTextChanged="txtCoin_TextChanged" AutoPostBack="true" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
     
-                      </div> 
+                      </div>        <!-- -->
+                   
+          
               
                      <div class="col-lg-6">
                   <div class="form-group" >
@@ -341,7 +393,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <%--<button type="button" class="btn btn-primary" >Save changes</button>--%>
-          <asp:Button ID="btnUpdate" class="btn btn-primary" runat="server" ValidationGroup="saved" OnClick="btnUpdate_Click" Text="Save changes" UseSubmitBehavior="false" OnClientClick="Confirms()" data-dismiss="modal"/>       
+          <asp:Button ID="btnUpdate" class="btn btn-primary" runat="server" ValidationGroup="saved" OnClick="btnUpdate_Click" Text="Save changes"  OnClientClick="return confirm('Are u sure?');" />       
       </div>
     </div>
   </div>
@@ -357,6 +409,7 @@
 <asp:Panel ID="Panel1" runat="server">
     <table class="table table-bordered table-striped">
         <tr>
+            <td> Salesman Cr/Dbt: <asp:Label ID="lblSalesmanCr" runat="server" Font-Bold="True"> </asp:Label></td>
 <td> Total Sales Amount : <asp:Label ID="Label1" runat="server" > </asp:Label></td>
  <td> Agent Cash Sales : <asp:Label ID="Label4" runat="server" Font-Bold="True" ForeColor="#003300"></asp:Label></td>
 <td>Staff A/c :  <asp:Label ID="Label2" runat="server" >
@@ -375,7 +428,7 @@
  
 </asp:Panel>
 
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example2" class="table table-bordered table-striped">
                    
                    <caption><b>Cash Sales</b></caption>
 
@@ -399,15 +452,16 @@
                <ItemTemplate>
                     <tr>
                          <asp:HiddenField id="hfAgentId" runat="server" value='<%#Eval("AgentID") %>' />  
+                        <asp:HiddenField id="hfDDId" runat="server" value='<%#Eval("OrderId") %>' />
                        <td><%# Eval("AgentCode")%>&nbsp;<%# Eval("AgentName")%></td>
                         
                          <td><%#Convert.ToDecimal(Eval("SalesAmt")).ToString("0.00")%></td>
                         <td><asp:TextBox ID="txtAgencySales" type="number" step="any" runat="server" ReadOnly="true" Text='<%#Convert.ToDecimal(Eval("AgencySale")).ToString("0.00")%>' ></asp:TextBox></td>
                        
-                        <td><asp:TextBox ID="txtPayment" type="number" step="any" runat="server" OnTextChanged="txtPayment_TextChanged" AutoPostBack="true"></asp:TextBox></td>
+                        <td><asp:TextBox ID="txtPayment" type="number" step="any" runat="server" OnTextChanged="txtPayment_TextChanged" AutoPostBack="true" Text='<%#Convert.ToDecimal(Eval("AgencySale")).ToString("0.00")%>'></asp:TextBox></td>
                       
                  
-                         <td><asp:TextBox ID="txtPending" type="number" step="any" runat="server" ReadOnly="true" ></asp:TextBox></td>
+                         <td><asp:TextBox ID="txtPending" type="number" step="any" runat="server" ReadOnly="true" Text="0" ></asp:TextBox></td>
                     
                        
                          

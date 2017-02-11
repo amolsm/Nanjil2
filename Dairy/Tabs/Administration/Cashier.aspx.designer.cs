@@ -94,6 +94,24 @@ namespace Dairy.Tabs.Administration {
         protected global::System.Web.UI.WebControls.TextBox txtOrderDate;
         
         /// <summary>
+        /// dpBrand control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpBrand;
+        
+        /// <summary>
+        /// dpRoute control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpRoute;
+        
+        /// <summary>
         /// dpSalesman control.
         /// </summary>
         /// <remarks>
@@ -128,6 +146,15 @@ namespace Dairy.Tabs.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRefress;
+        
+        /// <summary>
+        /// hfExcessFlag control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfExcessFlag;
         
         /// <summary>
         /// UpdateProgress1 control.
@@ -229,6 +256,24 @@ namespace Dairy.Tabs.Administration {
         protected global::System.Web.UI.WebControls.Label lbl10;
         
         /// <summary>
+        /// lbl5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl5;
+        
+        /// <summary>
+        /// lbl2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl2;
+        
+        /// <summary>
         /// lblcoins control.
         /// </summary>
         /// <remarks>
@@ -245,6 +290,33 @@ namespace Dairy.Tabs.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbltotalamt;
+        
+        /// <summary>
+        /// txtNetAmt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNetAmt;
+        
+        /// <summary>
+        /// txttotalPay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txttotalPay;
+        
+        /// <summary>
+        /// txtPendingTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPendingTotal;
         
         /// <summary>
         /// txt2000 control.
@@ -310,6 +382,24 @@ namespace Dairy.Tabs.Administration {
         protected global::System.Web.UI.WebControls.TextBox txt10;
         
         /// <summary>
+        /// txt5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt5;
+        
+        /// <summary>
+        /// txt2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt2;
+        
+        /// <summary>
         /// txtCoin control.
         /// </summary>
         /// <remarks>
@@ -317,33 +407,6 @@ namespace Dairy.Tabs.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCoin;
-        
-        /// <summary>
-        /// txtNetAmt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNetAmt;
-        
-        /// <summary>
-        /// txttotalPay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txttotalPay;
-        
-        /// <summary>
-        /// txtPendingTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPendingTotal;
         
         /// <summary>
         /// txtHidden control.
@@ -380,6 +443,15 @@ namespace Dairy.Tabs.Administration {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
+        
+        /// <summary>
+        /// lblSalesmanCr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSalesmanCr;
         
         /// <summary>
         /// Label1 control.
