@@ -67,9 +67,9 @@ namespace Bussiness
 
         }
 
-        public DataSet ItemWiseStaffSalesSummarybyDate(string StartDate, string EndDate, int EmployeID)
+        public DataSet ItemWiseStaffSalesSummarybyDate(string StartDate, string EndDate, int EmployeID, string flag)
         {
-            return dbMarketing.ItemWiseStaffSalesSummarybyDate(StartDate, EndDate, EmployeID);
+            return dbMarketing.ItemWiseStaffSalesSummarybyDate(StartDate, EndDate, EmployeID, flag);
         }
 
         public DataSet BillWiseStaffSalesSummarybyDate(string StartDate, string EndDate, int EmployeID)

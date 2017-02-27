@@ -194,7 +194,7 @@ namespace Dairy.Tabs.Administration
                 dpCategory.Items.Insert(0, new ListItem("--Select Brand--", "0"));
             }
             DS = new DataSet();
-            DS = BindCommanData.BindCommanDropDwon("EmployeeID ", "EmployeeCode +' '+EmployeeName as Name  ", "EmployeeMaster", "IsActive=1 and Designation='Sales Man' ");
+            DS = BindCommanData.BindCommanDropDwon("EmployeeID ", "EmployeeCode +' '+EmployeeName as Name  ", "EmployeeMaster", "IsActive=1 and (Designation='Sales Man' or Designation = 'Driver') ");
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 dpSalesman.DataSource = DS;

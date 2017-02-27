@@ -8,7 +8,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-   
+   <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
    
 
   

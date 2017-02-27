@@ -37,9 +37,9 @@ namespace Dairy.Tabs.Marketing
         {
 
 
-
+            string flag = "Staff";
             string result = string.Empty;
-            DS = billdata.StaffAccountSalesSummarybyDate((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"));
+            DS = billdata.StaffAccountSalesSummarybyDate((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"),flag);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 StringBuilder sb = new StringBuilder();

@@ -527,6 +527,8 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="dppaymenttype"
+        ErrorMessage=" Required" ValidationGroup="Save" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
 
                      

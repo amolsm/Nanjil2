@@ -96,13 +96,13 @@ namespace DataAccess
             return _DBHelper.ExecuteDataSet("mk_AgentRefundSchemeSummary", paramCollection, CommandType.StoredProcedure);
         }
 
-        public DataSet ItemWiseStaffSalesSummarybyDate(string StartDate, string EndDate, int EmployeID)
+        public DataSet ItemWiseStaffSalesSummarybyDate(string StartDate, string EndDate, int EmployeID, string flag)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
             paramCollection.Add(new DBParameter("@DispatchBeginDate", StartDate));
             paramCollection.Add(new DBParameter("@DispatchEndDate", EndDate));
             paramCollection.Add(new DBParameter("@EmployeeID", EmployeID));
-
+            paramCollection.Add(new DBParameter("@Flag", flag));
             return _DBHelper.ExecuteDataSet("mk_GetMarketingReportStaffItemwiseSalesSummary", paramCollection, CommandType.StoredProcedure);
         }
 

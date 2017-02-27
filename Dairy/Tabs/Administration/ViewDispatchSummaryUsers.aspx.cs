@@ -229,9 +229,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append("<b>Unit Type </b>");
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
-                sb.Append("<b>Spot Damage </b>");
-                sb.Append("</td>");
+               
 
                 sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
                 sb.Append("<b>Sales </b>");
@@ -239,6 +237,10 @@ namespace Dairy.Tabs.Administration
 
                 sb.Append("<td class='tg-yw4l' style='text-align:left'>");
                 sb.Append("<b>Return </b>");
+                sb.Append("</td>");
+
+                sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
+                sb.Append("<b>Spot Damage </b>");
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l' style='text-align:left'>");

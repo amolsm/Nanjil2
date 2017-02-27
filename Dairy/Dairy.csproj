@@ -108,6 +108,7 @@
     <Content Include="Tabs\Administration\BillSequence.aspx" />
     <Content Include="Tabs\Administration\BindSlabExcelUpload.aspx" />
     <Content Include="Tabs\Administration\BoothLog.aspx" />
+    <Content Include="Tabs\Administration\BulkOrderAgency.aspx" />
     <Content Include="Tabs\Administration\CancelOrderM.aspx" />
     <Content Include="Tabs\Administration\Cashier.aspx" />
     <Content Include="Tabs\Administration\DamageRateSetup.aspx" />
@@ -125,6 +126,14 @@
     <Content Include="Tabs\Administration\ViewDispatchSummary.aspx" />
     <Content Include="Tabs\Administration\ViewDispatchSummaryUsers.aspx" />
     <Content Include="Tabs\Administration\ViewDispatchUserShiftwise.aspx" />
+    <Content Include="Tabs\Cashier\BillwiseSaleSummary.aspx" />
+    <Content Include="Tabs\Cashier\BillwiseStaffSalesSummary.aspx" />
+    <Content Include="Tabs\Cashier\Cashier.aspx" />
+    <Content Include="Tabs\Cashier\ItemwiseSalesSummary.aspx" />
+    <Content Include="Tabs\Cashier\ItemwiseStaffSalesSummary.aspx" />
+    <Content Include="Tabs\Cashier\RoutewiseSalesSummary.aspx" />
+    <Content Include="Tabs\Cashier\SalesAnalysisItemwise.aspx" />
+    <Content Include="Tabs\Cashier\StaffAccountSalesSummary.aspx" />
     <Content Include="Tabs\Despatch\AddReturnedItems.aspx" />
     <Content Include="Tabs\Despatch\BoothPlaceOrder.aspx" />
     <Content Include="Tabs\Despatch\ItemwiseSalesSummary.aspx" />
@@ -1322,6 +1331,13 @@
     <Compile Include="Tabs\Administration\BoothLog.aspx.designer.cs">
       <DependentUpon>BoothLog.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Administration\BulkOrderAgency.aspx.cs">
+      <DependentUpon>BulkOrderAgency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\BulkOrderAgency.aspx.designer.cs">
+      <DependentUpon>BulkOrderAgency.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Administration\CancelOrderM.aspx.cs">
       <DependentUpon>CancelOrderM.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1439,6 +1455,62 @@
     </Compile>
     <Compile Include="Tabs\Administration\ViewDispatchUserShiftwise.aspx.designer.cs">
       <DependentUpon>ViewDispatchUserShiftwise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Cashier\BillwiseSaleSummary.aspx.cs">
+      <DependentUpon>BillwiseSaleSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Cashier\BillwiseSaleSummary.aspx.designer.cs">
+      <DependentUpon>BillwiseSaleSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Cashier\BillwiseStaffSalesSummary.aspx.cs">
+      <DependentUpon>BillwiseStaffSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Cashier\BillwiseStaffSalesSummary.aspx.designer.cs">
+      <DependentUpon>BillwiseStaffSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Cashier\Cashier.aspx.cs">
+      <DependentUpon>Cashier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Cashier\Cashier.aspx.designer.cs">
+      <DependentUpon>Cashier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Cashier\ItemwiseSalesSummary.aspx.cs">
+      <DependentUpon>ItemwiseSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Cashier\ItemwiseSalesSummary.aspx.designer.cs">
+      <DependentUpon>ItemwiseSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Cashier\ItemwiseStaffSalesSummary.aspx.cs">
+      <DependentUpon>ItemwiseStaffSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Cashier\ItemwiseStaffSalesSummary.aspx.designer.cs">
+      <DependentUpon>ItemwiseStaffSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Cashier\RoutewiseSalesSummary.aspx.cs">
+      <DependentUpon>RoutewiseSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Cashier\RoutewiseSalesSummary.aspx.designer.cs">
+      <DependentUpon>RoutewiseSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Cashier\SalesAnalysisItemwise.aspx.cs">
+      <DependentUpon>SalesAnalysisItemwise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Cashier\SalesAnalysisItemwise.aspx.designer.cs">
+      <DependentUpon>SalesAnalysisItemwise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Cashier\StaffAccountSalesSummary.aspx.cs">
+      <DependentUpon>StaffAccountSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Cashier\StaffAccountSalesSummary.aspx.designer.cs">
+      <DependentUpon>StaffAccountSalesSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Despatch\AddReturnedItems.aspx.cs">
       <DependentUpon>AddReturnedItems.aspx</DependentUpon>
@@ -2951,6 +3023,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Tabs\Despatch\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Tabs\Cashier\Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>

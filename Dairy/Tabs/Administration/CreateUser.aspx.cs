@@ -88,7 +88,8 @@ namespace Dairy.Authentication
             users.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
             users.EmployeeId = Convert.ToInt32(dpEmployee.SelectedItem.Value);
             users.flag = "Insert";
-            if (usersData.InsertUser(users))
+            int result = usersData.InsertUser(users);
+            if (result >0)
             {
                 divDanger.Visible = false;
                 divwarning.Visible = false;
@@ -102,12 +103,21 @@ namespace Dairy.Authentication
              
 
             }
-            else
+            else if(result == -999)
             {
                 divDanger.Visible = false;
                 divwarning.Visible = true;
                 divSusccess.Visible = false;
-                lblwarning.Text = "Something Went Worng try agean";
+                lblwarning.Text = "UserName Already Exist!";
+                pnlError.Update();
+
+            }
+            else 
+            {
+                divDanger.Visible = false;
+                divwarning.Visible = true;
+                divSusccess.Visible = false;
+                lblwarning.Text = "Something Went Worng try again";
                 pnlError.Update();
 
             }
@@ -139,7 +149,8 @@ namespace Dairy.Authentication
             users.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
             users.EmployeeId = Convert.ToInt32(dpEmployee.SelectedItem.Value);
             users.flag = "Update";
-            if (usersData.InsertUser(users))
+            int result = usersData.InsertUser(users);
+            if (result>0)
             {
                 divDanger.Visible = false;
                 divwarning.Visible = false;

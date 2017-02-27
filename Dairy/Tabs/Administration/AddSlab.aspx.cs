@@ -266,14 +266,15 @@ namespace Dairy.Tabs.Administration
 
         protected void btnRefresh_Click(object sender, EventArgs e)
         {
-            divDanger.Visible = false;
-            divwarning.Visible = false;
-            divSusccess.Visible = false;
-            lblHeaderTab.Text = "Add Slab";
-            btnAddSlab.Visible = true;
-            btnupdateSlab.Visible = false;
-            ClearTextBox();
-            pnlError.Update();
+            //divDanger.Visible = false;
+            //divwarning.Visible = false;
+            //divSusccess.Visible = false;
+            //lblHeaderTab.Text = "Add Slab";
+            //btnAddSlab.Visible = true;
+            //btnupdateSlab.Visible = false;
+            //ClearTextBox();
+            //pnlError.Update();
+            Response.Redirect("~/Tabs/Administration/AddSlab.aspx");
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Bussiness
 
 
         }
-        public bool InsertUser(User user)
+        public int InsertUser(User user)
         {
            return dbuser.InsertUser(user);
 

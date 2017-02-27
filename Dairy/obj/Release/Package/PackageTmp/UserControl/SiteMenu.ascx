@@ -214,11 +214,14 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/Tabs/Administration/CashierSettlement.aspx"><i class="fa fa-circle-o"></i> Cashier Settlement</a></li>
+               <%-- <li><a href="/Tabs/Administration/CashierSettlement.aspx"><i class="fa fa-circle-o"></i> Cashier Settlement</a></li>--%>
                    <li><a href="/Tabs/Administration/Cashier.aspx"><i class="fa fa-circle-o"></i>Agentwise Cash Settlement</a></li>
                  <li><a href="/Tabs/Marketing/BillwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Billwise Staff Sales Summary  </a></li>
-                 <li><a href="/Tabs/Marketing/ItemwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Staff Sales Summary  </a></li>
-                 <li><a href="/Tabs/Marketing/StaffAccountSalesSummary.aspx"><i class="fa fa-circle-o"></i> Staff A/C Sales Summary</a></li>
+                 <%--<li><a href="/Tabs/Marketing/ItemwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Staff Sales Summary  </a></li>--%>
+                 <%--<li><a href="/Tabs/Marketing/StaffAccountSalesSummary.aspx"><i class="fa fa-circle-o"></i> Staff A/C Sales Summary</a></li>--%>
+                    <li><a href="/Tabs/Cashier/ItemwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise A/c Sales Summary  </a></li>
+                         <li><a href="/Tabs/Cashier/StaffAccountSalesSummary.aspx"><i class="fa fa-circle-o"></i> A/C Sales Summary</a></li>
+
                <li  class="treeview">
                <a href="#">
                 <i class="fa fa-file"></i>
@@ -549,29 +552,42 @@
             <asp:Panel runat="server" ID="pnlCashier" Visible="false">
 
     <ul class="sidebar-menu">
-          <li class="treeview">
+          <li class="treeview" >
               <a href="#">
                 <i class="fa fa-file"></i>
-                <span>Cashier Settlement</span>
+                <span style="width:280px">Cashier Settlement</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="/Tabs/Administration/CashierSettlement.aspx"><i class="fa fa-circle-o"></i> Cashier Settlement</a></li>
-                  <li><a href="/Tabs/Administration/Cashier.aspx"><i class="fa fa-circle-o"></i>Agentwise Cash Settlement</a></li>
+              <ul class="treeview-menu" style="width:280px">
+                   <li><a href="/Tabs/Cashier/Cashier.aspx"><i class="fa fa-circle-o"></i>Agentwise Cash Settlement</a></li>
                    <li  class="treeview">
                <a href="#">
                 <i class="fa fa-file"></i>
-                <span>Staff Sales</span>
+                <span>A/c Sales</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
                        <ul class="treeview-menu">
-                     <li><a href="/Tabs/Marketing/BillwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Billwise Staff Sales Summary  </a></li>
+                     <li><a href="/Tabs/Cashier/BillwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Billwise Staff Sales Summary  </a></li>
                     
-                      <li><a href="/Tabs/Marketing/ItemwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Staff Sales Summary  </a></li>
-                         <li><a href="/Tabs/Marketing/StaffAccountSalesSummary.aspx"><i class="fa fa-circle-o"></i> Staff A/C Sales Summary</a></li>
+                      <li><a href="/Tabs/Cashier/ItemwiseStaffSalesSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Sales Summary  </a></li>
+                         <li><a href="/Tabs/Cashier/StaffAccountSalesSummary.aspx"><i class="fa fa-circle-o"></i> A/C Sales Summary</a></li>
 
                        </ul>
                     </li>
+                  <li  class="treeview">
+               <a href="#">
+                <i class="fa fa-file"></i>
+                <span>Agency Sales Report</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+               <ul class="treeview-menu">
+                 <li><a href="/Tabs/Cashier/ItemwiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Summary Item wise </a></li> 
+                 <li><a href="/Tabs/Cashier/BillwiseSaleSummary.aspx"><i class="fa fa-circle-o"></i>Summary Bill wise </a></li> 
+                   <li><a href="/Tabs/Cashier/RoutewiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Summary Route wise </a></li>
+                  <li><a href="/Tabs/Cashier/SalesAnalysisItemwise.aspx"><i class="fa fa-circle-o"></i>Sales Analysis Item wise</a></li>
+                  </ul> </li>
+              </ul>
+            </li> 
               </ul>
             </li> 
 

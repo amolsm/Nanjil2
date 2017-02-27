@@ -173,9 +173,9 @@ namespace Bussiness
             return dbbill.MarketingItemWiseSalesSummarybyDate(StartDate, EndDate,RouteID, AgentID);
         }
 
-        public DataSet StaffAccountSalesSummarybyDate(string StartDate, string EndDate)
+        public DataSet StaffAccountSalesSummarybyDate(string StartDate, string EndDate,string flag)
         {
-            return dbbill.StaffAccountSalesSummarybyDate(StartDate, EndDate);
+            return dbbill.StaffAccountSalesSummarybyDate(StartDate, EndDate, flag);
         }
 
         public DataSet PartywiseIncentiveSummary(string StartDate, string EndDate, int RouteID,int BrandID, int TypeID, int CommodityID)

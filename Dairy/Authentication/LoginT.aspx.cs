@@ -165,7 +165,7 @@ namespace Dairy.Authentication
                         }   
                         case "Cashier":
                             {
-                                Response.Redirect("/Tabs/Administration/CashierSettlement.aspx");
+                                Response.Redirect("/Tabs/Cashier/Cashier.aspx");
                                 break;
                             }
                         case "Transport":

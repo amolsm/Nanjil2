@@ -737,14 +737,15 @@ namespace Dairy.Tabs.Administration
 
         protected void btnRefresh_Click(object sender, EventArgs e)
         {
-            divDanger.Visible = false;
-            divwarning.Visible = false;
-            divSusccess.Visible = false;
-            
-            btnAddagent.Visible = true;
-            btnupdateagent.Visible = false;
-            //BinDAgentInfo();
-            pnlError.Update();
+            //divDanger.Visible = false;
+            //divwarning.Visible = false;
+            //divSusccess.Visible = false;
+
+            //btnAddagent.Visible = true;
+            //btnupdateagent.Visible = false;
+            ////BinDAgentInfo();
+            //pnlError.Update();
+            Response.Redirect("~/Tabs/Administration/AddAgent.aspx");
         }
     }
 }

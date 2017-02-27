@@ -226,6 +226,7 @@
                       
                               <asp:Button ID="btnAddProduct" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnClick_btnAddProducrID"    Text="Add" ValidationGroup="Save"  />     
                         <asp:Button ID="btnupdateProduct" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnClick_btnUpdateProductID"   Text="Update" ValidationGroup="Save"  />           
+                        &nbsp;&nbsp;<asp:Button ID="Button1" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="Button1_Click"   Text="Refresh" ValidationGroup="Refresh"  />           
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

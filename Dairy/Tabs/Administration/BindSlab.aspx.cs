@@ -35,14 +35,14 @@ namespace Dairy.Tabs.Administration
         {
             DS = new DataSet();
             productdata = new ProductData();
-            DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentName", "AgentMaster", "IsArchive=0");
+            DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentCode+' '+AgentName as Name", "AgentMaster", "IsArchive=0 and Isactive=1 and Agensytype='Agency' Order by AgentCode");
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 dpAgent.DataSource = DS;
-                dpAgent.DataTextField = "AgentName";
+                dpAgent.DataTextField = "Name";
                 dpAgent.DataValueField = "AgentID";
                 dpAgent.DataBind();
-                dpAgent.Items.Insert(0, new ListItem("--Select AgentName  --", "0"));
+                dpAgent.Items.Insert(0, new ListItem("--Select Agent--", "0"));
 
             }
             DS = new DataSet();

@@ -21,7 +21,7 @@ namespace DataAccess
             return _DBHelper.ExecuteDataSet("Sp_IsUserAuthenticat", paramCollection, CommandType.StoredProcedure);
         }
 
-        public bool InsertUser(User user)
+        public int InsertUser(User user)
         {
             int result = 0;
             try
@@ -45,14 +45,17 @@ namespace DataAccess
                 result = _DBHelper.ExecuteNonQuery("Sp_InsertUser", paramCollection, CommandType.StoredProcedure);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                if (ex.ToString().Contains("Violation of UNIQUE KEY constraint"))
+                    {
+                    result = -999;
+                }
+                
+                //throw;
             }
-            if (result > 0)
-                return true;
-            return false;
+            
+            return result;
         }
         public DataSet GetAllUsers()
         {

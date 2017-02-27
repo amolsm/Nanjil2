@@ -45,9 +45,10 @@ namespace Dairy.Tabs.Marketing
 
         protected void btngenrateBill_Click(object sender, EventArgs e)
         {
+            string flag = "Staff";
                 double totalamt = 0;
             string result = string.Empty;
-            DS = marketingdata.ItemWiseStaffSalesSummarybyDate((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpEmployee.SelectedItem.Value));
+            DS = marketingdata.ItemWiseStaffSalesSummarybyDate((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpEmployee.SelectedItem.Value),flag);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 StringBuilder sb = new StringBuilder();

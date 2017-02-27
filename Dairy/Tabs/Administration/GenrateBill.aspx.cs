@@ -47,6 +47,65 @@ namespace Dairy.Tabs.Administration
             DS = billdata.GenrateBillByDate((Convert.ToDateTime(txtDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpAgentSelasEMployee.SelectedItem.Value));
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
+                if (DS.Tables[2] != null && DS.Tables[2].Rows.Count > 0)
+                {
+                    //Duplicate Bill
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('One Duplicate Bill Found of " + DS.Tables[2].Rows[0]["AgentCode"].ToString() + " AgentCode')", true);
+                    btnPrint.Visible = false;
+                }
+                else if (DS.Tables[3] != null && DS.Tables[3].Rows.Count > 0)
+                {
+                    //empty
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage2", "alert('One Empty Bill Found!')", true);
+                    btnPrint.Visible = false;
+                }
+                else if (DS.Tables[4] != null && DS.Tables[5] != null)
+                {
+                    string tempAgentID = string.Empty;
+                    bool temp = false;
+                    //one item
+                    foreach (DataRow row5 in DS.Tables[4].Rows)
+                    {
+                        string chk = row5["AgentID"].ToString();
+                        foreach (DataRow row6 in DS.Tables[5].Rows)
+                        {
+                            if (chk == row6["AgentID"].ToString())
+                            {
+                                tempAgentID = row5["AgentCode"].ToString();
+                                temp = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (temp)
+                    {
+                        //only scheme
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage3", "alert('One Bill with Only Scheme Found AgentCode:" + tempAgentID + "')", true);
+                        btnPrint.Visible = false;
+                    }
+                    else if (DS.Tables[6] != null && DS.Tables[6].Rows.Count != 0)
+                    {
+                        //Double Scheme
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage6", "alert('One Double Scheme Found! AgentCode: " + DS.Tables[6].Rows[0]["AgentCode"].ToString() + "')", true);
+                        btnPrint.Visible = false;
+                    }
+                    else
+                    {
+                        btnPrint.Visible = true;
+                    }
+
+                }
+                else if (DS.Tables[6] != null && DS.Tables[6].Rows.Count != 0)
+                {
+                    //Double Scheme
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage4", "alert('One Double Scheme Found! AgentCode: " + DS.Tables[6].Rows[0]["AgentCode"].ToString() + "')", true);
+                    btnPrint.Visible = false;
+                }
+                else
+                {
+                    btnPrint.Visible = true;
+                }
+
                 StringBuilder sb = new StringBuilder();
 
                 foreach (DataRow row in DS.Tables[0].Rows)

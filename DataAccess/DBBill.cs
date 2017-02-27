@@ -371,11 +371,12 @@ namespace DataAccess
             return _DBHelper.ExecuteDataSet("sp_GetMarketingReportItemwiseSalesSummary", paramCollection, CommandType.StoredProcedure);
         }
 
-        public DataSet StaffAccountSalesSummarybyDate(string StartDate, string EndDate)
+        public DataSet StaffAccountSalesSummarybyDate(string StartDate, string EndDate, string flag)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
             paramCollection.Add(new DBParameter("@DispatchBeginDate", StartDate));
             paramCollection.Add(new DBParameter("@DispatchEndDate", EndDate));
+            paramCollection.Add(new DBParameter("@Flag", flag));
             return _DBHelper.ExecuteDataSet("sp_StaffAccountSalesSummary", paramCollection, CommandType.StoredProcedure);
         }
 

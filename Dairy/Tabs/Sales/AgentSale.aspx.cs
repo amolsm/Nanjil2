@@ -35,5 +35,10 @@ namespace Dairy.Tabs.Sales
             }
             
         }
+
+        protected void dpAgentShemeApplied_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

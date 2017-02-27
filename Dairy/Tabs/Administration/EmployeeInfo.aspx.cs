@@ -27,7 +27,7 @@ namespace Dairy.Tabs.Administration
                 btnEmpadd.Visible = true;
                 btnEmpUpdate.Visible = false;
                 lblTabName.Text = "Add Employee";
-                txtEmpCode.Enabled = false;
+                //txtEmpCode.Enabled = false;
                 txtJoingDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                 
 
