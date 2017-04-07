@@ -459,7 +459,8 @@ namespace Dairy.Tabs.Despatch
                 dispatch.Trays = (string.IsNullOrEmpty(txtTraysDispached.Text) ? 0 : Convert.ToInt32(txtTraysDispached.Text));
                 dispatch.IceBox = (string.IsNullOrEmpty(txtIceBox.Text) ? 0 : Convert.ToInt32(txtIceBox.Text));
                 dispatch.OtherDisp = (string.IsNullOrEmpty(txtOthers.Text) ? 0 : Convert.ToInt32(txtOthers.Text));
-                dispatch.DispatchDate = DateTime.Now.ToString("dd-MM-yyyy");
+                //dispatch.DispatchDate = DateTime.Now.ToString("dd-MM-yyyy");
+                dispatch.DispatchDate = (Convert.ToDateTime(txtOrderDate.Text).ToString("dd-MM-yyyy"));
                 dispatch.UserID = GlobalInfo.Userid;
                 dispatch.CategoryId = Convert.ToInt32(dpCategory.SelectedItem.Value);
                 dispatch.DispatchDateTime = DateTime.Now;
@@ -600,7 +601,7 @@ namespace Dairy.Tabs.Despatch
 
 
                 sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:right'>");
-                sb.Append("Date : " + DateTime.Now.ToString("dd-MM-yyyy"));
+                sb.Append("Date : " + (Convert.ToDateTime(txtOrderDate.Text)).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
 
 
@@ -957,7 +958,7 @@ namespace Dairy.Tabs.Despatch
 
 
                 sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:right'>");
-                sb.Append("Date : " + DateTime.Now.ToString("dd-MM-yyyy"));
+                sb.Append("Date : " + (Convert.ToDateTime(txtOrderDate.Text)).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
 
 

@@ -375,9 +375,10 @@ namespace DataAccess
         public DataSet GetPreviousDayOrder(Invoice invoice)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
-            paramCollection.Add(new DBParameter("@AgentID ", invoice.AgencyID));
-            paramCollection.Add(new DBParameter("@tokanID ", invoice.ProductID));
-            paramCollection.Add(new DBParameter("@RouteID ", invoice.ROuteID));
+            paramCollection.Add(new DBParameter("@AgentID", invoice.AgencyID));
+            paramCollection.Add(new DBParameter("@tokanID", invoice.ProductID));
+            paramCollection.Add(new DBParameter("@RouteID", invoice.ROuteID));
+            paramCollection.Add(new DBParameter("@OrderDate", invoice.orderDate));
             return _DBHelper.ExecuteDataSet("sp_getPrvOrderDetails", paramCollection, CommandType.StoredProcedure);
         }
         public DataSet GetPreviousDayOrderRouteWise(Invoice invoice)

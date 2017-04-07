@@ -1,0 +1,67 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <Row>1</Row>
+    <OrderID>661909</OrderID>
+    <OrderDate>27-03-2017</OrderDate>
+    <AgentID>16</AgentID>
+    <SelesEmployeeId>28</SelesEmployeeId>
+    <ShcemheApplied>false</ShcemheApplied>
+    <TotalBill>220.0000</TotalBill>
+    <OrderType>1</OrderType>
+    <RouteID>4</RouteID>
+    <IsPrinted>true</IsPrinted>
+    <BillNo>20170327/R0002/1</BillNo>
+    <CreatedBy>2</CreatedBy>
+    <CreatedDate>03-27-2017</CreatedDate>
+    <BillNumber>27-03-2017661909</BillNumber>
+    <BulkFlag>0</BulkFlag>
+    <BillSeq>6628</BillSeq>
+    <OrderDetailsId>676212</OrderDetailsId>
+    <OrderId1>661909</OrderId1>
+    <TypeID>1</TypeID>
+    <ProductID>467</ProductID>
+    <Qty>5</Qty>
+    <UnitCost>30.0000</UnitCost>
+    <Total>150.0000</Total>
+    <Dispatched>true</Dispatched>
+    <ProductID1>467</ProductID1>
+    <ProductName>DTM-250ml</ProductName>
+    <ProductCode>P00467</ProductCode>
+    <TypeID1>1</TypeID1>
+    <CommodityID>2</CommodityID>
+    <BrandID>1</BrandID>
+    <State>Tamil Nadu</State>
+    <SlabID>17</SlabID>
+    <Quantity>1</Quantity>
+    <UnitID>2</UnitID>
+    <Prize>30.0000</Prize>
+    <SlabCode xml:space="preserve">          </SlabCode>
+    <CreatedBy1>47</CreatedBy1>
+    <CreatedDate1>20-09-2016</CreatedDate1>
+    <ModifiedBy>47</ModifiedBy>
+    <ModifiedDate>20-09-2016</ModifiedDate>
+    <IsArchive>false</IsArchive>
+    <AgentID1>16</AgentID1>
+    <AgentCode>1813</AgentCode>
+    <RouteID1>4</RouteID1>
+    <AgentName>Alancode jn</AgentName>
+    <DateofJoining>27-05-2015</DateofJoining>
+    <Isactive>true</Isactive>
+    <Agensytype>Agency</Agensytype>
+    <MobileNo>9626817098</MobileNo>
+    <BillingMethod>Variable</BillingMethod>
+    <PaymentMode>Daily</PaymentMode>
+    <IsArchive1>false</IsArchive1>
+    <SchemeAmount>100.0000</SchemeAmount>
+    <TotalSchemeAmount>-1300.0000</TotalSchemeAmount>
+    <TypeID2>1</TypeID2>
+    <TypeName>Milk</TypeName>
+    <CategoryID>1</CategoryID>
+    <CreatedBy3>1</CreatedBy3>
+    <CreatedDate3>29-04-2016</CreatedDate3>
+    <ModifiedBy2>1</ModifiedBy2>
+    <ModifiedDate2>29-04-2016</ModifiedDate2>
+    <IsArchive2>true</IsArchive2>
+  </Table>
+</NewDataSet>

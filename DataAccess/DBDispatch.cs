@@ -338,13 +338,14 @@ namespace DataAccess
 
         public int AddDispatchInfo(Dispatch dispatch)
         {
+            DataSet DS = new DataSet();
             int result = 0;
             try
             {
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
 
-                paramCollection.Add(new DBParameter("@DI_Id", dispatch.DispatchId));
+                paramCollection.Add(new DBParameter("@Tokan", dispatch.tokanid));
                 paramCollection.Add(new DBParameter("@DI_SalesmanFirstId", dispatch.SalesmanFirstId));
                 paramCollection.Add(new DBParameter("@DI_SalesmanSecondId", dispatch.SalesmanSecondId));
                 paramCollection.Add(new DBParameter("@DI_RouteId", dispatch.RouteID));
@@ -359,15 +360,20 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@DispatchBy", dispatch.UserID));
                 paramCollection.Add(new DBParameter("@BrandId", dispatch.CategoryId));
                 paramCollection.Add(new DBParameter("@ShiftId", dispatch.ShiftId));
-                result = _DBHelper.ExecuteNonQuery("Sp_AddDispatchInfo", paramCollection, CommandType.StoredProcedure);
+                
+                DS = _DBHelper.ExecuteDataSet("Sp_AddDispatchInfoNew", paramCollection, CommandType.StoredProcedure);
+                //result = _DBHelper.ExecuteNonQuery("Sp_AddDispatchInfoNew", paramCollection, CommandType.StoredProcedure);
 
             }
             catch (Exception)
             {
 
-
+                return 0;
             }
-            return result;
+            if (Convert.ToInt32(DS.Tables[0].Rows[0]["ID"]) > 0)
+                return Convert.ToInt32(DS.Tables[0].Rows[0]["ID"]);
+            else
+                return -1;
         }
 
         public int UpdateDispatch(Dispatch dispatch)

@@ -108,6 +108,7 @@
     <Content Include="Tabs\Administration\BillSequence.aspx" />
     <Content Include="Tabs\Administration\BindSlabExcelUpload.aspx" />
     <Content Include="Tabs\Administration\BoothLog.aspx" />
+    <Content Include="Tabs\Administration\BulkOrder.aspx" />
     <Content Include="Tabs\Administration\BulkOrderAgency.aspx" />
     <Content Include="Tabs\Administration\CancelOrderM.aspx" />
     <Content Include="Tabs\Administration\Cashier.aspx" />
@@ -121,6 +122,7 @@
     <Content Include="Tabs\Administration\IncentiveSetup.aspx" />
     <Content Include="Tabs\Administration\OrderDemandStatement.aspx" />
     <Content Include="Tabs\Administration\OrderQuantity.aspx" />
+    <Content Include="Tabs\Administration\ProductMaster.aspx" />
     <Content Include="Tabs\Administration\Shift.aspx" />
     <Content Include="Tabs\Administration\UserLog.aspx" />
     <Content Include="Tabs\Administration\ViewDispatchSummary.aspx" />
@@ -136,6 +138,7 @@
     <Content Include="Tabs\Cashier\StaffAccountSalesSummary.aspx" />
     <Content Include="Tabs\Despatch\AddReturnedItems.aspx" />
     <Content Include="Tabs\Despatch\BoothPlaceOrder.aspx" />
+    <Content Include="Tabs\Despatch\DispatchOrders.aspx" />
     <Content Include="Tabs\Despatch\ItemwiseSalesSummary.aspx" />
     <Content Include="Tabs\Despatch\ReturnedTrays.aspx" />
     <Content Include="Tabs\Despatch\ReturnScheme.aspx" />
@@ -1331,6 +1334,13 @@
     <Compile Include="Tabs\Administration\BoothLog.aspx.designer.cs">
       <DependentUpon>BoothLog.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Administration\BulkOrder.aspx.cs">
+      <DependentUpon>BulkOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\BulkOrder.aspx.designer.cs">
+      <DependentUpon>BulkOrder.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Administration\BulkOrderAgency.aspx.cs">
       <DependentUpon>BulkOrderAgency.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1421,6 +1431,13 @@
     </Compile>
     <Compile Include="Tabs\Administration\OrderQuantity.aspx.designer.cs">
       <DependentUpon>OrderQuantity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Administration\ProductMaster.aspx.cs">
+      <DependentUpon>ProductMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\ProductMaster.aspx.designer.cs">
+      <DependentUpon>ProductMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Administration\Shift.aspx.cs">
       <DependentUpon>Shift.aspx</DependentUpon>
@@ -1525,6 +1542,13 @@
     </Compile>
     <Compile Include="Tabs\Despatch\BoothPlaceOrder.aspx.designer.cs">
       <DependentUpon>BoothPlaceOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Despatch\DispatchOrders.aspx.cs">
+      <DependentUpon>DispatchOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Despatch\DispatchOrders.aspx.designer.cs">
+      <DependentUpon>DispatchOrders.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Despatch\ItemwiseSalesSummary.aspx.cs">
       <DependentUpon>ItemwiseSalesSummary.aspx</DependentUpon>

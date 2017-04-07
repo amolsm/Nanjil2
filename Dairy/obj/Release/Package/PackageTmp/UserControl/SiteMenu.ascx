@@ -87,8 +87,8 @@
               </a>
               <ul class="treeview-menu">
 
-                   <li><a href="/Tabs/Administration/PlaceOrderRoutewise.aspx"><i class="fa fa-circle-o"></i>  Routewise Agency Order</a></li>
-                  <li><a href="/Tabs/Administration/PlaceOrderEmpRoutewise.aspx"><i class="fa fa-circle-o"></i>  Routewise Employee Order</a></li>
+                   
+                  <li><a href="/Tabs/Administration/BulkOrder.aspx"><i class="fa fa-circle-o"></i>  Routewise Orders</a></li>
                   <li><a href="/Tabs/Administration/PlaceOrder.aspx"><i class="fa fa-circle-o"></i>  Daily Agency Order</a></li>
                   <li><a href="/Tabs/Administration/EditOrder.aspx"><i class="fa fa-circle-o"></i>Edit Order</a></li>
                   <li><a href="/Tabs/Administration/OrderQuantity.aspx"><i class="fa fa-circle-o"></i>Order Summary</a></li>
@@ -423,8 +423,9 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu" style="width:220px">
-                <li><a href="/Tabs/Reception/PlaceOrderRoutewise.aspx"><i class="fa fa-circle-o"></i> Routewise Agency Order</a></li>
-                <li><a href="/Tabs/Reception/PlaceOrderEmpRoutewise.aspx"><i class="fa fa-circle-o"></i> Routewise Employee Order</a></li>
+                <%--<li><a href="/Tabs/Reception/PlaceOrderRoutewise.aspx"><i class="fa fa-circle-o"></i> Routewise Agency Order</a></li>
+                <li><a href="/Tabs/Reception/PlaceOrderEmpRoutewise.aspx"><i class="fa fa-circle-o"></i> Routewise Employee Order</a></li>--%>
+                  <li><a href="/Tabs/Administration/BulkOrder.aspx"><i class="fa fa-circle-o"></i>  Routewise Orders</a></li>
                 <li><a href="/Tabs/Reception/PlaceOrder.aspx"><i class="fa fa-circle-o"></i>  Daily Order</a></li>
                 <li><a href="/Tabs/Reception/EditOrder.aspx"><i class="fa fa-circle-o"></i>Edit Order</a></li>
                   <li><a href="/Tabs/Reception/CancelOrder.aspx"><i class="fa fa-circle-o"></i>Cancel Order</a></li>
@@ -457,7 +458,7 @@
               <ul class="treeview-menu">
                   <li><a href="/Tabs/Sales/BoothStockLanding.aspx"><i class="fa fa-circle-o"></i>Stock Available</a></li>
                 <li><a href="/Tabs/Sales/LocalBilling.aspx"><i class="fa fa-circle-o"></i>Local Sale</a></li>
-                   <li><a href="/Tabs/Sales/AgentBilling.aspx"><i class="fa fa-circle-o"></i>Agent Sale</a></li>
+                   <li><a href="/Tabs/Sales/AgentSale.aspx"><i class="fa fa-circle-o"></i>Agent Sale</a></li>
                    <li><a href="/Tabs/Sales/EmployeeBilling.aspx"><i class="fa fa-circle-o"></i>Employee Sale</a></li>    
                   <li><a href="/Tabs/Sales/BoothReturnReplace.aspx"><i class="fa fa-circle-o"></i>Return Items</a></li>   
                   <li><a href="/Tabs/Sales/BoothPlaceOrder.aspx"><i class="fa fa-circle-o"></i>Booth Place Order</a></li>         
@@ -478,7 +479,7 @@
               <ul class="treeview-menu" style="width:220px">
                 <li><a href="/Tabs/Despatch/BoothPlaceOrder.aspx"><i class="fa fa-circle-o"></i>  Place Booth Order</a></li>
                    <%--<li><a href="/Tabs/Administration/GenerateBillForBooth.aspx"><i class="fa fa-circle-o"></i>  Gnerate Bill</a></li>--%>
-                  <li><a href="/Tabs/Despatch/ViewDispatchOrders.aspx"><i class="fa fa-circle-o"></i> View Dispatch Order</a></li>
+                  <li><a href="/Tabs/Despatch/DispatchOrders.aspx"><i class="fa fa-circle-o"></i> View Dispatch Order</a></li>
                   </ul>
               </li>
                       <li  class="treeview">

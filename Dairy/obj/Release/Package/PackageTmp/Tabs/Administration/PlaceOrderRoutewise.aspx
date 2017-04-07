@@ -98,7 +98,9 @@
                        <asp:Button ID="btnGetPreviousOrder" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Get Previous Orders" ValidationGroup="Add" OnClick="btnGetPreviousOrder_Click"  />                    
                           &nbsp; 
                         <asp:Button ID="btnAgentORderSubmit" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnAgentORderSubmit_Click"  Text="Submit" ValidationGroup="Add"   />                
-                        
+                            &nbsp; 
+                        <asp:Button ID="btnRefresh" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnRefresh_Click"  Text="Refresh" ValidationGroup="none"   />                
+                       
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

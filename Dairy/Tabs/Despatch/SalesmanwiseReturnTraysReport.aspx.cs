@@ -22,8 +22,8 @@ namespace Dairy.Tabs.Despatch
             {
                 txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                 txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
-
-                DS = BindCommanData.BindCommanDropDwon("EmployeeID", "EmployeeCode+' '+EmployeeName as Name", "employeemaster", "IsArchive=0 and (Designation='Sales Man')");
+                DS = BindCommanData.BindCommanDropDwon("EmployeeID", "EmployeeCode +' '+EmployeeName as Name  ", "EmployeeMaster", "IsActive=1 and (Designation='Sales Man' or Designation = 'Driver') ");
+                //DS = BindCommanData.BindCommanDropDwon("EmployeeID", "EmployeeCode+' '+EmployeeName as Name", "employeemaster", "IsArchive=0 and (Designation='Sales Man')");
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {
                     dpSalesMan.DataSource = DS;

@@ -760,7 +760,7 @@ namespace Dairy.Tabs.Cashier
 
         protected void btnRefress_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Tabs/Administration/Cashier.aspx");
+            Response.Redirect("~/Tabs/Cashier/Cashier.aspx");
         }
     }
 

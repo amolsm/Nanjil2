@@ -1,0 +1,82 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <Row>1</Row>
+    <OrderID>611866</OrderID>
+    <OrderDate>09-03-2017</OrderDate>
+    <SelesEmployeeId>0</SelesEmployeeId>
+    <ShcemheApplied>false</ShcemheApplied>
+    <TotalBill>15.0000</TotalBill>
+    <OrderType>2</OrderType>
+    <RouteID>4</RouteID>
+    <EmployeeID>21</EmployeeID>
+    <IsPrinted>false</IsPrinted>
+    <BillNo>20170309/3</BillNo>
+    <CreatedBy>1</CreatedBy>
+    <CreatedDate>03-09-2017</CreatedDate>
+    <BillNumber>09-03-2017611866</BillNumber>
+    <BulkFlag>0</BulkFlag>
+    <BillSeq>6636</BillSeq>
+    <OrderDetailsId>626061</OrderDetailsId>
+    <OrderId1>611866</OrderId1>
+    <TypeID>1</TypeID>
+    <ProductID>11</ProductID>
+    <Qty>1</Qty>
+    <UnitCost>15.0000</UnitCost>
+    <Total>15.0000</Total>
+    <Dispatched>false</Dispatched>
+    <ProductID1>11</ProductID1>
+    <ProductName>TM-250ml</ProductName>
+    <ProductCode>P00011</ProductCode>
+    <TypeID1>1</TypeID1>
+    <CommodityID>1</CommodityID>
+    <BrandID>1</BrandID>
+    <State>Tamil Nadu</State>
+    <SlabID>2</SlabID>
+    <Quantity>1</Quantity>
+    <UnitID>2</UnitID>
+    <Prize>15.0000</Prize>
+    <SlabCode xml:space="preserve">          </SlabCode>
+    <CreatedBy1>1</CreatedBy1>
+    <CreatedDate1>29-04-2016</CreatedDate1>
+    <ModifiedBy>1</ModifiedBy>
+    <ModifiedDate>29-04-2016</ModifiedDate>
+    <IsArchive>false</IsArchive>
+    <EmployeeID1>21</EmployeeID1>
+    <EmployeeCode>1023</EmployeeCode>
+    <EmployeeName>Devarajan .D</EmployeeName>
+    <FatherName>x</FatherName>
+    <PFNO>67</PFNO>
+    <JoingingDate>01-05-2003</JoingingDate>
+    <IsActive>true</IsActive>
+    <Address1>x</Address1>
+    <Address2>x</Address2>
+    <Address3>x</Address3>
+    <Email>x</Email>
+    <mobile>9487960718</mobile>
+    <Phone>0</Phone>
+    <City>Mulagumoodu</City>
+    <Districk>Kanyakumari</Districk>
+    <State1>Tamil Nadu</State1>
+    <Country>India</Country>
+    <BankName>0</BankName>
+    <AccountNo>0</AccountNo>
+    <IFCCODE>0</IFCCODE>
+    <ActiveFrom>01-05-2016</ActiveFrom>
+    <Designation>A.S.O.</Designation>
+    <SuperViser>x</SuperViser>
+    <RouteID1>1</RouteID1>
+    <IsArchive1>false</IsArchive1>
+    <ModifiedBy1>1</ModifiedBy1>
+    <MOdifiedDate1>06-05-2016</MOdifiedDate1>
+    <Department>Marketing</Department>
+    <TypeID2>1</TypeID2>
+    <TypeName>Milk</TypeName>
+    <CategoryID>1</CategoryID>
+    <CreatedBy3>1</CreatedBy3>
+    <CreatedDate3>29-04-2016</CreatedDate3>
+    <ModifiedBy2>1</ModifiedBy2>
+    <ModifiedDate2>29-04-2016</ModifiedDate2>
+    <IsArchive2>true</IsArchive2>
+  </Table>
+</NewDataSet>

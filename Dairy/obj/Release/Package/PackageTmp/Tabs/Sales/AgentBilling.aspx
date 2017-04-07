@@ -84,7 +84,7 @@
                      <div class="input-group-addon">
                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                      </div>
-                      <asp:TextBox ID="txtGentOrderDate" class="form-control" type="date"  placeholder="Date" runat="server" required></asp:TextBox>                        
+                      <asp:TextBox ID="txtGentOrderDate" class="form-control" type="date"  placeholder="Date" runat="server" disabled></asp:TextBox>                        
                    </div><!-- /.input group -->
 
                  </div><!-- /.form group -->

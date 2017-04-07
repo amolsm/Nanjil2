@@ -27,6 +27,8 @@ namespace Dairy.Tabs.Administration
             {
                 BindDropDwon();
                 hftokanno.Value = Comman.Comman.RandomString();
+                btnRefresh.Visible = false;
+                btnAgentORderSubmit.Visible = false;
                 txtGentOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             }
         }
@@ -152,7 +154,9 @@ namespace Dairy.Tabs.Administration
             DS = invoiceData.GetPreviousDayOrderRouteWise(invoice);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-
+                btnRefresh.Visible = true;
+                btnGetPreviousOrder.Visible = false;
+                btnAgentORderSubmit.Visible = true;
                 rpAgentOrderdetails.Visible = true;
                 foreach (DataRow row in DS.Tables[0].Rows)
                 {
@@ -403,6 +407,11 @@ namespace Dairy.Tabs.Administration
                 binddetails();
                 upMain.Update();
             }
+        }
+
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Tabs/Administration/PlaceOrderRoutewise.aspx");
         }
     }
 }

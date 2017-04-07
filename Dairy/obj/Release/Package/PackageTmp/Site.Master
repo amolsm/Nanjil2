@@ -14,7 +14,7 @@
     </asp:ContentPlaceHolder>
      
 </head>
-  <body class="hold-transition skin-blue sidebar-mini sidebar-collapse" >
+  <body class="hold-transition skin-blue sidebar-mini sidebar-collapse" style="overflow:scroll;">
     <div class="wrapper">
     <form runat="server">
     <uc:ucHeader ID="uciheader" runat="server" />

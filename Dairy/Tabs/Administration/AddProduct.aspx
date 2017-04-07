@@ -79,6 +79,8 @@
         </div><!-- /.box-header -->
         <div class="box-body">
 
+            <div class="row">
+
              <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -98,9 +100,11 @@
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txtProductName"  class="form-control"   placeholder="Product Name" runat="server" required ></asp:TextBox>   
+                      <asp:TextBox ID="txtProductName"  class="form-control"   placeholder="Product Name" runat="server" ></asp:TextBox>   
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtProductName"
+        ErrorMessage="Name Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
                          </div>  <%--productName--%>
 
@@ -130,7 +134,9 @@
                   </div><!-- /.form group -->
                          </div> <!-- dp product type -->
 
+            </div>
 
+            <div class="row">
                          <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -179,16 +185,19 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtQuantity" class="form-control"   placeholder="Quantity" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtQuantity" class="form-control"   placeholder="Quantity" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtQuantity"
+        ErrorMessage="Quantity Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
 
                      
                        
                           
                       </div> 
+</div>
 
+            <div class="row">
                 <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -208,9 +217,10 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtPrize" class="form-control"   placeholder="Price " runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtPrize" class="form-control"   placeholder="Price " runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPrize"
+        ErrorMessage="Price Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
 
                      
@@ -236,7 +246,7 @@
                           
                       </div> 
 
-
+</div>
               
         </div><!-- /.box-body -->
       </div>

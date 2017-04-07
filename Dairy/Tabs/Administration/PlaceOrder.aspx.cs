@@ -364,6 +364,17 @@ namespace Dairy.Tabs.Administration
             rpAgentOrderdetails.DataSource = invicedata.GetTempItam(invocie);
             rpAgentOrderdetails.DataBind();
         }
+        protected void deleteAllItem()
+        {
+            Invoice invocie = new Invoice();
+            InvoiceData invicedata = new InvoiceData();
+            invocie.TokanId = hftokanno.Value;
+            invocie.UserID = GlobalInfo.Userid;
+            invocie.Country = "NewOrder";
+            invicedata.DeleteItes(invocie);
+            BindAgntTempItam(invocie);
+            upMain.Update();
+        }
         protected void dpAgentpre_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -371,16 +382,19 @@ namespace Dairy.Tabs.Administration
             InvoiceData invicedata = new InvoiceData();
             invocie.AgencyID = Convert.ToInt32(dpAgent.SelectedItem.Value);
             invocie.ROuteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
+            invocie.orderDate = (Convert.ToDateTime(txtGentOrderDate.Text)).ToString("dd-MM-yyyy");
             DS = invicedata.GetPreviousDayOrder(invocie);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                RemoveAllItam();
-
+                deleteAllItem();
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "1", "<script type='text/javascript'> $('#MainContent_dpAgent').attr('disabled', 'disabled'); </script>", false);
+                //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "2", "<script type='text/javascript'> $('#MainContent_txtGentOrderDate').attr('disabled', 'disabled'); </script>", false);
+                //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "3", "<script type='text/javascript'> $('#MainContent_dpagentRoute').attr('disabled', 'disabled'); </script>", false);
                 PrvAgentID = Convert.ToInt32(DS.Tables[0].Rows[0]["AgentID"]);
                 Session["PrvOrderID"] = Convert.ToInt32(DS.Tables[0].Rows[0]["OrderID"]);
                 // PrvOrderID = Convert.ToInt32(DS.Tables[0].Rows[0]["OrderID"]);
-                dpAgent.Enabled = false;
-
+                //dpAgent.Enabled = false;
+                
                 foreach (DataRow row in DS.Tables[0].Rows)
                 {
                     invocie.TokanId = hftokanno.Value;
@@ -403,7 +417,8 @@ namespace Dairy.Tabs.Administration
             {
                 Session["PrvOrderID"] = 0;
                 // PrvOrderID = 0;
-                RemoveAllItam();
+                //RemoveAllItam();
+                deleteAllItem();
             }
 
 
@@ -616,6 +631,7 @@ namespace Dairy.Tabs.Administration
                         invocie.UserID = GlobalInfo.Userid;
                         BindAgntTempItam(invocie);
                         upMain.Update();
+                        
 
                         break;
                     }
@@ -967,49 +983,70 @@ namespace Dairy.Tabs.Administration
         }
         protected void dpagentRoute_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dpAgent.SelectedItem.Value != "0")
+            DS = new DataSet();
+            DS = BindCommanData.BindCommanDropDwon("OrderID", "OrderID as Name  ", "OrderMaster", "OrderDate = '" + (Convert.ToDateTime(txtGentOrderDate.Text)).ToString("dd-MM-yyyy") + "' and RouteID = " + dpagentRoute.SelectedItem.Value + "and IsPrinted = 1");
+            if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                Invoice invocie = new Invoice();
-                InvoiceData invicedata = new InvoiceData();
-                invocie.AgencyID = Convert.ToInt32(dpAgent.SelectedItem.Value);
-                invocie.ROuteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
-                DS = invicedata.GetPreviousDayOrder(invocie);
-                if (!Comman.Comman.IsDataSetEmpty(DS))
+                btnAddAgentProductItem.Visible = false;
+                btnagentItamsremove.Visible = false;
+                btnAgentORderSubmit.Visible = false;
+                dpagentRoute.ClearSelection();
+                upMain.Update();
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage1", "alert('On This Route Orders are placed and Printed')", true);
+            }
+            else
+            {
+
+                if (dpAgent.SelectedItem.Value != "0")
                 {
-                    RemoveAllItam();
-
-                    PrvAgentID = Convert.ToInt32(DS.Tables[0].Rows[0]["AgentID"]);
-                    Session["PrvOrderID"] = Convert.ToInt32(DS.Tables[0].Rows[0]["OrderID"]);
-                    // PrvOrderID = Convert.ToInt32(DS.Tables[0].Rows[0]["OrderID"]);
-                    dpAgent.Enabled = false;
-
-                    foreach (DataRow row in DS.Tables[0].Rows)
+                    Invoice invocie = new Invoice();
+                    InvoiceData invicedata = new InvoiceData();
+                    invocie.AgencyID = Convert.ToInt32(dpAgent.SelectedItem.Value);
+                    invocie.ROuteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
+                    invocie.orderDate = (Convert.ToDateTime(txtGentOrderDate.Text)).ToString("dd-MM-yyyy");
+                    DS = invicedata.GetPreviousDayOrder(invocie);
+                    if (!Comman.Comman.IsDataSetEmpty(DS))
                     {
-                        invocie.TokanId = hftokanno.Value;
-                        invocie.UserID = GlobalInfo.Userid;
-                        invocie.ProductID = Convert.ToInt32(row["ProductID"]);
-                        invocie.qty = Convert.ToDouble(row["Qty"]);
-                        invocie.UnitCost = Convert.ToDouble(row["UnitCost"]);
-                        invocie.totalCoast = Convert.ToDouble(row["Total"]);
-                        invocie.TypeID = Convert.ToInt32(row["TypeID"]);
-                        totsum = totsum + Convert.ToDouble(row["Total"]);
-                        invicedata.InsertTempInvoiceItam(invocie);
-                        BindAgntTempItam(invocie);
+                        //RemoveAllItam();
+                        deleteAllItem();
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "11", "<script type='text/javascript'> $('#MainContent_dpAgent').attr('disabled', 'disabled'); </script>", false);
+                        //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "12", "<script type='text/javascript'> $('#MainContent_txtGentOrderDate').attr('disabled', 'disabled'); </script>", false);
+                        //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "13", "<script type='text/javascript'> $('#MainContent_dpagentRoute').attr('disabled', 'disabled'); </script>", false);
+                        PrvAgentID = Convert.ToInt32(DS.Tables[0].Rows[0]["AgentID"]);
+                        Session["PrvOrderID"] = Convert.ToInt32(DS.Tables[0].Rows[0]["OrderID"]);
+                        // PrvOrderID = Convert.ToInt32(DS.Tables[0].Rows[0]["OrderID"]);
+                        //dpAgent.Enabled = false;
+
+                        foreach (DataRow row in DS.Tables[0].Rows)
+                        {
+                            invocie.TokanId = hftokanno.Value;
+                            invocie.UserID = GlobalInfo.Userid;
+                            invocie.ProductID = Convert.ToInt32(row["ProductID"]);
+                            invocie.qty = Convert.ToDouble(row["Qty"]);
+                            invocie.UnitCost = Convert.ToDouble(row["UnitCost"]);
+                            invocie.totalCoast = Convert.ToDouble(row["Total"]);
+                            invocie.TypeID = Convert.ToInt32(row["TypeID"]);
+                            totsum = totsum + Convert.ToDouble(row["Total"]);
+                            invicedata.InsertTempInvoiceItam(invocie);
+                            BindAgntTempItam(invocie);
 
 
-                        //txtagentOrderqty.Text = "0";
+                            //txtagentOrderqty.Text = "0";
+                        }
+
+                    }
+                    else
+                    {
+                        Session["PrvOrderID"] = 0;
+                        // PrvOrderID = 0;
+                        //RemoveAllItam();
+                        deleteAllItem();
                     }
 
                 }
-                else
-                {
-                    Session["PrvOrderID"] = 0;
-                    // PrvOrderID = 0;
-                    RemoveAllItam();
-                }
-
             }
             dpagentRoute.Focus();
+
         }
         public void btnemployeeRemoveAllItem_click(object sender, EventArgs e)
         {

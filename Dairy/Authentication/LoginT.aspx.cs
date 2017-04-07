@@ -160,7 +160,7 @@ namespace Dairy.Authentication
                         }
                         case "Despatch":
                         {
-                            Response.Redirect("/Tabs/Despatch/ViewDispatchOrders.aspx");
+                            Response.Redirect("/Tabs/Despatch/DispatchOrders.aspx");
                             break;
                         }   
                         case "Cashier":

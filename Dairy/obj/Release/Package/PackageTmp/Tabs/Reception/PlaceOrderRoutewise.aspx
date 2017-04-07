@@ -98,7 +98,9 @@
                        <asp:Button ID="btnGetPreviousOrder" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Get Previous Orders" ValidationGroup="Add" OnClick="btnGetPreviousOrder_Click"  />                    
                           &nbsp; 
                         <asp:Button ID="btnAgentORderSubmit" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnAgentORderSubmit_Click"  Text="Submit" ValidationGroup="Add"   />                
-                        
+                            &nbsp; 
+                        <asp:Button ID="btnRefresh" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnRefresh_Click"  Text="Refresh" ValidationGroup="none"   />                
+                       
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -167,7 +169,7 @@
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
-                             <tr id="trEmpty" runat="server" visible="false"><td  align = "left" colspan="10"><h5> Bulk Routewise Agent Order is completed for this Route Or No records found. Please contact Admin.</h5></td> </tr>
+  <tr id="trEmpty" runat="server" visible="false"><td  align = "left" colspan="10"><h5> Bulk Routewise Agent Order is completed for this Route Or No records found. Please contact Admin.</h5></td> </tr>
                          </tbody>
 
                     <tfoot>
@@ -328,7 +330,7 @@
       </section>
     
     
-
+    
        <script type="text/javascript">
 
            $(function () {
