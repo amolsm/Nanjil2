@@ -49,8 +49,8 @@ namespace Dairy.Tabs.Marketing
 
                 try
                 {
-                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["BillSeq"] };
-                    DS.Tables[1].PrimaryKey = new[] { DS.Tables[1].Columns["BillSeq"] };
+                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["AgentID"] };
+                    DS.Tables[1].PrimaryKey = new[] { DS.Tables[1].Columns["AgentID"] };
                 }
                 catch (Exception) { }
                
@@ -154,10 +154,10 @@ namespace Dairy.Tabs.Marketing
                         
                             DataRow dr = dt.NewRow();
                            
-                            if (rows["AgentId1"].ToString() != rows["AgentId"].ToString())
+                            if (rows["Available"].ToString() != "1")
                             {
                                
-                                    dt.Rows.Add(rows["RouteId1"], rows["AgentId1"], rows["AgentCode1"], rows["AgentName1"]);
+                                    dt.Rows.Add(rows["RouteID"], rows["AgentID"], rows["AgentCode"], rows["AgentName"]);
                                     dt.Rows.Add(dr);
                               
                             }

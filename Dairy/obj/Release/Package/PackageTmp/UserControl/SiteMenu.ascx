@@ -457,8 +457,9 @@
               </a>
               <ul class="treeview-menu">
                   <li><a href="/Tabs/Sales/BoothStockLanding.aspx"><i class="fa fa-circle-o"></i>Stock Available</a></li>
+                  <li><a href="/Tabs/Administration/ViewBoothStock.aspx"><i class="fa fa-circle-o"></i>View Booth Stock</a></li>
                 <li><a href="/Tabs/Sales/LocalBilling.aspx"><i class="fa fa-circle-o"></i>Local Sale</a></li>
-                   <li><a href="/Tabs/Sales/AgentSale.aspx"><i class="fa fa-circle-o"></i>Agent Sale</a></li>
+                   <li><a href="/Tabs/Sales/AgentBilling.aspx"><i class="fa fa-circle-o"></i>Agent Sale</a></li>
                    <li><a href="/Tabs/Sales/EmployeeBilling.aspx"><i class="fa fa-circle-o"></i>Employee Sale</a></li>    
                   <li><a href="/Tabs/Sales/BoothReturnReplace.aspx"><i class="fa fa-circle-o"></i>Return Items</a></li>   
                   <li><a href="/Tabs/Sales/BoothPlaceOrder.aspx"><i class="fa fa-circle-o"></i>Booth Place Order</a></li>         
