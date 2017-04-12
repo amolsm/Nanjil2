@@ -100,12 +100,12 @@ namespace Dairy.Tabs.Sales
 
 
         }
-         protected void dpAgentpre_SelectedIndexChanged(object sender, EventArgs e)
+        protected void dpAgentpre_SelectedIndexChanged(object sender, EventArgs e)
         {
             Invoice invocie = new Invoice();
             InvoiceData invicedata = new InvoiceData();
             invocie.AgencyID = Convert.ToInt32(dpAgent.SelectedItem.Value);
-
+            invocie.orderDate = (Convert.ToDateTime(txtGentOrderDate.Text)).ToString("dd-MM-yyyy");
             DS = invicedata.GetPreviousDayOrder(invocie);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
@@ -134,7 +134,7 @@ namespace Dairy.Tabs.Sales
 
 
         }
-         public void BindAgntTempItam(Invoice invocie)
+        public void BindAgntTempItam(Invoice invocie)
          {
              InvoiceData invicedata = new InvoiceData();
              rpAgentOrderdetails.DataSource = invicedata.GetTempItam(invocie);

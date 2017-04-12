@@ -104,7 +104,7 @@ namespace Dairy.Tabs.Administration
             Invoice invocie = new Invoice();
             InvoiceData invicedata = new InvoiceData();
             invocie.AgencyID = Convert.ToInt32(dpAgent.SelectedItem.Value);
-
+            invocie.orderDate = (Convert.ToDateTime(txtGentOrderDate.Text)).ToString("dd-MM-yyyy");
             DS = invicedata.GetPreviousDayOrder(invocie);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
