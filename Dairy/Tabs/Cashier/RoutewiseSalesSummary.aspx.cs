@@ -159,7 +159,12 @@ namespace Dairy.Tabs.Cashier
                 sb.Append("<b> Quantity </b> ");
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:right'>");
+                sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
+
+                sb.Append("<b> Unit </b> ");
+                sb.Append("</td>");
+
+                sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
                 sb.Append("<b> Total </b> ");
                 sb.Append("</td>");
 
@@ -192,7 +197,12 @@ namespace Dairy.Tabs.Cashier
                     }
                     sb.Append("</td>");
 
-                    sb.Append("<td  class='tg-yw4l' colspan='2' style='text-align:right'>");
+
+                    sb.Append("<td  class='tg-yw4l'  style='text-align:center'>");
+                    sb.Append(row["Unit"].ToString());
+                    sb.Append("</td>");
+
+                    sb.Append("<td  class='tg-yw4l'  style='text-align:right'>");
                     if (string.IsNullOrEmpty(row["totalreturnAmount"].ToString()))
                     {
                         sb.Append("<b>" + (Convert.ToDecimal(row["Amount"]).ToString("#0.00")) + "</b>");
@@ -241,7 +251,12 @@ namespace Dairy.Tabs.Cashier
                 sb.Append("<b> Quantity </b> ");
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:right'>");
+                sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
+
+                sb.Append("<b> Unit </b> ");
+                sb.Append("</td>");
+
+                sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
                 sb.Append("<b> Total </b> ");
                 sb.Append("</td>");
 
@@ -274,7 +289,12 @@ namespace Dairy.Tabs.Cashier
                     }
                     sb.Append("</td>");
 
-                    sb.Append("<td  class='tg-yw4l' colspan='2' style='text-align:right'>");
+
+                    sb.Append("<td  class='tg-yw4l'  style='text-align:center'>");
+                    sb.Append(row["Unit"].ToString());
+                    sb.Append("</td>");
+
+                    sb.Append("<td  class='tg-yw4l'  style='text-align:right'>");
                     if (string.IsNullOrEmpty(row["totalreturnAmount"].ToString()))
                     {
                         sb.Append("<b>" + (Convert.ToDecimal(row["Amount"]).ToString("#0.00")) + "</b>");
@@ -323,7 +343,12 @@ namespace Dairy.Tabs.Cashier
                 sb.Append("<b> Quantity </b> ");
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:right'>");
+                sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
+
+                sb.Append("<b> Unit </b> ");
+                sb.Append("</td>");
+
+                sb.Append("<td class='tg-yw4l' style='text-align:right'>");
                 sb.Append("<b> Total </b> ");
                 sb.Append("</td>");
 
@@ -356,7 +381,12 @@ namespace Dairy.Tabs.Cashier
                     }
                     sb.Append("</td>");
 
-                    sb.Append("<td  class='tg-yw4l' colspan='2' style='text-align:right'>");
+
+                    sb.Append("<td  class='tg-yw4l'  style='text-align:center'>");
+                    sb.Append(row["Unit"].ToString());
+                    sb.Append("</td>");
+
+                    sb.Append("<td  class='tg-yw4l'  style='text-align:right'>");
                     if (string.IsNullOrEmpty(row["totalreturnAmount"].ToString()))
                     {
                         sb.Append("<b>" + (Convert.ToDecimal(row["Amount"]).ToString("#0.00")) + "</b>");
@@ -486,7 +516,10 @@ namespace Dairy.Tabs.Cashier
                 sb.Append("<td  style='text-align:center'>");
                 sb.Append("<b> Quantity</b>");
                 sb.Append("</td>");
-                sb.Append("<td colspan='2' style='text-align:right'>");
+                sb.Append("<td  style='text-align:center'>");
+                sb.Append("<b> Unit </b>");
+                sb.Append("</td>");
+                sb.Append("<td  style='text-align:right'>");
                 sb.Append("<b>Amount</b>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
@@ -521,7 +554,11 @@ namespace Dairy.Tabs.Cashier
 
                     sb.Append("</td>");
 
-                    sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:right'>");
+                    sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
+                    sb.Append("<b>" + row4["Unit"] + "</b>");
+                    sb.Append("</td>");
+
+                    sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
                     if (string.IsNullOrEmpty(row4["totalreturnAmount"].ToString()))
                     {
 

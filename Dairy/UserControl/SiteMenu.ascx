@@ -438,7 +438,7 @@
                   <li><a href="/Tabs/Reception/ItemwiseOrderSummary.aspx"><i class="fa fa-circle-o"></i>Itemwise Order Summary</a></li>
                 <li><a href="/Tabs/Reception/RatewiseOrderSummary.aspx"><i class="fa fa-circle-o"></i>Ratewise Order Summary</a></li>
                     <li><a href="/Tabs/Administration/OrderDemandStatement.aspx"><i class="fa fa-circle-o"></i>Order Demand Statement</a></li>
-                    <li><a href="/Tabs/Marketing/AgentListNotPlacedOrder.aspx"><i class="fa fa-circle-o"></i>Agent Not Placed Order</a></li>
+                    <li><a href="/Tabs/Reception/AgentListNotPlacedOrder.aspx"><i class="fa fa-circle-o"></i>Agent Not Placed Order</a></li>
                 
               </ul>
             </li> 
