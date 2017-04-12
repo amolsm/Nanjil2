@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Admin\DbBulk.cs" />
     <Compile Include="Admin\DbDispatch.cs" />
+    <Compile Include="Admin\DbProductMaster.cs" />
     <Compile Include="Admin\DBShift.cs" />
     <Compile Include="DAAgentwiseTray.cs" />
     <Compile Include="DBActiveInactiveIssues.cs" />

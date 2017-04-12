@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Admin\Bulk.cs" />
     <Compile Include="Admin\DispatchVM.cs" />
+    <Compile Include="Admin\productMaster.cs" />
     <Compile Include="Admin\Shift.cs" />
     <Compile Include="AgentInfo.cs" />
     <Compile Include="Cashier.cs" />
