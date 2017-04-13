@@ -99,20 +99,7 @@
     <Compile Include="Transports.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Model.dll" />
-    <Content Include="bin\Model.pdb" />
-    <Content Include="obj\Debug\Model.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\Model.dll" />
-    <Content Include="obj\Debug\Model.pdb" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="obj\Release\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -20,8 +20,8 @@ namespace Dairy.Tabs.Sales
     {
         DataSet DS;
         double total = 0;
-        public static double schemeTemp { get; set; }
-        public static bool schemeApplied = false;
+        public  double schemeTemp { get; set; }
+        public  bool schemeApplied = false;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -575,16 +575,17 @@ namespace Dairy.Tabs.Sales
         }
         public void btnAgentNewOrder_clcik(object sender, EventArgs e)
         {
-            clearAgentValues();
-            RemoveAllItam();
-            upMain.Update();
-            dpAgent.Enabled = true;
-            txtGentOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
-            divDanger.Visible = false;
-            divwarning.Visible = false;
-            divSusccess.Visible = false;
+            //clearAgentValues();
+            //RemoveAllItam();
+            //upMain.Update();
+            //dpAgent.Enabled = true;
+            //txtGentOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+            //divDanger.Visible = false;
+            //divwarning.Visible = false;
+            //divSusccess.Visible = false;
 
-            pnlError.Update();
+            //pnlError.Update();
+            Response.Redirect("AgentBilling.aspx");
         }
         protected void rpOrderitam_OnDataBinding(object sender, RepeaterItemEventArgs e)
         {

@@ -384,7 +384,52 @@ namespace Dairy.Tabs.Reception
                                 }
                             }
                         }
+                        double var = 0;
+                        try
+                        {
+                            var = Convert.ToDouble(DS1.Tables[1].Rows[0]["schemeAmount"]);
+                        }
+                        catch (Exception) { var = 0; }
 
+                        if (var != 0)
+                        {
+                            sb.Append("<tr>");
+                            count = count + 1;
+
+                            sb.Append("<td>");
+                            sb.Append("&nbsp");
+                            sb.Append("</td>");
+
+                            sb.Append("<td>");
+                            sb.Append("&nbsp");
+                            sb.Append("</td>");
+
+                            sb.Append("<td>");
+                            sb.Append(count);
+                            sb.Append("</td>");
+
+                            sb.Append("<td colspan='2'>");
+                            sb.Append("Scheme");
+                            sb.Append("</td>");
+                            //}
+                            
+                                sb.Append("<td>");
+                                sb.Append("&nbsp;");
+                                sb.Append("</td>");
+
+                                sb.Append("<td>");
+                                sb.Append("&nbsp;");
+                                sb.Append("</td>");
+
+                                sb.Append("<td>");
+                                sb.Append("&nbsp;");
+                                sb.Append("</td>");
+
+                            sb.Append("<td style='text-align:right'>");
+                            sb.Append(var.ToString("#.00"));
+                            sb.Append("</td>");
+
+                        }
                     }
 
 
