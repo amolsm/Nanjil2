@@ -136,9 +136,7 @@ namespace DataAccess
             {
                 
                 DBParameterCollection paramCollection = new DBParameterCollection();
-                paramCollection.Add(new DBParameter("@RouteID", dispatch.RouteID));
-                paramCollection.Add(new DBParameter("@DispatchDate", dispatch.DispatchDate));
-                paramCollection.Add(new DBParameter("@CategoryId", dispatch.CategoryId));
+                paramCollection.Add(new DBParameter("@DI_Id", dispatch.DispatchId));
                 paramCollection.Add(new DBParameter("@flag", dispatch.flag));
                 DS = _DBHelper.ExecuteDataSet("sp_getDispatchByRoute", paramCollection, CommandType.StoredProcedure);
             }
@@ -175,8 +173,7 @@ namespace DataAccess
             {
                 
                 DBParameterCollection paramCollection = new DBParameterCollection();
-                paramCollection.Add(new DBParameter("@RouteID", dispatch.RouteID));
-                paramCollection.Add(new DBParameter("@DispatchDate", dispatch.DispatchDate));
+                paramCollection.Add(new DBParameter("@DI_Id", dispatch.DispatchId));
                 DS = _DBHelper.ExecuteDataSet("sp_GetDetailsForSettlement", paramCollection, CommandType.StoredProcedure);
             }
             catch (Exception)
@@ -193,8 +190,7 @@ namespace DataAccess
             {
                 
                 DBParameterCollection paramCollection = new DBParameterCollection();
-                paramCollection.Add(new DBParameter("@RouteID", dispatch.RouteID));
-                paramCollection.Add(new DBParameter("@DispatchDate", dispatch.DispatchDate));
+                paramCollection.Add(new DBParameter("@DI_Id", dispatch.DispatchId));
                 DS = _DBHelper.ExecuteDataSet("sp_StockGetFromDispatch", paramCollection, CommandType.StoredProcedure);
             }
             catch (Exception)

@@ -36,7 +36,7 @@ namespace Dairy.Tabs.Despatch
                 //Button btnSubmitModal = (Button)FindControl("btnSubmitModal");
                 //btnSubmitModal.Visible = false;
                 // btnSubmitModal.Visible = false;
-                txtOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+              //  txtOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                 //btnAddRoute.Visible = true;
                 //btnupdateroute.Visible = false;
             }
@@ -73,13 +73,14 @@ namespace Dairy.Tabs.Despatch
         {
 
             Dispatch dispatch = new Dispatch();
-            dispatch.DispatchDate = (Convert.ToDateTime(txtOrderDate.Text)).ToString("dd-MM-yyyy");
+            //dispatch.DispatchDate = (Convert.ToDateTime(txtOrderDate.Text)).ToString("dd-MM-yyyy");
             //String.Format("{0:dd/MM/yyyy}", dispatch.OrderDate);
-            dispatch.CategoryId = Convert.ToInt32(dpCategory.SelectedItem.Value);
+            //  dispatch.CategoryId = Convert.ToInt32(dpCategory.SelectedItem.Value);
             // dispatch.OrderDate = a.ToString();
             //dispatch.OrderDate = txtOrderDate.Text;
             // dispatch.AgentID = Convert.ToInt32(dpAgent.SelectedItem.Value);
-            dispatch.RouteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
+            // dispatch.RouteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
+            dispatch.DispatchId = Convert.ToInt32(txtDispatchId.Text);
             DispatchData dispatchData = new DispatchData();
             DataSet DS = new DataSet();
             StringBuilder sb = new StringBuilder();
@@ -234,9 +235,10 @@ namespace Dairy.Tabs.Despatch
         {
             DataSet DS = new DataSet();
             Dispatch dispatch = new Dispatch();
-            dispatch.DispatchDate = (Convert.ToDateTime(txtOrderDate.Text)).ToString("dd-MM-yyyy");
-            dispatch.RouteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
-            dispatch.CategoryId = Convert.ToInt32(dpCategory.SelectedItem.Value);
+            //dispatch.DispatchDate = (Convert.ToDateTime(txtOrderDate.Text)).ToString("dd-MM-yyyy");
+            //dispatch.RouteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
+            //dispatch.CategoryId = Convert.ToInt32(dpCategory.SelectedItem.Value);
+            dispatch.DispatchId = Convert.ToInt32(txtDispatchId.Text);
             DispatchData dispatchData = new DispatchData();
             dispatch.flag = "none";
             DS = dispatchData.GetDispatchByAgentID(dispatch);
@@ -260,23 +262,23 @@ namespace Dairy.Tabs.Despatch
         {
 
 
-            DS = new DataSet();
-            DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "routeMaster", "IsArchive=1 ");
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
-                dpagentRoute.DataSource = DS;
-                dpagentRoute.DataBind();
-                dpagentRoute.Items.Insert(0, new ListItem("--Select Agent Route  --", "0"));
-            }
-            DS.Clear();
-            DS = new DataSet();
-            DS = BindCommanData.BindCommanDropDwon("CategoryId ", "CategoryName as Name  ", "Category", "IsActive=1");
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
-                dpCategory.DataSource = DS;
-                dpCategory.DataBind();
-                dpCategory.Items.Insert(0, new ListItem("--Select Brand--", "0"));
-            }
+            //DS = new DataSet();
+            //DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "routeMaster", "IsArchive=1 ");
+            //if (!Comman.Comman.IsDataSetEmpty(DS))
+            //{
+            //    dpagentRoute.DataSource = DS;
+            //    dpagentRoute.DataBind();
+            //    dpagentRoute.Items.Insert(0, new ListItem("--Select Agent Route  --", "0"));
+            //}
+            //DS.Clear();
+            //DS = new DataSet();
+            //DS = BindCommanData.BindCommanDropDwon("CategoryId ", "CategoryName as Name  ", "Category", "IsActive=1");
+            //if (!Comman.Comman.IsDataSetEmpty(DS))
+            //{
+            //    dpCategory.DataSource = DS;
+            //    dpCategory.DataBind();
+            //    dpCategory.Items.Insert(0, new ListItem("--Select Brand--", "0"));
+            //}
         }
         public void ClearTextBox()
         {
@@ -356,7 +358,7 @@ namespace Dairy.Tabs.Despatch
         public void GetRouteDetailsbyID(int id)
         {
             Dispatch dispatch = new Dispatch();
-            dispatch.OrderDate = (Convert.ToDateTime(txtOrderDate.Text)).ToString("dd-MM-yyyy");
+           // dispatch.OrderDate = (Convert.ToDateTime(txtOrderDate.Text)).ToString("dd-MM-yyyy");
             // dispatch.RouteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
 
             DispatchData dispatchData = new DispatchData();
@@ -395,8 +397,9 @@ namespace Dairy.Tabs.Despatch
             if (confirmValue == "Yes")
             {
                 Dispatch dispatch = new Dispatch();
-                dispatch.DispatchDate = (Convert.ToDateTime(txtOrderDate.Text)).ToString("dd-MM-yyyy");
-                dispatch.RouteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
+                //dispatch.DispatchDate = (Convert.ToDateTime(txtOrderDate.Text)).ToString("dd-MM-yyyy");
+                //dispatch.RouteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
+                dispatch.DispatchId=Convert.ToInt32(txtDispatchId.Text);
                 DispatchData dispatchData = new DispatchData();
                 DataSet DS = new DataSet();
 
@@ -468,8 +471,8 @@ namespace Dairy.Tabs.Despatch
         private void updateStock()
         {
             Dispatch dispatch = new Dispatch();
-            dispatch.DispatchDate = (Convert.ToDateTime(txtOrderDate.Text)).ToString("dd-MM-yyyy");
-            dispatch.RouteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
+            //dispatch.DispatchDate = (Convert.ToDateTime(txtOrderDate.Text)).ToString("dd-MM-yyyy");
+            dispatch.DispatchId = Convert.ToInt32(txtDispatchId.Text);
             DispatchData dispatchData = new DispatchData();
             DataSet DsStock = new DataSet();
 

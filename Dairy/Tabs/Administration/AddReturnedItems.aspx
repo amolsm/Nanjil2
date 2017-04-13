@@ -90,7 +90,22 @@
         </div><!-- /.box-header -->
         <div class="box-body">
 
-             <div class="col-lg-3">
+              <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:TextBox ID="txtDispatchId" class="form-control"   placeholder="Dispatch Id" ToolTip="Dispatch Id" runat="server" required ValidationGroup="search" type="number"></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>
+            <%-- <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -104,9 +119,9 @@
                      
                        
                           
-                      </div> 
+                      </div> --%>
 
-            <div class="col-lg-3">
+           <%-- <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -130,7 +145,7 @@
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
-                         </div>
+                         </div>--%>
        <%--        <div class="col-lg-3">
                   <div class="form-group" >
                     <div class="input-group">
@@ -413,7 +428,7 @@
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
-                         <tr id="trEmpty" runat="server" visible="false"><td  align = "left" colspan="9"><h5> Manage Return Item Process is completed for this Route  Or No records found. Please contact Admin.</h5></td> </tr>
+                         <tr id="trEmpty" runat="server" visible="false"><td  align = "left" colspan="9"><h5> Manage Return Item Process is completed for this Dispatch ID  Or No records found. Please contact Admin.</h5></td> </tr>
                          </tbody>
 
                     <tfoot>
