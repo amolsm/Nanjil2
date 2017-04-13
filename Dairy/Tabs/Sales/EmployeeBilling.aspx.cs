@@ -415,14 +415,14 @@ namespace Dairy.Tabs.Sales
         }
         protected void btnEmployeeNewOrder_click(object sender, EventArgs e)
         {
-            divDanger.Visible = false;
-            divwarning.Visible = false;
-            divSusccess.Visible = false;
-            pnlError.Update();
-            ClereEmployee();
-            RemoveAllItam();
-            txtEmployeeOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
-
+            //divDanger.Visible = false;
+            //divwarning.Visible = false;
+            //divSusccess.Visible = false;
+            //pnlError.Update();
+            //ClereEmployee();
+            //RemoveAllItam();
+            //txtEmployeeOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+            Response.Redirect("EmployeeBilling.aspx");
         }
         protected void rpEmployeeID_ItemCommand(object sender, RepeaterCommandEventArgs e)
         {

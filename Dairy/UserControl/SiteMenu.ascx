@@ -467,7 +467,7 @@
             </li> 
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-university fax2"></i>
+                <i class="fa fa-university "></i>
                 <span>Booth Info</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
