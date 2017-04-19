@@ -3,6 +3,14 @@
      <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      <style type="text/css">
+        .listboxl {
+            height:100px !important;
+        }
+       .frmgrp {
+       margin-bottom:1px;
+       }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   
@@ -77,7 +85,7 @@
 
                        <asp:Panel runat="server" ID="pnlAgentOrder" Visible="true">
                      
-                         <div class="col-md-12">
+                         <div class="row">
                        <div class="col-lg-4">
                  <div class="form-group">
                    <div class="input-group">
@@ -93,33 +101,10 @@
                        
                           
                      </div> 
-                             <%--  <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                      <asp:DropDownList ID="dpagentRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server"  > 
-                       </asp:DropDownList>
-                         
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-                         </div>--%>
-                           <%--    <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                      <asp:DropDownList ID="dpAgentSelasEMployee" class="form-control" DataTextField="Name" DataValueField="employeeID" runat="server"  > 
-                       </asp:DropDownList>
-                         
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-                         </div> --%>
+                           
 
                             <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
@@ -129,13 +114,16 @@
                         
                          
                     </div><!-- /.input group -->
+                       <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator1" Display="Dynamic" 
+    ValidationGroup="asdf" runat="server" ControlToValidate="dpAgent" ForeColor="Red"
+    ErrorMessage="Please Select Agent "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>
 
                          
 
                              <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
@@ -144,18 +132,21 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator2" Display="Dynamic" 
+    ValidationGroup="asdf" runat="server" ControlToValidate="dpAgentProductType" ForeColor="Red"
+    ErrorMessage="Please Select Type "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>
             
                        
                               </div>
-                    <div class="col-md-12">
+                    <div class="row">
                              
                         
                           
                         
                           <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
@@ -164,18 +155,21 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                      <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator3" Display="Dynamic" 
+    ValidationGroup="asdf" runat="server" ControlToValidate="dpAgentProductdetaisl" ForeColor="Red"
+    ErrorMessage="Please Select Product "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>
               
              <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
                        <asp:TextBox ID="txtagentOrderqty" class="form-control"   placeholder="Quantity " runat="server" ValidationGroup="Add"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="txtagentOrderqty" ErrorMessage="Quantity Must be &gt; 0" Operator="GreaterThan" Type="Double" ValueToCompare="0" ValidationGroup="asdf" ForeColor="#cc0000"/>
                   </div><!-- /.form group -->
 
                      
@@ -183,13 +177,13 @@
                           
                       </div> 
                            <div class="col-lg-4">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
                       </div>
                       <asp:DropDownList ID="dpAgentShemeApplied" class="form-control"   runat="server" AutoPostBack="true" OnSelectedIndexChanged="dpAgentShemeApplied_SelectedIndexChanged" > 
-                          <asp:ListItem Value="0">--Selet Agent Sheme--</asp:ListItem>
+                          <asp:ListItem Value="0">--Select Agent Scheme--</asp:ListItem>
                           <asp:ListItem Value="1">Apply</asp:ListItem>
                           <asp:ListItem Value="2">Not Apply</asp:ListItem>
                        </asp:DropDownList>
@@ -198,7 +192,12 @@
                   </div><!-- /.form group -->
                          </div>
 
-                          <div class="col-lg-4">
+                         
+            
+       
+                </div>
+                           <div class="row">
+                                <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -212,11 +211,9 @@
 
                          </div>
 
-                         <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="txtagentOrderqty" ErrorMessage="Quantity Must be &gt; 0" Operator="GreaterThan" Type="Double" ValueToCompare="0" ValidationGroup="Add" ForeColor="#cc0000"/>
+                         
                 <asp:HiddenField id="hfAgentProductUnitPrice" runat="server" />
-            
-       
-                </div>
+                           </div>
              
                          <div class="col-md-12">
                               <div class="col-lg-4  pull-right">
@@ -225,7 +222,7 @@
                       
                    
                        
-                        <asp:Button ID="btnAddAgentProductItem" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnAddAgentProductItem_click"   Text="Add" ValidationGroup="Add"   />                    
+                        <asp:Button ID="btnAddAgentProductItem" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnAddAgentProductItem_click"   Text="Add" ValidationGroup="asdf"  />                    
                      &nbsp;   <asp:Button ID="btnAgentNewOrder" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnAgentNewOrder_clcik"    Text="New Order" ValidationGroup="none"   />                    
                         
                     </div><!-- /.input group -->

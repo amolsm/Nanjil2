@@ -82,14 +82,13 @@
         
              
        
-
-             <div class="col-lg-3">
+                 <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtOrderDate" class="form-control"  type="date" placeholder="Dispatched Date" ToolTip="Order Date" runat="server" required ValidationGroup="search"></asp:TextBox>                        
+                       <asp:TextBox ID="txtDispatchId" class="form-control"   placeholder="Dispatch Id" ToolTip="Dispatch Id" runat="server" required ValidationGroup="search" type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -97,33 +96,8 @@
                      
                        
                           
-                      </div> 
-
-            <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                       <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="dpagentRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server"  > 
-                       </asp:DropDownList>
-                         
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-                         </div>
-
-            <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                      <asp:DropDownList ID="dpCategory" ValidationGroup="search" class="form-control" DataTextField="Name" DataValueField="CategoryId" runat="server"  > 
-                       </asp:DropDownList>
-                         
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-                         </div>
+       
      
 
              <div class="col-lg-3">
@@ -131,7 +105,7 @@
                     <div class="input-group">
                       <asp:Button ID="btnSearch" class="btn btn-primary" ValidationGroup="search" runat="server" CommandName="MoveNext" Text="Search" OnClick="btnSearch_Click"/>     
                        &nbsp; &nbsp;
-                         <%--<asp:Button ID="btnFinalSubmit" class="btn btn-primary" ValidationGroup="search" runat="server" CommandName="MoveNext" Text="Submit" OnClick="btnFinalSubmit_Click" OnClientClick="ConfirmFinal()"/>     --%>
+                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->

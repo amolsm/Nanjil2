@@ -28,16 +28,17 @@ namespace Dairy.Tabs.Marketing
                
             }
             txtrefunddate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+            txtrequesteddate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
         }
 
         protected void btnAddSchemeRefund_Click(object sender, EventArgs e)
         {
-               
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "Javascript", "javascript:Confirm(); ", true);
-                string confirmValue = Request.Form["confirm_value"];
-              start:
+
+                string confirmValue = string.Empty;
+                confirmValue = Request.Form["confirm_value"];
+              
                 if (confirmValue == "Yes")
-                      goto start;
+                     
                 {
                     
                     marketingdata = new MarketingData();
@@ -121,8 +122,11 @@ namespace Dairy.Tabs.Marketing
             ds = marketingdata.GetAgentInfoForSchemeRefund(AgentID);
             if (!Comman.Comman.IsDataSetEmpty(ds))
             {
-                txtTotalSchemeAmt.Text = string.IsNullOrEmpty(ds.Tables[0].Rows[0]["TotalSchemeAmount"].ToString()) ? string.Empty : ds.Tables[0].Rows[0]["TotalSchemeAmount"].ToString();
-              
+                double totalscheme;
+                totalscheme= Convert.ToDouble(string.IsNullOrEmpty(ds.Tables[0].Rows[0]["TotalSchemeAmount"].ToString()) ? string.Empty : ds.Tables[0].Rows[0]["TotalSchemeAmount"].ToString());
+                txtTotalSchemeAmt.Text = string.Format("{0:0.00}", totalscheme);
+
+
 
             }
             else
@@ -142,7 +146,7 @@ namespace Dairy.Tabs.Marketing
 
         protected void dpRoute_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentName+' '+AgentCode as Name", "AgentMaster", "RouteID=" + dpRoute.SelectedItem.Value.ToString() + "and IsArchive=0 and Agensytype='Agency'"+ "and TotalSchemeAmount<>0");
+            DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentCode+' '+AgentName as Name", "AgentMaster", "RouteID=" + dpRoute.SelectedItem.Value.ToString() + "and IsArchive=0 and Agensytype='Agency'"+ "and TotalSchemeAmount<>0");
 
 
                 dpAgent.ClearSelection();
@@ -292,18 +296,18 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("</td>");
 
                     sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                    sb.Append(row["TotalSchemeAmt"].ToString());
+                    sb.Append(string.Format("{0:0.00}", row["TotalSchemeAmt"]));
                     sb.Append("</td>");
 
 
 
                     sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                    sb.Append(row["RefundAmt"].ToString());
+                    sb.Append(string.Format("{0:0.00}", row["RefundAmt"]));
                     sb.Append("</td>");
 
 
                     sb.Append("<td class='tg-yw4l' style='text-align:right'>");
-                    sb.Append(row["Balance"].ToString());
+                    sb.Append(string.Format("{0:0.00}", row["Balance"]));
                     sb.Append("</td>");
 
                     sb.Append("</tr>");
@@ -347,10 +351,10 @@ namespace Dairy.Tabs.Marketing
 
         protected void txtrefundAmt_TextChanged(object sender, EventArgs e)
         {
-            double totalscheme=Convert.ToDouble(txtTotalSchemeAmt.Text);
-            double totalrefundamt = Convert.ToDouble(txtrefundAmt.Text);
+            double totalscheme=Convert.ToDouble(string.Format("{0:0.00}", txtTotalSchemeAmt.Text));
+            double totalrefundamt = Convert.ToDouble(string.Format("{0:0.00}", txtrefundAmt.Text));
              double balanceamt = totalscheme - totalrefundamt;
-             txtbalanceamt.Text = Convert.ToString(balanceamt); 
+             txtbalanceamt.Text = string.Format("{0:0.00}", balanceamt); 
         }
 
         public void ClearTextBox()

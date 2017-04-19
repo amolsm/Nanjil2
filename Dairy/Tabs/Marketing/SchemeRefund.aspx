@@ -155,7 +155,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txtTotalSchemeAmt" class="form-control" placeholder="Total Scheme Amount"  runat="server" ReadOnly="true" ToolTip="Total Scheme Amount"></asp:TextBox>
+                      <asp:TextBox ID="txtTotalSchemeAmt" class="form-control" placeholder="Total Scheme Amount"  runat="server" type="number" ReadOnly="true" ToolTip="Total Scheme Amount"></asp:TextBox>
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -173,7 +173,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txtrefundAmt" class="form-control"  placeholder="Refund Amount" runat="server" AutoPostBack="true" OnTextChanged="txtrefundAmt_TextChanged" type="number" ToolTip="Refund Amount" ></asp:TextBox>                              
+                      <asp:TextBox ID="txtrefundAmt" class="form-control"  placeholder="Refund Amount" runat="server" AutoPostBack="true" OnTextChanged="txtrefundAmt_TextChanged" type="number" step=".01" ToolTip="Refund Amount" ></asp:TextBox>                              
                          
                     </div><!-- /.input group -->
                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Please Enter Refund Amount" ControlToValidate="txtrefundAmt" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
@@ -203,7 +203,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                       Requested Date
                       </div>
                      <asp:TextBox ID="txtrequesteddate" class="form-control"  type="date" placeholder="Requested Date" runat="server"  ToolTip="Requested Date" ></asp:TextBox>                              
                     </div><!-- /.input group -->
@@ -218,7 +218,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       <span style="color:red">&nbsp;*</span>
+                       Refund Date
                       </div>
                       <asp:TextBox ID="txtrefunddate" class="form-control"  type="date" placeholder="Refund Date" runat="server" ReadOnly="true" ToolTip="Refund Date"  ></asp:TextBox>                              
                          
@@ -236,7 +236,7 @@
                       
                     
                       
-                              <asp:Button ID="btnAddSchemeRefund" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnAddSchemeRefund_Click" />   &nbsp;  
+                              <asp:Button ID="btnAddSchemeRefund" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClientClick="Confirm()" OnClick="btnAddSchemeRefund_Click" />   &nbsp;  
                           <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="AddNew"  OnClick="btnAddNew_Click" />   &nbsp;  
                       
                     </div><!-- /.input group -->
@@ -383,15 +383,26 @@
      <asp:HiddenField ID="hftokanno" runat="server" />
      <script type = "text/javascript">
          function Confirm() {
+
+             var form = document.forms[0];
+
+             // Remove the previous element added
+             var oldInput = document.getElementById('myInput');
+             if (oldInput !== null) form.removeChild(oldInput);
+
              var confirm_value = document.createElement("INPUT");
+             confirm_value.setAttribute('id', 'myInput');
              confirm_value.type = "hidden";
              confirm_value.name = "confirm_value";
-             if (confirm("Do you want to save data?")) {
+             if (confirm("Are you sure to Recalculate (Yes/No)")) {
                  confirm_value.value = "Yes";
              } else {
                  confirm_value.value = "No";
              }
-             document.forms[0].appendChild(confirm_value);
+
+
+             form.appendChild(confirm_value);
+
          }
     </script>
 </asp:Content>

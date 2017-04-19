@@ -607,11 +607,27 @@
                   <li><a href="/Tabs/Cashier/SalesAnalysisItemwise.aspx"><i class="fa fa-circle-o"></i>Sales Analysis Item wise</a></li>
                   </ul> </li>
               </ul>
-            </li> 
+            </li>
+         <li class="treeview">
+              <a href="#">
+                <i class="fa fa-university fax2"></i>
+                <span>Booth Info</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/Tabs/Administration/ViewBoothStock.aspx"><i class="fa fa-circle-o"></i>View Booth Stock</a></li>
+                   <li><a href="/Tabs/Administration/ViewBoothUserSales.aspx"><i class="fa fa-circle-o"></i>Booth User Sale</a></li>
+               <li><a href="/Tabs/Reports/Boothitemwisesalessummary.aspx"><i class="fa fa-circle-o"></i>BoothSummary Itemwise </a></li> 
+                 <li><a href="/Tabs/Reports/BoothBillWiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>BoothSummary Billwise </a></li> 
+                <li><a href="/Tabs/Reports/BoothSalesAnalysisUsers.aspx"><i class="fa fa-circle-o"></i>Booth Sales Analysis</a></li>
+                    <li><a href="/Tabs/Reports/BoothroutewiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Booth Sale Summary</a></li>
+                 
+                   
+                  
               </ul>
             </li> 
-
-     </ul>
+              </ul>
+          
 </asp:Panel>
           <asp:Panel runat="server" ID="pnlTransport" Visible="false">
 
@@ -762,6 +778,24 @@
               </ul>
                  
             </li> 
+                       <li class="treeview">
+              <a href="#">
+                <i class="fa fa-university fax2"></i>
+                <span>Booth Info</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/Tabs/Administration/ViewBoothStock.aspx"><i class="fa fa-circle-o"></i>View Booth Stock</a></li>
+                   <li><a href="/Tabs/Administration/ViewBoothUserSales.aspx"><i class="fa fa-circle-o"></i>Booth User Sale</a></li>
+               <li><a href="/Tabs/Reports/Boothitemwisesalessummary.aspx"><i class="fa fa-circle-o"></i>BoothSummary Itemwise </a></li> 
+                 <li><a href="/Tabs/Reports/BoothBillWiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>BoothSummary Billwise </a></li> 
+                <li><a href="/Tabs/Reports/BoothSalesAnalysisUsers.aspx"><i class="fa fa-circle-o"></i>Booth Sales Analysis</a></li>
+                    <li><a href="/Tabs/Reports/BoothroutewiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Booth Sale Summary</a></li>
+                 
+                   
+                  
+              </ul>
+            </li>
                       </ul>
                 
             </asp:Panel>
