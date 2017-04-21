@@ -408,6 +408,7 @@ namespace Dairy.Tabs.Sales
                         invicedata.Booth_InsertTempInvoiceItam(invocie);
                         BindAgntTempItam(invocie);
                         pnlBills.Visible = false;
+                        txtagentOrderqty.Text = "";
                     }
                     else
                     {
@@ -633,6 +634,7 @@ namespace Dairy.Tabs.Sales
                         invocie.TokanId = hftokanno.Value;
                         invocie.UserID = GlobalInfo.Userid;
                         BindAgntTempItam(invocie);
+                        txtGentOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                         upMain.Update();
 
                         break;

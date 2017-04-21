@@ -28,7 +28,7 @@ namespace Dairy.Tabs.Sales
             {
                 BindDropDwon();
                 hftokanno.Value = Comman.Comman.RandomString();
-                txtCustamerorderDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                //txtCustamerorderDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 lblUser.Text = GlobalInfo.UserName;
                 btnPrint.Visible = false;
                 int BothID = GlobalInfo.CurrentbothID;
@@ -97,6 +97,7 @@ namespace Dairy.Tabs.Sales
                         invocie.TokanId = hftokanno.Value;
                         invocie.UserID = GlobalInfo.Userid;
                         //BindAgntTempItam(invocie);
+                        txtCustamerorderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                         upMain.Update();
 
                         break;
@@ -391,6 +392,7 @@ namespace Dairy.Tabs.Sales
                         btnPrint.Visible = false;
                         pnlBills.Visible = false;
                         pnlBill.Enabled = true;
+                        txtcustomerqty.Text = "";
                     }
                     else
                     {
@@ -442,6 +444,7 @@ namespace Dairy.Tabs.Sales
                         invocie.TokanId = hftokanno.Value;
                         invocie.UserID = GlobalInfo.Userid;
                         BindCustomerTempItam(invocie);
+                        txtCustamerorderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                         upMain.Update();
 
                         break;

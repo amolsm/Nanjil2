@@ -377,7 +377,7 @@ namespace Dairy.Tabs.Administration
         }
         protected void dpAgentpre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            dpAgentProductType.ClearSelection();
             Invoice invocie = new Invoice();
             InvoiceData invicedata = new InvoiceData();
             invocie.AgencyID = Convert.ToInt32(dpAgent.SelectedItem.Value);

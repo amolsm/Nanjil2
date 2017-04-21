@@ -208,6 +208,7 @@ namespace Dairy.Tabs.Sales
 
         protected void btnAddEmployeeOrderItem_clcik(object sender, EventArgs e)
         {
+            txtQtyEmployee.Text = "";
             double tempQty = 0;
             DataSet ds = new DataSet();
 
@@ -441,6 +442,7 @@ namespace Dairy.Tabs.Sales
                         invocie.TokanId = hftokanno.Value;
                         invocie.UserID = GlobalInfo.Userid;
                         BindEmployeeOrderDetails(invocie);
+                        txtEmployeeOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                         upMain.Update();
 
                         break;
