@@ -50,7 +50,7 @@ namespace Dairy.Tabs.Marketing
               {
                   dpSlab.DataSource = DS;
                   dpSlab.DataBind();
-                  dpSlab.Items.Insert(0, new ListItem("--Select Slab --", "0"));
+                  dpSlab.Items.Insert(0, new ListItem("--All Slab --", "0"));
               }
 
 

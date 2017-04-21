@@ -60,9 +60,9 @@ namespace Dairy
             //// Log the exception and notify system operators
             //ExceptionUtility.LogException(exc, "DefaultPage");
             //ExceptionUtility.NotifySystemOps(exc);
-            //Server.Transfer("~/ErrorPages/Oops.aspx");
-            // Clear the error from the server
-            //Server.ClearError();
+            Server.Transfer("~/ErrorPages/Oops.aspx");
+            //Clear the error from the server
+            Server.ClearError();
 
         }
         void Application_AuthenticateRequest(object sender, EventArgs e)

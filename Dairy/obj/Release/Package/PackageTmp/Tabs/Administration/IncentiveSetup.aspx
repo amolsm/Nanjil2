@@ -170,7 +170,7 @@
                     
                       <asp:Button ID="btnShow" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Show Agents" ValidationGroup="Save" OnClick="btnClick_btnShow" />     
                              &nbsp;  &nbsp; <asp:Button ID="btnAddIncentive" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Save All" ValidationGroup="Save" OnClick="btnClick_btnAddIncentive" />     
-                         &nbsp;  &nbsp;<asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add New"  OnClick="btnAddNew_Click" />     
+                         &nbsp;  &nbsp;<asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Refresh"  OnClick="btnAddNew_Click" />     
                              
                     </div><!-- /.input group -->
 
@@ -237,7 +237,7 @@
                            <th>IncentiveAmount</th>
                         
                             <th><%--<asp:CheckBox ID="chkHeader" runat="server" />--%>IsActive</th>
-                           <th>Save</th>
+                         <%--  <th>Save</th>--%>
                         
                       </tr>
                     </thead>
@@ -268,9 +268,9 @@
 </td>
                          <td>
                                 <asp:HiddenField id="hfAgentId" runat="server" value='<%#Eval("AgentID") %>' />                 
-                             <asp:LinkButton ID="lbEdite" AlternateText="Save" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
+                            <%-- <asp:LinkButton ID="lbEdite" AlternateText="Save" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
                                                                     ToolTip="Save" runat="server" CommandArgument='<%#Eval("AgentID") %>'
-                                                                    CommandName="Edit"><i class="btn btn-primary"></i></asp:LinkButton>
+                                                                    CommandName="Edit"><i class="btn btn-primary"></i></asp:LinkButton>--%>
 
                          </td>
                         
@@ -293,7 +293,7 @@
                             <th>IncentiveAmount</th>
                       
                               <th>IsActive</th>
-                          <th>Save</th>
+                          <%--<th>Save</th>--%>
                          
                       </tr>
                     </tfoot>

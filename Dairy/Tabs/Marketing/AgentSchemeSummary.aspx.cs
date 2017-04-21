@@ -27,7 +27,7 @@ namespace Dairy.Tabs.Marketing
                     dpRoute.Items.Insert(0, new ListItem("--Select  Route  --", "0"));
                 }
 
-                DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentCode+' '+AgentName as Name", "AgentMaster", "IsArchive=0 and Agensytype='Agency' Order by AgentCode");
+                DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentCode+' '+AgentName as Name", "AgentMaster", "IsArchive=0 and SchemeAmount!=0.00 and Agensytype='Agency' Order by AgentCode");
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {
                     dpAgent.DataSource = DS;
