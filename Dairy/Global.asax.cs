@@ -32,21 +32,21 @@ namespace Dairy
             // Code that runs when an unhandled error occurs
 
             // Get the exception object.
-            //Exception exc = Server.GetLastError();
+            Exception exc = Server.GetLastError();
 
             // Handle HTTP errors
-            //if (exc.GetType() == typeof(HttpException))
-            //{
-            //    // The Complete Error Handling Example generates
-            //    // some errors using URLs with "NoCatch" in them;
-            //    // ignore these here to simulate what would happen
-            //    // if a global.asax handler were not implemented.
-            //    if (exc.Message.Contains("NoCatch") || exc.Message.Contains("maxUrlLength"))
-            //        return;
+            if (exc.GetType() == typeof(HttpException))
+            {
+                // The Complete Error Handling Example generates
+                // some errors using URLs with "NoCatch" in them;
+                // ignore these here to simulate what would happen
+                // if a global.asax handler were not implemented.
+                if (exc.Message.Contains("NoCatch") || exc.Message.Contains("maxUrlLength"))
+                    return;
 
-            //    //Redirect HTTP errors to HttpError page
-            //    //Server.Transfer("~/ErrorPages/Oops.aspx");
-            //}
+                //Redirect HTTP errors to HttpError page
+                Server.Transfer("~/ErrorPages/Oops.aspx");
+            }
 
             // For other kinds of errors give the user some information
             // but stay on the default page
@@ -60,7 +60,7 @@ namespace Dairy
             //// Log the exception and notify system operators
             //ExceptionUtility.LogException(exc, "DefaultPage");
             //ExceptionUtility.NotifySystemOps(exc);
-            Server.Transfer("~/ErrorPages/Oops.aspx");
+          
             //Clear the error from the server
             Server.ClearError();
 

@@ -92,7 +92,7 @@ namespace Dairy.Tabs.Marketing
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
 
-                sb.Append("<td colspan='4'>");
+                sb.Append("<td colspan='2'>");
                 if (dpRoute.SelectedItem.Value == "0")
                 {
                     sb.Append("Route : All");
@@ -100,6 +100,16 @@ namespace Dairy.Tabs.Marketing
                 else
                 {
                     sb.Append("");
+                }
+                sb.Append("</td>");
+                sb.Append("<td colspan='2'>");
+                if (dpASO.SelectedItem.Value == "0")
+                {
+                    sb.Append("");
+                }
+                else
+                {
+                    sb.Append("ASO :"+dpASO.SelectedItem.Text.ToString());
                 }
                 sb.Append("</td>");
                 sb.Append("<td colspan='3' style='text-align:right'>");
