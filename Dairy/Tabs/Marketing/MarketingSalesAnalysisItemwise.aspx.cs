@@ -25,14 +25,14 @@ namespace Dairy.Tabs.Marketing
                 {
                     dpRoute.DataSource = DS;
                     dpRoute.DataBind();
-                    dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
+                    dpRoute.Items.Insert(0, new ListItem("--All Route  --", "0"));
                 }
                 DS = BindCommanData.BindCommanDropDwon("CategoryId", "CategoryName as Name", "Category", "IsActive=1");
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {
                     dpBrand.DataSource = DS;
                     dpBrand.DataBind();
-                    dpBrand.Items.Insert(0, new ListItem("--Select Brand--", "0"));
+                    dpBrand.Items.Insert(0, new ListItem("--All Brand--", "0"));
                 }
                 txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                 txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
@@ -62,9 +62,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<col style = 'width:150px'>");
                 sb.Append("<col style = 'width:150px'>");
                 sb.Append("<col style = 'width:150px'>");
-                sb.Append("<col style = 'width:150px'>");
-                sb.Append("<col style = 'width:150px'>");
-                sb.Append("<col style = 'width:150px'>");
+                //sb.Append("<col style = 'width:150px'>");
                 sb.Append("</colgroup>");
 
                 sb.Append("<tr>");
@@ -72,8 +70,8 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
                 sb.Append("</th>");
 
-                sb.Append("<th class='tg-baqh' colspan='8' style='text-align:center'>");
-                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
+                sb.Append("<th class='tg-baqh' colspan='5' style='text-align:center'>");
+                sb.Append("<u>Agency Sales Analysis- Itemwise </u> <br/>");
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
@@ -83,9 +81,9 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td class='tg-yw4l' colspan='8' style='text-align:center'>");
-                
-                sb.Append("<b><u>Agency Sales Analysis- Itemwise </u></b> <br/>");
+                sb.Append("<td class='tg-yw4l' colspan='5' style='text-align:center'>");
+                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
+
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");
@@ -95,16 +93,16 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</td>");
 
                 sb.Append("<tr>");
-                sb.Append("<td class='tg-yw4l' colspan='5' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='3' style='text-align:left'>");
                 sb.Append("Start Date:" + Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
-                sb.Append("<td class='tg-yw4l' colspan='5' style='text-align:right'>");
+                sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:right'>");
                 sb.Append("End Date:" + Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:2px solid'>");
-                sb.Append("<td class='tg-yw4l' colspan='5' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='3' style='text-align:left'>");
                 if (Convert.ToInt32(dpRoute.SelectedItem.Value) == 0)
                 {
                     sb.Append("Route : " + "All");
@@ -115,14 +113,14 @@ namespace Dairy.Tabs.Marketing
                 }
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' colspan='5'  style='text-align:right'>");
+                sb.Append("<td class='tg-yw4l' colspan='4'  style='text-align:right'>");
                 sb.Append("Date : " + DateTime.Now.ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'> ");
-                sb.Append("<td class='tg-yw4l' colspan='10' style='text-align:left'>");
+                sb.Append("<td class='tg-yw4l' colspan='7' style='text-align:left'>");
                 if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
                 {
                     sb.Append("Brand Name : " + "All");
@@ -150,28 +148,22 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<b>Sales</b>");
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
-                sb.Append("<b>Total Return</b>");
-                sb.Append("</td>");
+                //sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
+                //sb.Append("<b>Total Return</b>");
+                //sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
-                sb.Append("<b>Incentive</b>");
-                sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
-                sb.Append("<b>Replace</b>");
-                sb.Append("</td>");
-
-                sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
-                sb.Append("<b>Gift/Other</b>");
-                sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                sb.Append("<b>Good Quality</b>");
+                sb.Append("<b>Return</b>");
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l' style='text-align:center'>");
                 sb.Append("<b>Spot Damage</b>");
+                sb.Append("</td>");
+
+                sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
+                sb.Append("<b>Gift/Other</b>");
                 sb.Append("</td>");
 
 
@@ -179,10 +171,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</tr>");
 
 
-                double subincentive = 0.00;
-                double incentive = 0.00;
-                double totalincentive = 0.00;
-             
+
                 foreach (DataRow row2 in DS.Tables[2].Rows)
                 {
 
@@ -226,35 +215,11 @@ namespace Dairy.Tabs.Marketing
 
                             sb.Append("</td>");
 
-                            sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                            sb.Append(row["Return"].ToString());
-                            sb.Append("</td>");
-
-                            sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                          
-                            try
-                            {
-                                incentive = Convert.ToDouble(row["Incentive"]);
-                                subincentive += incentive;
-                                totalincentive += incentive;
-                                sb.Append(Convert.ToDouble(incentive).ToString("0.00"));
-                            }
-                            catch {
-                                incentive = 0.00;
-                                subincentive = 0.00;
-                            }
-                           
-                          
-                            sb.Append("</td>");
-
-                            sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                            sb.Append("");
-                            sb.Append("</td>");
+                            //sb.Append("<td class='tg-yw4l' style='text-align:center'>");
+                            //sb.Append(row["Return"].ToString());
+                            //sb.Append("</td>");
 
 
-                            sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                            sb.Append(row["Sample"].ToString());
-                            sb.Append("</td>");
 
                             sb.Append("<td class='tg-yw4l' style='text-align:center'>");
                             sb.Append(row["Quality"].ToString());
@@ -264,13 +229,18 @@ namespace Dairy.Tabs.Marketing
                             sb.Append("<td class='tg-yw4l'style='text-align:center'>");
                             sb.Append(row["SpotDam"].ToString());
                             sb.Append("</td>");
+
+                            sb.Append("<td class='tg-yw4l' style='text-align:center'>");
+                            sb.Append(row["Sample"].ToString());
+                            sb.Append("</td>");
+
                             sb.Append("</tr>");
                         }
                         else { }
                     }
 
 
-                    sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '10'> &nbsp; </td> </tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '8'> &nbsp; </td> </tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td class='tg-yw4l' style='text-align:left'>");
                     sb.Append("SubTotal ");
@@ -303,33 +273,25 @@ namespace Dairy.Tabs.Marketing
                     }
                     sb.Append("</td>");
 
-                    sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                    sb.Append(row2["Return"].ToString());
-                    sb.Append("</td>");
+                    //sb.Append("<td class='tg-yw4l' style='text-align:center'>");
+                    //sb.Append(row2["Return"].ToString());
+                    //sb.Append("</td>");
 
-                    sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                   
-                    
-                    sb.Append(subincentive.ToString());
-                    
-                    sb.Append("</td>");
 
-                    sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                    sb.Append("");
-                    sb.Append("</td>");
-
-                    sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                    sb.Append(row2["Sample"].ToString());
-                    sb.Append("</td>");
 
                     sb.Append("<td class='tg-yw4l' style='text-align:center'>");
                     sb.Append(row2["Quality"].ToString());
                     sb.Append("</td>");
 
 
-                    sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:center'>");
+                    sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
                     sb.Append(row2["SpotDam"].ToString());
                     sb.Append("</td>");
+
+                    sb.Append("<td class='tg-yw4l' style='text-align:center'>");
+                    sb.Append(row2["Sample"].ToString());
+                    sb.Append("</td>");
+
                     sb.Append("</tr>");
 
 
@@ -339,7 +301,7 @@ namespace Dairy.Tabs.Marketing
 
 
 
-                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '10'> &nbsp; </td> </tr>");
+                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '8'> &nbsp; </td> </tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
 
                 sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:left'>");
@@ -372,21 +334,11 @@ namespace Dairy.Tabs.Marketing
                 }
                 sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                sb.Append("<b>" + DS.Tables[1].Rows[0]["TotalReturn"] + "</b>");
-                sb.Append("</td>");
+                //sb.Append("<td class='tg-yw4l' style='text-align:center'>");
+                //sb.Append("<b>" + DS.Tables[1].Rows[0]["TotalReturn"] + "</b>");
+                //sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                sb.Append("<b>" + totalincentive.ToString() + "</b>");
-                sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                sb.Append("<b>" + "" + "</b>");
-                sb.Append("</td>");
-
-                sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                sb.Append("<b>" + DS.Tables[1].Rows[0]["TotalSample"] + "</b>");
-                sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l' style='text-align:center'>");
                 sb.Append("<b>" + DS.Tables[1].Rows[0]["TotalQuality"] + "</b>");
@@ -397,6 +349,9 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<b>" + DS.Tables[1].Rows[0]["TotalSpotDam"] + "</b>");
                 sb.Append("</td>");
 
+                sb.Append("<td class='tg-yw4l' style='text-align:center'>");
+                sb.Append("<b>" + DS.Tables[1].Rows[0]["TotalSample"] + "</b>");
+                sb.Append("</td>");
 
 
                 sb.Append("</tr>");

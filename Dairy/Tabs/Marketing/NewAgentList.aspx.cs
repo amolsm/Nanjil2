@@ -26,6 +26,13 @@ namespace Dairy.Tabs.Marketing
                     dpRoute.DataBind();
                     dpRoute.Items.Insert(0, new ListItem("--All Route--", "0"));
                 }
+                DS = BindCommanData.BindCommanDropDwon("EmployeeId as Id ", "EmployeeCode +' '+EmployeeName as Name  ", "EmployeeMaster", "IsArchive=0 and Designation='A.S.O.'");
+                if (!Comman.Comman.IsDataSetEmpty(DS))
+                {
+                    dpASO.DataSource = DS;
+                    dpASO.DataBind();
+                    dpASO.Items.Insert(0, new ListItem("--Select ASO--", "0"));
+                }
                 txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                 txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             }
@@ -38,7 +45,7 @@ namespace Dairy.Tabs.Marketing
             marketingdatas = new MarketingData();
             DS = new DataSet();
           
-            DS = marketingdatas.NewAgentListDetails((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
+            DS = marketingdatas.NewAgentListDetails((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpASO.SelectedItem.Value));
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                
@@ -85,7 +92,7 @@ namespace Dairy.Tabs.Marketing
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
 
-                sb.Append("<td colspan='4'>");
+                sb.Append("<td colspan='2'>");
                 if (dpRoute.SelectedItem.Value == "0")
                 {
                     sb.Append("Route : All");
@@ -93,6 +100,16 @@ namespace Dairy.Tabs.Marketing
                 else
                 {
                     sb.Append("");
+                }
+                sb.Append("</td>");
+                sb.Append("<td colspan='2'>");
+                if (dpASO.SelectedItem.Value == "0")
+                {
+                    sb.Append("");
+                }
+                else
+                {
+                    sb.Append("ASO :"+dpASO.SelectedItem.Text.ToString());
                 }
                 sb.Append("</td>");
                 sb.Append("<td colspan='3' style='text-align:right'>");

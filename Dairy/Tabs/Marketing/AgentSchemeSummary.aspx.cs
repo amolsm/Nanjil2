@@ -27,7 +27,7 @@ namespace Dairy.Tabs.Marketing
                     dpRoute.Items.Insert(0, new ListItem("--Select  Route  --", "0"));
                 }
 
-                DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentCode+' '+AgentName as Name", "AgentMaster", "IsArchive=0 and Agensytype='Agency' Order by AgentCode");
+                DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentCode+' '+AgentName as Name", "AgentMaster", "IsArchive=0 and SchemeAmount!=0.00 and Agensytype='Agency' Order by AgentCode");
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {
                     dpAgent.DataSource = DS;
@@ -174,8 +174,10 @@ namespace Dairy.Tabs.Marketing
                     }
                     catch { openingb = 0; }
                         openingbalance = totalschemamt - openingb;
+                    if (openingbalance != 0)
+                    { sb.Append("<b>" + openingbalance + "</b>"); }
+                    else { sb.Append("<b>" + "" + "</b>"); }
                   
-                    sb.Append("<b>" + openingbalance + "</b>");
                     sb.Append("</td>");
 
                     sb.Append("</tr>");
@@ -198,7 +200,10 @@ namespace Dairy.Tabs.Marketing
                             try { scheme = Convert.ToDouble(rowr["Scheme"]); } catch { scheme = 0; }
 
                             totalscheme += scheme;
-                            sb.Append(scheme.ToString());
+                            if (scheme != 0)
+                            { sb.Append(scheme.ToString()); }
+                            else { sb.Append(""); }
+                           
                             sb.Append("</td>");
                         
                             sb.Append("</tr>");
@@ -214,7 +219,10 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("Total :");
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append(totalscheme);
+                    if (totalscheme != 0)
+                    { sb.Append(totalscheme); }
+                    else { sb.Append(""); }
+                  
                     sb.Append("</td>");
                     sb.Append("<td>");
                     sb.Append("Closing Balance");
@@ -233,8 +241,10 @@ namespace Dairy.Tabs.Marketing
                     }
                     catch { closingb = 0; }
                     closingbalance = totalschemamt1 - closingb;
+                    if (closingbalance != 0)
+                    { sb.Append("<b>" + closingbalance + "</b>"); }
+                    else { sb.Append("<b>" + "" + "</b>"); }
                    
-                    sb.Append("<b>"+ closingbalance + "</b>");
                  
                     sb.Append("</td>");
                     sb.Append("</tr>");
@@ -257,7 +267,7 @@ namespace Dairy.Tabs.Marketing
 
             else
             {
-                result = "Bill not found";
+                result = "Report not found";
                 genratedBIll.Text = result;
 
             }

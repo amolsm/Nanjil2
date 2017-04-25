@@ -181,6 +181,8 @@ namespace Dairy.Tabs.Marketing
                 TimeSpan ts = newdate - olddate;
                 int differenceInDays = ts.Days + 1;
                 int routsno = 0;
+                double totalqty = 0;
+                double totalavg = 0;
                 foreach (DataRow rows in DS.Tables[2].Rows)
                 {
                     routsno++;
@@ -199,14 +201,16 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("</tr>");
                     double qty = 0;
                     double avg = 0;
-                    double totalqty = 0;
-                    double totalavg = 0;
+                    double subtotalqty = 0;
+                    double subtotalavg = 0;
+                    int subcountsrno = 0;
                     foreach (DataRow row in DS.Tables[0].Rows)
                     {
-
+                       
                         if (row["AgentName"].ToString() != "" && rows["RouteID"].ToString()== row["RouteID"].ToString())
                         {
                             srno++;
+                            subcountsrno++;
                             sb.Append("<tr>");
                             sb.Append("<td>");
                             sb.Append(srno.ToString());
@@ -225,8 +229,10 @@ namespace Dairy.Tabs.Marketing
                             {
                               
                                 qty = Convert.ToDouble(row["Quantity"]);
+                                subtotalqty += qty;
                                 totalqty += qty;
                                 avg = qty / differenceInDays;
+                                subtotalavg += avg;
                                 totalavg += avg;
                                 sb.Append(Convert.ToDecimal(avg).ToString("#.##"));
                             }
@@ -235,7 +241,7 @@ namespace Dairy.Tabs.Marketing
                             sb.Append("</td>");
 
                             sb.Append("</tr>");
-
+                           
 
                         }
 
@@ -246,17 +252,28 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'></td></tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td colspan = '4'>");
-                    sb.Append(srno.ToString());
+                    sb.Append(subcountsrno.ToString());
                     sb.Append("</td>");
                     sb.Append("<td >");
-                    sb.Append(Convert.ToDecimal(totalqty).ToString("#.##"));
+                    sb.Append(Convert.ToDecimal(subtotalqty).ToString("#.##"));
                     sb.Append("</td>");
                     sb.Append("<td >");
-                    sb.Append(Convert.ToDecimal(totalavg).ToString("#.##"));
+                    sb.Append(Convert.ToDecimal(subtotalavg).ToString("#.##"));
                     sb.Append("</td>");
                     sb.Append("</tr>");
                 }
-
+                sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'></td></tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<td colspan = '4'>");
+                sb.Append(srno.ToString());
+                sb.Append("</td>");
+                sb.Append("<td >");
+                sb.Append(Convert.ToDecimal(totalqty).ToString("#.##"));
+                sb.Append("</td>");
+                sb.Append("<td >");
+                sb.Append(Convert.ToDecimal(totalavg).ToString("#.##"));
+                sb.Append("</td>");
+                sb.Append("</tr>");
 
 
 

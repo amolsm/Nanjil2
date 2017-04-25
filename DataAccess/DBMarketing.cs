@@ -77,12 +77,13 @@ namespace DataAccess
             return result;
         }
 
-        public DataSet NewAgentListDetails(string startdate, string enddate, int routeid)
+        public DataSet NewAgentListDetails(string startdate, string enddate, int routeid,int asoempid)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
             paramCollection.Add(new DBParameter("@StartDate", startdate));
             paramCollection.Add(new DBParameter("@EndDate", enddate));
             paramCollection.Add(new DBParameter("@RouteID", routeid));
+            paramCollection.Add(new DBParameter("@AsoEmpId", asoempid));
             return _DBHelper.ExecuteDataSet("mk_ViewNewAgentList", paramCollection, CommandType.StoredProcedure);
         }
 

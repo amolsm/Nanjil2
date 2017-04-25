@@ -102,6 +102,22 @@
                     
                   </div><!-- /.form group -->
                          </div>
+               <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <span style="color:red">&nbsp;*</span>
+                      </div>
+                      <asp:DropDownList ID="dpASO" class="form-control" runat="server" DataTextField="Name" DataValueField="Id" >
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div> 
               <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">

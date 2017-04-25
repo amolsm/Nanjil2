@@ -159,6 +159,7 @@
                       </div> 
                         
                         </div>
+                         
                         <asp:Panel runat="server" ID="pnlBill">
                         <asp:Literal runat="server" ID="genratedBIll"></asp:Literal>
               </asp:Panel>
@@ -166,7 +167,16 @@
                      
                     </ContentTemplate>
                 </asp:UpdatePanel>
-                 
+                  <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="upMain">
+            <ProgressTemplate>
+                
+                <div class="overlay">
+                <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+                </div>
+
+            </ProgressTemplate>
+            </asp:UpdateProgress>
                 
             </div><!-- /.box-body -->            
           </div><!-- /.box -->
