@@ -143,7 +143,7 @@ namespace Dairy.Tabs.Sales
 
          protected void btnAddAgentProductItem_click(object sender, EventArgs e)
          {
-            txtagentOrderqty.Text = "";
+            
              Invoice invocie = new Invoice();
              InvoiceData invicedata = new InvoiceData();
              invocie.TokanId = hftokanno.Value;
@@ -159,6 +159,7 @@ namespace Dairy.Tabs.Sales
             {
                 invicedata.InsertTempInvoiceItam(invocie);
                 BindAgntTempItam(invocie);
+                txtagentOrderqty.Text = "";
             }
             else
             {

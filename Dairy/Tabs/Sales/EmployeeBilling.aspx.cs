@@ -208,7 +208,7 @@ namespace Dairy.Tabs.Sales
 
         protected void btnAddEmployeeOrderItem_clcik(object sender, EventArgs e)
         {
-            txtQtyEmployee.Text = "";
+            
             double tempQty = 0;
             DataSet ds = new DataSet();
 
@@ -240,6 +240,7 @@ namespace Dairy.Tabs.Sales
                         BindEmployeeOrderDetails(invocie);
                         upMain.Update();
                         pnlBills.Visible = false;
+                        txtQtyEmployee.Text = "";
                     }
                     else
                     {

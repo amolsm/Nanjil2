@@ -375,7 +375,7 @@ namespace Dairy.Tabs.Administration
             productdata = new ProductData();
             product = new Product();
             product.ProductID = Convert.ToInt32(hfProductID.Value);
-
+            product.ProductName = string.Empty;
 
             product.TypeID = string.IsNullOrEmpty(dpType.SelectedItem.ToString()) ? 0 : Convert.ToInt32(dpType.SelectedValue);
             product.CommodityID = string.IsNullOrEmpty(dpCommodity.SelectedItem.ToString()) ? 0 : Convert.ToInt32(dpCommodity.SelectedValue);
