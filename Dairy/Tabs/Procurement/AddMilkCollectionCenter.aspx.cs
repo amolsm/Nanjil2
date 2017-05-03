@@ -32,7 +32,7 @@ namespace Dairy.Tabs.Procurement
                 dpCountry.Text = "India";
             }
             d1.Visible = false;
-           
+
         }
 
         protected void BindDropDwon()
@@ -105,10 +105,10 @@ namespace Dairy.Tabs.Procurement
             p.District = dpDistrict.SelectedItem.Text;
             p.State = dpState.SelectedItem.Text;
             p.Country = dpCountry.SelectedItem.Text;
-            p.ContactPerson =Convert.ToInt32( dpContactPerson.SelectedValue);
-            p.BMC =Convert.ToInt32( txtBMC.Text);
-            p.MilkCan = Convert.ToInt32(txtMilkCan.Text);
-            p.Silo = Convert.ToInt32(txtSilo.Text);
+            p.ContactPerson = Convert.ToInt32(dpContactPerson.SelectedValue);
+            p.BMC = string.IsNullOrEmpty(txtBMC.Text) ? 0 : Convert.ToInt32(txtBMC.Text);////////////////
+            p.MilkCan = string.IsNullOrEmpty(txtMilkCan.Text) ? 0 : Convert.ToInt32(txtMilkCan.Text);
+            p.Silo = string.IsNullOrEmpty(txtSilo.Text) ? 0 : Convert.ToInt32(txtSilo.Text);
             if (rdETPYes.Checked)
                 p.ETP = true;
             else
@@ -133,7 +133,7 @@ namespace Dairy.Tabs.Procurement
             {
                 p.FreezerAvailable = true;
                 p.FreezerModel = txtFreezerModel.Text;
-                p.Quantity =Convert.ToInt32 (txtQuantity.Text);
+                p.Quantity = Convert.ToInt32(txtQuantity.Text);
             }
             if (rdNo.Checked)
             {
@@ -266,7 +266,7 @@ namespace Dairy.Tabs.Procurement
 
 
         }
-     
+
         public void ClearTextBox()
         {
             txtCenterCode.Text = string.Empty;
@@ -296,7 +296,7 @@ namespace Dairy.Tabs.Procurement
         public void BindCollectionCenter()
         {
 
-            ProcurementData pd=new ProcurementData();
+            ProcurementData pd = new ProcurementData();
             DataSet DS = new DataSet();
             StringBuilder sb = new StringBuilder();
             DS = pd.GetAllCenterDetails();
@@ -407,7 +407,7 @@ namespace Dairy.Tabs.Procurement
                 {
                     dpContactPerson.Items.FindByValue(DS.Tables[0].Rows[0]["ContactPerson"].ToString()).Selected = true;
                 }
-                
+
                 if (DS.Tables[0].Rows[0]["FreezerAvailable"].ToString() == "True")
                 {
                     rdYes.Checked = true;
@@ -499,23 +499,23 @@ namespace Dairy.Tabs.Procurement
             p.BMC = 0;
             p.MilkCan = 0;
             p.Silo = 0;
-            
-                p.ETP = false;
-            
-                p.ETP = false;
-           
-                p.IBT = false;
-            
-                p.Store = false;
+
+            p.ETP = false;
+
+            p.ETP = false;
+
+            p.IBT = false;
+
+            p.Store = false;
             p.CreatedBy = App_code.GlobalInfo.Userid;
             p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             p.ModifiedBy = App_code.GlobalInfo.Userid;
             p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
-         
-                p.FreezerAvailable = false;
-                p.FreezerModel = "";
-                p.Quantity = 0;
-           
+
+            p.FreezerAvailable = false;
+            p.FreezerModel = "";
+            p.Quantity = 0;
+
             p.IsActive = false;
             p.flag = "Delete";
             int Result = 0;
@@ -544,8 +544,8 @@ namespace Dairy.Tabs.Procurement
                 pnlError.Update();
 
             }
-           
-            
+
+
         }
 
         protected void txtCenterName_TextChanged(object sender, EventArgs e)

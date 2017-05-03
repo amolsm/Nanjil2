@@ -213,7 +213,7 @@
                function PrintPanel() {
                    var panel = document.getElementById("<%=pnlCheckList.ClientID %>");
              var printWindow = window.open('', '', 'height=600px,width=800px');
-             printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif;} .dispnone {display:none;}</style> ");
+             printWindow.document.write("<html> <head> <style type='text/css'> @media print {page-break  { display: block; page-break-before: always; }} .style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif;} .dispnone {display:none;}</style> ");
              printWindow.document.write('</head><body >');
              printWindow.document.write(panel.innerHTML);
              printWindow.document.write('</body></html>');
@@ -226,3 +226,4 @@
          </script>
        </section>   
 </asp:Content>
+ 

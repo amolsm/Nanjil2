@@ -76,6 +76,9 @@
     <Compile Include="MAgentwiseTray.cs" />
     <Compile Include="Marketings.cs" />
     <Compile Include="MassIssueModel.cs" />
+    <Compile Include="MHeadwiseReport.cs" />
+    <Compile Include="MRawMilkStockRegisterReport.cs" />
+    <Compile Include="MTransportPayment.cs" />
     <Compile Include="OrderDemand.cs" />
     <Compile Include="Procurement.cs" />
     <Compile Include="Product.cs" />

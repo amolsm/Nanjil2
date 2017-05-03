@@ -168,7 +168,8 @@
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
-                     <div class="col-lg-3">
+
+<%--                     <div class="col-lg-3">
                   <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -196,7 +197,28 @@
                      
                        
                           
-                      </div>  
+                      </div>  --%>
+
+                               <div class="col-lg-3">
+                  <div class="form-group" style="margin-bottom:1px">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      <span style="color:red">&nbsp;*</span>
+                      </div>        
+                     <asp:DropDownList ID="Category" class="form-control" DataTextField="Name"  ToolTip="Select Category" runat="server" selected> 
+                       </asp:DropDownList>
+
+                  </div><!-- /.form group -->
+                      <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator2" Display="Dynamic" 
+                            ValidationGroup="Save" runat="server" ControlToValidate="Category"
+                            Text="Please Select Category" ErrorMessage="Please Select Category" ForeColor="Red"></asp:RequiredFieldValidator>
+                     
+                       
+                          
+                      </div> 
+                            
+                            </div>
+
 
                <div class="col-lg-3">
                   <div class="form-group" style="margin-bottom:1px">
@@ -204,7 +226,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                        <asp:DropDownList ID="dpIncentiveTariff" class="form-control" DataTextField="Name" DataValueField="ID" runat="server" selected ToolTip="Select Incentive Tariff"> 
+                        <asp:DropDownList ID="dpIncentiveTariff" class="form-control" DataTextField="Name"  runat="server" selected ToolTip="Select Incentive Tariff"> 
                        </asp:DropDownList>  
                          
                     </div><!-- /.input group -->
@@ -307,7 +329,8 @@
                         <th>Route Name</th>
                         <th>Collection Center</th>
                         <th>ASOID</th>
-                        <th>Category</th>
+                        <th>Rawmilk Tarriff</th>
+                          <th>Incentive tariff </th>
                           <th>IsActive</th>
                         <th>Created Date</th>
                            <th>Edit</th>
@@ -326,6 +349,7 @@
                       <td><%# Eval("CenterCode")%>&nbsp;&nbsp;<%# Eval("CenterName")%></td>
                       <td><%# Eval("ASOID")%></td>
                         <td><%# Eval("Category") %></td>
+                        <td><%# Eval("QIncentivtariffid") %></td>
                      <td><%# Eval("IsActive") %></td>
                       <td><%# Eval("CreatedDate")%></td>
                          <td>
@@ -351,7 +375,8 @@
                         <th>Route Name</th>
                         <th>Collection Center</th>
                           <th>ASOID</th>
-                        <th>Category</th>
+                        <th>Rawmilk Tarriff</th>
+                           <th>Incentive tariff </th>
                           <th>IsActive</th>
                         <th>Created Date</th>
                            <th>Edit</th>

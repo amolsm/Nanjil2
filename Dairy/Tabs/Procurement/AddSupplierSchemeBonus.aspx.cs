@@ -54,7 +54,7 @@ namespace Dairy.Tabs.Procurement
             txtBonusAmount.Text = string.Empty;
             txtSchemeAmount.Text = string.Empty;
             txtPaymentDate.Text = string.Empty;
-          
+
         }
         public void BindeSupplierSchemeInfo()
         {
@@ -268,6 +268,8 @@ namespace Dairy.Tabs.Procurement
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert(' Scheme and Bonus not found for this route')", true);
                 dpRoute.ClearSelection();
+                txtSchemeAmount.Text = string.Empty;
+                txtBonusAmount.Text = string.Empty;
             }
 
         }

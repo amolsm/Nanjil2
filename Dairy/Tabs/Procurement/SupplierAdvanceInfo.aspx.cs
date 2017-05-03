@@ -34,7 +34,7 @@ namespace Dairy.Tabs.Procurement
                 dpVehical.Items.Insert(0, new ListItem("--Select Vehical  --", "0"));
             }
         }
-       
+
 
         public void ClearTextBox()
         {
@@ -119,7 +119,7 @@ namespace Dairy.Tabs.Procurement
                 txtInterest.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Interest"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Interest"].ToString();
                 txtInstallments.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Installments"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Installments"].ToString();
                 txtInstallAmt.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["InstallmentAmt"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["InstallmentAmt"].ToString();
-               
+
             }
         }
         public void DeleteRoutebyrouteID(int CenterID)
@@ -249,5 +249,9 @@ namespace Dairy.Tabs.Procurement
 
         }
 
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Tabs/Procurement/SupplierAdvanceInfo.aspx");
+        }
     }
 }

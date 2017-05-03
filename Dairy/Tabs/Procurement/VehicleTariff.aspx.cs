@@ -29,7 +29,7 @@ namespace Dairy.Tabs.Procurement
 
         public void BindDropDownList()
         {
-            DS = BindCommanData.BindCommanDropDwon("id as VahicleID", "VehicleType as VehicleName", "Proc_VehicleType", "id is not null");
+            DS = BindCommanData.BindCommanDropDwon("id as VahicleID", "VehicleType as VehicleName", "Proc_VehicleType", "id is not null  Order by VehicleType Asc");
             dpVehicleType.DataSource = DS;
             dpVehicleType.DataBind();
             dpVehicleType.Items.Insert(0, new ListItem("--Select Vehicle Model--", "0"));
@@ -44,7 +44,7 @@ namespace Dairy.Tabs.Procurement
             p.Bata = Convert.ToDouble(txtBata.Text);
             p.KMLow = Convert.ToDouble(txtKMLow.Text);
             p.KMHigh = Convert.ToDouble(txtKMHigh.Text);
-          
+
             p.Amount = Convert.ToDouble(txtAmount.Text);
             //p.KMGreaterThan300 = Convert.ToDouble(txtKMGreater300.Text);
             p.Discription = txtDesc.Text;
@@ -84,11 +84,11 @@ namespace Dairy.Tabs.Procurement
         {
             txtKMLow.Text = string.Empty;
             txtKMHigh.Text = string.Empty;
-          txtAmount.Text = string.Empty;
+            txtAmount.Text = string.Empty;
             txtBata.Text = string.Empty;
-          //  txtKMGreater300.Text = string.Empty;
-    
-           // txtSrNo.Text = string.Empty;
+            //  txtKMGreater300.Text = string.Empty;
+
+            // txtSrNo.Text = string.Empty;
             dpVehicleType.ClearSelection();
             txtDesc.Text = string.Empty;
         }
@@ -154,7 +154,7 @@ namespace Dairy.Tabs.Procurement
             DS = pd.GetVehicleMasterDetailsbyID(vehicleid);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-              //  txtSrNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SrNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SrNo"].ToString();
+                //  txtSrNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SrNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SrNo"].ToString();
                 dpVehicleType.ClearSelection();
                 if (dpVehicleType.Items.FindByValue(DS.Tables[0].Rows[0]["Vehicle"].ToString()) != null)
                 {
@@ -219,7 +219,7 @@ namespace Dairy.Tabs.Procurement
             Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
             p.VehicleID = string.IsNullOrEmpty(hfrouteID.Value) ? 0 : Convert.ToInt32(hfrouteID.Value);
-           // p.SrNo = txtSrNo.Text;
+            // p.SrNo = txtSrNo.Text;
             p.VehicleType = Convert.ToInt16(dpVehicleType.SelectedItem.Value);
             p.Bata = Convert.ToDouble(txtBata.Text);
             p.KMLow = Convert.ToDouble(txtKMLow.Text);
@@ -267,7 +267,7 @@ namespace Dairy.Tabs.Procurement
             Response.Redirect("~/Tabs/Procurement/VehicleTariff.aspx");
         }
 
-    
+
 
         protected void txtKMHigh_TextChanged(object sender, EventArgs e)
         {
@@ -285,6 +285,7 @@ namespace Dairy.Tabs.Procurement
                     }
                 }
             }
+            txtAmount.Focus();
         }
     }
 }

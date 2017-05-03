@@ -87,6 +87,23 @@ namespace DataAccess
             return _DBHelper.ExecuteDataSet("csh_getSalesmanbyroute", paramCollection, CommandType.StoredProcedure);
 
         }
+        public DataSet GetCategory(string Category, string TableName)
+        {
+            DataSet DS = new DataSet();
+            DBParameterCollection paramcollection = new DataAcess.DBParameterCollection();
+            paramcollection.Add(new DBParameter("@Category", Category));
+            paramcollection.Add(new DBParameter("@TableName", TableName));
+            return _DBHelper.ExecuteDataSet("GetCategory", paramcollection, CommandType.StoredProcedure);
+        }
+        public DataSet GetIncentiveTariff(string QCat, string TableName)
+        {
+            DataSet DS = new DataSet();
+            DBParameterCollection paramcollection = new DataAcess.DBParameterCollection();
+            paramcollection.Add(new DBParameter("@Category", QCat));
+            //paramcollection.Add(new DBParameter("@ID", ID));
+            paramcollection.Add(new DBParameter("@TableName", TableName));
+            return _DBHelper.ExecuteDataSet("GetIncentiveTariff", paramcollection, CommandType.StoredProcedure);
+        }
 
     }
 }

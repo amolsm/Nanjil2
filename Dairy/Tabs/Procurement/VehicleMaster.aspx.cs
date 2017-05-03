@@ -27,7 +27,7 @@ namespace Dairy.Tabs.Procurement
 
         public void BindDropDwon()
         {
-            DS = BindCommanData.BindCommanDropDwon("id as VahicleID", "VehicleType as VehicleName", "Proc_VehicleType", "id is not null");
+            DS = BindCommanData.BindCommanDropDwon("id as VahicleID", "VehicleType as VehicleName", "Proc_VehicleType", "id is not null  Order by VehicleType Asc");
             dpVehicleType.DataSource = DS;
             dpVehicleType.DataBind();
             dpVehicleType.Items.Insert(0, new ListItem("--Select Vehicle Model--", "0"));
@@ -59,7 +59,7 @@ namespace Dairy.Tabs.Procurement
             p.VehicleMasterID = 0;
             //p.VehicleName = txtVehicleName.Text;
             p.VehicleNo = txtVehicleNo.Text;
-            p.VehicleID1 = 'V'+ txtVehicleNo.Text;
+            p.VehicleID1 = 'V' + txtVehicleNo.Text;
             p.VehicleOwnerName = txtOwnerName.Text;
             p.OwnerEmail = txtOwnerEmail.Text;
             p.OwnerMobileNo = txtOwnerMobileNo.Text;
@@ -142,8 +142,8 @@ namespace Dairy.Tabs.Procurement
             DS = pd.GetAllVehicleDetails();
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                    rpVehicleList.DataSource = DS;
-                    rpVehicleList.DataBind();
+                rpVehicleList.DataSource = DS;
+                rpVehicleList.DataBind();
             }
         }
 
@@ -208,15 +208,15 @@ namespace Dairy.Tabs.Procurement
                 if (dpIfscCode.Items.FindByText(DS.Tables[0].Rows[0]["IFSCCode"].ToString()) != null)
                 {
                     dpIfscCode.Items.FindByText(DS.Tables[0].Rows[0]["IFSCCode"].ToString()).Selected = true;
-                 }
-            
+                }
+
                 txtAccNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["AccountNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["AccountNo"].ToString();
                 dpRoute.ClearSelection();
                 if (dpRoute.Items.FindByValue(DS.Tables[0].Rows[0]["RouteID"].ToString()) != null)
                 {
                     dpRoute.Items.FindByValue(DS.Tables[0].Rows[0]["RouteID"].ToString()).Selected = true;
                 }
-               // txtTax.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Tax"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Tax"].ToString();
+                // txtTax.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Tax"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Tax"].ToString();
                 txtTDSPercent.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TDS"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TDS"].ToString();
                 dpVehicleType.ClearSelection();
                 if (dpVehicleType.Items.FindByValue(DS.Tables[0].Rows[0]["VehicleType"].ToString()) != null)
@@ -234,8 +234,8 @@ namespace Dairy.Tabs.Procurement
                     dpBankName.Items.FindByText(DS.Tables[0].Rows[0]["OwnerBankName"].ToString()).Selected = true;
                 }
                 DropDownList1.ClearSelection();
-                
-             
+
+
                 if (DS.Tables[0].Rows[0]["IsActive"].ToString() == "True")
                 {
                     DropDownList1.Items.FindByValue("1").Selected = true;
@@ -369,7 +369,7 @@ namespace Dairy.Tabs.Procurement
         {
             ProcurementData pd = new ProcurementData();
             DataSet DS = new DataSet();
-         
+
             DS = pd.GetAllVehicleDetails();
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
@@ -383,11 +383,12 @@ namespace Dairy.Tabs.Procurement
 
                 }
             }
+            txtOwnerName.Focus();
         }
 
         protected void btnAddNew_Click(object sender, EventArgs e)
         {
-           Response.Redirect("~/Tabs/Procurement/VehicleMaster.aspx");
+            Response.Redirect("~/Tabs/Procurement/VehicleMaster.aspx");
         }
     }
 }

@@ -520,12 +520,12 @@ namespace Model
         }
         private int _RawMilkTarrifID;
 
-        public int Category
+        public string Category
         {
             get { return _Category; }
             set { _Category = value; }
         }
-        private int _Category;
+        private string _Category;
 
         public decimal TSL
         {
@@ -1523,5 +1523,13 @@ namespace Model
         public string EveningOutCan { get; set; }
 
         private decimal _TSEndPercentage;
+        public int BankId { get; set; }
+        public DateTime ToDate1 { get; set; }
+        public DateTime ToDate2 { get; set; }
+        public string Description { get; set; }
+        public string abjust { get; set; }
+
+
+
     }
 }

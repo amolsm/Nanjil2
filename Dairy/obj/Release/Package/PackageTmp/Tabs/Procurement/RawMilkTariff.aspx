@@ -89,7 +89,7 @@
         </div><!-- /.box-header -->
         <div class="box-body">
              <div class="row">
-            <div class="col-lg-4">
+<%--            <div class="col-lg-4">
                
                   <div class="form-group" style="margin-bottom:1px">
                     <div class="input-group">
@@ -118,7 +118,24 @@
                      
                        
                           
-                      </div>  
+                      </div>  --%>
+
+                  <div class="col-lg-4">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <asp:Label ID="lblCategory" runat="server" Text="Category"></asp:Label>
+                      </div>
+                  <asp:TextBox ID="txtCategory" class="form-control" placeholder="Category" runat="server"  ToolTip="Category"></asp:TextBox>                        
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>   
+
             <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
@@ -151,7 +168,8 @@
                           
                       </div>  
           </div>
-             
+       
+             <div class="row">      
             <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
@@ -211,6 +229,8 @@
                           
                       </div> 
                             </div>
+                 </div>
+             <div class="row">
              <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
@@ -253,7 +273,9 @@
                      
                        
                           
-                      </div>     
+                      </div>  
+                 </div>   
+             <div class="row">
             <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
@@ -266,9 +288,25 @@
                   </div><!-- /.form group -->
 
                      
+                 
+     
+                          
+                      </div> 
+             <div class="col-lg-4">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <asp:Label ID="Label1" runat="server" Text="Description"></asp:Label>
+                      </div>
+                  <asp:TextBox ID="txtDescription" class="form-control" placeholder="Description" runat="server"  ToolTip="Description"></asp:TextBox>                        
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+
+                     
                        
                           
-                      </div>     
+                      </div>    
             <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
@@ -284,6 +322,8 @@
                        
                           
                       </div>   
+                 </div>
+              <div class="row">
              <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True"
         ShowSummary="False" ValidationGroup="Save" />  
                    <div class="col-lg-4">
@@ -303,7 +343,7 @@
                        
                           
                       </div>            
-            
+            </div>
         </div><!-- /.box-body -->
 
       </div>
@@ -355,7 +395,7 @@
                           <th>Bonus</th>
                           <th>WEF_DATE</th>
                            <th>Edit</th>
-                          <th>Delete</th>
+                         <%-- <th>Delete</th>--%>
                       </tr>
                     </thead>
                     <tbody>
@@ -364,7 +404,7 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
-                         <td><%# Eval("CategoryName")%></td>
+                         <td><%# Eval("Category")%></td>
                       <td><%# Eval("TSL")%></td>
                       <td><%# Eval("TSH")%></td>
                       <td><%# Eval("TSRATE")%></td>
@@ -384,10 +424,10 @@
                                                                     CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
 
                          </td>
-                         <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
+                         <%--<td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
                                                                     ToolTip="Delete" runat="server" CommandArgument='<%#Eval("RawMilkTarrifID") %>'
                                                                     CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>
+</td>--%>
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
@@ -409,7 +449,7 @@
                           <th>Bonus</th>
                           <th>WEF_DATE</th>
                            <th>Edit</th>
-                          <th>Delete</th>
+                         <%-- <th>Delete</th>--%>
                       </tr>
                     </tfoot>
 

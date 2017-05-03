@@ -398,6 +398,7 @@
                           <th>Vehicle Model</th>
                         
                         <th>Vehicle No</th>
+                          <th>Route</th>
                         <th>Owner Name</th>
                     
                         <th>Driver Name</th>
@@ -414,7 +415,8 @@
                     <tr>
                          <td><%# Eval("VehicleType")%></td>
                      
-                      <td><%# Eval("VehicleNo")%></td>
+                      <td><%# Eval("VehicleMasterID").ToString()+' '+Eval("VehicleNo").ToString()%></td>
+                        <td><%# Eval("RouteName")%></td>
                       <td><%# Eval("VehicleOwnerName")%></td>
                         
                      
@@ -442,6 +444,7 @@
                           <th>Vehicle Model</th>
                        
                         <th>Vehicle No</th>
+                           <th>Route</th>
                         <th>Owner Name</th>
                         
                         <th>Driver Name</th>

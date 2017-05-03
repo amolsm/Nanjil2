@@ -44,7 +44,7 @@ namespace Dairy.Tabs.Procurement
                 dpSupplier.Items.Insert(0, new ListItem("--Select Supplier  --", "0"));
             }
 
-           
+
             DS = BindCommanData.BindCommanDropDwonDistinct("ID", "BankName as Name", "BankDetails", "ID is not null");
             dpBankName.DataSource = DS;
             dpBankName.DataBind();
@@ -65,13 +65,13 @@ namespace Dairy.Tabs.Procurement
             p.SupplierID = Convert.ToInt32(dpSupplier.SelectedValue);
             p.LoanType = ddLoanType.SelectedItem.Text;
             p.AccounNumber = txtLoanAccountNo.Text;
-            p.LoanAmount =Convert.ToDouble( txtLoanAmt.Text);
+            p.LoanAmount = Convert.ToDouble(txtLoanAmt.Text);
             p.LoanTakenDate = txtLoanTakenDate.Text;
-            p.LoanDuration =txtLoanDuration.Text;
+            p.LoanDuration = txtLoanDuration.Text;
             p.LoanPaid = Convert.ToDouble(txtLoadPaid.Text);
             p.LoanStatus = DropDownList1.SelectedItem.Text;
             p.BankName = dpBankName.SelectedItem.Text;
-            p.BranchName = txtBranchName.Text;
+            //p.BranchName = txtBranchName.Text;
             p.IFSCCode = dpIfscCode.SelectedItem.Text;
             p.Interest = Convert.ToDouble(txtInterest.Text);
             p.LoanBalance = Convert.ToDouble(txtLoanBalance.Text);
@@ -125,7 +125,7 @@ namespace Dairy.Tabs.Procurement
             p.LoanBalance = Convert.ToDouble(txtLoanBalance.Text);
             p.LoanStatus = DropDownList1.SelectedItem.Text;
             p.BankName = dpBankName.SelectedItem.Text;
-            p.BranchName = txtBranchName.Text;
+            //p.BranchName = txtBranchName.Text;
             p.IFSCCode = dpIfscCode.SelectedItem.Text;
             p.Interest = Convert.ToDouble(txtInterest.Text);
             p.LoanBalance = Convert.ToDouble(txtLoanBalance.Text);
@@ -178,7 +178,7 @@ namespace Dairy.Tabs.Procurement
             txtLoadPaid.Text = string.Empty;
             txtLoanBalance.Text = string.Empty;
             txtLoanTakenDate.Text = string.Empty;
-            txtBranchName.Text = string.Empty;
+            //txtBranchName.Text = string.Empty;
             txtInterest.Text = string.Empty;
             dpBankName.ClearSelection();
             dpIfscCode.ClearSelection();
@@ -235,8 +235,8 @@ namespace Dairy.Tabs.Procurement
                             upMain.Update();
                             uprouteList.Update();
                         }
-                            break;
-                       
+                        break;
+
                     }
 
 
@@ -262,24 +262,24 @@ namespace Dairy.Tabs.Procurement
                 txtLoadPaid.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["LoanPaid"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["LoanPaid"].ToString();
                 txtLoanBalance.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["LoanBalance"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["LoanBalance"].ToString();
                 DropDownList1.ClearSelection();
-                if (DropDownList1.Items.FindByText(DS.Tables[0].Rows[0]["LoanStatus"].ToString())!=null)
+                if (DropDownList1.Items.FindByText(DS.Tables[0].Rows[0]["LoanStatus"].ToString()) != null)
                 { DropDownList1.Items.FindByText(DS.Tables[0].Rows[0]["LoanStatus"].ToString()).Selected = true; }
                 dpBankName.ClearSelection();
                 if (dpBankName.Items.FindByText(DS.Tables[0].Rows[0]["BankName"].ToString()) != null)
                 { dpBankName.Items.FindByText(DS.Tables[0].Rows[0]["BankName"].ToString()).Selected = true; }
-               
-                txtBranchName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BranchName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BranchName"].ToString();
+
+                //txtBranchName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BranchName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BranchName"].ToString();
                 dpIfscCode.ClearSelection();
                 if (dpIfscCode.Items.FindByText(DS.Tables[0].Rows[0]["IFSCCode"].ToString()) != null)
                 { dpIfscCode.Items.FindByText(DS.Tables[0].Rows[0]["IFSCCode"].ToString()).Selected = true; }
-                
+
                 txtInterest.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Interest"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Interest"].ToString();
 
             }
         }
         public void DeleteRoutebyrouteID(int CenterID)
         {
-           // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Do you want to delete')", true);
+            // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Do you want to delete')", true);
 
             Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
@@ -290,11 +290,11 @@ namespace Dairy.Tabs.Procurement
             p.LoanAmount = 0;
             p.LoanTakenDate = txtLoanTakenDate.Text;
             p.LoanDuration = txtLoanDuration.Text;
-            p.LoanPaid =0;
-            p.LoanBalance =0;
+            p.LoanPaid = 0;
+            p.LoanBalance = 0;
             p.LoanStatus = DropDownList1.SelectedItem.Text;
             p.BankName = dpBankName.SelectedItem.Text;
-            p.BranchName = txtBranchName.Text;
+            //p.BranchName = txtBranchName.Text;
             p.IFSCCode = dpIfscCode.SelectedItem.Text;
             p.Interest = 0;
             p.LoanBalance = 0;
@@ -308,7 +308,7 @@ namespace Dairy.Tabs.Procurement
             Result = pd.InsertSupplierLoanInfo(p);
             if (Result > 0)
             {
-              
+
 
                 divDanger.Visible = false;
                 divwarning.Visible = false;
@@ -336,13 +336,13 @@ namespace Dairy.Tabs.Procurement
         protected void dpRoute_SelectedIndexChanged(object sender, EventArgs e)
         {
             dpSupplier.ClearSelection();
-            int routeid=Convert.ToInt32(dpRoute.SelectedItem.Value);
-            DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 and RouteID="+routeid);
+            int routeid = Convert.ToInt32(dpRoute.SelectedItem.Value);
+            DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 and RouteID=" + routeid);
             //if (!Comman.Comman.IsDataSetEmpty(DS))
             //{
-                dpSupplier.DataSource = DS;
-                dpSupplier.DataBind();
-                dpSupplier.Items.Insert(0, new ListItem("--Select Supplier  --", "0"));
+            dpSupplier.DataSource = DS;
+            dpSupplier.DataBind();
+            dpSupplier.Items.Insert(0, new ListItem("--Select Supplier  --", "0"));
             //}
 
         }
@@ -361,13 +361,13 @@ namespace Dairy.Tabs.Procurement
             {
                 foreach (DataRow row in DS.Tables[0].Rows)
                 {
-                    if (row["SupplierID"].ToString() == dpSupplier.SelectedItem.Value && row["LoanType"].ToString() == ddLoanType.SelectedItem.Text.ToString() && row["LoanStatus"].ToString()=="Open")
+                    if (row["SupplierID"].ToString() == dpSupplier.SelectedItem.Value && row["LoanType"].ToString() == ddLoanType.SelectedItem.Text.ToString() && row["LoanStatus"].ToString() == "Open")
                     {
-                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Supplier Loan Already Exists')", true);
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Supplier Loan Already Exists')", true);
                         ddLoanType.ClearSelection();
                     }
                 }
             }
-            }
+        }
     }
 }

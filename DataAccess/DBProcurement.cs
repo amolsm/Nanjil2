@@ -67,15 +67,15 @@ namespace DataAccess
             try
             {
                 DBParameterCollection paramCollection = new DBParameterCollection();
-             
+
                 paramCollection.Add(new DBParameter("@StartDate", p.FomDate));
                 paramCollection.Add(new DBParameter("@EndDate", p.ToDate));
                 paramCollection.Add(new DBParameter("@VehicalNo", p.VehicleNo));
                 DS = _DBHelper.ExecuteDataSet("Proc_SP_MilkCollectionTransportBill", paramCollection, CommandType.StoredProcedure);
             }
-            catch(Exception e)
+            catch (Exception e)
             { string msg = e.ToString(); }
-          
+
             return DS;
         }
 
@@ -310,8 +310,8 @@ namespace DataAccess
 
             }
             catch (Exception e)
-            { 
-            string msg = e.ToString();
+            {
+                string msg = e.ToString();
             }
             return result;
         }
@@ -1093,6 +1093,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@IN_TS", p.IN_TS));
                 paramCollection.Add(new DBParameter("@Scheme", p.Scheme));
                 paramCollection.Add(new DBParameter("@Bonus", p.Bonus1));
+                paramCollection.Add(new DBParameter("@Description", p.Description));
                 paramCollection.Add(new DBParameter("@WEF_DATE", p.WEF_DATE));
                 paramCollection.Add(new DBParameter("@CreatedBy", p.CreatedBy));
                 paramCollection.Add(new DBParameter("@CreatedDate", p.Createddate));
@@ -1257,7 +1258,8 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@Session", p.Session));
                 paramCollection.Add(new DBParameter("@ModifiedBy", p.ModifiedBy));
                 paramCollection.Add(new DBParameter("@ModifiedDate", p.ModifiedDate));
-                DS = _DBHelper.ExecuteDataSet("Proc_SP_CalculateBill", paramCollection, CommandType.StoredProcedure);
+                paramCollection.Add(new DBParameter("@flag", p.flag));
+                DS = _DBHelper.ExecuteDataSet("Proc_SP_CalculateBill1", paramCollection, CommandType.StoredProcedure);
 
             }
             catch (Exception ex)
@@ -1417,7 +1419,7 @@ namespace DataAccess
             }
             return result;
         }
-        public DataSet GetAllMilkCollectionTransportDetails()
+        public DataSet GetAllMilkCollectionTransportDetails(Procurement p)
         {
 
             DataSet DS = new DataSet();
@@ -1425,6 +1427,9 @@ namespace DataAccess
             {
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@Date", p.Date));
+                paramCollection.Add(new DBParameter("@VehicalNo", p.VehicleNo));
+                paramCollection.Add(new DBParameter("@RouteID", p.RouteID));
                 DS = _DBHelper.ExecuteDataSet("Proc_Sp_GetAllMilkCollectionTransportDetails", paramCollection, CommandType.StoredProcedure);
 
             }
@@ -1516,14 +1521,169 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@QLow", p.QLow));
                 paramCollection.Add(new DBParameter("@QHigh", p.QHigh));
                 paramCollection.Add(new DBParameter("@QIncentive", p.QIncentive));
+                paramCollection.Add(new DBParameter("@Description", p.Description));
                 paramCollection.Add(new DBParameter("@IsActive", p.IsActive));
                 paramCollection.Add(new DBParameter("@flag", p.flag));
 
                 result = _DBHelper.ExecuteNonQuery("Proc_sp_AllIncentiveTariff", paramCollection, CommandType.StoredProcedure);
             }
-            catch { }
+            catch (Exception ex)
+            {
+                string msg = ex.Message.ToString();
+            }
             return result;
 
+        }
+
+        public DataSet GetExistingData(Procurement p1)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@Date", p1.Date));
+                paramCollection.Add(new DBParameter("@Session", p1.Session));
+                paramCollection.Add(new DBParameter("@SupplierID", p1.SupplierID));
+                DS = _DBHelper.ExecuteDataSet("SP_MilkCollectionExistData", paramCollection, CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.ToString();
+            }
+            return DS;
+        }
+        public DataSet ClosingStock(Procurement p)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@Date", p.ToDate));
+                paramCollection.Add(new DBParameter("@Date1", p.ToDate1));
+                paramCollection.Add(new DBParameter("@Date2", p.ToDate2));
+                paramCollection.Add(new DBParameter("@flag", p.flag1));
+                DS = _DBHelper.ExecuteDataSet("Proc_Sp_GetStock", paramCollection, CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.ToString();
+            }
+            return DS;
+        }
+
+        public int UpdateStock(Procurement p)
+        {
+
+            int result = 0;
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@Date", p.ToDate));
+                paramCollection.Add(new DBParameter("@abjust", p.abjust));
+                result = _DBHelper.ExecuteNonQuery("Proc_CloseUpdateStock", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception ex)
+            {
+
+                string msg = ex.ToString();
+            }
+            return result;
+        }
+        public DataSet RawMilkPaymentListViaBankExcel(Procurement p)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@fromdate", p.FomDate));
+                paramCollection.Add(new DBParameter("@todate", p.ToDate));
+                paramCollection.Add(new DBParameter("@Routeid", p.RouteID));
+                paramCollection.Add(new DBParameter("@BankName", p.BankName));
+                paramCollection.Add(new DBParameter("@IFSCCode", p.IFSCCode));
+                paramCollection.Add(new DBParameter("@flag", p.flag));
+                DS = _DBHelper.ExecuteDataSet("Proc_sp_RawMilkPaymentListViaBankExcel", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch (Exception ex)
+            {
+
+                string msg = ex.ToString();
+
+            }
+            return DS;
+        }
+        public DataSet RawMilkPurchaseBillSummary(Procurement p)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@fromdate", p.FomDate));
+                paramCollection.Add(new DBParameter("@todate", p.ToDate));
+                paramCollection.Add(new DBParameter("@Routeid", p.RouteID));
+                paramCollection.Add(new DBParameter("@Supplierid", p.SupplierID));
+                DS = _DBHelper.ExecuteDataSet("Proc_SP_RawMilkPurchaseBillSummary", paramCollection, CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.ToString();
+            }
+            return DS;
+
+        }
+        public DataSet GetExistingData(int supplyierid, int routeid, string date1, string date2, string date3)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+                DBParameterCollection paramcollection = new DataAcess.DBParameterCollection();
+                paramcollection.Add(new DBParameter("@SupplierID", supplyierid));
+                paramcollection.Add(new DBParameter("@RouteId", routeid));
+                paramcollection.Add(new DBParameter("@date1", date1));
+                paramcollection.Add(new DBParameter("@date2", date2));
+                paramcollection.Add(new DBParameter("@date3", date3));
+                DS = _DBHelper.ExecuteDataSet("proc_GetExistingData", paramcollection, CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.ToString();
+            }
+            return DS;
+        }
+        public DataSet VehiclewiseOperationStatementReport(Procurement p)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+
+                paramCollection.Add(new DBParameter("@StartDate", p.FomDate));
+                paramCollection.Add(new DBParameter("@EndDate", p.ToDate));
+                paramCollection.Add(new DBParameter("@VehicalNo", p.VehicleNo));
+                DS = _DBHelper.ExecuteDataSet("Proc_SP_VehiclewiseOperationReport", paramCollection, CommandType.StoredProcedure);
+            }
+            catch (Exception e)
+            { string msg = e.ToString(); }
+
+            return DS;
+
+        }
+        public DataSet GetExistingQcategory(string Qcategory)
+        {
+            DataSet DS = new DataSet();
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@Qcategory", Qcategory));
+                DS = _DBHelper.ExecuteDataSet("sp_Proc_GetExistingQcategory", paramCollection, CommandType.StoredProcedure);
+
+            }
+            catch { }
+            return DS;
         }
 
     }

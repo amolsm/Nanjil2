@@ -30,6 +30,29 @@
              });
          }
     </script>
+      <script type="text/javascript">
+          $(document).ready(function () {
+              $calculate = $('.cal');
+              $calculate.blur(function () {
+                  debugger;
+                  var advAmt = 0;
+                  var interest = 0;
+                  var advdeduct = 0;
+                  var advbal = 0;
+                  
+                  advAmt = $("#MainContent_txtAdvanceAmount").val();
+                  interest = $("#MainContent_txtInterest").val();
+                  advdeduct = $("#MainContent_txtAdvanceDeducted").val();
+
+                  advbal = parseFloat(advAmt) + parseFloat(interest) - advdeduct;
+                  $("#MainContent_txtAdvanceBalance").val(parseFloat(advbal).toFixed(2));
+
+              });
+          });
+
+      </script>
+
+
     <section class="content-header">
           <h1>
              Vehicle Advance Info
@@ -95,9 +118,10 @@
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAdvanceDate" class="form-control" placeholder="Advance Date" type="text" runat="server" required ToolTip="Advance Date"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAdvanceDate" class="form-control" placeholder="Advance Date" type="text" runat="server"  ToolTip="Advance Date"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtAdvanceDate"
+                     ErrorMessage="Advance Date Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
 
                      
@@ -113,7 +137,8 @@
                        <asp:DropDownList ID="dpVehical" class="form-control" DataTextField="Name" DataValueField="VehicleMasterID" runat="server" selected ToolTip="Select Vehical"> 
                        </asp:DropDownList>                               
                     </div><!-- /.input group -->
-
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="dpVehical"
+        ErrorMessage=" Required Vehicle" ValidationGroup="Save" ForeColor="Red" InitialValue="0"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group --> 
                           
                       </div> 
@@ -123,9 +148,10 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAdvanceAmount" class="form-control" placeholder="Advance Amount" runat="server" required ToolTip="Advance Amount" type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAdvanceAmount" class="cal form-control" placeholder="Advance Amount" runat="server"  ToolTip="Advance Amount" type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtAdvanceAmount"
+                     ErrorMessage="Advance Amount Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
 
                      
@@ -138,9 +164,10 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtInterest" class="form-control" placeholder="Interest" runat="server" required ToolTip="Interest" type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtInterest" class="cal form-control" placeholder="Interest" runat="server"  ToolTip="Interest" type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtInterest"
+                     ErrorMessage="Interest Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
 
                      
@@ -153,9 +180,10 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtInstallments" class="form-control" placeholder="No Of Installments" runat="server" required ToolTip="No Of Installments"></asp:TextBox>                        
+                       <asp:TextBox ID="txtInstallments" class="form-control" placeholder="No Of Installments" runat="server"  ToolTip="No Of Installments"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtInstallments"
+                     ErrorMessage="Installments Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
 
                      
@@ -168,9 +196,10 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtInstallAmt" class="form-control" placeholder="Installment Amount" runat="server" required ToolTip="Installment Amount" type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtInstallAmt" class="form-control" placeholder="Installment Amount" runat="server"  ToolTip="Installment Amount" type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtInstallAmt"
+                     ErrorMessage="Install Amt Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
 
                      
@@ -183,8 +212,10 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAdvanceDeducted" class="form-control" placeholder="Advance Deducted" runat="server" required ToolTip="Advance Deducted" type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAdvanceDeducted" class="cal form-control" placeholder="Advance Deducted" runat="server"  ToolTip="Advance Deducted" type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtAdvanceDeducted"
+                     ErrorMessage="Advance Deducted  Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->                   
                   </div>  
        
@@ -195,9 +226,10 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtAdvanceBalance" class="form-control" placeholder="Advance Balance" runat="server" required ToolTip="Advance Balance" type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtAdvanceBalance" class="cal form-control" placeholder="Advance Balance" runat="server"  ToolTip="Advance Balance" type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtAdvanceBalance"
+                     ErrorMessage="Advance Balance Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
                 
 
@@ -212,9 +244,10 @@
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtDeductDate" class="form-control" placeholder=" Last due paid Date" type="text" runat="server" required ToolTip=" Last due paid Date"></asp:TextBox>                        
+                       <asp:TextBox ID="txtDeductDate" class="form-control" placeholder=" Last due paid Date" type="text" runat="server"  ToolTip=" Last due paid Date"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+<asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtDeductDate"
+                     ErrorMessage="DeductDate Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
                   </div><!-- /.form group -->
 
                      
@@ -230,7 +263,8 @@
                     
                       
                               <asp:Button ID="btnAddAdvanceInfo" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnAddAdvanceInfo_Click"  Text="Add" ValidationGroup="Save" />     
-                        <asp:Button ID="btnupdateAdvanceInfo" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnupdateAdvanceInfo_Click" Text="Update" ValidationGroup="Save" />           
+                           &nbsp;&nbsp; <asp:Button ID="btnupdateAdvanceInfo" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnupdateAdvanceInfo_Click" Text="Update" ValidationGroup="Save" />   
+                           &nbsp;&nbsp;  <asp:Button ID="btnRefresh" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Refresh" ValidationGroup="none"  OnClick="btnRefresh_Click"  />           
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -278,14 +312,14 @@
                <HeaderTemplate>
                   <thead>
                       <tr>
-                          <th>Vehical ID</th>
+                          <th>Vehical No</th>
                         <th>Advance Amount</th>
                         <th>Advance Date</th> 
                         <th> Advance Deducted</th>
                           <th>Advance Balance</th>
                             <th>Deduct Date</th>
                            <th>Edit</th>
-                          <th>Delete</th>
+                          <%--<th>Delete</th>--%>
                       </tr>
                     </thead>
                     <tbody>
@@ -294,7 +328,7 @@
                </HeaderTemplate>
                <ItemTemplate>
                     <tr>
-                         <td><%# Eval("VehicalID")%></td>
+                         <td><%# Eval("VehicleNo")%></td>
                       <td><%# string.Format("{0:n2}",Eval("AdvanceAmount"))%></td>
                       <td><%# Eval("AdvanceDateTime")%></td>
                       <td><%# string.Format("{0:n2}",Eval("AdvanceDeducted"))%></td>
@@ -308,10 +342,10 @@
                                                                     CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
 
                          </td>
-                         <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
+                         <%--<td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
                                                                     ToolTip="Delete" runat="server" CommandArgument='<%#Eval("AdvanceID") %>'
                                                                     CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>
+</td>--%>
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
@@ -320,7 +354,7 @@
 
                     <tfoot>
                       <tr>
-                             <th>Vehical ID</th>
+                            <th>Vehical No</th>
                         <th>Advance Amount</th>
                         <th>Advance Date</th> 
                         <th> Advance Deducted</th>
@@ -329,7 +363,7 @@
                        
                        
                            <th>Edit</th>
-                          <th>Delete</th>
+                         <%-- <th>Delete</th>--%>
                       </tr>
                     </tfoot>
 

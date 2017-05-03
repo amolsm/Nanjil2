@@ -168,8 +168,8 @@
                     <div class="input-group">
                       
                     
-                      
-                              <asp:Button ID="btnCalculate" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnCalculate_Click"   Text="Calculate" ValidationGroup="Save" />     
+                      <asp:Button ID="btnShow" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnShow_Click"  Text="Show" ValidationGroup="Save" />     
+                      &nbsp; &nbsp; &nbsp; <asp:Button ID="btnCalculate" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnCalculate_Click"  OnClientClick = "Confirm()" Text="Calculate" ValidationGroup="Save" />     
                         &nbsp; &nbsp; &nbsp;<asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClientClick="PrintPanel()"    Text="Print"   />   
             
                           
@@ -298,6 +298,29 @@
              }, 500);
              return false;
          }
+
+               function Confirm() {
+
+                   var form = document.forms[0];
+
+                   // Remove the previous element added
+                   var oldInput = document.getElementById('myInput');
+                   if (oldInput !== null) form.removeChild(oldInput);
+
+                   var confirm_value = document.createElement("INPUT");
+                   confirm_value.setAttribute('id', 'myInput');
+                   confirm_value.type = "hidden";
+                   confirm_value.name = "confirm_value";
+                   if (confirm("Are you sure to Recalculate (Yes/No)")) {
+                       confirm_value.value = "Yes";
+                   } else {
+                       confirm_value.value = "No";
+                   }
+                  
+
+                   form.appendChild(confirm_value);
+                   
+               }
          </script>
        </section>   
 </asp:Content>

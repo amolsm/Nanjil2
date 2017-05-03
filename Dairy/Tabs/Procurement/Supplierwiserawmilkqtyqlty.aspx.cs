@@ -15,11 +15,13 @@ namespace Dairy.Tabs.Procurement
         DataSet DS = new DataSet();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 BindDropDown();
+                txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             }
-           
+
         }
         public void BindDropDown()
         {
@@ -72,7 +74,8 @@ namespace Dairy.Tabs.Procurement
 
                 sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center;font-size: 120%';>");
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
-            
+                //sb.Append("<b>" + (string.IsNullOrEmpty(DS1.Tables[1].Rows[0]["CenterName"].ToString()) ? string.Empty : DS1.Tables[1].Rows[0]["CenterName"].ToString()) + "</b>"); 
+
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
@@ -96,7 +99,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append(" <td colspan='2' style='text-align:left'>");
                 sb.Append(dpRoute.SelectedItem.Text.ToString());
-              
+
                 sb.Append("</td>");
 
                 sb.Append("<td colspan='2'>");
@@ -146,7 +149,14 @@ namespace Dairy.Tabs.Procurement
                 double totalrate = 0.00;
                 double amt = 0.00;
                 double totalamt = 0.00;
-
+                double fatkg = 0.00;
+                double totfatkg = 0.00;
+                double snfkg = 0.00;
+                double totsnfkg = 0.00;
+                double tskg = 0.00;
+                double tottskg = 0.00;
+                double milkinkg = 0.00;
+                double totmilkinkg = 0.00;
                 foreach (DataRow row in DS1.Tables[0].Rows)
                 {
                     count++;
@@ -160,28 +170,40 @@ namespace Dairy.Tabs.Procurement
                     try { milkinLtr = Convert.ToDecimal(row["MilkInLtr"]); } catch { milkinLtr = 0; }
 
                     totalmilkinLtr += milkinLtr;
+
+                    try { milkinkg = Convert.ToDouble(row["MilkInKG"]); } catch { milkinkg = 0; }
+                    totmilkinkg += milkinkg;
                     sb.Append(Convert.ToDecimal(milkinLtr).ToString("0.0"));
                     sb.Append("</td>");
+
                     sb.Append("<td style='text-align:right'>");
                     try { fatpercentage = Convert.ToDouble(row["FATPercentage"]); } catch { fatpercentage = 0.00; }
 
                     totalfatpercentage += fatpercentage;
+                    try { fatkg = Convert.ToDouble(row["FATInKG"]); } catch { fatkg = 0; }
+                    totfatkg += fatkg;
+
                     sb.Append(Convert.ToDecimal(fatpercentage).ToString("0.00"));
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
                     try { snfpercentage = Convert.ToDouble(row["SNFPercentage"]); } catch { snfpercentage = 0.00; }
 
                     totalsnfpercentage += snfpercentage;
+                    try { snfkg = Convert.ToDouble(row["SNFInKG"]); } catch { snfkg = 0; }
+                    totsnfkg += snfkg;
+
                     sb.Append(Convert.ToDecimal(snfpercentage).ToString("0.00"));
-                   
+
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
                     try { tspercentage = Convert.ToDouble(row["TSPercentage"]); } catch { tspercentage = 0.00; }
 
                     totaltspercentage += tspercentage;
+
+                    try { tskg = Convert.ToDouble(row["TSInKG"]); } catch { tskg = 0; }
+                    tottskg += tskg;
                     sb.Append(Convert.ToDecimal(tspercentage).ToString("0.00"));
 
-                   
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
                     try { rate = Convert.ToDouble(row["Rate"]); } catch { rate = 0.00; }
@@ -189,18 +211,18 @@ namespace Dairy.Tabs.Procurement
                     totalrate += rate;
                     sb.Append(Convert.ToDecimal(rate).ToString("0.00"));
 
-                 
+
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
                     try { amt = Convert.ToDouble(row["Amount"]); } catch { amt = 0.00; }
 
                     totalamt += amt;
                     sb.Append(Convert.ToDecimal(amt).ToString("0.00"));
-                  
+
                     sb.Append("</td>");
 
                     sb.Append("</tr>");
-                  
+
                 }
                 sb.Append("<tr style='border-bottom:1px solid'><td colspan='8'></td></tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
@@ -208,40 +230,40 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<b>Average</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>"+Convert.ToDecimal(totalfatpercentage/count).ToString("0.00")+"</b>");
+                sb.Append("<b>" + Convert.ToDecimal(totalfatpercentage / count).ToString("0.00") + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalsnfpercentage /count).ToString("0.00") + "</b>");
+                sb.Append("<b>" + Convert.ToDecimal(totalsnfpercentage / count).ToString("0.00") + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totaltspercentage /count).ToString("0.00") + "</b>");
+                sb.Append("<b>" + Convert.ToDecimal(totaltspercentage / count).ToString("0.00") + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalrate /count).ToString("0.00") + "</b>");
+                sb.Append("<b>" + Convert.ToDecimal(totalrate / count).ToString("0.00") + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:left'>");
                 sb.Append("/ Lt.");
                 sb.Append("</td>");
-               
+
                 sb.Append("</tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td>");
                 sb.Append("<b>Total</b>");
                 sb.Append("</td>");
                 sb.Append("<td>");
-                sb.Append("<b>"+count+"</b>");
+                sb.Append("<b>" + count + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + totalmilkinLtr + "</b>");
+                sb.Append("<b>" + totmilkinkg + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalfatpercentage).ToString("0.00") + "</b>");
+                sb.Append("<b>" + Convert.ToDecimal(totfatkg).ToString("0.00") + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>" + Convert.ToDecimal(totalsnfpercentage).ToString("0.00") + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totaltspercentage).ToString("0.00") + "</b>");
+                sb.Append("<b>" + Convert.ToDecimal(tottskg).ToString("0.00") + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>" + Convert.ToDecimal(totalrate).ToString("0.00") + "</b>");
@@ -249,7 +271,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>" + Convert.ToDecimal(totalamt).ToString("0.00") + "</b>");
                 sb.Append("</td>");
-             
+
 
                 sb.Append("</tr>");
                 result = sb.ToString();
@@ -269,4 +291,4 @@ namespace Dairy.Tabs.Procurement
         }
 
     }
-    }
+}

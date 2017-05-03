@@ -16,22 +16,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2017 11:51:09</publishTime>
     </File>
     <File Include="Authentication/LoginT.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>05/02/2017 18:01:15</publishTime>
     </File>
     <File Include="Authentication/LogOut.aspx">
       <publishTime>03/02/2017 11:51:09</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
-      <publishTime>04/21/2017 18:38:50</publishTime>
+      <publishTime>05/02/2017 19:32:21</publishTime>
     </File>
     <File Include="bin/Comman.dll">
       <publishTime>04/07/2017 11:12:03</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
-      <publishTime>04/24/2017 18:12:30</publishTime>
+      <publishTime>05/02/2017 19:32:25</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
-      <publishTime>04/21/2017 18:38:50</publishTime>
+      <publishTime>05/02/2017 19:32:20</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:52</publishTime>
@@ -58,7 +58,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/24/2012 13:52:52</publishTime>
     </File>
     <File Include="bin/Model.dll">
-      <publishTime>04/13/2017 14:29:28</publishTime>
+      <publishTime>05/02/2017 19:32:19</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:50</publishTime>
@@ -244,7 +244,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2017 11:51:09</publishTime>
     </File>
     <File Include="Tabs/Administration/CreateUser.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>05/02/2017 18:41:32</publishTime>
     </File>
     <File Include="Tabs/Administration/DamageRateSetup.aspx">
       <publishTime>03/02/2017 11:51:09</publishTime>
@@ -529,91 +529,118 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2017 11:51:09</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddMilkCollectionCenter.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 15:28:29</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddMilkCollectionRoute.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/26/2017 12:45:10</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddMilkSuppliersProfile.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 15:45:52</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSupplierAdvanceDetails.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 15:51:56</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSupplierBankDetails.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 15:57:31</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSupplierLoanDetails.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 16:03:22</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSupplierRDInfo.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 16:14:33</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSupplierSchemeBonus.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 16:21:49</publishTime>
     </File>
     <File Include="Tabs/Procurement/AddSuppliersLoanInfo.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/17/2017 17:25:35</publishTime>
     </File>
     <File Include="Tabs/Procurement/CalulateRawMilkPurchase.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/12/2017 18:40:22</publishTime>
     </File>
     <File Include="Tabs/Procurement/CheckList.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/28/2017 11:25:51</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/ClosingOpeningStock.aspx">
+      <publishTime>04/26/2017 17:39:57</publishTime>
     </File>
     <File Include="Tabs/Procurement/ConsolidatePaymentSummary.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 16:59:46</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/HardCopyTariff.aspx">
+      <publishTime>05/02/2017 19:24:08</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/HeadwiseReport.aspx">
+      <publishTime>04/11/2017 17:12:22</publishTime>
     </File>
     <File Include="Tabs/Procurement/IncentiveTarrif.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/28/2017 20:08:59</publishTime>
     </File>
     <File Include="Tabs/Procurement/InsertBatchWiseMilk.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 17:27:52</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionDetails.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>05/02/2017 17:43:16</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionTransport.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 17:32:35</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionTransportBill.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 17:38:51</publishTime>
     </File>
     <File Include="Tabs/Procurement/MonthlyRawMilkPurchaseSummary.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 17:42:39</publishTime>
     </File>
     <File Include="Tabs/Procurement/PaymentSummary.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 17:45:12</publishTime>
     </File>
     <File Include="Tabs/Procurement/RawMilkPaymentListViaBank.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/12/2017 19:15:28</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/RawMilkPurchaseBill.aspx">
+      <publishTime>04/11/2017 17:53:47</publishTime>
     </File>
     <File Include="Tabs/Procurement/RawMilkStockRegister.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 18:00:43</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/RawMilkStockRegisterReport.aspx">
+      <publishTime>04/11/2017 18:04:15</publishTime>
     </File>
     <File Include="Tabs/Procurement/RawMilkTariff.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 18:10:24</publishTime>
     </File>
     <File Include="Tabs/Procurement/ReceiveDisposalheadmaster.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 18:20:57</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/Received_DisposedHeadswiseDetails.aspx">
+      <publishTime>04/11/2017 18:15:44</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/Received_Disposed_Particularwise_Summary.aspx">
+      <publishTime>04/11/2017 18:13:39</publishTime>
     </File>
     <File Include="Tabs/Procurement/SupplierAdvanceInfo.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/12/2017 16:22:18</publishTime>
     </File>
     <File Include="Tabs/Procurement/Supplierwiserawmilkqtyqlty.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 18:24:49</publishTime>
     </File>
     <File Include="Tabs/Procurement/Transaction.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/12/2017 12:51:55</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/TransportPayment.aspx">
+      <publishTime>04/19/2017 15:51:27</publishTime>
     </File>
     <File Include="Tabs/Procurement/VehicleMaster.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/19/2017 13:31:12</publishTime>
     </File>
     <File Include="Tabs/Procurement/VehicleTariff.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/17/2017 13:27:59</publishTime>
     </File>
     <File Include="Tabs/Procurement/VehicleType.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>04/11/2017 18:34:26</publishTime>
+    </File>
+    <File Include="Tabs/Procurement/VehiclewiseOperationStatementReport.aspx">
+      <publishTime>04/11/2017 18:36:36</publishTime>
     </File>
     <File Include="Tabs/Purchase/ApprovedRequestItems.aspx">
       <publishTime>03/02/2017 11:51:09</publishTime>
@@ -3580,7 +3607,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2017 11:51:10</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
-      <publishTime>04/19/2017 18:07:46</publishTime>
+      <publishTime>05/02/2017 19:30:06</publishTime>
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>03/02/2017 11:51:10</publishTime>

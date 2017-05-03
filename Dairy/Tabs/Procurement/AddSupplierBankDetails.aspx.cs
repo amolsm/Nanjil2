@@ -62,7 +62,7 @@ namespace Dairy.Tabs.Procurement
             p.BankAddress = txtAddress.Text;
             p.BranchName = txtBranchName.Text;
             p.AccountType = DropDownList1.SelectedItem.Text;
-            
+
             p.CreatedBy = App_code.GlobalInfo.Userid;
             p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             p.ModifiedBy = App_code.GlobalInfo.Userid;
@@ -116,7 +116,7 @@ namespace Dairy.Tabs.Procurement
             p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             p.ModifiedBy = App_code.GlobalInfo.Userid;
             p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
-       
+
             p.flag = "Update";
             int Result = 0;
             Result = pd.InsertSupplierBankDetails(p);
@@ -159,7 +159,7 @@ namespace Dairy.Tabs.Procurement
             dpBankName.ClearSelection();
             txtAddress.Text = string.Empty;
             txtBranchName.Text = string.Empty;
-           
+
         }
         public void BindBankInfoList()
         {
@@ -169,9 +169,9 @@ namespace Dairy.Tabs.Procurement
             StringBuilder sb = new StringBuilder();
             DS = pd.GetAllSupplierBankDetails();
             if (!Comman.Comman.IsDataSetEmpty(DS))
-            { 
-                    rpBankInfoList.DataSource = DS;
-                    rpBankInfoList.DataBind();
+            {
+                rpBankInfoList.DataSource = DS;
+                rpBankInfoList.DataBind();
             }
         }
 

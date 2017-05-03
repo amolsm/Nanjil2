@@ -19,6 +19,8 @@ namespace Dairy.Tabs.Procurement
             if (!IsPostBack)
             {
                 BindDropDown();
+                txtStartDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                txtEndDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             }
         }
 
@@ -46,6 +48,7 @@ namespace Dairy.Tabs.Procurement
             DataSet DS1 = new DataSet();
             DS1 = pd.PaymentSummary(p);
             string result = string.Empty;
+
             if (!Comman.Comman.IsDataSetEmpty(DS1))
             {
                 try
@@ -101,7 +104,7 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("</th>");
 
                     sb.Append("<th class='tg-baqh' colspan='7' style='text-align:center'>");
-                  
+
                     sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                     sb.Append("</th>");
 
@@ -185,11 +188,12 @@ namespace Dairy.Tabs.Procurement
                     double totalamt = 0.00;
                     foreach (DataRow row in DS1.Tables[0].Rows)
                     {
+
                         foreach (DataRow rows in DS1.Tables[1].Rows)
                         {
-                            count++;
                             if (row["Category"].ToString() == rows["Category"].ToString())
                             {
+                                count++;
                                 sb.Append("<td>");
                                 sb.Append(row["SupplierCode"].ToString());
                                 sb.Append("</td>");
@@ -276,19 +280,19 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("<b>Total :</b>");
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append("<b>"+ count+"</b>");
+                    sb.Append("<b>" + count + "</b>");
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    sb.Append("<b>"+ Convert.ToDecimal(totalmilkinlter).ToString("0.00") + "</b>");
+                    sb.Append("<b>" + Convert.ToDecimal(totalmilkinlter).ToString("0.00") + "</b>");
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    sb.Append("<b>"+ Convert.ToDecimal(totalamt).ToString("0.00") + "</b>");
+                    sb.Append("<b>" + Convert.ToDecimal(totalamt).ToString("0.00") + "</b>");
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    sb.Append("<b>"+ Convert.ToDecimal(totalsupplierscheme).ToString("0.00") + "</b>");
+                    sb.Append("<b>" + Convert.ToDecimal(totalsupplierscheme).ToString("0.00") + "</b>");
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    sb.Append("<b>"+ Convert.ToDecimal(totalrd).ToString("0.00") + "</b>");
+                    sb.Append("<b>" + Convert.ToDecimal(totalrd).ToString("0.00") + "</b>");
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
                     sb.Append("<b>" + Convert.ToDecimal(totalcanloan).ToString("0.00") + "</b>");
@@ -321,12 +325,12 @@ namespace Dairy.Tabs.Procurement
                 Payment.Text = result;
 
             }
-                uprouteList.Update();
+            uprouteList.Update();
 
-            }
-
-                
-                     
         }
+
+
+
     }
+}
 

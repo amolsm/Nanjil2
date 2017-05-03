@@ -1,7 +1,21 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RawMilkPaymentListViaBank.aspx.cs" Inherits="Dairy.Tabs.Procurement.RawMilkPaymentListViaBank" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RawMilkPaymentListViaBank.aspx.cs" Inherits="Dairy.Tabs.Procurement.RawMilkPaymentListViaBank"  %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<%--    <script type="text/javascript">
+        function showDiv()
+        {
+            debugger;
+            function showDiv() {
+                var x = document.getElementById('divDownload');
+                x.style.visibility = 'visible';
+               
+            }
+        }
+
+        
+        
+    </script>--%>
      <section class="content-header">
           <h1>
             Raw Milk Payment List Via Bank
@@ -144,8 +158,8 @@
                       
                               <asp:Button ID="btnGeneratereport" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnGeneratereport_Click"   Text="Generate Report" ValidationGroup="Save" />     &nbsp;&nbsp;
                         <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="PrintPanel()"   Text="Print" ValidationGroup="Save" />      &nbsp;&nbsp;    
-                          <asp:Button ID="btnExporttoexcell" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnExporttoexcell_Click"   Text="Download as Excell file" ValidationGroup="Save" visible="false"/>     &nbsp;&nbsp;
-                          <asp:Button ID="btnExportinText" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnExportinText_Click"   Text="Download as Text File" ValidationGroup="Save"  visible="false"/>      
+                        <%-- <asp:Button ID="btnExporttoexcell" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnExporttoexcell_Click1"  Text="Download as Excell file" ValidationGroup="Save" visible="true"/>     &nbsp;&nbsp;--%>
+                        <%-- <asp:Button ID="btnExportinText" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnExportinText_Click"   Text="Download as Text File" ValidationGroup="Save"  visible="true"/>      --%>
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -154,6 +168,7 @@
                        
                           
                       </div> 
+                  
                   </div>
         </div><!-- /.box-body -->
       </div>
@@ -166,7 +181,7 @@
                      
                     </ContentTemplate>
                 </asp:UpdatePanel>
-                 
+              
                 
             </div><!-- /.box-body -->            
           </div><!-- /.box -->
@@ -179,6 +194,7 @@
               </div>
 
             </div>
+
                      
             <div class="box-body" id="datalist">
                    
@@ -193,12 +209,16 @@
                         <asp:Literal runat="server" ID="Payment"></asp:Literal>
               </asp:Panel>  
 
+                   
                         </ContentTemplate>
                 </asp:UpdatePanel>
-  
-                 
-       
-              </div>
+              
+                    
+                </div>
+              <div id="divDownload" style="text-align: center;" runat="server" >     
+                  <asp:Button ID="btnExporttoexcell" class="btn btn-primary" style='margin-top:2px' runat="server" CommandName="MoveNext" OnClick="btnExporttoexcell_Click1"  Text="Download as Excel file" ValidationGroup="Save" visible="true"/>     &nbsp;&nbsp;
+                  <asp:Button ID="btnExportinText" class="btn btn-primary" style='margin-top:2px' runat="server" CommandName="MoveNext" OnClick="btnExportinText_Click"   Text="Download as Text File" ValidationGroup="Save"  visible="true"/>      
+                   </div>
               </div><!-- /.box -->
            <script type = "text/javascript">
                function PrintPanel() {
