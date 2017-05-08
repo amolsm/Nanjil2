@@ -5,12 +5,12 @@
       
       <section class="content-header">
           <h1>
-       Dispatch Return Comparison Agentwise Report
+       Agentwise Return Comparison Report
             <small>Administration</small>    
           </h1> 
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
-            <li class="active"> Dispatch Return Comparison Agentwise Report</li>
+            <li class="active"> Agentwise Return Comparison Report</li>
           </ol>
         </section>
 
@@ -47,9 +47,9 @@
 
 
 
-           <div class="box  ">
+           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="Dispatch Return Comparison Agentwise Report"></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="Agentwise Return Comparison Report"></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -178,7 +178,16 @@
                      
                     </ContentTemplate>
                 </asp:UpdatePanel>
-                 
+                   <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="upMain">
+            <ProgressTemplate>
+                
+                <div class="overlay">
+                <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+                </div>
+
+            </ProgressTemplate>
+            </asp:UpdateProgress>
                 
             </div><!-- /.box-body -->            
           </div><!-- /.box -->

@@ -311,11 +311,11 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
                <ul class="treeview-menu">
-                     <li><a href="/Tabs/Marketing/SalesComparison.aspx"><i class="fa fa-circle-o"></i> Sales Comparison Summary</a></li>
+                     <li><a href="/Tabs/Marketing/SalesComparison.aspx"><i class="fa fa-circle-o"></i> Agentwise Sales Comparison Summary</a></li>
                     <li><a href="/Tabs/Marketing/DespatchComparisonReport.aspx"><i class="fa fa-circle-o"></i> Dispatch Comparison Summary</a></li>
                   <li><a href="/Tabs/Marketing/ReturnComparisonReport.aspx"><i class="fa fa-circle-o"></i> Return Comparison Summary</a></li>
                  <li><a href="/Tabs/Marketing/SpotDamageComparisonReport.aspx"><i class="fa fa-circle-o"></i> Spot-Damage Comparison Summary</a></li>
-                      <li><a href="/Tabs/Marketing/DispatchReturnComparison.aspx"><i class="fa fa-circle-o"></i>Dispatch Agency Return Comparison  </a></li>
+                      <li><a href="/Tabs/Marketing/DispatchReturnComparison.aspx"><i class="fa fa-circle-o"></i>Agentwise Return Comparison Report</a></li>
                    </ul>
                        <li><a href="/Tabs/Marketing/ActiveInactiveIssues.aspx"><i class="fa fa-circle-o"></i>Active Inactive Issue</a></li>
                    <li><a href="/Tabs/Marketing/CorrectiveActionOnIssue.aspx"><i class="fa fa-circle-o"></i>Corrective Action On Issue</a></li>

@@ -102,7 +102,7 @@ namespace Dairy.Tabs.Marketing
             DateTime newdate1 = Convert.ToDateTime(txtEnd2Date.Text);
             TimeSpan ts1 = newdate1 - olddate1;
             int differenceInDays1 = ts1.Days + 1;
-          
+
             string result = string.Empty;
             DS = billdata.SalesComparisionreportbyDate((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtStart2Date.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEnd2Date.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpBrand.SelectedValue), Convert.ToInt32(dpType.SelectedValue), Convert.ToInt32(dpCommodity.SelectedValue));
             if (!Comman.Comman.IsDataSetEmpty(DS))
@@ -195,15 +195,15 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                     sb.Append("</th>");
                     sb.Append("<th class='tg-yw4l' style='text-align:right'>");
-                   // sb.Append("TIN:" + DS.Tables[4].Rows[0]["TinNumber"].ToString() + "<br>");
+                    // sb.Append("TIN:" + DS.Tables[4].Rows[0]["TinNumber"].ToString() + "<br>");
                     sb.Append("");
                     sb.Append("</th>");
                     sb.Append("</tr>");
 
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td class='tg-yw4l' colspan='7' style='text-align:center'>");
-                    sb.Append("<u>Sales Comparison Reports </u> <br/>");
-               
+                    sb.Append("<u> Agentwise Sales Comparison Report </u> <br/>");
+
                     sb.Append("</td>");
                     sb.Append("<td class='tg-yw4l' style='text-align:right'>");
                     //sb.Append("PH:248370,248605");
@@ -212,28 +212,28 @@ namespace Dairy.Tabs.Marketing
 
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td colspan='2'>");
-                    if (dpRoute.SelectedValue=="0")
+                    if (dpRoute.SelectedValue == "0")
                     {
                         sb.Append("All Route");
                     }
                     else { sb.Append(dpRoute.SelectedItem.Text); }
-                   
+
                     sb.Append("</td>");
                     sb.Append("<td colspan='2'>");
-                    if (dpBrand.SelectedValue =="0")
+                    if (dpBrand.SelectedValue == "0")
                     {
                         sb.Append("All Brand");
                     }
                     else { sb.Append(dpBrand.SelectedItem.Text); }
-                   
+
                     sb.Append("</td>");
                     sb.Append("<td colspan='2'>");
-                    if (dpType.SelectedValue =="0")
+                    if (dpType.SelectedValue == "0")
                     {
                         sb.Append("All Product Type");
                     }
                     else { sb.Append(dpType.SelectedItem.Text); }
-                   
+
                     sb.Append("</td>");
                     sb.Append("<td colspan='2'>");
                     if (dpCommodity.SelectedValue == "0")
@@ -241,8 +241,8 @@ namespace Dairy.Tabs.Marketing
                         sb.Append("All Commodity");
                     }
                     else { sb.Append(dpCommodity.SelectedItem.Text); }
-                   
-                    
+
+
                     sb.Append("</td>");
                     sb.Append("<td  style='text-align:right;font-size: 80%;'>");
                     sb.Append(DateTime.Now.ToString("dd-MM-yyyy HH:mm"));
@@ -274,7 +274,7 @@ namespace Dairy.Tabs.Marketing
 
                     sb.Append("<td rowspan='2' style='text-align:right'>");
                     sb.Append("<b>Diff.Quantity</b>");
-                    sb.Append("</td>"); 
+                    sb.Append("</td>");
 
                     sb.Append("<td rowspan='2' style='text-align:right'>");
                     sb.Append("<b>Avg.Diff.</b>");
@@ -307,13 +307,13 @@ namespace Dairy.Tabs.Marketing
                     view.Sort = "AgentCode";
                     DataTable sortagent = view.ToTable();
 
-                    double qty=0.00;
-                    double qty1=0.00;
+                    double qty = 0.00;
+                    double qty1 = 0.00;
                     double qty2 = 0.00;
                     double qty3 = 0.00;
-                    double diffavg=0.00;
-                    double avg=0.00; 
-                    double avg1=0.00;
+                    double diffavg = 0.00;
+                    double avg = 0.00;
+                    double avg1 = 0.00;
                     double totalqty = 0.00;
                     double totalavg = 0.00;
                     double totalqty1 = 0.00;
@@ -321,12 +321,12 @@ namespace Dairy.Tabs.Marketing
                     double diffqty = 0.00;
                     double totaldiffqty = 0.00;
                     double totaldiff = 0.00;
-                   
+
                     foreach (DataRow row in sortagent.Rows)
                     {
 
                         srno++;
-                     
+
                         sb.Append("<tr>");
                         sb.Append("<td>");
                         sb.Append(srno.ToString());
@@ -335,77 +335,80 @@ namespace Dairy.Tabs.Marketing
                         sb.Append(row["AgentCode"].ToString() + "&nbsp;" + row["AgentName"].ToString());
                         sb.Append("</td>");
 
-                      
-                          
-                          sb.Append("<td>");
-                                try
-                                {
-                                    qty = Convert.ToDouble(row["Quantity"]);
-                                }
-                                catch{}
-                                try{
-                                    qty2=Convert.ToDouble(row["Quantity2"]);
-                                    
-                                }
-                                catch { }
-                                double sumqty = qty + qty2;
-                                totalqty += sumqty;
-                                sb.Append(Convert.ToDecimal(sumqty).ToString("0.00"));
-                                sb.Append("</td>");
-                                sb.Append("<td colspan='2' style='text-align:center'>");
-                                avg = sumqty / differenceInDays;
-                                totalavg += avg;
-                                sb.Append(Convert.ToDecimal(avg).ToString("0.00"));
-                                sb.Append("</td>");
+
+
+                        sb.Append("<td>");
+                        try
+                        {
+                            qty = Convert.ToDouble(row["Quantity"]);
+                        }
+                        catch { }
+                        try
+                        {
+                            qty2 = Convert.ToDouble(row["Quantity2"]);
+
+                        }
+                        catch { }
+                        double sumqty = qty + qty2;
+                        totalqty += sumqty;
+                        sb.Append(Convert.ToDecimal(sumqty).ToString("0.00"));
+                        sb.Append("</td>");
+                        sb.Append("<td colspan='2' style='text-align:center'>");
+                        avg = sumqty / differenceInDays;
+                        totalavg += avg;
+                        sb.Append(Convert.ToDecimal(avg).ToString("0.00"));
+                        sb.Append("</td>");
 
 
 
 
-                                sb.Append("<td  style='text-align:center'>");
-                                try
-                                {
-                                    qty1 = Convert.ToDouble(row["Quantity1"]);
-                                }
-                                catch { }
-                                try
-                                {
-                                    qty3 = Convert.ToDouble(row["Quantity3"]);
+                        sb.Append("<td  style='text-align:center'>");
+                        try
+                        {
+                            qty1 = Convert.ToDouble(row["Quantity1"]);
+                        }
+                        catch { }
+                        try
+                        {
+                            qty3 = Convert.ToDouble(row["Quantity3"]);
 
-                                }
-                                catch { }
-                                double sumqty1 = qty1 + qty3;
-                                totalqty1 += sumqty1;
-                                sb.Append(Convert.ToDecimal(sumqty1).ToString("0.00"));
-                                sb.Append("</td>");
+                        }
+                        catch { }
+                        double sumqty1 = qty1 + qty3;
+                        totalqty1 += sumqty1;
+                        sb.Append(Convert.ToDecimal(sumqty1).ToString("0.00"));
+                        sb.Append("</td>");
 
 
-                                avg1 = sumqty1 / differenceInDays1;
-                                totalavg1 += avg1;
-                                sb.Append("<td style='text-align:right'>");
-                                sb.Append(Convert.ToDecimal(avg1).ToString("0.00"));
-                                sb.Append("</td>");
+                        avg1 = sumqty1 / differenceInDays1;
+                        totalavg1 += avg1;
+                        sb.Append("<td style='text-align:right'>");
+                        sb.Append(Convert.ToDecimal(avg1).ToString("0.00"));
+                        sb.Append("</td>");
 
-                                sb.Append("<td style='text-align:right'>");
-                                diffqty = sumqty1 - sumqty;
-                                totaldiffqty += diffqty;
-                                sb.Append(Convert.ToDecimal(diffqty).ToString("0.00"));
-                                sb.Append("</td>");
+                        sb.Append("<td style='text-align:right'>");
+                        diffqty = sumqty1 - sumqty;
+                        totaldiffqty += diffqty;
+                        sb.Append(Convert.ToDecimal(diffqty).ToString("0.00"));
+                        sb.Append("</td>");
 
-                                sb.Append("<td  style='text-align:right'>");
+                        sb.Append("<td  style='text-align:right'>");
 
-                                diffavg = avg1 - avg;
-                               
-                                totaldiff += diffavg;
-                                sb.Append(Convert.ToDecimal(diffavg).ToString("0.00"));
-                                sb.Append("</td>");
-                                sb.Append("</tr>");
-                           }
+                        diffavg = avg1 - avg;
+
+                        totaldiff += diffavg;
+                        sb.Append(Convert.ToDecimal(diffavg).ToString("0.00"));
+                        sb.Append("</td>");
+                        sb.Append("</tr>");
+                        sb.Append("<tr> <td colspan = '9'> &nbsp; </td> </tr>");
+
+                    }
 
 
                     sb.Append("<tr style='border-bottom:1px solid' > <td colspan = '9'> &nbsp; </td> </tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td >");
-                    sb.Append("<b>"+srno.ToString()+"</b>");
+                    sb.Append("<b>" + srno.ToString() + "</b>");
                     sb.Append("</td>");
                     sb.Append("<td >");
                     sb.Append("<b>Total:</b>");
@@ -420,7 +423,7 @@ namespace Dairy.Tabs.Marketing
 
 
                     sb.Append("<td  style='text-align:center'>");
-                    sb.Append("<b>"+totalqty1.ToString()+"</b>");
+                    sb.Append("<b>" + totalqty1.ToString() + "</b>");
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
                     sb.Append("<b>" + Convert.ToDecimal(totalavg1).ToString("0.00") + "</b>");
@@ -439,7 +442,7 @@ namespace Dairy.Tabs.Marketing
 
 
                     sb.Append("</tr>");
-                  
+
 
 
 
@@ -451,7 +454,8 @@ namespace Dairy.Tabs.Marketing
 
                 }
 
-                catch (Exception) {
+                catch (Exception)
+                {
                     result = "Comparison Report not found";
                     genratedBIll.Text = result;
                 }

@@ -24,7 +24,7 @@ namespace Dairy.Tabs.Marketing
                 {
                     dpRoute.DataSource = DS;
                     dpRoute.DataBind();
-                    dpRoute.Items.Insert(0, new ListItem("--Select  Route  --", "0"));
+                    dpRoute.Items.Insert(0, new ListItem("--All  Route  --", "0"));
                 }
 
                 DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentCode+' '+AgentName as Name", "AgentMaster", "IsArchive=0 and SchemeAmount!=0.00 and Agensytype='Agency' Order by AgentCode");
@@ -66,7 +66,7 @@ namespace Dairy.Tabs.Marketing
                 {
                     DS.Tables[1].Merge(DS.Tables[2], false, MissingSchemaAction.Add);
                     DS.Tables[1].Merge(DS.Tables[3], false, MissingSchemaAction.Add);
-                   
+
                 }
                 catch (Exception) { }
 
@@ -101,7 +101,7 @@ namespace Dairy.Tabs.Marketing
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:center'>");
-                
+
                 sb.Append("<b><u>  Agency Scheme Summary </u> </b><br/>");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");
@@ -120,12 +120,12 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</td>");
                 sb.Append("</tr>");
 
-            
+
                 sb.Append("<tr style='border-bottom:1px solid'>");
 
 
 
-                
+
                 sb.Append("<td>");
                 sb.Append("&nbsp;");
                 sb.Append("</td>");
@@ -139,21 +139,21 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("&nbsp;");
                 sb.Append("</td>");
                 sb.Append("</tr>");
-               
 
 
-               
+
+
 
                 double openingbalance = 0;
                 double closingbalance = 0;
-              
+
                 foreach (DataRow row in DS.Tables[1].Rows)
                 {
                     sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'></td></tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
 
                     sb.Append("<td>");
-                    sb.Append("<b>"+row["AgentCode"].ToString()+"</b>");
+                    sb.Append("<b>" + row["AgentCode"].ToString() + "</b>");
                     sb.Append("</td>");
                     sb.Append("<td colspan='3'>");
                     sb.Append("<b>" + row["AgentName"].ToString() + "</b>");
@@ -163,21 +163,21 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("</td>");
 
                     sb.Append("<td  style='text-align:right'>");
-                   
-                    
-                        double totalschemamt = 0;
-                        double openingb = 0;
-                        totalschemamt = Convert.ToDouble(row["TotalSchemeAmount"]);
+
+
+                    double totalschemamt = 0;
+                    double openingb = 0;
+                    totalschemamt = Convert.ToDouble(row["TotalSchemeAmount"]);
                     try
                     {
                         openingb = Convert.ToDouble(row["OpeningScheme"]);
                     }
                     catch { openingb = 0; }
-                        openingbalance = totalschemamt - openingb;
+                    openingbalance = totalschemamt - openingb;
                     if (openingbalance != 0)
                     { sb.Append("<b>" + openingbalance + "</b>"); }
                     else { sb.Append("<b>" + "" + "</b>"); }
-                  
+
                     sb.Append("</td>");
 
                     sb.Append("</tr>");
@@ -203,9 +203,9 @@ namespace Dairy.Tabs.Marketing
                             if (scheme != 0)
                             { sb.Append(scheme.ToString()); }
                             else { sb.Append(""); }
-                           
+
                             sb.Append("</td>");
-                        
+
                             sb.Append("</tr>");
                             sb.Append("<tr><td colspan='6'>&nbsp;</td></tr>");
                         }
@@ -222,19 +222,19 @@ namespace Dairy.Tabs.Marketing
                     if (totalscheme != 0)
                     { sb.Append(totalscheme); }
                     else { sb.Append(""); }
-                  
+
                     sb.Append("</td>");
                     sb.Append("<td>");
                     sb.Append("Closing Balance");
                     sb.Append("</td>");
 
                     sb.Append("<td style='text-align:right'>");
-                   
-                  
 
-                        double closingb = 0;
-                        double totalschemamt1 = 0;
-                        totalschemamt1 = Convert.ToDouble(row["TotalSchemeAmount"]);
+
+
+                    double closingb = 0;
+                    double totalschemamt1 = 0;
+                    totalschemamt1 = Convert.ToDouble(row["TotalSchemeAmount"]);
                     try
                     {
                         closingb = Convert.ToDouble(row["ClosingScheme"]);
@@ -244,8 +244,8 @@ namespace Dairy.Tabs.Marketing
                     if (closingbalance != 0)
                     { sb.Append("<b>" + closingbalance + "</b>"); }
                     else { sb.Append("<b>" + "" + "</b>"); }
-                   
-                 
+
+
                     sb.Append("</td>");
                     sb.Append("</tr>");
                     sb.Append("<tr><td colspan='6'>&nbsp;</td></tr>");
@@ -275,14 +275,14 @@ namespace Dairy.Tabs.Marketing
 
         protected void dpRoute_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentCode+' '+AgentName as Name", "AgentMaster", "IsArchive=0 and Agensytype='Agency'  and RouteId="+dpRoute.SelectedItem.Value+ "Order by AgentCode");
+            DS = BindCommanData.BindCommanDropDwon("AgentID", "AgentCode+' '+AgentName as Name", "AgentMaster", "IsArchive=0 and Agensytype='Agency'  and SchemeAmount!=0.00  and RouteId=" + dpRoute.SelectedItem.Value + "Order by AgentCode");
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 dpAgent.DataSource = DS;
                 dpAgent.DataBind();
                 dpAgent.Items.Insert(0, new ListItem("--All Agency  --", "0"));
             }
-            
+
         }
     }
 }

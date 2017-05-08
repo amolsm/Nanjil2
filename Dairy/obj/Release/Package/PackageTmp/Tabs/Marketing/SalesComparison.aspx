@@ -8,12 +8,12 @@
       
       <section class="content-header">
           <h1>
-          Sales Comparison Report
+          Agentwise Sales Comparison Report
             <small>Administration</small>    
           </h1> 
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
-            <li class="active">Sales Comparison Report</li>
+            <li class="active">Agentwise Sales Comparison Report</li>
           </ol>
         </section>
 
@@ -52,7 +52,7 @@
 
            <div class="box  ">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="Sales Comparison Report"></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="Agentwise Sales Comparison Report"></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -214,7 +214,16 @@
                      
                     </ContentTemplate>
                 </asp:UpdatePanel>
-                 
+                  <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="upMain">
+            <ProgressTemplate>
+                
+                <div class="overlay">
+                <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+                </div>
+
+            </ProgressTemplate>
+            </asp:UpdateProgress>
                 
             </div><!-- /.box-body -->            
           </div><!-- /.box -->
@@ -225,7 +234,7 @@
           function PrintPanel() {
               var panel = document.getElementById("<%=pnlBill.ClientID %>");
               var printWindow = window.open('', '', 'height=400,width=800');
-              printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 14px; font-family: sans-serif;}</style>");
+              printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 16px; font-family: sans-serif; }</style>");
               printWindow.document.write('</head><body >');
               printWindow.document.write(panel.innerHTML);
               printWindow.document.write('</body></html>');
