@@ -223,7 +223,16 @@
                      
                     </ContentTemplate>
                 </asp:UpdatePanel>
-                 
+
+                 <asp:UpdateProgress ID="UpdateProgress2" runat="server" AssociatedUpdatePanelID="upMain">
+            <ProgressTemplate>
+                
+                <div class="overlay">
+                  <i class="fa fa-refresh fa-spin"></i>
+                </div>
+
+            </ProgressTemplate>
+            </asp:UpdateProgress> 
                 
             </div><!-- /.box-body -->            
           </div><!-- /.box -->

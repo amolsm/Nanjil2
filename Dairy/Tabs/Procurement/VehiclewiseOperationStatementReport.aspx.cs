@@ -47,7 +47,7 @@ namespace Dairy.Tabs.Procurement
             }
             else
             {
-                p.VehicleNo = dpVehicleNo.SelectedItem.Text;
+                p.VehicleNo = dpVehicleNo.SelectedItem.Value;
             }
            
             DataSet DS = new DataSet();

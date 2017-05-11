@@ -73,9 +73,15 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='5' style='text-align:center'>");
-                sb.Append("<b>Nanjil Milk Collection Centre,Naguneri</b>");
-
-                sb.Append("</th>");
+                if (Session["CollectionCenterLoggedIn"] != null)
+                {
+                    sb.Append("<b>" + Session["CollectionCenterLoggedIn"].ToString() + "</b>");
+                }
+                else
+                {
+                    sb.Append("<b>Nanjil Milk Collection Centre,Naguneri</b>");
+                }
+                    sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
 

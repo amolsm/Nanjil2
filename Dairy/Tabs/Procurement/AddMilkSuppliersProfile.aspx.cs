@@ -283,7 +283,8 @@ namespace Dairy.Tabs.Procurement
                 {
                     int count = Convert.ToInt32(DS.Tables[1].Rows[0]["id"]);
                     count = count + 1;
-                    txtSupplierCode.Text = string.Format("S{0:0000}", count);
+                    //txtSupplierCode.Text = string.Format("S{0:0000}", count);
+                    txtSupplierCode.Text = Convert.ToString(count);
                     txtSupplierCode.ReadOnly = false;
                     rpSupplierProfList.DataSource = DS;
                     rpSupplierProfList.DataBind();
@@ -291,7 +292,8 @@ namespace Dairy.Tabs.Procurement
                 else
                 {
                     int count = 1;
-                    txtSupplierCode.Text = string.Format("S{0:0000}", count);
+                    //txtSupplierCode.Text = string.Format("S{0:0000}", count);
+                    txtSupplierCode.Text =Convert.ToString(count);
                     txtSupplierCode.ReadOnly = false;
                 }
             }

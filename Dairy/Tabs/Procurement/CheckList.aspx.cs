@@ -59,8 +59,6 @@ namespace Dairy.Tabs.Procurement
             if (!Comman.Comman.IsDataSetEmpty(DS1))
             {
                 StringBuilder sb = new StringBuilder();
-
-
                 sb.Append("<style type='text / css'>");
                 sb.Append(".tg  { border-collapse:collapse; border-spacing:0; border: none; } .dispnone {display:none;} ");
                 sb.Append("</style>");
@@ -88,15 +86,20 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
-
                 sb.Append("TIN:330761667331<br>");
                 sb.Append("</th>");
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='7' style='text-align:center'>");
-                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
-
+                if (Session["CollectionCenterLoggedIn"] != null)
+                {
+                    sb.Append("<b>" + Session["CollectionCenterLoggedIn"].ToString() + "</b>");
+                }
+                else
+                {
+                    sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
+                }
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");

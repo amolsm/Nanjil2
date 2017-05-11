@@ -60,9 +60,16 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
                 sb.Append("</th>");
 
-                sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center'>");
-                sb.Append("<b>Nanjil Milk Collection Centre,  Mulagumoodu, K.K.Dt.</b>");
-
+                sb.Append("<th class='tg-baqh' colspan='7' style='text-align:center'>");
+                //sb.Append("<b>Nanjil Milk Collection Centre,  Mulagumoodu, K.K.Dt.</b>");
+                if (Session["CollectionCenterLoggedIn"] != null)
+                {
+                    sb.Append("<b>" + Session["CollectionCenterLoggedIn"].ToString() + "</b>");
+                }
+                else
+                {
+                    sb.Append("<b>Nanjil Milk Collection Centre,  Mulagumoodu, K.K.Dt.</b>");
+                }
                 sb.Append("</th colspan='3'>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
@@ -72,7 +79,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td class='tg-yw4l' colspan='6' style='text-align:center'>");
+                sb.Append("<td class='tg-yw4l' colspan='7' style='text-align:center'>");
                 sb.Append("<u>Vehiclewise Opereation Report</u> <br/>");
                 sb.Append("</td>");
 
@@ -88,7 +95,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("Date : " + DateTime.Now.ToString());
                 sb.Append("</td>");
 
-                sb.Append("<td colspan='3'>");
+                sb.Append("<td colspan='4'>");
                 sb.Append("<b>Vehicle Type:</b> " + dpVehicletype.SelectedItem.Text.ToString());
                 //+ "&nbsp;" + DS.Tables[1].Rows[0]["VehicleType"].ToString());
                 sb.Append("</td>");
@@ -121,12 +128,14 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<b>Tot.Amt</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:left'>");
-                sb.Append("<b>TDS</b>");
+                sb.Append("<b>TDS.Amt</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:left'>");
-                sb.Append("<b>Ins.Amt</b>");
+                sb.Append("<b>Adv.Amt</b>");
                 sb.Append("</td>");
-
+                sb.Append("<td style='text-align:left'>");
+                sb.Append("<b>Net.Amt</b>");
+                sb.Append("</td>");
                 sb.Append("</tr>");
                 sb.Append("<tr>");
 
@@ -137,9 +146,12 @@ namespace Dairy.Tabs.Procurement
                 double totamt = 0.00;
                 double tds = 0.00;
                 double tottds = 0.00;
-                double insamt = 0.00;
-                double totinsamt = 0.00;
+                double advamt = 0.00;
+                double totadvamt = 0.00;
                 double NetAmt = 0.00;
+                double bata = 0.00;
+                double tdsAmt = 0.00;
+                double TotNetAmt = 0.00;
                 foreach (DataRow row in DS.Tables[0].Rows)
                 {
                     count++;
@@ -172,18 +184,27 @@ namespace Dairy.Tabs.Procurement
                     sb.Append(Convert.ToDecimal(amt).ToString("0.00"));
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:left'>");
-                    try { tds = Convert.ToDouble(row["TDS"]); }
+                    try {
+                        bata = Convert.ToDouble(row["Bata"]);
+                        tds = Convert.ToDouble(row["TDS"]); 
+                    tdsAmt = (amt + bata) * tds;}
                     catch { tds = 0.00; }
-                    tottds += tds;
-                    sb.Append(Convert.ToDecimal(tds).ToString("0.00"));
+                    tottds += tdsAmt;
+                    sb.Append(Convert.ToDecimal(tdsAmt).ToString("0.00"));
                     sb.Append("</td>");
 
                     sb.Append("<td style='text-align:left'>");
-                    try { insamt = Convert.ToDouble(row["InsAmount"]); }
-                    catch { insamt = 0.00; }
-                    sb.Append(Convert.ToDecimal(insamt).ToString("0.00"));
+                    try { advamt = Convert.ToDouble(row["AdvanceAmount"]); }
+                    catch { advamt = 0.00; }
+                    totadvamt += advamt;
+                    sb.Append(Convert.ToDecimal(advamt).ToString("0.00"));
                     sb.Append("</td>");
 
+                    sb.Append("<td style='text-align:left'>");
+                    NetAmt = amt - tdsAmt - advamt;
+                    sb.Append(Convert.ToDecimal(NetAmt).ToString("0.00"));
+                    TotNetAmt += NetAmt;
+                    sb.Append("</td>");
                     sb.Append("</tr>");
                 }
 
@@ -207,20 +228,23 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<b>" + Convert.ToDecimal(tottds).ToString("0.00") + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td>");
-                sb.Append("<b>" + Convert.ToDecimal(totinsamt).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-
-                sb.Append("<tr style='border-bottom:1px solid'>");
-                NetAmt = totamt - tottds - totinsamt;
-                sb.Append("<td colspan='6'>");
-                sb.Append("</td>");
-                sb.Append("<td style= 'text-align:left'>");
-                sb.Append("<b>Net Amount :</b>");
+                sb.Append("<b>" + Convert.ToDecimal(totadvamt).ToString("0.00") + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td>");
-                sb.Append("<b>" + Convert.ToDecimal(NetAmt).ToString("0.00") + "</b>");
+                sb.Append("<b>" + Convert.ToDecimal(TotNetAmt).ToString("0.00") + "</b>");
                 sb.Append("</td>");
-                sb.Append("</tr>");
+                
+                //sb.Append("<tr style='border-bottom:1px solid'>");
+                //NetAmt = totamt - tottds - totadvamt;
+                //sb.Append("<td colspan='6'>");
+                //sb.Append("</td>");
+                //sb.Append("<td style= 'text-align:left'>");
+                //sb.Append("<b>Net Amount :</b>");
+                //sb.Append("</td>");
+                //sb.Append("<td>");
+                //sb.Append("<b>" + Convert.ToDecimal(NetAmt).ToString("0.00") + "</b>");
+                //sb.Append("</td>");
+                //sb.Append("</tr>");
                 result = sb.ToString();
                 Payment.Text = result;
 

@@ -73,9 +73,15 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center;font-size: 120%';>");
-                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
-                //sb.Append("<b>" + (string.IsNullOrEmpty(DS1.Tables[1].Rows[0]["CenterName"].ToString()) ? string.Empty : DS1.Tables[1].Rows[0]["CenterName"].ToString()) + "</b>"); 
-
+                if (Session["CollectionCenterLoggedIn"] != null)
+                {
+                    sb.Append("<b>" + Session["CollectionCenterLoggedIn"].ToString() + "</b>");
+                }
+                else
+                {
+                    sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
+                    //sb.Append("<b>" + (string.IsNullOrEmpty(DS1.Tables[1].Rows[0]["CenterName"].ToString()) ? string.Empty : DS1.Tables[1].Rows[0]["CenterName"].ToString()) + "</b>"); 
+                }
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");

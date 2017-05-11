@@ -97,7 +97,7 @@
                       <div class="input-group-addon">
                     Route
                       </div>
-                       <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteId" runat="server" selected ToolTip="Select Route"> 
+                       <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteId" runat="server" selected ToolTip="Select Route" OnSelectedIndexChanged="dpRoute_SelectedIndexChanged" AutoPostBack="true"> 
                        </asp:DropDownList>                               
                     </div><!-- /.input group -->
 

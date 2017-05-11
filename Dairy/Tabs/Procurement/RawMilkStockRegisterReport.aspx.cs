@@ -115,7 +115,7 @@ namespace Dairy.Tabs.Procurement
                             sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '10'> &nbsp; </td> </tr>");
 
                             /////////////////////////////////
-                            if (DS.Tables[0].Rows.Count !=  null)
+                            if (DS.Tables[0].Rows.Count !=  0)
                             {
                                 sb.Append("<tr style='border-bottom:1px solid'>");
 
@@ -206,7 +206,7 @@ namespace Dairy.Tabs.Procurement
                                 sb.Append("</tr>");
                             }
 
-                            if (DS.Tables[1].Rows.Count != null)
+                            if (DS.Tables[1].Rows.Count != 0)
                             {
                                 sb.Append("<tr style='border-bottom:1px solid'>");
 
@@ -311,7 +311,7 @@ namespace Dairy.Tabs.Procurement
                                 sb.Append("</th>");
                                 sb.Append("</tr>");
                             }
-                            if (DS.Tables[2].Rows.Count != null)
+                            if (DS.Tables[2].Rows.Count != 0)
                             {
                                 sb.Append("<tr style='border-bottom:1px solid'>");
 

@@ -14,7 +14,10 @@ namespace Dairy.UserControl
             if (!IsPostBack)
             {
               lblLAstLoginName.Text=GlobalInfo.LlastLogin;
-              lblemployeeName1.Text = GlobalInfo.UserName;
+                string str = Convert.ToString(Session["CollectionCenterLoggedIn"]);
+                string str1 = string.Join(string.Empty, str.Skip(5));
+                lblemployeeName1.Text = GlobalInfo.UserName + "<br>" + "<center>" + str1 + "</center>";
+               
             }
         }
     }

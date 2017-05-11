@@ -31,13 +31,14 @@ namespace Dairy.Tabs.Procurement
                 dpRoute.DataBind();
                 dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
 
-                DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 ");
-                if (!Comman.Comman.IsDataSetEmpty(DS))
-                {
-                    dpSupplier.DataSource = DS;
-                    dpSupplier.DataBind();
-                    dpSupplier.Items.Insert(0, new ListItem("--Select Supplier --", "0"));
-                }
+               
+            }
+            DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 ");
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                dpSupplier.DataSource = DS;
+                dpSupplier.DataBind();
+                dpSupplier.Items.Insert(0, new ListItem("--Select Supplier --", "0"));
             }
         }
         protected void btnGeneratereport_Click(object sender, EventArgs e)
@@ -79,9 +80,15 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center;font-size: 120%';>");
-                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
-
-                sb.Append("</th>");
+                if (Session["CollectionCenterLoggedIn"]!=null)
+                {
+                    sb.Append(Session["CollectionCenterLoggedIn"]);
+                }
+                else
+                {
+                    sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
+                }
+                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
 
@@ -90,7 +97,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td class='tg-baqh' colspan='5' style='text-align:center'>");
+                sb.Append("<td class='tg-baqh' colspan='6' style='text-align:center'>");
                 sb.Append("<b><u>Raw Milk Purchase Bill Report</u> </b><br/>");
                 sb.Append("</td>");
 
@@ -333,5 +340,15 @@ namespace Dairy.Tabs.Procurement
 
         }
 
+        protected void dpRoute_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dpSupplier.ClearSelection();
+            DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 and RouteID=" + dpRoute.SelectedItem.Value);
+            
+                dpSupplier.DataSource = DS;
+                dpSupplier.DataBind();
+                dpSupplier.Items.Insert(0, new ListItem("--Select Supplier --", "0"));
+            
+        }
     }
 }

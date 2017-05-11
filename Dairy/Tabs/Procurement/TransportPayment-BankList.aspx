@@ -1,15 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TransportPayment.aspx.cs" Inherits="Dairy.Tabs.Procurement.TransportPayment" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TransportPayment-BankList.aspx.cs" Inherits="Dairy.Tabs.Procurement.TransportPayment_BankList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
      <section class="content-header">
           <h1>
-         Transport Payment Report
+        TransportPayment-BankList 
             <small>Transport</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Transport</a></li>
-            <li class="active"> <asp:Label runat="server" ID="lblHeaderTab" Text="Transport Payment Report"></asp:Label> </li>
+            <li class="active"> <asp:Label runat="server" ID="lblHeaderTab" Text="TransportPayment-BankList Report"></asp:Label> </li>
           </ol>
         </section>
      <section class="content">
@@ -43,7 +43,7 @@
           <!-- Default box -->
               <div class="box collapsed-box">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lblTabName" runat="server" Text="Transport Payment Report"></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lblTabName" runat="server" Text="Transport Payment Bank List Report"></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -57,7 +57,7 @@
         
                <div class="box box-solid box-default" style="margin-bottom:5px !important;" >
         <div class="box-header" style="padding:0px 0px 0px 10px !important">
-          <h3 class="box-title">Transport Payment</h3>
+          <h3 class="box-title">Transport Payment Bank List</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
 
@@ -138,14 +138,20 @@
           </div><!-- /.box -->
          <div class="box ">
             <div class="box-header with-border">
+                  <div id="divDownload" style="text-align: left;" runat="server" >     
+                  <asp:Button ID="btnExporttoexcell" class="btn btn-primary" style='margin-top:2px' runat="server" CommandName="MoveNext" OnClick="btnExporttoexcell_Click1"  Text="Download as Excel file" ValidationGroup="Save" visible="true"/>     &nbsp;&nbsp;
+                  <asp:Button ID="btnExportinText" class="btn btn-primary" style='margin-top:2px' runat="server" CommandName="MoveNext" OnClick="btnExportinText_Click"   Text="Download as Text File" ValidationGroup="Save"  visible="true"/>      
+                   </div>
+
               <h3 class="box-title"></h3>
+
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 
               </div>
 
             </div>
-                     
+     
             <div class="box-body" id="datalist">
                    
                 
@@ -174,6 +180,11 @@
                  
        
               </div>
+<%--                           <div id="divDownload" style="text-align: center;" runat="server" >     
+                  <asp:Button ID="btnExporttoexcell" class="btn btn-primary" style='margin-top:2px' runat="server" CommandName="MoveNext" Text="Download as Excel file" ValidationGroup="Save" visible="true" OnClick="btnExporttoexcell_Click"/>     &nbsp;&nbsp;
+                  <asp:Button ID="btnExportinText" class="btn btn-primary" style='margin-top:2px' runat="server" CommandName="MoveNext" Text="Download as Text File" ValidationGroup="Save"  visible="true" OnClick="btnExportinText_Click"/>      
+                   </div>--%>
+
               </div><!-- /.box -->
            </section>
            <script type = "text/javascript">

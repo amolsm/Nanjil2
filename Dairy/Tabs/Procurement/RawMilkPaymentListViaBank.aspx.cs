@@ -110,8 +110,14 @@ namespace Dairy.Tabs.Procurement
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='11' style='text-align:center'>");
-                sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
-
+                if (Session["CollectionCenterLoggedIn"] != null)
+                {
+                    sb.Append("<b>" + Session["CollectionCenterLoggedIn"].ToString() + "</b>");
+                }
+                else
+                {
+                    sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
+                }
                 sb.Append("</td>");
 
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");

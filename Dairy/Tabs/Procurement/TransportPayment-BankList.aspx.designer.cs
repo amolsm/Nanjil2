@@ -10,7 +10,7 @@
 namespace Dairy.Tabs.Procurement {
     
     
-    public partial class TransportPayment {
+    public partial class TransportPayment_BankList {
         
         /// <summary>
         /// lblHeaderTab control.
@@ -146,6 +146,33 @@ namespace Dairy.Tabs.Procurement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPrint;
+        
+        /// <summary>
+        /// divDownload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divDownload;
+        
+        /// <summary>
+        /// btnExporttoexcell control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExporttoexcell;
+        
+        /// <summary>
+        /// btnExportinText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExportinText;
         
         /// <summary>
         /// uprouteList control.

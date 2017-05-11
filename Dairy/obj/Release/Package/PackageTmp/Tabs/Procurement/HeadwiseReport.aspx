@@ -182,6 +182,15 @@
        
               </div>
               </div><!-- /.box -->
+         <asp:UpdateProgress ID="UpdateProgress2" runat="server" AssociatedUpdatePanelID="uprouteList">
+            <ProgressTemplate>
+                
+                <div class="overlay">
+                  <i class="fa fa-refresh fa-spin"></i>
+                </div>
+
+            </ProgressTemplate>
+            </asp:UpdateProgress> 
            <script type = "text/javascript">
                function PrintPanel() {
                    var panel = document.getElementById("<%=pnlPayment.ClientID %>");

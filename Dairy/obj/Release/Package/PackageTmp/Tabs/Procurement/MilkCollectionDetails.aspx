@@ -82,9 +82,13 @@
                 var snfperc = 0;
                 var clr = 0;
                 clr = $("#MainContent_txtCLRReading").val();
-                snfperc = (clr / 4) + (0.2 * fatperc) + 0.36;
-                snfperc = BreakUpSingleDecimalPlace(snfperc);
-                $("#MainContent_txtSNFPercentage").val(parseFloat(snfperc).toFixed(1));
+                if (clr == "") {
+                    snfperc = 0.00;
+                } else {
+                    snfperc = (clr / 4) + (0.2 * fatperc) + 0.36;
+                    snfperc = BreakUpSingleDecimalPlace(snfperc);
+                    $("#MainContent_txtSNFPercentage").val(parseFloat(snfperc).toFixed(1));
+                }
 
                 var snfkg = 0;
                 snfkg = (milkinkg * snfperc) / 100;
@@ -596,9 +600,6 @@
                           
                       </div> 
             <div class="box-body" id="datalist">
-                   
-                
-                       
 
                                 <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
                     <ContentTemplate>

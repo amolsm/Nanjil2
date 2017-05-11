@@ -42,24 +42,34 @@
                   <li><a href="/Tabs/Administration/UnitMaster.aspx"><i class="fa fa-circle-o"></i> Unit Information</a></li>
                   <li><a href="/Tabs/Administration/IncentiveSetup.aspx"><i class="fa fa-circle-o"></i> Incentive Rate Setup </a></li>
                       <li><a href="/Tabs/Administration/DamageRateSetup.aspx"><i class="fa fa-circle-o"></i>Damage Rate Setup  </a></li>
-            <li><a href="/Tabs/Procurement/RawMilkTariff.aspx"><i class="fa fa-circle-o"></i>RawMilkTarrif</a></li>
-               <li><a href="/Tabs/Procurement/VehicleTariff.aspx"><i class="fa fa-circle-o"></i> Vehicle Tariff Info</a></li>
+        <li class="treeview">
+                      <a href="#">
+              <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <span>Procurement</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+                <ul class="treeview-menu">    
+                   
+                     <li><a href="/Tabs/Procurement/RawMilkTariff.aspx"><i class="fa fa-circle-o"></i>RawMilkTarrif</a></li>
+                   <li><a href="/Tabs/Procurement/VehicleTariff.aspx"><i class="fa fa-circle-o"></i> Vehicle Tariff Info</a></li>
                    <li><a href="/Tabs/Procurement/ConsolidatePaymentSummary.aspx"><i class="fa fa-circle-o"></i>Consolidate Payment Summary</a></li>
-             
+                   <li><a href="/Tabs/Procurement/AddMilkCollectionRoute.aspx"><i class="fa fa-circle-o"></i>Milk Collection Route Profile</a></li> 
                    <li><a href="/Tabs/Procurement/HardCopyTariff.aspx"><i class="fa fa-circle-o"></i>Hard Copy Tariff</a></li>
-                    <li><a href="/Tabs/Procurement/RawMilkPurchaseBill.aspx"><i class="fa fa-circle-o"></i>Raw Milk Purchase Report</a></li>
-                  <li><a href="/Tabs/Procurement/TransportPayment.aspx"><i class="fa fa-circle-o"></i>Transport Payment</a></li>
-                  <li><a href="/Tabs/Procurement/HeadwiseReport.aspx"><i class="fa fa-circle-o"></i>Headwise Report</a></li>
+                   <li><a href="/Tabs/Procurement/RawMilkPurchaseBill.aspx"><i class="fa fa-circle-o"></i>Raw Milk Purchase Report</a></li>
+                   <li><a href="/Tabs/Procurement/TransportPayment.aspx"><i class="fa fa-circle-o"></i>Transport Payment</a></li>
+                   <li><a href="/Tabs/Procurement/HeadwiseReport.aspx"><i class="fa fa-circle-o"></i>Headwise Report</a></li>
                    <li><a href="/Tabs/Procurement/VehiclewiseOperationStatementReport.aspx"><i class="fa fa-circle-o"></i>Vehiclewise Operation Report</a></li>
-                  <li><a href="/Tabs/Procurement/ClosingOpeningStock.aspx"><i class="fa fa-circle-o"></i>Closing Opening Stock</a></li>
-                  <li><a href="/Tabs/Procurement/RawMilkStockRegisterReport.aspx"><i class="fa fa-circle-o"></i>Raw Milk Stock Register Report</a></li>
-                  <li><a href="/Tabs/Procurement/Received_DisposedHeadswiseDetails.aspx"><i class="fa fa-circle-o"></i>Received/Disposed Headswise Details</a></li>
-                  <li><a href="/Tabs/Procurement/Received_Disposed_Particularwise_Summary.aspx"><i class="fa fa-circle-o"></i>Received Disposed Particularwise Summary</a></li>
+                   <li><a href="/Tabs/Procurement/ClosingOpeningStock.aspx"><i class="fa fa-circle-o"></i>Closing Opening Stock</a></li>
+                   <li><a href="/Tabs/Procurement/RawMilkStockRegisterReport.aspx"><i class="fa fa-circle-o"></i>Raw Milk Stock Register Report</a></li>
+                   <li><a href="/Tabs/Procurement/Received_DisposedHeadswiseDetails.aspx"><i class="fa fa-circle-o"></i>Received/Disposed Headswise Details</a></li>
+                   <li><a href="/Tabs/Procurement/Received_Disposed_Particularwise_Summary.aspx"><i class="fa fa-circle-o"></i>Received Disposed Particularwise Summary</a></li>
 
-                    <li><a href="/Tabs/Procurement/AddMilkCollectionCenter.aspx"><i class="fa fa-circle-o"></i>Milk Collection Center Profile</a></li>
-   <li><a href="/Tabs/Procurement/IncentiveTarrif.aspx"><i class="fa fa-circle-o"></i>Procurement Incentive Tarrif</a></li>
-              </ul>
-            </li>
+                   <li><a href="/Tabs/Procurement/AddMilkCollectionCenter.aspx"><i class="fa fa-circle-o"></i>Milk Collection Center Profile</a></li>
+                   <li><a href="/Tabs/Procurement/IncentiveTarrif.aspx"><i class="fa fa-circle-o"></i>Procurement Incentive Tarrif</a></li>
+
+                   </ul>
+                   </li>
+                  </ul>
               <li class="treeview">
               <a href="#">
                 <i class="fa fa-gg fax2"> </i>
@@ -380,7 +390,7 @@
               </ul>
             </li> 
             
-                <li class="treeview">
+               <li class="treeview">
               <a href="#">
                 <i class="fa fa-tag"></i>
                 <span>Procurement</span>
@@ -391,7 +401,7 @@
                     <li><a href="/Tabs/Procurement/VehicleMaster.aspx"><i class="fa fa-circle-o"></i>VehicleMaster</a></li>
                   <li><a href="/Tabs/Procurement/ReceiveDisposalheadmaster.aspx"><i class="fa fa-circle-o"></i>Receive & Dispose Master</a></li>
                 
-                  <li><a href="/Tabs/Procurement/AddMilkCollectionRoute.aspx"><i class="fa fa-circle-o"></i>Milk Collection Route Profile</a></li> 
+                  
                 
                 
                 <li><a href="/Tabs/Procurement/AddMilkSuppliersProfile.aspx"><i class="fa fa-circle-o"></i>Milk Supplier Profile</a></li> 
@@ -406,7 +416,7 @@
                 <li><a href="/Tabs/Procurement/SupplierAdvanceInfo.aspx"><i class="fa fa-circle-o"></i> Vehicle Advance Info</a></li> 
                   <li><a href="/Tabs/Procurement/AddSupplierRDInfo.aspx"><i class="fa fa-circle-o"></i> Supplier RD Info</a></li>
                  <%-- <li><a href="/Tabs/Procurement/VehicleTariff.aspx"><i class="fa fa-circle-o"></i> Vehicle Tariff Info</a></li>--%>
-                
+               
                    <li><a href="/Tabs/Procurement/PaymentSummary.aspx"><i class="fa fa-circle-o"></i>Payment Summary</a></li>
                   <li><a href="/Tabs/Procurement/MilkCollectionTransport.aspx"><i class="fa fa-circle-o"></i>Vehicle IN-Out Entry</a></li>
               
@@ -416,11 +426,14 @@
                     <li><a href="/Tabs/Procurement/Transaction.aspx"><i class="fa fa-circle-o"></i>Transaction Summary</a></li>
                    <li><a href="/Tabs/Procurement/MonthlyRawMilkPurchaseSummary.aspx"><i class="fa fa-circle-o"></i>Monthly Raw Milk Purchase Summary</a></li>
                       <li><a href="/Tabs/Procurement/MilkCollectionTransportBill.aspx"><i class="fa fa-circle-o"></i>Milk Collection Transport Bill</a></li>
+                    <li><a href="/Tabs/Procurement/RawMilkPurchaseBill.aspx"><i class="fa fa-circle-o"></i>Raw Milk Purchase Report</a></li>
+                    <li><a href="/Tabs/Procurement/TransportPayment.aspx"><i class="fa fa-circle-o"></i>Transport Payment</a></li>
+                    <li><a href="/Tabs/Procurement/RawMilkStockRegisterReport.aspx"><i class="fa fa-circle-o"></i>Raw Milk Stock Register Report</a></li>
               </ul>
             </li>
             
             <%--<li class="header">LABELS</li>--%>
-        
+         
           </ul>
 </asp:Panel>
 
@@ -809,7 +822,7 @@
                       </ul>
                 
             </asp:Panel>
-            <asp:Panel runat="server" ID="pnlProcurement" Visible="false">
+           <asp:Panel runat="server" ID="pnlProcurement" Visible="false">
                 <ul class="sidebar-menu"> 
                     <li class="treeview">
               <a href="#">
@@ -822,7 +835,7 @@
                     <li><a href="/Tabs/Procurement/VehicleMaster.aspx"><i class="fa fa-circle-o"></i>VehicleMaster</a></li>
                   <li><a href="/Tabs/Procurement/ReceiveDisposalheadmaster.aspx"><i class="fa fa-circle-o"></i>Receive & Dispose Master</a></li>
                 
-                  <li><a href="/Tabs/Procurement/AddMilkCollectionRoute.aspx"><i class="fa fa-circle-o"></i>Milk Collection Route Profile</a></li> 
+                
                 
                 
                 <li><a href="/Tabs/Procurement/AddMilkSuppliersProfile.aspx"><i class="fa fa-circle-o"></i>Milk Supplier Profile</a></li> 
@@ -847,6 +860,9 @@
                     <li><a href="/Tabs/Procurement/Transaction.aspx"><i class="fa fa-circle-o"></i>Transaction Summary</a></li>
                    <li><a href="/Tabs/Procurement/MonthlyRawMilkPurchaseSummary.aspx"><i class="fa fa-circle-o"></i>Monthly Raw Milk Purchase Summary</a></li>
                       <li><a href="/Tabs/Procurement/MilkCollectionTransportBill.aspx"><i class="fa fa-circle-o"></i>Milk Collection Transport Bill</a></li>
+                   <li><a href="/Tabs/Procurement/RawMilkPurchaseBill.aspx"><i class="fa fa-circle-o"></i>Raw Milk Purchase Report</a></li>
+                    <li><a href="/Tabs/Procurement/TransportPayment.aspx"><i class="fa fa-circle-o"></i>Transport Payment</a></li>
+                    <li><a href="/Tabs/Procurement/RawMilkStockRegisterReport.aspx"><i class="fa fa-circle-o"></i>Raw Milk Stock Register Report</a></li>
               </ul>
             </li>
             

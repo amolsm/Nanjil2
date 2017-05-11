@@ -161,11 +161,21 @@
 
                         </ContentTemplate>
                 </asp:UpdatePanel>
-  
+            <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="uprouteList">
+            <ProgressTemplate>
+                
+                <div class="overlay">
+                <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+            <span class="sr-only">Loading...</span>
+                </div>
+
+            </ProgressTemplate>
+            </asp:UpdateProgress>
                  
        
               </div>
               </div><!-- /.box -->
+           </section>
            <script type = "text/javascript">
                function PrintPanel() {
                    var panel = document.getElementById("<%=pnlPayment.ClientID %>");
@@ -181,6 +191,6 @@
              return false;
          }
          </script>
-        </section>
+      
 </asp:Content>
 
