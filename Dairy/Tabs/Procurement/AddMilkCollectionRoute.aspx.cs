@@ -41,7 +41,14 @@ namespace Dairy.Tabs.Procurement
                 dpCenter.DataBind();
                 dpCenter.Items.Insert(0, new ListItem("--Select Center  --", "0"));
             }
-            DS = BindCommanData.BindCommanDropDwon("ID ", "QCat as Name", "Proc_tblIncentiveTariff", "IsActive=1");
+            //DS = BindCommanData.BindCommanDropDwon("Distinct QCat as Name ", "ID", "Proc_tblIncentiveTariff", "IsActive=1");
+            //if (!Comman.Comman.IsDataSetEmpty(DS))
+            //{
+            //    dpIncentiveTariff.DataSource = DS;
+            //    dpIncentiveTariff.DataBind();
+            //    dpIncentiveTariff.Items.Insert(0, new ListItem("--Select Incentive Tariff  --", "0"));
+            //}
+            DS = BindCommanData.GetIncentiveTariff("Distinct QCat as Name", "Proc_tblIncentiveTariff");
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 dpIncentiveTariff.DataSource = DS;
@@ -49,6 +56,13 @@ namespace Dairy.Tabs.Procurement
                 dpIncentiveTariff.Items.Insert(0, new ListItem("--Select Incentive Tariff  --", "0"));
             }
 
+            DS = BindCommanData.GetCategory("Category as Name", "Proc_RawMilkTarrif");
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+                Category.DataSource = DS;
+                Category.DataBind();
+                Category.Items.Insert(0, new ListItem("--Select Rawmilk Tariff --", "0"));
+            }
         }
 
         protected void btnAddRout_Click(object sender, EventArgs e)
@@ -60,10 +74,11 @@ namespace Dairy.Tabs.Procurement
             route.CenterID = Convert.ToInt32(dpCenter.SelectedValue);
             route.RouteName = txtRouteName.Text;
             route.ASOID = Convert.ToInt32(dpASOID.SelectedItem.Value);
-            route.Category = Convert.ToInt32(Category.SelectedItem.Value);
+            route.Category = Category.SelectedItem.Text;
             route.RouteDesc = txtRouteDescription.Text;
             route.Discription = txtDesc.Text;
-            route.QIncentiveId = Convert.ToInt32(dpIncentiveTariff.SelectedItem.Value);
+            //route.QIncentiveId = Convert.ToInt32(dpIncentiveTariff.SelectedItem.Value);
+            route.QIncentiveCategory = dpIncentiveTariff.SelectedItem.Text;
             route.CreatedBy = App_code.GlobalInfo.Userid;
             if (DropDownList1.SelectedValue == "1")
             {
@@ -206,16 +221,17 @@ namespace Dairy.Tabs.Procurement
                     Category.Items.FindByValue(DS.Tables[0].Rows[0]["Category"].ToString()).Selected = true;
                 }
                 dpIncentiveTariff.ClearSelection();
-                if (dpIncentiveTariff.Items.FindByValue(DS.Tables[0].Rows[0]["QIncentivtariffid"].ToString()) != null)
+                if (dpIncentiveTariff.Items.FindByText(DS.Tables[0].Rows[0]["QIncentivtariffid"].ToString()) != null)
                 {
-                    dpIncentiveTariff.Items.FindByValue(DS.Tables[0].Rows[0]["QIncentivtariffid"].ToString()).Selected = true;
+                    dpIncentiveTariff.Items.FindByText(DS.Tables[0].Rows[0]["QIncentivtariffid"].ToString()).Selected = true;
                 }
                 txtDesc.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Discription"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Discription"].ToString();
-                if (DS.Tables[0].Rows[0]["IsActive"].ToString()=="1")
+                DropDownList1.ClearSelection();
+                if (DS.Tables[0].Rows[0]["IsActive"].ToString() == "True")
                 {
                     DropDownList1.Items.FindByValue("1").Selected = true;
                 }
-                else if (DS.Tables[0].Rows[0]["IsActive"].ToString() == "0")
+                else if (DS.Tables[0].Rows[0]["IsActive"].ToString() == "False")
                 {
                     DropDownList1.Items.FindByValue("2").Selected = true;
                 }
@@ -232,9 +248,10 @@ namespace Dairy.Tabs.Procurement
             route.CenterID = 0;
             route.RouteName = string.Empty;
             route.ASOID = Convert.ToInt32(dpASOID.SelectedItem.Value);
-            route.Category = Convert.ToInt32(Category.SelectedItem.Value);
+            route.Category = Category.SelectedItem.Text;
             route.RouteDesc = string.Empty;
-            route.QIncentiveId = Convert.ToInt32(dpIncentiveTariff.SelectedItem.Value);
+            //route.QIncentiveId = Convert.ToInt32(dpIncentiveTariff.SelectedItem.Value);
+            route.QIncentiveCategory = dpIncentiveTariff.SelectedItem.Text;
             route.CreatedBy = App_code.GlobalInfo.Userid;
             route.Discription = string.Empty;
             route.IsActive = false;
@@ -278,7 +295,7 @@ namespace Dairy.Tabs.Procurement
             route.CenterID = Convert.ToInt32(dpCenter.SelectedValue);
             route.RouteName = txtRouteName.Text;
             route.ASOID = Convert.ToInt32(dpASOID.SelectedItem.Value);
-            route.Category = Convert.ToInt32(Category.SelectedItem.Value);
+            route.Category = Category.SelectedItem.Text;
             if (DropDownList1.SelectedValue == "1")
             {
                 route.IsActive = true;
@@ -289,7 +306,8 @@ namespace Dairy.Tabs.Procurement
             }
             route.RouteDesc = txtRouteDescription.Text;
             route.Discription = txtDesc.Text;
-            route.QIncentiveId = Convert.ToInt32(dpIncentiveTariff.SelectedItem.Value);
+            //route.QIncentiveId = Convert.ToInt32(dpIncentiveTariff.SelectedItem.Text);
+            route.QIncentiveCategory = dpIncentiveTariff.SelectedItem.Text;
             route.CreatedBy = App_code.GlobalInfo.Userid;
             route.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             route.ModifiedBy = App_code.GlobalInfo.Userid;
@@ -330,7 +348,7 @@ namespace Dairy.Tabs.Procurement
             DS = routeDate.GetAllMilkCollectionRouteDetails();
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                foreach(DataRow row in DS.Tables[0].Rows)
+                foreach (DataRow row in DS.Tables[0].Rows)
                 {
                     if (row["RouteName"].ToString() == txtRouteName.Text.Trim().ToString() && row["CenterID"].ToString() == dpCenter.SelectedItem.Value.ToString())
                     {
@@ -340,11 +358,11 @@ namespace Dairy.Tabs.Procurement
                 }
             }
 
-            }
+        }
 
         protected void btnAddNew_Click(object sender, EventArgs e)
         {
-           Response.Redirect("~/Tabs/Procurement/AddMilkCollectionRoute.aspx");
+            Response.Redirect("~/Tabs/Procurement/AddMilkCollectionRoute.aspx");
         }
     }
 }

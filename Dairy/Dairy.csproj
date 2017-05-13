@@ -200,7 +200,10 @@
     <Content Include="Tabs\Procurement\AddSuppliersLoanInfo.aspx" />
     <Content Include="Tabs\Procurement\CalulateRawMilkPurchase.aspx" />
     <Content Include="Tabs\Procurement\CheckList.aspx" />
+    <Content Include="Tabs\Procurement\ClosingOpeningStock.aspx" />
     <Content Include="Tabs\Procurement\ConsolidatePaymentSummary.aspx" />
+    <Content Include="Tabs\Procurement\HardCopyTariff.aspx" />
+    <Content Include="Tabs\Procurement\HeadwiseReport.aspx" />
     <Content Include="Tabs\Procurement\IncentiveTarrif.aspx" />
     <Content Include="Tabs\Procurement\InsertBatchWiseMilk.aspx" />
     <Content Include="Tabs\Procurement\MilkCollectionDetails.aspx" />
@@ -209,15 +212,21 @@
     <Content Include="Tabs\Procurement\MonthlyRawMilkPurchaseSummary.aspx" />
     <Content Include="Tabs\Procurement\PaymentSummary.aspx" />
     <Content Include="Tabs\Procurement\RawMilkPaymentListViaBank.aspx" />
+    <Content Include="Tabs\Procurement\RawMilkPurchaseBill.aspx" />
     <Content Include="Tabs\Procurement\RawMilkStockRegister.aspx" />
+    <Content Include="Tabs\Procurement\RawMilkStockRegisterReport.aspx" />
     <Content Include="Tabs\Procurement\RawMilkTariff.aspx" />
     <Content Include="Tabs\Procurement\ReceiveDisposalheadmaster.aspx" />
+    <Content Include="Tabs\Procurement\Received_DisposedHeadswiseDetails.aspx" />
+    <Content Include="Tabs\Procurement\Received_Disposed_Particularwise_Summary.aspx" />
     <Content Include="Tabs\Procurement\SupplierAdvanceInfo.aspx" />
     <Content Include="Tabs\Procurement\Supplierwiserawmilkqtyqlty.aspx" />
     <Content Include="Tabs\Procurement\Transaction.aspx" />
+    <Content Include="Tabs\Procurement\TransportPayment.aspx" />
     <Content Include="Tabs\Procurement\VehicleMaster.aspx" />
     <Content Include="Tabs\Procurement\VehicleTariff.aspx" />
     <Content Include="Tabs\Procurement\VehicleType.aspx" />
+    <Content Include="Tabs\Procurement\VehiclewiseOperationStatementReport.aspx" />
     <Content Include="Tabs\PurchaseM\Dashboard.aspx" />
     <Content Include="Tabs\PurchaseM\ViewPrchsRequest.aspx" />
     <Content Include="Tabs\Purchase\ApprovedRequestItems.aspx" />
@@ -1970,12 +1979,33 @@
     <Compile Include="Tabs\Procurement\CheckList.aspx.designer.cs">
       <DependentUpon>CheckList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Procurement\ClosingOpeningStock.aspx.cs">
+      <DependentUpon>ClosingOpeningStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\ClosingOpeningStock.aspx.designer.cs">
+      <DependentUpon>ClosingOpeningStock.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Procurement\ConsolidatePaymentSummary.aspx.cs">
       <DependentUpon>ConsolidatePaymentSummary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Tabs\Procurement\ConsolidatePaymentSummary.aspx.designer.cs">
       <DependentUpon>ConsolidatePaymentSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\HardCopyTariff.aspx.cs">
+      <DependentUpon>HardCopyTariff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\HardCopyTariff.aspx.designer.cs">
+      <DependentUpon>HardCopyTariff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\HeadwiseReport.aspx.cs">
+      <DependentUpon>HeadwiseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\HeadwiseReport.aspx.designer.cs">
+      <DependentUpon>HeadwiseReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Procurement\IncentiveTarrif.aspx.cs">
       <DependentUpon>IncentiveTarrif.aspx</DependentUpon>
@@ -2033,12 +2063,26 @@
     <Compile Include="Tabs\Procurement\RawMilkPaymentListViaBank.aspx.designer.cs">
       <DependentUpon>RawMilkPaymentListViaBank.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkPurchaseBill.aspx.cs">
+      <DependentUpon>RawMilkPurchaseBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkPurchaseBill.aspx.designer.cs">
+      <DependentUpon>RawMilkPurchaseBill.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Procurement\RawMilkStockRegister.aspx.cs">
       <DependentUpon>RawMilkStockRegister.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Tabs\Procurement\RawMilkStockRegister.aspx.designer.cs">
       <DependentUpon>RawMilkStockRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkStockRegisterReport.aspx.cs">
+      <DependentUpon>RawMilkStockRegisterReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\RawMilkStockRegisterReport.aspx.designer.cs">
+      <DependentUpon>RawMilkStockRegisterReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Procurement\RawMilkTariff.aspx.cs">
       <DependentUpon>RawMilkTariff.aspx</DependentUpon>
@@ -2053,6 +2097,20 @@
     </Compile>
     <Compile Include="Tabs\Procurement\ReceiveDisposalheadmaster.aspx.designer.cs">
       <DependentUpon>ReceiveDisposalheadmaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\Received_DisposedHeadswiseDetails.aspx.cs">
+      <DependentUpon>Received_DisposedHeadswiseDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\Received_DisposedHeadswiseDetails.aspx.designer.cs">
+      <DependentUpon>Received_DisposedHeadswiseDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\Received_Disposed_Particularwise_Summary.aspx.cs">
+      <DependentUpon>Received_Disposed_Particularwise_Summary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\Received_Disposed_Particularwise_Summary.aspx.designer.cs">
+      <DependentUpon>Received_Disposed_Particularwise_Summary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Procurement\SupplierAdvanceInfo.aspx.cs">
       <DependentUpon>SupplierAdvanceInfo.aspx</DependentUpon>
@@ -2075,6 +2133,13 @@
     <Compile Include="Tabs\Procurement\Transaction.aspx.designer.cs">
       <DependentUpon>Transaction.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Procurement\TransportPayment.aspx.cs">
+      <DependentUpon>TransportPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\TransportPayment.aspx.designer.cs">
+      <DependentUpon>TransportPayment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Procurement\VehicleMaster.aspx.cs">
       <DependentUpon>VehicleMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2095,6 +2160,13 @@
     </Compile>
     <Compile Include="Tabs\Procurement\VehicleType.aspx.designer.cs">
       <DependentUpon>VehicleType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehiclewiseOperationStatementReport.aspx.cs">
+      <DependentUpon>VehiclewiseOperationStatementReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\VehiclewiseOperationStatementReport.aspx.designer.cs">
+      <DependentUpon>VehiclewiseOperationStatementReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\PurchaseM\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>

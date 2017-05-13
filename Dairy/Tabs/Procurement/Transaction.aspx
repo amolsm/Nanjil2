@@ -79,7 +79,7 @@
         </div><!-- /.box-header -->
         <div class="box-body">
            
-
+             <div class="row">
             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -90,7 +90,10 @@
                        </asp:DropDownList>
                  
                     </div><!-- /.input group -->
-                 
+                  <%--<asp:RequiredFieldValidator InitialValue="0" ID="Rfv1" Display="Dynamic" 
+                             ValidationGroup="Save" runat="server" ControlToValidate="dpRoute" ForeColor="Red"
+                             ErrorMessage="Pls Select Route">
+                         </asp:RequiredFieldValidator>--%>
 
                   </div><!-- /.form group -->
 
@@ -106,12 +109,10 @@
                       </div>
                       <asp:TextBox ID="txtpaymentdate" runat="server" class="form-control"  placeholder="Payment Date" ToolTip="Payment Date" type="date"></asp:TextBox>      
                     </div><!-- /.input group -->
+                      
                   </div><!-- /.form group -->                   
-                  </div>  
-                  
-
-
-                        <div class="col-lg-3">
+                  </div>                                    
+             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -120,6 +121,8 @@
                       <asp:TextBox ID="txtfromdate" runat="server" class="form-control"  placeholder="From Date" ToolTip="From Date" type="date"></asp:TextBox>      
 
                   </div><!-- /.form group -->
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ValidationGroup="Save" ControlToValidate="txtfromdate" ForeColor="Red"
+                        ErrorMessage="Please Select Date  "></asp:RequiredFieldValidator>
                      </div> 
                         </div>
             <div class="col-lg-3">
@@ -131,8 +134,11 @@
                       <asp:TextBox ID="txttodate" runat="server" class="form-control"  placeholder="To Date" ToolTip="To Date" type="date"></asp:TextBox>      
 
                   </div><!-- /.form group -->
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Save" ControlToValidate="txttodate" ForeColor="Red"
+                        ErrorMessage="Please Select Date  "></asp:RequiredFieldValidator>
                      </div> 
                         </div>
+                 </div>
               <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -194,7 +200,7 @@
                         <th>Cash Loan</th>
                         <th>Bank Loan</th>
                         <th>NetAmount</th>
-                        <th>Save</th>
+                       <%-- <th>Save</th>--%>
                        
                       </tr>
                     </thead>
@@ -222,9 +228,9 @@
 
                          <td>
                              <asp:HiddenField id="hfSupplierID" runat="server" value='<%#Eval("SupplierID") %>' /> 
-                             <asp:LinkButton ID="lbEdite" AlternateText="Save" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
+                            <%-- <asp:LinkButton ID="lbEdite" AlternateText="Save" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
                                                                     ToolTip="Save" runat="server" CommandArgument='<%#Eval("SupplierID") %>'
-                                                                    CommandName="Edit"><i class="btn btn-primary"></i></asp:LinkButton>
+                                                                    CommandName="Edit"><i class="btn btn-primary"></i></asp:LinkButton>--%>
 
                          </td>
                        
@@ -250,7 +256,7 @@
                         <th>Cash Loan</th>
                         <th>Bank Loan</th>
                         <th>NetAmount</th>
-                        <th>Save</th>
+                        <%--<th>Save</th>--%>
                       </tr>
                     </tfoot>
 
@@ -296,7 +302,7 @@
             var confirm_value = document.createElement("INPUT");
             confirm_value.type = "hidden";
             confirm_value.name = "confirm_value";
-            if (confirm("Do you want to save data?")) {
+            if (confirm("data transaction is process is completed for this date. Do you want to update?")) {
                 confirm_value.value = "Yes";
             } else {
                 confirm_value.value = "No";

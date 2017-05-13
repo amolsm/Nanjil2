@@ -12,6 +12,7 @@ namespace Dairy.Tabs.Procurement
 {
     public partial class IncentiveTarrif : System.Web.UI.Page
     {
+        DataSet DS = new DataSet();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -30,9 +31,11 @@ namespace Dairy.Tabs.Procurement
             int result = 0;
             p.ID = 0;
             p.QCat = txtQCat.Text.ToString();
-            p.QLow= string.IsNullOrEmpty(txtQLow.Text) ? 0 : Convert.ToDecimal(txtQLow.Text);
+            p.QLow = string.IsNullOrEmpty(txtQLow.Text) ? 0 : Convert.ToDecimal(txtQLow.Text);
             p.QHigh = string.IsNullOrEmpty(txtQHigh.Text) ? 0 : Convert.ToDecimal(txtQHigh.Text);
             p.QIncentive = string.IsNullOrEmpty(txtQIncentive.Text) ? 0 : Convert.ToDecimal(txtQIncentive.Text);
+            p.Description = string.IsNullOrEmpty(txtDesc.Text) ? string.Empty : txtDesc.Text;
+
             if (dpStatus.SelectedItem.Value == "1")
             {
                 p.IsActive = true;
@@ -92,6 +95,7 @@ namespace Dairy.Tabs.Procurement
             p.QLow = string.IsNullOrEmpty(txtQLow.Text) ? 0 : Convert.ToDecimal(txtQLow.Text);
             p.QHigh = string.IsNullOrEmpty(txtQHigh.Text) ? 0 : Convert.ToDecimal(txtQHigh.Text);
             p.QIncentive = string.IsNullOrEmpty(txtQIncentive.Text) ? 0 : Convert.ToDecimal(txtQIncentive.Text);
+            p.Description = string.IsNullOrEmpty(txtDesc.Text) ? string.Empty : txtDesc.Text;
             if (dpStatus.SelectedItem.Value == "1")
             {
                 p.IsActive = true;
@@ -141,7 +145,7 @@ namespace Dairy.Tabs.Procurement
             {
                 case ("Edit"):
                     {
-                       
+
                         hftariff.Value = incentivetariffid.ToString();
                         incentivetariffid = Convert.ToInt32(hftariff.Value);
                         GetIncentiveTariffbyID(incentivetariffid);
@@ -151,17 +155,17 @@ namespace Dairy.Tabs.Procurement
                         uprouteList.Update();
                         break;
                     }
-                case ("delete"):
-                    {
+                    //case ("delete"):
+                    //    {
 
-                        hftariff.Value = incentivetariffid.ToString();
-                        incentivetariffid = Convert.ToInt32(hftariff.Value);
-                        DeleteIncentiveTariffbyId(incentivetariffid);
-                        BindIncentiveList();
-                        upMain.Update();
-                        uprouteList.Update();
-                        break;
-                    }
+                    //        hftariff.Value = incentivetariffid.ToString();
+                    //        incentivetariffid = Convert.ToInt32(hftariff.Value);
+                    //        DeleteIncentiveTariffbyId(incentivetariffid);
+                    //        BindIncentiveList();
+                    //        upMain.Update();
+                    //        uprouteList.Update();
+                    //        break;
+                    //    }
 
 
             }
@@ -233,7 +237,7 @@ namespace Dairy.Tabs.Procurement
                 txtQLow.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["QLow"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["QLow"].ToString();
                 txtQHigh.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["QHigh"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["QHigh"].ToString();
                 txtQIncentive.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["QIncentive"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["QIncentive"].ToString();
-               
+                txtDesc.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Description"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Description"].ToString();
             }
         }
 
@@ -241,5 +245,17 @@ namespace Dairy.Tabs.Procurement
         {
             Response.Redirect("~/Tabs/Procurement/IncentiveTarrif.aspx");
         }
+
+        //protected void txtQCat_TextChanged(object sender, EventArgs e)
+        //{
+        //    string Qcategory = txtQCat.Text;
+        //    ProcurementData pd = new ProcurementData();
+        //    DS = pd.GetExistingQcategory(Qcategory);
+        //    if (!Comman.Comman.IsDataSetEmpty(DS))
+        //    {
+        //        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Quality Catogory Already exists.')", true);
+        //        txtQCat.Text = string.Empty;
+        //    }
+        //}
     }
 }

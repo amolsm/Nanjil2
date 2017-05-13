@@ -23,7 +23,7 @@ namespace Dairy.Tabs.Procurement
                 btnSupplierUpdate.Visible = false;
                 dpState.Text = "TamilNadu";
                 dpCountry.Text = "India";
-                
+                txtJoiningDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
             }
         }
@@ -71,14 +71,14 @@ namespace Dairy.Tabs.Procurement
                 dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
             }
 
-            DS = new DataSet();
-            DS = BindCommanData.BindCommanDropDwonDistinct("ID", "BankName as Name", "BankDetails", "ID is not null");
-            dpBankName.DataSource = DS;
-            dpBankName.DataBind();
-            dpBankName.Items.Insert(0, new ListItem("--Select Bank Name--", "0"));
+            //DS = new DataSet();
+            //DS = BindCommanData.BindCommanDropDwonDistinct("ID", "BankName as Name", "BankDetails", "ID is not null");
+            //dpBankName.DataSource = DS;
+            //dpBankName.DataBind();
+            //dpBankName.Items.Insert(0, new ListItem("--Select Bank Name--", "0"));
 
             DS = new DataSet();
-            DS = BindCommanData.BindCommanDropDwonDistinct("ID", "IFSCCode as Name", "BankDetails", "ID is not null");
+            DS = BindCommanData.BindCommanDropDwon("ID", "IFSCCode as Name", "BankDetails", "ID is not null");
             dpIfscCode.DataSource = DS;
             dpIfscCode.DataBind();
             dpIfscCode.Items.Insert(0, new ListItem("--Select Ifsc Code--", "0"));
@@ -119,15 +119,15 @@ namespace Dairy.Tabs.Procurement
             p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             p.ModifiedBy = App_code.GlobalInfo.Userid;
             p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
-            p.BankDetailsID = 0;
+            //p.BankDetailsID = 0;
             p.SupplierID = 0;
             p.AccounNumber = txtAccountNo.Text;
-            p.AccountType = DropDownList2.SelectedItem.Text;
-            p.BankName = dpBankName.SelectedItem.Text;
-            p.IFSCCode = dpIfscCode.SelectedItem.Text;
-            p.BankAddress = txtAddress.Text;
-            p.BranchName = txtBranchName.Text;
-            p.AccountType = DropDownList2.SelectedItem.Text;
+            p.AccountType = string.Empty;
+            p.BankName = string.Empty;
+            p.IFSCCode = string.Empty;
+            p.BankAddress = string.Empty;
+            p.BranchName = string.Empty;
+            p.BankDetailsID = Convert.ToInt32(dpIfscCode.SelectedItem.Value);
             p.AccountName = txtAccountName.Text;
             p.flag = "Insert";
             int Result = 0;
@@ -198,13 +198,14 @@ namespace Dairy.Tabs.Procurement
             p.BankDetailsID = string.IsNullOrEmpty(HiddenField1.Value) ? 0 : Convert.ToInt32(HiddenField1.Value);
             p.SupplierID = string.IsNullOrEmpty(hfprofileID.Value) ? 0 : Convert.ToInt32(hfprofileID.Value);
             p.AccounNumber = txtAccountNo.Text;
-            p.AccountType = DropDownList2.SelectedItem.Text;
-            p.BankName = dpBankName.SelectedItem.Text;
-            p.IFSCCode = dpIfscCode.SelectedItem.Text;
-            p.BankAddress = txtAddress.Text;
-            p.BranchName = txtBranchName.Text;
-            p.AccountType = DropDownList2.SelectedItem.Text;
+            p.AccountType = string.Empty;
+            p.BankName = string.Empty;
+            p.IFSCCode = string.Empty;
+            p.BankAddress = string.Empty;
+            p.BranchName = string.Empty;
+            //p.AccountType = DropDownList2.SelectedItem.Text;
             p.AccountName = txtAccountName.Text;
+            p.BankId = Convert.ToInt32(dpIfscCode.SelectedItem.Value);
             p.flag = "Update";
             int Result = 0;
             Result = pd.InsertSupplierPrfile(p);
@@ -262,11 +263,11 @@ namespace Dairy.Tabs.Procurement
             //txtAdvanceGiven.Text = string.Empty;
             //txtScheme.Text = string.Empty;
             txtAccountNo.Text = string.Empty;
-            DropDownList2.ClearSelection();
+            //DropDownList2.ClearSelection();
             dpIfscCode.ClearSelection();
-            dpBankName.ClearSelection();
-            txtAddress.Text = string.Empty;
-            txtBranchName.Text = string.Empty;
+            //dpBankName.ClearSelection();
+            //txtAddress.Text = string.Empty;
+            //txtBranchName.Text = string.Empty;
             txtAccountName.Text = string.Empty;
         }
         public void BindSupplierList()
@@ -282,16 +283,18 @@ namespace Dairy.Tabs.Procurement
                 {
                     int count = Convert.ToInt32(DS.Tables[1].Rows[0]["id"]);
                     count = count + 1;
-                    txtSupplierCode.Text = string.Format("S{0:0000}", count);
-                    txtSupplierCode.ReadOnly = true;
+                    //txtSupplierCode.Text = string.Format("S{0:0000}", count);
+                    txtSupplierCode.Text = Convert.ToString(count);
+                    txtSupplierCode.ReadOnly = false;
                     rpSupplierProfList.DataSource = DS;
                     rpSupplierProfList.DataBind();
                 }
                 else
                 {
                     int count = 1;
-                    txtSupplierCode.Text = string.Format("S{0:0000}", count);
-                    txtSupplierCode.ReadOnly = true;
+                    //txtSupplierCode.Text = string.Format("S{0:0000}", count);
+                    txtSupplierCode.Text =Convert.ToString(count);
+                    txtSupplierCode.ReadOnly = false;
                 }
             }
         }
@@ -385,7 +388,7 @@ namespace Dairy.Tabs.Procurement
                     dpCountry.Items.FindByText(DS.Tables[0].Rows[0]["Country"].ToString()).Selected = true;
                 }
 
-              
+
                 //txtBankDetailID.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BankDetailsID"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BankDetailsID"].ToString();
                 //txtIncentive.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IncentiveTillDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["IncentiveTillDate"].ToString();
                 //txtDeposit.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ReccDeposit"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ReccDeposit"].ToString();
@@ -402,25 +405,25 @@ namespace Dairy.Tabs.Procurement
                     DropDownList1.Items.FindByValue("2").Selected = true;
                 }
                 HiddenField1.Value = string.IsNullOrEmpty(DS.Tables[1].Rows[0]["BankDetailID"].ToString()) ? string.Empty : DS.Tables[1].Rows[0]["BankDetailID"].ToString();
-                dpBankName.ClearSelection();
-                if (dpBankName.Items.FindByText(DS.Tables[1].Rows[0]["BankName"].ToString()) != null)
-                {
-                    dpBankName.Items.FindByText(DS.Tables[1].Rows[0]["BankName"].ToString()).Selected = true;
-                }
-               
+                //dpBankName.ClearSelection();
+                //if (dpBankName.Items.FindByText(DS.Tables[1].Rows[0]["BankName"].ToString()) != null)
+                //{
+                //    dpBankName.Items.FindByText(DS.Tables[1].Rows[0]["BankName"].ToString()).Selected = true;
+                //}
+
                 txtAccountNo.Text = string.IsNullOrEmpty(DS.Tables[1].Rows[0]["AccountNo"].ToString()) ? string.Empty : DS.Tables[1].Rows[0]["AccountNo"].ToString();
-                DropDownList2.ClearSelection();
-                if (DropDownList2.Items.FindByText(DS.Tables[1].Rows[0]["AccountType"].ToString()) != null)
-                {
-                    DropDownList2.Items.FindByText(DS.Tables[1].Rows[0]["AccountType"].ToString()).Selected = true;
-                }
+                //DropDownList2.ClearSelection();
+                //if (DropDownList2.Items.FindByText(DS.Tables[1].Rows[0]["AccountType"].ToString()) != null)
+                //{
+                //    DropDownList2.Items.FindByText(DS.Tables[1].Rows[0]["AccountType"].ToString()).Selected = true;
+                //}
                 dpIfscCode.ClearSelection();
-                if (dpIfscCode.Items.FindByText(DS.Tables[1].Rows[0]["IFSCCode"].ToString()) != null)
+                if (dpIfscCode.Items.FindByValue(DS.Tables[1].Rows[0]["BankId"].ToString()) != null)
                 {
-                    dpIfscCode.Items.FindByText(DS.Tables[1].Rows[0]["IFSCCode"].ToString()).Selected = true;
+                    dpIfscCode.Items.FindByValue(DS.Tables[1].Rows[0]["BankId"].ToString()).Selected = true;
                 }
-                txtAddress.Text = string.IsNullOrEmpty(DS.Tables[1].Rows[0]["BankAddress"].ToString()) ? string.Empty : DS.Tables[1].Rows[0]["BankAddress"].ToString();
-                txtBranchName.Text = string.IsNullOrEmpty(DS.Tables[1].Rows[0]["BranchName"].ToString()) ? string.Empty : DS.Tables[1].Rows[0]["BranchName"].ToString();
+                //txtAddress.Text = string.IsNullOrEmpty(DS.Tables[1].Rows[0]["BankAddress"].ToString()) ? string.Empty : DS.Tables[1].Rows[0]["BankAddress"].ToString();
+                //txtBranchName.Text = string.IsNullOrEmpty(DS.Tables[1].Rows[0]["BranchName"].ToString()) ? string.Empty : DS.Tables[1].Rows[0]["BranchName"].ToString();
                 txtAccountName.Text = string.IsNullOrEmpty(DS.Tables[1].Rows[0]["AccountName"].ToString()) ? string.Empty : DS.Tables[1].Rows[0]["AccountName"].ToString();
             }
         }
@@ -462,7 +465,7 @@ namespace Dairy.Tabs.Procurement
             p.SupplierID = string.IsNullOrEmpty(hfprofileID.Value) ? 0 : Convert.ToInt32(hfprofileID.Value);
             p.AccounNumber = string.Empty;
             p.AccountType = DropDownList1.SelectedItem.Text;
-            p.BankName = dpBankName.SelectedItem.Text;
+            //p.BankName = dpBankName.SelectedItem.Text;
             p.IFSCCode = dpIfscCode.SelectedItem.Text;
             p.BankAddress = string.Empty;
             p.BranchName = string.Empty;

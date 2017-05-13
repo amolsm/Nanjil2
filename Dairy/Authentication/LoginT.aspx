@@ -95,6 +95,20 @@
                     </div><!-- /.input group -->
                    </div>
            </asp:Panel>
+
+                  <asp:Panel runat="server" ID="pnlCollectionCenter" Visible="false">
+               <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <asp:Label runat="server" Text="Collection Center"></asp:Label>
+                      </div>
+                       <asp:DropDownList ID="dpCollectionCenter" class="form-control" DataTextField="Name" DataValueField="CenterID" runat="server" AutoPostBack="true" OnSelectedIndexChanged ="dpCollectionCenter_SelectedIndexChanged"   > 
+                       </asp:DropDownList>
+                        
+                         
+                    </div><!-- /.input group -->
+                   </div>
+           </asp:Panel>
         </form>
 
         

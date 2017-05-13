@@ -16,6 +16,7 @@ namespace Dairy.Tabs.Procurement
         DataSet DS = new DataSet();
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
 
@@ -25,8 +26,15 @@ namespace Dairy.Tabs.Procurement
                 btnupdateMilkCollection.Visible = false;
                 txtDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                 txtDate1.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
-
+                txtActualMilkInLtr.Attributes.Add("readonly", "readonly");
+                txtMilkInLtr.Attributes.Add("readonly", "readonly");
+                txtSNFPercentage.Attributes.Add("readonly", "readonly");
+                txtTSPercentage.Attributes.Add("readonly", "readonly");
+                txtFATInKG.Attributes.Add("readonly", "readonly");
+                txtSNFInKG.Attributes.Add("readonly", "readonly");
+                txtTSKG.Attributes.Add("readonly", "readonly");
             }
+
         }
 
         protected void BindDropDown()
@@ -53,113 +61,261 @@ namespace Dairy.Tabs.Procurement
             }
         }
 
-        protected void txtMilkInKG_TextChanged(object sender, EventArgs e)
-        {
-            double milkInLtr = System.Math.Round((Convert.ToDouble(txtMilkInKG.Text) / 1.03),2);
-            txtMilkInLtr.Text = milkInLtr.ToString();
-            string num = milkInLtr.ToString();
-           string outnum= BreakUpSingleDecimalPlace(num);
-           txtActualMilkInLtr.Text = outnum;
-            // txtActualMilkInLtr.Text = System.Math.Round(milkInLtr, 1,
-            //MidpointRounding.ToEven).ToString(); // Rounds to even
-            txtCLRReading.Focus();
-           
+        //protected void txtMilkInKG_TextChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        double milkInLtr = System.Math.Round((Convert.ToDouble(txtMilkInKG.Text) / 1.03), 2);
+        //        txtMilkInLtr.Text = milkInLtr.ToString();
+        //        string num = milkInLtr.ToString("0.0");
+        //        string outnum = BreakUpSingleDecimalPlace(num);
+        //        txtActualMilkInLtr.Text = outnum;
+        //        // txtActualMilkInLtr.Text = System.Math.Round(milkInLtr, 1,
+        //        //MidpointRounding.ToEven).ToString(); // Rounds to even
 
-        }
+        //        ((TextBox)sender).Focus();
+        //        ScriptManager manager = ScriptManager.GetCurrent(this);
+        //        manager.SetFocus(txtCLRReading);
 
-        public string BreakUpSingleDecimalPlace(string num)
-        {
-            string s = num;
-            string[] parts = s.Split('.');
-            int i1 = int.Parse(parts[0]);
-            int i2 = int.Parse(parts[1]);
-            string shortnum = i2.ToString();
-            if (shortnum.Length > 1)
-            {
-                num = num.Remove(num.Length - 1, 1);
-            }
-            return num;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        ((TextBox)sender).Focus();
+        //        ScriptManager manager = ScriptManager.GetCurrent(this);
+        //        manager.SetFocus(txtCLRReading);
+        //    }
+        //}
 
-        }
 
-        protected void txtCLRReading_TextChanged(object sender, EventArgs e)
-        {
-           
-            txtFATInKG.Text = System.Math.Round(((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtFATPercentage.Text)) / 100),2).ToString();
-            string snfpercentage = System.Math.Round((Convert.ToDouble(txtCLRReading.Text) / 4 + (0.2 * Convert.ToDouble(txtFATPercentage.Text)) + 0.36),2).ToString();
-            string outsnfpercentage = BreakUpSingleDecimalPlace(snfpercentage);
-            txtSNFPercentage.Text = outsnfpercentage;
-            txtSNFInKG.Text = System.Math.Round(((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtSNFPercentage.Text)) / 100),2).ToString();
-            string tsPercent = System.Math.Round((Convert.ToDouble(txtFATPercentage.Text) + Convert.ToDouble(txtSNFPercentage.Text)),2).ToString();
-            string outtspercent = BreakUpSingleDecimalPlace(tsPercent);
-            txtTSPercentage.Text = outtspercent;
-           
-            txtTSKG.Text = System.Math.Round((Convert.ToDouble(txtFATInKG.Text) + Convert.ToDouble(txtSNFInKG.Text)),2).ToString();
-            txtFATInKG.Focus();
-           
-        }
 
-      
+        //public string BreakUpSingleDecimalPlace(string num)
+        //{
+        //    string s = num;
+        //    string[] parts = s.Split('.');
+        //    int i1 = int.Parse(parts[0]);
+        //    int i2 = int.Parse(parts[1]);
+        //    string shortnum = i2.ToString();
+        //    if (shortnum.Length > 1)
+        //    {
+        //        num = num.Remove(num.Length - 1, 1);
+        //    }
+        //    return num;
+
+        //}
+
+        //protected void txtCLRReading_TextChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (txtFATPercentage.Text != string.Empty)
+        //        {
+        //            txtFATInKG.Text = System.Math.Round(((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtFATPercentage.Text)) / 100), 2).ToString();
+        //            string snfpercentage = System.Math.Round((Convert.ToDouble(txtCLRReading.Text) / 4 + (0.2 * Convert.ToDouble(txtFATPercentage.Text)) + 0.36), 2).ToString();
+        //            string outsnfpercentage = BreakUpSingleDecimalPlace(snfpercentage);
+        //            txtSNFPercentage.Text = outsnfpercentage;
+        //            txtSNFInKG.Text = System.Math.Round(((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtSNFPercentage.Text)) / 100), 2).ToString();
+        //            string tsPercent = System.Math.Round((Convert.ToDouble(txtFATPercentage.Text) + Convert.ToDouble(txtSNFPercentage.Text)), 2).ToString();
+        //            string outtspercent = BreakUpSingleDecimalPlace(tsPercent);
+        //            txtTSPercentage.Text = outtspercent;
+        //            txtTSKG.Text = System.Math.Round((Convert.ToDouble(txtFATInKG.Text) + Convert.ToDouble(txtSNFInKG.Text)), 2).ToString();
+
+
+
+        //        }
+        //        else if (txtFATPercentage.Text == string.Empty)
+        //        {
+        //            //txtFATPercentage.Text = Convert.ToDouble(0).ToString();
+        //            ((TextBox)sender).Focus();
+        //            ScriptManager managers1 = ScriptManager.GetCurrent(this);
+        //            managers1.SetFocus(txtFATPercentage);
+        //        }
+
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        string msg = ex.Message.ToString();
+
+        //        ScriptManager managers2 = ScriptManager.GetCurrent(this);
+        //        managers2.SetFocus(txtFATPercentage);
+        //    }
+
+
+
+        //}
+
+        //protected void txtFATPercentage_TextChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+
+        //        txtFATInKG.Text = System.Math.Round(((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtFATPercentage.Text)) / 100), 2).ToString();
+
+        //        string snfpercentage = System.Math.Round((Convert.ToDouble(txtCLRReading.Text) / 4 + (0.2 * Convert.ToDouble(txtFATPercentage.Text)) + 0.36), 2).ToString();
+        //        string outsnfpercentage = BreakUpSingleDecimalPlace(snfpercentage);
+        //        txtSNFPercentage.Text = outsnfpercentage;
+        //        txtSNFInKG.Text = System.Math.Round(((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtSNFPercentage.Text)) / 100), 2).ToString();
+        //        string tsPercent = System.Math.Round((Convert.ToDouble(txtFATPercentage.Text) + Convert.ToDouble(txtSNFPercentage.Text)), 2).ToString();
+        //        string outtspercent = BreakUpSingleDecimalPlace(tsPercent);
+        //        txtTSPercentage.Text = outtspercent;
+
+        //        txtTSKG.Text = System.Math.Round((Convert.ToDouble(txtFATInKG.Text) + Convert.ToDouble(txtSNFInKG.Text)), 2).ToString();
+        //        //((Button)sender).Focus();
+        //        //ScriptManager managers3 = ScriptManager.GetCurrent(this);
+        //        //managers3.SetFocus(btnAddMilkCollection);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        string msg = ex.Message.ToString();
+
+
+
+        //    }
+        //}
+
+        //protected void calculate()
+        //{
+        //    try
+        //    {
+        //        if (txtFATPercentage.Text != "")
+        //        {
+        //            txtFATInKG.Text = System.Math.Round(((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtFATPercentage.Text)) / 100), 2).ToString();
+        //        }
+        //        else {
+        //            txtFATPercentage.Text = Convert.ToDouble(0).ToString();
+        //        }
+        //        string snfpercentage = System.Math.Round((Convert.ToDouble(txtCLRReading.Text) / 4 + (0.2 * Convert.ToDouble(txtFATPercentage.Text)) + 0.36), 2).ToString();
+        //        string outsnfpercentage = BreakUpSingleDecimalPlace(snfpercentage);
+        //        txtSNFPercentage.Text = outsnfpercentage;
+        //        txtSNFInKG.Text = System.Math.Round(((Convert.ToDouble(txtMilkInKG.Text) * Convert.ToDouble(txtSNFPercentage.Text)) / 100), 2).ToString();
+        //        string tsPercent = System.Math.Round((Convert.ToDouble(txtFATPercentage.Text) + Convert.ToDouble(txtSNFPercentage.Text)), 2).ToString();
+        //        string outtspercent = BreakUpSingleDecimalPlace(tsPercent);
+        //        txtTSPercentage.Text = outtspercent;
+
+        //        txtTSKG.Text = System.Math.Round((Convert.ToDouble(txtFATInKG.Text) + Convert.ToDouble(txtSNFInKG.Text)), 2).ToString();
+        //        //
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        string msg = ex.Message.ToString();
+
+        //        txtFATPercentage.Focus();
+
+        //    }
+
+        //}
+
         protected void btnAddMilkCollection_Click(object sender, EventArgs e)
         {
-            Model.Procurement p = new Model.Procurement();
-            ProcurementData pd = new ProcurementData();
-            p.MilkCollectionID = 0;
-            p.Batch = txtBatch.Text;
-            p.Session = dpSession.SelectedItem.Text;
-         
-            p.Date = Convert.ToDateTime(txtDate.Text.ToString());
-            p.MilkInKG =Convert.ToDecimal(txtMilkInKG.Text);
-            p.MilkInLtr = Convert.ToDecimal(txtMilkInLtr.Text);
-            p.ActualMilkInLtr = Convert.ToDecimal(txtActualMilkInLtr.Text);
-            p.RouteID =Convert.ToInt32( dpRoute.SelectedItem.Value);
-            p.SupplierID = Convert.ToInt32(dpSupplier.SelectedItem.Value);
-            p.FATPercentage = Convert.ToDecimal(txtFATPercentage.Text);
-            p.FATInKG = Convert.ToDecimal(txtFATInKG.Text);
-            p.CLRReading = Convert.ToDecimal(txtCLRReading.Text);
-            //p.SNF = Convert.ToDecimal(txtSNF.Text);
-            p.SNFPercentage = Convert.ToDecimal(txtSNFPercentage.Text);
-            p.SNFInKG = Convert.ToDecimal(txtSNFInKG.Text);
-            p.TSPercentage = Convert.ToDecimal(txtTSPercentage.Text);
-            p.TSInKg = Convert.ToDecimal(txtTSKG.Text);
-            p.MilkCan = Convert.ToInt32(txtMilkCan.Text);
-            p.CreatedBy = App_code.GlobalInfo.Userid;
-            p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
-            p.ModifiedBy = App_code.GlobalInfo.Userid;
-            p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
-            p.flag = "Insert";
-            int Result = 0;
-            Result = pd.InsertMilkCollectionDetails(p);
-            if (Result > 0)
+            try
             {
+                Model.Procurement p1 = new Model.Procurement();
+                ProcurementData pd1 = new ProcurementData();
+                p1.Date = Convert.ToDateTime(txtDate.Text.ToString());
+                p1.Session = dpSession.SelectedItem.Text;
+                p1.SupplierID = Convert.ToInt32(dpSupplier.SelectedItem.Value);
+                DS = pd1.GetExistingData(p1);
+                if (!Comman.Comman.IsDataSetEmpty(DS))
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Supplier Already exist for the same date and session.')", true);
+                    ClearTextBox();
+                    txtMilkCan.Focus();
+                    int selectnextvalue = dpSupplier.Items.IndexOf(dpSupplier.Items.FindByValue(dpSupplier.SelectedItem.Value));
+                    try
+                    {
+                        dpSupplier.SelectedIndex = selectnextvalue + 1;
 
-                divDanger.Visible = false;
-                divwarning.Visible = false;
-                divSusccess.Visible = true;
-                lblSuccess.Text = "Milk Collection Record Add  Successfully";
+                    }
+                    catch { }
+                }
+                else
+                {
+                    txtActualMilkInLtr.ReadOnly = false;
+                    txtMilkInLtr.ReadOnly = false;
+                    txtSNFPercentage.ReadOnly = false;
+                    txtTSPercentage.ReadOnly = false;
+                    txtFATInKG.ReadOnly = false;
+                    txtSNFInKG.ReadOnly = false;
+                    txtTSKG.ReadOnly = false;
+                    Model.Procurement p = new Model.Procurement();
+                    ProcurementData pd = new ProcurementData();
+                    p.MilkCollectionID = 0;
+                    p.Batch = txtBatch.Text;
+                    p.Session = dpSession.SelectedItem.Text;
 
-                ClearTextBox();
-                //BindMilkCollectionList();
-                pnlError.Update();
-                upMain.Update();
-                uprouteList.Update();
+                    p.Date = Convert.ToDateTime(txtDate.Text.ToString());
+                    p.MilkInKG = Convert.ToDecimal(txtMilkInKG.Text);
+                    p.MilkInLtr = Convert.ToDecimal(txtMilkInLtr.Text);
+                    p.ActualMilkInLtr = Convert.ToDecimal(txtActualMilkInLtr.Text);
+                    p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
+                    p.SupplierID = Convert.ToInt32(dpSupplier.SelectedItem.Value);
+                    p.FATPercentage = Convert.ToDecimal(txtFATPercentage.Text);
+                    p.FATInKG = Convert.ToDecimal(txtFATInKG.Text);
+                    p.CLRReading = Convert.ToDecimal(txtCLRReading.Text);
+                    //p.SNF = Convert.ToDecimal(txtSNF.Text);
+                    p.SNFPercentage = Convert.ToDecimal(txtSNFPercentage.Text);
+                    p.SNFInKG = Convert.ToDecimal(txtSNFInKG.Text);
+                    p.TSPercentage = Convert.ToDecimal(txtTSPercentage.Text);
+                    p.TSInKg = Convert.ToDecimal(txtTSKG.Text);
+                    p.MilkCan = Convert.ToInt32(txtMilkCan.Text);
+                    p.CreatedBy = App_code.GlobalInfo.Userid;
+                    p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
+                    p.ModifiedBy = App_code.GlobalInfo.Userid;
+                    p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
+                    p.flag = "Insert";
+                    int Result = 0;
+                    Result = pd.InsertMilkCollectionDetails(p);
+                    if (Result > 0)
+                    {
+
+                        divDanger.Visible = false;
+                        divwarning.Visible = false;
+                        divSusccess.Visible = true;
+                        lblSuccess.Text = "Milk Collection Record Add  Successfully";
+
+                        ClearTextBox();
+                        //BindMilkCollectionList();
+                        pnlError.Update();
+                        upMain.Update();
+                        uprouteList.Update();
+                        txtMilkCan.Focus();
+
+                        int selectnextvalue = dpSupplier.Items.IndexOf(dpSupplier.Items.FindByValue(dpSupplier.SelectedItem.Value));
+                        try
+                        {
+                            dpSupplier.SelectedIndex = selectnextvalue + 1;
+                            divwarning.Visible = false;
+                            divSusccess.Visible = false;
+                            pnlError.Update();
+                            upMain.Update();
+                            //Page.ClientScript.RegisterStartupScript(this.GetType(), "somekey", "autoHide();", false);
+
+                        }
+                        catch { }
+                    }
+                    else
+                    {
+                        divDanger.Visible = false;
+                        divwarning.Visible = true;
+                        divSusccess.Visible = false;
+                        lblwarning.Text = "Please Contact to Site Admin";
+                        pnlError.Update();
+
+                    }
+                }
             }
-            else
+            catch(Exception ex)
             {
-                divDanger.Visible = false;
-                divwarning.Visible = true;
-                divSusccess.Visible = false;
-                lblwarning.Text = "Please Contact to Site Admin";
-                pnlError.Update();
-
+                string msg = ex.Message.ToString();
             }
         }
-
+    
         public void ClearTextBox()
         {
-           // txtBatch.Text = string.Empty;
+            // txtBatch.Text = string.Empty;
             //txtDate.Text = string.Empty;
-           // dpSession.ClearSelection();
+            // dpSession.ClearSelection();
             txtTSPercentage.Text = string.Empty;
             txtSNFPercentage.Text = string.Empty;
             txtSNFInKG.Text = string.Empty;
@@ -170,8 +326,8 @@ namespace Dairy.Tabs.Procurement
             txtFATPercentage.Text = string.Empty;
             txtFATInKG.Text = string.Empty;
             txtCLRReading.Text = string.Empty;
-           // dpRoute.ClearSelection();
-            dpSupplier.ClearSelection();
+            // dpRoute.ClearSelection();
+            //dpSupplier.ClearSelection();
             txtMilkCan.Text = string.Empty;
             txtTSKG.Text = string.Empty;
         }
@@ -259,8 +415,8 @@ namespace Dairy.Tabs.Procurement
                 }
                 txtBatch.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Batch"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Batch"].ToString();
                 txtDate.Text = Convert.ToDateTime(DS.Tables[0].Rows[0]["_Date"]).ToString("yyyy-MM-dd").ToString();
-              
-                dpSession.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["_Session"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["_Session"].ToString();
+
+                //dpSession.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["_Session"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["_Session"].ToString();
                 txtMilkCan.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Can"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Can"].ToString();
                 txtTSKG.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TSInKg"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TSInKg"].ToString();
             }
@@ -381,18 +537,18 @@ namespace Dairy.Tabs.Procurement
             DS1 = pd.ViewMilkCollectionDetails(p);
             //if (!Comman.Comman.IsDataSetEmpty(DS1))
             //{
-               
-                rpMilkCollectionList.DataSource = DS1;
-                rpMilkCollectionList.DataBind();
-                uprouteList.Update();
+
+            rpMilkCollectionList.DataSource = DS1;
+            rpMilkCollectionList.DataBind();
+            uprouteList.Update();
             //}
-        
-        
+
+
         }
 
         protected void btnAddNew_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("~/Tabs/Procurement/MilkCollectionDetails.aspx");
+            Response.Redirect("~/Tabs/Procurement/MilkCollectionDetails.aspx");
             divDanger.Visible = false;
             divwarning.Visible = false;
             divSusccess.Visible = false;
@@ -403,13 +559,36 @@ namespace Dairy.Tabs.Procurement
         protected void dpRoute_SelectedIndexChanged(object sender, EventArgs e)
         {
             dpSupplier.ClearSelection();
-            DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 and RouteId="+dpRoute.SelectedItem.Value);
-           
+            DS = BindCommanData.BindCommanDropDwon("SupplierID ", "SupplierCode +' '+SupplierName as Name  ", "Proc_MilkSuppliersProfile", "IsActive=1 and RouteId=" + dpRoute.SelectedItem.Value);
+
             dpSupplier.DataSource = DS;
             dpSupplier.DataBind();
             dpSupplier.Items.Insert(0, new ListItem("--Select Supplier  --", "0"));
-            
 
+            //ScriptManager manager = ScriptManager.GetCurrent(this);
+            //manager.SetFocus(dpSession);
         }
+
+        protected void dpSession_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ScriptManager manager = ScriptManager.GetCurrent(this);
+            manager.SetFocus(txtBatch);
+        }
+
+        protected void txtBatch_TextChanged(object sender, EventArgs e)
+        {
+            ScriptManager manager = ScriptManager.GetCurrent(this);
+            manager.SetFocus(dpSupplier);
+        }
+
+        //protected void dpSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    divDanger.Visible = false;
+        //    divwarning.Visible = false;
+        //    divSusccess.Visible = false;
+        //    pnlError.Update();
+        //    //upMain.Update();
+        //    txtMilkCan.Focus();
+        //}
     }
 }

@@ -18,12 +18,14 @@ namespace Dairy.Tabs.Procurement
             if (!IsPostBack)
             {
                 BindDropDown();
+                txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             }
         }
         protected void BindDropDown()
         {
 
-            DS = BindCommanData.BindCommanDropDwon("VehicleMasterID ", "VehicleNo", "Proc_VehicleMaster", "IsActive=1 ");
+            DS = BindCommanData.BindCommanDropDwon("VehicleMasterID ", "VehicleNo", "Proc_VehicleMaster", "IsActive=1 Order by VehicleNo Asc");
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 dpVehicleNo.DataSource = DS;
@@ -31,12 +33,12 @@ namespace Dairy.Tabs.Procurement
                 dpVehicleNo.Items.Insert(0, new ListItem("--Select Vehicle No.  --", "0"));
             }
         }
-    protected void btnGeneratereport_Click(object sender, EventArgs e)
+        protected void btnGeneratereport_Click(object sender, EventArgs e)
         {
             Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
 
-         
+
             p.FomDate = Convert.ToDateTime(txtStartDate.Text);
             p.ToDate = Convert.ToDateTime(txtEndDate.Text);
             p.VehicleNo = dpVehicleNo.SelectedItem.Text;
@@ -71,9 +73,15 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='5' style='text-align:center'>");
-                sb.Append("<b>Nanjil Milk Collection Centre,Naguneri</b>");
-              
-                sb.Append("</th>");
+                if (Session["CollectionCenterLoggedIn"] != null)
+                {
+                    sb.Append("<b>" + Session["CollectionCenterLoggedIn"].ToString() + "</b>");
+                }
+                else
+                {
+                    sb.Append("<b>Nanjil Milk Collection Centre,Naguneri</b>");
+                }
+                    sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
 
@@ -83,7 +91,7 @@ namespace Dairy.Tabs.Procurement
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='5' style='text-align:center'>");
-                sb.Append("<u>Milk Collection Transporting</u> <br/>");
+                sb.Append("<u>Milk Collection Transporting Bill</u> <br/>");
 
                 sb.Append("</td>");
 
@@ -99,7 +107,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</td>");
 
                 sb.Append("<td colspan='3'>");
-                sb.Append(dpVehicleNo.SelectedItem.Text.ToString() + "&nbsp;"+ DS.Tables[1].Rows[0]["VehicleType"].ToString());
+                sb.Append(dpVehicleNo.SelectedItem.Text.ToString() + "&nbsp;" + DS.Tables[1].Rows[0]["VehicleType"].ToString());
                 sb.Append("</td>");
                 sb.Append("<td>");
                 sb.Append(Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
@@ -127,7 +135,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>Total Amount</b>");
                 sb.Append("</td>");
-             
+
 
 
 
@@ -136,7 +144,7 @@ namespace Dairy.Tabs.Procurement
 
                 double amt = 0.00;
                 int count = 0;
-               
+
                 double km = 0.00;
                 double totalkm = 0.00;
                 double bata = 0.00;
@@ -152,7 +160,7 @@ namespace Dairy.Tabs.Procurement
                     sb.Append(Convert.ToDateTime(row["Date"]).ToString("dd-MM-yyyy"));
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append(row["RouteCode"].ToString());
+                    //sb.Append(row["RouteCode"].ToString());
                     sb.Append("</td>");
                     sb.Append("<td>");
                     sb.Append(row["RouteName"].ToString());
@@ -185,7 +193,7 @@ namespace Dairy.Tabs.Procurement
 
 
                     sb.Append("</td>");
-                  
+
 
                     sb.Append("</tr>");
                 }
@@ -209,7 +217,12 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>" + Convert.ToDecimal(totalnetamt).ToString("0.00") + "</b>");
                 sb.Append("</td>");
-               
+
+                sb.Append("</tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<td colspan='3' style='text-align:left'> <b>Driver Name: " + DS.Tables[1].Rows[0]["VehicleOwnerName"].ToString()+"</b></td>");
+                sb.Append("<td colspan='3' style='text-align:left'> <b>A/c.No: " + DS.Tables[1].Rows[0]["AccountNo"].ToString() + "</b></td>");
+                sb.Append("<td colspan='3' style='text-align:right'><b> IFSC: " + DS.Tables[1].Rows[0]["IFSCCode"].ToString() + "</b> </td>");
                 sb.Append("</tr>");
                 result = sb.ToString();
                 Payment.Text = result;
@@ -229,4 +242,4 @@ namespace Dairy.Tabs.Procurement
         }
 
     }
-    }
+}

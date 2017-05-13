@@ -57,26 +57,26 @@ namespace Dairy.Tabs.Marketing
             string result = string.Empty;
 
             DS = marketingdata.ReturnComparisionreportbyDate((Convert.ToDateTime(txtStart1Date.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEnd1Date.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtStart2Date.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEnd2Date.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpAgent.SelectedItem.Value), Convert.ToInt32(dpBrand.SelectedValue));
-            if (!Comman.Comman.IsDataSetEmpty(DS))
+            if ((DS.Tables[0].Rows.Count>0 && DS.Tables[0]!=null) && (DS.Tables[1].Rows.Count > 0 && DS.Tables[1] != null) && (DS.Tables[2].Rows.Count > 0 &&  DS.Tables[2] != null )&& (DS.Tables[3].Rows.Count > 0 && DS.Tables[3] != null))
             {
                 StringBuilder sb = new StringBuilder();
                 //for subtotal quantity
                 try
                 {
-                    DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["TypeID"] };
-                    DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["TypeName"] };
+                    DS.Tables[2].PrimaryKey = new[] { DS.Tables[2].Columns["TypeID"] };
+                    DS.Tables[2].PrimaryKey = new[] { DS.Tables[2].Columns["TypeName"] };
                 }
                 catch (Exception) { }
                 try
                 {
-                    DS.Tables[4].PrimaryKey = new[] { DS.Tables[4].Columns["TypeID"] };
-                    DS.Tables[4].PrimaryKey = new[] { DS.Tables[4].Columns["TypeName"] };
+                    DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["TypeID"] };
+                    DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["TypeName"] };
 
                 }
                 catch (Exception) { }
                 try
                 {
-                    DS.Tables[3].Merge(DS.Tables[4], false, MissingSchemaAction.Add);
+                    DS.Tables[2].Merge(DS.Tables[3], false, MissingSchemaAction.Add);
 
                 }
                 catch (Exception) { }
@@ -87,14 +87,14 @@ namespace Dairy.Tabs.Marketing
                 {
                     DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["ITEM"] };
                  
-                    //DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["CommodityID"] };
+                   
                 }
                 catch (Exception) { }
                 try
                 {
                     DS.Tables[1].PrimaryKey = new[] { DS.Tables[1].Columns["ITEM"] };
                   
-                    //DS.Tables[1].PrimaryKey = new[] { DS.Tables[1].Columns["CommodityID"] };
+                   
                 }
                 catch (Exception) { }
                 try
@@ -111,7 +111,7 @@ namespace Dairy.Tabs.Marketing
                     sb.Append(".tg .tg-yw4l{vertical-align:top}");
                     sb.Append(".tg .tg-baqh{text-align:center;vertical-align:top}");
                     sb.Append("</style>");
-                    //sb.Append("<table class='tg style1' style='page-break-inside:avoid; align:center;'>");
+                  
                     sb.Append("<table class='tg style1'  style=' position:relative;align:center;'>");
                     sb.Append("<colgroup>");
                     sb.Append("<col style = 'width:40px'>");
@@ -133,17 +133,17 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                     sb.Append("</th>");
                     sb.Append("<th class='tg-yw4l' style='text-align:right'>");
-                   // sb.Append("TIN:" + DS.Tables[2].Rows[0]["TinNumber"].ToString() + "<br>");
+                  
                     sb.Append("</th>");
                     sb.Append("</tr>");
 
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td class='tg-yw4l' colspan='7' style='text-align:center'>");
                   
-                    sb.Append("<b><u>AgentWise Return Comparison Reports </u></b> <br/>");
+                    sb.Append("<b><u>Agentwise Return Comparison Report</u></b> <br/>");
                     sb.Append("</td>");
                     sb.Append("<td class='tg-yw4l' style='text-align:right'>");
-                   // sb.Append("PH:248370,248605");
+                  
                     sb.Append("</td> </tr>");
 
                     sb.Append("<tr style='border-bottom:1px solid'>");
@@ -215,7 +215,7 @@ namespace Dairy.Tabs.Marketing
                     DataView view = DS.Tables[0].DefaultView;
                     view.Sort = "TypeID ASC";
                     DataTable sortagent = view.ToTable();
-                    DataView view1 = DS.Tables[3].DefaultView;
+                    DataView view1 = DS.Tables[2].DefaultView;
                     view1.Sort = "TypeID ASC";
                     DataTable sorttype = view1.ToTable();
                     double qty = 0.00;

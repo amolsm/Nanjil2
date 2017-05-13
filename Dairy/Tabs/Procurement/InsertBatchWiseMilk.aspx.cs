@@ -83,11 +83,11 @@ namespace Dairy.Tabs.Procurement
             p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
             p.flag = "Insert";
 
-            DS = pd.GetOpeningClosingBal(p.Date,p.CenterID);
+            DS = pd.GetOpeningClosingBal(p.Date, p.CenterID);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 p.BalanceID = Convert.ToInt32(string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BalanceID"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BalanceID"].ToString());
-                decimal OpeningBal =Convert.ToDecimal(string.IsNullOrEmpty(DS.Tables[0].Rows[0]["OpeningBalance"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["OpeningBalance"].ToString());
+                decimal OpeningBal = Convert.ToDecimal(string.IsNullOrEmpty(DS.Tables[0].Rows[0]["OpeningBalance"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["OpeningBalance"].ToString());
                 decimal ClosingBal = Convert.ToDecimal(string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ClosingBalance"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ClosingBalance"].ToString());
                 if (rdRecieving.Checked)
                 {
@@ -115,7 +115,7 @@ namespace Dairy.Tabs.Procurement
                         p.OpeningBalance = Convert.ToDecimal(string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ClosingBalance"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ClosingBalance"].ToString());
                         p.ClosingBalance = p.OpeningBalance - p.ActualMilkInLtr;
                     }
-                    
+
                 }
                 else
                 {
@@ -321,7 +321,7 @@ namespace Dairy.Tabs.Procurement
                 p.BatchWiseMilkCollectionID = 0;
                 p.flag1 = "Disposal";
             }
-            
+
             p.BatchNo = txtBatch.Text;
             p.VehicleNo = txtVehicalNo.Text;
             p.Session = dpSession.SelectedItem.Text;

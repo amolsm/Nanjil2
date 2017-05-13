@@ -18,11 +18,16 @@ namespace Dairy.Tabs.Procurement
             if (!IsPostBack)
             {
 
-                BindMilkCollectionList();
+                //BindMilkCollectionList();
                 BindDropDown();
                 btnAddMilkTransport.Visible = true;
                 btnupdateMilkTransport.Visible = false;
                 txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                txtDate1.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                txtMorningInTime.Text = DateTime.Now.ToString("HH:mm");
+                txtMorningOutTime.Text = DateTime.Now.ToString("HH:mm");
+                txtEveningInTime.Text = DateTime.Now.ToString("HH:mm");
+                txtEveningOutTime.Text = DateTime.Now.ToString("HH:mm");
             }
         }
 
@@ -35,29 +40,29 @@ namespace Dairy.Tabs.Procurement
                 dpRoute.DataSource = DS;
                 dpRoute.DataBind();
                 dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
+
+                dpRoute1.DataSource = DS;
+                dpRoute1.DataBind();
+                dpRoute1.Items.Insert(0, new ListItem("--Select All Route  --", "0"));
             }
-            DS = BindCommanData.BindCommanDropDwon("VehicleMasterID ", "VehicleNo", "Proc_VehicleMaster", "IsActive=1 ");
+            DS = BindCommanData.BindCommanDropDwon("VehicleMasterID ", "VehicleNo", "Proc_VehicleMaster", "IsActive=1  Order by VehicleNo Asc");
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 dpVehicleNo.DataSource = DS;
                 dpVehicleNo.DataBind();
                 dpVehicleNo.Items.Insert(0, new ListItem("--Select Vehicle No.  --", "0"));
+
+                dpVehicleNo1.DataSource = DS;
+                dpVehicleNo1.DataBind();
+                dpVehicleNo1.Items.Insert(0, new ListItem("--Select All Vehicle  --", "0"));
             }
 
         }
-        public void BindMilkCollectionList()
-        {
+        //public void BindMilkCollectionList(string dates,string vehicle,int route)
+        //{
 
-            ProcurementData pd = new ProcurementData();
-            DataSet DS = new DataSet();
-            StringBuilder sb = new StringBuilder();
-            DS = pd.GetAllMilkCollectionTransportDetails();
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
-                rpMilkCollectionList.DataSource = DS;
-                rpMilkCollectionList.DataBind();
-            }
-        }
+
+        //}
 
         protected void rpMilkCollectionList_ItemCommand(object sender, RepeaterCommandEventArgs e)
         {
@@ -75,7 +80,11 @@ namespace Dairy.Tabs.Procurement
                         //lbltital.Text = "Edit Route";
                         hfMilkCollectionID.Value = MilkCollectionid.ToString();
                         MilkCollectionid = Convert.ToInt32(hfMilkCollectionID.Value);
-                        BindMilkCollectionList();
+
+                        string dates = Convert.ToDateTime(txtDate1.Text).ToString("dd-MM-yyyy");
+                        string vehicle = dpVehicleNo1.SelectedItem.Text;
+                        int route = Convert.ToInt32(dpRoute1.SelectedItem.Value);
+                        //BindMilkCollectionList(dates, vehicle, route);
                         GetMilkCollectionTransportDetailsbyID(MilkCollectionid);
                         btnAddMilkTransport.Visible = false;
                         btnupdateMilkTransport.Visible = true;
@@ -89,7 +98,10 @@ namespace Dairy.Tabs.Procurement
                         hfMilkCollectionID.Value = MilkCollectionid.ToString();
                         MilkCollectionid = Convert.ToInt32(hfMilkCollectionID.Value);
                         DeleteMilkCollectionTransportbyID(MilkCollectionid);
-                        BindMilkCollectionList();
+                        string dates = Convert.ToDateTime(txtDate1.Text).ToString("dd-MM-yyyy");
+                        string vehicle = dpVehicleNo1.SelectedItem.Text;
+                        int route = Convert.ToInt32(dpRoute1.SelectedItem.Value);
+                        //BindMilkCollectionList(dates, vehicle, route);
                         upMain.Update();
                         uprouteList.Update();
                         break;
@@ -101,58 +113,67 @@ namespace Dairy.Tabs.Procurement
 
         protected void btnAddMilkCollection_Click(object sender, EventArgs e)
         {
-            Model.Procurement p = new Model.Procurement();
-            ProcurementData pd = new ProcurementData();
-            p.MilkCollectionTransportID = 0;
-            p.Date = Convert.ToDateTime(txtDate.Text);
-            p.VehicleNo = dpVehicleNo.SelectedItem.Text;
-            p.RouteID =Convert.ToInt32(dpRoute.SelectedItem.Value);
-            p.MorningKM = Convert.ToDouble(txtMorningKM.Text);
-            p.EveningKM = Convert.ToDouble(txtEveningKM.Text);
-            p.Bata = Convert.ToDouble(txtBata.Text);
-            p.InstallmentAmount = Convert.ToDouble(txtAmount.Text);
-            p.MorningInTime = txtMorningInTime.Text;
-            p.MorningOutTime = txtMorningOutTime.Text;
-            p.EveningInTime = txtEveningInTime.Text;
-            p.EveningOutTime = txtEveningOutTime.Text;
-            p.MorningInCan = txtMCanIn.Text;
-            p.MorningOutCan = txtMCanOut.Text;
-            p.EveningInCan = txtEInCan.Text;
-            p.EveningOutCan = txtEOutCan.Text;
-            p.DriverName = txtDriverName.Text;
-            p.Remarks = txtRemarks.Text;
-            p.CreatedBy = App_code.GlobalInfo.Userid;
-            p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
-            p.ModifiedBy = App_code.GlobalInfo.Userid;
-            p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
-            p.flag = "Insert";
-            int Result = 0;
-            Result = pd.InsertMilkCollectionTransportDetails(p);
-            if (Result > 0)
+            try
             {
+                Model.Procurement p = new Model.Procurement();
+                ProcurementData pd = new ProcurementData();
+                p.MilkCollectionTransportID = 0;
+                p.Date = Convert.ToDateTime(txtDate.Text);
+                p.VehicleNo = dpVehicleNo.SelectedItem.Text;
+                p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
+                p.MorningKM = Convert.ToDouble(txtMorningKM.Text);
+                p.EveningKM = Convert.ToDouble(txtEveningKM.Text);
+                p.Bata = Convert.ToDouble(txtBata.Text);
+                p.InstallmentAmount = Convert.ToDouble(txtAmount.Text);
+                p.MorningInTime = txtMorningInTime.Text;
+                p.MorningOutTime = txtMorningOutTime.Text;
+                p.EveningInTime = txtEveningInTime.Text;
+                p.EveningOutTime = txtEveningOutTime.Text;
+                p.MorningInCan = txtMCanIn.Text;
+                p.MorningOutCan = txtMCanOut.Text;
+                p.EveningInCan = txtEInCan.Text;
+                p.EveningOutCan = txtEOutCan.Text;
+                p.DriverName = txtDriverName.Text;
+                p.Remarks = txtRemarks.Text;
+                p.CreatedBy = App_code.GlobalInfo.Userid;
+                p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
+                p.ModifiedBy = App_code.GlobalInfo.Userid;
+                p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
+                p.flag = "Insert";
+                int Result = 0;
+                Result = pd.InsertMilkCollectionTransportDetails(p);
+                if (Result > 0)
+                {
 
-                divDanger.Visible = false;
-                divwarning.Visible = false;
-                divSusccess.Visible = true;
-                lblSuccess.Text = "Milk Collection Transport Record Add  Successfully";
+                    divDanger.Visible = false;
+                    divwarning.Visible = false;
+                    divSusccess.Visible = true;
+                    lblSuccess.Text = "Milk Collection Transport Record Add  Successfully";
 
-                ClearTextBox();
-                BindMilkCollectionList();
-                pnlError.Update();
-                upMain.Update();
-                uprouteList.Update();
+                    ClearTextBox();
+                    string dates = Convert.ToDateTime(txtDate1.Text).ToString("dd-MM-yyyy");
+                    string vehicle = dpVehicleNo1.SelectedItem.Text;
+                    int route = Convert.ToInt32(dpRoute1.SelectedItem.Value);
+                    //BindMilkCollectionList(dates, vehicle, route);
+                    pnlError.Update();
+                    upMain.Update();
+                    uprouteList.Update();
+                }
+                else
+                {
+                    divDanger.Visible = false;
+                    divwarning.Visible = true;
+                    divSusccess.Visible = false;
+                    lblwarning.Text = "Please Contact to Site Admin";
+                    pnlError.Update();
+
+                }
             }
-            else
+            catch (Exception ex)
             {
-                divDanger.Visible = false;
-                divwarning.Visible = true;
-                divSusccess.Visible = false;
-                lblwarning.Text = "Please Contact to Site Admin";
-                pnlError.Update();
-
+                string msg = ex.Message.ToString();
             }
         }
-
         public void ClearTextBox()
         {
             dpVehicleNo.ClearSelection();
@@ -252,7 +273,10 @@ namespace Dairy.Tabs.Procurement
                 divSusccess.Visible = true;
                 lblSuccess.Text = "Milk Collection Record Deleted  Successfully";
                 ClearTextBox();
-                BindMilkCollectionList();
+                string dates = Convert.ToDateTime(txtDate1.Text).ToString("dd-MM-yyyy");
+                string vehicle = dpVehicleNo1.SelectedItem.Text;
+                int route = Convert.ToInt32(dpRoute1.SelectedItem.Value);
+                //BindMilkCollectionList(dates, vehicle, route);
                 pnlError.Update();
                 btnAddMilkTransport.Visible = true;
                 btnupdateMilkTransport.Visible = false;
@@ -306,7 +330,10 @@ namespace Dairy.Tabs.Procurement
                 divSusccess.Visible = true;
                 lblSuccess.Text = "Milk Collection Record Updated  Successfully";
                 ClearTextBox();
-                BindMilkCollectionList();
+                string dates = Convert.ToDateTime(txtDate1.Text).ToString("dd-MM-yyyy");
+                string vehicle = dpVehicleNo1.SelectedItem.Text;
+                int route = Convert.ToInt32(dpRoute1.SelectedItem.Value);
+                //BindMilkCollectionList(dates, vehicle, route);
                 pnlError.Update();
                 btnAddMilkTransport.Visible = true;
                 btnupdateMilkTransport.Visible = false;
@@ -324,58 +351,169 @@ namespace Dairy.Tabs.Procurement
             }
         }
 
-        protected void txtEveningKM_TextChanged(object sender, EventArgs e)
+        protected void txtMorningKM_TextChanged(object sender, EventArgs e)
         {
-            int MorningKM;
-            int EveningKM;
-            double totalkm;
-
-            MorningKM= string.IsNullOrEmpty(txtMorningKM.Text) ? 0 : Convert.ToInt32(txtMorningKM.Text);
-            EveningKM= string.IsNullOrEmpty(txtEveningKM.Text) ? 0 : Convert.ToInt32(txtEveningKM.Text);
-            totalkm = Convert.ToDouble(MorningKM + EveningKM);
-            txtTotalKM.Text = totalkm.ToString();
-            DS = BindCommanData.BindCommanDropDwon("VehicleMasterID ", "VehicleType", "Proc_VehicleMaster", "IsActive=1 and VehicleMasterID=" + dpVehicleNo.SelectedItem.Value);
-            if (!Comman.Comman.IsDataSetEmpty(DS))
+            try
             {
-                int modelid;
-                double tds;
-                double amt;
-                var vehiclemodelid = DS.Tables[0].AsEnumerable().Select(r => r.Field<int>("VehicleType")).ToList();
-                modelid = Convert.ToInt32(vehiclemodelid[0]);
-                DataSet ds = new DataSet();
-                ProcurementData pd = new ProcurementData();
-                ds = pd.GetBataandAmountOfVehicleonbasisofmodelid(modelid,Convert.ToInt32(dpVehicleNo.SelectedItem.Value));
+                int MorningKM;
+                int EveningKM;
+                double totalkm;
+
+                MorningKM = string.IsNullOrEmpty(txtMorningKM.Text) ? 0 : Convert.ToInt32(txtMorningKM.Text);
+                EveningKM = string.IsNullOrEmpty(txtEveningKM.Text) ? 0 : Convert.ToInt32(txtEveningKM.Text);
+                totalkm = Convert.ToDouble(MorningKM + EveningKM);
+                txtTotalKM.Text = totalkm.ToString();
+                txtMorningInTime.Focus();
+                DS = BindCommanData.BindCommanDropDwon("VehicleMasterID ", "VehicleType", "Proc_VehicleMaster", "IsActive=1 and VehicleMasterID=" + dpVehicleNo.SelectedItem.Value);
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {
-                    foreach (DataRow row in ds.Tables[0].Rows)
+                    int modelid = 0;
+                    //double tds;
+                    double tariff = 0.00; ;
+                    double amt = 0.00;
+                    var vehiclemodelid = DS.Tables[0].AsEnumerable().Select(r => r.Field<int>("VehicleType")).ToList();
+                    modelid = Convert.ToInt32(vehiclemodelid[0]);
+                    DataSet ds = new DataSet();
+                    ProcurementData pd = new ProcurementData();
+                    ds = pd.GetBataandAmountOfVehicleonbasisofmodelid(modelid, Convert.ToInt32(dpVehicleNo.SelectedItem.Value));
+                    if (!Comman.Comman.IsDataSetEmpty(DS))
                     {
-                        if (Convert.ToDouble(row["KMLow"]) <= totalkm && Convert.ToDouble(row["KMHigh"]) >= totalkm)
+                        foreach (DataRow row in ds.Tables[0].Rows)
                         {
-                            txtBata.Text = Convert.ToDecimal(row["Bata"]).ToString("#.##");
+                            if (Convert.ToDouble(row["KMLow"]) <= totalkm && Convert.ToDouble(row["KMHigh"]) >= totalkm)
+                            {
+                                txtBata.Text = Convert.ToDecimal(row["Bata"]).ToString("#.##");
+                                tariff = Convert.ToDouble(row["Amount"]);
+                                amt = totalkm * tariff;
+                                txtAmount.Text = amt.ToString();
+
+                            }
                         }
+                        //tds = Convert.ToDouble(ds.Tables[1].Rows[0]["TDS"]);
+                        //amt = totalkm + (Convert.ToDouble(totalkm) * tds / 100);
+                        //txtAmount.Text = amt.ToString();
+                        //tariff = Convert.ToDouble(ds.Tables[0].Rows[0]["Amount"]);
+
+                        //amt = totalkm * tariff;
+                        //txtAmount.Text = amt.ToString();
                     }
-                    tds= Convert.ToDouble(ds.Tables[1].Rows[0]["TDS"]);
-                    amt = totalkm+(totalkm * tds/100) ;
-                    txtAmount.Text = amt.ToString();
-                }
 
                 }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+
+        protected void txtEveningKM_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int MorningKM;
+                int EveningKM;
+                double totalkm;
+
+                MorningKM = string.IsNullOrEmpty(txtMorningKM.Text) ? 0 : Convert.ToInt32(txtMorningKM.Text);
+                EveningKM = string.IsNullOrEmpty(txtEveningKM.Text) ? 0 : Convert.ToInt32(txtEveningKM.Text);
+                totalkm = Convert.ToDouble(MorningKM + EveningKM);
+                txtTotalKM.Text = totalkm.ToString();
+                txtEveningInTime.Focus();
+                DS = BindCommanData.BindCommanDropDwon("VehicleMasterID ", "VehicleType", "Proc_VehicleMaster", "IsActive=1 and VehicleMasterID=" + dpVehicleNo.SelectedItem.Value);
+                if (!Comman.Comman.IsDataSetEmpty(DS))
+                {
+                    int modelid=0;
+                    //double tds;
+                    double tariff = 0.00; ;
+                    double amt=0.00;
+                    var vehiclemodelid = DS.Tables[0].AsEnumerable().Select(r => r.Field<int>("VehicleType")).ToList();
+                    modelid = Convert.ToInt32(vehiclemodelid[0]);
+                    DataSet ds = new DataSet();
+                    ProcurementData pd = new ProcurementData();
+                    ds = pd.GetBataandAmountOfVehicleonbasisofmodelid(modelid, Convert.ToInt32(dpVehicleNo.SelectedItem.Value));
+                    if (!Comman.Comman.IsDataSetEmpty(DS))
+                    {
+                        foreach (DataRow row in ds.Tables[0].Rows)
+                        {
+                            if (Convert.ToDouble(row["KMLow"]) <= totalkm && Convert.ToDouble(row["KMHigh"]) >= totalkm)
+                            {
+                                txtBata.Text = Convert.ToDecimal(row["Bata"]).ToString("#.##");
+                                tariff = Convert.ToDouble(row["Amount"]);
+                                amt = totalkm * tariff;
+                                txtAmount.Text = amt.ToString();
+                            }
+                        }
+                        //tds = Convert.ToDouble(ds.Tables[1].Rows[0]["TDS"]);
+                        //amt = totalkm + (Convert.ToDouble(totalkm) * tds / 100);
+                        //txtAmount.Text = amt.ToString();
+                        //tariff = Convert.ToDouble(ds.Tables[0].Rows[0]["Amount"]);
+
+                        //amt = totalkm * tariff;
+                        //txtAmount.Text = amt.ToString();
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         protected void btnAddNew_Click(object sender, EventArgs e)
         {
-           Response.Redirect("~/Tabs/Procurement/MilkCollectionTransport.aspx");
+            Response.Redirect("~/Tabs/Procurement/MilkCollectionTransport.aspx");
         }
 
         protected void dpVehicleNo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DS = BindCommanData.BindCommanDropDwon("VehicleMasterID ", "DriverName", "Proc_VehicleMaster", "IsActive=1 and VehicleMasterID="+dpVehicleNo.SelectedItem.Value);
+            DS = BindCommanData.BindCommanDropDwon("VehicleMasterID ", "DriverName", "Proc_VehicleMaster", "IsActive=1 and VehicleMasterID=" + dpVehicleNo.SelectedItem.Value);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-               
-                    var dname = DS.Tables[0].AsEnumerable().Select(r => r.Field<string>("DriverName")).ToList();
-                    txtDriverName.Text = dname[0].ToString();
+
+                var dname = DS.Tables[0].AsEnumerable().Select(r => r.Field<string>("DriverName")).ToList();
+                txtDriverName.Text = dname[0].ToString();
             }
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Model.Procurement p = new Model.Procurement();
+                ProcurementData pd = new ProcurementData();
+                DataSet DS = new DataSet();
+                //StringBuilder sb = new StringBuilder();
+                p.Date = Convert.ToDateTime(txtDate1.Text);
+                if(Convert.ToInt32(dpVehicleNo1.SelectedItem.Value)==0)
+                {
+                    p.VehicleNo = "0";
+                }
+                else
+                {
+                    p.VehicleNo = dpVehicleNo1.SelectedItem.Text;
+                }
+               if(Convert.ToInt32(dpRoute1.SelectedItem.Value)==0)
+                {
+                    p.RouteID = 0;
+                }
+               else
+                {
+                    p.RouteID = Convert.ToInt32(dpRoute1.SelectedItem.Value);
+                }
+               
+                DS = pd.GetAllMilkCollectionTransportDetails(p);
+                //if (!Comman.Comman.IsDataSetEmpty(DS))
+                //{
+                rpMilkCollectionList.DataSource = DS;
+                rpMilkCollectionList.DataBind();
+                uprouteList.Update();
+                //}
+
+            }
+            catch (Exception) { }
+        }
+
     }
 }

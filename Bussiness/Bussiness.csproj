@@ -65,8 +65,12 @@
     <Compile Include="ActiveInactiveIssuesData.cs" />
     <Compile Include="AgentInfoData.cs" />
     <Compile Include="BAgentwiseTray.cs" />
+    <Compile Include="BHardCopyTariff.cs" />
+    <Compile Include="BHeadwiseReport.cs" />
     <Compile Include="BillData.cs" />
     <Compile Include="BindCommanData.cs" />
+    <Compile Include="BRawMilkStockRegisterReport.cs" />
+    <Compile Include="BTransportpayment.cs" />
     <Compile Include="CashierData.cs" />
     <Compile Include="CorrectiveActionOnIssuesData.cs" />
     <Compile Include="DispatchData.cs" />

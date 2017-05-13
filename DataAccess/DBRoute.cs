@@ -47,7 +47,7 @@ namespace DataAccess
             {
 
                 DBParameterCollection paramCollection = new DBParameterCollection();
-                
+
                 paramCollection.Add(new DBParameter("@flag", 0));
                 result = _DBHelper.ExecuteNonQuery("Sp_ClearBindSlab", paramCollection, CommandType.StoredProcedure);
 
@@ -108,7 +108,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@ASOName", route.ASOID));
                 paramCollection.Add(new DBParameter("@Discription", route.Discription));
                 paramCollection.Add(new DBParameter("@Category", route.Category));
-                paramCollection.Add(new DBParameter("@QIncentiveId", route.QIncentiveId));
+                paramCollection.Add(new DBParameter("@QIncentiveCategory", route.QIncentiveCategory));
                 paramCollection.Add(new DBParameter("@IsArchive", route.IsActive));
                 paramCollection.Add(new DBParameter("@ModifiedBy", route.ModifiedBy));
                 paramCollection.Add(new DBParameter("@ModifiedDate", route.ModifiedDate));
@@ -118,9 +118,9 @@ namespace DataAccess
                 result = _DBHelper.ExecuteNonQuery("Proc_Sp_InsertMilkCollectionRoute", paramCollection, CommandType.StoredProcedure);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                string msg = ex.Message.ToString();
 
             }
             return result;

@@ -50,9 +50,9 @@ namespace Dairy.Tabs.Procurement
                 divSusccess.Visible = true;
                 lblSuccess.Text = "Vehicle Model Added  Successfully";
                 GetVehicleType();
-          
-               upMain.Update();
-               
+
+                upMain.Update();
+
                 pnlError.Update();
                 uprouteList.Update();
             }
@@ -62,7 +62,7 @@ namespace Dairy.Tabs.Procurement
                 divwarning.Visible = true;
                 divSusccess.Visible = false;
                 lblwarning.Text = "   Please Contact to Site Admin";
-                
+
                 pnlError.Update();
 
             }
@@ -74,7 +74,7 @@ namespace Dairy.Tabs.Procurement
             pd = new ProcurementData();
             p = new Model.Procurement();
             int Result = 0;
-           
+
             p.VehicleType = string.IsNullOrEmpty(hfBrandId.Value) ? 0 : Convert.ToInt32(hfBrandId.Value);
             p.VehicleTypeName = txtVehicleType.Text;
             if (dpStatus.SelectedItem.Value == "1")
@@ -213,7 +213,7 @@ namespace Dairy.Tabs.Procurement
                     dpStatus.Items.FindByValue("2").Selected = true;
                 }
                 txtVehicleType.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["VehicleType"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["VehicleType"].ToString();
-                
+
             }
         }
 
@@ -248,14 +248,14 @@ namespace Dairy.Tabs.Procurement
 
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                foreach(DataRow row in DS.Tables[0].Rows)
+                foreach (DataRow row in DS.Tables[0].Rows)
                 {
                     if (row["VehicleType"].ToString() == txtVehicleType.Text.ToString())
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Vehicle Model Already exists')", true);
                         txtVehicleType.Text = string.Empty;
                     }
-                   
+
                 }
             }
         }

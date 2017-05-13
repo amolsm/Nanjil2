@@ -85,7 +85,7 @@
                       <div class="input-group-addon">
                      Quantity Category
                       </div>
-                       <asp:TextBox ID="txtQCat" class="form-control" placeholder="Quantity Category" runat="server"  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtQCat" class="form-control" placeholder="Quantity Category" runat="server"  AutoPostBack="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
                        <asp:RequiredFieldValidator  ID="RequiredFieldValidator4" Display="Dynamic" 
     ValidationGroup="Save" runat="server" ControlToValidate="txtQCat" ForeColor="Red"
@@ -138,6 +138,18 @@
     ErrorMessage="Please Enter Quantity Incentive Amount   "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->                   
                   </div>  
+
+                              <div class="col-lg-4">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       Description
+                      </div>
+                       <asp:TextBox ID="txtDesc" class="form-control" placeholder="Description" runat="server"  ToolTip="Description"></asp:TextBox>                        
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->                   
+                  </div>  
+
 
                <div class="col-lg-4">
                   <div class="form-group" style="margin-bottom:10px">
@@ -220,7 +232,7 @@
                         <th>Quantity Incentive</th>
                          <th>IsActive</th>
                         <th>Edit</th>
-                        <th>Delete</th>
+                       <%-- <th>Delete</th>--%>
                       </tr>
                     </thead>
                     <tbody>
@@ -243,10 +255,10 @@
                                                                     CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
 
                          </td>
-                         <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
+                       <%--  <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
                                                                     ToolTip="Delete" runat="server" CommandArgument='<%#Eval("ID") %>'
                                                                     CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>
+</td>--%>
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
@@ -262,7 +274,7 @@
                         <th>Quantity Incentive</th>
                          <th>IsActive</th>
                         <th>Edit</th>
-                        <th>Delete</th>
+                       <%-- <th>Delete</th>--%>
                       </tr>
                     </tfoot>
 

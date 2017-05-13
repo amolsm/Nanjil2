@@ -43,7 +43,17 @@ namespace Bussiness
             DBBindComman dbbindComman = new DBBindComman();
             return dbbindComman.GetDispSalesman( Dates,  routeid, BrandId);
         }
+        public static DataSet GetCategory(string Category, string TableName)
+        {
+            DBBindComman dbbindComman = new DBBindComman();
+            return dbbindComman.GetCategory(Category, TableName);
+        }
 
+        public static DataSet GetIncentiveTariff(string QCat, string TableName)
+        {
+            DBBindComman dbbindComman = new DBBindComman();
+            return dbbindComman.GetIncentiveTariff(QCat, TableName);
+        }
 
     }
 }

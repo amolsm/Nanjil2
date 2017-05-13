@@ -36,7 +36,8 @@ namespace Dairy.Tabs.Procurement
                 Model.Procurement p = new Model.Procurement();
                 ProcurementData pd = new ProcurementData();
                 p.RawMilkTarrifID = 0;
-                p.Category = Convert.ToInt32(Category.SelectedItem.Value);
+                //p.Category = Convert.ToInt32(Category.SelectedItem.Value);
+                p.Category = string.IsNullOrEmpty(txtCategory.Text) ? string.Empty : (txtCategory.Text);
                 p.TSL = Convert.ToDecimal(txtTSL.Text);
                 p.TSH = Convert.ToDecimal(txtTSH.Text);
                 p.TSRATE = Convert.ToDecimal(txtTSRate.Text);
@@ -46,6 +47,7 @@ namespace Dairy.Tabs.Procurement
                 p.IN_SNF = string.IsNullOrEmpty(txtIN_SNF.Text) ? 0 : Convert.ToInt32(txtIN_SNF.Text);
                 p.IN_TS = string.IsNullOrEmpty(txtIN_TS.Text) ? 0 : Convert.ToInt32(txtIN_TS.Text);
                 p.Bonus1 = string.IsNullOrEmpty(txtBonus.Text) ? 0 : Convert.ToDecimal(txtBonus.Text);
+                p.Description = string.IsNullOrEmpty(txtDescription.Text) ? string.Empty : (txtDescription.Text);
                 p.Scheme = string.IsNullOrEmpty(txtScheme.Text) ? 0 : Convert.ToDecimal(txtScheme.Text);
                 p.WEF_DATE = Convert.ToDateTime(txtWEF_DATE.Text);
                 p.CreatedBy = App_code.GlobalInfo.Userid;
@@ -112,7 +114,7 @@ namespace Dairy.Tabs.Procurement
             txtIN_SNF.Text = string.Empty;
             txtIN_FAT.Text = string.Empty;
             txtBonus.Text = string.Empty;
-            Category.ClearSelection();
+            txtCategory.Text = string.Empty;
             txtTSL.Text = string.Empty;
             txtTSH.Text = string.Empty;
         }
@@ -178,12 +180,13 @@ namespace Dairy.Tabs.Procurement
             DS = pd.GetRawMilkTarrifDetailsbyID(rawid);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                Category.ClearSelection();
-                if (Category.Items.FindByValue(DS.Tables[0].Rows[0]["Category"].ToString()) != null)
-                {
-                    Category.Items.FindByValue(DS.Tables[0].Rows[0]["Category"].ToString()).Selected = true;
-                }
-               
+                //Category.ClearSelection();
+                //if (Category.Items.FindByValue(DS.Tables[0].Rows[0]["Category"].ToString()) != null)
+                //{
+                //    Category.Items.FindByValue(DS.Tables[0].Rows[0]["Category"].ToString()).Selected = true;
+                //}
+                txtCategory.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Category"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Category"].ToString();
+
                 //decimal tsl = Convert.ToDecimal(DS.Tables[0].Rows[0]["TSL"].ToString());
 
                 //string str = tsl.ToString("G29");
@@ -193,7 +196,7 @@ namespace Dairy.Tabs.Procurement
 
                 //string str1 = tsh.ToString("G29");
                 txtTSH.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TSH"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TSH"].ToString();
-             
+
                 txtBonus.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Bonus"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Bonus"].ToString();
                 txtIN_FAT.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IN_FAT"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["IN_FAT"].ToString();
                 txtIN_SNF.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IN_SNF"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["IN_SNF"].ToString();
@@ -213,8 +216,9 @@ namespace Dairy.Tabs.Procurement
             Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
             p.RawMilkTarrifID = string.IsNullOrEmpty(hfrouteID.Value) ? 0 : Convert.ToInt32(hfrouteID.Value);
-            p.Category = Convert.ToInt32(Category.SelectedItem.Value);
-            p.TSL = string.IsNullOrEmpty(txtTSL.Text) ? 0 :Convert.ToDecimal(txtTSL.Text);
+            //p.Category = Convert.ToInt32(Category.SelectedItem.Value);
+            p.Category = string.IsNullOrEmpty(txtCategory.Text) ? string.Empty : txtCategory.Text;
+            p.TSL = string.IsNullOrEmpty(txtTSL.Text) ? 0 : Convert.ToDecimal(txtTSL.Text);
             p.TSH = string.IsNullOrEmpty(txtTSH.Text) ? 0 : Convert.ToDecimal(txtTSH.Text);
             p.TSRATE = string.IsNullOrEmpty(txtTSRate.Text) ? 0 : Convert.ToDecimal(txtTSRate.Text);
             p.TS_INCR = 0;
@@ -266,7 +270,7 @@ namespace Dairy.Tabs.Procurement
                 Model.Procurement p = new Model.Procurement();
                 ProcurementData pd = new ProcurementData();
                 p.RawMilkTarrifID = string.IsNullOrEmpty(hfrouteID.Value) ? 0 : Convert.ToInt32(hfrouteID.Value);
-                p.Category = Convert.ToInt32(Category.SelectedItem.Value);
+                p.Category = string.IsNullOrEmpty(txtCategory.Text) ? string.Empty : txtCategory.Text;
                 p.TSL = Convert.ToDecimal(txtTSL.Text);
                 p.TSH = Convert.ToDecimal(txtTSH.Text);
                 p.TSRATE = Convert.ToDecimal(txtTSRate.Text);
@@ -277,6 +281,7 @@ namespace Dairy.Tabs.Procurement
                 p.IN_TS = string.IsNullOrEmpty(txtIN_TS.Text) ? 0 : Convert.ToInt32(txtIN_TS.Text);
                 p.Bonus1 = string.IsNullOrEmpty(txtBonus.Text) ? 0 : Convert.ToDecimal(txtBonus.Text);
                 p.Scheme = string.IsNullOrEmpty(txtScheme.Text) ? 0 : Convert.ToDecimal(txtScheme.Text);
+                p.Description = string.IsNullOrEmpty(txtDescription.Text) ? string.Empty : (txtDescription.Text);
                 p.WEF_DATE = Convert.ToDateTime(txtWEF_DATE.Text);
                 p.CreatedBy = App_code.GlobalInfo.Userid;
                 p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");

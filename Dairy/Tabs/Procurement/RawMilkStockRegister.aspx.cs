@@ -29,7 +29,7 @@ namespace Dairy.Tabs.Procurement
                 btnupdateMilk.Visible = false;
                 rdRecieving.Checked = true;
                 d1.Visible = false;
-              //  disp.Visible = false;
+                //  disp.Visible = false;
             }
         }
 
@@ -95,24 +95,24 @@ namespace Dairy.Tabs.Procurement
             p.FATPercentage = Convert.ToDecimal(txtFATPercentage.Text);
             p.SNFPercentage = Convert.ToDecimal(txtSNFPercentage.Text);
             p.Time = txtTime.Text;
-          //  p.HandlingExcess =!string.IsNullOrEmpty(txtHandlingExcess.Text)?Convert.ToDecimal(txtHandlingExcess.Text):0;
-           // p.HandlingLoss = !string.IsNullOrEmpty(txtHandlingLoss.Text)?Convert.ToDecimal(txtHandlingLoss.Text):0;
-         //   p.Disposal = dpdestination.SelectedItem.Text;
-           // p.InternameConsumption =!string.IsNullOrEmpty(txtInternalConsumption.Text)? Convert.ToDecimal(txtInternalConsumption.Text):0;
-          //  p.DamageMilk =!string.IsNullOrEmpty(txtDamageMilk.Text)? Convert.ToDecimal(txtDamageMilk.Text):0;
-          //  p.Other =!string.IsNullOrEmpty(TextBtxtOther.Text)? Convert.ToDecimal(TextBtxtOther.Text):0;
+            //  p.HandlingExcess =!string.IsNullOrEmpty(txtHandlingExcess.Text)?Convert.ToDecimal(txtHandlingExcess.Text):0;
+            // p.HandlingLoss = !string.IsNullOrEmpty(txtHandlingLoss.Text)?Convert.ToDecimal(txtHandlingLoss.Text):0;
+            //   p.Disposal = dpdestination.SelectedItem.Text;
+            // p.InternameConsumption =!string.IsNullOrEmpty(txtInternalConsumption.Text)? Convert.ToDecimal(txtInternalConsumption.Text):0;
+            //  p.DamageMilk =!string.IsNullOrEmpty(txtDamageMilk.Text)? Convert.ToDecimal(txtDamageMilk.Text):0;
+            //  p.Other =!string.IsNullOrEmpty(TextBtxtOther.Text)? Convert.ToDecimal(TextBtxtOther.Text):0;
             p.CreatedBy = App_code.GlobalInfo.Userid;
             p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             p.ModifiedBy = App_code.GlobalInfo.Userid;
             p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
-         
+
             p.flag = "Insert";
 
-            DS = pd.GetOpeningClosingBal(p.Date,p.CenterID);
+            DS = pd.GetOpeningClosingBal(p.Date, p.CenterID);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 p.BalanceID = Convert.ToInt32(string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BalanceID"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BalanceID"].ToString());
-                decimal OpeningBal =Convert.ToDecimal(string.IsNullOrEmpty(DS.Tables[0].Rows[0]["OpeningBalance"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["OpeningBalance"].ToString());
+                decimal OpeningBal = Convert.ToDecimal(string.IsNullOrEmpty(DS.Tables[0].Rows[0]["OpeningBalance"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["OpeningBalance"].ToString());
                 decimal ClosingBal = Convert.ToDecimal(string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ClosingBalance"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ClosingBalance"].ToString());
                 if (rdRecieving.Checked)
                 {
@@ -140,7 +140,7 @@ namespace Dairy.Tabs.Procurement
                         p.OpeningBalance = Convert.ToDecimal(string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ClosingBalance"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ClosingBalance"].ToString());
                         p.ClosingBalance = p.OpeningBalance - p.ActualMilkInLtr;
                     }
-                    
+
                 }
                 else
                 {
@@ -196,12 +196,12 @@ namespace Dairy.Tabs.Procurement
             rdDisposal.Checked = false;
             rpBatchWiseMilkCollection.DataSource = null;
             rpBatchWiseMilkCollection.DataBind();
-           //  dpdestination.ClearSelection();
-           // txtHandlingExcess.Text = string.Empty;
-           // txtHandlingLoss.Text = string.Empty;
-           // txtInternalConsumption.Text = string.Empty;
-           // txtDamageMilk.Text = string.Empty;
-           // TextBtxtOther.Text = string.Empty;
+            //  dpdestination.ClearSelection();
+            // txtHandlingExcess.Text = string.Empty;
+            // txtHandlingLoss.Text = string.Empty;
+            // txtInternalConsumption.Text = string.Empty;
+            // txtDamageMilk.Text = string.Empty;
+            // TextBtxtOther.Text = string.Empty;
         }
         public void BindMilkCollectionList()
         {
@@ -267,7 +267,7 @@ namespace Dairy.Tabs.Procurement
                 flag = "receive";
             }
             else { flag = "dispose"; }
-            DS = pd.GetBatchWiseMilkCollection(milkcollectionid,flag);
+            DS = pd.GetBatchWiseMilkCollection(milkcollectionid, flag);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 txtFATPercentage.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["FATPercentage"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["FATPercentage"].ToString();
@@ -372,7 +372,7 @@ namespace Dairy.Tabs.Procurement
                 p.flag1 = "Disposal";
                 p.ID = Convert.ToInt32(dpParticulardispose.SelectedItem.Value);
             }
-            
+
             p.BatchNo = txtBatch.Text;
             p.VehicleNo = txtVehicalNo.Text;
             p.Session = txtTime.Text;
@@ -386,11 +386,11 @@ namespace Dairy.Tabs.Procurement
             p.FATPercentage = Convert.ToDecimal(txtFATPercentage.Text);
             p.SNFPercentage = Convert.ToDecimal(txtSNFPercentage.Text);
             p.Time = txtTime.Text;
-           // p.Disposal = dpdestination.SelectedItem.Text;
-           // p.HandlingExcess = Convert.ToDecimal(txtHandlingExcess.Text);
-           // p.HandlingLoss = Convert.ToDecimal(txtHandlingLoss.Text);
-           // p.InternameConsumption = Convert.ToDecimal(txtInternalConsumption.Text);
-           // p.DamageMilk = Convert.ToDecimal(txtDamageMilk.Text);
+            // p.Disposal = dpdestination.SelectedItem.Text;
+            // p.HandlingExcess = Convert.ToDecimal(txtHandlingExcess.Text);
+            // p.HandlingLoss = Convert.ToDecimal(txtHandlingLoss.Text);
+            // p.InternameConsumption = Convert.ToDecimal(txtInternalConsumption.Text);
+            // p.DamageMilk = Convert.ToDecimal(txtDamageMilk.Text);
             //p.Other = Convert.ToDecimal(TextBtxtOther.Text);
             p.CreatedBy = App_code.GlobalInfo.Userid;
             p.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
@@ -433,12 +433,12 @@ namespace Dairy.Tabs.Procurement
                 d1.Visible = false;
                 d2.Visible = true;
                 //disp.Visible = false;
-            
-               
+
+
                 rpBatchWiseMilkCollection.Dispose();
             }
-           
-           
+
+
         }
 
         protected void rdDisposal_CheckedChanged(object sender, EventArgs e)
@@ -447,12 +447,12 @@ namespace Dairy.Tabs.Procurement
             {
                 d1.Visible = true;
                 d2.Visible = false;
-             //   disp.Visible = true;
-               
-               
+                //   disp.Visible = true;
+
+
                 rpBatchWiseMilkCollection.Dispose();
             }
-           
+
         }
 
         protected void btnView_Click(object sender, EventArgs e)
@@ -460,7 +460,7 @@ namespace Dairy.Tabs.Procurement
             ProcurementData pd = new ProcurementData();
             DataSet DS = new DataSet();
             Model.Procurement p = new Model.Procurement();
-           
+
             p.CenterID = 6;//Convert.ToInt32(dpCenter.SelectedItem.Value);
             if (rdDisposal.Checked)
             {
@@ -488,5 +488,5 @@ namespace Dairy.Tabs.Procurement
             Response.Redirect("~/Tabs/Procurement/RawMilkStockRegister.aspx");
         }
     }
-    
+
 }

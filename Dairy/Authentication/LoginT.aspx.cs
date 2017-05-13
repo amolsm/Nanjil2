@@ -36,6 +36,14 @@ namespace Dairy.Authentication
                     dpShift.DataBind();
                     dpShift.Items.Insert(0, new ListItem("--Select Shift--", "0"));
                 }
+                DS.Clear();
+                DS = BindCommanData.BindCommanDropDwon("CenterID", "CenterCode+' '+CenterName as Name", "tbl_MilkCollectionCenter", "IsActive=1");
+                if (!Comman.Comman.IsDataSetEmpty(DS))
+                {
+                    dpCollectionCenter.DataSource = DS;
+                    dpCollectionCenter.DataBind();
+                    dpCollectionCenter.Items.Insert(0, new ListItem("--Select Collection Center--", "0"));
+                }
 
             }
         }
@@ -54,7 +62,8 @@ namespace Dairy.Authentication
                     PNLLOGIN.Visible = false;
                     PNLSELECTBOTH.Visible = true;
                     pnlSelectShift.Visible = false;
-                   // CreateAutinticationTikit(user, string.Empty);
+                    pnlCollectionCenter.Visible = false;
+                    // CreateAutinticationTikit(user, string.Empty);
                 }
                 else if (user.RoleID.ToString() == "Despatch")
                 {
@@ -62,6 +71,16 @@ namespace Dairy.Authentication
                     PNLLOGIN.Visible = false;
                     PNLSELECTBOTH.Visible = false;
                     pnlSelectShift.Visible = true;
+                    pnlCollectionCenter.Visible = false;
+                    // CreateAutinticationTikit(user, string.Empty);
+                }
+                else if (user.RoleID.ToString() == "Procurement")
+                {
+                    AddCookies();
+                    PNLLOGIN.Visible = false;
+                    PNLSELECTBOTH.Visible = false;
+                    pnlSelectShift.Visible = false;
+                    pnlCollectionCenter.Visible = true;
                     // CreateAutinticationTikit(user, string.Empty);
                 }
                 else
@@ -69,7 +88,7 @@ namespace Dairy.Authentication
                     AddCookies();
                     PNLLOGIN.Visible = true;
                     PNLSELECTBOTH.Visible = false;
-                    CreateAutinticationTikit(user, string.Empty, string.Empty);
+                    CreateAutinticationTikit(user, string.Empty, string.Empty,string.Empty);
 
 
                 }
@@ -130,11 +149,11 @@ namespace Dairy.Authentication
             Session["UserLoggedIn"] = user.UserName;
             return true;
         }
-          public void CreateAutinticationTikit(User user,string bothID, string ShiftId)
+          public void CreateAutinticationTikit(User user,string bothID, string ShiftId,string Coll_CenterId)
         {
                 FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, txtUsername.Text,
                 DateTime.Now, DateTime.Now.AddMinutes(60),
-                true, user.UserID.ToString() + ";" + user.RoleID.ToString() + ";" + user.UserName.ToString() + ";" + user.privilege.ToString() + ";" + user.LastLogin+ ";" + bothID + ";" + ShiftId,
+                true, user.UserID.ToString() + ";" + user.RoleID.ToString() + ";" + user.UserName.ToString() + ";" + user.privilege.ToString() + ";" + user.LastLogin+ ";" + bothID + ";" + ShiftId+";"+ Coll_CenterId,
                 FormsAuthentication.FormsCookiePath);
                 string hash = FormsAuthentication.Encrypt(ticket);
                 HttpCookie cookie = new HttpCookie(
@@ -183,6 +202,11 @@ namespace Dairy.Authentication
                                 Response.Redirect("/Tabs/Marketing/AgentSchemeDetails.aspx");
                                 break;
                             }
+                      case "Procurement":
+                           {
+                        Response.Redirect("/Tabs/Procurement/MilkCollectionDetails.aspx");
+                        break;
+                           }
             }               
 
             }
@@ -207,6 +231,25 @@ namespace Dairy.Authentication
             return true;
         }
 
+        public bool collectioncenterLoggedIn()
+        {
+            List<string> d = Application["CollectionCenterLoggedIn"] as List<string>;
+            if (d != null)
+            {
+                lock (d)
+                {
+                    if (d.Contains(dpCollectionCenter.SelectedItem.Text))
+                    {
+                        // User is already logged in!!!
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Collection Center already logged in')", true);
+                        return false;
+                    }
+                    d.Add(dpCollectionCenter.SelectedItem.Text);
+                }
+            }
+            Session["CollectionCenterLoggedIn"] = dpCollectionCenter.SelectedItem.Text;
+            return true;
+        }
         protected void dpShift_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (dpShift.SelectedItem.Value != "0")
@@ -216,7 +259,7 @@ namespace Dairy.Authentication
                 user.PassWord = ViewState["txtpassword"].ToString();//txtpassword.Text;// FormsAuthentication.HashPasswordForStoringInConfigFile(txtpassword.Text, "MD5");
                 if (userData.Isauthenticat(user))
                 {
-                    CreateAutinticationTikit(user, string.Empty, dpShift.SelectedItem.Value);
+                    CreateAutinticationTikit(user, string.Empty, dpShift.SelectedItem.Value,string.Empty);
                 }
             }
         }
@@ -230,7 +273,7 @@ namespace Dairy.Authentication
                 user.PassWord = ViewState["txtpassword"].ToString();//txtpassword.Text;// FormsAuthentication.HashPasswordForStoringInConfigFile(txtpassword.Text, "MD5");
                 if (userData.Isauthenticat(user) && boothLoggedIn())
                 {
-                    CreateAutinticationTikit(user, dpAgent.SelectedItem.Value, string.Empty);
+                    CreateAutinticationTikit(user, dpAgent.SelectedItem.Value, string.Empty,string.Empty);
                 }
             }
         }
@@ -247,6 +290,20 @@ namespace Dairy.Authentication
 
             //Most important, write the cookie to client.
             Response.Cookies.Add(myCookie);
+        }
+
+        protected void dpCollectionCenter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dpCollectionCenter.SelectedItem.Value != "0")
+            {
+                UserData userData = new UserData();
+                user.UserName = txtUsername.Text;
+                user.PassWord = ViewState["txtpassword"].ToString();//txtpassword.Text;// FormsAuthentication.HashPasswordForStoringInConfigFile(txtpassword.Text, "MD5");
+                if (userData.Isauthenticat(user) && collectioncenterLoggedIn())
+                {
+                    CreateAutinticationTikit(user, string.Empty, string.Empty,dpCollectionCenter.SelectedItem.Value);
+                }
+            }
         }
     }
     }

@@ -80,7 +80,7 @@ namespace Bussiness
         public DataSet MonthlyRawMilkPurchaseSummary(Procurement p)
         {
             return pdb.MonthlyRawMilkPurchaseSummary(p);
-         }
+        }
 
         public DataSet GetTransactionDetails(Procurement p)
         {
@@ -299,10 +299,10 @@ namespace Bussiness
 
             return pdb.InsertMilkCollectionTransportDetails(p);
         }
-        public DataSet GetAllMilkCollectionTransportDetails()
+        public DataSet GetAllMilkCollectionTransportDetails(Procurement p)
         {
 
-            return pdb.GetAllMilkCollectionTransportDetails();
+            return pdb.GetAllMilkCollectionTransportDetails(p);
         }
         public DataSet GetMilkCollectionTransportDetailsbyID(int milkcollectionid)
         {
@@ -340,9 +340,41 @@ namespace Bussiness
             return pdb.AddTransaction(SupplierID, RouteID, PaymentDateTime, FomDate, ToDate, Amount, Bonus, Scheme, RDAmount, canloan, casloan, bankloan, netamt);
         }
 
-        public DataSet GetBataandAmountOfVehicleonbasisofmodelid(int modelid,int vehicleno)
+        public DataSet GetBataandAmountOfVehicleonbasisofmodelid(int modelid, int vehicleno)
         {
             return pdb.GetBataandAmountOfVehicleonbasisofmodelid(modelid, vehicleno);
+        }
+        public DataSet GetExistingData(Procurement p1)
+        {
+            return pdb.GetExistingData(p1);
+        }
+        public DataSet ClosingStock(Procurement p)
+        {
+            return pdb.ClosingStock(p);
+        }
+        public int UpdateStock(Procurement p)
+        {
+            return pdb.UpdateStock(p);
+        }
+        public DataSet RawMilkPaymentListViaBankExcel(Procurement p)
+        {
+            return pdb.RawMilkPaymentListViaBankExcel(p);
+        }
+        public DataSet RawMilkPurchaseBillSummary(Procurement p)
+        {
+            return pdb.RawMilkPurchaseBillSummary(p);
+        }
+        public DataSet GetExistingData(int supplyierid, int routeid, string date1, string date2, string date3)
+        {
+            return pdb.GetExistingData(supplyierid, routeid, date1, date2, date3);
+        }
+        public DataSet VehiclewiseOperationStatementReport(Procurement p)
+        {
+            return pdb.VehiclewiseOperationStatementReport(p);
+        }
+        public DataSet GetExistingQcategory(string Qcategory)
+        {
+            return pdb.GetExistingQcategory(Qcategory);
         }
     }
 }

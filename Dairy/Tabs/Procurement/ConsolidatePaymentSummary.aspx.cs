@@ -18,6 +18,8 @@ namespace Dairy.Tabs.Procurement
             if (!IsPostBack)
             {
                 BindDropDown();
+                txtStartDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                txtEndDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             }
         }
         public void BindDropDown()
@@ -29,7 +31,7 @@ namespace Dairy.Tabs.Procurement
                 dpCenter.DataBind();
                 dpCenter.Items.Insert(0, new ListItem("--All Center  --", "0"));
             }
-           
+
         }
 
         protected void btnGeneratereport_Click(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace Dairy.Tabs.Procurement
             p.CenterID = Convert.ToInt32(dpCenter.SelectedItem.Value);
             p.FomDate = Convert.ToDateTime(txtStartDate.Text);
             p.ToDate = Convert.ToDateTime(txtEndDate.Text);
-          //  p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
+            //  p.RouteID = Convert.ToInt32(dpRoute.SelectedItem.Value);
             DataSet DS = new DataSet();
             DS = pd.ConsolidatePayementSummary(p);
             string result = string.Empty;
@@ -140,12 +142,12 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("<td colspan='2' >");
                     sb.Append("");
                     sb.Append("</td>");
-                    
+
                     sb.Append("<td colspan='2' style='text-align:left'>");
-                    sb.Append("From : "+Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
+                    sb.Append("From : " + Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
                     sb.Append("</td>");
                     sb.Append("<td  style='text-align:right'>");
-                    sb.Append("To: "+Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
+                    sb.Append("To: " + Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
                     sb.Append("</td>");
                     sb.Append("</tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
@@ -195,11 +197,13 @@ namespace Dairy.Tabs.Procurement
                     double totalamt = 0.00;
                     foreach (DataRow row in DS.Tables[0].Rows)
                     {
+
                         foreach (DataRow rows in DS.Tables[1].Rows)
                         {
-                            count++;
+
                             if (row["Category"].ToString() == rows["Category"].ToString())
                             {
+                                count++;
                                 sb.Append("<td>");
                                 sb.Append(row["RouteCode"].ToString());
                                 sb.Append("</td>");
@@ -244,26 +248,26 @@ namespace Dairy.Tabs.Procurement
                                 totalrd += rd;
                                 sb.Append("</td>");
                                 sb.Append("<td style='text-align:right'>");
-                              
-                                    try
-                                    {
-                                        canloan = Convert.ToDouble(row["CanLoanPaid"]);
-                                    }
-                                    catch { canloan = 0.00; }
-                                    sb.Append(Convert.ToDecimal(canloan).ToString("0.00"));
-                               
-                                
+
+                                try
+                                {
+                                    canloan = Convert.ToDouble(row["CanLoanPaid"]);
+                                }
+                                catch { canloan = 0.00; }
+                                sb.Append(Convert.ToDecimal(canloan).ToString("0.00"));
+
+
                                 totalcanloan += canloan;
                                 sb.Append("</td>");
                                 sb.Append("<td style='text-align:right'>");
-                               
-                                    try
-                                    {
-                                        casloan = Convert.ToDouble(row["CashLoanPaid"]);
-                                    }
-                                    catch { casloan = 0.00; }
-                                    sb.Append(Convert.ToDecimal(casloan).ToString("0.00"));
-                               
+
+                                try
+                                {
+                                    casloan = Convert.ToDouble(row["CashLoanPaid"]);
+                                }
+                                catch { casloan = 0.00; }
+                                sb.Append(Convert.ToDecimal(casloan).ToString("0.00"));
+
                                 totalcasloan += casloan;
                                 sb.Append("</td>");
                                 sb.Append("<td style='text-align:right'>");
@@ -276,6 +280,7 @@ namespace Dairy.Tabs.Procurement
                             }
 
                         }
+
                     }
                     sb.Append("<tr style='border-bottom:1px solid'><td colspan='9'></td></tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
@@ -333,7 +338,7 @@ namespace Dairy.Tabs.Procurement
         }
 
 
-protected void dpCenter_SelectedIndexChanged(object sender, EventArgs e)
+        protected void dpCenter_SelectedIndexChanged(object sender, EventArgs e)
         {
             //dpRoute.ClearSelection();
             //DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "Proc_MilkCollectionRoute", "IsActive=1 and CenterID=" + dpCenter.SelectedItem.Value);
@@ -343,4 +348,4 @@ protected void dpCenter_SelectedIndexChanged(object sender, EventArgs e)
             //dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
         }
     }
-    }
+}

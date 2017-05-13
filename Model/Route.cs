@@ -15,7 +15,7 @@ namespace Model
         private string _RouteCode;
         private string _Discription;
         private bool _IsArchive;
-        private int _Category;
+        private string _Category;
         private int _CenterID;
 
         public int CenterID
@@ -29,7 +29,7 @@ namespace Model
                 _CenterID = value;
             }
         }
-        public int Category
+        public string Category
         {
             get
             {
@@ -117,9 +117,10 @@ namespace Model
             {
                 _RouteCode = value;
             }
- 
+
         }
 
         public int QIncentiveId { get; set; }
+        public string QIncentiveCategory { get; set; }
     }
 }

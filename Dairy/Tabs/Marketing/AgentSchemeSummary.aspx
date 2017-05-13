@@ -124,11 +124,13 @@
                   </div><!-- /.form group -->
                          </div>
                  
-                 <div class="col-lg-3">
+                 <div class="col-lg-5">
                   <div class="form-group">
                     <div class="input-group">
-                               <asp:Button ID="btngenrateBill" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btngenrateBill_click"   Text="ViewReport"    />     
-                        &nbsp; <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="return PrintPanel();return true;"   Text="Print"    />     
+                               <asp:Button ID="btngenrateBill" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btngenrateBill_click"   Text="ViewReport In Thermal"    />  
+                       &nbsp;&nbsp; <asp:Button ID="btngerateBillA4" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btngerateBillA4_Click"   Text="ViewReport In A4 Size"    />        
+                        &nbsp;&nbsp; <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="return PrintPanel();return true;"   Text="Print"    />     
+                       
                              
                     </div><!-- /.input group -->
 

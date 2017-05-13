@@ -139,6 +139,15 @@ namespace Dairy.Tabs.Procurement {
         protected global::System.Web.UI.WebControls.DropDownList dpSession;
         
         /// <summary>
+        /// btnShow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnShow;
+        
+        /// <summary>
         /// btnCalculate control.
         /// </summary>
         /// <remarks>
@@ -173,5 +182,14 @@ namespace Dairy.Tabs.Procurement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal Bill;
+        
+        /// <summary>
+        /// UpdateProgress2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress UpdateProgress2;
     }
 }

@@ -196,7 +196,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                        Loan Duration In Month
+                         No of Dues
                       </div>
                        <asp:TextBox ID="txtLoanDuration" class="form-control" placeholder="Loan Duration In Months" ToolTip="Loan Duration In Months" runat="server" Type="number" step="any" ></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -282,7 +282,7 @@
                        
                           
                       </div>  
-            <div class="col-lg-4">
+            <div class="col-lg-3">
 
              
 
@@ -299,7 +299,7 @@
                      
                        
                       </div>
-             <div class="col-lg-3">
+<%--             <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -313,7 +313,7 @@
                      
                        
                           
-                      </div> 
+                      </div> --%>
            
     
                <div class="col-lg-3">

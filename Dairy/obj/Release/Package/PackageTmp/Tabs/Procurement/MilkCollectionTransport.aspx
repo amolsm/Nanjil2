@@ -12,7 +12,16 @@
 
         })
     </script>--%>
-     <script type="text/javascript">
+     <script type="text/javascript" src="Scripts/jquery-1.4.1.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js" type="text/javascript"></script>
+   <script type="text/javascript">
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.count = $scope.a + $scope.b;
+    });
+    </script>
+
+      <script type="text/javascript">
          Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
          function InIEvent() {
 
@@ -77,7 +86,7 @@
                 
               </div>
             </div>
-            <div class="box-body">
+            <div class="box-body"  ng-app="myApp" ng-controller="myCtrl">>
                
               
                       <asp:UpdatePanel runat="server" ID="upMain" UpdateMode="Conditional">
@@ -125,7 +134,7 @@
                       <div class="input-group-addon">
                      Route
                       </div>
-                      <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route"> 
+                      <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route"   > 
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
@@ -142,7 +151,7 @@
                       <div class="input-group-addon">
                     Morning KM
                       </div>
-                       <asp:TextBox ID="txtMorningKM" class="form-control" placeholder="Morning KM" runat="server" type="number" step="any" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtMorningKM"  class="form-control" placeholder="Morning KM" runat="server" type="number" step="any"  onTextChanged="txtMorningKM_TextChanged" autopostback="true" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -206,7 +215,7 @@
                       <div class="input-group-addon">
                        Evening KM
                       </div>
-                       <asp:TextBox ID="txtEveningKM" class="form-control" placeholder="Evening KM" runat="server" type="number" step="any"  ToolTip="Evening KM" OnTextChanged="txtEveningKM_TextChanged" AutoPostBack="true"></asp:TextBox>                        
+                       <asp:TextBox ID="txtEveningKM"  class="form-control" placeholder="Evening KM" runat="server" type="number" step="any"  ToolTip="Evening KM" onTextChanged="txtEveningKM_TextChanged" autopostback="true" ></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div> 
@@ -243,7 +252,7 @@
                       <div class="input-group-addon">
                      Evening Out Time
                       </div>
-                       <asp:TextBox ID="txtEveningOutTime" class="form-control" placeholder="Evening Out Time" runat="server" type="time" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtEveningOutTime" class="form-control" placeholder="Evening Out Time" runat="server" type="time"  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -283,7 +292,7 @@
                       <div class="input-group-addon">
                       Total KM
                       </div>
-                       <asp:TextBox ID="txtTotalKM" class="form-control" placeholder="Total KM" type="number" step="any" runat="server" readonly></asp:TextBox>                        
+                       <asp:TextBox ID="txtTotalKM"  class="form-control" placeholder="Total KM" type="number" step="any" runat="server" ReadOnly="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -295,7 +304,7 @@
                       <div class="input-group-addon">
                        Amount
                       </div>
-                       <asp:TextBox ID="txtAmount" class="form-control" placeholder="Amount" type="number" step="any" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtAmount" class="form-control" placeholder="Amount" type="number" step="any" runat="server" Readonly="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group --> 
@@ -310,7 +319,7 @@
                       <div class="input-group-addon">
                     Bata
                       </div>
-                       <asp:TextBox ID="txtBata" class="form-control" placeholder="Bata" runat="server" type="number" step="any"  ToolTip="Bata"></asp:TextBox>                        
+                       <asp:TextBox ID="txtBata" class="form-control" placeholder="Bata" runat="server" type="number" step="any"  ToolTip="Bata" ReadOnly="true"></asp:TextBox>                        
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->                   
                   </div>  
@@ -371,7 +380,56 @@
                 
               </div>
             </div>
-            <div class="box-body" id="datalist">
+           
+                   
+                           <div class="col-lg-3"> 
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      Collection Date
+                      </div>
+                       <asp:TextBox ID="txtDate1" class="form-control" placeholder="Collection Date" runat="server" type="date" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group --> 
+                          
+                      </div>
+            
+             <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       Vehicle No.
+                      </div>
+                        <asp:DropDownList ID="dpVehicleNo1" class="form-control" DataTextField="VehicleNo" DataValueField="VehicleMasterID" ToolTip="Select Vehicle No." runat="server" > 
+                       </asp:DropDownList>                     
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div>  
+            <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     Route
+                      </div>
+                      <asp:DropDownList ID="dpRoute1" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server" selected ToolTip="Select Route"   > 
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div> 
+                 
+                      <asp:Button ID="btnSearch" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnSearch_Click"   Text="View" ValidationGroup="Search" />  
+                     <div class="box-body" id="datalist1">
                    
                 
                        
@@ -379,11 +437,7 @@
                                 <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
                     <ContentTemplate>
 
-                <table id="example1" class="table table-bordered table-striped">
-                   
-
-                 
-
+                <table id="example2" class="table table-bordered table-striped">   
                 <asp:Repeater ID="rpMilkCollectionList" runat="server" OnItemCommand="rpMilkCollectionList_ItemCommand">
                 
                <HeaderTemplate>
@@ -391,6 +445,7 @@
                       <tr>
                           <th>Date</th>
                         <th>VehicalNo</th>
+                          <th>Route</th>
                         <th>MorningKM </th>
                         <th>EveningKM</th> 
                         <th>Amount</th>
@@ -408,12 +463,14 @@
                     <tr>
                          <td><%# Convert.ToDateTime(Eval("Date")).ToString("dd-MM-yyyy")%></td>
                       <td><%# Eval("VehicalNo")%></td>
+                        <td><%#Eval("RouteName")%></td>
+
                       <td><%# Eval("MorningKM")%></td>
                      
                       <td><%# Eval("EveningKM")%></td>
                         <td><%# Eval("Amount")%></td>
                         <td><%# Eval("Bata")%></td>
-                        
+                            
                          <td>
 
                              <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
@@ -435,6 +492,7 @@
                       <tr>
                           <th>Date</th>
                         <th>VehicalNo</th>
+                           <th>Route</th>
                         <th>MorningKM </th>
                         <th>EveningKM</th> 
                         <th>Amount</th>

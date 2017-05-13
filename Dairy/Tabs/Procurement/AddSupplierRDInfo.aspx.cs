@@ -22,7 +22,9 @@ namespace Dairy.Tabs.Procurement
                 btnAddRDInfo.Visible = true;
                 btnupdateRDInfo.Visible = false;
 
-
+                txtRDStartDate.Text=DateTime.Now.ToString("yyyy-MM-dd");
+                txtRDMaturityDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                txtRDPaymentDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             }
         }
         public void BindDropdown()
@@ -150,25 +152,25 @@ namespace Dairy.Tabs.Procurement
                 txtRDPaymentDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDPaymentDateTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDPaymentDateTime"].ToString();
                 txtRDStartDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RDStartDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RDStartDate"].ToString();
                 DropDownList1.ClearSelection();
-             
+
                 if (DropDownList1.Items.FindByText(DS.Tables[0].Rows[0]["RDStatus"].ToString()) != null)
                 {
                     DropDownList1.Items.FindByText(DS.Tables[0].Rows[0]["RDStatus"].ToString()).Selected = true;
                 }
-                
+
                 dpBankName.ClearSelection();
                 if (dpBankName.Items.FindByText(DS.Tables[0].Rows[0]["BankName"].ToString()) != null)
                 {
                     dpBankName.Items.FindByText(DS.Tables[0].Rows[0]["BankName"].ToString()).Selected = true;
                 }
-               
+
                 txtAccountNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["AccountNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["AccountNo"].ToString();
                 dpIfscCode.ClearSelection();
                 if (dpIfscCode.Items.FindByText(DS.Tables[0].Rows[0]["IFSCCode"].ToString()) != null)
                 {
                     dpIfscCode.Items.FindByText(DS.Tables[0].Rows[0]["IFSCCode"].ToString()).Selected = true;
                 }
-                
+
                 txtBranchName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BranchName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BranchName"].ToString();
                 txtAccountName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["AccountName"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["AccountName"].ToString();
             }
