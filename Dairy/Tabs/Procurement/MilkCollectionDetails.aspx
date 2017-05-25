@@ -86,7 +86,8 @@
                     snfperc = 0.00;
                 } else {
                     snfperc = (clr / 4) + (0.2 * fatperc) + 0.36;
-                    snfperc = BreakUpSingleDecimalPlace(snfperc);
+                    debugger;
+                    //snfperc = BreakUpSingleDecimalPlace(snfperc);
                     $("#MainContent_txtSNFPercentage").val(parseFloat(snfperc).toFixed(1));
                 }
 
