@@ -189,6 +189,11 @@
     <Content Include="Tabs\Marketing\SchemeRefund.aspx" />
     <Content Include="Tabs\Marketing\SpotDamageComparisonReport.aspx" />
     <Content Include="Tabs\Marketing\StaffAccountSalesSummary.aspx" />
+    <Content Include="Tabs\OfflineBooth\AgentBilling.aspx" />
+    <Content Include="Tabs\OfflineBooth\BoothPlaceOrder.aspx" />
+    <Content Include="Tabs\OfflineBooth\BoothStockLanding.aspx" />
+    <Content Include="Tabs\OfflineBooth\EmployeeBilling.aspx" />
+    <Content Include="Tabs\OfflineBooth\LocalBilling.aspx" />
     <Content Include="Tabs\Procurement\AddMilkCollectionCenter.aspx" />
     <Content Include="Tabs\Procurement\AddMilkCollectionRoute.aspx" />
     <Content Include="Tabs\Procurement\AddMilkSuppliersProfile.aspx" />
@@ -1902,6 +1907,41 @@
     <Compile Include="Tabs\Marketing\StaffAccountSalesSummary.aspx.designer.cs">
       <DependentUpon>StaffAccountSalesSummary.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\OfflineBooth\AgentBilling.aspx.cs">
+      <DependentUpon>AgentBilling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\OfflineBooth\AgentBilling.aspx.designer.cs">
+      <DependentUpon>AgentBilling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\OfflineBooth\BoothPlaceOrder.aspx.cs">
+      <DependentUpon>BoothPlaceOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\OfflineBooth\BoothPlaceOrder.aspx.designer.cs">
+      <DependentUpon>BoothPlaceOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\OfflineBooth\BoothStockLanding.aspx.cs">
+      <DependentUpon>BoothStockLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\OfflineBooth\BoothStockLanding.aspx.designer.cs">
+      <DependentUpon>BoothStockLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\OfflineBooth\EmployeeBilling.aspx.cs">
+      <DependentUpon>EmployeeBilling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\OfflineBooth\EmployeeBilling.aspx.designer.cs">
+      <DependentUpon>EmployeeBilling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\OfflineBooth\LocalBilling.aspx.cs">
+      <DependentUpon>LocalBilling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\OfflineBooth\LocalBilling.aspx.designer.cs">
+      <DependentUpon>LocalBilling.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Procurement\AddMilkCollectionCenter.aspx.cs">
       <DependentUpon>AddMilkCollectionCenter.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2977,6 +3017,7 @@
     <None Include="packages\EntityFramework.5.0.0\tools\install.ps1" />
     <Content Include="packages\EntityFramework.5.0.0\tools\Redirect.config" />
     <Content Include="packages\EntityFramework.5.0.0\tools\Redirect.VS11.config" />
+    <None Include="Properties\PublishProfiles\a.pubxml" />
     <None Include="Properties\PublishProfiles\amol.pubxml" />
     <None Include="Properties\PublishProfiles\DairyERP.pubxml" />
     <None Include="Properties\PublishProfiles\sharad_mahajan.pubxml" />
@@ -3122,6 +3163,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Tabs\Cashier\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Tabs\OfflineBooth\Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>

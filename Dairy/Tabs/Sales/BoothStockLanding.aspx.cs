@@ -25,7 +25,9 @@ namespace Dairy.Tabs.Sales
         {
             if (!IsPostBack)
             {
-               
+                bindStockUser();
+                bindstock();
+                updateSalesSummary();
             }
         }
 

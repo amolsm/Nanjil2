@@ -23,7 +23,7 @@ namespace Dairy.Tabs.Sales
         ProductData productdata;
         Product product;
         DataSet DS = new DataSet();
-        static int Id = 0;
+        //static int Id = 0;
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -53,9 +53,10 @@ namespace Dairy.Tabs.Sales
 
         protected void rpDesigList_ItemCommand(object sender, RepeaterCommandEventArgs e)
         {
-            
-            
-            Id = Convert.ToInt32(e.CommandArgument);
+
+            int ids = 0;
+            ids = Convert.ToInt32(e.CommandArgument);
+            hfId.Value = ids.ToString();
             switch (e.CommandName)
             {
                 case ("Edit"):
@@ -77,19 +78,21 @@ namespace Dairy.Tabs.Sales
 
         private void openModal()
         {
+            int ids = 0;
+            ids = Convert.ToInt32(hfId.Value);
             int boothid = GlobalInfo.CurrentbothID;
             productdata = new ProductData();
             DataSet DS = new DataSet();
             DS = productdata.GetStockDetails(boothid);
             // DataTable dt = DS.Tables[0];
             var query = from dts in DS.Tables[0].AsEnumerable()
-                        where dts.Field<int>("BoothStockDetailsID") == Id
+                        where dts.Field<int>("BoothStockDetailsID") == ids
                         select dts.Field<string>("ProductName");
 
 
 
             var query1 = from dts in DS.Tables[0].AsEnumerable()
-                         where dts.Field<int>("BoothStockDetailsID") == Id
+                         where dts.Field<int>("BoothStockDetailsID") == ids
                          select dts.Field<double>("StockAvailable");
 
             List<string> pname = query.ToList();
@@ -123,10 +126,10 @@ namespace Dairy.Tabs.Sales
                 prod.Other = string.IsNullOrEmpty(txtOthers.Text) ? 0 : Convert.ToDouble(txtOthers.Text);
                 prod.Incentive = string.IsNullOrEmpty(txtIncentive.Text) ? 0 : Convert.ToDouble(txtIncentive.Text);
                 prod.SpotDamage = string.IsNullOrEmpty(txtSpotDamaged.Text) ? 0 : Convert.ToDouble(txtSpotDamaged.Text);
-                prod.ID = Id;
+                prod.ID = Convert.ToInt32(hfId.Value);
                 prod.UserID = GlobalInfo.Userid;
                 DataSet DS1 = new DataSet();
-                DS1 = productdata.getStockbyId(Id);
+                DS1 = productdata.getStockbyId(Convert.ToInt32(hfId.Value));
 
                 if (prod.Return >= 0 && prod.Replace >= 0 && prod.Other >= 0 && prod.Incentive >= 0 && prod.SpotDamage >= 0)
                 {

@@ -68,6 +68,7 @@
                   <a href="/Authentication/ForgotPassword.aspx"> I forgot my password </a><br>
                     <asp:Label runat="server" ID="lblmsg" Text="Invalid Username or Password" ForeColor="Red"></asp:Label>
                   </asp:Panel>
+
                  <asp:Panel runat="server" ID="PNLSELECTBOTH" Visible="false">
                <div class="form-group">
                     <div class="input-group">
@@ -80,6 +81,42 @@
                          
                     </div><!-- /.input group -->
                    </div>
+           </asp:Panel>
+
+                <asp:Panel runat="server" ID="pnlOfflineBooth" Visible="false">
+                   
+                 <div class="form-group">
+                   <div class="input-group">
+                     <div class="input-group-addon">
+                       <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                     </div>
+                      <asp:TextBox ID="txtOfflineBoothDate" class="form-control" type="date"  placeholder="Date" runat="server" ></asp:TextBox>                        
+                   </div><!-- /.input group -->
+
+                 </div><!-- /.form group -->
+
+                   
+               <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:DropDownList ID="dpBooth" class="form-control" DataTextField="Name" DataValueField="AgentID" runat="server" > 
+                       </asp:DropDownList>
+                        
+                         
+                    </div><!-- /.input group -->
+                   </div>
+
+                    <div class="form-group">
+                    <div class="input-group">
+                       <asp:Button ID="btnOfflineBooth" class="btn btn-primary" runat="server"  Text="Submit" ValidationGroup="offline"  OnClick="btnOfflineBooth_Click"  />                    
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+
+
            </asp:Panel>
 
                 <asp:Panel runat="server" ID="pnlSelectShift" Visible="false">
@@ -137,5 +174,62 @@
             });
         });
     </script>
+      <script>
+         yepnope({ // or Modernizr.load
+             test: Modernizr.inputtypes.date,
+             nope: [
+                 'http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js',
+
+                 'http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.css',
+                 'http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.structure.min.css',
+                 'http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.theme.min.css',
+
+             ],
+
+             callback: function (url) {
+
+                 if (url === 'http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js') {
+
+                     var idx = 0;
+
+                     $('input[type="date"]').each(function () {
+                         var _this = $(this),
+                             prefix = 'alt' + String(idx++) + '_',
+                             _val = _this.val();
+
+                         _this
+                         .attr('placeholder', 'gg/mm/aaaa')
+                         .attr('autocomplete', 'off')
+                         .prop('readonly', true)
+                         .after('<input type="text" class="altfield" id="' + prefix + this.attr('id') + '" name="' + this.attr('name') + '" value="' + _val + '">')
+                         .removeAttr('name')
+                         .val('')
+                         .datepicker({
+                             altField: '#' + prefix + _this.attr('id'),
+                             dateFormat: 'dd/mm/yy',
+                             altFormat: 'dd/mm/yy'
+                         });
+
+                         if (_val) {
+                             this.datepicker('setDate', $.datepicker.parseDate('dd/mm/yy', val));
+                         };
+                     });
+
+
+                     // min attribute
+                     $('input[type="date"][min]').each(function () {
+                         var _this = $(this);
+                         this.datepicker("option", "minDate", $.datepicker.parseDate('dd/mm/yy', this.attr('min')));
+                     });
+
+                     // max attribute
+                     $('input[type="date"][max]').each(function () {
+                         var _this = $(this);
+                         this.datepicker("option", "maxDate", $.datepicker.parseDate('dd/mm/yy', this.attr('max')));
+                     });
+                 }
+             }
+         }); // end Modernizr.load
+        </script>
   </body>
 </html>

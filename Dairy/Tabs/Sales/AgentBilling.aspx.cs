@@ -89,12 +89,7 @@ namespace Dairy.Tabs.Sales
             dpAgentProductdetaisl.Focus();
             upMain.Update();
 
-            DataSet DS1 = new DataSet();
-            DS1=BindCommanData.BindCommanDropDwon("AgentID","PaymentMode","AgentMaster","AgentID="+Convert.ToInt32(dpAgent.SelectedItem.Value));
-            dpPaymentMode.DataSource = DS1;
-            dpPaymentMode.DataBind();
-            dpPaymentMode.Focus();
-            upMain.Update();
+           
 
         }
         protected void dpAgentShemeApplied_SelectedIndexChanged(object sender, EventArgs e)
@@ -172,14 +167,12 @@ namespace Dairy.Tabs.Sales
 
         protected void dpAgentpre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //DS = BindCommanData.BindTypeDropDwon("TypeMaster.TypeID", "TypeMaster.TypeName as TypeName ", " TypeMaster ", " BindSlab", " TypeMaster.TypeID = BindSlab.TypeID ", "BindSlab.AgentID = 110 ");
-            //if (!Comman.Comman.IsDataSetEmpty(DS))
-            //{
-            //    dpAgentProductType.DataSource = DS;
-            //    dpAgentProductType.DataBind();
-            //    dpAgentProductType.Items.Insert(0, new ListItem("--Select Product Type  --", "0"));
-            //}
-            dpAgent.Focus();
+            DataSet DS1 = new DataSet();
+            DS1 = BindCommanData.BindCommanDropDwon("AgentID", "PaymentMode", "AgentMaster", "AgentID=" + Convert.ToInt32(dpAgent.SelectedItem.Value));
+            dpPaymentMode.DataSource = DS1;
+            dpPaymentMode.DataBind();
+            dpPaymentMode.Focus();
+            upMain.Update();
         }
 
 

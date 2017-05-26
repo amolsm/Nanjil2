@@ -173,6 +173,29 @@ namespace Dairy.App_code
             }
         }
 
+        public static string OfflineBoothDate
+        {
+
+            get
+            {
+                try
+                {
+
+                    FormsIdentity id = (System.Web.Security.FormsIdentity)HttpContext.Current.User.Identity;
+                    System.Web.Security.FormsAuthenticationTicket ticket = id.Ticket;
+                    string userData = ticket.UserData;
+                    string[] arrStr = userData.Split(new Char[] { ';' });
+                    return string.IsNullOrEmpty(arrStr[7]) ? "none" : (arrStr[7].ToString());
+
+                }
+                catch (Exception)
+                {
+                    return "0";
+                    throw;
+                }
+            }
+        }
+
 
     }
 }

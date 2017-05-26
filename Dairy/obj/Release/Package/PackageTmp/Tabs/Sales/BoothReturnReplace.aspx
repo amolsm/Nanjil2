@@ -95,7 +95,7 @@
       </div>
       <div class="modal-body">
           <div class="box-body">
-            
+            <asp:HiddenField runat="server" ID="hfId" />
               <div class="col-lg-6">
                   <div class="form-group" >
                     <div class="input-group">

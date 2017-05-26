@@ -85,6 +85,42 @@ namespace Dairy.Authentication {
         protected global::System.Web.UI.WebControls.DropDownList dpAgent;
         
         /// <summary>
+        /// pnlOfflineBooth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlOfflineBooth;
+        
+        /// <summary>
+        /// txtOfflineBoothDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOfflineBoothDate;
+        
+        /// <summary>
+        /// dpBooth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpBooth;
+        
+        /// <summary>
+        /// btnOfflineBooth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOfflineBooth;
+        
+        /// <summary>
         /// pnlSelectShift control.
         /// </summary>
         /// <remarks>

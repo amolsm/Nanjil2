@@ -509,6 +509,47 @@
         
           </ul>
 </asp:Panel>
+
+            <asp:Panel runat="server" ID="pnlOfflineBooth" Visible="false">
+      <ul class="sidebar-menu">
+           
+             <li class="treeview">
+              <a href="#">
+                <i class="fa fa-archive"></i>
+                <span>Booth Billing</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                  <li><a href="/Tabs/OfflineBooth/BoothStockLanding.aspx"><i class="fa fa-circle-o"></i>Stock Available</a></li>
+                  <li><a href="/Tabs/Administration/ViewBoothStock.aspx"><i class="fa fa-circle-o"></i>View Booth Stock</a></li>
+                <li><a href="/Tabs/OfflineBooth/LocalBilling.aspx"><i class="fa fa-circle-o"></i>Local Sale</a></li>
+                   <li><a href="/Tabs/OfflineBooth/AgentBilling.aspx"><i class="fa fa-circle-o"></i>Agent Sale</a></li>
+                   <li><a href="/Tabs/OfflineBooth/EmployeeBilling.aspx"><i class="fa fa-circle-o"></i>Employee Sale</a></li>    
+                 <%-- <li><a href="/Tabs/Sales/BoothReturnReplace.aspx"><i class="fa fa-circle-o"></i>Return Items</a></li>   --%>
+                  <li><a href="/Tabs/OfflineBooth/BoothPlaceOrder.aspx"><i class="fa fa-circle-o"></i>Booth Place Order</a></li>         
+              </ul>
+            </li> 
+         <%--   <li class="treeview">
+              <a href="#">
+                <i class="fa fa-university "></i>
+                <span>Booth Info</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/Tabs/Administration/ViewBoothStock.aspx"><i class="fa fa-circle-o"></i>View Booth Stock</a></li>
+                   <li><a href="/Tabs/Administration/ViewBoothUserSales.aspx"><i class="fa fa-circle-o"></i>Booth User Sale</a></li>
+               <li><a href="/Tabs/Reports/Boothitemwisesalessummary.aspx"><i class="fa fa-circle-o"></i>BoothSummary Itemwise </a></li> 
+                 <li><a href="/Tabs/Reports/BoothBillWiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>BoothSummary Billwise </a></li> 
+                <li><a href="/Tabs/Reports/BoothSalesAnalysisUsers.aspx"><i class="fa fa-circle-o"></i>Booth Sales Analysis</a></li>
+                    <li><a href="/Tabs/Reports/BoothroutewiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Booth Sale Summary</a></li>
+                 
+                   
+                  
+              </ul>
+            </li>--%>          
+        
+          </ul>
+</asp:Panel>
 <asp:Panel runat="server" ID="pnlDesptach" Visible="false">
 
     <ul class="sidebar-menu">

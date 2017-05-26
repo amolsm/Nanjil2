@@ -2,29 +2,29 @@
 <NewDataSet>
   <Table>
     <Row>1</Row>
-    <OrderID>771925</OrderID>
-    <OrderDate>04-05-2017</OrderDate>
+    <OrderID>791927</OrderID>
+    <OrderDate>17-05-2017</OrderDate>
     <AgentID>16</AgentID>
-    <SelesEmployeeId>28</SelesEmployeeId>
+    <SelesEmployeeId>29</SelesEmployeeId>
     <ShcemheApplied>false</ShcemheApplied>
     <TotalBill>130.0000</TotalBill>
     <OrderType>1</OrderType>
     <RouteID>4</RouteID>
     <IsPrinted>true</IsPrinted>
-    <BillNo>20170505/R0002/1</BillNo>
+    <BillNo>20170517/R0002/1</BillNo>
     <CreatedBy>1</CreatedBy>
-    <CreatedDate>05-05-2017</CreatedDate>
-    <BillNumber>04-05-2017771925</BillNumber>
+    <CreatedDate>05-17-2017</CreatedDate>
+    <BillNumber>17-05-2017791927</BillNumber>
     <BulkFlag>0</BulkFlag>
     <BillSeq>6628</BillSeq>
-    <OrderDetailsId>786253</OrderDetailsId>
-    <OrderId1>771925</OrderId1>
+    <OrderDetailsId>806257</OrderDetailsId>
+    <OrderId1>791927</OrderId1>
     <TypeID>1</TypeID>
     <ProductID>465</ProductID>
     <Qty>1</Qty>
     <UnitCost>30.0000</UnitCost>
     <Total>30.0000</Total>
-    <Dispatched>false</Dispatched>
+    <Dispatched>true</Dispatched>
     <ProductID1>465</ProductID1>
     <ProductName>DTM-1000ml</ProductName>
     <ProductCode>P00465</ProductCode>
@@ -54,7 +54,7 @@
     <PaymentMode>Daily</PaymentMode>
     <IsArchive1>false</IsArchive1>
     <SchemeAmount>100.0000</SchemeAmount>
-    <TotalSchemeAmount>113700.0000</TotalSchemeAmount>
+    <TotalSchemeAmount>113800.0000</TotalSchemeAmount>
     <TypeID2>1</TypeID2>
     <TypeName>Milk</TypeName>
     <CategoryID>1</CategoryID>
@@ -66,29 +66,29 @@
   </Table>
   <Table>
     <Row>2</Row>
-    <OrderID>771925</OrderID>
-    <OrderDate>04-05-2017</OrderDate>
+    <OrderID>791927</OrderID>
+    <OrderDate>17-05-2017</OrderDate>
     <AgentID>16</AgentID>
-    <SelesEmployeeId>28</SelesEmployeeId>
+    <SelesEmployeeId>29</SelesEmployeeId>
     <ShcemheApplied>false</ShcemheApplied>
     <TotalBill>130.0000</TotalBill>
     <OrderType>1</OrderType>
     <RouteID>4</RouteID>
     <IsPrinted>true</IsPrinted>
-    <BillNo>20170505/R0002/1</BillNo>
+    <BillNo>20170517/R0002/1</BillNo>
     <CreatedBy>1</CreatedBy>
-    <CreatedDate>05-05-2017</CreatedDate>
-    <BillNumber>04-05-2017771925</BillNumber>
+    <CreatedDate>05-17-2017</CreatedDate>
+    <BillNumber>17-05-2017791927</BillNumber>
     <BulkFlag>0</BulkFlag>
     <BillSeq>6628</BillSeq>
-    <OrderDetailsId>786254</OrderDetailsId>
-    <OrderId1>771925</OrderId1>
+    <OrderDetailsId>806258</OrderDetailsId>
+    <OrderId1>791927</OrderId1>
     <TypeID>0</TypeID>
     <ProductID>0</ProductID>
     <Qty>0</Qty>
     <UnitCost>0.0000</UnitCost>
     <Total>100.0000</Total>
-    <Dispatched>false</Dispatched>
+    <Dispatched>true</Dispatched>
     <AgentID1>16</AgentID1>
     <AgentCode>1813</AgentCode>
     <RouteID1>4</RouteID1>
@@ -101,33 +101,33 @@
     <PaymentMode>Daily</PaymentMode>
     <IsArchive1>false</IsArchive1>
     <SchemeAmount>100.0000</SchemeAmount>
-    <TotalSchemeAmount>113700.0000</TotalSchemeAmount>
+    <TotalSchemeAmount>113800.0000</TotalSchemeAmount>
   </Table>
   <Table>
     <Row>3</Row>
-    <OrderID>771926</OrderID>
-    <OrderDate>04-05-2017</OrderDate>
+    <OrderID>791928</OrderID>
+    <OrderDate>17-05-2017</OrderDate>
     <AgentID>23</AgentID>
-    <SelesEmployeeId>28</SelesEmployeeId>
+    <SelesEmployeeId>29</SelesEmployeeId>
     <ShcemheApplied>false</ShcemheApplied>
-    <TotalBill>190.9000</TotalBill>
+    <TotalBill>130.3000</TotalBill>
     <OrderType>1</OrderType>
     <RouteID>4</RouteID>
     <IsPrinted>true</IsPrinted>
-    <BillNo>20170505/R0002/2</BillNo>
+    <BillNo>20170517/R0002/2</BillNo>
     <CreatedBy>1</CreatedBy>
-    <CreatedDate>05-05-2017</CreatedDate>
-    <BillNumber>04-05-2017771926</BillNumber>
+    <CreatedDate>05-17-2017</CreatedDate>
+    <BillNumber>17-05-2017791928</BillNumber>
     <BulkFlag>0</BulkFlag>
     <BillSeq>6629</BillSeq>
-    <OrderDetailsId>786255</OrderDetailsId>
-    <OrderId1>771926</OrderId1>
+    <OrderDetailsId>806259</OrderDetailsId>
+    <OrderId1>791928</OrderId1>
     <TypeID>1</TypeID>
     <ProductID>17</ProductID>
-    <Qty>3</Qty>
+    <Qty>1</Qty>
     <UnitCost>30.3000</UnitCost>
-    <Total>90.9000</Total>
-    <Dispatched>false</Dispatched>
+    <Total>30.3000</Total>
+    <Dispatched>true</Dispatched>
     <ProductID1>17</ProductID1>
     <ProductName>DTM-1000ml</ProductName>
     <ProductCode>P00017</ProductCode>
@@ -157,7 +157,7 @@
     <PaymentMode>Daily</PaymentMode>
     <IsArchive1>false</IsArchive1>
     <SchemeAmount>100.0000</SchemeAmount>
-    <TotalSchemeAmount>35600.0000</TotalSchemeAmount>
+    <TotalSchemeAmount>35800.0000</TotalSchemeAmount>
     <TypeID2>1</TypeID2>
     <TypeName>Milk</TypeName>
     <CategoryID>1</CategoryID>
@@ -169,29 +169,29 @@
   </Table>
   <Table>
     <Row>4</Row>
-    <OrderID>771926</OrderID>
-    <OrderDate>04-05-2017</OrderDate>
+    <OrderID>791928</OrderID>
+    <OrderDate>17-05-2017</OrderDate>
     <AgentID>23</AgentID>
-    <SelesEmployeeId>28</SelesEmployeeId>
+    <SelesEmployeeId>29</SelesEmployeeId>
     <ShcemheApplied>false</ShcemheApplied>
-    <TotalBill>190.9000</TotalBill>
+    <TotalBill>130.3000</TotalBill>
     <OrderType>1</OrderType>
     <RouteID>4</RouteID>
     <IsPrinted>true</IsPrinted>
-    <BillNo>20170505/R0002/2</BillNo>
+    <BillNo>20170517/R0002/2</BillNo>
     <CreatedBy>1</CreatedBy>
-    <CreatedDate>05-05-2017</CreatedDate>
-    <BillNumber>04-05-2017771926</BillNumber>
+    <CreatedDate>05-17-2017</CreatedDate>
+    <BillNumber>17-05-2017791928</BillNumber>
     <BulkFlag>0</BulkFlag>
     <BillSeq>6629</BillSeq>
-    <OrderDetailsId>786256</OrderDetailsId>
-    <OrderId1>771926</OrderId1>
+    <OrderDetailsId>806260</OrderDetailsId>
+    <OrderId1>791928</OrderId1>
     <TypeID>0</TypeID>
     <ProductID>0</ProductID>
     <Qty>0</Qty>
     <UnitCost>0.0000</UnitCost>
     <Total>100.0000</Total>
-    <Dispatched>false</Dispatched>
+    <Dispatched>true</Dispatched>
     <AgentID1>23</AgentID1>
     <AgentCode>2719</AgentCode>
     <RouteID1>4</RouteID1>
@@ -204,6 +204,6 @@
     <PaymentMode>Daily</PaymentMode>
     <IsArchive1>false</IsArchive1>
     <SchemeAmount>100.0000</SchemeAmount>
-    <TotalSchemeAmount>35600.0000</TotalSchemeAmount>
+    <TotalSchemeAmount>35800.0000</TotalSchemeAmount>
   </Table>
 </NewDataSet>

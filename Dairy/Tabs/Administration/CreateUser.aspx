@@ -221,6 +221,7 @@
                             <asp:ListItem Value="7">Marketing</asp:ListItem>
                             <asp:ListItem Value="8">Cashier</asp:ListItem>
                             <asp:ListItem Value="9">Procurement</asp:ListItem>
+                          <asp:ListItem Value="10">OfflineBooth</asp:ListItem>
                           
                        </asp:DropDownList> 
                     </div><!-- /.input group -->

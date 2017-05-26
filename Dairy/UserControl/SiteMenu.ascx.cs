@@ -26,6 +26,7 @@ namespace Dairy.UserControl
                             pnlMarketing.Visible = false;
                             pnlCashier.Visible = false;
                             pnlProcurement.Visible = false;
+                            pnlOfflineBooth.Visible = false;
                             break;                             
                         }
                     case "Reception":
@@ -39,6 +40,7 @@ namespace Dairy.UserControl
                             pnlMarketing.Visible = false;
                             pnlCashier.Visible = false;
                             pnlProcurement.Visible = false;
+                            pnlOfflineBooth.Visible = false;
                             break;
                         }
                     case "Sales":
@@ -52,6 +54,7 @@ namespace Dairy.UserControl
                             pnlMarketing.Visible = false;
                             pnlCashier.Visible = false;
                             pnlProcurement.Visible = false;
+                            pnlOfflineBooth.Visible = false;
                             break;
                         }
                     case "Despatch":
@@ -65,6 +68,7 @@ namespace Dairy.UserControl
                             pnlMarketing.Visible = false;
                             pnlCashier.Visible = false;
                             pnlProcurement.Visible = false;
+                            pnlOfflineBooth.Visible = false;
                             break;
                         }
                     case "Transport":
@@ -78,6 +82,7 @@ namespace Dairy.UserControl
                             pnlTransport.Visible = true;
                             pnlCashier.Visible = false;
                             pnlProcurement.Visible = false;
+                            pnlOfflineBooth.Visible = false;
 
                             break;
                         }
@@ -92,6 +97,7 @@ namespace Dairy.UserControl
                             pnlPurchase.Visible = true;
                             pnlCashier.Visible = false;
                             pnlProcurement.Visible = false;
+                            pnlOfflineBooth.Visible = false;
                             break;
                         }
                     case "Marketing":
@@ -105,6 +111,7 @@ namespace Dairy.UserControl
                             pnlMarketing.Visible = true;
                             pnlCashier.Visible = false;
                             pnlProcurement.Visible = false;
+                            pnlOfflineBooth.Visible = false;
                             break;
                         }
                     case "Cashier":
@@ -118,6 +125,7 @@ namespace Dairy.UserControl
                             pnlMarketing.Visible = false;
                             pnlCashier.Visible = true;
                             pnlProcurement.Visible = false;
+                            pnlOfflineBooth.Visible = false;
                             break;
                         }
                     case "Procurement":
@@ -130,7 +138,22 @@ namespace Dairy.UserControl
                             pnlPurchase.Visible = false;
                             pnlMarketing.Visible = false;
                             pnlCashier.Visible = false;
+                            pnlOfflineBooth.Visible = false;
                             pnlProcurement.Visible = true;
+                            break;
+                        }
+                    case "OfflineBooth":
+                        {
+                            pnlAddminitration.Visible = false;
+                            pnlReception.Visible = false;
+                            pnlSales.Visible = false;
+                            pnlDesptach.Visible = false;
+                            pnlTransport.Visible = false;
+                            pnlPurchase.Visible = false;
+                            pnlMarketing.Visible = false;
+                            pnlCashier.Visible = false;
+                            pnlProcurement.Visible = false;
+                            pnlOfflineBooth.Visible = true;
                             break;
                         }
                 }
