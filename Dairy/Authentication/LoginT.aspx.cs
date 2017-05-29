@@ -138,34 +138,39 @@ namespace Dairy.Authentication
             {
                 lock (d)
                 {
-                    if (d.Contains(user.UserName))
+                    foreach (string item in d)
                     {
-                        Int32 temp = 0;
-                        try
+                        if (item.Contains(user.UserName))
                         {
-                            temp = GlobalInfo.Userid;
-                        }
-                        catch (Exception) { }
+                            Int32 temp = 0;
+                            try
+                            {
+                                temp = GlobalInfo.Userid;
+                            }
+                            catch (Exception) { }
 
-                        if (user.UserID == temp)
-                        {
-                            return true;
+                            if (user.UserID == temp)
+                            {
+                                return true;
+                            }
+                            else if (txtUsername.Text == username)
+                            {
+                                return true;
+                            }
+                            else
+                            { // User is already logged in!!!
+                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('User already logged in')", true);
+                                return false;
+                            }
+
                         }
-                        else if (txtUsername.Text== username)
-                        {
-                            return true;
-                        }
-                        else
-                        { // User is already logged in!!!
-                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('User already logged in')", true);
-                            return false;
-                        }
-                        
                     }
-                    d.Add(user.UserName);
+                    
+                    string abc = user.UserName +" "+ user.RoleID + " "+ DateTime.Now.ToString();
+                    d.Add(abc);
                 }
             }
-            Session["UserLoggedIn"] = user.UserName;
+            Session["UserLoggedIn"] = user.UserName + " " + user.RoleID + " " + DateTime.Now.ToString(); 
             return true;
         }
           public void CreateAutinticationTikit(User user,string bothID, string ShiftId,string Coll_CenterId, string offlineBoothDate = "none")
