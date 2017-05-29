@@ -43,7 +43,7 @@ namespace Dairy.Tabs.Marketing
         {
             string result = string.Empty;
             DS = billdata.MarketingReportForSalesAnalysisitemwiseByDate((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpBrand.SelectedValue));
-            if (!Comman.Comman.IsDataSetEmpty(DS))
+            if (DS.Tables[0].Rows.Count>0 && DS.Tables[2].Rows.Count>0)
             {
                 StringBuilder sb = new StringBuilder();
 

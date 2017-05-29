@@ -77,6 +77,19 @@ namespace DataAccess
             return result;
         }
 
+        public DataSet SalesComparisionreportItemwisebyDate(string start1Date, string end1Date, string start2Date, string end2Date, int routeID, int brandID)
+        {
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@Dispatch1BeginDate", start1Date));
+            paramCollection.Add(new DBParameter("@Dispatch1EndDate", end1Date));
+            paramCollection.Add(new DBParameter("@Dispatch2BeginDate", start2Date));
+            paramCollection.Add(new DBParameter("@Dispatch2EndDate", end2Date));
+            paramCollection.Add(new DBParameter("@RouteID", routeID));
+
+            paramCollection.Add(new DBParameter("@BrandID", brandID));
+            return _DBHelper.ExecuteDataSet("sp_SalesComparisonReportItemwise", paramCollection, CommandType.StoredProcedure);
+        }
+
         public DataSet NewAgentListDetails(string startdate, string enddate, int routeid,int asoempid)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();

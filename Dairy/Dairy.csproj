@@ -186,6 +186,7 @@
     <Content Include="Tabs\Marketing\RefundSchemeSummary.aspx" />
     <Content Include="Tabs\Marketing\ReturnComparisonReport.aspx" />
     <Content Include="Tabs\Marketing\SalesComparison.aspx" />
+    <Content Include="Tabs\Marketing\SalesComparisonReport.aspx" />
     <Content Include="Tabs\Marketing\SchemeRefund.aspx" />
     <Content Include="Tabs\Marketing\SpotDamageComparisonReport.aspx" />
     <Content Include="Tabs\Marketing\StaffAccountSalesSummary.aspx" />
@@ -1885,6 +1886,13 @@
     </Compile>
     <Compile Include="Tabs\Marketing\SalesComparison.aspx.designer.cs">
       <DependentUpon>SalesComparison.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\SalesComparisonReport.aspx.cs">
+      <DependentUpon>SalesComparisonReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\SalesComparisonReport.aspx.designer.cs">
+      <DependentUpon>SalesComparisonReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Marketing\SchemeRefund.aspx.cs">
       <DependentUpon>SchemeRefund.aspx</DependentUpon>
