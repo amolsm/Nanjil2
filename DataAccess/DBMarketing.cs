@@ -219,12 +219,14 @@ namespace DataAccess
         }
 
 
-        public DataSet AmountwiseIceCreamReport(string Date, int RouteID, double startamt, double endamt)
+        public DataSet AmountwiseIceCreamReport(string StartDate, string EndDate, int RouteID, int typeid,int commodityid,double startamt, double endamt)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
-            paramCollection.Add(new DBParameter("@Date", Date));
-       
+            paramCollection.Add(new DBParameter("@StartDate", StartDate));
+            paramCollection.Add(new DBParameter("@EndDate", EndDate));
             paramCollection.Add(new DBParameter("@RouteID", RouteID));
+            paramCollection.Add(new DBParameter("@TypeId", typeid));
+            paramCollection.Add(new DBParameter("@CommodityId", commodityid));
             paramCollection.Add(new DBParameter("@startamt", startamt));
             paramCollection.Add(new DBParameter("@endamt", endamt));
             return _DBHelper.ExecuteDataSet("mk_AmountwiseIceCreamReport", paramCollection, CommandType.StoredProcedure);
