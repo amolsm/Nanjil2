@@ -242,6 +242,15 @@ namespace Dairy.Authentication
               
         public bool boothLoggedIn()
         {
+            string bname = string.Empty;
+            HttpCookie myCookie = Request.Cookies["myBCookie"];
+            if (myCookie != null)
+            {
+                if (!string.IsNullOrEmpty(myCookie.Values["bname"]))
+                {
+                    bname = myCookie.Values["bname"].ToString();
+                }
+            }
             List<string> d = Application["BoothLoggedIn"] as List<string>;
             if (d != null)
             {
@@ -249,10 +258,15 @@ namespace Dairy.Authentication
                 {
                     if (d.Contains(dpAgent.SelectedItem.Text))
                     {
+                        if (dpAgent.SelectedItem.Text == bname)
+                        {
+                            return true;
+                        }else
                         // User is already logged in!!!
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Booth already logged in')", true);
                         return false;
                     }
+                    AddBoothCookies();
                     d.Add(dpAgent.SelectedItem.Text);
                 }
             }
@@ -320,7 +334,19 @@ namespace Dairy.Authentication
             //Most important, write the cookie to client.
             Response.Cookies.Add(myCookie);
         }
+        public void AddBoothCookies()
+        {
+            HttpCookie mybCookie = new HttpCookie("myBCookie");
 
+            //Add key-values in the cookie
+            mybCookie.Values.Add("bname", dpAgent.SelectedItem.Text);
+
+            //set cookie expiry date-time. Made it to last for next 12 hours.
+            mybCookie.Expires = DateTime.Now.AddHours(12);
+
+            //Most important, write the cookie to client.
+            Response.Cookies.Add(mybCookie);
+        }
         protected void dpCollectionCenter_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (dpCollectionCenter.SelectedItem.Value != "0")

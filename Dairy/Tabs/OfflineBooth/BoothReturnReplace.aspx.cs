@@ -16,7 +16,7 @@ using System.Data.SqlClient;
 using System.Web.Services;
 
 
-namespace Dairy.Tabs.Sales
+namespace Dairy.Tabs.OfflineBooth
 {
     public partial class BoothReturnReplace : System.Web.UI.Page
     {
@@ -128,8 +128,7 @@ namespace Dairy.Tabs.Sales
                 prod.SpotDamage = string.IsNullOrEmpty(txtSpotDamaged.Text) ? 0 : Convert.ToDouble(txtSpotDamaged.Text);
                 prod.ID = Convert.ToInt32(hfId.Value);
                 prod.UserID = GlobalInfo.Userid;
-                prod.ShiftDate = DateTime.Now.ToString("dd-MM-yyyy");
-
+                prod.ShiftDate = GlobalInfo.OfflineBoothDate;
                 DataSet DS1 = new DataSet();
                 DS1 = productdata.getStockbyId(Convert.ToInt32(hfId.Value));
 

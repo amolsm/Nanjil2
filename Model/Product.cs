@@ -62,7 +62,7 @@ namespace Model
         public double SpotDamage { get; set; }
         public double Incentive { get; set; }
         public double Other { get; set; }
-
+        public string ShiftDate { get; set; }
 
         public string MonthelyCollection
         {

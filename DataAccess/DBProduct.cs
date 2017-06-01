@@ -862,7 +862,7 @@ namespace DataAccess
                 paramCollection.Add(new DBParameter("@Incentive", product.Incentive));
                 paramCollection.Add(new DBParameter("@Other", product.Other));
                 paramCollection.Add(new DBParameter("@UserID", product.UserID));
-
+                paramCollection.Add(new DBParameter("@ShiftDate", product.ShiftDate));
 
                 result = _DBHelper.ExecuteNonQuery("UpdateStockUser", paramCollection, CommandType.StoredProcedure);
 

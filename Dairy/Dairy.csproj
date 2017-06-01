@@ -191,6 +191,7 @@
     <Content Include="Tabs\Marketing\StaffAccountSalesSummary.aspx" />
     <Content Include="Tabs\OfflineBooth\AgentBilling.aspx" />
     <Content Include="Tabs\OfflineBooth\BoothPlaceOrder.aspx" />
+    <Content Include="Tabs\OfflineBooth\BoothReturnReplace.aspx" />
     <Content Include="Tabs\OfflineBooth\BoothStockLanding.aspx" />
     <Content Include="Tabs\OfflineBooth\EmployeeBilling.aspx" />
     <Content Include="Tabs\OfflineBooth\LocalBilling.aspx" />
@@ -1920,6 +1921,13 @@
     </Compile>
     <Compile Include="Tabs\OfflineBooth\BoothPlaceOrder.aspx.designer.cs">
       <DependentUpon>BoothPlaceOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\OfflineBooth\BoothReturnReplace.aspx.cs">
+      <DependentUpon>BoothReturnReplace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\OfflineBooth\BoothReturnReplace.aspx.designer.cs">
+      <DependentUpon>BoothReturnReplace.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\OfflineBooth\BoothStockLanding.aspx.cs">
       <DependentUpon>BoothStockLanding.aspx</DependentUpon>
