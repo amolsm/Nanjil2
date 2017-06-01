@@ -83,6 +83,11 @@ namespace Bussiness
             return dbMarketing.AddAgentDamageReplacementRateSetup(agentId, routeid, categoryid, typeid, commodityid, damagereplacementrate, isActive);
         }
 
+        public DataSet SalesComparisionreportItemwisebyDate(string Start1Date, string End1Date, string Start2Date, string End2Date, int routeID, int BrandID)
+        {
+            return dbMarketing.SalesComparisionreportItemwisebyDate(Start1Date, End1Date, Start2Date, End2Date, routeID, BrandID);
+        }
+
         public DataSet ReturnComparisionreportbyDate(string Start1Date, string End1Date, string Start2Date, string End2Date, int AgentID, int BrandID)
         {
             return dbMarketing.ReturnComparisionreportbyDate(Start1Date, End1Date, Start2Date, End2Date,  AgentID, BrandID);
@@ -117,10 +122,10 @@ namespace Bussiness
             return dbMarketing.ViewItemwisePurchaseAgentList(StartDate, EndDate, RouteID, TypeID, CommodityID);
         }
 
-        public DataSet AmountwiseIceCreamReport(string Date, int RouteID, double startamt, double endamt)
+        public DataSet AmountwiseIceCreamReport(string StartDate, string EndDate, int RouteID, int typeid,int commodityid, double startamt, double endamt)
         {
             dbMarketing = new DBMarketing();
-            return dbMarketing.AmountwiseIceCreamReport(Date, RouteID, startamt, endamt);
+            return dbMarketing.AmountwiseIceCreamReport(StartDate, EndDate, RouteID, typeid, commodityid,startamt, endamt);
         }
     }
 }

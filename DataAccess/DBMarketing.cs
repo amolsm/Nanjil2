@@ -77,6 +77,19 @@ namespace DataAccess
             return result;
         }
 
+        public DataSet SalesComparisionreportItemwisebyDate(string start1Date, string end1Date, string start2Date, string end2Date, int routeID, int brandID)
+        {
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@Dispatch1BeginDate", start1Date));
+            paramCollection.Add(new DBParameter("@Dispatch1EndDate", end1Date));
+            paramCollection.Add(new DBParameter("@Dispatch2BeginDate", start2Date));
+            paramCollection.Add(new DBParameter("@Dispatch2EndDate", end2Date));
+            paramCollection.Add(new DBParameter("@RouteID", routeID));
+
+            paramCollection.Add(new DBParameter("@BrandID", brandID));
+            return _DBHelper.ExecuteDataSet("sp_SalesComparisonReportItemwise", paramCollection, CommandType.StoredProcedure);
+        }
+
         public DataSet NewAgentListDetails(string startdate, string enddate, int routeid,int asoempid)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
@@ -206,12 +219,14 @@ namespace DataAccess
         }
 
 
-        public DataSet AmountwiseIceCreamReport(string Date, int RouteID, double startamt, double endamt)
+        public DataSet AmountwiseIceCreamReport(string StartDate, string EndDate, int RouteID, int typeid,int commodityid,double startamt, double endamt)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
-            paramCollection.Add(new DBParameter("@Date", Date));
-       
+            paramCollection.Add(new DBParameter("@StartDate", StartDate));
+            paramCollection.Add(new DBParameter("@EndDate", EndDate));
             paramCollection.Add(new DBParameter("@RouteID", RouteID));
+            paramCollection.Add(new DBParameter("@TypeId", typeid));
+            paramCollection.Add(new DBParameter("@CommodityId", commodityid));
             paramCollection.Add(new DBParameter("@startamt", startamt));
             paramCollection.Add(new DBParameter("@endamt", endamt));
             return _DBHelper.ExecuteDataSet("mk_AmountwiseIceCreamReport", paramCollection, CommandType.StoredProcedure);

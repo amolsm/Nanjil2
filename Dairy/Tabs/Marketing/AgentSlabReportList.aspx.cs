@@ -81,6 +81,18 @@ namespace Dairy.Tabs.Marketing
 
                 }
                 catch (Exception) { }
+                try
+                {
+                    DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["AgentID"] };
+                    DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["AgentCode"] };
+                }
+                catch (Exception) { }
+                try
+                {
+                    DS.Tables[0].Merge(DS.Tables[3], false, MissingSchemaAction.Add);
+
+                }
+                catch (Exception) { }
 
                 sb.Append("<style type='text / css'>");
                 sb.Append(".tg  { border - collapse:collapse; border - spacing:0; border: none; }");
@@ -215,6 +227,8 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("</tr>");
                     double qty = 0;
                     double avg = 0;
+                    double qty1 = 0;
+                    double qty2 = 0;
                     double subtotalqty = 0;
                     double subtotalavg = 0;
                     int subcountsrno = 0;
@@ -237,13 +251,18 @@ namespace Dairy.Tabs.Marketing
                                 sb.Append(row["AgentName"].ToString());
                                 sb.Append("</td>");
                                 sb.Append("<td>");
-                                sb.Append(row["Quantity"].ToString());
+                                try { qty1 = Convert.ToDouble(row["Quantity"]); } catch { qty1 = 0; }
+                                try
+                                { qty2 = Convert.ToDouble(row["Quantity1"]); }
+                                catch { qty2 = 0; }
+                                qty = qty1 + qty2;
+                                sb.Append(Convert.ToDecimal(qty).ToString("#.##"));
                                 sb.Append("</td>");
                                 sb.Append("<td>");
                                 try
                                 {
 
-                                    qty = Convert.ToDouble(row["Quantity"]);
+                                   
                                     subtotalqty += qty;
                                     totalqty += qty;
                                     avg = qty / differenceInDays;

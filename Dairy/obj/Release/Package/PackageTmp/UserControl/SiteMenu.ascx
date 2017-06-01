@@ -322,6 +322,7 @@
               </a>
                <ul class="treeview-menu">
                      <li><a href="/Tabs/Marketing/SalesComparison.aspx"><i class="fa fa-circle-o"></i> Agentwise Sales Comparison Summary</a></li>
+                    <li><a href="/Tabs/Marketing/SalesComparisonReport.aspx"><i class="fa fa-circle-o"></i>Sales Comparison Report</a></li>
                     <li><a href="/Tabs/Marketing/DespatchComparisonReport.aspx"><i class="fa fa-circle-o"></i> Dispatch Comparison Summary</a></li>
                   <li><a href="/Tabs/Marketing/ReturnComparisonReport.aspx"><i class="fa fa-circle-o"></i> Return Comparison Summary</a></li>
                  <li><a href="/Tabs/Marketing/SpotDamageComparisonReport.aspx"><i class="fa fa-circle-o"></i> Spot-Damage Comparison Summary</a></li>
@@ -432,7 +433,56 @@
               </ul>
             </li>
             
-            <%--<li class="header">LABELS</li>--%>
+         <li class="treeview">
+              <a href="#">
+                <i class="fa fa-gg fax2"></i>
+                <span>Production</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+         <ul class="treeview-menu">
+                  
+                     <li><a href="/Tabs/Production/RMRData.aspx"><i class="fa fa-circle-o"></i>RMRData</a></li>
+                     <li><a href="/Tabs/Production/Rechilling.aspx"><i class="fa fa-circle-o"></i>Rechilling Process</a></li>
+                  <li><a href="/Tabs/Production/StandardizationProductsAdded.aspx"><i class="fa fa-circle-o"></i>StandardizationAdded</a></li>
+                   <li><a href="/Tabs/Production/Standardization.aspx"><i class="fa fa-circle-o"></i>Standardization</a></li>
+                    <li><a href="/Tabs/Production/PasteurizationProcess.aspx"><i class="fa fa-circle-o"></i>Pasteurization Process</a></li>
+                   <li><a href="/Tabs/Production/CreamProduction.aspx"><i class="fa fa-circle-o"></i>CreamProduction</a></li>
+                   <li><a href="/Tabs/Production/FinishedGoodRelease.aspx"><i class="fa fa-circle-o"></i>Finished Good Release</a></li>
+                    <li><a href="/Tabs/Production/Homogenizer.aspx"><i class="fa fa-circle-o"></i>Homogenizer</a></li>
+                 
+                <li><a href="/Tabs/Production/MilkPacking.aspx"><i class="fa fa-circle-o"></i>Milk Packing</a></li>
+                 <li><a href="/Tabs/Production/MilkColdRoomTemperature.aspx"><i class="fa fa-circle-o"></i>Cold Room Details</a></li>
+                <li><a href="/Tabs/Production/FilmData.aspx"><i class="fa fa-circle-o"></i>Film Data Details</a></li>
+                 <li class="treeview">
+                      <a href="#">
+              <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <span>Quality Details </span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+                <ul class="treeview-menu">
+                  <li><a href="/Tabs/Production/QualityCheck.aspx"><i class="fa fa-circle-o"></i>Quality Check</a></li>
+                <li><a href="/Tabs/Production/PasteurizationQC.aspx"><i class="fa fa-circle-o"></i>Pasteurization QC</a></li>
+                <li><a href="/Tabs/Production/AfterPackedPouchMilkTestQC.aspx"><i class="fa fa-circle-o"></i>Pouch Milk QC</a></li>
+                <li><a href="/Tabs/Production/QCAfterProcessing.aspx"><i class="fa fa-circle-o"></i>After Process QC</a></li>  
+                <li><a href="/Tabs/Production/TraceabilityForMilkQC.aspx"><i class="fa fa-circle-o"></i>Traceability Milk Qc</a></li>  
+                    <li><a href="/Tabs/Production/ReturnDrainedMilkQC.aspx"><i class="fa fa-circle-o"></i>Return Drained Milk Qc</a></li> 
+                 <li><a href=" /Tabs/Production/MilkProductsTestBeforePackingQC.aspx "><i class="fa fa-circle-o"></i>QC Before Milk Packing</a></li>    
+                </ul>
+                  
+                     <li class="treeview">
+                      <a href="#">
+              <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            <span>Curd Process</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+                <ul class="treeview-menu">    
+                   <li><a href="/Tabs/Production/CurdProcessing.aspx"><i class="fa fa-circle-o"></i>Curd Processing</a></li> 
+                     <li><a href="/Tabs/Production/CurdProcseeingQC.aspx"><i class="fa fa-circle-o"></i>Curd Processing QC</a></li> 
+                    </ul>
+                     </li>
+                      </ul>
+         </li>
+          </ul>
          
           </ul>
 </asp:Panel>
@@ -827,7 +877,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
                <ul class="treeview-menu">
-                     <li><a href="/Tabs/Marketing/SalesComparison.aspx"><i class="fa fa-circle-o"></i> Sales Comparison Summary</a></li>
+                     <li><a href="/Tabs/Marketing/SalesComparison.aspx"><i class="fa fa-circle-o"></i> Agency Sales Comparison Summary</a></li>
+                    <li><a href="/Tabs/Marketing/SalesComparisonReport.aspx"><i class="fa fa-circle-o"></i>Sales Comparison Report</a></li>
                     <li><a href="/Tabs/Marketing/DespatchComparisonReport.aspx"><i class="fa fa-circle-o"></i> Dispatch Comparison Summary</a></li>
                   <li><a href="/Tabs/Marketing/ReturnComparisonReport.aspx"><i class="fa fa-circle-o"></i> Return Comparison Summary</a></li>
                  <li><a href="/Tabs/Marketing/SpotDamageComparisonReport.aspx"><i class="fa fa-circle-o"></i> Spot-Damage Comparison Summary</a></li>

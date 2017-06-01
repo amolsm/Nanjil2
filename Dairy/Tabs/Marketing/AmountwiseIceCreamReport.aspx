@@ -5,12 +5,12 @@
      
       <section class="content-header">
           <h1>
-        Amount Wise Ice Cream Report
+        Amount Wise Product type Report
              <small>Administration</small>  
           </h1> 
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
-            <li class="active">  Amount Wise Ice Cream Report </li>
+            <li class="active">  Amount Wise Product type Report</li>
           </ol>
         </section>
 
@@ -49,7 +49,7 @@
 
            <div class="box  ">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="   Amount Wise Ice Cream Report "></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text=" Amount Wise Product type Report"></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -70,9 +70,9 @@
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                      Order Date
+                      Start Order Date
                       </div>
-                       <asp:TextBox ID="txtDate" class="form-control"   type="date" placeholder=" Order Date" runat="server" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtStartDate" class="form-control"   type="date" placeholder=" Order Date" runat="server" required  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -81,6 +81,22 @@
                        
                           
                       </div>  
+
+                   <div class="col-lg-3">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     End  Order Date
+                      </div>
+                       <asp:TextBox ID="txtEndDate" class="form-control"   type="date" placeholder=" Order Date" runat="server" required  ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div> 
 
                     <div class="col-lg-3">
                   <div class="form-group">
@@ -94,6 +110,41 @@
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
                          </div>
+
+                      <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                    Product Type
+                      </div>
+                         <asp:DropDownList ID="dpType" class="form-control" DataTextField="Name" DataValueField="TypeID" runat="server" AutoPostBack="true" OnSelectedIndexChanged = "dpType_SelectedIndexChanged" > 
+                       </asp:DropDownList>
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div> 
+
+                   <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      Commodity
+                      </div>
+                         <asp:DropDownList ID="dpCommodity" class="form-control" DataTextField="Name" DataValueField="CommodityID" runat="server"  > 
+                       </asp:DropDownList>
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div> 
+
 
                              <div class="col-lg-3">
                   <div class="form-group" >
@@ -111,6 +162,7 @@
                           
                       </div>       
                 
+                     
 
                    <div class="col-lg-3">
                   <div class="form-group" >
