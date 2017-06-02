@@ -575,11 +575,11 @@
                 <li><a href="/Tabs/OfflineBooth/LocalBilling.aspx"><i class="fa fa-circle-o"></i>Local Sale</a></li>
                    <li><a href="/Tabs/OfflineBooth/AgentBilling.aspx"><i class="fa fa-circle-o"></i>Agent Sale</a></li>
                    <li><a href="/Tabs/OfflineBooth/EmployeeBilling.aspx"><i class="fa fa-circle-o"></i>Employee Sale</a></li>    
-                 <%-- <li><a href="/Tabs/Sales/BoothReturnReplace.aspx"><i class="fa fa-circle-o"></i>Return Items</a></li>   --%>
+                  <li><a href="/Tabs/OfflineBooth/BoothReturnReplace.aspx"><i class="fa fa-circle-o"></i>Return Items</a></li>   
                   <li><a href="/Tabs/OfflineBooth/BoothPlaceOrder.aspx"><i class="fa fa-circle-o"></i>Booth Place Order</a></li>         
               </ul>
             </li> 
-         <%--   <li class="treeview">
+            <li class="treeview">
               <a href="#">
                 <i class="fa fa-university "></i>
                 <span>Booth Info</span>
@@ -596,7 +596,7 @@
                    
                   
               </ul>
-            </li>--%>          
+            </li>          
         
           </ul>
 </asp:Panel>
