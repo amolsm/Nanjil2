@@ -15,6 +15,7 @@ using DataAcess;
 using System.Web.Services;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Web.Security;
 
 namespace Dairy.Tabs.Reception
 {
@@ -28,6 +29,18 @@ namespace Dairy.Tabs.Reception
                 BindDropDwon();
                 hftokanno.Value = Comman.Comman.RandomString();
                 txtGentOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+            }
+            if (Context.Session != null && Context.Session.IsNewSession == true &&
+    Page.Request.Headers["Cookie"] != null &&
+    Page.Request.Headers["Cookie"].IndexOf("ASP.NET_SessionId") >= 0)
+            {
+                // session has timed out, log out the user
+                if (Page.Request.IsAuthenticated)
+                {
+                    FormsAuthentication.SignOut();
+                }
+                // redirect to timeout page
+                Page.Response.Redirect("/Authentication/LoginT.aspx");
             }
         }
         private void BindDropDwon()

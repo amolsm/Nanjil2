@@ -7,7 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Model;
 using Bussiness;
-
+using System.Web.Security;
 using Comman;
 using System.Text;
 using Dairy.App_code;
@@ -36,7 +36,18 @@ namespace Dairy.Tabs.Sales
                 txtGentOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                 
             }
-
+            if (Context.Session != null && Context.Session.IsNewSession == true &&
+  Page.Request.Headers["Cookie"] != null &&
+  Page.Request.Headers["Cookie"].IndexOf("ASP.NET_SessionId") >= 0)
+            {
+                // session has timed out, log out the user
+                if (Page.Request.IsAuthenticated)
+                {
+                    FormsAuthentication.SignOut();
+                }
+                // redirect to timeout page
+                Page.Response.Redirect("/Authentication/LoginT.aspx");
+            }
         }
         public void BindDropDwon()
         {
