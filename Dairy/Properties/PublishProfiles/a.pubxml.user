@@ -22,16 +22,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2017 11:51:09</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
-      <publishTime>05/31/2017 13:20:24</publishTime>
+      <publishTime>06/01/2017 14:22:05</publishTime>
     </File>
     <File Include="bin/Comman.dll">
-      <publishTime>05/29/2017 10:51:52</publishTime>
+      <publishTime>06/01/2017 14:22:03</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
-      <publishTime>05/31/2017 13:20:28</publishTime>
+      <publishTime>06/01/2017 14:22:09</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
-      <publishTime>05/31/2017 13:20:23</publishTime>
+      <publishTime>06/01/2017 14:22:04</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:52</publishTime>
@@ -58,7 +58,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/24/2012 13:52:52</publishTime>
     </File>
     <File Include="bin/Model.dll">
-      <publishTime>05/31/2017 13:20:23</publishTime>
+      <publishTime>06/01/2017 14:22:03</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:50</publishTime>
@@ -451,7 +451,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/11/2017 16:45:32</publishTime>
     </File>
     <File Include="Tabs/Marketing/AmountwiseIceCreamReport.aspx">
-      <publishTime>03/02/2017 11:51:09</publishTime>
+      <publishTime>06/01/2017 12:26:14</publishTime>
     </File>
     <File Include="Tabs/Marketing/BillwiseSalesSummaryforMarketing.aspx">
       <publishTime>05/08/2017 15:38:45</publishTime>
@@ -488,6 +488,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Tabs/Marketing/ItemwiseStaffSalesSummary.aspx">
       <publishTime>03/02/2017 11:51:09</publishTime>
+    </File>
+    <File Include="Tabs/Marketing/MarketingGift-Othercomparison.aspx">
+      <publishTime>05/12/2017 12:35:44</publishTime>
     </File>
     <File Include="Tabs/Marketing/MarketingSalesAnalysisItemwise.aspx">
       <publishTime>03/02/2017 11:51:09</publishTime>
@@ -536,6 +539,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Tabs/OfflineBooth/BoothPlaceOrder.aspx">
       <publishTime>05/29/2017 10:51:52</publishTime>
+    </File>
+    <File Include="Tabs/OfflineBooth/BoothReturnReplace.aspx">
+      <publishTime>06/01/2017 12:12:16</publishTime>
     </File>
     <File Include="Tabs/OfflineBooth/BoothStockLanding.aspx">
       <publishTime>05/29/2017 10:51:52</publishTime>
@@ -3691,13 +3697,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2017 11:51:10</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
-      <publishTime>05/31/2017 13:18:45</publishTime>
+      <publishTime>06/01/2017 14:20:31</publishTime>
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>03/02/2017 11:51:10</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/29/2017 10:58:18</publishTime>
+      <publishTime>06/01/2017 14:22:10</publishTime>
     </File>
     <File Include="WebService/BindAgentSlab.asmx">
       <publishTime>03/02/2017 11:51:10</publishTime>

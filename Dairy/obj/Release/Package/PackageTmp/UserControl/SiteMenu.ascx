@@ -310,7 +310,7 @@
                    <li><a href="/Tabs/Marketing/DeactivateAgentList.aspx"><i class="fa fa-circle-o"></i>Deactivate Agent List  </a></li>
                     <li><a href="/Tabs/Marketing/PartywiseDamageReplacementSummary.aspx"><i class="fa fa-circle-o"></i>Partywise DamageReplacement Summary</a></li>
                    <li><a href="/Tabs/Marketing/ItemwisePurchaseAgentList.aspx"><i class="fa fa-circle-o"></i>ItemWise PurchaseAgent List  </a></li>
-                    <li><a href="/Tabs/Marketing/AmountwiseIceCreamReport.aspx"><i class="fa fa-circle-o"></i>Amount Wise IceCream PurchaseAgent List  </a></li>
+                    <li><a href="/Tabs/Marketing/AmountwiseIceCreamReport.aspx"><i class="fa fa-circle-o"></i>Amount Wise PurchaseAgent List  </a></li>
                      <li><a href="/Tabs/Marketing/AgentListNotPlacedOrder.aspx"><i class="fa fa-circle-o"></i>AgentList Not Placed Order  </a></li>
                        <li><a href="/Tabs/Marketing/AgencyCloserScreen.aspx"><i class="fa fa-circle-o"></i>Agency Closer  </a></li>
             
@@ -326,6 +326,7 @@
                     <li><a href="/Tabs/Marketing/DespatchComparisonReport.aspx"><i class="fa fa-circle-o"></i> Dispatch Comparison Summary</a></li>
                   <li><a href="/Tabs/Marketing/ReturnComparisonReport.aspx"><i class="fa fa-circle-o"></i> Return Comparison Summary</a></li>
                  <li><a href="/Tabs/Marketing/SpotDamageComparisonReport.aspx"><i class="fa fa-circle-o"></i> Spot-Damage Comparison Summary</a></li>
+                    <li><a href="/Tabs/Marketing/MarketingGift-Othercomparison.aspx"><i class="fa fa-circle-o"></i> Gift & Others Comparison Summary</a></li>
                       <li><a href="/Tabs/Marketing/DispatchReturnComparison.aspx"><i class="fa fa-circle-o"></i>Agentwise Return Comparison Report</a></li>
                    </ul>
                        <li><a href="/Tabs/Marketing/ActiveInactiveIssues.aspx"><i class="fa fa-circle-o"></i>Active Inactive Issue</a></li>
@@ -575,11 +576,11 @@
                 <li><a href="/Tabs/OfflineBooth/LocalBilling.aspx"><i class="fa fa-circle-o"></i>Local Sale</a></li>
                    <li><a href="/Tabs/OfflineBooth/AgentBilling.aspx"><i class="fa fa-circle-o"></i>Agent Sale</a></li>
                    <li><a href="/Tabs/OfflineBooth/EmployeeBilling.aspx"><i class="fa fa-circle-o"></i>Employee Sale</a></li>    
-                 <%-- <li><a href="/Tabs/Sales/BoothReturnReplace.aspx"><i class="fa fa-circle-o"></i>Return Items</a></li>   --%>
+                  <li><a href="/Tabs/OfflineBooth/BoothReturnReplace.aspx"><i class="fa fa-circle-o"></i>Return Items</a></li>   
                   <li><a href="/Tabs/OfflineBooth/BoothPlaceOrder.aspx"><i class="fa fa-circle-o"></i>Booth Place Order</a></li>         
               </ul>
             </li> 
-         <%--   <li class="treeview">
+            <li class="treeview">
               <a href="#">
                 <i class="fa fa-university "></i>
                 <span>Booth Info</span>
@@ -596,7 +597,7 @@
                    
                   
               </ul>
-            </li>--%>          
+            </li>          
         
           </ul>
 </asp:Panel>
@@ -866,7 +867,7 @@
                    <li><a href="/Tabs/Marketing/DeactivateAgentList.aspx"><i class="fa fa-circle-o"></i>Deactivate Agent List  </a></li>
                     <li><a href="/Tabs/Marketing/PartywiseDamageReplacementSummary.aspx"><i class="fa fa-circle-o"></i>Partywise DamageReplacement Summary</a></li>
                    <li><a href="/Tabs/Marketing/ItemwisePurchaseAgentList.aspx"><i class="fa fa-circle-o"></i>ItemWise PurchaseAgent List  </a></li>
-                    <li><a href="/Tabs/Marketing/AmountwiseIceCreamReport.aspx"><i class="fa fa-circle-o"></i>Amount Wise IceCream PurchaseAgent List  </a></li>
+                    <li><a href="/Tabs/Marketing/AmountwiseIceCreamReport.aspx"><i class="fa fa-circle-o"></i>Amount Wise PurchaseAgent List  </a></li>
                      <li><a href="/Tabs/Marketing/AgentListNotPlacedOrder.aspx"><i class="fa fa-circle-o"></i>AgentList Not Placed Order  </a></li>
                        <li><a href="/Tabs/Marketing/AgencyCloserScreen.aspx"><i class="fa fa-circle-o"></i>Agency Closer  </a></li>
             
@@ -882,6 +883,7 @@
                     <li><a href="/Tabs/Marketing/DespatchComparisonReport.aspx"><i class="fa fa-circle-o"></i> Dispatch Comparison Summary</a></li>
                   <li><a href="/Tabs/Marketing/ReturnComparisonReport.aspx"><i class="fa fa-circle-o"></i> Return Comparison Summary</a></li>
                  <li><a href="/Tabs/Marketing/SpotDamageComparisonReport.aspx"><i class="fa fa-circle-o"></i> Spot-Damage Comparison Summary</a></li>
+                      <li><a href="/Tabs/Marketing/MarketingGift-Othercomparison.aspx"><i class="fa fa-circle-o"></i> Gift & Others Comparison Summary</a></li>
                       <li><a href="/Tabs/Marketing/DispatchReturnComparison.aspx"><i class="fa fa-circle-o"></i>Dispatch Agency Return Comparison  </a></li>
                    </ul>
                        <li><a href="/Tabs/Marketing/ActiveInactiveIssues.aspx"><i class="fa fa-circle-o"></i>Active Inactive Issue</a></li>

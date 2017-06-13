@@ -81,18 +81,7 @@ namespace Dairy.Tabs.Marketing
 
                 }
                 catch (Exception) { }
-                try
-                {
-                    DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["AgentID"] };
-                    DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["AgentCode"] };
-                }
-                catch (Exception) { }
-                try
-                {
-                    DS.Tables[0].Merge(DS.Tables[3], false, MissingSchemaAction.Add);
-
-                }
-                catch (Exception) { }
+              
 
                 sb.Append("<style type='text / css'>");
                 sb.Append(".tg  { border - collapse:collapse; border - spacing:0; border: none; }");

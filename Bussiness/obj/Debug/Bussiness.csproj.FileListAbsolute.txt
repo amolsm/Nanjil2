@@ -1,14 +1,3 @@
-D:\NanjilCode2\Nanjil\Bussiness\bin\Bussiness.dll
-D:\NanjilCode2\Nanjil\Bussiness\bin\Bussiness.pdb
-D:\NanjilCode2\Nanjil\Bussiness\bin\Comman.dll
-D:\NanjilCode2\Nanjil\Bussiness\bin\DataAccess.dll
-D:\NanjilCode2\Nanjil\Bussiness\bin\Model.dll
-D:\NanjilCode2\Nanjil\Bussiness\bin\Comman.pdb
-D:\NanjilCode2\Nanjil\Bussiness\bin\DataAccess.pdb
-D:\NanjilCode2\Nanjil\Bussiness\bin\Model.pdb
-D:\NanjilCode2\Nanjil\Bussiness\obj\Debug\Bussiness.csprojResolveAssemblyReference.cache
-D:\NanjilCode2\Nanjil\Bussiness\obj\Debug\Bussiness.dll
-D:\NanjilCode2\Nanjil\Bussiness\obj\Debug\Bussiness.pdb
 D:\NanjilCode2\Nanjil2\Bussiness\bin\Bussiness.dll
 D:\NanjilCode2\Nanjil2\Bussiness\bin\Bussiness.pdb
 D:\NanjilCode2\Nanjil2\Bussiness\bin\Comman.dll

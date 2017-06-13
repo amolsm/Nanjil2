@@ -53,27 +53,7 @@ namespace Dairy.Tabs.Marketing
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 StringBuilder sb = new StringBuilder();
-                try
-                {
-                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["AgentID"] };
-                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["AgentCode"] };
-                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["AgentName"] };
-                }
-                catch (Exception) { }
-                try
-                {
-                    DS.Tables[1].PrimaryKey = new[] { DS.Tables[1].Columns["AgentID"] };
-                    DS.Tables[1].PrimaryKey = new[] { DS.Tables[1].Columns["AgentCode"] };
-                    DS.Tables[1].PrimaryKey = new[] { DS.Tables[1].Columns["AgentName"] };
-
-                }
-                catch (Exception) { }
-                try
-                {
-                    DS.Tables[0].Merge(DS.Tables[1], false, MissingSchemaAction.Add);
-
-                }
-                catch (Exception) { }
+               
 
                 sb.Append("<style type='text / css'>");
                 sb.Append(".tg  { border - collapse:collapse; border - spacing:0; border: none; }");
@@ -181,15 +161,13 @@ namespace Dairy.Tabs.Marketing
 
                 sb.Append("</tr>");
                 int srno = 0;
-                double amt1 = 0;
-                double amt2 = 0;
+                double amt = 0;
+                double totalamt = 0;
+           
                 foreach (DataRow row in DS.Tables[0].Rows)
                 {
-                    try { amt1 = Convert.ToDouble(row["TotalBill"]); } catch { amt1 = 0; }
-                    try { amt2 = Convert.ToDouble(row["TotalBill1"]); } catch { amt2 = 0; }
-                    amt1 += amt2;
-
-                    if (amt1 >= Convert.ToInt32(txtStartAmt.Text) && amt1 <= Convert.ToInt32(txtEndAmt.Text))
+                    try { amt = Convert.ToDouble(row["TotalBill"]); } catch { amt = 0; }
+                    if (amt >= Convert.ToDouble(txtStartAmt.Text) && amt <= Convert.ToDouble(txtEndAmt.Text))
                     {
                         srno++;
                         sb.Append("<tr>");
@@ -203,26 +181,34 @@ namespace Dairy.Tabs.Marketing
                         sb.Append(row["AgentName"].ToString());
                         sb.Append("</td>");
                         sb.Append("<td style='text-align:right'>");
-                        try { amt1 = Convert.ToDouble(row["TotalBill"]); } catch { amt1 = 0; }
-                        try { amt2 = Convert.ToDouble(row["TotalBill1"]); } catch { amt2 = 0; }
-                        amt1 += amt2;
+                        double amt1;
+                        try { amt1 = Convert.ToDouble(row["TotalBill"]); } catch { amt1 = 0; };
+                        totalamt += amt1;
                         sb.Append(Convert.ToDecimal(amt1).ToString("#.##"));
                         sb.Append("</td>");
 
                         sb.Append("</tr>");
 
+
+
+
                     }
-                   
-
-
-
 
 
 
 
                 }
+                sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '4'> &nbsp; </td> </tr>");
+                sb.Append("<tr  style='border-bottom:1px solid'>");
+                sb.Append("<td>");
+                sb.Append(srno.ToString());
+                sb.Append("</td>");
+               
+                sb.Append("<td colspan='3' style='text-align:right'>");
+                sb.Append(Convert.ToDecimal(totalamt).ToString("#.##"));
+                sb.Append("</td>");
 
-
+                sb.Append("</tr>");
 
 
 

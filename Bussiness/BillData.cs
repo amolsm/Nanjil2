@@ -241,5 +241,9 @@ namespace Bussiness
         {
             return dbbill.PartywiseDamageReturnSummary(StartDate, EndDate, RouteID, BrandID, TypeID, CommodityID);
         }
+        public DataSet GiftOtherComparisonReportbyDate(string Start1Date, string End1Date, string Start2Date, string End2Date, int routeID, int BrandID)
+        {
+            return dbbill.GiftOtherComparisonReportbyDate(Start1Date, End1Date, Start2Date, End2Date, routeID, BrandID);
+        }
     }
     }

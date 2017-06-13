@@ -71,6 +71,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Tabs\Marketing\MarketingGift-Othercomparison.aspx" />
     <Content Include="Tabs\Production\AfterPackedPouchMilkTestQC.aspx" />
     <Content Include="Tabs\Production\Cold room temperature chart.aspx" />
     <Content Include="Tabs\Production\CreamProduction.aspx" />
@@ -1170,6 +1171,13 @@
     <Content Include="WebService\BindAgentSlab.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tabs\Marketing\MarketingGift-Othercomparison.aspx.cs">
+      <DependentUpon>MarketingGift-Othercomparison.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\MarketingGift-Othercomparison.aspx.designer.cs">
+      <DependentUpon>MarketingGift-Othercomparison.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Production\AfterPackedPouchMilkTestQC.aspx.cs">
       <DependentUpon>AfterPackedPouchMilkTestQC.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
