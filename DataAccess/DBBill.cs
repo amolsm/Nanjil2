@@ -491,6 +491,18 @@ namespace DataAccess
             paramCollection.Add(new DBParameter("@CommodityID", CommodityID));
             return _DBHelper.ExecuteDataSet("sp_PartywiseDamageReturnSummary", paramCollection, CommandType.StoredProcedure);
         }
-    
+
+        public DataSet GiftOtherComparisonReportbyDate(string StartDate, string EndDate, string Start2Date, string End2Date, int routeID, int BrandID)
+        {
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@Dispatch1BeginDate", StartDate));
+            paramCollection.Add(new DBParameter("@Dispatch1EndDate", EndDate));
+            paramCollection.Add(new DBParameter("@Dispatch2BeginDate", Start2Date));
+            paramCollection.Add(new DBParameter("@Dispatch2EndDate", End2Date));
+            paramCollection.Add(new DBParameter("@RouteID", routeID));
+            paramCollection.Add(new DBParameter("@BrandID", BrandID));
+            return _DBHelper.ExecuteDataSet("sp_GiftOtherComparisonReport", paramCollection, CommandType.StoredProcedure);
+        }
+
     }
 }

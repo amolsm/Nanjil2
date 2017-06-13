@@ -1,16 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AmountwiseIceCreamReport.aspx.cs" Inherits="Dairy.Tabs.Marketing.AmountwiseIceCreamReport" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MarketingGift-Othercomparison.aspx.cs" Inherits="Dairy.Tabs.Marketing.Marketing_Gift_Othercomparison" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-     
+      
       <section class="content-header">
           <h1>
-        Amount Wise Purchase Agents Report
-             <small>Administration</small>  
+      Marketing a Gift/Other comparison
+            <small>Administration</small>    
           </h1> 
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
-            <li class="active">    Amount Wise Purchase Agents Report</li>
+            <li class="active"> Gift/Other Comparison Report</li>
           </ol>
         </section>
 
@@ -49,7 +49,7 @@
 
            <div class="box  ">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="Amount Wise Purchase Agents Report"></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text=" Gift/Other Comparison Report"></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -65,14 +65,13 @@
 
              <div class="row">
                  
-
                     <div class="col-lg-3">
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                      Start Order Date
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtStartDate" class="form-control"   type="date" placeholder=" Order Date" runat="server" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtStart1Date" class="form-control"  type="date" placeholder="Date" runat="server" required ToolTip="Start Date" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -80,15 +79,14 @@
                      
                        
                           
-                      </div>  
-
-                   <div class="col-lg-3">
+                      </div> 
+                  <div class="col-lg-3">
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                     End  Order Date
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtEndDate" class="form-control"   type="date" placeholder=" Order Date" runat="server" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtEnd1Date" class="form-control"  type="date" placeholder="Date" runat="server" required ToolTip="End Date"   ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -99,10 +97,40 @@
                       </div> 
 
                     <div class="col-lg-3">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:TextBox ID="txtStart2Date" class="form-control"  type="date" placeholder="Date" runat="server" required ToolTip="Start Date" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div> 
+                  <div class="col-lg-3">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:TextBox ID="txtEnd2Date" class="form-control"  type="date" placeholder="Date" runat="server" required ToolTip="End Date"  ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div> 
+           <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       Route
+                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
                       </div>
                       <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server"  > 
                        </asp:DropDownList>
@@ -110,86 +138,26 @@
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
                          </div>
-
-                      <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                    Product Type
-                      </div>
-                         <asp:DropDownList ID="dpType" class="form-control" DataTextField="Name" DataValueField="TypeID" runat="server" AutoPostBack="true" OnSelectedIndexChanged = "dpType_SelectedIndexChanged" > 
-                       </asp:DropDownList>
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div> 
-
-                   <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                      Commodity
-                      </div>
-                         <asp:DropDownList ID="dpCommodity" class="form-control" DataTextField="Name" DataValueField="CommodityID" runat="server"  > 
-                       </asp:DropDownList>
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div> 
-
-
-                             <div class="col-lg-3">
-                  <div class="form-group" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                       Start Amount
-                      </div>
-                       <asp:TextBox ID="txtStartAmt" class="form-control"   placeholder="Start Amount" runat="server" type="number" step="0.01" required  ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div>       
-                
-                     
-
-                   <div class="col-lg-3">
-                  <div class="form-group" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                     End Amount
-                      </div>
-                       <asp:TextBox ID="txtEndAmt" class="form-control"   placeholder="End Amount" runat="server" type="number" step="0.01" required  ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div>       
-                                  
-        
           
-             
+                  <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
+                      </div>
+                       <asp:DropDownList ID="dpBrand" class="form-control" DataTextField="Name" DataValueField="CategoryId" runat="server" > 
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div>
             
                  
                  <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
-                               <asp:Button ID="btnViewDetails" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnViewDetails_Click"  Text="View Details"    />     
-                        &nbsp; <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="return PrintPanel();"   Text="Print"    />     
+                               <asp:Button ID="btngenrateBill" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btngenrateBill_Click"  Text="ViewReport"    />     
+                        &nbsp; <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="return PrintPanel();return true;"   Text="Print"    />     
                              
                     </div><!-- /.input group -->
 
@@ -215,20 +183,20 @@
           
 
     </section>
-     <script type = "text/javascript">
-         function PrintPanel() {
-             var panel = document.getElementById("<%=pnlBill.ClientID %>");
-             var printWindow = window.open('', '', 'height=600,width=800');
-             printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 14px; font-family: sans-serif;}</style>");
-             printWindow.document.write('</head><body >');
-             printWindow.document.write(panel.innerHTML);
-             printWindow.document.write('</body></html>');
-             printWindow.document.close();
-             setTimeout(function () {
-                 printWindow.print();
-             }, 500);
-             return false;
-         }
+    <script type = "text/javascript">
+        function PrintPanel() {
+            var panel = document.getElementById("<%=pnlBill.ClientID %>");
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 14px; font-family: sans-serif;}</style>");
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(panel.innerHTML);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            setTimeout(function () {
+                printWindow.print();
+            }, 500);
+            return true;
+        }
     </script>
      <script>
          yepnope({ // or Modernizr.load
@@ -254,7 +222,7 @@
                              _val = _this.val();
 
                          _this
-                         .attr('placeholder', 'dd-MM-yyyy')
+                         .attr('placeholder', 'gg/mm/aaaa')
                          .attr('autocomplete', 'off')
                          .prop('readonly', true)
                          .after('<input type="text" class="altfield" id="' + prefix + this.attr('id') + '" name="' + this.attr('name') + '" value="' + _val + '">')
@@ -262,12 +230,12 @@
                          .val('')
                          .datepicker({
                              altField: '#' + prefix + _this.attr('id'),
-                             dateFormat: 'dd-MM-yyyy',
-                             altFormat: 'dd-MM-yyyy'
+                             dateFormat: 'dd/mm/yy',
+                             altFormat: 'dd/mm/yy'
                          });
 
                          if (_val) {
-                             this.datepicker('setDate', $.datepicker.parseDate('dd-MM-yyyy', val));
+                             this.datepicker('setDate', $.datepicker.parseDate('dd/mm/yy', val));
                          };
                      });
 
@@ -275,16 +243,17 @@
                      // min attribute
                      $('input[type="date"][min]').each(function () {
                          var _this = $(this);
-                         this.datepicker("option", "minDate", $.datepicker.parseDate('dd-MM-yyyy', this.attr('min')));
+                         this.datepicker("option", "minDate", $.datepicker.parseDate('dd/mm/yy', this.attr('min')));
                      });
 
                      // max attribute
                      $('input[type="date"][max]').each(function () {
                          var _this = $(this);
-                         this.datepicker("option", "maxDate", $.datepicker.parseDate('dd-MM-yyyy', this.attr('max')));
+                         this.datepicker("option", "maxDate", $.datepicker.parseDate('dd/mm/yy', this.attr('max')));
                      });
                  }
              }
          }); // end Modernizr.load
         </script>
 </asp:Content>
+
