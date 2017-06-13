@@ -33,7 +33,7 @@ namespace Dairy.Tabs.Cashier
         public void BindDropDown()
         {
 
-            DS = BindCommanData.BindCommanDropDwon("EmployeeID", "EmployeeCode+' '+EmployeeName as Name", "employeemaster", "IsActive=1");
+            DS = BindCommanData.BindCommanDropDwon("EmployeeID", "EmployeeCode+' '+EmployeeName as Name", "employeemaster", "EmployeeId is not Null");
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 dpEmployee.DataSource = DS;

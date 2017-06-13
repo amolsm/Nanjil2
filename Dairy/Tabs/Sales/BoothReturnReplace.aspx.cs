@@ -12,7 +12,7 @@ using System.Text;
 using Dairy.App_code;
 using System.Configuration;
 using System.Data.SqlClient;
-
+using System.Web.Security;
 using System.Web.Services;
 
 
@@ -31,6 +31,18 @@ namespace Dairy.Tabs.Sales
             {
                 BindListDetails();
 
+            }
+            if (Context.Session != null && Context.Session.IsNewSession == true &&
+  Page.Request.Headers["Cookie"] != null &&
+  Page.Request.Headers["Cookie"].IndexOf("ASP.NET_SessionId") >= 0)
+            {
+                // session has timed out, log out the user
+                if (Page.Request.IsAuthenticated)
+                {
+                    FormsAuthentication.SignOut();
+                }
+                // redirect to timeout page
+                Page.Response.Redirect("/Authentication/LoginT.aspx");
             }
         }
 

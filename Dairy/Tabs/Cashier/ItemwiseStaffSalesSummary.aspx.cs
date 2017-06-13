@@ -399,7 +399,7 @@ namespace Dairy.Tabs.Cashier
             DS = new DataSet();
             if (dpReportType.SelectedItem.Value == "1")
             {
-                DS = BindCommanData.BindCommanDropDwon("EmployeeID as ID", "EmployeeCode+' '+EmployeeName as Name", "employeemaster", "IsActive=1");
+                DS = BindCommanData.BindCommanDropDwon("EmployeeID as ID", "EmployeeCode+' '+EmployeeName as Name", "employeemaster", "EmployeeId is not Null");
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {
                     dpEmployee.DataSource = DS;

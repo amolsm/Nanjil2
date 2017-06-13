@@ -8,6 +8,8 @@ using Bussiness;
 using System.Data;
 using System.Text;
 using Comman;
+using System.Web.Security;
+
 namespace Dairy.Tabs.Reception
 {
     public partial class GenrateBill : System.Web.UI.Page
@@ -38,6 +40,18 @@ namespace Dairy.Tabs.Reception
 
                 }
                 txtDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+            }
+            if (Context.Session != null && Context.Session.IsNewSession == true &&
+    Page.Request.Headers["Cookie"] != null &&
+    Page.Request.Headers["Cookie"].IndexOf("ASP.NET_SessionId") >= 0)
+            {
+                // session has timed out, log out the user
+                if (Page.Request.IsAuthenticated)
+                {
+                    FormsAuthentication.SignOut();
+                }
+                // redirect to timeout page
+                Page.Response.Redirect("/Authentication/LoginT.aspx");
             }
         }
         protected void btngenrateBill_click(object sender, EventArgs e)

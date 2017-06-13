@@ -95,35 +95,47 @@ namespace Dairy
             // Note: The Session_End event is raised only when the sessionstate mode
             // is set to InProc in the Web.config file. If session mode is set to StateServer 
             // or SQLServer, the event is not raised.
-
-            string userLoggedIn =  (string)Session["UserLoggedIn"];
-            if (userLoggedIn.Length > 0)
+            try
             {
-                System.Collections.Generic.List<string> d = Application["UsersLoggedIn"]
-                    as System.Collections.Generic.List<string>;
-                if (d != null)
+                string userLoggedIn = (string)Session["UserLoggedIn"];
+                if (userLoggedIn.Length > 0)
                 {
-                    lock (d)
+                    System.Collections.Generic.List<string> d = Application["UsersLoggedIn"]
+                        as System.Collections.Generic.List<string>;
+                    if (d != null)
                     {
-                        d.Remove(userLoggedIn);
+                        lock (d)
+                        {
+                            d.Remove(userLoggedIn);
+                        }
                     }
-                }
 
+                }
+                string BoothLoggedIn = (string)Session["BoothLoggedIn"];
+                if (BoothLoggedIn.Length > 0)
+                {
+                    System.Collections.Generic.List<string> b = Application["BoothLoggedIn"]
+                        as System.Collections.Generic.List<string>;
+                    if (b != null)
+                    {
+                        lock (b)
+                        {
+                            b.Remove(BoothLoggedIn);
+                        }
+                    }
+
+                }
             }
-            string BoothLoggedIn = (string)Session["BoothLoggedIn"];
-            if (BoothLoggedIn.Length > 0)
+            catch (Exception) { }
+
+            //
+
+            try
             {
-                System.Collections.Generic.List<string> b = Application["BoothLoggedIn"]
-                    as System.Collections.Generic.List<string>;
-                if (b != null)
-                {
-                    lock (b)
-                    {
-                        b.Remove(BoothLoggedIn);
-                    }
-                }
-
+                FormsAuthentication.SignOut();
             }
+            catch (Exception)
+            { }
         }
     }
 }
