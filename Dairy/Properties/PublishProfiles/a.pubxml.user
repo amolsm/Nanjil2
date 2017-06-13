@@ -28,7 +28,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2017 10:08:22</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
-      <publishTime>06/01/2017 10:08:36</publishTime>
+      <publishTime>06/07/2017 14:40:45</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
       <publishTime>06/01/2017 10:08:24</publishTime>
@@ -3700,7 +3700,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/01/2017 10:08:41</publishTime>
+      <publishTime>06/07/2017 14:40:50</publishTime>
     </File>
     <File Include="WebService/BindAgentSlab.asmx">
       <publishTime>11/11/2016 10:53:02</publishTime>
