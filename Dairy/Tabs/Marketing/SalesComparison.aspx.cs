@@ -326,6 +326,13 @@ namespace Dairy.Tabs.Marketing
                     {
 
                         srno++;
+                        if (dpRoute.SelectedItem.Value == "0")
+                        {
+                            sb.Append("<tr style='border-bottom:1px solid' > <td colspan = '9'>");
+                            sb.Append("<b>Route : </b>" + row["RouteName"].ToString());
+                            sb.Append("</td>");
+                            sb.Append("</tr>");
+                        }
 
                         sb.Append("<tr>");
                         sb.Append("<td>");
@@ -400,8 +407,8 @@ namespace Dairy.Tabs.Marketing
                         sb.Append(Convert.ToDecimal(diffavg).ToString("0.00"));
                         sb.Append("</td>");
                         sb.Append("</tr>");
-                        sb.Append("<tr> <td colspan = '9'> &nbsp; </td> </tr>");
-
+                        //sb.Append("<tr> <td colspan = '9'> &nbsp; </td> </tr>");
+                        sb.Append("<tr style='border-bottom:1px solid'><td colspan = '9'> &nbsp; </td>");
                     }
 
 

@@ -117,6 +117,7 @@ namespace Dairy.Tabs.Procurement
             txtCategory.Text = string.Empty;
             txtTSL.Text = string.Empty;
             txtTSH.Text = string.Empty;
+            txtDescription.Text = string.Empty;
         }
         public void BindRawMilkTerrifList()
         {
@@ -205,6 +206,7 @@ namespace Dairy.Tabs.Procurement
                 txtScheme.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Scheme"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Scheme"].ToString();
                 //txtTS_INCR.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TS_INCR"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TS_INCR"].ToString();
                 txtTSRate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TSRATE"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TSRATE"].ToString();
+                txtDescription.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Description"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Description"].ToString();
                 txtWEF_DATE.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["WEF_DATE"].ToString()) ? string.Empty : Convert.ToDateTime(DS.Tables[0].Rows[0]["WEF_DATE"]).ToString("yyyy-MM-dd");
 
 

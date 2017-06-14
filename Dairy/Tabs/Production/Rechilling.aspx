@@ -124,11 +124,11 @@
 
                   </div><!-- /.form group -->
             </div>
-                               <div class="col-lg-3">
+<%--                               <div class="col-lg-3">
                   <div class="form-group cntrlbtm">
                     <div class="input-group">
                       <div class="input-group-addon">
-<%--                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                           <asp:Label ID="Label2" runat="server" Text="Type Of Milk"></asp:Label>
                       </div>
                        <asp:TextBox ID="txtTypeOfMilk" class="form-control"   placeholder="RCM" runat="server" ></asp:TextBox>                        
@@ -138,7 +138,35 @@
                                         ErrorMessage="Pls Enter Milk Type " style="font-size:12px;"></asp:RequiredFieldValidator>
 
                   </div><!-- /.form group -->
-            </div>
+            </div>--%>
+
+               <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                     
+                       Type Of Milk
+
+                      </div>
+                         <asp:DropDownList ID="dpTypeOfMilk" class="form-control"  runat="server" selected ToolTip="Select Type of Milk"   > 
+                            <asp:ListItem Value="0">Select Milk Type</asp:ListItem>
+                            <asp:ListItem Value="1">TM</asp:ListItem>
+                            <asp:ListItem Value="2">DTM</asp:ListItem>
+                              <asp:ListItem Value="3">SM</asp:ListItem>
+                              <asp:ListItem Value="4">FCM</asp:ListItem>
+                             <asp:ListItem Value="5">Other</asp:ListItem>
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                        <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator2" Display="Dynamic" 
+                             ValidationGroup="Save" runat="server" ControlToValidate="dpShiftDetails" ForeColor="Red"
+                             ErrorMessage="Pls Select Shift Details" style="font-size:12px;">
+                         </asp:RequiredFieldValidator>
+
+                  </div><!-- /.form group -->
+                         </div>
+
+
              <div class="col-lg-3">
                   <div class="form-group cntrlbtm">
                     <div class="input-group">
@@ -362,7 +390,7 @@
                                         <td><%# Convert.ToDateTime(Eval("RMRDate")).ToString("dd-MM-yyyy")%></td>    
                                         <td><%# Eval("BatchNo")%></td>   
                                         <td><%# Eval("ShiftName")%></td> 
-                                        <td><%# Eval("TypeOfMilk")%></td>
+                                        <td><%# Eval("RechilTypeOfMilk").ToString()== "" || Eval("RechilTypeOfMilk")==null ? Eval("TypeOfMilk") : Eval("RechilTypeOfMilk")  %></td>
                                         <td><%# Eval("Qty")%></td>
                                         <td><%# Eval("SiloNo")%></td> 
                                         <td><%# Eval("IBTInTemperature")%></td>

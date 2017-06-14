@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
         <section class="content-header">
           <h1>
-           Homogenizer Data 
+           Homogenization Data 
            <small>Details</small>
           </h1>
           <ol class="breadcrumb">
@@ -79,7 +79,7 @@
                   <div class="form-group cntrlbtm">
                     <div class="input-group">
                       <div class="input-group-addon">
-                          <asp:Label ID="lblDate" runat="server" Text="Homogenizer Date"></asp:Label>
+                          <asp:Label ID="lblDate" runat="server" Text="Homogenization Date"></asp:Label>
                       </div>
                        <asp:TextBox ID="txtHomogenizerDate" class="form-control" type="date" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
@@ -190,7 +190,7 @@
                     <div class="input-group">
                       <div class="input-group-addon">
 <%--                       <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>--%>
-                        <asp:Label ID="Label4" runat="server" Text="Oil Leakage"></asp:Label>
+                        <asp:Label ID="Label4" runat="server" Text="Machine condition"></asp:Label>
 
                       </div>
                       <asp:DropDownList ID="dpOilLeakage" class="form-control" DataValueField="StatusId" DataTextField="Name"   runat="server"  > 
@@ -243,11 +243,11 @@
                  </div>
 
 
-               <div class="col-lg-3">
+<%--               <div class="col-lg-3">
                   <div class="form-group cntrlbtm">
                     <div class="input-group">
                       <div class="input-group-addon">
-<%--                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
+                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                           <asp:Label ID="Label8" runat="server" Text="Homogenized"></asp:Label>
                       </div>
                        <asp:TextBox ID="txtHomogenized" class="form-control"   placeholder="Enter Homogenized " runat="server" ></asp:TextBox>                        
@@ -257,7 +257,7 @@
                                         ErrorMessage="Pls Enter Homogenized" style="font-size:12px;"></asp:RequiredFieldValidator>
 
                   </div><!-- /.form group -->
-                 </div>
+                 </div>--%>
 
 
                 <div class="col-lg-3">
@@ -273,9 +273,7 @@
                   </div><!-- /.form group -->
                  </div>
 
- </div>
-<div class="row">
-                  <div class="col-lg-3">
+                       <div class="col-lg-3">
                   <div class="form-group cntrlbtm">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -295,7 +293,8 @@
                   </div><!-- /.form group -->
                          </div>
 
-</div>
+
+ </div>
 
                 <div class="col-lg-3 pull-right">
                   <div class="form-group cntrlbtm">
@@ -315,7 +314,7 @@
 
                            <div class="box ">
             <div class="box-header with-border">
-              <h3 class="box-title"> Homogenizer Data List </h3>
+              <h3 class="box-title"> Homogenization Data List </h3>
               <div class="box-tools pull-right" style="right: 4px; top: 4px">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 

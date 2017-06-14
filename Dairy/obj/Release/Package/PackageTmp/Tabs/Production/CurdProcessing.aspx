@@ -209,7 +209,7 @@
                     <div class="input-group">
                       <div class="input-group-addon">
 <%--                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
-                          <asp:Label ID="Label5" runat="server" Text="Culture add Name"></asp:Label>
+                          <asp:Label ID="Label5" runat="server" Text="Culture Name"></asp:Label>
                       </div>
                        <asp:TextBox ID="txtCultureName" class="form-control"   placeholder="Enter Culture add Name" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->

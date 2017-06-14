@@ -2,11 +2,61 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
+    <script type="text/javascript" src="Scripts/jquery-1.4.1.min.js"></script>
     <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
     <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
     <style type="text/css">.cntrlbtm {    margin-bottom: 1px;} </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+     <script type="text/javascript">
+         $(document).ready(function () {
+             $(".cal").change(function () {
+                 debugger;
+                
+                 //srtdate = $("#MainContent_txtDate").val();
+                 //endate = $("#MainContent_txtDate").val();
+                 //var startDate = new Date(srtdate);
+                 //var endDate = new Date(endate);
+                 mbrtstart = $("#MainContent_txtMBRTStartTime").val();
+                 mbrtend = $("#MainContent_txtMBRTEndTime").val();
+                 time1 = mbrtstart.split(':');
+                 time2 = mbrtend.split(':');
+                 var hours1 = $.trim(time1[0]) + " hrs";
+                 var hours2 = $.trim(time2[0]) + " hrs";
+
+                 var mins1 = $.trim(time1[1]) + " min";                       
+                 var mins2 = $.trim(time2[1]) + " min";
+
+                 var hours = parseInt(hours2) - parseInt(hours1), mins = 0;
+
+                 if (hours < 0) hours = 24 + hours;
+                 if (mins2 >= mins1) {
+                     mins = parseInt(mins2) - parseInt(mins1);
+                 }
+                 else if (mins2 < mins1)
+                 {
+                     mins = 60 - parseInt(mins1) + parseInt(mins2);
+                     hours--;
+                 }
+                 else {
+                     mins = parseInt(mins2 + 60) - parseInt(mins1);
+                     hours--;
+                     
+                 }
+                 if (hours.toString().length == 1) {
+                     hours = "0" + hours;
+                 }
+                 if (mins.toString().length == 1) {
+                     mins = "0" + mins;
+                 }
+                
+                 diff = hours + ":" + mins;
+                 $("#MainContent_txtTotalHours").val(diff);
+                               
+             });
+            
+         });
+    </script>
     <section class="content-header">
           <h1>
            RMR Data 
@@ -181,7 +231,7 @@
 <%--                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
                           <asp:Label ID="lblQty" runat="server" Text="Quantity"></asp:Label>
                       </div>
-                       <asp:TextBox ID="txtQty" class="form-control"   placeholder="Enter Quantity in Liters" runat="server"></asp:TextBox>                        
+                       <asp:TextBox ID="txtQty" class="form-control"   placeholder="Enter Quantity in Liters" runat="server" Type="number" min="0" step="any"></asp:TextBox>                        
                     </div><!-- /.input group -->
                        <asp:RequiredFieldValidator  ID="RFVQty" Display="Dynamic" 
                                         ValidationGroup="Save" runat="server" ControlToValidate="txtQty" ForeColor="Red"
@@ -199,7 +249,7 @@
                         <%--<i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
                           <asp:Label ID="Label5" runat="server" Text="MBRT Start Time"></asp:Label>
                       </div>
-                       <asp:TextBox ID="txtMBRTStartTime" class="form-control" type="time"        placeholder=" MBRT Start Time" ToolTip="MBRT Start Time" runat="server" ReadOnly="true"></asp:TextBox>        
+                       <asp:TextBox ID="txtMBRTStartTime" class="cal form-control" type="time" placeholder=" MBRT Start Time" ToolTip="MBRT Start Time" runat="server" ReadOnly="true"></asp:TextBox>        
                     </div><!-- /.input group -->
                         <asp:RequiredFieldValidator ID="RFVMBRTStart" runat="server" ErrorMessage="Please MBRT Start Time" style="font-size:12px;" ControlToValidate="txtMBRTStartTime" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
@@ -220,7 +270,7 @@
                         <%--<i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
                           <asp:Label ID="Label6" runat="server" Text="MBRT End Time"></asp:Label>
                       </div>
-                       <asp:TextBox ID="txtMBRTEndTime" class="form-control" type="time"        placeholder=" MBRT End Time" ToolTip="MBRT End Time" runat="server" ReadOnly="true"></asp:TextBox>        
+                       <asp:TextBox ID="txtMBRTEndTime" class="cal form-control" type="time"        placeholder=" MBRT End Time" ToolTip="MBRT End Time" runat="server" ReadOnly="true"></asp:TextBox>        
                     </div><!-- /.input group -->
                         <asp:RequiredFieldValidator ID="RFVMBRTEnd" runat="server" ErrorMessage="Please MBRT End Time" style="font-size:12px;" ControlToValidate="txtMBRTEndTime" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
@@ -372,7 +422,7 @@
                                          <th>Date</th>
                                         <th>RMR Batch No</th>
                                         
-                                        <th>Shift Name</th>  
+                                        <th>Shift</th>  
                                          <th>Tanker No</th>                                    
                                         <th>Tanker Receipt No</th>                                      
                                         <th>Type Of Milk</th>
@@ -432,7 +482,7 @@
                                          <th>Date</th>
                                         <th>RMR Batch No</th>
                                         
-                                        <th>Shift Name</th>  
+                                        <th>Shift</th>  
                                          <th>Tanker No</th>                                    
                                         <th>Tanker Receipt No</th>                                      
                                         <th>Type Of Milk</th>

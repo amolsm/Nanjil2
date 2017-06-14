@@ -152,7 +152,7 @@
                       <div class="input-group-addon">
                        Start Amount
                       </div>
-                       <asp:TextBox ID="txtStartAmt" class="form-control"   placeholder="Start Amount" runat="server" type="number" step="0.01" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtStartAmt" class="form-control"   placeholder="Start Amount" runat="server" type="number" step="0.01"   ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -170,7 +170,7 @@
                       <div class="input-group-addon">
                      End Amount
                       </div>
-                       <asp:TextBox ID="txtEndAmt" class="form-control"   placeholder="End Amount" runat="server" type="number" step="0.01" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtEndAmt" class="form-control"   placeholder="End Amount" runat="server" type="number" step="0.01"   ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -180,7 +180,16 @@
                           
                       </div>       
                                   
-        
+         <div class="col-lg-3">
+                  <div class="form-group">
+                   <div class="input-group">
+                        <span class="input-group-addon">
+                          <asp:CheckBox runat="server" ID="chkAmt" OnCheckedChanged="chkAmt_CheckedChanged" AutoPostBack="true"/>
+                        </span>
+                    <input type="text" class="form-control" value="All Amt" disabled>
+                  </div>
+                  </div><!-- /.form group -->
+                         </div>
           
              
             

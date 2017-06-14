@@ -647,7 +647,7 @@
                                         <%--<td><%# Eval("QualityId")%></td>  --%> 
                                         <td><%# Convert.ToDateTime(Eval("RMRDate")).ToString("dd-MM-yyyy")%></td>  
                                         <td><%# Eval("BatchNo")%></td>   
-                                        <td><%# Eval("QualityDate")%></td> 
+                          <td><%# Convert.ToDateTime(Eval("QualityDate")).ToString("dd-MM-yyyy")%></td>  
                                         <td><%# Eval("ShiftName")%></td>                                                                                                                  
                                         <td><%# Eval("FAT")%></td>
                                         <td><%# Eval("SNF")%></td>                                        

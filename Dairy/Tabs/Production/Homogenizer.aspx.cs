@@ -42,7 +42,7 @@ namespace Dairy.Tabs.Production
         protected void BindDropDwon()
         {
             DS = new DataSet();
-            DS = BindCommanData.BindCommanDropDwon("ShiftId", "ShiftName as Name", "ShiftDetails", "IsActive =1");
+            DS = BindCommanData.BindCommanDropDwon("ShiftId", "ShiftName as Name", "ShiftMaster", "IsActive =1");
             dpShiftDetails.DataSource = DS;
             dpShiftDetails.DataBind();
             dpShiftDetails.Items.Insert(0, new ListItem("--Select Shift--", "0"));
@@ -92,7 +92,7 @@ namespace Dairy.Tabs.Production
                 mhomo.OilleakageId = Convert.ToInt32(dpOilLeakage.SelectedItem.Value);
                 mhomo.HomogenizedQty = string.IsNullOrEmpty(txtQtyHomogenized.Text) ? 0 : Convert.ToDouble(txtQtyHomogenized.Text);
                 mhomo.Technician = txtTechnician.Text;
-                mhomo.Homogenized = txtHomogenized.Text;
+                //mhomo.Homogenized = txtHomogenized.Text;
                 mhomo.Remarks = txtRemarks.Text;
                 mhomo.MachineStartTime = txtStartingTime.Text;
                 mhomo.MachineEndTime = txtEndTime.Text;
@@ -151,7 +151,7 @@ namespace Dairy.Tabs.Production
 
                 mhomo.HomogenizedQty = string.IsNullOrEmpty(txtQtyHomogenized.Text) ? 0 : Convert.ToDouble(txtQtyHomogenized.Text);
                 mhomo.Technician = txtTechnician.Text;
-                mhomo.Homogenized = txtHomogenized.Text;
+                //mhomo.Homogenized = txtHomogenized.Text;
                 mhomo.Remarks = txtRemarks.Text;
                 mhomo.MachineStartTime = txtStartingTime.Text;
                 mhomo.MachineEndTime = txtEndTime.Text;
@@ -328,7 +328,7 @@ namespace Dairy.Tabs.Production
                 }
                 txtQtyHomogenized.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["HomogenizedQty"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["HomogenizedQty"].ToString();
                 txtTechnician.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Technician"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Technician"].ToString();
-                txtHomogenized.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Homogenized"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Homogenized"].ToString();
+                //txtHomogenized.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Homogenized"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Homogenized"].ToString();
                 txtRemarks.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Remarks"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Remarks"].ToString();
                 txtStartingTime.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MachineStartTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MachineStartTime"].ToString();
                 txtEndTime.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["MachineEndTime"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["MachineEndTime"].ToString();

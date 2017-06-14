@@ -44,9 +44,9 @@ namespace Bussiness
             return dbbill.AgentSchemeSummaryOpeningClosing(StartDate, EndDate, RouteId, AgentId);
         }
 
-        public DataSet AgentSchemeDetails(int routeID)
+        public DataSet AgentSchemeDetails(string StartDate, string EndDate, int routeID)
         {
-            return dbbill.AgentSchemeDetails( routeID);
+            return dbbill.AgentSchemeDetails(StartDate, EndDate, routeID);
         }
 
         public DataSet GenrateItemwiseSalesSummaryByDate(string StartDate, string EndDate, int routeID, int BrandID)

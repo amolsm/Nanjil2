@@ -85,12 +85,16 @@ namespace DataAccess
             paramCollection.Add(new DBParameter("@RouteID", routeID));
             return _DBHelper.ExecuteDataSet("sp_GetReportBillwiseSalesSummary", paramCollection, CommandType.StoredProcedure);
         }
-        public DataSet AgentSchemeDetails(int routeID)
+        public DataSet AgentSchemeDetails(string StartDate, string EndDate, int routeID)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
-            
+            paramCollection.Add(new DBParameter("@StartDate", StartDate));
+            paramCollection.Add(new DBParameter("@EndDate", EndDate));
             paramCollection.Add(new DBParameter("@RouteID", routeID));
+
             return _DBHelper.ExecuteDataSet("Proc_AgentScheme", paramCollection, CommandType.StoredProcedure);
+
+
         }
         public DataSet GenrateItemwiseSalesSummaryByDate(string StartDate, string EndDate, int routeID, int BrandID)
         {

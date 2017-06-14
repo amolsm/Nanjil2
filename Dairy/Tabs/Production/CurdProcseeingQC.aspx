@@ -362,7 +362,7 @@
                           <asp:Label ID="Label11" runat="server" Text="Phosphatase Total hours"></asp:Label>
                       </div>
                       
-                        <asp:TextBox ID="txtPhosphataseTotalHours" class="form-control"   placeholder="Enter Total Hours" runat="server" type="time"></asp:TextBox>                        
+                        <asp:TextBox ID="txtPhosphataseTotalHours" class="form-control"   placeholder="Enter Total Hours" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
                        
                        <asp:RequiredFieldValidator ID="RequiredFieldValidator23" runat="server" ErrorMessage="Pls Enter Phosphatase Total Hours" style="font-size:12.5px;" ControlToValidate="txtPhosphataseTotalHours" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>

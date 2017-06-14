@@ -46,8 +46,8 @@ namespace Dairy.Tabs.Production
 
                 dpfinishQC.Enabled = false;
                 RFVMBRTStart.Enabled = false;
-                    RFVMBRTEnd.Enabled = false;
-                    RFVTotalHrs.Enabled = false;
+                RFVMBRTEnd.Enabled = false;
+                RFVTotalHrs.Enabled = false;
              
             }
         }
@@ -56,7 +56,7 @@ namespace Dairy.Tabs.Production
         protected void BindDropDwon()
         {
             DS = new DataSet();
-            DS = BindCommanData.BindCommanDropDwon("ShiftId", "ShiftName as Name", "ShiftDetails", "IsActive =1");
+            DS = BindCommanData.BindCommanDropDwon("ShiftId", "ShiftName as Name", "ShiftMaster", "IsActive =1");
             dpShiftDetails.DataSource = DS;
             dpShiftDetails.DataBind();
             dpShiftDetails.Items.Insert(0, new ListItem("--Select Shift--", "0"));
@@ -103,7 +103,6 @@ namespace Dairy.Tabs.Production
                
                 RMRecieve R = new RMRecieve();
                 R.RMRDate = Convert.ToDateTime(txtDate.Text);
-               
                 GetRMRDetails(R);
                 uprouteList.Update();
                 lblSuccess.Text = "RMR Data Add  Successfully";
@@ -199,10 +198,13 @@ namespace Dairy.Tabs.Production
             DS = proddata.GetRMRDatabyId(RMRId);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                string DATE = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RMRDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RMRDate"].ToString();
-                //sky
-                DateTime date1 = Convert.ToDateTime(DATE, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
-                txtDate.Text = (Convert.ToDateTime(date1).ToString("yyyy-MM-dd"));
+                //string DATE = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RMRDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RMRDate"].ToString();
+                ////sky
+                //DateTime date1 = Convert.ToDateTime(DATE, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
+                //txtDate.Text = (Convert.ToDateTime(date1).ToString("yyyy-MM-dd"));
+
+                txtDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RMRDate"].ToString()) ? string.Empty : Convert.ToDateTime(DS.Tables[0].Rows[0]["RMRDate"]).ToString("yyyy-MM-dd");
+
                 txtBatchNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BatchNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BatchNo"].ToString();
                 //txtDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Date"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Date"].ToString();
                 //dpShiftDetails.SelectedValue = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ShiftId"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ShiftId"].ToString();

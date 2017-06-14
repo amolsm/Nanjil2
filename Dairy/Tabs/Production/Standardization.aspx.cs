@@ -45,7 +45,7 @@ namespace Dairy.Tabs.Production
         protected void BindDropDwon()
         {
             DS = new DataSet();
-            DS = BindCommanData.BindCommanDropDwon("ShiftId", "ShiftName as Name", "ShiftDetails", "IsActive =1");
+            DS = BindCommanData.BindCommanDropDwon("ShiftId", "ShiftName as Name", "ShiftMaster", "IsActive =1");
             dpShiftDetails.DataSource = DS;
             dpShiftDetails.DataBind();
             dpShiftDetails.Items.Insert(0, new ListItem("--Select Shift--", "0"));
@@ -123,10 +123,12 @@ namespace Dairy.Tabs.Production
             DS = stdbdata.GetStandardizationDetailsbyId(RMRId);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                string DATE = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["QualityDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["QualityDate"].ToString();
-                //sky
-                DateTime date1 = Convert.ToDateTime(DATE, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
-                txtDate.Text = (Convert.ToDateTime(date1).ToString("yyyy-MM-dd"));
+                //string DATE = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["QualityDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["QualityDate"].ToString();
+                ////sky
+                //DateTime date1 = Convert.ToDateTime(DATE, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
+                //txtDate.Text = (Convert.ToDateTime(date1).ToString("yyyy-MM-dd"));
+
+                txtDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["QualityDate"].ToString()) ? string.Empty : Convert.ToDateTime(DS.Tables[0].Rows[0]["QualityDate"]).ToString("yyyy-MM-dd");
                 txtBatchNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BatchNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BatchNo"].ToString();
                 txtSiloNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SiloNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SiloNo"].ToString();
                 txtRCMQty.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RCMQuantity"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RCMQuantity"].ToString();

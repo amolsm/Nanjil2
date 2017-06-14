@@ -25,18 +25,19 @@ namespace Dairy.Tabs.Marketing
                     dpRoute.DataSource = DS;
                     dpRoute.DataBind();
                     dpRoute.Items.Insert(0, new ListItem("--All Route  --", "0"));
+                    txtStartDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                    txtEndDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 }
-                
+
             }
         }
 
         protected void btngenrateBill_click(object sender, EventArgs e)
         {
 
-            
-
             string result = string.Empty;
-            DS = billdata.AgentSchemeDetails(Convert.ToInt32(dpRoute.SelectedItem.Value));
+
+            DS = billdata.AgentSchemeDetails(Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"), Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value));
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 DataView view = new DataView(DS.Tables[0]);
@@ -75,7 +76,7 @@ namespace Dairy.Tabs.Marketing
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:center'>");
-               
+
                 sb.Append("<b><u>Agency Scheme Details </u> </b><br/>");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");

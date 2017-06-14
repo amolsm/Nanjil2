@@ -221,6 +221,7 @@ namespace Dairy.Tabs.Procurement
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Supplier Already exist for the same date and session.')", true);
                     ClearTextBox();
                     txtMilkCan.Focus();
+                    //dpSupplier.Focus();
                     int selectnextvalue = dpSupplier.Items.IndexOf(dpSupplier.Items.FindByValue(dpSupplier.SelectedItem.Value));
                     try
                     {
@@ -305,12 +306,12 @@ namespace Dairy.Tabs.Procurement
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 string msg = ex.Message.ToString();
             }
         }
-    
+
         public void ClearTextBox()
         {
             // txtBatch.Text = string.Empty;
@@ -413,6 +414,15 @@ namespace Dairy.Tabs.Procurement
                 {
                     dpSupplier.Items.FindByValue(DS.Tables[0].Rows[0]["SupplierID"].ToString()).Selected = true;
                 }
+                dpSession.ClearSelection();
+                string session = DS.Tables[0].Rows[0]["_Session"].ToString();
+                if (dpSession.Items.Contains(dpSession.Items.FindByText(session)) == true)
+                {
+                    //dpSupplier.Items.FindByText(DS.Tables[0].Rows[0]["_Session"].ToString());
+                    //dpSession.SelectedItem.Value = session;
+                    dpSession.Items.FindByText(session).Selected = true;
+                }
+
                 txtBatch.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Batch"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Batch"].ToString();
                 txtDate.Text = Convert.ToDateTime(DS.Tables[0].Rows[0]["_Date"]).ToString("yyyy-MM-dd").ToString();
 
@@ -532,16 +542,24 @@ namespace Dairy.Tabs.Procurement
             ProcurementData pd = new ProcurementData();
             p.Date = Convert.ToDateTime(txtDate1.Text);
             p.RouteID = Convert.ToInt32(dpRoute1.SelectedItem.Value);
-            p.Session = dpSession1.SelectedItem.Text.ToString();
+            if (dpSession1.SelectedItem.Value == "0")
+            {
+                p.Session = "0";
+            }
+            else
+            {
+                p.Session = dpSession1.SelectedItem.Text.ToString();
+            }
+
             DataSet DS1 = new DataSet();
             DS1 = pd.ViewMilkCollectionDetails(p);
-            //if (!Comman.Comman.IsDataSetEmpty(DS1))
-            //{
+            if (!Comman.Comman.IsDataSetEmpty(DS1))
+            {
 
-            rpMilkCollectionList.DataSource = DS1;
-            rpMilkCollectionList.DataBind();
-            uprouteList.Update();
-            //}
+                rpMilkCollectionList.DataSource = DS1;
+                rpMilkCollectionList.DataBind();
+                uprouteList.Update();
+            }
 
 
         }

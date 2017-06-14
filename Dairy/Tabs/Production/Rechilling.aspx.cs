@@ -40,11 +40,12 @@ namespace Dairy.Tabs.Production
         protected void BindDropDwon()
         {
             DS = new DataSet();
-            DS = BindCommanData.BindCommanDropDwon("ShiftId", "ShiftName as Name", "ShiftDetails", "IsActive =1");
+            DS = BindCommanData.BindCommanDropDwon("ShiftId", "ShiftName as Name", "ShiftMaster", "IsActive =1");
             dpShiftDetails.DataSource = DS;
             dpShiftDetails.DataBind();
             dpShiftDetails.Items.Insert(0, new ListItem("--Select Shift--", "0"));
 
+           
             DS = BindCommanData.BindCommanDropDwon("QCId", "Status as Name", "QCDetails", "IsActive =1");
 
             dpRechillStatus.DataSource = DS;
@@ -52,6 +53,8 @@ namespace Dairy.Tabs.Production
             //dpRechillStatus.Items.FindByText("Rejected").Enabled = false;
             //dpRechillStatus.Items.FindByText("Re-Chilling").Enabled = false;
             dpRechillStatus.Items.Insert(0, new ListItem("--Select Status--", "0"));
+
+
         }
 
         protected void btnAddRechilling_Click(object sender, EventArgs e)
@@ -70,9 +73,10 @@ namespace Dairy.Tabs.Production
             }
             RData.BatchNo = string.IsNullOrEmpty(txtBatchNO.Text) ? string.Empty : txtBatchNO.Text;
             RData.ShiftId = Convert.ToInt32(dpShiftDetails.SelectedItem.Value);
-            RData.Date = Convert.ToDateTime(txtDate.Text).ToString("dd-MM-yyyy");
+            RData.Date = Convert.ToDateTime(txtDate.Text.ToString());
             RData.SiloNo = Convert.ToInt32(txtSiloNo.Text);
-            RData.TypeOfMilk = string.IsNullOrEmpty(txtTypeOfMilk.Text) ? string.Empty : txtTypeOfMilk.Text;
+            RData.TypeOfMilk = dpTypeOfMilk.SelectedItem.Text;
+            //string.IsNullOrEmpty(txtTypeOfMilk.Text) ? string.Empty : txtTypeOfMilk.Text;
             RData.Quantity = Convert.ToDouble(txtQuantity.Text);
             RData.IBTInTemperature = Convert.ToDouble(txtIBTInTemperature.Text);
             RData.IBTOutTemperature = Convert.ToDouble(txtIBTOutTemperature.Text);
@@ -120,20 +124,21 @@ namespace Dairy.Tabs.Production
                 MRechilling RData = new MRechilling();
                 BRechilling BData = new BRechilling();
                 int Result = 0;
-                RData.RMRId = string.IsNullOrEmpty(hId.Value) ? 0 : Convert.ToInt32(hId.Value);
-                 RData.BatchNo = string.IsNullOrEmpty(txtBatchNO.Text) ? string.Empty : txtBatchNO.Text;
+            RData.RMRId = string.IsNullOrEmpty(hId.Value) ? 0 : Convert.ToInt32(hId.Value);
+            RData.BatchNo = string.IsNullOrEmpty(txtBatchNO.Text) ? string.Empty : txtBatchNO.Text;
             RData.ShiftId = Convert.ToInt32(dpShiftDetails.SelectedItem.Value);
-            RData.Date = Convert.ToDateTime(txtDate.Text).ToString("dd-MM-yyyy");
+            RData.Date = Convert.ToDateTime(txtDate.Text.ToString());
             RData.SiloNo = Convert.ToInt32(txtSiloNo.Text);
-            RData.TypeOfMilk = string.IsNullOrEmpty(txtTypeOfMilk.Text) ? string.Empty : txtTypeOfMilk.Text;
+            RData.TypeOfMilk = dpTypeOfMilk.SelectedItem.Text;
+                //string.IsNullOrEmpty(txtTypeOfMilk.Text) ? string.Empty : txtTypeOfMilk.Text;
             RData.Quantity = Convert.ToDouble(txtQuantity.Text);
             RData.IBTInTemperature = Convert.ToDouble(txtIBTInTemperature.Text);
             RData.IBTOutTemperature = Convert.ToDouble(txtIBTOutTemperature.Text);
             RData.MilkInTemperature = Convert.ToDouble(txtMilkInTemperature.Text);
             RData.MilkOutTemperature = Convert.ToDouble(txtMilkOutTemperature.Text);
             RData.RechilledBy = string.IsNullOrEmpty(txtRechilledBy.Text) ? string.Empty : txtRechilledBy.Text;
-                RData.RechillStatusId = Convert.ToInt32(dpRechillStatus.SelectedItem.Value);
-                RData.flag = "Update";
+            RData.RechillStatusId = Convert.ToInt32(dpRechillStatus.SelectedItem.Value);
+            RData.flag = "Update";
 
                 Result = BData.RechillingData(RData);
                 if (Result > 0)
@@ -168,10 +173,12 @@ namespace Dairy.Tabs.Production
             if (!Comman.Comman.IsDataSetEmpty(DS))
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {
-                    string DATE = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RMRDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RMRDate"].ToString();
+                    //string DATE = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RMRDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RMRDate"].ToString();
 
-                    DateTime date1 = Convert.ToDateTime(DATE, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
-                    txtDate.Text = (Convert.ToDateTime(date1).ToString("yyyy-MM-dd"));
+                    //DateTime date1 = Convert.ToDateTime(DATE, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
+                    //txtDate.Text = (Convert.ToDateTime(date1).ToString("yyyy-MM-dd"));
+
+                    txtDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RMRDate"].ToString()) ? string.Empty : Convert.ToDateTime(DS.Tables[0].Rows[0]["RMRDate"]).ToString("yyyy-MM-dd");
 
                     dpShiftDetails.ClearSelection();
                     string ShiftDetails = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RMRShiftId"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RMRShiftId"].ToString();
@@ -186,7 +193,26 @@ namespace Dairy.Tabs.Production
                     //dpShiftDetails.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ShiftId"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ShiftId"].ToString();
                     txtBatchNO.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BatchNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BatchNo"].ToString();
                     txtSiloNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["SiloNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["SiloNo"].ToString();
-                    txtTypeOfMilk.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TypeOfMilk"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TypeOfMilk"].ToString();
+                    //txtTypeOfMilk.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TypeOfMilk"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TypeOfMilk"].ToString();
+                    //dpTypeofMilk.ClearSelection();
+                    //string typeofmilk=string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TypeOfMilkId"].ToString())? string.Empty : DS.Tables[0].Rows[0]["TypeOfMilkId"].ToString();
+                    //if(typeofmilk=="")
+                    //{
+                    //    dpTypeofMilk.SelectedIndex = 0;
+                    //}
+                    //else
+                    //{
+                    //    dpTypeofMilk.Items.FindByValue(Convert.ToInt32(DS.Tables[0].Rows[0]["TypeOfMilkId"]).ToString()).Selected = true;
+                    //}
+                    dpTypeOfMilk.ClearSelection();
+                    string typeofmilk = DS.Tables[0].Rows[0]["RechilTypeOfMilk"].ToString();
+                    if (dpTypeOfMilk.Items.Contains(dpTypeOfMilk.Items.FindByText(typeofmilk)) == true)
+                    {
+                        //dpSupplier.Items.FindByText(DS.Tables[0].Rows[0]["_Session"].ToString());
+                        //dpSession.SelectedItem.Value = session;
+                        dpTypeOfMilk.Items.FindByText(typeofmilk).Selected = true;
+                    }
+
                     txtQuantity.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Qty"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Qty"].ToString();
                     
                     txtIBTInTemperature.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["IBTInTemperature"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["IBTInTemperature"].ToString();

@@ -5,20 +5,12 @@
      
       <section class="content-header">
           <h1>
-<<<<<<< HEAD
         Amount Wise Purchase Agents Report
-=======
-        Amount Wise Product type Report
->>>>>>> origin/master
              <small>Administration</small>  
           </h1> 
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
-<<<<<<< HEAD
             <li class="active">    Amount Wise Purchase Agents Report</li>
-=======
-            <li class="active">  Amount Wise Product type Report</li>
->>>>>>> origin/master
           </ol>
         </section>
 
@@ -57,11 +49,7 @@
 
            <div class="box  ">
             <div class="box-header with-border">
-<<<<<<< HEAD
               <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="Amount Wise Purchase Agents Report"></asp:Label> </h3>
-=======
-              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text=" Amount Wise Product type Report"></asp:Label> </h3>
->>>>>>> origin/master
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -164,7 +152,7 @@
                       <div class="input-group-addon">
                        Start Amount
                       </div>
-                       <asp:TextBox ID="txtStartAmt" class="form-control"   placeholder="Start Amount" runat="server" type="number" step="0.01" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtStartAmt" class="form-control"   placeholder="Start Amount" runat="server" type="number" step="0.01"   ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -182,7 +170,7 @@
                       <div class="input-group-addon">
                      End Amount
                       </div>
-                       <asp:TextBox ID="txtEndAmt" class="form-control"   placeholder="End Amount" runat="server" type="number" step="0.01" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtEndAmt" class="form-control"   placeholder="End Amount" runat="server" type="number" step="0.01"   ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -192,7 +180,16 @@
                           
                       </div>       
                                   
-        
+         <div class="col-lg-3">
+                  <div class="form-group">
+                   <div class="input-group">
+                        <span class="input-group-addon">
+                          <asp:CheckBox runat="server" ID="chkAmt" OnCheckedChanged="chkAmt_CheckedChanged" AutoPostBack="true"/>
+                        </span>
+                    <input type="text" class="form-control" value="All Amt" disabled>
+                  </div>
+                  </div><!-- /.form group -->
+                         </div>
           
              
             

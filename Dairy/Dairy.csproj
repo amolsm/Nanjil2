@@ -72,21 +72,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tabs\Marketing\MarketingGift-Othercomparison.aspx" />
-    <Content Include="Tabs\Production\AfterPackedPouchMilkTestQC.aspx" />
-    <Content Include="Tabs\Production\Cold room temperature chart.aspx" />
-    <Content Include="Tabs\Production\CreamProduction.aspx" />
-    <Content Include="Tabs\Production\CurdProcessing.aspx" />
-    <Content Include="Tabs\Production\CurdProcseeingQC.aspx" />
     <Content Include="ErrorPages\designi.jpg" />
     <Content Include="ErrorPages\customcss.css" />
     <Content Include="ErrorPages\Oops.aspx" />
     <Content Include="ErrorPages\PageNotFound.aspx" />
-    <Content Include="Tabs\Production\FilmData.aspx" />
-    <Content Include="Tabs\Production\FinishedGoodRelease.aspx" />
-    <Content Include="Tabs\Production\Homogenizer.aspx" />
-    <Content Include="Tabs\Production\MilkColdRoomTemperature.aspx" />
-    <Content Include="Tabs\Production\MilkPacking.aspx" />
-    <Content Include="Tabs\Production\MilkProductsTestBeforePackingQC.aspx" />
     <Content Include="packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll" />
     <Content Include="packages\EntityFramework.5.0.0\lib\net40\EntityFramework.xml" />
     <Content Include="packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll" />
@@ -95,12 +84,7 @@
     <Content Include="packages\EntityFramework.5.0.0\tools\EntityFramework.PowerShell.dll" />
     <Content Include="packages\EntityFramework.5.0.0\tools\EntityFramework.PowerShell.Utility.dll" />
     <Content Include="packages\EntityFramework.5.0.0\tools\migrate.exe" />
-    <Content Include="Tabs\Production\PasteurizationProcess.aspx" />
-    <Content Include="Tabs\Production\PasteurizationQC.aspx" />
     <Content Include="Print.aspx" />
-    <Content Include="Tabs\Production\QCAfterProcessing.aspx" />
-    <Content Include="Tabs\Production\QualityCheck.aspx" />
-    <Content Include="Tabs\Production\Rechilling.aspx" />
     <Content Include="Reports\AgentSchemeReport.aspx" />
     <Content Include="Reports\BillsReports.aspx" />
     <Content Include="Reports\PartyWiseScheme.aspx" />
@@ -109,10 +93,6 @@
     <Content Include="Authentication\ForgotPassword.aspx" />
     <Content Include="Authentication\LoginT.aspx" />
     <Content Include="Authentication\LogOut.aspx" />
-    <Content Include="Tabs\Production\ReturnDrainedMilkQC.aspx" />
-    <Content Include="Tabs\Production\RMRData.aspx" />
-    <Content Include="Tabs\Production\Standardization.aspx" />
-    <Content Include="Tabs\Production\StandardizationProductsAdded.aspx" />
     <Content Include="Tabs\Administration\AddAgent.aspx" />
     <Content Include="Tabs\Administration\AddBank.aspx" />
     <Content Include="Tabs\Administration\AddBrand.aspx" />
@@ -255,6 +235,27 @@
     <Content Include="Tabs\Procurement\VehicleTariff.aspx" />
     <Content Include="Tabs\Procurement\VehicleType.aspx" />
     <Content Include="Tabs\Procurement\VehiclewiseOperationStatementReport.aspx" />
+    <Content Include="Tabs\Production\AfterPackedPouchMilkTestQC.aspx" />
+    <Content Include="Tabs\Production\Cold room temperature chart.aspx" />
+    <Content Include="Tabs\Production\CreamProduction.aspx" />
+    <Content Include="Tabs\Production\CurdProcessing.aspx" />
+    <Content Include="Tabs\Production\CurdProcseeingQC.aspx" />
+    <Content Include="Tabs\Production\FilmData.aspx" />
+    <Content Include="Tabs\Production\FinishedGoodRelease.aspx" />
+    <Content Include="Tabs\Production\Homogenizer.aspx" />
+    <Content Include="Tabs\Production\MilkColdRoomTemperature.aspx" />
+    <Content Include="Tabs\Production\MilkPacking.aspx" />
+    <Content Include="Tabs\Production\MilkProductsTestBeforePackingQC.aspx" />
+    <Content Include="Tabs\Production\PasteurizationProcess.aspx" />
+    <Content Include="Tabs\Production\PasteurizationQC.aspx" />
+    <Content Include="Tabs\Production\QCAfterProcessing.aspx" />
+    <Content Include="Tabs\Production\QualityCheck.aspx" />
+    <Content Include="Tabs\Production\Rechilling.aspx" />
+    <Content Include="Tabs\Production\ReturnDrainedMilkQC.aspx" />
+    <Content Include="Tabs\Production\RMRData.aspx" />
+    <Content Include="Tabs\Production\Standardization.aspx" />
+    <Content Include="Tabs\Production\StandardizationProductsAdded.aspx" />
+    <Content Include="Tabs\Production\TraceabilityForMilkQC.aspx" />
     <Content Include="Tabs\PurchaseM\Dashboard.aspx" />
     <Content Include="Tabs\PurchaseM\ViewPrchsRequest.aspx" />
     <Content Include="Tabs\Purchase\ApprovedRequestItems.aspx" />
@@ -1153,7 +1154,6 @@
     <Content Include="Theme\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="Theme\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Theme\plugins\timepicker\bootstrap-timepicker.min.js" />
-    <Content Include="Tabs\Production\TraceabilityForMilkQC.aspx" />
     <Content Include="UserControl\Footer.ascx" />
     <Content Include="UserControl\Head.ascx" />
     <Content Include="UserControl\Header.ascx" />
@@ -1178,13 +1178,6 @@
     <Compile Include="Tabs\Marketing\MarketingGift-Othercomparison.aspx.designer.cs">
       <DependentUpon>MarketingGift-Othercomparison.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tabs\Production\AfterPackedPouchMilkTestQC.aspx.cs">
-      <DependentUpon>AfterPackedPouchMilkTestQC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\AfterPackedPouchMilkTestQC.aspx.designer.cs">
-      <DependentUpon>AfterPackedPouchMilkTestQC.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AgentSchemeReport.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1196,34 +1189,6 @@
       <DependentUpon>AgentSeameWiseReports.xsd</DependentUpon>
     </Compile>
     <Compile Include="App_Code\GlobalInfo.cs" />
-    <Compile Include="Tabs\Production\Cold room temperature chart.aspx.cs">
-      <DependentUpon>Cold room temperature chart.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\Cold room temperature chart.aspx.designer.cs">
-      <DependentUpon>Cold room temperature chart.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\CreamProduction.aspx.cs">
-      <DependentUpon>CreamProduction.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\CreamProduction.aspx.designer.cs">
-      <DependentUpon>CreamProduction.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\CurdProcessing.aspx.cs">
-      <DependentUpon>CurdProcessing.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\CurdProcessing.aspx.designer.cs">
-      <DependentUpon>CurdProcessing.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\CurdProcseeingQC.aspx.cs">
-      <DependentUpon>CurdProcseeingQC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\CurdProcseeingQC.aspx.designer.cs">
-      <DependentUpon>CurdProcseeingQC.aspx</DependentUpon>
-    </Compile>
     <Compile Include="DairyerpDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1257,83 +1222,6 @@
     </Compile>
     <Compile Include="ErrorPages\PageNotFound.aspx.designer.cs">
       <DependentUpon>PageNotFound.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\FilmData.aspx.cs">
-      <DependentUpon>FilmData.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\FilmData.aspx.designer.cs">
-      <DependentUpon>FilmData.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\FinishedGoodRelease.aspx.cs">
-      <DependentUpon>FinishedGoodRelease.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\FinishedGoodRelease.aspx.designer.cs">
-      <DependentUpon>FinishedGoodRelease.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\Homogenizer.aspx.cs">
-      <DependentUpon>Homogenizer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\Homogenizer.aspx.designer.cs">
-      <DependentUpon>Homogenizer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\MilkColdRoomTemperature.aspx.cs">
-      <DependentUpon>MilkColdRoomTemperature.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\MilkColdRoomTemperature.aspx.designer.cs">
-      <DependentUpon>MilkColdRoomTemperature.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\MilkPacking.aspx.cs">
-      <DependentUpon>MilkPacking.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\MilkPacking.aspx.designer.cs">
-      <DependentUpon>MilkPacking.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\MilkProductsTestBeforePackingQC.aspx.cs">
-      <DependentUpon>MilkProductsTestBeforePackingQC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\MilkProductsTestBeforePackingQC.aspx.designer.cs">
-      <DependentUpon>MilkProductsTestBeforePackingQC.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\PasteurizationProcess.aspx.cs">
-      <DependentUpon>PasteurizationProcess.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\PasteurizationProcess.aspx.designer.cs">
-      <DependentUpon>PasteurizationProcess.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\PasteurizationQC.aspx.cs">
-      <DependentUpon>PasteurizationQC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\PasteurizationQC.aspx.designer.cs">
-      <DependentUpon>PasteurizationQC.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\QCAfterProcessing.aspx.cs">
-      <DependentUpon>QCAfterProcessing.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\QCAfterProcessing.aspx.designer.cs">
-      <DependentUpon>QCAfterProcessing.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\QualityCheck.aspx.cs">
-      <DependentUpon>QualityCheck.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\QualityCheck.aspx.designer.cs">
-      <DependentUpon>QualityCheck.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\Rechilling.aspx.cs">
-      <DependentUpon>Rechilling.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\Rechilling.aspx.designer.cs">
-      <DependentUpon>Rechilling.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reports\AgentSchemeReport.aspx.cs">
       <DependentUpon>AgentSchemeReport.aspx</DependentUpon>
@@ -1379,34 +1267,6 @@
     </Compile>
     <Compile Include="Reports\StaffACCSaleSummary.aspx.designer.cs">
       <DependentUpon>StaffACCSaleSummary.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\ReturnDrainedMilkQC.aspx.cs">
-      <DependentUpon>ReturnDrainedMilkQC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\ReturnDrainedMilkQC.aspx.designer.cs">
-      <DependentUpon>ReturnDrainedMilkQC.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\RMRData.aspx.cs">
-      <DependentUpon>RMRData.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\RMRData.aspx.designer.cs">
-      <DependentUpon>RMRData.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\Standardization.aspx.cs">
-      <DependentUpon>Standardization.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\Standardization.aspx.designer.cs">
-      <DependentUpon>Standardization.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\StandardizationProductsAdded.aspx.cs">
-      <DependentUpon>StandardizationProductsAdded.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\StandardizationProductsAdded.aspx.designer.cs">
-      <DependentUpon>StandardizationProductsAdded.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Administration\AddAgent.aspx.cs">
       <DependentUpon>AddAgent.aspx</DependentUpon>
@@ -2393,6 +2253,153 @@
     <Compile Include="Tabs\Procurement\VehiclewiseOperationStatementReport.aspx.designer.cs">
       <DependentUpon>VehiclewiseOperationStatementReport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\Production\AfterPackedPouchMilkTestQC.aspx.cs">
+      <DependentUpon>AfterPackedPouchMilkTestQC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\AfterPackedPouchMilkTestQC.aspx.designer.cs">
+      <DependentUpon>AfterPackedPouchMilkTestQC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\Cold room temperature chart.aspx.cs">
+      <DependentUpon>Cold room temperature chart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\Cold room temperature chart.aspx.designer.cs">
+      <DependentUpon>Cold room temperature chart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\CreamProduction.aspx.cs">
+      <DependentUpon>CreamProduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\CreamProduction.aspx.designer.cs">
+      <DependentUpon>CreamProduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\CurdProcessing.aspx.cs">
+      <DependentUpon>CurdProcessing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\CurdProcessing.aspx.designer.cs">
+      <DependentUpon>CurdProcessing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\CurdProcseeingQC.aspx.cs">
+      <DependentUpon>CurdProcseeingQC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\CurdProcseeingQC.aspx.designer.cs">
+      <DependentUpon>CurdProcseeingQC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\FilmData.aspx.cs">
+      <DependentUpon>FilmData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\FilmData.aspx.designer.cs">
+      <DependentUpon>FilmData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\FinishedGoodRelease.aspx.cs">
+      <DependentUpon>FinishedGoodRelease.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\FinishedGoodRelease.aspx.designer.cs">
+      <DependentUpon>FinishedGoodRelease.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\Homogenizer.aspx.cs">
+      <DependentUpon>Homogenizer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\Homogenizer.aspx.designer.cs">
+      <DependentUpon>Homogenizer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\MilkColdRoomTemperature.aspx.cs">
+      <DependentUpon>MilkColdRoomTemperature.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\MilkColdRoomTemperature.aspx.designer.cs">
+      <DependentUpon>MilkColdRoomTemperature.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\MilkPacking.aspx.cs">
+      <DependentUpon>MilkPacking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\MilkPacking.aspx.designer.cs">
+      <DependentUpon>MilkPacking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\MilkProductsTestBeforePackingQC.aspx.cs">
+      <DependentUpon>MilkProductsTestBeforePackingQC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\MilkProductsTestBeforePackingQC.aspx.designer.cs">
+      <DependentUpon>MilkProductsTestBeforePackingQC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\PasteurizationProcess.aspx.cs">
+      <DependentUpon>PasteurizationProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\PasteurizationProcess.aspx.designer.cs">
+      <DependentUpon>PasteurizationProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\PasteurizationQC.aspx.cs">
+      <DependentUpon>PasteurizationQC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\PasteurizationQC.aspx.designer.cs">
+      <DependentUpon>PasteurizationQC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\QCAfterProcessing.aspx.cs">
+      <DependentUpon>QCAfterProcessing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\QCAfterProcessing.aspx.designer.cs">
+      <DependentUpon>QCAfterProcessing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\QualityCheck.aspx.cs">
+      <DependentUpon>QualityCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\QualityCheck.aspx.designer.cs">
+      <DependentUpon>QualityCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\Rechilling.aspx.cs">
+      <DependentUpon>Rechilling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\Rechilling.aspx.designer.cs">
+      <DependentUpon>Rechilling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\ReturnDrainedMilkQC.aspx.cs">
+      <DependentUpon>ReturnDrainedMilkQC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\ReturnDrainedMilkQC.aspx.designer.cs">
+      <DependentUpon>ReturnDrainedMilkQC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\RMRData.aspx.cs">
+      <DependentUpon>RMRData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\RMRData.aspx.designer.cs">
+      <DependentUpon>RMRData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\Standardization.aspx.cs">
+      <DependentUpon>Standardization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\Standardization.aspx.designer.cs">
+      <DependentUpon>Standardization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\StandardizationProductsAdded.aspx.cs">
+      <DependentUpon>StandardizationProductsAdded.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\StandardizationProductsAdded.aspx.designer.cs">
+      <DependentUpon>StandardizationProductsAdded.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\TraceabilityForMilkQC.aspx.cs">
+      <DependentUpon>TraceabilityForMilkQC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\TraceabilityForMilkQC.aspx.designer.cs">
+      <DependentUpon>TraceabilityForMilkQC.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\PurchaseM\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3015,13 +3022,6 @@
     </Compile>
     <Compile Include="Tabs\TransportModule\VehicleTarifDetails.aspx.designer.cs">
       <DependentUpon>VehicleTarifDetails.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tabs\Production\TraceabilityForMilkQC.aspx.cs">
-      <DependentUpon>TraceabilityForMilkQC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tabs\Production\TraceabilityForMilkQC.aspx.designer.cs">
-      <DependentUpon>TraceabilityForMilkQC.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebService\BindAgentSlab.asmx.cs">
       <DependentUpon>BindAgentSlab.asmx</DependentUpon>

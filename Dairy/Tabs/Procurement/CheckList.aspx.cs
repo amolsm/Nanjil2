@@ -131,38 +131,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append(Convert.ToDateTime(txtToDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("</tr>");
-                sb.Append("<tr style='border-bottom:1px solid'>");
-                //sb.Append("<td>");
-                //sb.Append("<b>Date</b>");
-                //sb.Append("</td>");
 
-                sb.Append("<td colspan='2'>");
-                sb.Append("<b>Supplier</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>Can</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>MilkInKG</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>MilkInLtr</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>CLR</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>Fat Perc.</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>SNF Perc.</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>TS Perc.</b>");
-                sb.Append("</td>");
-
-
-                sb.Append("</tr>");
                 sb.Append("<tr>");
                 int count = 0;
 
@@ -215,17 +184,49 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("<b>Time : </b>" + rows["_Session"].ToString());
                     sb.Append("</td>");
                     sb.Append("</tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    //sb.Append("<td>");
+                    //sb.Append("<b>Date</b>");
+                    //sb.Append("</td>");
+
+                    sb.Append("<td colspan='2'>");
+                    sb.Append("<b>Supplier</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>Can</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>MilkInKG</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>MilkInLtr</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>CLR</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>Fat Perc.</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>SNF Perc.</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>TS Perc.</b>");
+                    sb.Append("</td>");
+
+
+                    sb.Append("</tr>");
                     foreach (DataRow row in DS1.Tables[0].Rows)
                     {
                         //count1++;
                         if (rows["_Date"].ToString() == row["_Date"].ToString())
                         {
                             if (rows["RouteName"].ToString() == row["RouteName"].ToString())
-                            { 
-                                if (rows["_Session"].ToString() == row["_Session"].ToString())
                             {
-                                
-                                
+                                if (rows["_Session"].ToString() == row["_Session"].ToString())
+                                {
+
+
                                     count++;
                                     countavg += count;
 
@@ -367,7 +368,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<b>" + totmillkg + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" +Convert.ToDecimal(totmilkltr).ToString("00.00") + "</b>");
+                sb.Append("<b>" + Convert.ToDecimal(totmilkltr).ToString("00.00") + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td style='text-align:right'>");
                 sb.Append("<b>" + totclr + "</b>");
@@ -384,7 +385,7 @@ namespace Dairy.Tabs.Procurement
 
 
                 sb.Append("</tr>");
-                
+
                 result = sb.ToString();
                 CheckLists.Text = result;
 

@@ -464,8 +464,8 @@
 
                                                             
                                         <%--<td><%# Eval("RMRId")%></td>--%>  
-                                     <td><%# Convert.ToDateTime(Eval("StandardDate")).ToString()%></td>    
-                                       <td><%# Eval("BatchNo")%></td>                       
+                                     <td><%# Convert.ToDateTime(Eval("StandardDate")).ToString("dd-MM-yyyy")%></td>    
+                                        <td><%# Eval("BatchNo")%></td>                       
                                         <td><%# Eval("ShiftName")%></td>
                                         <td><%# Eval("StatusName")%></td>
                                    <asp:HiddenField id="hfStdId" runat="server" value='<%#Eval("StdId") %>' />   

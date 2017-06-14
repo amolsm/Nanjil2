@@ -6,6 +6,49 @@
         <style type="text/css">.cntrlbtm {    margin-bottom: 1px;} </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.cal').change(function () {
+                debugger;
+                PhosStrTime = $("#MainContent_txtPhosphataseStartingTime").val();
+                PhosEndTime = $("#MainContent_txtPhosphataseEndTime").val();
+                time1 = PhosStrTime.split(':');
+                time2 = PhosEndTime.split(':');
+                var hours1 = $.trim(time1[0]) + " hrs";
+                var hours2 = $.trim(time2[0]) + " hrs";
+
+                var mins1 = $.trim(time1[1]) + " min";
+                var mins2 = $.trim(time2[1]) + " min";
+
+                var hours = parseInt(hours2) - parseInt(hours1), mins = 0;
+
+                if (hours < 0) hours = 24 + hours;
+                if (mins2 >= mins1) {
+                    mins = parseInt(mins2) - parseInt(mins1);
+                }
+                else if (mins2 < mins1) {
+                    mins = 60 - parseInt(mins1) + parseInt(mins2);
+                    hours--;
+                }
+                else {
+                    mins = parseInt(mins2 + 60) - parseInt(mins1);
+                    hours--;
+
+                }
+                if (hours.toString().length == 1) {
+                    hours = "0" + hours;
+                }
+                if (mins.toString().length == 1) {
+                    mins = "0" + mins;
+                }
+
+                diff = hours + ":" + mins;
+                $("#MainContent_txtPhosphatasetotalhrs").val(diff);
+
+            });
+             });
+    </script>
       <section class="content-header">
           <h1>
            QC After Processing    
@@ -236,7 +279,7 @@
 <%--                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
                           <asp:Label ID="Label9" runat="server" Text="Phosphatase Starting Time"></asp:Label>
                       </div>
-                       <asp:TextBox ID="txtPhosphataseStartingTime" class="form-control"  type="time" placeholder="Enter Start Time" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtPhosphataseStartingTime" class="cal form-control"  type="time" placeholder="Enter Start Time" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ErrorMessage="Pls Enter Phosphatase Start Time" style="font-size:12px;" ControlToValidate="txtPhosphataseStartingTime" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
 
@@ -254,7 +297,7 @@
 <%--                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
                           <asp:Label ID="Label10" runat="server" Text="Phosphatase End Time"></asp:Label>
                       </div>
-                       <asp:TextBox ID="txtPhosphataseEndTime" class="form-control" type="time"  placeholder="Enter End Time" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtPhosphataseEndTime" class="cal form-control" type="time"  placeholder="Enter End Time" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Pls Enter Phosphatase End Time" style="font-size:12px;" ControlToValidate="txtPhosphataseEndTime" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
 

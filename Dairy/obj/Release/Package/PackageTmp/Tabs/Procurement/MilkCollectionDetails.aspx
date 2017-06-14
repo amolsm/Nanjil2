@@ -577,8 +577,9 @@
                 Shift
                       </div>
                         <asp:DropDownList ID="dpSession1" class="form-control"  runat="server" selected ToolTip="Select Session"> 
-                            <asp:ListItem Value="0">Morning</asp:ListItem>
-                            <asp:ListItem Value="1">Evening</asp:ListItem>
+                            <asp:ListItem Value="0">All Session</asp:ListItem>
+                            <asp:ListItem Value="1">Morning</asp:ListItem>
+                            <asp:ListItem Value="2">Evening</asp:ListItem>
                        </asp:DropDownList>                          
                     </div><!-- /.input group -->
         <%--<asp:RequiredFieldValidator InitialValue="0" ID="Req_ID" Display="Dynamic" 

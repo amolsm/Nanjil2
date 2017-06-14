@@ -51,7 +51,7 @@ namespace Dairy.Tabs.Production
         protected void BindDropDwon()
         {
             DS = new DataSet();
-            DS = BindCommanData.BindCommanDropDwon("ShiftId", "ShiftName as Name", "ShiftDetails", "IsActive =1");
+            DS = BindCommanData.BindCommanDropDwon("ShiftId", "ShiftName as Name", "ShiftMaster", "IsActive =1");
             dpShiftDetails.DataSource = DS;
             dpShiftDetails.DataBind();
             dpShiftDetails.Items.Insert(0, new ListItem("--Select Shift--", "0"));

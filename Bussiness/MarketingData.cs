@@ -127,5 +127,10 @@ namespace Bussiness
             dbMarketing = new DBMarketing();
             return dbMarketing.AmountwiseIceCreamReport(StartDate, EndDate, RouteID, typeid, commodityid,startamt, endamt);
         }
+        public DataSet AmountwiseIceCreamReport1(string StartDate, string EndDate, int RouteID, int typeid, int commodityid)
+        {
+            dbMarketing = new DBMarketing();
+            return dbMarketing.AmountwiseIceCreamReport1(StartDate, EndDate, RouteID, typeid, commodityid);
+        }
     }
 }
