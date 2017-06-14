@@ -5,20 +5,12 @@
      
       <section class="content-header">
           <h1>
-<<<<<<< HEAD
         Amount Wise Purchase Agents Report
-=======
-        Amount Wise Product type Report
->>>>>>> origin/master
              <small>Administration</small>  
           </h1> 
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
-<<<<<<< HEAD
             <li class="active">    Amount Wise Purchase Agents Report</li>
-=======
-            <li class="active">  Amount Wise Product type Report</li>
->>>>>>> origin/master
           </ol>
         </section>
 
@@ -57,11 +49,7 @@
 
            <div class="box  ">
             <div class="box-header with-border">
-<<<<<<< HEAD
               <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="Amount Wise Purchase Agents Report"></asp:Label> </h3>
-=======
-              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text=" Amount Wise Product type Report"></asp:Label> </h3>
->>>>>>> origin/master
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 

@@ -406,9 +406,8 @@ namespace Dairy.Tabs.Sales
                 {
                     double temp = Convert.ToDouble(ds.Tables[0].Rows[0]["avail"]);
 
-                    if (temp >= tempQty)
+                    if (temp >= invocie.qty)
                     {
-
                         invicedata.Booth_InsertTempInvoiceItam(invocie);
                         BindAgntTempItam(invocie);
                         pnlBills.Visible = false;
