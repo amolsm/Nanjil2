@@ -22,6 +22,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/14/2017 12:56:10</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
+<<<<<<< HEAD
       <publishTime>06/14/2017 15:53:50</publishTime>
     </File>
     <File Include="bin/Comman.dll">
@@ -32,6 +33,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/DataAccess.dll">
       <publishTime>06/14/2017 15:53:50</publishTime>
+=======
+      <publishTime>06/14/2017 11:27:49</publishTime>
+    </File>
+    <File Include="bin/Comman.dll">
+      <publishTime>06/14/2017 11:27:46</publishTime>
+    </File>
+    <File Include="bin/Dairy.dll">
+      <publishTime>06/14/2017 11:28:12</publishTime>
+    </File>
+    <File Include="bin/DataAccess.dll">
+      <publishTime>06/14/2017 11:27:48</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>06/24/2012 13:52:52</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>06/14/2017 12:56:13</publishTime>
@@ -40,7 +56,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/02/2012 21:25:10</publishTime>
     </File>
     <File Include="bin/Model.dll">
+<<<<<<< HEAD
       <publishTime>06/14/2017 15:53:49</publishTime>
+=======
+      <publishTime>06/14/2017 11:27:46</publishTime>
+    </File>
+    <File Include="bin/pt/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>06/24/2012 13:52:50</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>06/24/2012 13:53:08</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>06/24/2012 13:53:48</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/Microsoft.ReportViewer.WebForms.resources.dll">
+      <publishTime>06/24/2012 13:50:22</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="DairyerpDataSet.xsc">
       <publishTime>06/14/2017 12:56:10</publishTime>
@@ -421,7 +453,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/14/2017 12:56:11</publishTime>
     </File>
     <File Include="Tabs/Marketing/AmountwiseIceCreamReport.aspx">
+<<<<<<< HEAD
       <publishTime>06/14/2017 15:38:42</publishTime>
+=======
+      <publishTime>06/13/2017 13:32:09</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Marketing/BillwiseSalesSummaryforMarketing.aspx">
       <publishTime>06/14/2017 12:56:11</publishTime>
@@ -460,7 +496,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/14/2017 12:56:11</publishTime>
     </File>
     <File Include="Tabs/Marketing/MarketingGift-Othercomparison.aspx">
+<<<<<<< HEAD
       <publishTime>06/14/2017 12:56:11</publishTime>
+=======
+      <publishTime>06/13/2017 13:32:09</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="Tabs/Marketing/MarketingSalesAnalysisItemwise.aspx">
       <publishTime>06/14/2017 12:56:11</publishTime>
@@ -510,9 +550,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Tabs/OfflineBooth/BoothPlaceOrder.aspx">
       <publishTime>06/14/2017 12:56:11</publishTime>
     </File>
+<<<<<<< HEAD
     <File Include="Tabs/OfflineBooth/BoothReturnReplace.aspx">
       <publishTime>06/14/2017 12:56:11</publishTime>
     </File>
+=======
+>>>>>>> origin/master
     <File Include="Tabs/OfflineBooth/BoothStockLanding.aspx">
       <publishTime>06/14/2017 12:56:11</publishTime>
     </File>
@@ -3667,13 +3710,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/14/2017 12:56:12</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
+<<<<<<< HEAD
       <publishTime>06/14/2017 12:56:12</publishTime>
+=======
+      <publishTime>06/13/2017 13:32:09</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>06/14/2017 12:56:12</publishTime>
     </File>
     <File Include="Web.config">
+<<<<<<< HEAD
       <publishTime>06/14/2017 15:53:58</publishTime>
+=======
+      <publishTime>06/14/2017 11:28:16</publishTime>
+>>>>>>> origin/master
     </File>
     <File Include="WebService/BindAgentSlab.asmx">
       <publishTime>06/14/2017 12:56:12</publishTime>
