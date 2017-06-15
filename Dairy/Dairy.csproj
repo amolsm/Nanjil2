@@ -3212,6 +3212,7 @@
     <None Include="Properties\PublishProfiles\a.pubxml" />
     <None Include="Properties\PublishProfiles\amol.pubxml" />
     <None Include="Properties\PublishProfiles\DairyERP.pubxml" />
+    <None Include="Properties\PublishProfiles\karthik.pubxml" />
     <None Include="Properties\PublishProfiles\sharad_mahajan.pubxml" />
     <Content Include="Reports\ReportDataSet\PartywiseScheme.xsc">
       <DependentUpon>PartywiseScheme.xsd</DependentUpon>

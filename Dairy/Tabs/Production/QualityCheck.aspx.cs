@@ -276,6 +276,7 @@ namespace Dairy.Tabs.Production
                     uprouteList.Update();
                     lblSuccess.Text = "QualityData Added Successfully";
                     pnlError.Update();
+                    ClearText();
                 }
                 else
                 {
@@ -293,6 +294,32 @@ namespace Dairy.Tabs.Production
             }
             }
         
+        public void ClearText()
+        {
+            txtBatchNo.Text = string.Empty;
+            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            dpShiftDetails.SelectedIndex = -1;
+            txtMilkType.Text = string.Empty;
+            txtTankerReceipitNo.Text = string.Empty;
+            txtTankerNo.Text = string.Empty;
+            txtQty.Text = string.Empty;
+            txtTemperature.Text = string.Empty;
+            txtTaste.Text = string.Empty;
+            txtSmell.Text = string.Empty;
+            txtColor.Text = string.Empty;
+            txtAlcohol.Text = string.Empty;
+            txtNeutralizer.Text = string.Empty;
+            txtAcidity.Text = string.Empty;
+            txtHeatStability.Text = string.Empty;
+            txtFat.Text = string.Empty;
+            txtCLR.Text = string.Empty;
+            txtSNF.Text = string.Empty;
+            txtTestedBy.Text = string.Empty;
+            txtVerifiedBy.Text = string.Empty;
+            txtOthers.Text = string.Empty;
+            txtRemarks.Text = string.Empty;
+            dpQCDetails.SelectedIndex = -1;
+        }
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             qtyMdata = new MQuality();

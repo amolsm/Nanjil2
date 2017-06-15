@@ -394,7 +394,8 @@
                 
               </div>
             </div>
-                                      <div class="row">
+
+                <div class="row">
                     <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -425,11 +426,7 @@
                             </div>
 
             <div class="box-body" id="datalist">
-                   
-                
-                       
-
-                                <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
+                   <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
                     <ContentTemplate>
                 <table id="example1" class="table table-bordered table-striped">
                    

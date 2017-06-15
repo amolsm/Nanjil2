@@ -422,7 +422,7 @@
                                          <th>Date</th>
                                         <th>RMR Batch No</th>
                                         
-                                        <th>Shift</th>  
+                                        <th style="text-align:center">Shift</th>  
                                          <th>Tanker No</th>                                    
                                         <th>Tanker Receipt No</th>                                      
                                         <th>Type Of Milk</th>
@@ -449,8 +449,8 @@
                                            
                                         <td><%# Eval("ShiftName")%></td>
                                          <td><%# Eval("TankerNo")%></td>                                          
-                                        <td style="text-align:center" ><%# Eval("TankMilkReciptNo")%></td>
-                                       
+                                        <%--<td style="text-align:center" ><%# Eval("TankMilkReciptNo")%></td>--%>
+                                       <td><%# Eval("TankMilkReciptNo")%></td>
                                         <td><%# Eval("TypeOfMilk")%></td>
                                         <td><%# Eval("Qty")%></td>
                                         
@@ -482,7 +482,7 @@
                                          <th>Date</th>
                                         <th>RMR Batch No</th>
                                         
-                                        <th>Shift</th>  
+                                   <th style="text-align:center">Shift</th>  
                                          <th>Tanker No</th>                                    
                                         <th>Tanker Receipt No</th>                                      
                                         <th>Type Of Milk</th>
