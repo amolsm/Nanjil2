@@ -1,4 +1,0 @@
-E:\Sharad\saji\DairyAppNew\Dairy\Dairy\bin\Dairy.dll
-E:\Sharad\saji\DairyAppNew\Dairy\Dairy\bin\Dairy.pdb
-E:\Sharad\saji\DairyAppNew\Dairy\Dairy\obj\Debug\Dairy.dll
-E:\Sharad\saji\DairyAppNew\Dairy\Dairy\obj\Debug\Dairy.pdb
