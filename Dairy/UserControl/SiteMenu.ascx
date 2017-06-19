@@ -109,7 +109,7 @@
 
                    
                   <li><a href="/Tabs/Administration/BulkOrder.aspx"><i class="fa fa-circle-o"></i>  Routewise Orders</a></li>
-                  <li><a href="/Tabs/Administration/PlaceOrder.aspx"><i class="fa fa-circle-o"></i>  Daily Agency Order</a></li>
+                  <li><a href="/Tabs/Administration/BulkOrder.aspx"><i class="fa fa-circle-o"></i>  Daily Agency Order</a></li>
                   <li><a href="/Tabs/Administration/EditOrder.aspx"><i class="fa fa-circle-o"></i>Edit Order</a></li>
                   <li><a href="/Tabs/Administration/OrderQuantity.aspx"><i class="fa fa-circle-o"></i>Order Summary</a></li>
                   <li><a href="/Tabs/Administration/CancelOrderM.aspx"><i class="fa fa-circle-o"></i>Cancel Bill</a></li>
