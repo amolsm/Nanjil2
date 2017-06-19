@@ -107,7 +107,7 @@ namespace Dairy.Tabs.Production
                 uprouteList.Update();
                 lblSuccess.Text = "RMR Data Add  Successfully";
                 pnlError.Update();
-                
+                clearText();
             }
             else if (Result == 100)
             {
@@ -132,9 +132,22 @@ namespace Dairy.Tabs.Production
 
         }
 
-       
 
-       
+
+          public void clearText()
+        {
+            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            txtBatchNo.Text = string.Empty;
+            dpShiftDetails.SelectedIndex = -1;
+            txtTankerNo.Text = string.Empty;
+            txtTankerReceipitNo.Text = string.Empty;
+            txtQty.Text = string.Empty;
+            txtMBRTStartTime.Text = string.Empty;
+            txtMBRTEndTime.Text = string.Empty;
+            txtTotalHours.Text = string.Empty;
+            txtRMRQCStatus.Text = string.Empty; 
+        }
+
 
         protected void rpRMRList_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
@@ -237,7 +250,7 @@ namespace Dairy.Tabs.Production
                         RFVMBRTEnd.Enabled = true;
                         RFVTotalHrs.Enabled = true;
                     }
-                    else if (dpfinishQC.SelectedItem.Text == "Rejected" || dpfinishQC.SelectedItem.Text == "Pending")
+                    else if (dpfinishQC.SelectedItem.Text == "Rejected" || dpfinishQC.SelectedItem.Text == "Pending" ||dpfinishQC.SelectedItem.Text=="Re-Chilling")
                     {
                         txtMBRTStartTime.ReadOnly = true;
                         txtMBRTEndTime.ReadOnly = true;

@@ -269,6 +269,7 @@ namespace Dairy.Tabs.Production
                 R.RMRDate = Convert.ToDateTime(txtSearchDate.Text);
                 GetStandardizationDetails(R);
                 uprouteList.Update();
+                ClearTextbox();
                 }
                 else
                 {
@@ -281,7 +282,32 @@ namespace Dairy.Tabs.Production
 
                 //return Result;
             }
-        
+        public void ClearTextbox()
+        {
+            txtBatchNo.Text = string.Empty;
+            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            dpShiftDetails.SelectedIndex = -1;
+            txtSiloNo.Text = string.Empty;
+            txtFat.Text = string.Empty;
+            txtSnf.Text = string.Empty;
+            txtTypeOfMilk.Text = string.Empty;
+            txtTotalQuantity.Text= string.Empty;
+            txtStandardizationStartTime.Text = string.Empty;
+            txtStandardizationEndTime.Text = string.Empty;
+            txtRCMQty.Text = string.Empty;
+            txtCuttingMilkQuantity.Text = string.Empty;
+            txtCuttingMilkFat.Text = string.Empty;
+            txtCuttingMilkSnf.Text = string.Empty;
+            txtSkim.Text = string.Empty;
+            txtSkimFat.Text = string.Empty;
+            txtSkimSnf.Text = string.Empty;
+            txtRcm.Text = string.Empty;
+            txtSmpAdd.Text = string.Empty;
+            txtCreamAdd.Text = string.Empty;
+            txtCreamProduced.Text = string.Empty;
+            txtRemarks.Text = string.Empty;
+            dpStandardDone.SelectedIndex = -1;
+        }
         protected void btnRefresh_Click(object sender, EventArgs e)
         {
             Response.Redirect(Request.RawUrl);
@@ -333,7 +359,7 @@ namespace Dairy.Tabs.Production
                 R.RMRDate = Convert.ToDateTime(txtSearchDate.Text);
                 GetStandardizationDetails(R);
                 uprouteList.Update();
-
+               // ClearTextbox();
             }
             else
             {

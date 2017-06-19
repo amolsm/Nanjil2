@@ -93,6 +93,7 @@ namespace Dairy.Tabs.Production
                     R.RMRDate = Convert.ToDateTime(txtDate.Text);
                     GetStandardizationProductsAddedDetails(R);
                     uprouteList.Update();
+                    ClearFields();
                 }
                 else
                 {
@@ -107,6 +108,10 @@ namespace Dairy.Tabs.Production
             }
         }
 
+        public void ClearFields()
+        {
+            upMain.Update();
+        }
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             {
@@ -143,6 +148,7 @@ namespace Dairy.Tabs.Production
                     R.RMRDate = Convert.ToDateTime(txtDate.Text);
                     GetStandardizationProductsAddedDetails(R);
                     uprouteList.Update();
+                    ClearFields();
                 }
                 else
                 {
@@ -246,8 +252,8 @@ namespace Dairy.Tabs.Production
                 }
                 else
                 {
-                    DateTime date1 = Convert.ToDateTime(DATE, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
-                    txtDate.Text = (Convert.ToDateTime(date1).ToString("yyyy-MM-dd"));
+                    //DateTime date1 = Convert.ToDateTime(DATE, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
+                    txtDate.Text = (Convert.ToDateTime(DATE).ToString("yyyy-MM-dd"));
                 }
                 txtBatchNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BatchNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BatchNo"].ToString();
                 dpShiftDetails.ClearSelection();

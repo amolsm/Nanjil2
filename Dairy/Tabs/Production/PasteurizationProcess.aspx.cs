@@ -70,25 +70,24 @@ namespace Dairy.Tabs.Production
           
                 else if (DS.Tables[0].Rows.Count == 0)
                 {
-
-
-                    this.BindRepeater(dt);
-
-                }
+                //this.BindRepeater(dt);
+                rpPastProcessList.DataSource = DS;
+                rpPastProcessList.DataBind();
+            }
             
         }
-        private void BindRepeater(DataTable dt)
-        {
-            rpPastProcessList.DataSource = dt;
-            rpPastProcessList.DataBind();
+        //private void BindRepeater(DataTable dt)
+        //{
+        //    rpPastProcessList.DataSource = dt;
+        //    rpPastProcessList.DataBind();
 
-            if (dt.Rows.Count == 0)
-            {
-                Control FooterTemplate = rpPastProcessList.Controls[rpPastProcessList.Controls.Count - 1].Controls[0];
-                FooterTemplate.FindControl("trEmpty").Visible = true;
-            }
+        //    if (dt.Rows.Count == 0)
+        //    {
+        //        Control FooterTemplate = rpPastProcessList.Controls[rpPastProcessList.Controls.Count - 1].Controls[0];
+        //        FooterTemplate.FindControl("trEmpty").Visible = true;
+        //    }
 
-        }
+        //}
 
 
         public void GetPastDetails(int RMRId)

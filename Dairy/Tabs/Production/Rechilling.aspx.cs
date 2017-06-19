@@ -103,6 +103,7 @@ namespace Dairy.Tabs.Production
                 uprouteList.Update();
                 lblSuccess.Text = "Rechilling Data Add  Successfully";
                 pnlError.Update();
+                ClearTextbox();
             }
             else
             {
@@ -117,7 +118,21 @@ namespace Dairy.Tabs.Production
         }
 
 
-
+        public void ClearTextbox()
+        {
+            txtBatchNO.Text = string.Empty;
+            dpShiftDetails.SelectedIndex = -1;
+            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            txtSiloNo.Text = string.Empty;
+            dpTypeOfMilk.SelectedIndex = -1;
+            txtQuantity.Text = string.Empty;
+            txtIBTInTemperature.Text = string.Empty;
+            txtIBTOutTemperature.Text = string.Empty;
+            txtMilkInTemperature.Text = string.Empty;
+            txtMilkOutTemperature.Text = string.Empty;
+            txtRechilledBy.Text = string.Empty;
+            dpRechillStatus.SelectedIndex = -1;
+        }
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             {
@@ -153,6 +168,7 @@ namespace Dairy.Tabs.Production
                     uprouteList.Update();
                     lblSuccess.Text = "Rechilling Data Updated  Successfully";
                     pnlError.Update();
+                    ClearTextbox();
                 }
                 else
                 {
