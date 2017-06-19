@@ -99,8 +99,8 @@ namespace Dairy.Tabs.Production
             {
                 string DATE = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["StandardDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["StandardDate"].ToString();
                 //sky
-                DateTime date1 = Convert.ToDateTime(DATE, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
-                txtDate.Text = (Convert.ToDateTime(date1).ToString("yyyy-MM-dd"));
+                //DateTime date1 = Convert.ToDateTime(DATE, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
+                txtDate.Text = (Convert.ToDateTime(DATE).ToString("yyyy-MM-dd"));
                 txtBatchNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["BatchNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["BatchNo"].ToString();
                 //txtDate.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Date"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Date"].ToString();
                 //dpShiftDetails.SelectedValue = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ShiftId"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ShiftId"].ToString();

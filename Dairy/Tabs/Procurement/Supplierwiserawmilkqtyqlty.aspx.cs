@@ -30,7 +30,7 @@ namespace Dairy.Tabs.Procurement
             {
                 dpRoute.DataSource = DS;
                 dpRoute.DataBind();
-                dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
+                dpRoute.Items.Insert(0, new ListItem("--Select All Route  --", "0"));
 
             }
         }
@@ -104,17 +104,26 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append(" <td colspan='2' style='text-align:left'>");
-                sb.Append(dpRoute.SelectedItem.Text.ToString());
-
+                string Route="";
+                if (dpRoute.SelectedIndex == 0)
+                {
+                    Route = "All Route";
+                    sb.Append(Route);
+                }
+                else
+                {
+                   Route=(dpRoute.SelectedItem.Text.ToString());
+                    sb.Append(Route);
+                }
                 sb.Append("</td>");
 
-                sb.Append("<td colspan='2'>");
+                sb.Append("<td colspan='3'>");
                 sb.Append(DateTime.Now.ToString());
                 sb.Append("</td>");
-                sb.Append("<td colspan='2'>");
+                sb.Append("<td colspan='2' style='text-align:left'>");
                 sb.Append("From : " + Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
-                sb.Append("<td colspan='2'>");
+                sb.Append("<td colspan='2' style='text-align:right'>");
                 sb.Append("To : " + Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("</tr>");

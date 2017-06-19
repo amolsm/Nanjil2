@@ -228,6 +228,22 @@
                   </div><!-- /.form group -->
             </div>
 
+          <div class="col-lg-3">
+                  <div class="form-group cntrlbtm">
+                    <div class="input-group ">
+                      <div class="input-group-addon">
+<%--                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
+                          <asp:Label ID="Label8" runat="server" Text="Milk Quantity In 200ml"></asp:Label>
+                      </div>
+                       <asp:TextBox ID="TextBox1" class="form-control"   placeholder="Enter Qty" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+<%--                      <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Please Enter Milk Quantity" ControlToValidate="txtQuantityIn200" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>--%>
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Pls Enter Quantity"  ControlToValidate="txtQuantityIn200" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ValidationExpression= "[0-9]+(\.[0-9][0-9]?)?"
+                           ErrorMessage ="Pls enter valid number"  ControlToValidate="txtQuantityIn200" ForeColor="Red" ValidationGroup="Save"/> 
+                  </div><!-- /.form group -->
+            </div>
+
 
                                  <div class="col-lg-3">
                   <div class="form-group cntrlbtm">

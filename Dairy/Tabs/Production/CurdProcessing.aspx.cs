@@ -143,8 +143,9 @@ namespace Dairy.Tabs.Production
                 if (DS.Tables[0].Rows[0]["CurdProcessDate"].ToString() == "")
                 {
                     string DATE = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["RMRDate"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["RMRDate"].ToString();
-                    DateTime date1 = Convert.ToDateTime(DATE, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
-                    txtDate.Text = (Convert.ToDateTime(date1).ToString("yyyy-MM-dd"));
+                    //DateTime date1 = Convert.ToDateTime(DATE, System.Globalization.CultureInfo.GetCultureInfo("ur-PK").DateTimeFormat);
+                    //txtDate.Text = (Convert.ToDateTime(date1).ToString("yyyy-MM-dd"));
+                    txtDate.Text = (Convert.ToDateTime(DATE).ToString("yyyy-MM-dd"));
                 }
                 else
                 {

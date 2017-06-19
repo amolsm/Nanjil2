@@ -22,16 +22,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/14/2017 12:56:10</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
-      <publishTime>06/15/2017 12:51:46</publishTime>
+      <publishTime>06/17/2017 16:10:31</publishTime>
     </File>
     <File Include="bin/Comman.dll">
       <publishTime>06/15/2017 12:51:44</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
-      <publishTime>06/15/2017 15:04:47</publishTime>
+      <publishTime>06/17/2017 16:10:37</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
-      <publishTime>06/15/2017 12:51:45</publishTime>
+      <publishTime>06/17/2017 16:10:31</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>06/14/2017 12:56:13</publishTime>
@@ -577,7 +577,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/14/2017 12:56:11</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionDetails.aspx">
-      <publishTime>06/14/2017 18:50:08</publishTime>
+      <publishTime>06/17/2017 11:52:47</publishTime>
     </File>
     <File Include="Tabs/Procurement/MilkCollectionTransport.aspx">
       <publishTime>06/14/2017 12:56:11</publishTime>
