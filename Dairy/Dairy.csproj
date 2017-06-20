@@ -243,6 +243,7 @@
     <Content Include="Tabs\Production\FilmData.aspx" />
     <Content Include="Tabs\Production\FinishedGoodRelease.aspx" />
     <Content Include="Tabs\Production\Homogenizer.aspx" />
+    <Content Include="Tabs\Production\MachineCondition.aspx" />
     <Content Include="Tabs\Production\MilkColdRoomTemperature.aspx" />
     <Content Include="Tabs\Production\MilkPacking.aspx" />
     <Content Include="Tabs\Production\MilkProductsTestBeforePackingQC.aspx" />
@@ -2308,6 +2309,13 @@
     </Compile>
     <Compile Include="Tabs\Production\Homogenizer.aspx.designer.cs">
       <DependentUpon>Homogenizer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Production\MachineCondition.aspx.cs">
+      <DependentUpon>MachineCondition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Production\MachineCondition.aspx.designer.cs">
+      <DependentUpon>MachineCondition.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Production\MilkColdRoomTemperature.aspx.cs">
       <DependentUpon>MilkColdRoomTemperature.aspx</DependentUpon>

@@ -184,7 +184,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtagentOrderqty" class="form-control"   placeholder="Quantity " runat="server" ValidationGroup="Add" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtagentOrderqty" class="form-control Orderqty" onkeypress="return isNumberKey(event)"  placeholder="Quantity " runat="server" ValidationGroup="Add" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -442,7 +442,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtQtyEmployee" class="form-control"   placeholder="Quantity " runat="server" ValidationGroup="EMployyeOrder"></asp:TextBox>                        
+                       <asp:TextBox ID="txtQtyEmployee" class="form-control Orderqty"  onkeypress="return isNumberKey(event)" placeholder="Quantity " runat="server" ValidationGroup="EMployyeOrder"></asp:TextBox>                        
                     </div><!-- /.input group -->
                       <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtQtyEmployee" runat="server" ErrorMessage="Enter Quantity" ValidationGroup="EMployyeOrder" ForeColor="#cc0000"></asp:RequiredFieldValidator>
                       <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToValidate="txtQtyEmployee" ErrorMessage="Quantity Must be &gt; 0" Operator="GreaterThan" Type="Double" ValueToCompare="0" ValidationGroup="EMployyeOrder" ForeColor="#cc0000"/>
@@ -748,6 +748,28 @@
                 // do something after content has been loaded
             });
         });
+        function isNumberKey(evt) {
+
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode != 46)
+                return false;
+            else {
+                var len = $('.Orderqty').val().length;
+                var index = $('.Orderqty').val().indexOf('.');
+
+                if (index > 0 && charCode == 46) {
+                    return false;
+                }
+                if (index > 0) {
+                    var CharAfterdot = (len + 1) - index;
+                    if (CharAfterdot > 3) {
+                        return false;
+                    }
+                }
+
+            }
+            return true;
+        }
     </script>
 
  <%--   <script type="text/javascript">
