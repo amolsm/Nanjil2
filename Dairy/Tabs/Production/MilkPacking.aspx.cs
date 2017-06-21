@@ -44,6 +44,11 @@ namespace Dairy.Tabs.Production
             dpShiftDetails.DataBind();
             dpShiftDetails.Items.Insert(0, new ListItem("--Select Shift--", "0"));
 
+            DS = BindCommanData.BindCommanDropDwon("TypeID", "TypeName as Name", "TypeMaster","IsArchive =1");
+            dpProduct.DataSource = DS;
+            dpProduct.DataBind();
+            dpProduct.Items.Insert(0, new ListItem("--Select Product Type--","0"));
+
             DS = BindCommanData.BindCommanDropDwon("StatusId", "StatusName as StatusName", "Prod_StatusDetails", "IsActive =1");
             dpPackingDetailStatus.DataSource = DS;
             dpPackingDetailStatus.DataBind();
@@ -74,7 +79,10 @@ namespace Dairy.Tabs.Production
                 mpacked.QuantityIn500ML = string.IsNullOrEmpty(txtQuantityIn500.Text) ? 0 : Convert.ToDouble(txtQuantityIn500.Text);
                 mpacked.QuantityIn450ML = string.IsNullOrEmpty(txtQuantityIn450.Text) ? 0 : Convert.ToDouble(txtQuantityIn450.Text);
                 mpacked.QuantityIn250ML = string.IsNullOrEmpty(txtQuantityIn250.Text) ? 0 : Convert.ToDouble(txtQuantityIn250.Text);
-                mpacked.QuantityIn200ML = string.IsNullOrEmpty(txtQuantityIn200.Text) ? 0 : Convert.ToDouble(txtQuantityIn200.Text);   
+                mpacked.QuantityIn200ML = string.IsNullOrEmpty(txtQuantityIn200.Text) ? 0 : Convert.ToDouble(txtQuantityIn200.Text);
+                mpacked.Curd500MLQty = string.IsNullOrEmpty(txtcurd500.Text) ? 0 : Convert.ToDouble(txtcurd500.Text);
+                mpacked.Curd450MLQty = string.IsNullOrEmpty(txtcurd450.Text) ? 0 : Convert.ToDouble(txtcurd450.Text);
+                mpacked.ButterMilk200ML = string.IsNullOrEmpty(txtbuttermilk200.Text) ? 0 : Convert.ToDouble(txtbuttermilk200.Text);
                 mpacked.TotalQtyOfMilk = string.IsNullOrEmpty(txtTotalOfMilk.Text) ? 0 : Convert.ToDouble(txtTotalOfMilk.Text);
                 mpacked.ColdRoomNo = string.IsNullOrEmpty(txtColdRoomNo.Text) ? string.Empty : txtColdRoomNo.Text;
                 mpacked.PackingDetailStatusId = Convert.ToInt32(dpPackingDetailStatus.SelectedItem.Value);
@@ -130,6 +138,9 @@ namespace Dairy.Tabs.Production
                 mpacked.QuantityIn450ML = string.IsNullOrEmpty(txtQuantityIn450.Text) ? 0 : Convert.ToDouble(txtQuantityIn450.Text);
                 mpacked.QuantityIn250ML = string.IsNullOrEmpty(txtQuantityIn250.Text) ? 0 : Convert.ToDouble(txtQuantityIn250.Text);
                 mpacked.QuantityIn200ML = string.IsNullOrEmpty(txtQuantityIn200.Text) ? 0 : Convert.ToDouble(txtQuantityIn200.Text);
+                mpacked.Curd500MLQty = string.IsNullOrEmpty(txtcurd500.Text) ? 0 : Convert.ToDouble(txtcurd500.Text);
+                mpacked.Curd450MLQty = string.IsNullOrEmpty(txtcurd450.Text) ? 0 : Convert.ToDouble(txtcurd450.Text);
+                mpacked.ButterMilk200ML = string.IsNullOrEmpty(txtbuttermilk200.Text) ? 0 : Convert.ToDouble(txtbuttermilk200.Text);
                 mpacked.TotalQtyOfMilk = string.IsNullOrEmpty(txtTotalOfMilk.Text) ? 0 : Convert.ToDouble(txtTotalOfMilk.Text);
                 mpacked.ColdRoomNo = string.IsNullOrEmpty(txtColdRoomNo.Text) ? string.Empty : txtColdRoomNo.Text;
                 mpacked.PackingDetailStatusId = Convert.ToInt32(dpPackingDetailStatus.SelectedItem.Value);
@@ -264,6 +275,9 @@ namespace Dairy.Tabs.Production
                 txtQuantityIn450.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["QuantityIn450ML"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["QuantityIn450ML"].ToString();
                 txtQuantityIn250.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["QuantityIn250ML"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["QuantityIn250ML"].ToString();
                 txtQuantityIn200.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["QuantityIn200ML"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["QuantityIn200ML"].ToString();
+                txtcurd500.Text= string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Curd500ML"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Curd500ML"].ToString();
+                txtcurd450.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Curd450ML"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Curd450ML"].ToString();
+                txtbuttermilk200.Text= string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ButterMilk200ML"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ButterMilk200ML"].ToString();
                 txtTotalOfMilk.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["TotalQtyOfMilk"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["TotalQtyOfMilk"].ToString();
                 txtColdRoomNo.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["ColdRoomNo"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["ColdRoomNo"].ToString();
 
@@ -290,5 +304,37 @@ namespace Dairy.Tabs.Production
             }
             catch (Exception) { }
         }
+
+        protected void dpProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dpProduct.SelectedItem.Text == "Milk")
+            {
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "<script type='text/javascript'> $('#myModal').modal('show'); </script>", false);
+            }
+            if (dpProduct.SelectedItem.Text == "Milk Products")
+            {
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal1", "<script type='text/javascript'> $('#myModal1').modal('show'); </script>", false);
+            }
+            if (dpProduct.SelectedItem.Text == "Ice Creams")
+            {
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal2", "<script type='text/javascript'> $('#myModal2').modal('show'); </script>", false);
+            }
+        }
+
+        //protected void dpProduct_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (dpProduct.SelectedItem.Value == "1")
+        //    {
+        //        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "<script type='text/javascript'> $('#myModal').modal('show'); </script>", false);
+        //    }
+        //    if(dpProduct.SelectedItem.Value=="2")
+        //    {
+        //        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal1", "<script type='text/javascript'> $('#myModal1').modal('show'); </script>", false);
+        //    }
+        //    if (dpProduct.SelectedItem.Value == "3")
+        //    {
+        //        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal2", "<script type='text/javascript'> $('#myModal2').modal('show'); </script>", false);
+        //    }
+        //}
     }
 }

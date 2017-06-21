@@ -31,6 +31,9 @@ namespace DataAccess.Production
                 paramcollection.Add(new DBParameter("@QuantityIn450ML", receive.QuantityIn450ML));
                 paramcollection.Add(new DBParameter("@QuantityIn250ML", receive.QuantityIn250ML));
                 paramcollection.Add(new DBParameter("@QuantityIn200ML", receive.QuantityIn200ML));
+                paramcollection.Add(new DBParameter("@Curd500ml", receive.Curd500MLQty));
+                paramcollection.Add(new DBParameter("@Curd450ml", receive.Curd450MLQty));
+                paramcollection.Add(new DBParameter("@ButterMilk200ml", receive.ButterMilk200ML));
                 paramcollection.Add(new DBParameter("@TotalQtyOfMilk", receive.TotalQtyOfMilk));
                 paramcollection.Add(new DBParameter("@ColdRoomNo", receive.ColdRoomNo));
                 paramcollection.Add(new DBParameter("@PackingDetailStatusId", receive.PackingDetailStatusId));

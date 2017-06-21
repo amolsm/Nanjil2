@@ -93,12 +93,16 @@ namespace Dairy.Tabs.Production
                     divDanger.Visible = false;
                     divwarning.Visible = false;
                     divSusccess.Visible = true;
-                    lblSuccess.Text = "Traceability Data Added Successfully";
+                 
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "sel3", "$('#bx1').addClass('collapsed-box');", true);
-                    pnlError.Update();
+                    RMRecieve R = new RMRecieve();
+                    R.RMRDate = Convert.ToDateTime(txtSkimDate.Text);
+                    GetTraceabilityDetails(R);
                     string dates;
                     dates = string.IsNullOrEmpty(txtSearchDate.Text) ? string.Empty : Convert.ToDateTime(txtSearchDate.Text).ToString("dd-MM-yyyy");
                     uprouteList.Update();
+                    lblSuccess.Text = "Traceability Data Added Successfully";
+                    pnlError.Update();
                 }
                 else
                 {

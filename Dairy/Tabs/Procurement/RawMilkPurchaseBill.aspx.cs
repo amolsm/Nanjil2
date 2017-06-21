@@ -29,7 +29,7 @@ namespace Dairy.Tabs.Procurement
             {
                 dpRoute.DataSource = DS;
                 dpRoute.DataBind();
-                dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
+                dpRoute.Items.Insert(0, new ListItem("--All Route  --", "0"));
 
                
             }
@@ -38,7 +38,7 @@ namespace Dairy.Tabs.Procurement
             {
                 dpSupplier.DataSource = DS;
                 dpSupplier.DataBind();
-                dpSupplier.Items.Insert(0, new ListItem("--Select Supplier --", "0"));
+                dpSupplier.Items.Insert(0, new ListItem("--All Supplier --", "0"));
             }
         }
         protected void btnGeneratereport_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='6' style='text-align:center;font-size: 120%';>");
-                if (Session["CollectionCenterLoggedIn"]!=null)
+                if (Session["CollectionCenterLoggedIn"] != null)
                 {
                     sb.Append(Session["CollectionCenterLoggedIn"]);
                 }
@@ -88,7 +88,7 @@ namespace Dairy.Tabs.Procurement
                 {
                     sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                 }
-                 sb.Append("</th>");
+                sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
 
@@ -129,206 +129,223 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("To : " + Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("</tr>");
-                sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td colspan='1' style='text-align:center'>");
-                sb.Append("<b>Date</b>");
-                sb.Append("</td>");
+              
 
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>Session</b>");
-                sb.Append("</td>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<td colspan='1' style='text-align:center'>");
+                    sb.Append("<b>Date</b>");
+                    sb.Append("</td>");
 
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>MilkInLtr</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>FAT %</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>SNF %</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>TS %</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>Rate</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>Amount</b>");
-                sb.Append("</td>");
-                sb.Append("</tr>");
-                sb.Append("<tr>");
-                int count = 0;
-                decimal milkinLtr = 0;
-                decimal totalmilkinLtr = 0;
-                double fatpercentage = 0.00;
-                double totalfatpercentage = 0.00;
-                double snfpercentage = 0.00;
-                double totalsnfpercentage = 0.00;
-                double tspercentage = 0.00;
-                double totaltspercentage = 0.00;
-                double rate = 0.00;
-                double totalrate = 0.00;
-                double amt = 0.00;
-                double totalamt = 0.00;
-                double scheme = 0.00;
-                int can = 0;
-                double RDAmt = 0.00;
-                double LoanAmt = 0.00;
-                double NetAmt = 0.00;
-                foreach (DataRow row in DS1.Tables[0].Rows)
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>Session</b>");
+                    sb.Append("</td>");
+
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>MilkInLtr</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>FAT %</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>SNF %</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>TS %</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>Rate</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>Amount</b>");
+                    sb.Append("</td>");
+                    sb.Append("</tr>");
+                    sb.Append("<tr>");
+                    int count = 0;
+                    decimal milkinLtr = 0;
+                    decimal totalmilkinLtr = 0;
+                    double fatpercentage = 0.00;
+                    double totalfatpercentage = 0.00;
+                    double snfpercentage = 0.00;
+                    double totalsnfpercentage = 0.00;
+                    double tspercentage = 0.00;
+                    double totaltspercentage = 0.00;
+                    double rate = 0.00;
+                    double totalrate = 0.00;
+                    double amt = 0.00;
+                    double totalamt = 0.00;
+                    double scheme = 0.00;
+                    int can = 0;
+                    double RDAmt = 0.00;
+                    double LoanAmt = 0.00;
+                    double NetAmt = 0.00;
+                foreach (DataRow rows in DS1.Tables[1].Rows)
                 {
-                    count++;
-                    //sb.Append("<td>");
-                    ////sb.Append(row["SupplierCode"].ToString());
-                    //sb.Append("</td>");
-                    sb.Append("<td style='text-align:center'>");
-                    sb.Append(Convert.ToDateTime(row["_Date"]).ToString("dd-MM-yyyy"));
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append(" <td colspan='2' style='text-align:left'>");
+                    sb.Append((rows["SupplierName"]).ToString());
                     sb.Append("</td>");
+                    sb.Append("</tr>");
+                    foreach (DataRow row in DS1.Tables[0].Rows)
+                    {
+                        count++;
+                        if (rows["RouteID"].ToString() == row["RouteID"].ToString())
+                        {
+                            if (rows["SupplierName"].ToString() == row["SupplierName"].ToString())
+                            {
+                                //sb.Append("<td>");
+                                ////sb.Append(row["SupplierCode"].ToString());
+                                //sb.Append("</td>");
+                                sb.Append("<td style='text-align:center'>");
+                                sb.Append(Convert.ToDateTime(row["_Date"]).ToString("dd-MM-yyyy"));
+                                sb.Append("</td>");
 
+                                sb.Append("<td style='text-align:right'>");
+                                sb.Append((row["_Session"]).ToString());
+                                sb.Append("</td>");
+
+                                sb.Append("<td style='text-align:right'>");
+                                try { milkinLtr = Convert.ToDecimal(row["MilkInLtr"]); } catch { milkinLtr = 0; }
+
+                                totalmilkinLtr += milkinLtr;
+                                sb.Append(Convert.ToDecimal(milkinLtr).ToString("0.0"));
+                                sb.Append("</td>");
+                                sb.Append("<td style='text-align:right'>");
+                                try { fatpercentage = Convert.ToDouble(row["FATPercentage"]); } catch { fatpercentage = 0.00; }
+
+                                totalfatpercentage += fatpercentage;
+                                sb.Append(Convert.ToDecimal(fatpercentage).ToString("0.00"));
+                                sb.Append("</td>");
+                                sb.Append("<td style='text-align:right'>");
+                                try { snfpercentage = Convert.ToDouble(row["SNFPercentage"]); } catch { snfpercentage = 0.00; }
+
+                                totalsnfpercentage += snfpercentage;
+                                sb.Append(Convert.ToDecimal(snfpercentage).ToString("0.00"));
+
+                                sb.Append("</td>");
+                                sb.Append("<td style='text-align:right'>");
+                                try { tspercentage = Convert.ToDouble(row["TSPercentage"]); } catch { tspercentage = 0.00; }
+
+                                totaltspercentage += tspercentage;
+                                sb.Append(Convert.ToDecimal(tspercentage).ToString("0.00"));
+
+
+                                sb.Append("</td>");
+                                sb.Append("<td style='text-align:right'>");
+                                try { rate = Convert.ToDouble(row["Rate"]); } catch { rate = 0.00; }
+
+                                totalrate += rate;
+                                sb.Append(Convert.ToDecimal(rate).ToString("0.00"));
+
+
+                                sb.Append("</td>");
+                                sb.Append("<td style='text-align:right'>");
+                                try { amt = Convert.ToDouble(row["Amount"]); } catch { amt = 0.00; }
+
+                                totalamt += amt;
+                                sb.Append(Convert.ToDecimal(amt).ToString("0.00"));
+
+                                sb.Append("</td>");
+
+                                try { scheme = Convert.ToDouble(row["Scheme"]); } catch { amt = 0.00; }
+
+                                try { can = Convert.ToInt32(row["Can"]); } catch { amt = 0.00; }
+
+                                try { RDAmt = Convert.ToDouble(row["RDAmount"]); } catch { RDAmt = 0.00; }
+
+                                try { LoanAmt = Convert.ToDouble(row["LoanAmount"]); } catch { LoanAmt = 0.00; }
+                                sb.Append("</tr>");
+                            }
+                        }
+                    }
+
+                    sb.Append("<tr style='border-bottom:1px solid'><td colspan='8'></td></tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<td colspan='3'>");
+                    sb.Append("<b>Average</b>");
+                    sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    sb.Append((row["_Session"]).ToString());
-                    sb.Append("</td>");
-
-                    sb.Append("<td style='text-align:right'>");
-                    try { milkinLtr = Convert.ToDecimal(row["MilkInLtr"]); } catch { milkinLtr = 0; }
-
-                    totalmilkinLtr += milkinLtr;
-                    sb.Append(Convert.ToDecimal(milkinLtr).ToString("0.0"));
+                    sb.Append("<b>" + Convert.ToDecimal(totalfatpercentage / count).ToString("0.00") + "</b>");
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    try { fatpercentage = Convert.ToDouble(row["FATPercentage"]); } catch { fatpercentage = 0.00; }
-
-                    totalfatpercentage += fatpercentage;
-                    sb.Append(Convert.ToDecimal(fatpercentage).ToString("0.00"));
+                    sb.Append("<b>" + Convert.ToDecimal(totalsnfpercentage / count).ToString("0.00") + "</b>");
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    try { snfpercentage = Convert.ToDouble(row["SNFPercentage"]); } catch { snfpercentage = 0.00; }
-
-                    totalsnfpercentage += snfpercentage;
-                    sb.Append(Convert.ToDecimal(snfpercentage).ToString("0.00"));
-
+                    sb.Append("<b>" + Convert.ToDecimal(totaltspercentage / count).ToString("0.00") + "</b>");
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    try { tspercentage = Convert.ToDouble(row["TSPercentage"]); } catch { tspercentage = 0.00; }
+                    sb.Append("<b>" + Convert.ToDecimal(totalrate / count).ToString("0.00") + "</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:left'>");
+                    sb.Append("/ Lt.");
+                    sb.Append("</td>");
 
-                    totaltspercentage += tspercentage;
-                    sb.Append(Convert.ToDecimal(tspercentage).ToString("0.00"));
-
-
+                    sb.Append("</tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<td>");
+                    sb.Append("<b>Total</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td>");
+                    sb.Append("<b>" + count + "</b>");
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    try { rate = Convert.ToDouble(row["Rate"]); } catch { rate = 0.00; }
-
-                    totalrate += rate;
-                    sb.Append(Convert.ToDecimal(rate).ToString("0.00"));
-
-
+                    sb.Append("<b>" + totalmilkinLtr + "</b>");
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    try { amt = Convert.ToDouble(row["Amount"]); } catch { amt = 0.00; }
-
-                    totalamt += amt;
-                    sb.Append(Convert.ToDecimal(amt).ToString("0.00"));
-
+                    sb.Append("<b>" + Convert.ToDecimal(totalfatpercentage).ToString("0.00") + "</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>" + Convert.ToDecimal(totalsnfpercentage).ToString("0.00") + "</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>" + Convert.ToDecimal(totaltspercentage).ToString("0.00") + "</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>" + Convert.ToDecimal(totalrate).ToString("0.00") + "</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>" + Convert.ToDecimal(totalamt).ToString("0.00") + "</b>");
                     sb.Append("</td>");
 
-                    try { scheme = Convert.ToDouble(row["Scheme"]); } catch { amt = 0.00; }
 
-                    try { can = Convert.ToInt32(row["Can"]); } catch { amt = 0.00; }
-
-                    try { RDAmt = Convert.ToDouble(row["RDAmount"]); } catch { RDAmt = 0.00; }
-
-                    try { LoanAmt = Convert.ToDouble(row["LoanAmount"]); } catch { LoanAmt = 0.00; }
                     sb.Append("</tr>");
                 }
-                sb.Append("<tr style='border-bottom:1px solid'><td colspan='8'></td></tr>");
-                sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td colspan='3'>");
-                sb.Append("<b>Average</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalfatpercentage / count).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalsnfpercentage / count).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totaltspercentage / count).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalrate / count).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:left'>");
-                sb.Append("/ Lt.");
-                sb.Append("</td>");
+                    sb.Append("<tr>");
+                    sb.Append("<td style='text-align:center' colspan = '2'>");
+                    sb.Append("<b>Scheme: </b>");
+                    sb.Append("<b>" + Convert.ToDecimal(scheme).ToString("0.00") + "</b>");
 
-                sb.Append("</tr>");
-                sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td>");
-                sb.Append("<b>Total</b>");
-                sb.Append("</td>");
-                sb.Append("<td>");
-                sb.Append("<b>" + count + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + totalmilkinLtr + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalfatpercentage).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalsnfpercentage).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totaltspercentage).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalrate).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + Convert.ToDecimal(totalamt).ToString("0.00") + "</b>");
-                sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>RD: </b>");
+                    sb.Append("<b>" + Convert.ToDecimal(RDAmt).ToString("0.00") + "</b>");
+                    sb.Append("</td>");
 
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>Can: </b>");
+                    sb.Append("<b>" + Convert.ToDecimal(can).ToString() + "</b>");
+                    sb.Append("</td>");
 
-                sb.Append("</tr>");
+                    sb.Append("<td style='text-align:center' colspan='2'>");
+                    sb.Append("<b>Loan: </b>");
+                    sb.Append("<b>" + Convert.ToDecimal(LoanAmt).ToString("0.00") + "</b>");
+                    sb.Append("</td>");
 
-                sb.Append("<tr>");
-                sb.Append("<td style='text-align:center' colspan = '2'>");
-                sb.Append("<b>Scheme: </b>");
-                sb.Append("<b>" + Convert.ToDecimal(scheme).ToString("0.00") + "</b>");
+                    sb.Append("<td style = 'text-align:right' colspan='3'>");
+                    sb.Append("<b> NetAmt: </b>");
 
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>RD: </b>");
-                sb.Append("<b>" + Convert.ToDecimal(RDAmt).ToString("0.00") + "</b>");
-                sb.Append("</td>");
+                    NetAmt = totalamt - LoanAmt - can - RDAmt - scheme;
 
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>Can: </b>");
-                sb.Append("<b>" + Convert.ToDecimal(can).ToString() + "</b>");
-                sb.Append("</td>");
+                    NetAmt = (NetAmt < 0 ? -NetAmt : NetAmt);
 
-                sb.Append("<td style='text-align:center' colspan='2'>");
-                sb.Append("<b>Loan: </b>");
-                sb.Append("<b>" + Convert.ToDecimal(LoanAmt).ToString("0.00") + "</b>");
-                sb.Append("</td>");
+                    sb.Append("<b>" + Convert.ToDecimal(NetAmt).ToString("0.00") + "</b>");
+                    sb.Append("</td>");
 
-                sb.Append("<td style = 'text-align:right' colspan='3'>");
-                sb.Append("<b> NetAmt: </b>");
+                    sb.Append("</tr>");
+                    result = sb.ToString();
+                    Payment.Text = result;
 
-                NetAmt = totalamt - LoanAmt - can - RDAmt - scheme;
+                    Session["ctrl"] = pnlPayment;
 
-                NetAmt = (NetAmt < 0 ? -NetAmt : NetAmt);
-
-                sb.Append("<b>" + Convert.ToDecimal(NetAmt).ToString("0.00") + "</b>");
-                sb.Append("</td>");
-
-                sb.Append("</tr>");
-                result = sb.ToString();
-                Payment.Text = result;
-
-                Session["ctrl"] = pnlPayment;
-
+                
             }
             else
             {

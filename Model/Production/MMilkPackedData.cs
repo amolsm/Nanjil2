@@ -30,7 +30,7 @@ namespace Model.Production
         public double QuantityIn250ML { get; set; }
 
         public double QuantityIn200ML { get; set; }
-
+       
         public double CurdCupQty { get; set; }
 
         public double Curd500MLQty { get; set; }

@@ -225,8 +225,7 @@ namespace Dairy.Tabs.Procurement
                             {
                                 if (rows["_Session"].ToString() == row["_Session"].ToString())
                                 {
-
-
+                                    
                                     count++;
                                     countavg += count;
 

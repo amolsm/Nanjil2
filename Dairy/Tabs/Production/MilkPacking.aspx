@@ -2,10 +2,37 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
      <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
         <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="Scripts/jquery-1.4.1.min.js"></script>
         <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
         <style type="text/css">.cntrlbtm {    margin-bottom: 1px;} </style>
+       
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+     <script type="text/javascript">
+         $(document).ready(function () {
+             
+             $('#MainContent_txtQuantityIn1000').change(function () {
+                 debugger;
+             });
+             $('.cal').blur(function () {
+                 debugger;
+                 var sum = 0;
+                 $('.cal').each(function() {
+                     if($(this).val()!="")
+                     {
+                         sum += parseFloat($(this).val());
+                     }
+
+                 });
+                 // here, you have your sum
+              
+                 $("#MainContent_txtColdRoomNo").val(sum);
+                
+             });​​​​​​​​​
+             });
+         
+ </script>
     <section class="content-header">
             <h1>
                Milk Packing     
@@ -58,7 +85,8 @@
 
               <asp:UpdatePanel runat="server" ID="upMain" UpdateMode="Conditional">
               <ContentTemplate>
-        
+      
+
               <div class="col-lg-3">
                   <div class="form-group cntrlbtm">
                     <div class="input-group">
@@ -145,104 +173,33 @@
                   </div><!-- /.form group -->
             </div>
                   
-                                        <div class="col-lg-3">
-                  <div class="form-group cntrlbtm">
-                    <div class="input-group ">
+                                          <div class="col-lg-3">
+                  <div class="form-group">
+                    <div class="input-group">
                       <div class="input-group-addon">
-<%--                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
-                          <asp:Label ID="Label6" runat="server" Text="Milk Quantity In 1000ml"></asp:Label>
+                Product
                       </div>
-                       <asp:TextBox ID="txtQuantityIn1000" class="form-control"   placeholder="Enter Qty" runat="server" ></asp:TextBox>                        
+<%--                        <asp:DropDownList ID="dpProduct" class="form-control"  runat="server" selected ToolTip="Select Product" OnSelectedIndexChanged="dpProduct_SelectedIndexChanged" AutoPostBack="true"> 
+                            <asp:ListItem Value="0">--Select Product</asp:ListItem>
+                            <asp:ListItem Value="1">Milk</asp:ListItem>
+                            <asp:ListItem Value="2">Curd</asp:ListItem>
+                             <asp:ListItem Value="3">Butter Milk</asp:ListItem>
+                             <asp:ListItem Value="4">Khoa</asp:ListItem>
+                       </asp:DropDownList>                          --%>
+                         <asp:DropDownList ID="dpProduct" class="form-control" DataValueField="TypeID" DataTextField="Name"   runat="server"  OnSelectedIndexChanged="dpProduct_SelectedIndexChanged" AutoPostBack="true"> 
+                       </asp:DropDownList>   
                     </div><!-- /.input group -->
-<%--                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Please Enter Milk Quantity" ControlToValidate="txtQuantityIn1000" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>--%>
-                       <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Pls Enter Quantity"  ControlToValidate="txtQuantityIn1000" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ValidationExpression= "[0-9]+(\.[0-9][0-9]?)?"
-                           ErrorMessage ="Pls enter valid number"  ControlToValidate="txtQuantityIn1000" ForeColor="Red" ValidationGroup="Save"/> 
-                  </div><!-- /.form group -->
-            </div>
 
-            <div class="col-lg-3">
-                  <div class="form-group cntrlbtm">
-                    <div class="input-group ">
-                      <div class="input-group-addon">
-<%--                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
-                          <asp:Label ID="Label10" runat="server" Text="Milk Quantity In 500ml"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="txtQuantityIn500" class="form-control"   placeholder="Enter Qty" runat="server" ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-<%--                      <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Please Enter Milk Quantity" ControlToValidate="txtQuantityIn500" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>--%>
-                       <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Pls Enter Quantity"  ControlToValidate="txtQuantityIn500" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationExpression= "[0-9]+(\.[0-9][0-9]?)?"
-                           ErrorMessage ="Pls enter valid number"  ControlToValidate="txtQuantityIn500" ForeColor="Red" ValidationGroup="Save"/> 
-                  </div><!-- /.form group -->
-            </div>
+                  </div><!-- /.form group --> 
+                          
+                      </div> 
 
 
-          <div class="col-lg-3">
-                  <div class="form-group cntrlbtm">
-                    <div class="input-group ">
-                      <div class="input-group-addon">
-<%--                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
-                          <asp:Label ID="Label11" runat="server" Text="Milk Quantity In 450ml"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="txtQuantityIn450" class="form-control"   placeholder="Enter Qty" runat="server" ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-<%--                      <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Please Enter Milk Quantity" ControlToValidate="txtQuantityIn450" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>--%>
-                       <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Pls Enter Quantity"  ControlToValidate="txtQuantityIn450" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ValidationExpression= "[0-9]+(\.[0-9][0-9]?)?"
-                           ErrorMessage ="Pls enter valid number"  ControlToValidate="txtQuantityIn450" ForeColor="Red" ValidationGroup="Save"/> 
-                  </div><!-- /.form group -->
-            </div>
+
+         
 
 
-          <div class="col-lg-3">
-                  <div class="form-group cntrlbtm">
-                    <div class="input-group ">
-                      <div class="input-group-addon">
-<%--                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
-                          <asp:Label ID="Label12" runat="server" Text="Milk Quantity In 250ml"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="txtQuantityIn250" class="form-control"   placeholder="Enter Qty" runat="server" ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-<%--                      <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Please Enter Milk Quantity" ControlToValidate="txtQuantityIn250" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>--%>
-                       <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Pls Enter Quantity"  ControlToValidate="txtQuantityIn250" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ValidationExpression= "[0-9]+(\.[0-9][0-9]?)?"
-                           ErrorMessage ="Pls enter valid number"  ControlToValidate="txtQuantityIn250" ForeColor="Red" ValidationGroup="Save"/> 
-                  </div><!-- /.form group -->
-            </div>
 
-
-              <div class="col-lg-3">
-                  <div class="form-group cntrlbtm">
-                    <div class="input-group ">
-                      <div class="input-group-addon">
-<%--                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
-                          <asp:Label ID="Label13" runat="server" Text="Milk Quantity In 200ml"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="txtQuantityIn200" class="form-control"   placeholder="Enter Qty" runat="server" ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-<%--                      <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Please Enter Milk Quantity" ControlToValidate="txtQuantityIn200" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>--%>
-                       <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Pls Enter Quantity"  ControlToValidate="txtQuantityIn200" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ValidationExpression= "[0-9]+(\.[0-9][0-9]?)?"
-                           ErrorMessage ="Pls enter valid number"  ControlToValidate="txtQuantityIn200" ForeColor="Red" ValidationGroup="Save"/> 
-                  </div><!-- /.form group -->
-            </div>
-
-          <div class="col-lg-3">
-                  <div class="form-group cntrlbtm">
-                    <div class="input-group ">
-                      <div class="input-group-addon">
-<%--                        <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>--%>
-                          <asp:Label ID="Label8" runat="server" Text="Milk Quantity In 200ml"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="TextBox1" class="form-control"   placeholder="Enter Qty" runat="server" ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-<%--                      <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Please Enter Milk Quantity" ControlToValidate="txtQuantityIn200" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>--%>
-                       <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Pls Enter Quantity"  ControlToValidate="txtQuantityIn200" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ValidationExpression= "[0-9]+(\.[0-9][0-9]?)?"
-                           ErrorMessage ="Pls enter valid number"  ControlToValidate="txtQuantityIn200" ForeColor="Red" ValidationGroup="Save"/> 
-                  </div><!-- /.form group -->
-            </div>
 
 
                                  <div class="col-lg-3">
@@ -315,6 +272,199 @@
           </asp:UpdatePanel>
                    </div><!-- /.box-body -->            
      </div><!-- /.box -->
+
+                  <asp:UpdatePanel ID="upModal" runat="server" UpdateMode="Conditional" >  
+              <ContentTemplate>         
+                      <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Milk Quantity Details</h4>
+      </div>
+      <div class="modal-body">
+          <div class="box-body">
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server" >  
+              <ContentTemplate> 
+          <div class="row">
+            <div class="col-lg-4">
+                  <div class="form-group ">
+                    <div class="input-group ">
+                      <div class="input-group-addon">
+                         Milk 1000ml
+                      </div>
+                       <asp:TextBox ID="txtQuantityIn1000" class="cal form-control" step="any"  type="number"  ToolTip="Milk qty 1000"  placeholder="Enter Qty" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+                      
+                  </div><!-- /.form group -->
+            </div>
+
+                
+                  
+                     
+               <div class="col-lg-4">
+                  <div class="form-group ">
+                    <div class="input-group ">
+                      <div class="input-group-addon">
+                     Milk 500ml
+                      </div>
+                       <asp:TextBox ID="txtQuantityIn500" class="cal form-control"  step="any"  type="number"  ToolTip="Milk qty 500" placeholder="Enter Qty" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+            </div>
+
+
+          <div class="col-lg-4">
+                  <div class="form-group ">
+                    <div class="input-group ">
+                      <div class="input-group-addon">
+                        Milk 450ml
+                      </div>
+                       <asp:TextBox ID="txtQuantityIn450" class="cal form-control" step="any"  type="number"  ToolTip="Milk qty 450"  placeholder="Enter Qty" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+            </div>
+</div>
+
+
+ <div class="row">
+          <div class="col-lg-4">
+                  <div class="form-group ">
+                    <div class="input-group ">
+                      <div class="input-group-addon">
+                          Milk 250ml
+                      </div>
+                       <asp:TextBox ID="txtQuantityIn250" class="cal form-control"  step="any"  type="number"  ToolTip="Milk qty 250" placeholder="Enter Qty" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+            </div>
+
+
+              <div class="col-lg-4">
+                  <div class="form-group ">
+                    <div class="input-group ">
+                      <div class="input-group-addon">
+               Milk 200ml
+                      </div>
+                       <asp:TextBox ID="txtQuantityIn200" class="cal form-control" step="any"  type="number"  ToolTip="Milk qty 200"  placeholder="Enter Qty" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+            </div>
+          
+                   
+   </div>       
+              
+ </ContentTemplate>
+             </asp:UpdatePanel> 
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%--<button type="button" class="btn btn-primary" >Save changes</button>--%>
+          <asp:Button ID="Button1" class="btn btn-primary" runat="server" ValidationGroup="saved"  Text="Save changes"  OnClientClick="return confirm('Are u sure?');" />       
+      </div>
+    </div>
+  </div>
+</div>     
+
+                  </ContentTemplate>
+             </asp:UpdatePanel> 
+
+                           <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" >  
+              <ContentTemplate>         
+                      <!-- Modal -->
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Curd Milk Quantity Details</h4>
+      </div>
+      <div class="modal-body">
+          <div class="box-body">
+            <asp:UpdatePanel ID="UpdatePanel3" runat="server" >  
+              <ContentTemplate> 
+                <div class="col-lg-4">
+                  <div class="form-group cntrlbtm">
+                    <div class="input-group ">
+                      <div class="input-group-addon">
+                  Curd 500 ml
+                      </div>
+                       <asp:TextBox ID="txtcurd500" class="cal form-control" step="any"  type="number"  ToolTip="Curd 500ml"  placeholder="Curd 500 ml" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+            </div>
+
+          <div class="col-lg-4">
+                  <div class="form-group cntrlbtm">
+                    <div class="input-group ">
+                      <div class="input-group-addon">
+                       Curd 450 ml
+                      </div>
+                       <asp:TextBox ID="txtcurd450" class="cal form-control"  step="any"  type="number"  ToolTip="Curd 450ml" placeholder="Curd 450 ml" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+            </div>    
+              
+ </ContentTemplate>
+             </asp:UpdatePanel> 
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%--<button type="button" class="btn btn-primary" >Save changes</button>--%>
+          <asp:Button ID="Button2" class="btn btn-primary" runat="server" ValidationGroup="saved"  Text="Save changes"  OnClientClick="return confirm('Are u sure?');" />       
+      </div>
+    </div>
+  </div>
+</div>     
+
+                  </ContentTemplate>
+             </asp:UpdatePanel> 
+
+                                    <asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Conditional" >  
+              <ContentTemplate>         
+                      <!-- Modal -->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Butter Milk Quantity Details</h4>
+      </div>
+      <div class="modal-body">
+          <div class="box-body">
+            <asp:UpdatePanel ID="UpdatePanel5" runat="server" >  
+              <ContentTemplate> 
+                   <div class="col-lg-5">
+                  <div class="form-group cntrlbtm">
+                    <div class="input-group ">
+                      <div class="input-group-addon">
+                        Butter milk 200ml
+                      </div>
+                       <asp:TextBox ID="txtbuttermilk200" class="cal form-control"   placeholder="Butter Milk 200 ml" runat="server" ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+            </div>
+
+              
+ </ContentTemplate>
+             </asp:UpdatePanel> 
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%--<button type="button" class="btn btn-primary" >Save changes</button>--%>
+          <asp:Button ID="Button3" class="btn btn-primary" runat="server" ValidationGroup="saved"  Text="Save changes"  OnClientClick="return confirm('Are u sure?');" />       
+      </div>
+    </div>
+  </div>
+</div>     
+
+                  </ContentTemplate>
+             </asp:UpdatePanel> 
+
 
                    <div class="box ">
             <div class="box-header with-border">
