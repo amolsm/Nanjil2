@@ -119,6 +119,7 @@ namespace Dairy.Tabs.Marketing
                     double totalsheme = 0.00;
                     foreach (DataRow row in DS.Tables[0].Rows)
                     {
+                       
                         if (rows["RouteCode"].ToString() == row["RouteCode"].ToString())
                         {
                             srno++;
@@ -132,23 +133,19 @@ namespace Dairy.Tabs.Marketing
                             sb.Append("<td colspan = '2'>");
                             sb.Append(row["AgentName"].ToString());
                             sb.Append("</td>");
-                            //sb.Append("<td>");
-                            //sb.Append(row["RouteName"].ToString()); ;
-                            //sb.Append("</td>");
-                            sb.Append("<td style='text-align:right'>");
-                            sb.Append(Convert.ToDecimal(row["SchemeAmount"]).ToString("#0.00"));
-                            sb.Append("</td>");
-                            schemeamt += Convert.ToDouble(row["SchemeAmount"]);
-                            sb.Append("<td style='text-align:right'>");
-                            if (string.IsNullOrEmpty(row["TotalSchemeAmount"].ToString()))
+                          
+                          
+                        
+                            sb.Append("<td colspan = '2' style='text-align:right'>");
+                            if (string.IsNullOrEmpty(row["Scheme"].ToString()))
                             {
                                 sb.Append("0.00");
                             }
                             else
                             {
-                                sb.Append(Convert.ToDecimal(row["TotalSchemeAmount"]).ToString("#0.00"));
-
-                                totalsheme += Convert.ToDouble(row["TotalSchemeAmount"]);
+                                sb.Append(Convert.ToDecimal(row["Scheme"]).ToString("#0.00"));
+                                schemeamt += Convert.ToDouble(row["Scheme"]);
+                                totalsheme += schemeamt;
                             }
                             sb.Append("</td>");
                             sb.Append("</tr>");
@@ -166,14 +163,11 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("<td colspan='2'>");
                     sb.Append(srno.ToString());
                     sb.Append("</td>");
-                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<td colspan = '2' style='text-align:right'>");
                     sb.Append(Convert.ToDecimal(schemeamt).ToString("#0.00"));
                     routeschemeamt += schemeamt;
                     sb.Append("</td>");
-                    sb.Append("<td style='text-align:right'>");
-                    sb.Append(Convert.ToDecimal(totalsheme).ToString("#0.00"));
-                    routetotalsheme += totalsheme;
-                    sb.Append("</td>");
+                   
                     sb.Append("</tr>");
 
                 }
@@ -189,12 +183,10 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<td colspan='2'>");
                 sb.Append(totalentries.ToString());
                 sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
+                sb.Append("<td colspan = '2' style='text-align:right'>");
                 sb.Append(Convert.ToDecimal(routeschemeamt).ToString("#0.00"));
                 sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append(Convert.ToDecimal(routetotalsheme).ToString("#0.00"));
-                sb.Append("</td>");
+              
                 sb.Append("</tr>");
 
                 result = sb.ToString();

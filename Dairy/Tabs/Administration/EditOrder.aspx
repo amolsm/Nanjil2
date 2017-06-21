@@ -287,7 +287,7 @@
                       <div class="input-group-addon">
                         <asp:Label runat="server" Text="Quantity"></asp:Label>
                       </div>
-                       <asp:TextBox ID="txtNewQuantity" class="form-control" ToolTip="Quantity"  placeholder="Quantity" runat="server" type="number"></asp:TextBox>                        
+                       <asp:TextBox ID="txtNewQuantity" class="form-control Orderqty" onkeypress="return isNumberKey(event)" ToolTip="Quantity"  placeholder="Quantity" runat="server" type="number"></asp:TextBox>                        
                     </div><!-- /.input group -->
                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtNewQuantity"
         ErrorMessage="Quantity Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -315,6 +315,28 @@
      <script type = "text/javascript">
         
 
+         function isNumberKey(evt) {
+
+             var charCode = (evt.which) ? evt.which : event.keyCode
+             if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode != 46)
+                 return false;
+             else {
+                 var len = $('.Orderqty').val().length;
+                 var index = $('.Orderqty').val().indexOf('.');
+
+                 if (index > 0 && charCode == 46) {
+                     return false;
+                 }
+                 if (index > 0) {
+                     var CharAfterdot = (len + 1) - index;
+                     if (CharAfterdot > 3) {
+                         return false;
+                     }
+                 }
+
+             }
+             return true;
+         }
 
          //-->
 

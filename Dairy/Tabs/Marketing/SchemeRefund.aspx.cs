@@ -354,7 +354,13 @@ namespace Dairy.Tabs.Marketing
             double totalscheme=Convert.ToDouble(string.Format("{0:0.00}", txtTotalSchemeAmt.Text));
             double totalrefundamt = Convert.ToDouble(string.Format("{0:0.00}", txtrefundAmt.Text));
              double balanceamt = totalscheme - totalrefundamt;
-             txtbalanceamt.Text = string.Format("{0:0.00}", balanceamt); 
+            if (balanceamt < 0)
+            {
+                txtbalanceamt.Text = string.Empty;
+                txtrefundAmt.Text = string.Empty;
+            }
+            else { txtbalanceamt.Text = string.Format("{0:0.00}", balanceamt); }
+           
         }
 
         public void ClearTextBox()

@@ -173,7 +173,7 @@
                       <div class="input-group-addon">
                        <span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txtrefundAmt" class="form-control"  placeholder="Refund Amount" runat="server" AutoPostBack="true" OnTextChanged="txtrefundAmt_TextChanged" type="number" step=".01" ToolTip="Refund Amount" ></asp:TextBox>                              
+                      <asp:TextBox ID="txtrefundAmt" class="form-control"  placeholder="Refund Amount" runat="server" AutoPostBack="true" OnTextChanged="txtrefundAmt_TextChanged" type="number" step=".01"  min="0" ToolTip="Refund Amount" ></asp:TextBox>                              
                          
                     </div><!-- /.input group -->
                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Please Enter Refund Amount" ControlToValidate="txtrefundAmt" ForeColor="Red" ValidationGroup="Save"></asp:RequiredFieldValidator>
@@ -237,7 +237,7 @@
                     
                       
                               <asp:Button ID="btnAddSchemeRefund" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClientClick="Confirm()" OnClick="btnAddSchemeRefund_Click" />   &nbsp;  
-                          <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="AddNew"  OnClick="btnAddNew_Click" />   &nbsp;  
+                          <asp:Button ID="btnAddNew" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Refresh"  OnClick="btnAddNew_Click" />   &nbsp;  
                       
                     </div><!-- /.input group -->
 
@@ -404,5 +404,10 @@
              form.appendChild(confirm_value);
 
          }
+         $("#MainContent_txtrefundAmt").keypress(function (event) {
+             if (event.which == 45) {
+                 event.preventDefault();
+             }
+         });
     </script>
 </asp:Content>

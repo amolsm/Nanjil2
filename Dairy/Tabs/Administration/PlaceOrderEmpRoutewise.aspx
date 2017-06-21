@@ -274,7 +274,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtQuantity" class="form-control" ValidationGroup="saved" ToolTip="Quantity"  placeholder="Quantity" runat="server" ></asp:TextBox>                        
+                       <asp:TextBox ID="txtQuantity" class="form-control Orderqty" onkeypress="return isNumberKey(event)" ValidationGroup="saved" ToolTip="Quantity"  placeholder="Quantity" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -404,6 +404,29 @@
 
 
     <script type="text/javascript">
+        function isNumberKey(evt) {
+
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode != 46)
+                return false;
+            else {
+                var len = $('.Orderqty').val().length;
+                var index = $('.Orderqty').val().indexOf('.');
+
+                if (index > 0 && charCode == 46) {
+                    return false;
+                }
+                if (index > 0) {
+                    var CharAfterdot = (len + 1) - index;
+                    if (CharAfterdot > 3) {
+                        return false;
+                    }
+                }
+
+            }
+            return true;
+        }
+
         $(function () {
             $("[id$=txtAgentAuto]").autocomplete({
                 source: function (request, response) {
