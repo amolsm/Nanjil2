@@ -1,0 +1,4 @@
+D:\NanjilCode2\Nanjil\Model\bin\Model.dll
+D:\NanjilCode2\Nanjil\Model\bin\Model.pdb
+D:\NanjilCode2\Nanjil\Model\obj\Debug\Model.dll
+D:\NanjilCode2\Nanjil\Model\obj\Debug\Model.pdb
