@@ -1,0 +1,9 @@
+D:\NanjilCode2\Nanjil2\DataAccess\bin\DataAccess.dll
+D:\NanjilCode2\Nanjil2\DataAccess\bin\DataAccess.pdb
+D:\NanjilCode2\Nanjil2\DataAccess\bin\Comman.dll
+D:\NanjilCode2\Nanjil2\DataAccess\bin\Model.dll
+D:\NanjilCode2\Nanjil2\DataAccess\bin\Comman.pdb
+D:\NanjilCode2\Nanjil2\DataAccess\bin\Model.pdb
+D:\NanjilCode2\Nanjil2\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
+D:\NanjilCode2\Nanjil2\DataAccess\obj\Release\DataAccess.dll
+D:\NanjilCode2\Nanjil2\DataAccess\obj\Release\DataAccess.pdb

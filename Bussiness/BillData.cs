@@ -133,9 +133,9 @@ namespace Bussiness
             return dbbill.GenerateBoothRoteSalesSummary(Date, BoothID, BrandID);
         }
 
-        public DataSet GetSchemeAmountForBillwiseSalesSummary(dynamic BillNo)
+        public DataSet GetSchemeAmountForBillwiseSalesSummary(dynamic BillNo,int flag)
         {
-            return dbbill.GetSchemeAmountForBillwiseSalesSummary(BillNo);
+            return dbbill.GetSchemeAmountForBillwiseSalesSummary(BillNo, flag);
         }
         public DataSet GetSchemeAmountForBoothBillwiseSalesSummary(dynamic BillNo)
         {

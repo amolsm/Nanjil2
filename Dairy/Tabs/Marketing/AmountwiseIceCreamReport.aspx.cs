@@ -49,17 +49,26 @@ namespace Dairy.Tabs.Marketing
 
         protected void btnViewDetails_Click(object sender, EventArgs e)
         {
-            try
+            int flag;
+            if (chkAmt.Checked)
             {
-                string result = string.Empty;
-                if (chkAmt.Checked)
-                {
-                    DS = marketingdata.AmountwiseIceCreamReport1((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpType.SelectedItem.Value), Convert.ToInt32(dpCommodity.SelectedItem.Value)/*, Convert.ToDouble(txtStartAmt.Text), Convert.ToDouble(txtEndAmt.Text)*/);
-                }
-                else
-                {
-                    DS = marketingdata.AmountwiseIceCreamReport((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpType.SelectedItem.Value), Convert.ToInt32(dpCommodity.SelectedItem.Value), Convert.ToDouble(txtStartAmt.Text), Convert.ToDouble(txtEndAmt.Text));
-                }
+                flag = 0;
+            }
+            else { flag = 1; }
+           
+            string result = string.Empty;
+            DS = new DataSet();
+            marketingdata = new MarketingData();
+            double startamt = 0;
+            double endamt = 0;
+            try {
+            startamt = Convert.ToDouble(txtStartAmt.Text);
+            endamt = Convert.ToDouble(txtEndAmt.Text);
+                } catch { startamt = 0; endamt = 0; }
+                
+              
+                DS = marketingdata.AmountwiseIceCreamReport((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpType.SelectedItem.Value), Convert.ToInt32(dpCommodity.SelectedItem.Value), startamt, endamt, flag);
+
 
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {
@@ -185,63 +194,59 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("</td>");
                     sb.Append("</tr>");
 
-                    int srno = 0;
-                    double amt = 0;
+
+                    int count = 0;
                     double totalamt = 0;
                     double totalavg = 0;
-                    foreach (DataRow row in DS.Tables[0].Rows)
-                    {
-                        try { amt = Convert.ToDouble(row["TotalBill"]); } catch { amt = 0; }
-                        //if (amt >= Convert.ToDouble(txtStartAmt.Text) && amt <= Convert.ToDouble(txtEndAmt.Text))
-
+                foreach (DataRow row in DS.Tables[1].Rows)
+                {
+                    sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '5'> &nbsp; </td> </tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<td colspan='2' style='text-align:left'>");
+                    sb.Append("<b>" + row["RouteCode"].ToString()+"</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td colspan='4' style='text-align:right'>");
+                    sb.Append("<b>" + row["RouteName"].ToString() + "</b>");
+                    sb.Append("</td>");
+                    sb.Append("</tr>");
+                    int srno = 0;
+                    foreach (DataRow rows in DS.Tables[0].Rows)
                         {
-
+                        
+                        if (row["RouteID"].ToString() == rows["RouteID"].ToString())
+                        {
+                                       
                             srno++;
+                            count++;
                             sb.Append("<tr>");
                             sb.Append("<td>");
                             sb.Append(srno.ToString());
                             sb.Append("</td>");
                             sb.Append("<td>");
-                            sb.Append(row["AgentCode"].ToString());
+                            sb.Append(rows["AgentCode"].ToString());
                             sb.Append("</td>");
                             sb.Append("<td>");
-                            sb.Append(row["AgentName"].ToString());
+                            sb.Append(rows["AgentName"].ToString());
                             sb.Append("</td>");
                             sb.Append("<td style='text-align:right'>");
                             double amt1;
-                            try { amt1 = Convert.ToDouble(row["TotalBill"]); } catch { amt1 = 0; };
+                            try { amt1 = Convert.ToDouble(rows["TotalBill"]); } catch { amt1 = 0; };
                             totalamt += amt1;
                             sb.Append(Convert.ToDecimal(amt1).ToString("#.##"));
                             sb.Append("</td>");
 
                             sb.Append("<td style='text-align:right'>");
                             double avg1;
-                            try { avg1 = Convert.ToDouble(row["AvgBill"]); } catch { avg1 = 0; };
+                            try { avg1 = Convert.ToDouble(rows["AvgBill"]); } catch { avg1 = 0; };
                             totalavg += avg1;
                             sb.Append(Convert.ToDecimal(avg1).ToString("#.##"));
                             sb.Append("</td>");
                             sb.Append("</tr>");
-                            sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '4'> &nbsp; </td> </tr>");
-                            if (dpRoute.SelectedItem.Value == "0")
-                            {
-                                foreach (DataRow rows in DS.Tables[1].Rows)
-                                {
-                                    if (rows["OrderDate"].ToString() == row["OrderDate"].ToString())
-                                    {
-                                        if (rows["RouteName"].ToString() == row["RouteName"].ToString())
-                                        {
-                                            sb.Append("<tr style='border-bottom:1px solid'>");
-                                            sb.Append("<td colspan='2' style='text-align:left'>");
-                                            sb.Append("<b>Date : </b>" + rows["OrderDate"].ToString());
-                                            sb.Append("</td>");
-                                            sb.Append("<td colspan='4' style='text-align:right'>");
-                                            sb.Append("<b>Route : </b>" + rows["RouteName"].ToString());
-                                            sb.Append("</td>");
-                                            sb.Append("</tr>");
-                                        }
-                                    }
-                                }
-                            }
+                        }
+                               
+                      
+                         
+                           
 
 
                         }
@@ -253,7 +258,7 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '5'> &nbsp; </td> </tr>");
                     sb.Append("<tr  style='border-bottom:1px solid'>");
                     sb.Append("<td>");
-                    sb.Append(srno.ToString());
+                    sb.Append(count.ToString());
                     sb.Append("</td>");
 
                     sb.Append("<td colspan='3' style='text-align:right'>");
@@ -284,10 +289,7 @@ namespace Dairy.Tabs.Marketing
                     genratedBIll.Text = result;
 
                 }
-            }catch(Exception ex)
-            {
-                string msg = ex.Message.ToString();
-            }
+            
         }
 
         protected void dpType_SelectedIndexChanged(object sender, EventArgs e)

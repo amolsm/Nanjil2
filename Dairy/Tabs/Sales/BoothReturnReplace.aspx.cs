@@ -105,10 +105,10 @@ namespace Dairy.Tabs.Sales
 
             var query1 = from dts in DS.Tables[0].AsEnumerable()
                          where dts.Field<int>("BoothStockDetailsID") == ids
-                         select dts.Field<double>("StockAvailable");
+                         select dts.Field<decimal>("StockAvailable");
 
             List<string> pname = query.ToList();
-            List<double> stockavail = query1.ToList();
+            List<decimal> stockavail = query1.ToList();
 
             txtProductName.Text = pname[0].ToString();
             txtStockAvail.Text = stockavail[0].ToString();

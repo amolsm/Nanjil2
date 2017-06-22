@@ -71,188 +71,202 @@ namespace Dairy.Tabs.Marketing
                 catch (Exception) { }
                 double openingbalance = 0;
                 double closingbalance = 0;
-
-                foreach (DataRow row in DS.Tables[1].Rows)
+                DataView view = new DataView(DS.Tables[0]);
+                DataTable distinctValues = view.ToTable(true, "AgentCode");
+                foreach (DataRow r in distinctValues.Rows)
                 {
-                    sb.Append("<style type='text / css'>");
-                    sb.Append(".tg  { border - collapse:collapse; border - spacing:0; border: none; }");
-                    sb.Append(".tg .tg-yw4l{vertical-align:top}");
-                    sb.Append(".tg .tg-baqh{text-align:center;vertical-align:top}");
-                    sb.Append("</style>");
-                    //sb.Append("<table class='tg style1' style='page-break-inside:avoid; align:center;'>");
-                    sb.Append("<table class='style1' style='page -break-inside:avoid; font - family: sans - serif; padding - right: 10px; align: center; '>");
-                    sb.Append("<colgroup>");
-                    sb.Append("<col style = 'width:20px'>");
-                    sb.Append("<col style = 'width:40px'>");
-                    sb.Append("<col style = 'width:40px'>");
-                    sb.Append("<col style = 'width:40px'>");
-                    sb.Append("<col style = 'width:40px'>");
-                    sb.Append("<col style = 'width:40px'>");
 
-                    sb.Append("</colgroup>");
-                    sb.Append("<tbody>");
-                    sb.Append("<tr>");
-                    sb.Append("<th class='tg-yw4l' rowspan='2'>");
-                    sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='60px'>");
-                    sb.Append("</th>");
-
-                    sb.Append("<th class='tg-baqh' colspan='5' style='text-align:center; font-size: 90%;'  >");
-                    sb.Append("<u>Agency Scheme Summary </u>");
-                    sb.Append("<br></th></tr>");
-                    sb.Append("<tr style='border -bottom:1px solid'>");
-                    sb.Append("<td class='tg - yw4l' colspan='6' style='text - align:Center; font-size:15px'> ");
-                    sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
-                    sb.Append("<td></tr></tr>");
-
-
-                    sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'></td></tr>");
-
-                    sb.Append("<tr>");
-                    sb.Append("<td colspan='3'style='text-align:left'>");
-                    sb.Append(Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
-
-                    sb.Append("</td>");
-                    sb.Append("<td colspan='3' style='text-align:right;'>");
-                    sb.Append(Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
-                    sb.Append("<tr>");
-                    sb.Append("<td colspan='3'style='text-align:left'>");
-                    sb.Append("<b>" + row["RouteCode"].ToString() + "</b>");
-                    sb.Append("<b>" + row["RouteName"].ToString() + "</b>");
-                    sb.Append("</td>");
-                    sb.Append("<td colspan='3' style='text-align:right'>");
-                    sb.Append("<b>" + row["AgentCode"].ToString() + "</b>");
-                    sb.Append("<b>" + row["AgentName"].ToString() + "</b>");
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
-
-                    sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'></td></tr>");
-
-                    sb.Append("<tr style='border-bottom:1px solid'>");
-
-
-
-
-                    sb.Append("<td colspan='3' style='text-align:left; padding-top:5px; font-size:15px'>");
-                    sb.Append("PreviousBalance");
-                    sb.Append("</td>");
-                    sb.Append("<td colspan = '3' style='text-align:right; padding-top:5px; font-size:15px'>");
-                    double totalschemamt = 0;
-                    double openingb = 0;
-                    totalschemamt = Convert.ToDouble(row["TotalSchemeAmount"]);
-                    try
+                    foreach (DataRow row in DS.Tables[1].Rows)
                     {
-                        openingb = Convert.ToDouble(row["OpeningScheme"]);
-                    }
-                    catch { openingb = 0; }
-                    openingbalance = totalschemamt - openingb;
-                    if (openingbalance != 0)
-                    { sb.Append("<b>" + Convert.ToDecimal(openingbalance).ToString("#.00") + "</b>"); }
-                    else { sb.Append("<b>" + "" + "</b>"); }
-
-                    sb.Append("</td>");
-
-                    sb.Append("</tr>");
-                    sb.Append("<tr>");
-                    sb.Append("<td colspan='2' style='text-align:left'>");
-                    sb.Append("SR.NO");
-                    sb.Append("</td>");
-                    sb.Append("<td colspan='2' style='text-align:left'>");
-                    sb.Append("Date");
-                    sb.Append("</td>");
-                    sb.Append("<td colspan='2' style='text-align:right'>");
-                    sb.Append("Amount");
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
-                 
-
-                    int srno = 0;
-                    double totalscheme = 0;
-                    foreach (DataRow rowr in DS.Tables[0].Rows)
-                    {
-                      
-                        if (row["AgentCode"].ToString() == rowr["AgentCode"].ToString())
+                        if (r["AgentCode"].ToString() == row["AgentCode"].ToString())
                         {
-                            srno++;
-                            sb.Append("<tr style='border - bottom:1px solid'>");
-                            sb.Append("<td colspan='2' style='text-align:left;font-size: 14px'>");
-                            sb.Append(srno.ToString());
-                            sb.Append("</td>"); 
-                            sb.Append("<td colspan = '2' style='text-align:left; font-size:14px' nowrap=''>");
-                            sb.Append(rowr["OrderDate"].ToString());
-                            sb.Append("</td>");
-                            sb.Append("<td colspan = '2' style='text-align:right; font-size:14px'>");
-                            double scheme = 0;
-                            try { scheme = Convert.ToDouble(rowr["Scheme"]); } catch { scheme = 0; }
 
-                            totalscheme += scheme;
-                            if (scheme != 0)
-                            { sb.Append(Convert.ToDecimal(scheme).ToString("#.00")); }
-                            else { sb.Append(""); }
+                            sb.Append("<style type='text / css'>");
+                            sb.Append(".tg  { border - collapse:collapse; border - spacing:0; border: none; }");
+                            sb.Append(".tg .tg-yw4l{vertical-align:top}");
+                            sb.Append(".tg .tg-baqh{text-align:center;vertical-align:top}");
+                            sb.Append("</style>");
+                            //sb.Append("<table class='tg style1' style='page-break-inside:avoid; align:center;'>");
+                            sb.Append("<table class='style1' style='page -break-inside:avoid; font - family: sans - serif; padding - right: 10px; align: center; '>");
+                            sb.Append("<colgroup>");
+                            sb.Append("<col style = 'width:20px'>");
+                            sb.Append("<col style = 'width:40px'>");
+                            sb.Append("<col style = 'width:40px'>");
+                            sb.Append("<col style = 'width:40px'>");
+                            sb.Append("<col style = 'width:40px'>");
+                            sb.Append("<col style = 'width:40px'>");
+
+                            sb.Append("</colgroup>");
+                            sb.Append("<tbody>");
+                            sb.Append("<tr>");
+                            sb.Append("<th class='tg-yw4l' rowspan='2'>");
+                            sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='60px'>");
+                            sb.Append("</th>");
+
+                            sb.Append("<th class='tg-baqh' colspan='5' style='text-align:center; font-size: 90%;'  >");
+                            sb.Append("<u>Agency Scheme Summary </u>");
+                            sb.Append("<br></th></tr>");
+                            sb.Append("<tr style='border -bottom:1px solid'>");
+                            sb.Append("<td class='tg - yw4l' colspan='6' style='text - align:Center; font-size:15px'> ");
+                            sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
+                            sb.Append("<td></tr></tr>");
+
+
+                            sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'></td></tr>");
+
+                            sb.Append("<tr>");
+                            sb.Append("<td colspan='3'style='text-align:left'>");
+                            sb.Append(Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
+
+                            sb.Append("</td>");
+                            sb.Append("<td colspan='3' style='text-align:right;'>");
+                            sb.Append(Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
+                            sb.Append("</td>");
+                            sb.Append("</tr>");
+                            sb.Append("<tr>");
+                            sb.Append("<td colspan='3'style='text-align:left'>");
+                            sb.Append("<b>" + row["RouteCode"].ToString() + "</b>");
+                            sb.Append("<b>" + row["RouteName"].ToString() + "</b>");
+                            sb.Append("</td>");
+                            sb.Append("<td colspan='3' style='text-align:right'>");
+                            sb.Append("<b>" + row["AgentCode"].ToString() + "</b>");
+                            sb.Append("<b>" + row["AgentName"].ToString() + "</b>");
+                            sb.Append("</td>");
+                            sb.Append("</tr>");
+
+                            sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'></td></tr>");
+
+                            sb.Append("<tr style='border-bottom:1px solid'>");
+
+
+
+
+                            sb.Append("<td colspan='3' style='text-align:left; padding-top:5px; font-size:15px'>");
+                            sb.Append("PreviousBalance");
+                            sb.Append("</td>");
+                            sb.Append("<td colspan = '3' style='text-align:right; padding-top:5px; font-size:15px'>");
+                            double totalschemamt = 0;
+                            double openingb = 0;
+                            totalschemamt = Convert.ToDouble(row["TotalSchemeAmount"]);
+                            try
+                            {
+                                openingb = Convert.ToDouble(row["OpeningScheme"]);
+                            }
+                            catch { openingb = 0; }
+                            openingbalance = totalschemamt - openingb;
+                            //if (openingbalance != 0)
+                            //{
+                            sb.Append("<b>" + Convert.ToDecimal(openingbalance).ToString("0.00") + "</b>");
+                            //}
+                            //    else { sb.Append("<b>" + "" + "</b>"); }
 
                             sb.Append("</td>");
 
                             sb.Append("</tr>");
-                            
+                            sb.Append("<tr>");
+                            sb.Append("<td colspan='2' style='text-align:left'>");
+                            sb.Append("SR.NO");
+                            sb.Append("</td>");
+                            sb.Append("<td colspan='2' style='text-align:left'>");
+                            sb.Append("Date");
+                            sb.Append("</td>");
+                            sb.Append("<td colspan='2' style='text-align:right'>");
+                            sb.Append("Amount");
+                            sb.Append("</td>");
+                            sb.Append("</tr>");
+
+
+                            int srno = 0;
+                            double totalscheme = 0;
+                            foreach (DataRow rowr in DS.Tables[0].Rows)
+                            {
+
+                                if (row["AgentCode"].ToString() == rowr["AgentCode"].ToString())
+                                {
+                                    srno++;
+                                    sb.Append("<tr style='border - bottom:1px solid'>");
+                                    sb.Append("<td colspan='2' style='text-align:left;font-size: 14px'>");
+                                    sb.Append(srno.ToString());
+                                    sb.Append("</td>");
+                                    sb.Append("<td colspan = '2' style='text-align:left; font-size:14px' nowrap=''>");
+                                    sb.Append(rowr["OrderDate"].ToString());
+                                    sb.Append("</td>");
+                                    sb.Append("<td colspan = '2' style='text-align:right; font-size:14px'>");
+                                    double scheme = 0;
+                                    try { scheme = Convert.ToDouble(rowr["Scheme"]); } catch { scheme = 0; }
+
+                                    totalscheme += scheme;
+                                    //if (scheme != 0)
+                                    //{
+                                    sb.Append(Convert.ToDecimal(scheme).ToString("0.00"));
+                                    //}
+                                    //else { sb.Append(""); }
+
+                                    sb.Append("</td>");
+
+                                    sb.Append("</tr>");
+
+                                }
+                            }
+                            sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'></td></tr>");
+
+                            sb.Append("<tr style='border-bottom:1px solid'>");
+                            sb.Append("<td colspan='2' style='text-align:left; padding-top:5px; font-size:15px'>");
+                            sb.Append("ClosingBalance");
+                            sb.Append("</td>");
+                            sb.Append("<td colspan='2' style='text-align:right; padding-top:5px'>");
+                            sb.Append("&nbsp;");
+                            sb.Append("</td>");
+                            sb.Append("<td colspan='2' style='text-align:right; padding-top:5px;font-size: 15px'>");
+
+                            //if (totalscheme != 0)
+                            //{ sb.Append(totalscheme); }
+                            //else { sb.Append(""); }
+
+                            double closingb = 0;
+                            double totalschemamt1 = 0;
+                            totalschemamt1 = Convert.ToDouble(row["TotalSchemeAmount"]);
+                            try
+                            {
+                                closingb = Convert.ToDouble(row["ClosingScheme"]);
+                            }
+                            catch { closingb = 0; }
+                            closingbalance = totalschemamt1 - closingb;
+                            //if (closingbalance != 0)
+                            //{
+                            sb.Append("<b>" + Convert.ToDecimal(closingbalance).ToString("0.00") + "</b>");
+                            //}
+                            //else { sb.Append("<b>" + "" + "</b>"); }
+
+
+                            sb.Append("</td>");
+                            sb.Append("</tr>");
+                            sb.Append("<tr style='border - top: 1px dotted'>");
+                            sb.Append("<td colspan='6' style='text-align:center'>");
+                            sb.Append("&nbsp;");
+                            sb.Append("</td>");
+                            sb.Append("</tr>");
+                            sb.Append("<tr>");
+                            sb.Append("<td colspan='6' style='text-align:center'>");
+                            sb.Append("&nbsp;");
+                            sb.Append("</td>");
+                            sb.Append("</tr>");
+                            sb.Append("<tr>");
+                            sb.Append("<td colspan='6' style='text-align:center'>");
+                            sb.Append("&nbsp;");
+                            sb.Append("</td>");
+                            sb.Append("</tr>");
+                            sb.Append("<tr>");
+                            sb.Append("<td colspan='6' style='text-align:center'>");
+                            sb.Append("&nbsp;");
+                            sb.Append("</td>");
+                            sb.Append("</tr>");
+                            sb.Append("<tbody>");
+                            sb.Append("<table>");
+
                         }
                     }
-                    sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'></td></tr>");
-
-                    sb.Append("<tr style='border-bottom:1px solid'>");
-                    sb.Append("<td colspan='2' style='text-align:left; padding-top:5px; font-size:15px'>");
-                    sb.Append("ClosingBalance");
-                    sb.Append("</td>");
-                    sb.Append("<td colspan='2' style='text-align:right; padding-top:5px'>");
-                    sb.Append("&nbsp;");
-                    sb.Append("</td>");
-                    sb.Append("<td colspan='2' style='text-align:right; padding-top:5px;font-size: 15px'>");
-                  
-                    //if (totalscheme != 0)
-                    //{ sb.Append(totalscheme); }
-                    //else { sb.Append(""); }
-
-                    double closingb = 0;
-                    double totalschemamt1 = 0;
-                    totalschemamt1 = Convert.ToDouble(row["TotalSchemeAmount"]);
-                    try
-                    {
-                        closingb = Convert.ToDouble(row["ClosingScheme"]);
-                    }
-                    catch { closingb = 0; }
-                    closingbalance = totalschemamt1 - closingb;
-                    if (closingbalance != 0)
-                    { sb.Append("<b>" + Convert.ToDecimal(closingbalance).ToString("#.00") + "</b>"); }
-                    else { sb.Append("<b>" + "" + "</b>"); }
-
-
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
-                    sb.Append("<tr style='border - top: 1px dotted'>");
-                    sb.Append("<td colspan='6' style='text-align:center'>");
-                    sb.Append("&nbsp;");
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
-                    sb.Append("<tr>");
-                    sb.Append("<td colspan='6' style='text-align:center'>");
-                    sb.Append("&nbsp;");
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
-                    sb.Append("<tr>");
-                    sb.Append("<td colspan='6' style='text-align:center'>");
-                    sb.Append("&nbsp;");
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
-                    sb.Append("<tr>");
-                    sb.Append("<td colspan='6' style='text-align:center'>");
-                    sb.Append("&nbsp;");
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
-                    sb.Append("<tbody>");
-                    sb.Append("<table>");
-
                 }
-
 
 
 
@@ -391,118 +405,125 @@ namespace Dairy.Tabs.Marketing
 
                 double openingbalance = 0;
                 double closingbalance = 0;
-
-                foreach (DataRow row in DS.Tables[1].Rows)
+                DataView view = new DataView(DS.Tables[0]);
+                DataTable distinctValues = view.ToTable(true, "AgentCode");
+                foreach (DataRow r in distinctValues.Rows)
                 {
-                    sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'></td></tr>");
-                    sb.Append("<tr style='border-bottom:1px solid'>");
-                    sb.Append("<td>");
-                    sb.Append("<b>" + row["RouteCode"].ToString() + "</b>");
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append("<b>" + row["RouteName"].ToString() + "</b>");
-                    sb.Append("</td>");
-                    sb.Append("<td style='text-align:center'>");
-                    sb.Append("<b>" + row["AgentCode"].ToString() + "</b>");
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append("<b>" + row["AgentName"].ToString() + "</b>");
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append("Previous Balance");
-                    sb.Append("</td>");
 
-                    sb.Append("<td  style='text-align:right'>");
-
-
-                    double totalschemamt = 0;
-                    double openingb = 0;
-                    totalschemamt = Convert.ToDouble(row["TotalSchemeAmount"]);
-                    try
+                    foreach (DataRow row in DS.Tables[1].Rows)
                     {
-                        openingb = Convert.ToDouble(row["OpeningScheme"]);
-                    }
-                    catch { openingb = 0; }
-                    openingbalance = totalschemamt - openingb;
-                    if (openingbalance != 0)
-                    { sb.Append("<b>" + openingbalance + "</b>"); }
-                    else { sb.Append("<b>" + "" + "</b>"); }
-
-                    sb.Append("</td>");
-
-                    sb.Append("</tr>");
-                    int srno = 0;
-                    double totalscheme = 0;
-                    foreach (DataRow rowr in DS.Tables[0].Rows)
-                    {
-                        srno++;
-                        if (row["AgentCode"].ToString() == rowr["AgentCode"].ToString())
+                        if (r["AgentCode"].ToString() == row["AgentCode"].ToString())
                         {
-                            sb.Append("<tr>");
+                            sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'></td></tr>");
+                            sb.Append("<tr style='border-bottom:1px solid'>");
                             sb.Append("<td>");
-                            sb.Append(srno.ToString());
+                            sb.Append("<b>" + row["RouteCode"].ToString() + "</b>");
                             sb.Append("</td>");
-                            sb.Append("<td colspan = '2'>");
-                            sb.Append(rowr["OrderDate"].ToString());
+                            sb.Append("<td>");
+                            sb.Append("<b>" + row["RouteName"].ToString() + "</b>");
                             sb.Append("</td>");
-                            sb.Append("<td colspan = '3'>");
-                            double scheme = 0;
-                            try { scheme = Convert.ToDouble(rowr["Scheme"]); } catch { scheme = 0; }
+                            sb.Append("<td style='text-align:center'>");
+                            sb.Append("<b>" + row["AgentCode"].ToString() + "</b>");
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            sb.Append("<b>" + row["AgentName"].ToString() + "</b>");
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            sb.Append("Previous Balance");
+                            sb.Append("</td>");
 
-                            totalscheme += scheme;
-                            if (scheme != 0)
-                            { sb.Append(scheme.ToString()); }
-                            else { sb.Append(""); }
+                            sb.Append("<td  style='text-align:right'>");
+
+
+                            double totalschemamt = 0;
+                            double openingb = 0;
+                            totalschemamt = Convert.ToDouble(row["TotalSchemeAmount"]);
+                            try
+                            {
+                                openingb = Convert.ToDouble(row["OpeningScheme"]);
+                            }
+                            catch { openingb = 0; }
+                            openingbalance = totalschemamt - openingb;
+                            if (openingbalance != 0)
+                            { sb.Append("<b>" + openingbalance + "</b>"); }
+                            else { sb.Append("<b>" + "" + "</b>"); }
 
                             sb.Append("</td>");
 
                             sb.Append("</tr>");
+                            int srno = 0;
+                            double totalscheme = 0;
+                            foreach (DataRow rowr in DS.Tables[0].Rows)
+                            {
+                                srno++;
+                                if (row["AgentCode"].ToString() == rowr["AgentCode"].ToString())
+                                {
+                                    sb.Append("<tr>");
+                                    sb.Append("<td>");
+                                    sb.Append(srno.ToString());
+                                    sb.Append("</td>");
+                                    sb.Append("<td colspan = '2'>");
+                                    sb.Append(rowr["OrderDate"].ToString());
+                                    sb.Append("</td>");
+                                    sb.Append("<td colspan = '3'>");
+                                    double scheme = 0;
+                                    try { scheme = Convert.ToDouble(rowr["Scheme"]); } catch { scheme = 0; }
+
+                                    totalscheme += scheme;
+                                    if (scheme != 0)
+                                    { sb.Append(scheme.ToString()); }
+                                    else { sb.Append(""); }
+
+                                    sb.Append("</td>");
+
+                                    sb.Append("</tr>");
+                                    sb.Append("<tr><td colspan='6'>&nbsp;</td></tr>");
+                                }
+                            }
+                            sb.Append("<tr style='border-bottom:1px dotted'><td colspan='6'></td></tr>");
+                            sb.Append("<tr style='border-bottom:1px solid'>");
+                            sb.Append("<td>");
+                            sb.Append(srno.ToString());
+                            sb.Append("</td>");
+                            sb.Append("<td colspan = '2'>");
+                            sb.Append("Total :");
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            if (totalscheme != 0)
+                            { sb.Append(totalscheme); }
+                            else { sb.Append(""); }
+
+                            sb.Append("</td>");
+                            sb.Append("<td>");
+                            sb.Append("Closing Balance");
+                            sb.Append("</td>");
+
+                            sb.Append("<td style='text-align:right'>");
+
+
+
+                            double closingb = 0;
+                            double totalschemamt1 = 0;
+                            totalschemamt1 = Convert.ToDouble(row["TotalSchemeAmount"]);
+                            try
+                            {
+                                closingb = Convert.ToDouble(row["ClosingScheme"]);
+                            }
+                            catch { closingb = 0; }
+                            closingbalance = totalschemamt1 - closingb;
+                            if (closingbalance != 0)
+                            { sb.Append("<b>" + closingbalance + "</b>"); }
+                            else { sb.Append("<b>" + "" + "</b>"); }
+
+
+                            sb.Append("</td>");
+                            sb.Append("</tr>");
                             sb.Append("<tr><td colspan='6'>&nbsp;</td></tr>");
+
                         }
+
                     }
-                    sb.Append("<tr style='border-bottom:1px dotted'><td colspan='6'></td></tr>");
-                    sb.Append("<tr style='border-bottom:1px solid'>");
-                    sb.Append("<td>");
-                    sb.Append(srno.ToString());
-                    sb.Append("</td>");
-                    sb.Append("<td colspan = '2'>");
-                    sb.Append("Total :");
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    if (totalscheme != 0)
-                    { sb.Append(totalscheme); }
-                    else { sb.Append(""); }
-
-                    sb.Append("</td>");
-                    sb.Append("<td>");
-                    sb.Append("Closing Balance");
-                    sb.Append("</td>");
-
-                    sb.Append("<td style='text-align:right'>");
-
-
-
-                    double closingb = 0;
-                    double totalschemamt1 = 0;
-                    totalschemamt1 = Convert.ToDouble(row["TotalSchemeAmount"]);
-                    try
-                    {
-                        closingb = Convert.ToDouble(row["ClosingScheme"]);
-                    }
-                    catch { closingb = 0; }
-                    closingbalance = totalschemamt1 - closingb;
-                    if (closingbalance != 0)
-                    { sb.Append("<b>" + closingbalance + "</b>"); }
-                    else { sb.Append("<b>" + "" + "</b>"); }
-
-
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
-                    sb.Append("<tr><td colspan='6'>&nbsp;</td></tr>");
-
                 }
-
-
 
 
 

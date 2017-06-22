@@ -287,10 +287,11 @@ namespace DataAccess
             return _DBHelper.ExecuteDataSet("Sp_BoothSalesSummaryReport", paramCollection, CommandType.StoredProcedure);
         }
 
-        public DataSet GetSchemeAmountForBillwiseSalesSummary(dynamic BillNo)
+        public DataSet GetSchemeAmountForBillwiseSalesSummary(dynamic BillNo,int flag)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
             paramCollection.Add(new DBParameter("@BillNo", BillNo));
+            paramCollection.Add(new DBParameter("@flag", flag));
             return _DBHelper.ExecuteDataSet("Sp_GetSchemeAmountForBillwiseSalesSummary", paramCollection, CommandType.StoredProcedure);
         }
         public DataSet GetSchemeAmountForBoothBillwiseSalesSummary(dynamic BillNo)

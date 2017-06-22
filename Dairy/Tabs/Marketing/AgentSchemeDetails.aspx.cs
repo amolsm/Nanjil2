@@ -93,7 +93,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</tr>");
                 int totalentries = 0;
                 double routeschemeamt = 0.00;
-                double routetotalsheme = 0.00;
+              
                 foreach (DataRow rows in distinctValues.Rows)
                 {
                     sb.Append("<tr style='border-bottom:1px solid'><td colspan='6'>&nbsp;&nbsp;</td></tr>");

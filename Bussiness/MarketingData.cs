@@ -122,15 +122,11 @@ namespace Bussiness
             return dbMarketing.ViewItemwisePurchaseAgentList(StartDate, EndDate, RouteID, TypeID, CommodityID);
         }
 
-        public DataSet AmountwiseIceCreamReport(string StartDate, string EndDate, int RouteID, int typeid,int commodityid, double startamt, double endamt)
+        public DataSet AmountwiseIceCreamReport(string StartDate, string EndDate, int RouteID, int typeid,int commodityid, double startamt, double endamt,int flag)
         {
             dbMarketing = new DBMarketing();
-            return dbMarketing.AmountwiseIceCreamReport(StartDate, EndDate, RouteID, typeid, commodityid,startamt, endamt);
+            return dbMarketing.AmountwiseIceCreamReport(StartDate, EndDate, RouteID, typeid, commodityid,startamt, endamt,flag);
         }
-        public DataSet AmountwiseIceCreamReport1(string StartDate, string EndDate, int RouteID, int typeid, int commodityid)
-        {
-            dbMarketing = new DBMarketing();
-            return dbMarketing.AmountwiseIceCreamReport1(StartDate, EndDate, RouteID, typeid, commodityid);
-        }
+       
     }
 }

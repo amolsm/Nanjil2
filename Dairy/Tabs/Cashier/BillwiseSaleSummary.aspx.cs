@@ -254,7 +254,7 @@ namespace Dairy.Tabs.Cashier
                         }
                         else { }
                     }
-                    DS1 = billdata.GetSchemeAmountForBillwiseSalesSummary(row2["OrderId"]);
+                    DS1 = billdata.GetSchemeAmountForBillwiseSalesSummary(row2["OrderId"],0);
                     if (!Comman.Comman.IsDataSetEmpty(DS1))
                     {
                         sb.Append("<tr>");

@@ -314,7 +314,7 @@ namespace Dairy.Tabs.Marketing
             }
             else
             {
-                result = " Report Not found";
+                result = "Report Not found";
                 genratedBIll.Text = result;
 
             }
