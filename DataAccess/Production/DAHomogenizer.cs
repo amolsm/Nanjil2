@@ -31,11 +31,11 @@ namespace DataAccess.Production
                 paramcollection.Add(new DBParameter("@HomogenizedQty", receive.HomogenizedQty));
                 paramcollection.Add(new DBParameter("@Technician", receive.Technician));
 
-<<<<<<< HEAD
+
                 //paramcollection.Add(new DBParameter("@Homogenized", receive.Homogenized));
-=======
+
                 paramcollection.Add(new DBParameter("@Homogenized", receive.Homogenized));
->>>>>>> origin/master
+
 
                 paramcollection.Add(new DBParameter("@Remarks", receive.Remarks));
                 paramcollection.Add(new DBParameter("@HomogenizerStatusId", receive.HomogenizerStatusId));

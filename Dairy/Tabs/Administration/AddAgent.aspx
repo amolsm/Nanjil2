@@ -939,7 +939,7 @@
                                     
                           <th>Map Slab</th>
                           <th>Edit</th>
-                          <th>Delete</th>
+                        <%--  <th>Delete</th>--%>
                                      
                            
                       </tr>
@@ -970,12 +970,12 @@
 
                          </td>
 
-                        <td> 
+                     <%--   <td> 
 
                              <asp:LinkButton ID="lblDelete" AlternateText="Delete" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand"
                                   ToolTip="Edit" runat="server" CommandArgument='<%#Eval("AgentID") %>'  CommandName="Delete"><i class="fa fa-trash"></i></asp:LinkButton>
 
-                         </td>
+                         </td>--%>
      
                     </tr>
                </ItemTemplate>
@@ -993,7 +993,7 @@
                                     <th>Address</th>
                                      
                            <th>Edit</th> 
-                            <th>Delete</th>                      
+                           <%-- <th>Delete</th> --%>                     
                       </tr>
                     </tfoot>
 
@@ -1093,7 +1093,7 @@
                         class="btn btn-default" data-dismiss="modal">
                             Close</button>
                     </div>
-                </div
+                </div>
             </div>
         </div>
 

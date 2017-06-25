@@ -168,17 +168,11 @@ namespace Dairy.Tabs.Cashier
                     sb.Append("</td>");
 
                     sb.Append("<td style='text-align:right'>");
-                    if (string.IsNullOrEmpty(row["totalreturnAmount"].ToString()))
-                    {
-                        totalamt += Convert.ToDouble(row["TotalAmount"]);
-                        sb.Append(Convert.ToDecimal(row["TotalAmount"]).ToString("#.00"));
-                    }
-                    else
-                    {
-                        double amt = (Convert.ToDouble(row["TotalAmount"]) - Convert.ToDouble(row["totalreturnAmount"]));
-                        sb.Append(Convert.ToDecimal(amt).ToString("#.00"));
-                        totalamt += amt;
-                    }
+                   
+                    double amt = (Convert.ToDouble(row["TotalAmount"]));
+                    sb.Append(Convert.ToDecimal(amt).ToString("#.00"));
+                    totalamt += amt;
+                 
                     sb.Append("</td>");
                     sb.Append("</tr>");
                  

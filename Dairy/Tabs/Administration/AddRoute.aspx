@@ -1,6 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="../../Site.Master" AutoEventWireup="true" CodeBehind="AddRoute.aspx.cs" Inherits="Dairy.Tabs.Administration.AddRount" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-         
+          <style type="text/css">
+        .listboxl {
+            height:100px !important;
+        }
+       .frmgrp {
+       margin-bottom:1px;
+       }
+       .frmgrp2 {
+       margin-bottom:15px;
+       }
+    </style> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -26,7 +36,7 @@
       <section class="content-header">
           <h1>
              Route Information
-            <small>Administration</small>  <%--<span style="font-size:medium"> [ Active Route = <asp:Label ID="lblActiveCount" runat="server"></asp:Label>]&nbsp; &nbsp;[ Deactive Route = <asp:Label ID="lblDeactive" runat="server"></asp:Label>]</span>--%>
+            <small>Administration</small>  <span style="font-size:medium"> [ Active Route = <asp:Label ID="lblActiveCount" runat="server"></asp:Label>]&nbsp; &nbsp;[ Deactive Route = <asp:Label ID="lblDeactive" runat="server"></asp:Label>]</span>
 
           </h1>
           <ol class="breadcrumb">
@@ -82,9 +92,9 @@
           <h3 class="box-title">Route Information </h3>
         </div><!-- /.box-header -->
         <div class="box-body">
-
+            <div class="row">
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
@@ -99,14 +109,16 @@
                           
                       </div> 
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtrouteName" class="form-control" ToolTip="Enter Route Name" placeholder="Route Name" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtrouteName" class="form-control" ToolTip="Enter Route Name" placeholder="Route Name" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtrouteName"
+        ErrorMessage="Route Name is Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
+              
                   </div><!-- /.form group -->
 
                      
@@ -114,21 +126,24 @@
                           
                       </div>  
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtdpRouteDesc" class="form-control" ToolTip="Enter Route Distance" placeholder="Route Distance " type="text" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtdpRouteDesc" class="form-control" ToolTip="Enter Route Distance" placeholder="Route Distance " type="text" runat="server" ></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtdpRouteDesc"
+        ErrorMessage="Route Distance is Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
+              
                   </div><!-- /.form group -->
 
                      
                        
                           
-                      </div>            
-             <div class="form-group">
+                      </div> 
+             <div class="col-lg-3">           
+             <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
@@ -138,30 +153,60 @@
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group --> 
-
+                 </div>
+            </div>
+            <div class="row">
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa  fa-code "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtDsicription" class="form-control" ToolTip="Enter Description" placeholder="Description" type="text" runat="server" required></asp:TextBox>                        
+                       <asp:TextBox ID="txtDsicription" class="form-control" ToolTip="Enter Description" placeholder="Description" type="text" runat="server"></asp:TextBox>                        
                     </div><!-- /.input group -->
-
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtDsicription"
+        ErrorMessage="Discription is Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
+              
                   </div><!-- /.form group -->
 
                      
                        
                           
                       </div>  
+
+              <div class="col-lg-3">
+                  <div class="form-group frmgrp">
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       <span style="color:red">&nbsp;*</span>
+                      </div>
+                      <asp:DropDownList ID="dpStatus" class="form-control" runat="server" ToolTip="Select Status">
+
+                           <asp:ListItem Value="0">---Select Status---</asp:ListItem>
+                           <asp:ListItem Value="1">Active</asp:ListItem>
+                           <asp:ListItem Value="2">Deactive</asp:ListItem>
+                       
+                       </asp:DropDownList>
+                         
+                    </div><!-- /.input group -->
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" InitialValue="0"  Display="Dynamic" ControlToValidate="dpStatus"
+        ErrorMessage="Select Valid Status" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator> 
+              
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div> 
              <div class="col-lg-3">
-                  <div class="form-group">
+                  <div class="form-group frmgrp">
                     <div class="input-group">
                       
                     
                       
                               <asp:Button ID="btnAddRoute" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Add" ValidationGroup="Save" OnClick="btnClick_btnAddRoute" />     
-                        <asp:Button ID="btnupdateroute" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnClick_btnUpdate" />           
+                        <asp:Button ID="btnupdateroute" class="btn btn-primary" runat="server" CommandName="MoveNext"    Text="Update" ValidationGroup="Save" OnClick="btnClick_btnUpdate" />   
+                          &nbsp;&nbsp;  <asp:Button ID="btnRefresh" class="btn btn-primary" runat="server"     Text="Refresh" ValidationGroup="none"  OnClick="btnRefresh_Click"  />                   
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -171,7 +216,7 @@
                           
                       </div> 
 
-
+                </div>
               
         </div><!-- /.box-body -->
       </div>
@@ -223,8 +268,9 @@
                         <th>ASO Name</th>
                         
                         <th>Created Date</th>
+                            <th>IsActive</th>
                            <th>Edit</th>
-                          <th>Delete</th>
+                         <%-- <th>Delete</th>--%>
                       </tr>
                     </thead>
                     <tbody>
@@ -239,6 +285,7 @@
                       <td><%# Eval("EmployeeName")%></td>
                      
                       <td><%# Eval("CreatedDate")%></td>
+                          <td><%# Eval("IsArchive")%></td>
                          <td>
 
                              <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 
@@ -246,10 +293,10 @@
                                                                     CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
 
                          </td>
-                         <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
+                        <%-- <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
                                                                     ToolTip="Delete" runat="server" CommandArgument='<%#Eval("routeid") %>'
                                                                     CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>
+</td>--%>
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
@@ -264,8 +311,9 @@
                         <th>ASO Name</th>
                        
                         <th>Created Date</th>
+                           <th>IsActive</th>
                            <th>Edit</th>
-                          <th>Delete</th>
+                        <%--  <th>Delete</th>--%>
                       </tr>
                     </tfoot>
 

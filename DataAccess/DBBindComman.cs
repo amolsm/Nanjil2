@@ -76,6 +76,15 @@ namespace DataAccess
             return _DBHelper.ExecuteDataSet("Sp_GetActiveAndDeactiveCount", paramCollection, CommandType.StoredProcedure);
 
         }
+        public DataSet GetAllActiveAndDeactiveCountForRoute(string TableName, string status)
+        {
+            DataSet DS = new DataSet();
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@TableName", TableName));
+            paramCollection.Add(new DBParameter("@status", status));
+            return _DBHelper.ExecuteDataSet("Sp_GetActiveAndDeactiveCountForRoute", paramCollection, CommandType.StoredProcedure);
+
+        }
 
         public DataSet GetDispSalesman(string Dates, int routeid, int BrandId)
         {

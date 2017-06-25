@@ -625,7 +625,7 @@
                                         <th>Phone</th>
                                          
                                         <th>Edit</th>
-                                        <th>Delete</th>
+                                       <%-- <th>Delete</th>--%>
                           
                       </tr>
                     </thead>
@@ -656,10 +656,10 @@
                                                                     CommandName="Edit"><i class="fa fa-edit"></i></asp:LinkButton>
 
                          </td>
-                         <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
+                     <%--    <td>   <asp:LinkButton ID="lbdelete" AlternateText="delete" ForeColor="Gray" OnItemCommand="lbdelete_ItemCommand" 
                                                                     ToolTip="Delete" runat="server" CommandArgument='<%#Eval("EmployeeID") %>'
                                                                     CommandName="delete"><i class="fa fa-trash"></i></asp:LinkButton>
-</td>
+</td>--%>
 
 
 
@@ -683,7 +683,7 @@
                                         <th>Phone</th>
                                          
                                         <th>Edit</th>
-                                        <th>Delete</th>
+                                    <%--    <th>Delete</th>--%>
                       </tr>
                     </tfoot>
 
@@ -768,5 +768,6 @@
                  }
              }
          }); // end Modernizr.load
+         
         </script>
 </asp:Content>

@@ -31,11 +31,11 @@ namespace Dairy.Tabs.Administration
 
         private void BindActiveAndDeactiveCount()
         {
-            DS = BindCommanData.GetAllActiveAndDeactiveCount("Userinfo", "Isactive");
-            //if (DS.Tables[0].Rows.Count != 0)
-            //    lblActiveCount.Text = DS.Tables[0].Rows[0]["Count"].ToString();
-            //if (DS.Tables[1].Rows.Count != 0)
-            //    lblDeactive.Text = DS.Tables[1].Rows[0]["Count"].ToString();
+            DS = BindCommanData.GetAllActiveAndDeactiveCountForRoute("RouteMaster", "IsArchive");
+            if (DS.Tables[0].Rows.Count != 0)
+                lblActiveCount.Text = DS.Tables[0].Rows[0]["Count"].ToString();
+            if (DS.Tables[1].Rows.Count != 0)
+                lblDeactive.Text = DS.Tables[1].Rows[0]["Count"].ToString();
         }
 
         protected void btnClick_btnAddRoute(object sender, EventArgs e)
@@ -49,7 +49,15 @@ namespace Dairy.Tabs.Administration
             route.RouteDesc = txtdpRouteDesc.Text;
             route.Discription = txtDsicription.Text;
             route.CreatedBy = GlobalInfo.Userid;
-            route.IsActive = true;
+            if (dpStatus.SelectedItem.Value == "1")
+            {
+                route.IsActive = true;
+            }
+            if (dpStatus.SelectedItem.Value == "2")
+            {
+                route.IsActive = false;
+            }
+            
             route.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             route.ModifiedBy = GlobalInfo.Userid;
             route.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
@@ -93,7 +101,14 @@ namespace Dairy.Tabs.Administration
             route.RouteCode = txtRouteCode.Text;
             route.RouteName = txtrouteName.Text;
             route.ASOID = Convert.ToInt32(dpASOID.SelectedItem.Value);
-            route.IsActive = true;
+            if (dpStatus.SelectedItem.Value == "1")
+            {
+                route.IsActive = true;
+            }
+            if (dpStatus.SelectedItem.Value == "2")
+            {
+                route.IsActive = false;
+            }
             route.RouteDesc = txtdpRouteDesc.Text;
             route.Discription = txtDsicription.Text;
             route.CreatedBy = GlobalInfo.Userid;
@@ -146,6 +161,7 @@ namespace Dairy.Tabs.Administration
             txtrouteName.Text = string.Empty;
             txtDsicription.Text = string.Empty;
             dpASOID.ClearSelection();
+            dpStatus.ClearSelection();
             txtdpRouteDesc.Text = string.Empty;
         }
         public void BindRouteList()
@@ -220,7 +236,15 @@ namespace Dairy.Tabs.Administration
                     dpASOID.Items.FindByValue(DS.Tables[0].Rows[0]["ASOid"].ToString()).Selected = true;
                 }
                 txtDsicription.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[0]["Discription"].ToString()) ? string.Empty : DS.Tables[0].Rows[0]["Discription"].ToString();
-
+                dpStatus.ClearSelection();
+                if (DS.Tables[0].Rows[0]["IsArchive"].ToString() == "True")
+                {
+                    dpStatus.Items.FindByValue("1").Selected = true;
+                }
+                if (DS.Tables[0].Rows[0]["IsArchive"].ToString() == "False")
+                {
+                    dpStatus.Items.FindByValue("2").Selected = true;
+                }
 
             }
         }
@@ -236,7 +260,14 @@ namespace Dairy.Tabs.Administration
             route.RouteDesc = string.Empty;
             route.CreatedBy = GlobalInfo.Userid;
             route.Discription = txtDsicription.Text;
-            route.IsActive = false;
+            if (dpStatus.SelectedItem.Value == "1")
+            {
+                route.IsActive = true;
+            }
+            if (dpStatus.SelectedItem.Value == "2")
+            {
+                route.IsActive = false;
+            }
             route.Createddate = DateTime.Now.ToString("dd-MM-yyyy");
             route.ModifiedBy = GlobalInfo.Userid;
             route.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
@@ -267,6 +298,11 @@ namespace Dairy.Tabs.Administration
                 pnlError.Update();
 
             }
+        }
+
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddRoute.aspx");
         }
     }
 }
