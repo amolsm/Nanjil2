@@ -129,7 +129,7 @@
                       <div class="input-group-addon">
                        <i class="fa fa-rode"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:TextBox ID="txtBeginBillNo" class="form-control" placeholder="StartRange Of BillNo." runat="server"  ToolTip="Enter Bill Number"  ></asp:TextBox>           
+                      <asp:TextBox ID="txtBeginBillNo" class="form-control" placeholder="Bill No." runat="server"  ToolTip="Enter Bill Number"  ></asp:TextBox>           
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->

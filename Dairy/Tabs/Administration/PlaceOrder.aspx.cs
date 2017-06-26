@@ -237,7 +237,7 @@ namespace Dairy.Tabs.Administration
 
             //  DS = BindCommanData.BindTypeDropDwon("Products.productId", "ProductName+' '+Productcode as product", " TypeMaster ", " BindSlab", " TypeMaster.TypeID = BindSlab.TypeID ", "BindSlab.AgentID = 110 ");
 
-            DS = BindCommanData.BindTypeDropDwon("Products.productId", "Products.ProductName+' '+Products.Productcode as product", "Products", "BindSlab", "Products.TypeID = Bindslab.TypeID", "Products.TypeID =" + Convert.ToInt32(dpAgentProductType.SelectedItem.Value) + " and BindSlab.AgentID =" + Convert.ToInt32(dpAgent.SelectedItem.Value) + " and BindSlab.SlabID = Products.SlabID and BindSlab.IsArchive=0 order by Products.ProductName");
+            DS = BindCommanData.BindTypeDropDwon("Products.productId", "Products.ProductName+' '+Products.Productcode as product", "Products", "BindSlab", "Products.TypeID = Bindslab.TypeID", "Products.TypeID =" + Convert.ToInt32(dpAgentProductType.SelectedItem.Value) + " and BindSlab.AgentID =" + Convert.ToInt32(dpAgent.SelectedItem.Value) + " and BindSlab.SlabID = Products.SlabID and BindSlab.IsArchive=0 and Products.IsArchive=0 order by Products.ProductName");
 
             // DS = BindCommanData.BindCommanDropDwon("Products.ProductID", "Commodity.CommodityName+' '+Products.ProductName as product", "Commodity, Products", "   Products.CommodityID = Commodity.CommodityID");
 

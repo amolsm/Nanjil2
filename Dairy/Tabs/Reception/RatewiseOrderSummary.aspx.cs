@@ -273,18 +273,27 @@ namespace Dairy.Tabs.Reception
 
                     sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:center'>");
 
-                    double noofscheme;
+                    double noofscheme = 0;
+                    double retSchemeNo = 0, retSchemeAmt = 0;
                     try
                     {
-                        noofscheme = (Convert.ToDouble(DS.Tables[3].Rows[0]["NumberOfScheme"]));
-                        sb.Append("<b>" + noofscheme + "</b>");
+                        retSchemeNo = (Convert.ToDouble(DS.Tables[7].Rows[0]["nos"]));
+                        retSchemeAmt = (Convert.ToDouble(DS.Tables[7].Rows[0]["total"]));
+
+                    }
+                    catch (Exception) { retSchemeNo = 0; retSchemeAmt = 0; }
+
+                    try
+                    {
+                        noofscheme = (Convert.ToDouble(DS.Tables[3].Rows[0]["NumberOfScheme"])) ;
+                        
                     }
                     catch (Exception ex)
                     {
-
+                        noofscheme = 0;
                     }
-
-
+                    noofscheme = noofscheme + retSchemeNo;
+                    sb.Append("<b>" + noofscheme + "</b>");
                     sb.Append("</td>");
 
                     sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:right'>");
@@ -295,15 +304,16 @@ namespace Dairy.Tabs.Reception
                     try
                     {
                         totalscheme = (string.IsNullOrEmpty(DS.Tables[3].Rows[0]["TotalScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[3].Rows[0]["TotalScheme"]));
-                        sb.Append("<b>" + (Convert.ToDecimal(totalscheme).ToString("#0.00")) + "</b>");
+                        
 
                     }
                     catch (Exception ex)
                     {
-
+                        totalscheme = 0;
                     }
+                    totalscheme = totalscheme + retSchemeAmt;
 
-
+                    sb.Append("<b>" + (Convert.ToDecimal(totalscheme).ToString("#0.00")) + "</b>");
                     sb.Append("</td>");
                     sb.Append("</tr>");
 

@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-D:\NanjilCode2\Nanjil2\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
-D:\NanjilCode2\Nanjil2\DataAccess\bin\DataAccess.dll
-D:\NanjilCode2\Nanjil2\DataAccess\bin\DataAccess.pdb
-D:\NanjilCode2\Nanjil2\DataAccess\bin\Comman.dll
-D:\NanjilCode2\Nanjil2\DataAccess\bin\Model.dll
-D:\NanjilCode2\Nanjil2\DataAccess\bin\Comman.pdb
-D:\NanjilCode2\Nanjil2\DataAccess\bin\Model.pdb
-D:\NanjilCode2\Nanjil2\DataAccess\obj\Debug\DataAccess.dll
-D:\NanjilCode2\Nanjil2\DataAccess\obj\Debug\DataAccess.pdb
-=======
 D:\NanjilCode2\Nanjil\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 D:\NanjilCode2\Nanjil\DataAccess\bin\DataAccess.dll
 D:\NanjilCode2\Nanjil\DataAccess\bin\DataAccess.pdb
@@ -18,4 +7,3 @@ D:\NanjilCode2\Nanjil\DataAccess\bin\Comman.pdb
 D:\NanjilCode2\Nanjil\DataAccess\bin\Model.pdb
 D:\NanjilCode2\Nanjil\DataAccess\obj\Debug\DataAccess.dll
 D:\NanjilCode2\Nanjil\DataAccess\obj\Debug\DataAccess.pdb
->>>>>>> origin/master

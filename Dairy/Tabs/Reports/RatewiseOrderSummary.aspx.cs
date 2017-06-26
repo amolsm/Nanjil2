@@ -59,7 +59,7 @@ namespace Dairy.Tabs.Reports
                 sb.Append(".tg .tg-yw4l{vertical-align:top}");
                 sb.Append(".tg .tg-baqh{text-align:center;vertical-align:top}");
                 sb.Append("</style>");
-                sb.Append("<table class='tg style1' style='align:center;'>");
+                sb.Append("<table class='tg style1'  align:center;'>");
                 sb.Append("<colgroup>");
                 sb.Append("<col style = 'width:120px'>");
                 sb.Append("<col style = 'width:160px'>");
@@ -198,7 +198,6 @@ namespace Dairy.Tabs.Reports
 
                     sb.Append("</td>");
                     sb.Append("</tr>");
-                 
 
 
                     foreach (DataRow row in DS.Tables[0].Rows)
@@ -250,7 +249,7 @@ namespace Dairy.Tabs.Reports
                 if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1 || Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
                 {
                     sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '9'> &nbsp; </td> </tr>");
-                    sb.Append("<tr style='border-bottom:1px solid';page-break-inside:avoid;>");
+                    sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'>");
 
 
                     sb.Append("<td class='tg-yw4l' colspan='4'  style='text-align:left'>");
@@ -262,18 +261,27 @@ namespace Dairy.Tabs.Reports
 
                     sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:center'>");
 
-                    double noofscheme;
+                    double noofscheme = 0;
+                    double retSchemeNo = 0, retSchemeAmt = 0;
+                    try
+                    {
+                        retSchemeNo = (Convert.ToDouble(DS.Tables[7].Rows[0]["nos"]));
+                        retSchemeAmt = (Convert.ToDouble(DS.Tables[7].Rows[0]["total"]));
+
+                    }
+                    catch (Exception) { retSchemeNo = 0; retSchemeAmt = 0; }
+
                     try
                     {
                         noofscheme = (Convert.ToDouble(DS.Tables[3].Rows[0]["NumberOfScheme"]));
-                        sb.Append("<b>" + noofscheme + "</b>");
+
                     }
                     catch (Exception ex)
                     {
-
+                        noofscheme = 0;
                     }
-
-
+                    noofscheme = noofscheme + retSchemeNo;
+                    sb.Append("<b>" + noofscheme + "</b>");
                     sb.Append("</td>");
 
                     sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:right'>");
@@ -284,15 +292,16 @@ namespace Dairy.Tabs.Reports
                     try
                     {
                         totalscheme = (string.IsNullOrEmpty(DS.Tables[3].Rows[0]["TotalScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[3].Rows[0]["TotalScheme"]));
-                        sb.Append("<b>" + (Convert.ToDecimal(totalscheme).ToString("#0.00")) + "</b>");
+
 
                     }
                     catch (Exception ex)
                     {
-
+                        totalscheme = 0;
                     }
+                    totalscheme = totalscheme + retSchemeAmt;
 
-
+                    sb.Append("<b>" + (Convert.ToDecimal(totalscheme).ToString("#0.00")) + "</b>");
                     sb.Append("</td>");
                     sb.Append("</tr>");
 

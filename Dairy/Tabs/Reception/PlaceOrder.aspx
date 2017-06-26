@@ -27,7 +27,7 @@
 
         <section class="content-header">
           <h1>
-             Place Order
+             Daily Order
             <small>Reception</small> 
 
           </h1>

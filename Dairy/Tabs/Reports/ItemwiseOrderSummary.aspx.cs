@@ -172,10 +172,10 @@ namespace Dairy.Tabs.Reports
 
 
                     sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
-                    sb.Append(row["Quantity"].ToString() );
+                    sb.Append(row["Quantity"].ToString());
                     sb.Append("</td>");
                     sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
-                    sb.Append( row["UnitName"].ToString());
+                    sb.Append(row["UnitName"].ToString());
                     sb.Append("</td>");
 
                     sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
@@ -188,7 +188,7 @@ namespace Dairy.Tabs.Reports
 
                 }
 
-                if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1|| Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
+                if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1 || Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
                 {
                     sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '6'> &nbsp; </td> </tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
@@ -200,16 +200,25 @@ namespace Dairy.Tabs.Reports
                     sb.Append("&nbsp;");
                     sb.Append("</td>");
                     sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:center'>");
-                    double noofscheme;
+                    double noofscheme = 0;
+                    double retSchemeNo = 0, retSchemeAmt = 0;
+                    try
+                    {
+                        retSchemeNo = (Convert.ToDouble(DS.Tables[6].Rows[0]["nos"]));
+                        retSchemeAmt = (Convert.ToDouble(DS.Tables[6].Rows[0]["total"]));
+
+                    }
+                    catch (Exception) { retSchemeNo = 0; retSchemeAmt = 0; }
+
                     try
                     {
                         noofscheme = (string.IsNullOrEmpty(DS.Tables[4].Rows[0]["NumberOfScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[4].Rows[0]["NumberOfScheme"]));
-                        sb.Append("<b>" + noofscheme + "</b>");
+
                     }
                     catch (Exception ex)
-                    { }
-
-
+                    { noofscheme = 0; }
+                    noofscheme = noofscheme + retSchemeNo;
+                    sb.Append("<b>" + noofscheme + "</b>");
 
                     sb.Append("</td>");
 
@@ -220,13 +229,15 @@ namespace Dairy.Tabs.Reports
                     try
                     {
                         totalscheme = (Convert.ToDouble(DS.Tables[4].Rows[0]["TotalScheme"]));
-                        sb.Append("<b>" + (Convert.ToDecimal(totalscheme).ToString("#0.00")) + "</b>");
+
 
                     }
                     catch (Exception ex)
                     {
-
+                        totalscheme = 0;
                     }
+                    totalscheme = totalscheme + retSchemeAmt;
+                    sb.Append("<b>" + (Convert.ToDecimal(totalscheme).ToString("#0.00")) + "</b>");
                     sb.Append("</td>");
                     sb.Append("</tr>");
 
@@ -275,9 +286,9 @@ namespace Dairy.Tabs.Reports
 
                     totalagentcreditamount = (string.IsNullOrEmpty(DS.Tables[5].Rows[0]["AgentCreditAmount"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[5].Rows[0]["AgentCreditAmount"]));
 
-                 
-                    }
-                    catch (Exception ex)
+
+                }
+                catch (Exception ex)
                 { string msg = ex.ToString(); }
                 totalstaffamount += totalagentcreditamount;
                 sb.Append("<b>" + (Convert.ToDecimal(totalstaffamount).ToString("#0.00")) + "</b>");
