@@ -55,7 +55,10 @@ namespace Dairy.Tabs.Marketing
                 flag = 0;
             }
             else { flag = 1; }
-           
+            DateTime olddate = Convert.ToDateTime(txtStartDate.Text);
+            DateTime newdate = Convert.ToDateTime(txtEndDate.Text);
+            TimeSpan ts = newdate - olddate;
+            int differenceInDays = ts.Days + 1;
             string result = string.Empty;
             DS = new DataSet();
             marketingdata = new MarketingData();
@@ -237,7 +240,7 @@ namespace Dairy.Tabs.Marketing
 
                             sb.Append("<td style='text-align:right'>");
                             double avg1;
-                            try { avg1 = Convert.ToDouble(rows["AvgBill"]); } catch { avg1 = 0; };
+                            avg1 = amt1 / differenceInDays;
                             totalavg += avg1;
                             sb.Append(Convert.ToDecimal(avg1).ToString("#.##"));
                             sb.Append("</td>");
