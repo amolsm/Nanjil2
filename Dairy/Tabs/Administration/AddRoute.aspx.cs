@@ -31,11 +31,11 @@ namespace Dairy.Tabs.Administration
 
         private void BindActiveAndDeactiveCount()
         {
-            DS = BindCommanData.GetAllActiveAndDeactiveCountForRoute("RouteMaster", "IsArchive");
-            if (DS.Tables[0].Rows.Count != 0)
-                lblActiveCount.Text = DS.Tables[0].Rows[0]["Count"].ToString();
-            if (DS.Tables[1].Rows.Count != 0)
-                lblDeactive.Text = DS.Tables[1].Rows[0]["Count"].ToString();
+            //DS = BindCommanData.GetAllActiveAndDeactiveCountForRoute("RouteMaster", "IsArchive");
+            //if (DS.Tables[0].Rows.Count != 0)
+            //    lblActiveCount.Text = DS.Tables[0].Rows[0]["Count"].ToString();
+            //if (DS.Tables[1].Rows.Count != 0)
+            //    lblDeactive.Text = DS.Tables[1].Rows[0]["Count"].ToString();
         }
 
         protected void btnClick_btnAddRoute(object sender, EventArgs e)
