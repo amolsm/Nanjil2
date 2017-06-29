@@ -409,7 +409,7 @@ namespace Dairy.Tabs.Cashier
             }
             if (dpReportType.SelectedItem.Value == "2")
             {
-                DS = BindCommanData.BindCommanDropDwon("AgentID as ID", "AgentCode+' '+AgentName as Name", "Agentmaster", "IsActive=1 and PaymentMode='Monthly'");
+                DS = BindCommanData.BindCommanDropDwon("AgentID as ID", "AgentCode+' '+AgentName as Name", "Agentmaster", "PaymentMode='Monthly'");
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {
                     dpEmployee.DataSource = DS;
