@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -15,28 +16,28 @@ namespace Dairy.Tabs.Administration
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Context.Session != null && Context.Session.IsNewSession == true &&
+    Page.Request.Headers["Cookie"] != null &&
+    Page.Request.Headers["Cookie"].IndexOf("ASP.NET_SessionId") >= 0)
+            {
+                // session has timed out, log out the user
+                if (Page.Request.IsAuthenticated)
+                {
+                    FormsAuthentication.SignOut();
+                }
+                // redirect to timeout page
+                Page.Response.Redirect("/Authentication/LoginT.aspx");
+            }
 
             if (!IsPostBack)
             {
-                bindDropDown();
-                txtOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+
+
             }
 
         }
 
-        private void bindDropDown()
-        {
 
-            DataSet DS = new DataSet();
-            DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "routeMaster", "IsArchive=1 ");
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
-                dpagentRoute.DataSource = DS;
-                dpagentRoute.DataBind();
-                dpagentRoute.Items.Insert(0, new ListItem("--Select Agent Route  --", "0"));
-            }
-            DS.Clear();
-        }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
@@ -44,8 +45,10 @@ namespace Dairy.Tabs.Administration
             Invoice invoice = new Invoice();
             InvoiceData invoiceData = new InvoiceData();
 
-            invoice.orderDate = Convert.ToDateTime(txtOrderDate.Text).ToString("dd-MM-yyyy");
-            invoice.ROuteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
+            //invoice.orderDate = Convert.ToDateTime(txtOrderDate.Text).ToString("dd-MM-yyyy");
+            //invoice.ROuteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
+
+            invoice.ID = Convert.ToInt32(txtDispatchId.Text);
 
             DS = invoiceData.GetSchemeRoutewise(invoice);
             if (!Comman.Comman.IsDataSetEmpty(DS))
@@ -124,9 +127,8 @@ namespace Dairy.Tabs.Administration
                 Invoice invoice = new Invoice();
                 //InvoiceData invoiceData = new InvoiceData();
 
-                invoice.orderDate = Convert.ToDateTime(txtOrderDate.Text).ToString("dd-MM-yyyy");
-                invoice.ROuteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
 
+                invoice.ID = Convert.ToInt32(txtDispatchId.Text);
                 DS = invoiceData.GetSchemeRoutewise(invoice);
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {

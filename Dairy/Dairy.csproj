@@ -432,9 +432,6 @@
     <Content Include="Theme\img\logo2.png" />
     <Content Include="Theme\logincss\login.css" />
     <Content Include="Theme\logincss\loginbody.css" />
-    <Content Include="Theme\obj\Debug\Dairy.csproj.FileListAbsolute.txt" />
-    <Content Include="Theme\obj\Debug\Dairy.dll" />
-    <Content Include="Theme\obj\Debug\Dairy.pdb" />
     <Content Include="Theme\plugins\bootstrap-slider\bootstrap-slider.js" />
     <Content Include="Theme\plugins\bootstrap-slider\slider.css" />
     <Content Include="Theme\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.js" />
@@ -3134,7 +3131,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Tabs\DespatchM\" />
-    <Folder Include="Theme\obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
@@ -3330,7 +3326,6 @@
     <Content Include="Theme\build\less\timeline.less" />
     <Content Include="Theme\build\less\users-list.less" />
     <Content Include="Theme\build\less\variables.less" />
-    <Content Include="Theme\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="Theme\plugins\ckeditor\CHANGES.md" />
     <Content Include="Theme\plugins\ckeditor\LICENSE.md" />
     <Content Include="Theme\plugins\ckeditor\plugins\scayt\LICENSE.md" />

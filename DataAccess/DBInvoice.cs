@@ -617,8 +617,9 @@ namespace DataAccess
         {
 
             DBParameterCollection paramCollection = new DBParameterCollection();
-            paramCollection.Add(new DBParameter("@OrderDate ", invoice.orderDate));
-            paramCollection.Add(new DBParameter("@RouteId", invoice.ROuteID));
+            //paramCollection.Add(new DBParameter("@OrderDate ", invoice.orderDate));
+            //paramCollection.Add(new DBParameter("@RouteId", invoice.ROuteID));
+            paramCollection.Add(new DBParameter("@ID", invoice.ID));
             return _DBHelper.ExecuteDataSet("Sp_GetSchemeRoutewise", paramCollection, CommandType.StoredProcedure);
 
         }

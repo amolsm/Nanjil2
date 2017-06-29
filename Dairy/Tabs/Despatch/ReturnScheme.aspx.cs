@@ -31,26 +31,13 @@ namespace Dairy.Tabs.Despatch
 
             if (!IsPostBack)
             {
-               // Page.ClientScript.RegisterStartupScript(this.GetType(), "open", "window.open('ReturnScheme.aspx','','fullscreen=yes');", true);
-                bindDropDown();
-                txtOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+               
+                
             }
 
         }
 
-        private void bindDropDown()
-        {
-
-            DataSet DS = new DataSet();
-            DS = BindCommanData.BindCommanDropDwon("RouteID ", "RouteCode +' '+RouteName as Name  ", "routeMaster", "IsArchive=1 ");
-            if (!Comman.Comman.IsDataSetEmpty(DS))
-            {
-                dpagentRoute.DataSource = DS;
-                dpagentRoute.DataBind();
-                dpagentRoute.Items.Insert(0, new ListItem("--Select Agent Route  --", "0"));
-            }
-            DS.Clear();
-        }
+       
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
@@ -58,8 +45,10 @@ namespace Dairy.Tabs.Despatch
             Invoice invoice = new Invoice();
             InvoiceData invoiceData = new InvoiceData();
 
-            invoice.orderDate = Convert.ToDateTime(txtOrderDate.Text).ToString("dd-MM-yyyy");
-            invoice.ROuteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
+            //invoice.orderDate = Convert.ToDateTime(txtOrderDate.Text).ToString("dd-MM-yyyy");
+            //invoice.ROuteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
+
+            invoice.ID = Convert.ToInt32(txtDispatchId.Text);
 
             DS = invoiceData.GetSchemeRoutewise(invoice);
             if (!Comman.Comman.IsDataSetEmpty(DS))
@@ -138,9 +127,8 @@ namespace Dairy.Tabs.Despatch
                 Invoice invoice = new Invoice();
                 //InvoiceData invoiceData = new InvoiceData();
 
-                invoice.orderDate = Convert.ToDateTime(txtOrderDate.Text).ToString("dd-MM-yyyy");
-                invoice.ROuteID = Convert.ToInt32(dpagentRoute.SelectedItem.Value);
 
+                invoice.ID = Convert.ToInt32(txtDispatchId.Text);
                 DS = invoiceData.GetSchemeRoutewise(invoice);
                 if (!Comman.Comman.IsDataSetEmpty(DS))
                 {

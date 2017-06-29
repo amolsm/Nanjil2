@@ -76,13 +76,13 @@
         </div><!-- /.box-header -->
         <div class="box-body">
 
-             <div class="col-lg-3">
+               <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
                         <i class="fa fa-road "></i><span style="color:red">&nbsp;*</span>
                       </div>
-                       <asp:TextBox ID="txtOrderDate" class="form-control"  type="date" placeholder="Dispatched Date" ToolTip="Order Date" runat="server" required ValidationGroup="search"></asp:TextBox>                        
+                       <asp:TextBox ID="txtDispatchId" class="form-control" type="number" placeholder="Dispatched Id" ToolTip="Dispatched Id" runat="server" required ValidationGroup="search"></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -91,19 +91,6 @@
                        
                           
                       </div> 
-
-            <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                       <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
-                      </div>
-                      <asp:DropDownList ID="dpagentRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server"  > 
-                       </asp:DropDownList>
-                         
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-                         </div>
 
             
             <div class="col-lg-3">
