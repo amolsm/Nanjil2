@@ -155,12 +155,10 @@ namespace Dairy.Tabs.Cashier
                         // sb.Append("<tr  style='page-break-inside:avoid; align:center;'> <td colspan = '9' > &nbsp; </td> </tr>");
 
                         sb.Append("<tr>");
-                        sb.Append("<td>");
-                        sb.Append("<b>" + row2["OrderDate"].ToString() + "</b>");
+                        sb.Append("<td colspan='2'>");
+                        sb.Append("<b>" + row2["OrderDate"].ToString() + "&nbsp;" + row2["time"].ToString()+"</b>");
                         sb.Append("</td>");
-                        sb.Append("<td>");
-                        sb.Append("&nbsp;");
-                        sb.Append("</td>");
+                      
                         sb.Append("<td>");
                         if (dpEmployee.SelectedItem.Value == "0")
                         {
@@ -332,12 +330,10 @@ namespace Dairy.Tabs.Cashier
                        // sb.Append("<tr  style='page-break-inside:avoid; align:center;'> <td colspan = '9' > &nbsp; </td> </tr>");
 
                         sb.Append("<tr>");
-                        sb.Append("<td>");
-                        sb.Append("<b>" + row3["OrderDate"].ToString() + "</b>");
+                        sb.Append("<td colspan='2'>");
+                        sb.Append("<b>" + row3["OrderDate"].ToString() + "&nbsp;"+row3["time"].ToString() + "</b>");
                         sb.Append("</td>");
-                        sb.Append("<td>");
-                        sb.Append("&nbsp;");
-                        sb.Append("</td>");
+                        
                         sb.Append("<td>");
                         if (dpEmployee.SelectedItem.Value=="0")
                         {
