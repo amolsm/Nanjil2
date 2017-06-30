@@ -51,6 +51,15 @@ namespace DataAccess
             return _DBHelper.ExecuteDataSet("sp_EditReturnSchemeRoleback", paramCollection, CommandType.StoredProcedure);
         }
 
+        public DataSet BillwiseSalesForCashierSummaryByDate(string StartDate, string EndDate, int routeID)
+        {
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@DispatchBeginDate", StartDate));
+            paramCollection.Add(new DBParameter("@DispatchEndDate", EndDate));
+            paramCollection.Add(new DBParameter("@RouteID", routeID));
+            return _DBHelper.ExecuteDataSet("sp_GetReportBillwiseSalesSummaryForCashier", paramCollection, CommandType.StoredProcedure);
+        }
+
         public DataSet AgentSchemeSummaryOpeningClosing(string startDate, string endDate, int routeId, int agentId)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
@@ -77,6 +86,16 @@ namespace DataAccess
             paramCollection.Add(new DBParameter("@BrandID", BrandID));
             return _DBHelper.ExecuteDataSet("sp_GetReportSalesAnalysisitemwise", paramCollection, CommandType.StoredProcedure);
         }
+        public DataSet SalesAnalysisitemwiseByDateForCashier(string StartDate, string EndDate, int routeID, int BrandID)
+        {
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@DispatchBeginDate", StartDate));
+            paramCollection.Add(new DBParameter("@DispatchEndDate", EndDate));
+            paramCollection.Add(new DBParameter("@RouteID", routeID));
+            paramCollection.Add(new DBParameter("@BrandID", BrandID));
+            return _DBHelper.ExecuteDataSet("sp_GetReportSalesAnalysisitemwiseForCashier", paramCollection, CommandType.StoredProcedure);
+        }
+
         public DataSet BillwiseSalesSummaryByDate(string StartDate, string EndDate, int routeID)
         {
             DBParameterCollection paramCollection = new DBParameterCollection();
@@ -104,6 +123,15 @@ namespace DataAccess
             paramCollection.Add(new DBParameter("@RouteID", routeID));
             paramCollection.Add(new DBParameter("@BrandID", BrandID));
             return _DBHelper.ExecuteDataSet("sp_GetReportGenrateItemwiseSalesSummary", paramCollection, CommandType.StoredProcedure);
+        }
+        public DataSet GenrateItemwiseSalesSummaryForCashierByDate(string StartDate, string EndDate, int routeID, int BrandID)
+        {
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@DispatchBeginDate", StartDate));
+            paramCollection.Add(new DBParameter("@DispatchEndDate", EndDate));
+            paramCollection.Add(new DBParameter("@RouteID", routeID));
+            paramCollection.Add(new DBParameter("@BrandID", BrandID));
+            return _DBHelper.ExecuteDataSet("sp_GetReportGenrateItemwiseSalesSummaryForCashier", paramCollection, CommandType.StoredProcedure);
         }
 
         public DataSet GenrateReportByDate(string StartDate, string EndDate, int routeID, int BrandID)
@@ -184,6 +212,16 @@ namespace DataAccess
             paramCollection.Add(new DBParameter("@RouteID", routeID));
             paramCollection.Add(new DBParameter("@BrandID", BrandID));
             return _DBHelper.ExecuteDataSet("sp_GetReportGenerateRoteSalesSummary", paramCollection, CommandType.StoredProcedure);
+        }
+
+        public DataSet GenerateRoteSalesSummaryForCashier(string StartDate, string EndDate, int routeID, int BrandID)
+        {
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@OrderBeginDate", StartDate));
+            paramCollection.Add(new DBParameter("@OrderEndDate", EndDate));
+            paramCollection.Add(new DBParameter("@RouteID", routeID));
+            paramCollection.Add(new DBParameter("@BrandID", BrandID));
+            return _DBHelper.ExecuteDataSet("sp_GetReportGenerateRoteSalesSummaryForCashier", paramCollection, CommandType.StoredProcedure);
         }
 
 

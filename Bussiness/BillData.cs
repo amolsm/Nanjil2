@@ -29,6 +29,10 @@ namespace Bussiness
         {
             return dbbill.SalesAnalysisitemwiseByDate(StartDate, EndDate, routeID, BrandID);
         }
+        public DataSet SalesAnalysisitemwiseByDateForCashier(string StartDate, string EndDate, int routeID, int BrandID)
+        {
+            return dbbill.SalesAnalysisitemwiseByDateForCashier(StartDate, EndDate, routeID, BrandID);
+        }
         public DataSet BillwiseSalesSummaryByDate(string StartDate, string EndDate, int routeID)
         {
             return dbbill.BillwiseSalesSummaryByDate(StartDate, EndDate, routeID);
@@ -42,6 +46,16 @@ namespace Bussiness
         public DataSet AgentSchemeSummaryOpeningClosing(string StartDate, string EndDate, int RouteId, int AgentId)
         {
             return dbbill.AgentSchemeSummaryOpeningClosing(StartDate, EndDate, RouteId, AgentId);
+        }
+
+        public DataSet BillwiseSalesForCashierSummaryByDate(string StartDate, string EndDate, int routeID)
+        {
+            return dbbill.BillwiseSalesForCashierSummaryByDate(StartDate, EndDate, routeID);
+        }
+
+        public DataSet GenrateItemwiseSalesSummaryForCashierByDate(string StartDate, string EndDate, int routeID, int BrandID)
+        {
+            return dbbill.GenrateItemwiseSalesSummaryForCashierByDate(StartDate, EndDate, routeID, BrandID);
         }
 
         public DataSet AgentSchemeDetails(string StartDate, string EndDate, int routeID)
@@ -85,7 +99,10 @@ namespace Bussiness
         {
             return dbbill.GenerateRoteSalesSummary(StartDate, EndDate, routeID, BrandID);
         }
-
+        public DataSet GenerateRoteSalesSummaryForCashier(string StartDate, string EndDate, int routeID, int BrandID)
+        {
+            return dbbill.GenerateRoteSalesSummaryForCashier(StartDate, EndDate, routeID, BrandID);
+        }
         public DataSet GenrateBillForBoothByDate(string Date, int routeID)
         {
             return dbbill.GenrateBillForBoothByDate(Date, routeID);
