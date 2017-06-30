@@ -252,6 +252,7 @@ namespace Dairy.Tabs.Sales
                         upMain.Update();
                         pnlBills.Visible = false;
                         txtQtyEmployee.Text = "";
+                        dpEmployee.Enabled = false;
                     }
                     else
                     {

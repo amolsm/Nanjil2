@@ -241,6 +241,7 @@ namespace Dairy.Tabs.OfflineBooth
                         upMain.Update();
                         pnlBills.Visible = false;
                         txtQtyEmployee.Text = "";
+                        dpEmployee.Enabled = false;
                     }
                     else
                     {

@@ -62,7 +62,7 @@ namespace Dairy.Tabs.Administration
                 sb.Append(".tg .tg-yw4l{vertical-align:top}");
                 sb.Append(".tg .tg-baqh{text-align:center;vertical-align:top}");
                 sb.Append("</style>");
-                sb.Append("<table class='tg style1' style='page-break-inside:avoid; align:center;'>");
+                sb.Append("<table class='tg style1' style='align:center;'>");
                 sb.Append("<colgroup>");
                 sb.Append("<col style = 'width:200px'>");
                 sb.Append("<col style = 'width:200px'>");
@@ -138,30 +138,35 @@ namespace Dairy.Tabs.Administration
                 int count = 1;
                 foreach (DataRow row in DS.Tables[0].Rows)
                 {
-                    sb.Append("<tr>");
+                    if (Convert.ToDecimal(row["StockAvailable"]) == 0)
+                    { }
+                    else
+                    {
+                        sb.Append("<tr>");
 
-                    sb.Append("<td  class='tg-yw4l' style='text-align:left'>");
-                    sb.Append(count.ToString());
-                    sb.Append("</td>");
+                        sb.Append("<td  class='tg-yw4l' style='text-align:left'>");
+                        sb.Append(count.ToString());
+                        sb.Append("</td>");
 
-                    sb.Append("<td  class='tg-yw4l' style='text-align:left'>");
-                    sb.Append(row["TypeName"].ToString());
-                    sb.Append("</td>");
+                        sb.Append("<td  class='tg-yw4l' style='text-align:left'>");
+                        sb.Append(row["TypeName"].ToString());
+                        sb.Append("</td>");
 
-                    sb.Append("<td  class='tg-yw4l' style='text-align:left'>");
-                    sb.Append(row["CommodityName"].ToString());
-                    sb.Append("</td>");
+                        sb.Append("<td  class='tg-yw4l' style='text-align:left'>");
+                        sb.Append(row["CommodityName"].ToString());
+                        sb.Append("</td>");
 
-                    sb.Append("<td  class='tg-yw4l' style='text-align:left'>");
-                    sb.Append(row["ProductName"].ToString());
-                    sb.Append("</td>");
+                        sb.Append("<td  class='tg-yw4l' style='text-align:left'>");
+                        sb.Append(row["ProductName"].ToString());
+                        sb.Append("</td>");
 
-                    sb.Append("<td  class='tg-yw4l' style='text-align:right'>");
-                    sb.Append(row["StockAvailable"].ToString());
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
+                        sb.Append("<td  class='tg-yw4l' style='text-align:right'>");
+                        sb.Append(row["StockAvailable"].ToString() + "  " + row["uname"].ToString());
+                        sb.Append("</td>");
+                        sb.Append("</tr>");
 
-                    count++;
+                        count++;
+                    }
                 }
                 sb.Append("<tr style='border-Top:1px solid' > ");
                 sb.Append("<td colspan ='5' style='text-align:right'>");

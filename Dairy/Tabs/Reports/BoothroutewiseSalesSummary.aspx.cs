@@ -29,7 +29,7 @@ namespace Dairy.Tabs.Reports
                 {
                     dpAgent.DataSource = DS;
                     dpAgent.DataBind();
-                    dpAgent.Items.Insert(0, new ListItem("--Select Booth --", "0"));
+                    dpAgent.Items.Insert(0, new ListItem("-- All Booth --", "0"));
                 }
                 DS = BindCommanData.BindCommanDropDwon("CategoryId", "CategoryName as Name", "Category", "IsActive=1");
                 if (!Comman.Comman.IsDataSetEmpty(DS))
