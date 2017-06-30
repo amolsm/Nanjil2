@@ -200,9 +200,9 @@ namespace Dairy.Tabs.Reports
 
                 //find out distict datatable column value
                 DataView view = new DataView(dt3);
+                view.Sort= "TypeID ASC";
                 DataTable distinctValues = view.ToTable(true, "ProductName", "Unit");
-                //DataView view1 = new DataView(dt1);
-                //DataTable distinctValues1 = view.ToTable(true, "ProductName");
+                
 
 
 

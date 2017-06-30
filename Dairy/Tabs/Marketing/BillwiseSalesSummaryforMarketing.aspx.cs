@@ -68,7 +68,7 @@ namespace Dairy.Tabs.Marketing
                 //sb.Append("<table class='tg style1' style='page-break-inside:avoid; align:center;'>");
                 sb.Append("<table class='tg style1'  style=' position:relative;align:center;'>");
                 sb.Append("<colgroup>");
-                sb.Append("<col style = 'width:120px'>");
+                sb.Append("<col style = 'width:160px'>");
                 sb.Append("<col style = 'width:160px'>");
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:100px'>");
@@ -152,7 +152,7 @@ namespace Dairy.Tabs.Marketing
                         sb.Append("<tr style='border-bottom:1px solid' style='page-break-inside:avoid; align:center;'> <td colspan = '9'> &nbsp; </td> </tr>");
                         sb.Append("<tr>");
                         sb.Append("<td>");
-                        sb.Append("<b>" + row2["OrderDate"].ToString() + "</b>");
+                        sb.Append("<b>" + row2["OrderDate"].ToString() + "&nbsp;"+row2["time"].ToString() + "</b>");
                         sb.Append("</td>");
                         sb.Append("<td>");
                         sb.Append("&nbsp;");
@@ -388,7 +388,7 @@ namespace Dairy.Tabs.Marketing
                         sb.Append("<tr style='border-bottom:1px solid' style='page-break-inside:avoid; align:center;'> <td colspan = '9'> &nbsp; </td> </tr>");
                         sb.Append("<tr>");
                         sb.Append("<td>");
-                        sb.Append("<b>" + row3["OrderDate"].ToString() + "</b>");
+                        sb.Append("<b>" + row3["OrderDate"].ToString() + "&nbsp;" + row3["time"].ToString() + "</b>");
                         sb.Append("</td>");
                         sb.Append("<td>");
                         sb.Append("&nbsp;");
