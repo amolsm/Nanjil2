@@ -459,9 +459,22 @@ namespace Dairy.Tabs.Administration
             DataSet DsStock = new DataSet();
 
             DsStock = dispatchData.GetStockFromDispatch(dispatch);
-
             if (!Comman.Comman.IsDataSetEmpty(DsStock))
             {
+                DsStock.Tables[0].Columns.Add("UserID", typeof(int));
+
+                for (int i = 0; i <= DsStock.Tables[0].Rows.Count - 1; i++)
+                {
+                    DsStock.Tables[0].Rows[i]["UserID"] = GlobalInfo.Userid;
+                }
+                DsStock.Tables[0].Columns.Add("ShiftDate", typeof(string));
+
+                for (int i = 0; i <= DsStock.Tables[0].Rows.Count - 1; i++)
+                {
+                    DsStock.Tables[0].Rows[i]["ShiftDate"] = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                }
+           
+               
                 string constr = ConfigurationManager.ConnectionStrings["projectConnection"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(constr))
                 {
