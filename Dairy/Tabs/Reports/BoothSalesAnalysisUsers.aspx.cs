@@ -200,76 +200,81 @@ namespace Dairy.Tabs.Reports
 
                     foreach (DataRow row in DS.Tables[0].Rows)
                     {
-                        sb.Append("<tr>");
-                        sb.Append("<td>");
-                        sb.Append(row["TypeName"].ToString());
-                        sb.Append("</td>");
+                        if (row["OpeningQuantity"].ToString() == "0" && row["Dispatch"].ToString() == "0" && row["SaleQuantity"].ToString() == "0" && row["ReturnQuantity"].ToString() == "0" && row["SpotDamage"].ToString() == "0" && row["Others"].ToString() == "0" && row["ClosingQuantity"].ToString() == "0")
+                        { }
+                        else
+                        {
+                            sb.Append("<tr>");
+                            sb.Append("<td>");
+                            sb.Append(row["TypeName"].ToString());
+                            sb.Append("</td>");
 
-                        sb.Append("<td>");
-                        sb.Append(row["ProductName"].ToString());
-                        sb.Append("</td>");
+                            sb.Append("<td>");
+                            sb.Append(row["ProductName"].ToString());
+                            sb.Append("</td>");
 
-                        sb.Append("<td>");
-                        sb.Append(row["uname"].ToString());
-                        sb.Append("</td>");
+                            sb.Append("<td>");
+                            sb.Append(row["uname"].ToString());
+                            sb.Append("</td>");
 
-                        sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                        //if (string.IsNullOrEmpty(row["OpeningQuantity"].ToString()))
-                        //{
-                        //    sb.Append("0");
-                        //}
-                        //else
-                        //{
+                            sb.Append("<td class='tg-yw4l' style='text-align:center'>");
+                            //if (string.IsNullOrEmpty(row["OpeningQuantity"].ToString()))
+                            //{
+                            //    sb.Append("0");
+                            //}
+                            //else
+                            //{
                             sb.Append(row["OpeningQuantity"].ToString());
-                        //}
-                        sb.Append("</td>");
+                            //}
+                            sb.Append("</td>");
 
-                        sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                        //if ((string.IsNullOrEmpty(row["DispatchQuantity"].ToString()) && string.IsNullOrEmpty(row["OpeningQuantity"].ToString())))
-                        //{
-                        //    if (!string.IsNullOrEmpty(row["StockAvailable"].ToString()))
-                        //        sb.Append(row["StockAvailable"].ToString());
-                        //    else
-                        //        sb.Append("0");
+                            sb.Append("<td class='tg-yw4l' style='text-align:center'>");
+                            //if ((string.IsNullOrEmpty(row["DispatchQuantity"].ToString()) && string.IsNullOrEmpty(row["OpeningQuantity"].ToString())))
+                            //{
+                            //    if (!string.IsNullOrEmpty(row["StockAvailable"].ToString()))
+                            //        sb.Append(row["StockAvailable"].ToString());
+                            //    else
+                            //        sb.Append("0");
 
-                        //}
-                        //else if ((row["DispatchQuantity"].ToString() == "0" && string.IsNullOrEmpty(row["OpeningQuantity"].ToString())))
-                        //{
-                        //    if (!string.IsNullOrEmpty(row["StockAvailable"].ToString()))
-                        //        sb.Append(row["StockAvailable"].ToString());
-                        //    else
-                        //        sb.Append("0");
-                        //}
-                        //else
-                        //{
+                            //}
+                            //else if ((row["DispatchQuantity"].ToString() == "0" && string.IsNullOrEmpty(row["OpeningQuantity"].ToString())))
+                            //{
+                            //    if (!string.IsNullOrEmpty(row["StockAvailable"].ToString()))
+                            //        sb.Append(row["StockAvailable"].ToString());
+                            //    else
+                            //        sb.Append("0");
+                            //}
+                            //else
+                            //{
                             sb.Append(row["Dispatch"].ToString());
-                        //}
+                            //}
 
-                        sb.Append("</td>");
+                            sb.Append("</td>");
 
-                        sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                        sb.Append(row["SaleQuantity"].ToString());
-                        sb.Append("</td>");
+                            sb.Append("<td class='tg-yw4l' style='text-align:center'>");
+                            sb.Append(row["SaleQuantity"].ToString());
+                            sb.Append("</td>");
 
-                        sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                        sb.Append(row["ReturnQuantity"].ToString());
-                        sb.Append("</td>");
+                            sb.Append("<td class='tg-yw4l' style='text-align:center'>");
+                            sb.Append(row["ReturnQuantity"].ToString());
+                            sb.Append("</td>");
 
-                        sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                        sb.Append(row["SpotDamage"].ToString());
-                        sb.Append("</td>");
+                            sb.Append("<td class='tg-yw4l' style='text-align:center'>");
+                            sb.Append(row["SpotDamage"].ToString());
+                            sb.Append("</td>");
 
-                        sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                        sb.Append(row["Others"].ToString());
-                        sb.Append("</td>");
+                            sb.Append("<td class='tg-yw4l' style='text-align:center'>");
+                            sb.Append(row["Others"].ToString());
+                            sb.Append("</td>");
 
-                        sb.Append("<td class='tg-yw4l' style='text-align:center'>");
-                        sb.Append(row["ClosingQuantity"].ToString());
-                        sb.Append("</td>");
+                            sb.Append("<td class='tg-yw4l' style='text-align:center'>");
+                            sb.Append(row["ClosingQuantity"].ToString());
+                            sb.Append("</td>");
 
 
 
-                        sb.Append("</tr>");
+                            sb.Append("</tr>");
+                        }
                     }
                     sb.Append("<tr style='border-Top:1px solid' > ");
                     sb.Append("<td colspan ='10' style='text-align:right'>");
