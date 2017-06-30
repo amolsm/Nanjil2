@@ -125,7 +125,7 @@ namespace Dairy.Tabs.Sales
                     sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
                     sb.Append("</th>");
 
-                    sb.Append("<th class='tg-baqh' colspan='7' style='text-align:center'>");
+                    sb.Append("<th class='tg-baqh' colspan='8' style='text-align:center'>");
                     sb.Append("<u> Current Stock Available </u> <br/>");
                     sb.Append("</th>");
 
@@ -136,7 +136,7 @@ namespace Dairy.Tabs.Sales
                     sb.Append("</tr>");
 
                     sb.Append("<tr style='border-bottom:1px solid'>");
-                    sb.Append("<td class='tg-yw4l' colspan='7' style='text-align:center'>");
+                    sb.Append("<td class='tg-yw4l' colspan='8' style='text-align:center'>");
                     sb.Append("<b>Nanjil Integrated Dairy Development ,Mulagunoodu, K.K.Dt.</b>");
 
                     sb.Append("</td>");
@@ -155,7 +155,7 @@ namespace Dairy.Tabs.Sales
                     sb.Append(DS.Tables[0].Rows[0]["ShiftDate"].ToString());
                     sb.Append("</td>");
 
-                    sb.Append("<td colspan ='5' rowspan='2' style='text-align:center'>");
+                    sb.Append("<td colspan ='6' rowspan='2' style='text-align:center'>");
                     sb.Append(DS.Tables[0].Rows[0]["AgentName"].ToString());
                     sb.Append("</td>");
 
@@ -186,6 +186,9 @@ namespace Dairy.Tabs.Sales
 
                     sb.Append("<td>");
                     sb.Append("<b> Product Name </b> ");
+                    sb.Append("</td>");
+                    sb.Append("<td>");
+                    sb.Append("<b> Unit </b> ");
                     sb.Append("</td>");
 
                     sb.Append("<td class='tg-yw4l' style='text-align:center'>");
@@ -237,6 +240,9 @@ namespace Dairy.Tabs.Sales
 
                         sb.Append("<td>");
                         sb.Append(row["ProductName"].ToString());
+                        sb.Append("</td>");
+                        sb.Append("<td>");
+                        sb.Append(row["uname"].ToString());
                         sb.Append("</td>");
 
                         sb.Append("<td class='tg-yw4l' style='text-align:center'>");
