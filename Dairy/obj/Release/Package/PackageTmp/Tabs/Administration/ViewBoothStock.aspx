@@ -92,10 +92,13 @@
                       <div class="input-group-addon">
                        <i class="fa fa-road"></i><span style="color:red">&nbsp;*</span>
                       </div>
-                      <asp:DropDownList ID="dpAgent" class="form-control" DataTextField="Name" DataValueField="AgentID" runat="server" AutoPostBack="false" > 
+                      <asp:DropDownList ID="dpAgent" class="form-control" DataTextField="Name" DataValueField="AgentID" runat="server" AutoPostBack="false" ValidationGroup="s"> 
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                       <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator1" Display="Dynamic" 
+    ValidationGroup="s" runat="server" ControlToValidate="dpAgent" ForeColor="Red"
+    ErrorMessage="Please Select Booth "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>      
                  
@@ -115,7 +118,7 @@
                  <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
-                               <asp:Button ID="btnViewStock" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnViewStock_Click"  Text="View Stock"    />     
+                               <asp:Button ID="btnViewStock" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btnViewStock_Click"  Text="View Stock"  ValidationGroup="s"  />     
                         &nbsp; <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClientClick="return PrintPanel(); return true;"    Text="Print" OnClick="btnPrint_Click" UseSubmitBehavior="true"   />     
                              
                     </div><!-- /.input group -->

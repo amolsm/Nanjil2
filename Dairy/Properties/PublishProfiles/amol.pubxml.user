@@ -22,16 +22,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="bin/Bussiness.dll">
-      <publishTime>06/28/2017 15:56:33</publishTime>
+      <publishTime>07/01/2017 12:22:54</publishTime>
     </File>
     <File Include="bin/Comman.dll">
       <publishTime>06/28/2017 11:32:25</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
-      <publishTime>06/28/2017 16:08:32</publishTime>
+      <publishTime>07/01/2017 15:34:52</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
-      <publishTime>06/28/2017 15:56:30</publishTime>
+      <publishTime>07/01/2017 12:22:52</publishTime>
     </File>
     <File Include="bin/de/Microsoft.ReportViewer.WebForms.resources.dll">
       <publishTime>06/24/2012 13:52:52</publishTime>
@@ -319,7 +319,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Administration/ViewBoothStock.aspx">
-      <publishTime>11/11/2016 10:53:00</publishTime>
+      <publishTime>06/30/2017 11:09:19</publishTime>
     </File>
     <File Include="Tabs/Administration/ViewBoothUserSales.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
@@ -364,7 +364,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/17/2017 13:49:36</publishTime>
     </File>
     <File Include="Tabs/Cashier/Web.config">
-      <publishTime>02/23/2017 11:56:00</publishTime>
+      <publishTime>06/30/2017 11:10:54</publishTime>
     </File>
     <File Include="Tabs/Despatch/AddReturnedItems.aspx">
       <publishTime>04/19/2017 20:49:51</publishTime>
@@ -541,7 +541,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/22/2017 15:07:50</publishTime>
     </File>
     <File Include="Tabs/OfflineBooth/BoothReturnReplace.aspx">
-      <publishTime>06/01/2017 09:30:48</publishTime>
+      <publishTime>06/30/2017 11:09:19</publishTime>
     </File>
     <File Include="Tabs/OfflineBooth/BoothStockLanding.aspx">
       <publishTime>05/26/2017 10:43:46</publishTime>
@@ -754,7 +754,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Purchase/ItemRates.aspx">
-      <publishTime>11/11/2016 10:53:00</publishTime>
+      <publishTime>06/29/2017 16:11:36</publishTime>
     </File>
     <File Include="Tabs/Purchase/Items.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
@@ -829,7 +829,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reports/Boothitemwisesalessummary.aspx">
-      <publishTime>11/11/2016 10:53:00</publishTime>
+      <publishTime>06/30/2017 11:10:54</publishTime>
     </File>
     <File Include="Tabs/Reports/BoothroutewiseSalesSummary.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
@@ -868,10 +868,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/22/2017 15:07:50</publishTime>
     </File>
     <File Include="Tabs/Sales/BoothReturnReplace.aspx">
-      <publishTime>05/26/2017 10:43:46</publishTime>
+      <publishTime>06/30/2017 11:09:19</publishTime>
     </File>
     <File Include="Tabs/Sales/BoothStockLanding.aspx">
-      <publishTime>11/11/2016 10:53:00</publishTime>
+      <publishTime>06/30/2017 16:45:05</publishTime>
     </File>
     <File Include="Tabs/Sales/EmployeeBilling.aspx">
       <publishTime>06/22/2017 15:07:50</publishTime>
@@ -3691,7 +3691,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:02</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
-      <publishTime>06/22/2017 15:07:50</publishTime>
+      <publishTime>06/30/2017 11:10:54</publishTime>
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>11/11/2016 10:53:02</publishTime>

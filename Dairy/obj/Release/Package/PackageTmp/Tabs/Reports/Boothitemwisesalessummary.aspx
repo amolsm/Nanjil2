@@ -140,6 +140,9 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
+                       <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator1" Display="Dynamic" 
+    ValidationGroup="Save" runat="server" ControlToValidate="dpAgent" ForeColor="Red"
+    ErrorMessage="Please Select Booth "></asp:RequiredFieldValidator>
                   </div><!-- /.form group -->
                          </div>
           
@@ -149,7 +152,7 @@
                  <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
-                               <asp:Button ID="btngenrateBill" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btngenrateBill_click"   Text="ViewReport"    />     
+                               <asp:Button ID="btngenrateBill" class="btn btn-primary" runat="server" CommandName="MoveNext" ValidationGroup="Save"  OnClick="btngenrateBill_click"   Text="ViewReport"    />     
                         &nbsp; <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="return PrintPanel();"   Text="Print"    />     
                              
                     </div><!-- /.input group -->

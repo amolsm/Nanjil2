@@ -3,6 +3,9 @@
      <link rel="stylesheet" href="http://localhost:5500/code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
             <script src="//code.jquery.com/jquery-1.10.2.js"></script>
             <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <style type="text/css">
+       
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
       
@@ -144,7 +147,7 @@
         function PrintPanel() {
             var panel = document.getElementById("<%=pnlBill.ClientID %>");
               var printWindow = window.open('', '', 'height=600,width=800');
-              printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif;}</style>");
+              printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif;}  #Sidebars {display:none;}</style>");
               printWindow.document.write('</head><body >');
               printWindow.document.write(panel.innerHTML);
               printWindow.document.write('</body></html>');
@@ -160,7 +163,7 @@
         function PrintPanel1() {
             var panel = document.getElementById("<%=pnlSalesSummary.ClientID %>");
             var printWindow = window.open('', '', 'height=600,width=800');
-            printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif; }</style>");
+            printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif; } </style>");
             printWindow.document.write('</head><body >');
             printWindow.document.write(panel.innerHTML);
             printWindow.document.write('</body></html>');
