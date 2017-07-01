@@ -270,18 +270,10 @@ namespace Dairy.Tabs.Marketing
                                 sb.Append("");
                                 sb.Append("</td>");
                                 sb.Append("<td class='tg-yw4l'  style='text-align:left'>");
-                                //if (row["Quantity1"].ToString() != "" && row["Quantity2"].ToString() != "")
-                                //{
-                                //    quantity = Convert.ToDouble(row["Quantity1"]) + Convert.ToDouble(row["Quantity2"]);
-
-                                //}
-                                //if (row["Quantity1"].ToString() == "")
-                                //{
+                               
                                     quantity = Convert.ToDouble(row["Quantity"]);
 
-                                //}
-                                //else { quantity = Convert.ToDouble(row["Quantity1"]); }
-
+                                
                                 totalquantity += quantity;
                                 sb.Append(quantity);
                                 sb.Append("</td>");
@@ -289,17 +281,9 @@ namespace Dairy.Tabs.Marketing
                                 sb.Append(row["UnitType"].ToString());
                                 sb.Append("</td>");
                                 sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
-                                //if (row["Amount1"].ToString() != "" && row["Amount2"].ToString() != "")
-                                //{
-                                //    amounts = Convert.ToDouble(row["Amount1"]) + Convert.ToDouble(row["Amount2"]);
-
-                                //}
-                                //if (row["Amount1"].ToString() == "")
-                                //{
+                               
                                     amounts = Convert.ToDouble(row["Amount"]);
 
-                                //}
-                                //else { amounts = Convert.ToDouble(row["Amount1"]); }
                                 totalamounts += amounts;
                                 sb.Append((Convert.ToDecimal(amounts).ToString("#.00")));
                                 sb.Append("</td>");
@@ -327,17 +311,7 @@ namespace Dairy.Tabs.Marketing
                         double amt = 0;
 
                         amt = Convert.ToDouble(totalamounts);
-                            //amt += schemeamount;
-
-
-                       
-
-                        //sb.Append("<td class='tg-yw4l' colspan='3'  style='text-align:left'>");
-                        //if (row2["PaymentMode"].ToString() == "Daily")
-                        //    sb.Append("Reciept: " + amt.ToString("#0.00"));
-                        //else
-                        //    sb.Append("Reciept: 0.00");
-                        //sb.Append("</td>");
+                            
 
 
 

@@ -31,7 +31,7 @@ namespace Dairy.Tabs.Marketing
                 {
                     dpASO.DataSource = DS;
                     dpASO.DataBind();
-                    dpASO.Items.Insert(0, new ListItem("--Select ASO--", "0"));
+                    dpASO.Items.Insert(0, new ListItem("--All ASO--", "0"));
                 }
                 txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                 txtEndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
@@ -105,7 +105,7 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<td colspan='2'>");
                 if (dpASO.SelectedItem.Value == "0")
                 {
-                    sb.Append("");
+                    sb.Append("ASO : All");
                 }
                 else
                 {
