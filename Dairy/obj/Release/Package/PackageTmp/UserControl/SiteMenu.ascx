@@ -249,10 +249,10 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
                <ul class="treeview-menu">
-                 <li><a href="/Tabs/Reports/ItemwiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Summary Item wise </a></li> 
-                 <li><a href="/Tabs/Reports/BillwiseSaleSummary.aspx"><i class="fa fa-circle-o"></i>Summary Bill wise </a></li> 
-                   <li><a href="/Tabs/Reports/RoutewiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Summary Route wise </a></li>
-                  <li><a href="/Tabs/Reports/SalesAnalysisItemwise.aspx"><i class="fa fa-circle-o"></i>Sales Analysis Item wise</a></li>
+                 <li><a href="/Tabs/Cashier/ItemwiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Summary Item wise </a></li> 
+                 <li><a href="/Tabs/Cashier/BillwiseSaleSummary.aspx"><i class="fa fa-circle-o"></i>Summary Bill wise </a></li> 
+                   <li><a href="/Tabs/Cashier/RoutewiseSalesSummary.aspx"><i class="fa fa-circle-o"></i>Summary Route wise </a></li>
+                  <li><a href="/Tabs/Cashier/SalesAnalysisItemwise.aspx"><i class="fa fa-circle-o"></i>Sales Analysis Item wise</a></li>
                   </ul> </li>
               </ul>
             </li> 

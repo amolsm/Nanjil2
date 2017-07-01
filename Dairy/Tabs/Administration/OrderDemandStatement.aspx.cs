@@ -180,7 +180,7 @@ namespace Dairy
                     sb.Append("</tr>");
 
                     count++;
-                    if (count % 17 == 0 && count != 0)
+                    if (count % 15 == 0 && count != 0)
                     {
 
                         sb.Append("<style type='text/css'>");

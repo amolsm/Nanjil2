@@ -396,8 +396,8 @@ namespace Dairy.Tabs.Despatch
             }
 
             //DataSet ds1 = new DataSet();
-            if (dpCategory.SelectedItem.Value == "1")
-            {
+            //if (dpCategory.SelectedItem.Value == "1")
+            //{
                 DataTable dt = new DataTable();
                 //ds.ReadXml(Server.MapPath("~/Tabs/Dispatch/temp" + nm + ".xml"));
 
@@ -409,8 +409,8 @@ namespace Dairy.Tabs.Despatch
                 {
                     DBDispatch.DispatchSceme(item);
                 }
-            }
-        }
+        //}
+    }
         private void clearlist()
         {
             // DataSet dats = new DataSet();
