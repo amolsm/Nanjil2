@@ -219,13 +219,13 @@ namespace Dairy.Tabs.Procurement
                     foreach (DataRow row in DS1.Tables[0].Rows)
                     {
                         //count1++;
-                        if (rows["_Date"].ToString() == row["_Date"].ToString())
+                        if (rows["_Date"].ToString() == row["_Date"].ToString() && rows["RouteName"].ToString() == row["RouteName"].ToString()) 
                         {
-                            if (rows["RouteName"].ToString() == row["RouteName"].ToString())
+
+
+                            if (rows["_Session"].ToString() == row["_Session"].ToString())
                             {
-                                if (rows["_Session"].ToString() == row["_Session"].ToString())
-                                {
-                                    
+                            
                                     count++;
                                     countavg += count;
 
@@ -282,8 +282,8 @@ namespace Dairy.Tabs.Procurement
                                 }
                             }
                         }
-
-                    }
+                    
+                    
 
                     sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '9'> &nbsp; </td> </tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");

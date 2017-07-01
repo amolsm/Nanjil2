@@ -10,5 +10,6 @@ namespace Model
         public DateTime Startdate { get; set; }
         public DateTime Enddate { get; set; }
         public string Vehicletype { get; set; }
+        public string flag { get; set; }
     }
 }

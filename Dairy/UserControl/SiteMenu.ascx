@@ -50,6 +50,7 @@
               </a>
                 <ul class="treeview-menu">    
                    
+                    
                      <li><a href="/Tabs/Procurement/RawMilkTariff.aspx"><i class="fa fa-circle-o"></i>RawMilkTarrif</a></li>
                    <li><a href="/Tabs/Procurement/VehicleTariff.aspx"><i class="fa fa-circle-o"></i> Vehicle Tariff Info</a></li>
                    <li><a href="/Tabs/Procurement/ConsolidatePaymentSummary.aspx"><i class="fa fa-circle-o"></i>Consolidate Payment Summary</a></li>
@@ -916,7 +917,7 @@
                       </ul>
                 
             </asp:Panel>
-           <asp:Panel runat="server" ID="pnlProcurement" Visible="false">
+                     <asp:Panel runat="server" ID="pnlProcurement" Visible="false">
                 <ul class="sidebar-menu"> 
                     <li class="treeview">
               <a href="#">
@@ -964,6 +965,7 @@
         
           </ul>
            </asp:Panel>
+
         </section>
         <!-- /.sidebar -->
       </aside>

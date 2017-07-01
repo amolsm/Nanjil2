@@ -88,7 +88,8 @@ namespace Dairy.Tabs.Procurement
         {
             Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
-            p.SupplierID = 0;
+            //p.SupplierID = 0;
+            p.SupplierID =Convert.ToInt32(txtSupplierCode.Text);
             p.SupplierCode = txtSupplierCode.Text;
             p.SupplierName = txtSupplierName.Text;
             p.CenterID = Convert.ToInt32(dpCenter.SelectedValue);
@@ -120,7 +121,7 @@ namespace Dairy.Tabs.Procurement
             p.ModifiedBy = App_code.GlobalInfo.Userid;
             p.ModifiedDate = DateTime.Now.ToString("dd-MM-yyyy");
             //p.BankDetailsID = 0;
-            p.SupplierID = 0;
+            //p.SupplierID = 0;
             p.AccounNumber = txtAccountNo.Text;
             p.AccountType = string.Empty;
             p.BankName = string.Empty;

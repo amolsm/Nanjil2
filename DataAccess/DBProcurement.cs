@@ -517,10 +517,10 @@ namespace DataAccess
                 result = _DBHelper.ExecuteNonQuery("Proc_SP_InsertSupplierProfile", paramCollection, CommandType.StoredProcedure);
 
             }
-            catch (Exception)
+            catch (Exception EX)
             {
 
-
+                string msg = EX.Message.ToString();
             }
             return result;
         }

@@ -15,5 +15,15 @@ namespace Bussiness
         {
             return dbtp.TransportPaymentDetails(p);
         }
+
+        public DataSet TransportPaymentBankList(MTransportPayment p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataSet TransportPaymentBankListExcel(MTransportPayment p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

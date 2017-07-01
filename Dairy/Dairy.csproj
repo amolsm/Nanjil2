@@ -230,6 +230,7 @@
     <Content Include="Tabs\Procurement\SupplierAdvanceInfo.aspx" />
     <Content Include="Tabs\Procurement\Supplierwiserawmilkqtyqlty.aspx" />
     <Content Include="Tabs\Procurement\Transaction.aspx" />
+    <Content Include="Tabs\Procurement\TransportPayment-BankList.aspx" />
     <Content Include="Tabs\Procurement\TransportPayment.aspx" />
     <Content Include="Tabs\Procurement\VehicleMaster.aspx" />
     <Content Include="Tabs\Procurement\VehicleTariff.aspx" />
@@ -2215,6 +2216,13 @@
     </Compile>
     <Compile Include="Tabs\Procurement\Transaction.aspx.designer.cs">
       <DependentUpon>Transaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Procurement\TransportPayment-BankList.aspx.cs">
+      <DependentUpon>TransportPayment-BankList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Procurement\TransportPayment-BankList.aspx.designer.cs">
+      <DependentUpon>TransportPayment-BankList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Procurement\TransportPayment.aspx.cs">
       <DependentUpon>TransportPayment.aspx</DependentUpon>

@@ -220,55 +220,7 @@ namespace Dairy.Tabs.Procurement
 
                 sb.Append("</td>");
                 sb.Append("</tr>");
-                sb.Append("<tr style='border-bottom:1px solid'>");
-
-                sb.Append("<td>");
-                sb.Append("<b>Sr.No.</b>");
-                sb.Append("</td>");
-
-
-
-                sb.Append("<td colspan='2'>");
-                sb.Append("<b>Supplier</b>");
-                sb.Append("</td>");
-
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>Can</b>");
-                sb.Append("</td>");
-
-                sb.Append("<td  style='text-align:right'>");
-                sb.Append("<b>MilkInKG</b>");
-                sb.Append("</td>");
-
-                sb.Append("<td  style='text-align:right'>");
-                sb.Append("<b>MilkInLtr</b>");
-                sb.Append("</td>");
-
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>CLR</b>");
-                sb.Append("</td>");
-
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>Fat %</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>SNF %</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>TS %</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>RPL</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>Incentive</b>");
-                sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>Amount</b>");
-                sb.Append("</td>");
-                sb.Append("</tr>");
-                sb.Append("</tr>");
-                sb.Append("<tr>");
+              
 
                 decimal milkinkg = 0;
                 decimal totalmilkinkg = 0;
@@ -308,6 +260,7 @@ namespace Dairy.Tabs.Procurement
                 double inc = 0.00;
                 double totalinc = 0.00;
                 double inc1 = 0.00;
+               
                 foreach (DataRow rows in DS1.Tables[1].Rows)
                 {
                     count = 0;
@@ -333,6 +286,55 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("<b>Time : </b>" + rows["_Session"].ToString());
                     sb.Append("</td>");
                     sb.Append("</tr>");
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+
+                    sb.Append("<td>");
+                    sb.Append("<b>Sr.No.</b>");
+                    sb.Append("</td>");
+
+
+
+                    sb.Append("<td colspan='2'>");
+                    sb.Append("<b>Supplier</b>");
+                    sb.Append("</td>");
+
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>Can</b>");
+                    sb.Append("</td>");
+
+                    sb.Append("<td  style='text-align:right'>");
+                    sb.Append("<b>MilkInKG</b>");
+                    sb.Append("</td>");
+
+                    sb.Append("<td  style='text-align:right'>");
+                    sb.Append("<b>MilkInLtr</b>");
+                    sb.Append("</td>");
+
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>CLR</b>");
+                    sb.Append("</td>");
+
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>Fat %</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>SNF %</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>TS %</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>RPL</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>Incentive</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td style='text-align:right'>");
+                    sb.Append("<b>Amount</b>");
+                    sb.Append("</td>");
+                    sb.Append("</tr>");
+                    sb.Append("</tr>");
+                    sb.Append("<tr>");
                     foreach (DataRow row in DS1.Tables[0].Rows)
                     {
                         if (rows["_Date"].ToString() == row["_Date"].ToString())
@@ -375,7 +377,7 @@ namespace Dairy.Tabs.Procurement
                                     sb.Append("</td>");
 
                                     sb.Append("<td style='text-align:right'>");
-                                    try { clr = Convert.ToInt32(row["CLRReading"]); } catch { clr = 0; }
+                                    try { clr = Convert.ToDouble(row["CLRReading"]); } catch { clr = 0; }
 
                                     totalclr += clr;
                                     sb.Append(Convert.ToDecimal(clr).ToString("0.0"));

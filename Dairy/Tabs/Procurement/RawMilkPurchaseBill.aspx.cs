@@ -38,7 +38,7 @@ namespace Dairy.Tabs.Procurement
             {
                 dpSupplier.DataSource = DS;
                 dpSupplier.DataBind();
-                dpSupplier.Items.Insert(0, new ListItem("--All Supplier --", "0"));
+                dpSupplier.Items.Insert(0, new ListItem("--All Suppliers--", "0"));
             }
         }
         protected void btnGeneratereport_Click(object sender, EventArgs e)
@@ -131,6 +131,32 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("</tr>");
               
 
+                   
+                    int count = 0;
+                    decimal milkinLtr = 0;
+                    decimal totalmilkinLtr = 0;
+                    double fatpercentage = 0.00;
+                    double totalfatpercentage = 0.00;
+                    double snfpercentage = 0.00;
+                    double totalsnfpercentage = 0.00;
+                    double tspercentage = 0.00;
+                    double totaltspercentage = 0.00;
+                    double rate = 0.00;
+                    double totalrate = 0.00;
+                    double amt = 0.00;
+                    double totalamt = 0.00;
+                    double scheme = 0.00;
+                    int can = 0;
+                    double RDAmt = 0.00;
+                    double LoanAmt = 0.00;
+                    double NetAmt = 0.00;
+                foreach (DataRow rows in DS1.Tables[1].Rows)
+                {
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append(" <td colspan='10' style='text-align:left'>");
+                    sb.Append((rows["SupplierName"]).ToString());
+                    sb.Append("</td>");
+                    sb.Append("</tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td colspan='1' style='text-align:center'>");
                     sb.Append("<b>Date</b>");
@@ -160,31 +186,6 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("</td>");
                     sb.Append("</tr>");
                     sb.Append("<tr>");
-                    int count = 0;
-                    decimal milkinLtr = 0;
-                    decimal totalmilkinLtr = 0;
-                    double fatpercentage = 0.00;
-                    double totalfatpercentage = 0.00;
-                    double snfpercentage = 0.00;
-                    double totalsnfpercentage = 0.00;
-                    double tspercentage = 0.00;
-                    double totaltspercentage = 0.00;
-                    double rate = 0.00;
-                    double totalrate = 0.00;
-                    double amt = 0.00;
-                    double totalamt = 0.00;
-                    double scheme = 0.00;
-                    int can = 0;
-                    double RDAmt = 0.00;
-                    double LoanAmt = 0.00;
-                    double NetAmt = 0.00;
-                foreach (DataRow rows in DS1.Tables[1].Rows)
-                {
-                    sb.Append("<tr style='border-bottom:1px solid'>");
-                    sb.Append(" <td colspan='2' style='text-align:left'>");
-                    sb.Append((rows["SupplierName"]).ToString());
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
                     foreach (DataRow row in DS1.Tables[0].Rows)
                     {
                         count++;
@@ -309,7 +310,7 @@ namespace Dairy.Tabs.Procurement
 
                     sb.Append("</tr>");
                 }
-                    sb.Append("<tr>");
+                sb.Append("<tr>");
                     sb.Append("<td style='text-align:center' colspan = '2'>");
                     sb.Append("<b>Scheme: </b>");
                     sb.Append("<b>" + Convert.ToDecimal(scheme).ToString("0.00") + "</b>");
