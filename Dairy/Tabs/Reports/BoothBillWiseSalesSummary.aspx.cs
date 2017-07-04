@@ -201,7 +201,7 @@ namespace Dairy.Tabs.Reports
                     sb.Append("</tr>");
                     foreach (DataRow row in DS.Tables[0].Rows)
                     {
-                        if (row2["OrderId"].ToString() == row["OrderId"].ToString() && row["Qty"].ToString() != "0")
+                        if (row2["OrderId"].ToString() == row["OrderId"].ToString())
                         {
                             sb.Append("<tr>");
                             sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
