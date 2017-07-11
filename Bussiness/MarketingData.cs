@@ -56,6 +56,11 @@ namespace Bussiness
             }
         }
 
+        public DataSet SalesAnalysisitemwiseByDateForPlantandBooth(string StartDate, string EndDate, int BrandID)
+        {
+            return dbMarketing.SalesAnalysisitemwiseByDateForPlantandBooth(StartDate, EndDate, BrandID);
+        }
+
         public DataSet AgentRefundSchemeSummary(string StartDate, string EndDate, int RouteID, int AgentID)
         {
             return dbMarketing.AgentRefundSchemeSummary(StartDate, EndDate, RouteID, AgentID);

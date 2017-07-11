@@ -186,6 +186,7 @@
     <Content Include="Tabs\Marketing\ProductIncentive.aspx" />
     <Content Include="Tabs\Marketing\RefundSchemeSummary.aspx" />
     <Content Include="Tabs\Marketing\ReturnComparisonReport.aspx" />
+    <Content Include="Tabs\Marketing\SalesAnalysisItemwiseForBoothandPlant.aspx" />
     <Content Include="Tabs\Marketing\SalesComparison.aspx" />
     <Content Include="Tabs\Marketing\SalesComparisonReport.aspx" />
     <Content Include="Tabs\Marketing\SchemeRefund.aspx" />
@@ -1908,6 +1909,13 @@
     </Compile>
     <Compile Include="Tabs\Marketing\ReturnComparisonReport.aspx.designer.cs">
       <DependentUpon>ReturnComparisonReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Marketing\SalesAnalysisItemwiseForBoothandPlant.aspx.cs">
+      <DependentUpon>SalesAnalysisItemwiseForBoothandPlant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Marketing\SalesAnalysisItemwiseForBoothandPlant.aspx.designer.cs">
+      <DependentUpon>SalesAnalysisItemwiseForBoothandPlant.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Marketing\SalesComparison.aspx.cs">
       <DependentUpon>SalesComparison.aspx</DependentUpon>

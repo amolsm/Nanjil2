@@ -10,7 +10,7 @@
 namespace Dairy.Tabs.Marketing {
     
     
-    public partial class AmountwiseIceCreamReport {
+    public partial class SalesAnalysisItemwiseForBoothandPlant {
         
         /// <summary>
         /// pnlError control.
@@ -112,67 +112,22 @@ namespace Dairy.Tabs.Marketing {
         protected global::System.Web.UI.WebControls.TextBox txtEndDate;
         
         /// <summary>
-        /// dpRoute control.
+        /// dpBrand control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpRoute;
+        protected global::System.Web.UI.WebControls.DropDownList dpBrand;
         
         /// <summary>
-        /// dpType control.
+        /// btngenrateBill control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpType;
-        
-        /// <summary>
-        /// dpCommodity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpCommodity;
-        
-        /// <summary>
-        /// txtStartAmt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStartAmt;
-        
-        /// <summary>
-        /// txtEndAmt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEndAmt;
-        
-        /// <summary>
-        /// chkAmt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAmt;
-        
-        /// <summary>
-        /// btnViewDetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnViewDetails;
+        protected global::System.Web.UI.WebControls.Button btngenrateBill;
         
         /// <summary>
         /// btnPrint control.
@@ -200,14 +155,5 @@ namespace Dairy.Tabs.Marketing {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal genratedBIll;
-        
-        /// <summary>
-        /// UpdateProgress1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdateProgress UpdateProgress1;
     }
 }

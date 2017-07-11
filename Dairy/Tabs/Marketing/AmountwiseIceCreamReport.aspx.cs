@@ -71,13 +71,53 @@ namespace Dairy.Tabs.Marketing
                 
               
                 DS = marketingdata.AmountwiseIceCreamReport((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), (Convert.ToDateTime(txtEndDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpType.SelectedItem.Value), Convert.ToInt32(dpCommodity.SelectedItem.Value), startamt, endamt, flag);
-
-
-                if (!Comman.Comman.IsDataSetEmpty(DS))
+         
+            if (!Comman.Comman.IsDataSetEmpty(DS))
+            {
+               
+                try
                 {
+                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["RouteID"] };
+
+                }
+                catch (Exception) { }
+                try
+                {
+                    DS.Tables[1].PrimaryKey = new[] { DS.Tables[1].Columns["RouteID"] };
+
+                }
+                catch (Exception) { }
+                try
+                {
+                    DS.Tables[0].Merge(DS.Tables[1], false, MissingSchemaAction.Add);
+
+                }
+                catch (Exception) { }
+              
+                try
+                {
+                       DataView view = new DataView(DS.Tables[0]);
+                       var strExpr=string.Empty;
+                        if (flag == 1)
+                        {
+                        try
+                        {
+                            strExpr = "TotalBill >= " + @startamt + " AND TotalBill <= " + @endamt;
+                            view.RowFilter = strExpr;
+                        }
+                        catch { }
+                         }else
+                        {
+                        try
+                        {
+                            strExpr = string.Empty;
+                            view.RowFilter = strExpr;
+                        }
+                        catch { }
+                        }
+                    DataTable DefaultView = view.ToTable();
+
                     StringBuilder sb = new StringBuilder();
-
-
                     sb.Append("<style type='text / css'>");
                     sb.Append(".tg  { border - collapse:collapse; border - spacing:0; border: none; }");
                     sb.Append(".tg .tg-yw4l{vertical-align:top}");
@@ -201,55 +241,55 @@ namespace Dairy.Tabs.Marketing
                     int count = 0;
                     double totalamt = 0;
                     double totalavg = 0;
-                foreach (DataRow row in DS.Tables[1].Rows)
-                {
-                    sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '5'> &nbsp; </td> </tr>");
-                    sb.Append("<tr style='border-bottom:1px solid'>");
-                    sb.Append("<td colspan='2' style='text-align:left'>");
-                    sb.Append("<b>" + row["RouteCode"].ToString()+"</b>");
-                    sb.Append("</td>");
-                    sb.Append("<td colspan='4' style='text-align:right'>");
-                    sb.Append("<b>" + row["RouteName"].ToString() + "</b>");
-                    sb.Append("</td>");
-                    sb.Append("</tr>");
-                    int srno = 0;
-                    foreach (DataRow rows in DS.Tables[0].Rows)
+                    foreach (DataRow row in DefaultView.Rows)
+                    {
+                        sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '5'> &nbsp; </td> </tr>");
+                        sb.Append("<tr style='border-bottom:1px solid'>");
+                        sb.Append("<td colspan='2' style='text-align:left'>");
+                        sb.Append("<b>" + row["RouteCode"].ToString() + "</b>");
+                        sb.Append("</td>");
+                        sb.Append("<td colspan='4' style='text-align:right'>");
+                        sb.Append("<b>" + row["RouteName"].ToString() + "</b>");
+                        sb.Append("</td>");
+                        sb.Append("</tr>");
+                        int srno = 0;
+                        foreach (DataRow rows in DefaultView.Rows)
                         {
-                        
-                        if (row["RouteID"].ToString() == rows["RouteID"].ToString())
-                        {
-                                       
-                            srno++;
-                            count++;
-                            sb.Append("<tr>");
-                            sb.Append("<td>");
-                            sb.Append(srno.ToString());
-                            sb.Append("</td>");
-                            sb.Append("<td>");
-                            sb.Append(rows["AgentCode"].ToString());
-                            sb.Append("</td>");
-                            sb.Append("<td>");
-                            sb.Append(rows["AgentName"].ToString());
-                            sb.Append("</td>");
-                            sb.Append("<td style='text-align:right'>");
-                            double amt1;
-                            try { amt1 = Convert.ToDouble(rows["TotalBill"]); } catch { amt1 = 0; };
-                            totalamt += amt1;
-                            sb.Append(Convert.ToDecimal(amt1).ToString("#.##"));
-                            sb.Append("</td>");
 
-                            sb.Append("<td style='text-align:right'>");
-                            double avg1;
-                            avg1 = amt1 / differenceInDays;
-                            totalavg += avg1;
-                            sb.Append(Convert.ToDecimal(avg1).ToString("#.##"));
-                            sb.Append("</td>");
-                            sb.Append("</tr>");
-                        }
-                               
-                      
-                         
-                           
+                            if (row["RouteID"].ToString() == rows["RouteID"].ToString())
+                            {
+
+                                srno++;
+                                count++;
+                                sb.Append("<tr>");
+                                sb.Append("<td>");
+                                sb.Append(srno.ToString());
+                                sb.Append("</td>");
+                                sb.Append("<td>");
+                                sb.Append(rows["AgentCode"].ToString());
+                                sb.Append("</td>");
+                                sb.Append("<td>");
+                                sb.Append(rows["AgentName"].ToString());
+                                sb.Append("</td>");
+                                sb.Append("<td style='text-align:right'>");
+                                double amt1;
+                                try { amt1 = Convert.ToDouble(rows["TotalBill"]); } catch { amt1 = 0; };
+                                totalamt += amt1;
+                                sb.Append(Convert.ToDecimal(amt1).ToString("#.##"));
+                                sb.Append("</td>");
+
+                                sb.Append("<td style='text-align:right'>");
+                                double avg1;
+                                avg1 = amt1 / differenceInDays;
+                                totalavg += avg1;
+                                sb.Append(Convert.ToDecimal(avg1).ToString("#.##"));
+                                sb.Append("</td>");
+                                sb.Append("</tr>");
+                            }
+
+
+
+
 
 
                         }
@@ -285,15 +325,22 @@ namespace Dairy.Tabs.Marketing
                     Session["ctrl"] = pnlBill;
                     //Response.Redirect("/print.aspx", true);
 
-                }
-                else
-                {
-                    result = "Report Not found";
-                    genratedBIll.Text = result;
 
                 }
+                catch (Exception) {
+                    result = "Report Not found";
+                    genratedBIll.Text = result;
+                }
+            }
+            else
+            {
+                result = "Report Not found";
+                genratedBIll.Text = result;
+
+            }
+            }
             
-        }
+       
 
         protected void dpType_SelectedIndexChanged(object sender, EventArgs e)
         {

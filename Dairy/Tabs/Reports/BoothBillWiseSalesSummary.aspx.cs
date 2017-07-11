@@ -19,6 +19,7 @@ namespace Dairy.Tabs.Reports
         string result = string.Empty;
         string result1 = string.Empty;
         double schemeamount;
+        double amt;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -43,6 +44,7 @@ namespace Dairy.Tabs.Reports
         private void allSales()
         {
             double totalScheme = 0;
+            double amt=0;
             DS = billdata.BoothBillwiseSalesSummaryByDate((Convert.ToDateTime(txtStartDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpAgent.SelectedItem.Value), Convert.ToInt32(dpEmployee.SelectedItem.Value));
             //local
             DataSet DSL = new DataSet();
@@ -126,7 +128,7 @@ namespace Dairy.Tabs.Reports
 
 
 
-
+               
                 foreach (DataRow row2 in DS.Tables[1].Rows)
                 {
 
@@ -199,9 +201,10 @@ namespace Dairy.Tabs.Reports
                     sb.Append("<b>Amount</b>");
                     sb.Append("</td>");
                     sb.Append("</tr>");
+                   
                     foreach (DataRow row in DS.Tables[0].Rows)
                     {
-                        if (row2["OrderId"].ToString() == row["OrderId"].ToString())
+                        if (row2["OrderId"].ToString() == row["OrderId"].ToString() && row["Qty"].ToString() != "0")
                         {
                             sb.Append("<tr>");
                             sb.Append("<td class='tg-yw4l'   style='text-align:left'>");
@@ -229,12 +232,12 @@ namespace Dairy.Tabs.Reports
                             sb.Append("</td>");
                             sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
                             sb.Append((Convert.ToDecimal(row["Total"]).ToString("#.00")));
-
+                            amt   = (Convert.ToDouble(row["Total"]));
 
                             sb.Append("</td>");
                             sb.Append("</tr>");
                         }
-                        else { }
+                        else { amt = 0; }
                     }
                     DS2 = billdata.GetSchemeAmountForBoothBillwiseSalesSummary(row2["OrderId"]);
                     if (!Comman.Comman.IsDataSetEmpty(DS2))
@@ -267,7 +270,7 @@ namespace Dairy.Tabs.Reports
                     sb.Append("</td>");
 
                     sb.Append("<td> &nbsp; </td>");
-                    double amt = (Convert.ToDouble(row2["Total"]));
+                  
                     amt += schemeamount;
                     sb.Append("<td colpsan=3>");
                     if (row2["PaymentMode"].ToString() == "Daily")
@@ -441,14 +444,14 @@ namespace Dairy.Tabs.Reports
 
                 try
                 {
-                    totalamount = (Convert.ToDouble(DSL.Tables[2].Rows[0]["TotalAmount"])) + (Convert.ToDouble(DS.Tables[2].Rows[0]["TotalAmount"]));
+                    totalamount = (string.IsNullOrEmpty(DSL.Tables[2].Rows[0]["TotalAmount"].ToString()) ? 0 : Convert.ToDouble(DSL.Tables[2].Rows[0]["TotalAmount"])) + (string.IsNullOrEmpty(DS.Tables[2].Rows[0]["TotalAmount"].ToString())? 0 :Convert.ToDouble(DS.Tables[2].Rows[0]["TotalAmount"]));
                     totalamount += totalScheme;
                     sb.Append("<b>" + (Convert.ToDouble(totalamount).ToString("#0.00")) + "</b>");
 
                 }
                 catch (Exception ex)
                 {
-
+                   
                 }
 
 

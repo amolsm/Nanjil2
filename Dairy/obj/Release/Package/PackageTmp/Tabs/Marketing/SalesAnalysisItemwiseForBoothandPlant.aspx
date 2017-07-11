@@ -1,16 +1,32 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AmountwiseIceCreamReport.aspx.cs" Inherits="Dairy.Tabs.Marketing.AmountwiseIceCreamReport" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SalesAnalysisItemwiseForBoothandPlant.aspx.cs" Inherits="Dairy.Tabs.Marketing.SalesAnalysisItemwiseForBoothandPlant" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+     <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
+     <script type="text/javascript" src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-     
+    <script type = "text/javascript">
+          function PrintPanel() {
+              var panel = document.getElementById("<%=pnlBill.ClientID %>");
+              var printWindow = window.open('', '', 'height=400,width=800');
+              printWindow.document.write("<html><head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 14px; font-family: sans-serif;}</style>");
+              printWindow.document.write('</head><body >');
+              printWindow.document.write(panel.innerHTML);
+              printWindow.document.write('</body></html>');
+              printWindow.document.close();
+              setTimeout(function () {
+                  printWindow.print();
+              }, 500);
+              return false;
+          }
+    </script>
       <section class="content-header">
           <h1>
-        Amount Wise Purchase Agents Report
-             <small>Administration</small>  
+            Sales Analysis- Itemwise
+            <small>Administration</small>    
           </h1> 
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
-            <li class="active">    Amount Wise Purchase Agents Report</li>
+            <li class="active">Sales Analysis- Itemwise</li>
           </ol>
         </section>
 
@@ -49,7 +65,7 @@
 
            <div class="box  ">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="Amount Wise Purchase Agents Report"></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="Sales Analysis- Itemwise"></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 
@@ -65,30 +81,14 @@
 
              <div class="row">
                  
-
-                    <div class="col-lg-3">
+                 
+                 <div class="col-lg-3">
                   <div class="form-group" >
                     <div class="input-group">
                       <div class="input-group-addon">
-                      Start Order Date
+                       Start Date
                       </div>
-                       <asp:TextBox ID="txtStartDate" class="form-control"   type="date" placeholder=" Order Date" runat="server" required  ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div>  
-
-                   <div class="col-lg-3">
-                  <div class="form-group" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                     End  Order Date
-                      </div>
-                       <asp:TextBox ID="txtEndDate" class="form-control"   type="date" placeholder=" Order Date" runat="server" required  ></asp:TextBox>                        
+                       <asp:TextBox ID="txtStartDate" class="form-control"  type="date" placeholder="Date" runat="server" required  ></asp:TextBox>                        
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -98,98 +98,37 @@
                           
                       </div> 
 
-                    <div class="col-lg-3">
+                 <div class="col-lg-3">
+                  <div class="form-group" >
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                       End Date
+                      </div>
+                       <asp:TextBox ID="txtEndDate" class="form-control"  type="date" placeholder="Date" runat="server" required  ></asp:TextBox>                        
+                    </div><!-- /.input group -->
+
+                  </div><!-- /.form group -->
+
+                     
+                       
+                          
+                      </div> 
+
+                  <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
-                       Route
+                    Brand
                       </div>
-                      <asp:DropDownList ID="dpRoute" class="form-control" DataTextField="Name" DataValueField="RouteID" runat="server"  > 
+                       <asp:DropDownList ID="dpBrand" class="form-control" DataTextField="Name" DataValueField="CategoryId" runat="server" > 
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
                          </div>
-
-                      <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                    Product Type
-                      </div>
-                         <asp:DropDownList ID="dpType" class="form-control" DataTextField="Name" DataValueField="TypeID" runat="server" AutoPostBack="true" OnSelectedIndexChanged = "dpType_SelectedIndexChanged" > 
-                       </asp:DropDownList>
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div> 
-
-                   <div class="col-lg-3">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                      Commodity
-                      </div>
-                         <asp:DropDownList ID="dpCommodity" class="form-control" DataTextField="Name" DataValueField="CommodityID" runat="server"  > 
-                       </asp:DropDownList>
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div> 
-
-
-                             <div class="col-lg-3">
-                  <div class="form-group" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                       Start Amount
-                      </div>
-                       <asp:TextBox ID="txtStartAmt" class="form-control"   placeholder="Start Amount" runat="server" type="number" step="0.01"   ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div>       
-                
-                     
-
-                   <div class="col-lg-3">
-                  <div class="form-group" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                     End Amount
-                      </div>
-                       <asp:TextBox ID="txtEndAmt" class="form-control"   placeholder="End Amount" runat="server" type="number" step="0.01"   ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-
-                  </div><!-- /.form group -->
-
-                     
-                       
-                          
-                      </div>       
-                                  
-         <div class="col-lg-3">
-                  <div class="form-group">
-                   <div class="input-group">
-                        <span class="input-group-addon">
-                          <asp:CheckBox runat="server" ID="chkAmt" OnCheckedChanged="chkAmt_CheckedChanged" AutoPostBack="true"/>
-                        </span>
-                    <input type="text" class="form-control" value="All Amt" disabled>
-                  </div>
-                  </div><!-- /.form group -->
-                         </div>
+                 
+                 
+          
           
              
             
@@ -197,7 +136,7 @@
                  <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
-                               <asp:Button ID="btnViewDetails" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClick="btnViewDetails_Click"  Text="View Details"    />     
+                               <asp:Button ID="btngenrateBill" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btngenrateBill_Click"   Text="ViewReport"    />     
                         &nbsp; <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="return PrintPanel();"   Text="Print"    />     
                              
                     </div><!-- /.input group -->
@@ -217,38 +156,15 @@
                      
                     </ContentTemplate>
                 </asp:UpdatePanel>
-                   <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="upMain">
-            <ProgressTemplate>
-                
-                <div class="overlay">
-                <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
-<span class="sr-only">Loading...</span>
-                </div>
-
-            </ProgressTemplate>
-            </asp:UpdateProgress>
+                 
                 
             </div><!-- /.box-body -->            
           </div><!-- /.box -->
           
 
     </section>
-     <script type = "text/javascript">
-         function PrintPanel() {
-             var panel = document.getElementById("<%=pnlBill.ClientID %>");
-             var printWindow = window.open('', '', 'height=600,width=800');
-             printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 14px; font-family: sans-serif;}</style>");
-             printWindow.document.write('</head><body >');
-             printWindow.document.write(panel.innerHTML);
-             printWindow.document.write('</body></html>');
-             printWindow.document.close();
-             setTimeout(function () {
-                 printWindow.print();
-             }, 500);
-             return false;
-         }
-    </script>
-     <script>
+
+     <script type="text/javascript">
          yepnope({ // or Modernizr.load
              test: Modernizr.inputtypes.date,
              nope: [
@@ -272,7 +188,7 @@
                              _val = _this.val();
 
                          _this
-                         .attr('placeholder', 'dd-MM-yyyy')
+                         .attr('placeholder', 'gg/mm/aaaa')
                          .attr('autocomplete', 'off')
                          .prop('readonly', true)
                          .after('<input type="text" class="altfield" id="' + prefix + this.attr('id') + '" name="' + this.attr('name') + '" value="' + _val + '">')
@@ -280,12 +196,12 @@
                          .val('')
                          .datepicker({
                              altField: '#' + prefix + _this.attr('id'),
-                             dateFormat: 'dd-MM-yyyy',
-                             altFormat: 'dd-MM-yyyy'
+                             dateFormat: 'dd/mm/yy',
+                             altFormat: 'dd/mm/yy'
                          });
 
                          if (_val) {
-                             this.datepicker('setDate', $.datepicker.parseDate('dd-MM-yyyy', val));
+                             this.datepicker('setDate', $.datepicker.parseDate('dd/mm/yy', val));
                          };
                      });
 
@@ -293,13 +209,13 @@
                      // min attribute
                      $('input[type="date"][min]').each(function () {
                          var _this = $(this);
-                         this.datepicker("option", "minDate", $.datepicker.parseDate('dd-MM-yyyy', this.attr('min')));
+                         this.datepicker("option", "minDate", $.datepicker.parseDate('dd/mm/yy', this.attr('min')));
                      });
 
                      // max attribute
                      $('input[type="date"][max]').each(function () {
                          var _this = $(this);
-                         this.datepicker("option", "maxDate", $.datepicker.parseDate('dd-MM-yyyy', this.attr('max')));
+                         this.datepicker("option", "maxDate", $.datepicker.parseDate('dd/mm/yy', this.attr('max')));
                      });
                  }
              }

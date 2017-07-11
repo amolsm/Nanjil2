@@ -198,7 +198,7 @@ namespace Dairy.Tabs.Marketing
                     routsno++;
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td colspan='6'>");
-                    sb.Append(rows["SlabName"].ToString());
+                    sb.Append("<b>"+ rows["SlabName"].ToString()+ "</b>");
                     sb.Append("</td>");
                     sb.Append("</tr>");
                     //sb.Append("<tr><td colspan='6'>&nbsp;</td></tr>");
@@ -208,10 +208,10 @@ namespace Dairy.Tabs.Marketing
                     sb.Append(routsno.ToString());
                     sb.Append("</td>");
                     sb.Append("<td>");
-                    sb.Append(rows["RouteCode"].ToString());
+                    sb.Append("<b>" + rows["RouteCode"].ToString()+"</b>");
                     sb.Append("</td>");
                     sb.Append("<td colspan = '4'>");
-                    sb.Append(rows["RouteName"].ToString());
+                    sb.Append("<b>" + rows["RouteName"].ToString() + "</b>");
                     sb.Append("</td>");
                     sb.Append("</tr>");
                     double qty = 0;

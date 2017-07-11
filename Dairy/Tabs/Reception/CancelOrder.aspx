@@ -136,7 +136,7 @@
 
                                 <td><%# Eval("RouteName")%></td>
                                 <td><%# (String.IsNullOrEmpty(Eval("AgentName").ToString()) ? Eval("EmployeeCode") +" "+ Eval("EmployeeName") : Eval("AgentCode") +" "+  Eval("AgentName"))%></td>
-                                <td><%# Convert.ToDecimal(Eval("TotalBill")).ToString("0.00")%></td>
+                                <td><%# string.Format("{0:##,###.00}",Eval("TotalBill"))%></td>
                                 
                          <td>
                              <asp:LinkButton ID="lbEdite" AlternateText="Edit" ForeColor="Gray" OnItemCommand="lbEdite_ItemCommand" 

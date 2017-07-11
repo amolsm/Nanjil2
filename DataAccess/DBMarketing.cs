@@ -50,6 +50,16 @@ namespace DataAccess
             return DS;
         }
 
+        public DataSet SalesAnalysisitemwiseByDateForPlantandBooth(string startDate, string endDate, int brandID)
+        {
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@StartDate", startDate));
+            paramCollection.Add(new DBParameter("@EndDate", endDate));
+            paramCollection.Add(new DBParameter("@BrandID", brandID));
+            return _DBHelper.ExecuteDataSet("sp_SalesComparisonReportItemwise", paramCollection, CommandType.StoredProcedure);
+
+        }
+
         public int AddSchemeRefund(Marketings marketing)
         {
             int result = 0;
