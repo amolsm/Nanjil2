@@ -251,7 +251,7 @@ namespace Dairy.Tabs.Reports
                         sb.Append("</td>");
                         schemeamount = (Convert.ToDouble(DS2.Tables[0].Rows[0]["SchemeAmount"]));
                         sb.Append("<td class='tg-yw4l' colspan='4'  style='text-align:right'>");
-                        sb.Append(schemeamount);
+                        sb.Append((Convert.ToDecimal(schemeamount).ToString("#.00")));
                         sb.Append("</td>");
                         totalScheme = totalScheme + (Convert.ToDouble(DS2.Tables[0].Rows[0]["SchemeAmount"]));
                     }
@@ -268,13 +268,18 @@ namespace Dairy.Tabs.Reports
                     sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:left'>");
                     sb.Append(row2["SalesEmployee"].ToString());
                     sb.Append("</td>");
-
+                    double totalamt = 0;
                     sb.Append("<td> &nbsp; </td>");
+                    try
+                    {
+                        totalamt = Convert.ToDouble(row2["Total"]);
+                    }
+                    catch { totalamt = 0; }
+
                   
-                    amt += schemeamount;
                     sb.Append("<td colpsan=3>");
                     if (row2["PaymentMode"].ToString() == "Daily")
-                        sb.Append("Reciept: " + amt.ToString("#0.00"));
+                        sb.Append("Reciept: " + totalamt.ToString("#0.00"));
                     else
                         sb.Append("Reciept: 0.00");
                     sb.Append("</td>");
@@ -287,7 +292,7 @@ namespace Dairy.Tabs.Reports
 
 
 
-                    sb.Append((Convert.ToDecimal(amt).ToString("#0.00")));
+                    sb.Append((Convert.ToDecimal(totalamt).ToString("#0.00")));
 
                     sb.Append("</td>");
 
