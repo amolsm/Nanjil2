@@ -1,32 +1,6 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
-  <Table>
-    <Row>1</Row>
-    <OrderID>921964</OrderID>
-    <OrderDate>14-07-2017</OrderDate>
-    <RouteName>Manavalakuricy</RouteName>
-    <ProductName>TM-500ml</ProductName>
-    <CommodityName>Toned Milk</CommodityName>
-    <Qty>100</Qty>
-    <OrderDetailsID>936425</OrderDetailsID>
-    <RouteID>4</RouteID>
-    <UnitCost>0.0000</UnitCost>
-    <AgentName>113  Plant Booth</AgentName>
-  </Table>
-  <Table>
-    <Row>2</Row>
-    <OrderID>921964</OrderID>
-    <OrderDate>14-07-2017</OrderDate>
-    <RouteName>Manavalakuricy</RouteName>
-    <ProductName>TM-250ml</ProductName>
-    <CommodityName>Toned Milk</CommodityName>
-    <Qty>11</Qty>
-    <OrderDetailsID>936426</OrderDetailsID>
-    <RouteID>4</RouteID>
-    <UnitCost>0.0000</UnitCost>
-    <AgentName>113  Plant Booth</AgentName>
-  </Table>
   <Table1>
-    <id>7</id>
+    <id>12</id>
   </Table1>
 </NewDataSet>

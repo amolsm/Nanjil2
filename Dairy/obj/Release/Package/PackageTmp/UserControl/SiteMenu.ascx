@@ -273,8 +273,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
                        <ul class="treeview-menu">
-                      <li><a href="/Tabs/Marketing/AgentSchemeDetails.aspx"><i class="fa fa-circle-o"></i> Agency Scheme Details</a></li>
-                  <li><a href="/Tabs/Marketing/AgentSchemeSummary.aspx"><i class="fa fa-circle-o"></i>Agency Scheme Summary</a></li>
+                      <li><a href="/Tabs/Marketing/AgentSchemeDetails.aspx"><i class="fa fa-circle-o"></i>Agency Scheme Summary</a></li>
+                  <li><a href="/Tabs/Marketing/AgentSchemeSummary.aspx"><i class="fa fa-circle-o"></i>Agency Scheme Details</a></li>
                     <li><a href="/Tabs/Marketing/SchemeRefund.aspx"><i class="fa fa-circle-o"></i>Agency SchemeRefund  </a></li>
                   <li><a href="/Tabs/Marketing/RefundSchemeSummary.aspx"><i class="fa fa-circle-o"></i>Refund Scheme Summary  </a></li>
                        </ul>
@@ -828,8 +828,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
                        <ul class="treeview-menu">
-                      <li><a href="/Tabs/Marketing/AgentSchemeDetails.aspx"><i class="fa fa-circle-o"></i> Agency Scheme Details</a></li>
-                  <li><a href="/Tabs/Marketing/AgentSchemeSummary.aspx"><i class="fa fa-circle-o"></i>Agency Scheme Summary</a></li>
+                      <li><a href="/Tabs/Marketing/AgentSchemeDetails.aspx"><i class="fa fa-circle-o"></i>Agency Scheme Summary</a></li>
+                  <li><a href="/Tabs/Marketing/AgentSchemeSummary.aspx"><i class="fa fa-circle-o"></i>Agency Scheme Details</a></li>
                     <li><a href="/Tabs/Marketing/SchemeRefund.aspx"><i class="fa fa-circle-o"></i>Agency SchemeRefund  </a></li>
                   <li><a href="/Tabs/Marketing/RefundSchemeSummary.aspx"><i class="fa fa-circle-o"></i>Refund Scheme Summary  </a></li>
                        </ul>

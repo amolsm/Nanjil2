@@ -8,12 +8,12 @@
       
       <section class="content-header">
           <h1>
-           Agency Scheme Details
+           Agency Scheme Summary
             <small>Administration</small>    
           </h1> 
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Administration</a></li>
-            <li class="active">Agency Scheme</li>
+            <li class="active">Agency Scheme Summary</li>
           </ol>
         </section>
 
@@ -52,7 +52,7 @@
 
            <div class="box  ">
             <div class="box-header with-border">
-              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="Agency Scheme Details"></asp:Label> </h3>
+              <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="Agency Scheme Summary"></asp:Label> </h3>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
                 

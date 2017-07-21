@@ -258,7 +258,7 @@ namespace Dairy.Tabs.Sales
 
                 sb.Append("<th class='tg-yw4l' colspan='2' style='text-align:right; font-size: 80%;'>");
 
-                sb.Append("TIN:330761667331<br>");
+                sb.Append("GSTIN:&nbsp;33AAECN2463R1Z2<br>");
                 sb.Append("</th>");
                 sb.Append("</tr>");
 
@@ -365,7 +365,7 @@ namespace Dairy.Tabs.Sales
                 sb.Append("</b> </td>");
 
                 sb.Append("</tr>");
-                sb.Append("<tr > <td colspan = '5'style='text-align:center > Thanks, Visit Again...!! </td> </tr>");
+                sb.Append("<tr> <td colspan = '5'style='text-align:center'> Thanks, Visit Again...!! </td> </tr>");
                 result = sb.ToString();
                 genratedBIll.Text = result;
                 //Session["ctrl"] = sb.ToString();

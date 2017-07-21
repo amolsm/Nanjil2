@@ -140,9 +140,7 @@
                        </asp:DropDownList>
                          
                     </div><!-- /.input group -->
-                       <asp:RequiredFieldValidator InitialValue="0" ID="RequiredFieldValidator1" Display="Dynamic" 
-    ValidationGroup="Save" runat="server" ControlToValidate="dpAgent" ForeColor="Red"
-    ErrorMessage="Please Select Booth "></asp:RequiredFieldValidator>
+                     
                   </div><!-- /.form group -->
                          </div>
           

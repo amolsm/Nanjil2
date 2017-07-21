@@ -89,12 +89,18 @@ namespace Dairy.Tabs.Marketing
                             //sb.Append("<table class='tg style1' style='page-break-inside:avoid; align:center;'>");
                             sb.Append("<table class='style1' style='page -break-inside:avoid; font - family: sans - serif; padding - right: 10px; align: center; '>");
                             sb.Append("<colgroup>");
+                            sb.Append("<col style = 'width:30px'>");
+                            sb.Append("<col style = 'width:80px'>");
                             sb.Append("<col style = 'width:20px'>");
-                            sb.Append("<col style = 'width:40px'>");
-                            sb.Append("<col style = 'width:40px'>");
-                            sb.Append("<col style = 'width:40px'>");
-                            sb.Append("<col style = 'width:40px'>");
-                            sb.Append("<col style = 'width:40px'>");
+                            sb.Append("<col style = 'width:20px'>");
+                            sb.Append("<col style = 'width:70px'>");
+                            sb.Append("<col style = 'width:100px'>");
+                            //sb.Append("<col style = 'width:20px'>");
+                            //sb.Append("<col style = 'width:40px'>");
+                            //sb.Append("<col style = 'width:40px'>");
+                            //sb.Append("<col style = 'width:40px'>");
+                            //sb.Append("<col style = 'width:40px'>");
+                            //sb.Append("<col style = 'width:40px'>");
 
                             sb.Append("</colgroup>");
                             sb.Append("<tbody>");
@@ -104,7 +110,7 @@ namespace Dairy.Tabs.Marketing
                             sb.Append("</th>");
 
                             sb.Append("<th class='tg-baqh' colspan='5' style='text-align:center; font-size: 90%;'  >");
-                            sb.Append("<u>Agency Scheme Summary </u>");
+                            sb.Append("<u>Agency Scheme Details</u>");
                             sb.Append("<br></th></tr>");
                             sb.Append("<tr style='border -bottom:1px solid'>");
                             sb.Append("<td class='tg - yw4l' colspan='6' style='text - align:Center; font-size:15px'> ");
@@ -214,14 +220,18 @@ namespace Dairy.Tabs.Marketing
                             sb.Append("<td colspan='2' style='text-align:left; padding-top:5px; font-size:15px'>");
                             sb.Append("ClosingBalance");
                             sb.Append("</td>");
+                        
                             sb.Append("<td colspan='2' style='text-align:right; padding-top:5px'>");
-                            sb.Append("&nbsp;");
+
+                            sb.Append(Convert.ToDecimal(totalscheme).ToString("0.00"));
+
+
                             sb.Append("</td>");
+                         
+                           
                             sb.Append("<td colspan='2' style='text-align:right; padding-top:5px;font-size: 15px'>");
 
-                            //if (totalscheme != 0)
-                            //{ sb.Append(totalscheme); }
-                            //else { sb.Append(""); }
+                          
 
                             double closingb = 0;
                             double totalschemamt1 = 0;
@@ -338,9 +348,9 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<table class='tg style1'  style=' position:relative;align:center;'>");
                 sb.Append("<colgroup>");
                 sb.Append("<col style = 'width:80px'>");
-                sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:160px'>");
-                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:120px'>");
+                sb.Append("<col style = 'width:160px'>");
                 sb.Append("<col style = 'width:120px'>");
                 sb.Append("<col style = 'width:120px'>");
                 sb.Append("</colgroup>");
@@ -354,14 +364,14 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                 sb.Append("</th>");
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
-                sb.Append("TIN:330761667331<br>");
+                sb.Append("GSTIN:&nbsp;33AAECN2463R1Z2<br>");
                 sb.Append("</th>");
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:center'>");
 
-                sb.Append("<b><u>  Agency Scheme Summary </u> </b><br/>");
+                sb.Append("<b><u>Agency Scheme Details</u> </b><br/>");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");
                 sb.Append("PH:248370,248605");

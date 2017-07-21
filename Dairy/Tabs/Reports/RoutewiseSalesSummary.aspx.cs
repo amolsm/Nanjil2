@@ -80,7 +80,7 @@ namespace Dairy.Tabs.Reports
 
                 sb.Append("<th class='tg-yw4l'  style='text-align:right'>");
 
-                sb.Append("TIN:330761667331<br>");
+                sb.Append("GSTIN:&nbsp;33AAECN2463R1Z2<br>");
                 sb.Append("</th>");
                 sb.Append("</tr>");
 
@@ -411,8 +411,7 @@ namespace Dairy.Tabs.Reports
                 sb.Append("</td> </tr>");
 
                 #endregion
-                if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1 || Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
-                {
+              
                     #region SchemeTotal
 
                     sb.Append("<tr style='border-Top:1px solid' > ");
@@ -457,7 +456,7 @@ namespace Dairy.Tabs.Reports
 
 
                     #endregion
-                }
+               
 
                 sb.Append("<tr style='border-Top:1px solid' > ");
                 sb.Append("<td colspan ='6' style='text-align:right'>");

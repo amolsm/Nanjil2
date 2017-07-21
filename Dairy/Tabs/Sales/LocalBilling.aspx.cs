@@ -303,7 +303,7 @@ namespace Dairy.Tabs.Sales
                 sb.Append("</b> </td>");
 
                 sb.Append("</tr>");
-                sb.Append("<tr > <td colspan = '5'style='text-align:center > Thanks, Visit Again...!! </td> </tr>");
+                sb.Append("<tr> <td colspan = '5'style='text-align:center'> Thanks, Visit Again...!! </td> </tr>");
                 //sb.Append("<tr> <td colspan='5' style='text-align:left> Thanks, Visit Again...!! </td> </tr>" );
                
                 result = sb.ToString();

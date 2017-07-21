@@ -39,7 +39,7 @@ namespace Dairy.Tabs.Reports
                 {
                     dpAgent.DataSource = DS;
                     dpAgent.DataBind();
-                    dpAgent.Items.Insert(0, new ListItem("--Select Booth  --", "0"));
+                    dpAgent.Items.Insert(0, new ListItem("--All Booth  --", "0"));
 
                 }
                 txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
@@ -70,9 +70,9 @@ namespace Dairy.Tabs.Reports
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:100px'>");
-                sb.Append("<col style = 'width:100px'>");
-                sb.Append("<col style = 'width:100px'>");
-                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:120px'>");
+                sb.Append("<col style = 'width:120px'>");
+                sb.Append("<col style = 'width:120px'>");
                 sb.Append("</colgroup>");
 
                 sb.Append("<tr>");
@@ -86,7 +86,7 @@ namespace Dairy.Tabs.Reports
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
 
-                sb.Append("TIN:330761667331<br>");
+                sb.Append("GSTIN:&nbsp;33AAECN2463R1Z2<br>");
                 sb.Append("</th>");
                 sb.Append("</tr>");
 
@@ -348,11 +348,10 @@ namespace Dairy.Tabs.Reports
 
 
                 //sb.Append("</tr>");
-                if(dpBrand.SelectedItem.Value=="1" || dpBrand.SelectedItem.Value=="0")
-                { 
+               
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:left'>");
-                sb.Append("<b>" + "TotalScheme" + "</b>");
+                sb.Append("<b>" + "Scheme" + "</b>");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:center'>");
 
@@ -362,10 +361,10 @@ namespace Dairy.Tabs.Reports
 
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");
                 totalscheme = string.IsNullOrEmpty(DS.Tables[6].Rows[0]["TotalScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[6].Rows[0]["TotalScheme"]);
-                sb.Append("<b>" + (Convert.ToDouble(totalscheme).ToString("#.00")) + "</b>");
+                sb.Append("<b>" + (Convert.ToDouble(totalscheme).ToString("0.00")) + "</b>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
-                }
+                
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 double agentcreditsales = string.IsNullOrEmpty(DS.Tables[10].Rows[0]["Total"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[10].Rows[0]["Total"]);
                 double agentcashsales = string.IsNullOrEmpty(DS.Tables[9].Rows[0]["Total"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[9].Rows[0]["Total"]);
@@ -374,14 +373,14 @@ namespace Dairy.Tabs.Reports
                 double cashSale = agentcashsales + totalscheme + localsales;
                 double creditSale = agentcreditsales + employeesales;
                 double totalSale = cashSale + creditSale;
-                sb.Append("<td colspan ='4' style='text-align:left'>");
+                sb.Append("<td colspan ='2' style='text-align:left'>");
                 sb.Append("<b>" + "Total Cash Sale" + "&nbsp;" + (Convert.ToDecimal(cashSale).ToString("#0.00")) + "</b>");
                 sb.Append("</td>");
-                sb.Append("<td  colspan ='2' style='text-align:left'>");
+                sb.Append("<td  colspan ='3' style='text-align:left'>");
                 sb.Append("<b>" + "Total Credit Sale" + "&nbsp;" + (Convert.ToDecimal(creditSale).ToString("#0.00")) + "</b>");
                 sb.Append("</td>");
-                sb.Append("<td style='text-align:right'>");
-                sb.Append("<b>" + "Total Sale" + "&nbsp;" + (Convert.ToDecimal(totalSale).ToString("#0.00")) + "</b>");
+                sb.Append("<td colspan ='2' style='text-align:right'>");
+                sb.Append("<b>" + "Total Amount" + "&nbsp;" + (Convert.ToDecimal(totalSale).ToString("#0.00")) + "</b>");
                 sb.Append("</td>");
 
 

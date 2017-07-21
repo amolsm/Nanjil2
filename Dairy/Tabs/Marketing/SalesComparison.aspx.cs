@@ -142,12 +142,12 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("<colgroup>");
                     sb.Append("<col style = 'width:40px'>");
                     sb.Append("<col style = 'width:200px'>");
-                    sb.Append("<col style = 'width:100px'>");
-                    sb.Append("<col style = 'width:100px'>");
-                    sb.Append("<col style = 'width:100px'>");
-                    sb.Append("<col style = 'width:100px'>");
-                    sb.Append("<col style = 'width:100px'>");
-                    sb.Append("<col style = 'width:100px'>");
+                    sb.Append("<col style = 'width:120px'>");
+                    sb.Append("<col style = 'width:120px'>");
+                    sb.Append("<col style = 'width:120px'>");
+                    sb.Append("<col style = 'width:120px'>");
+                    sb.Append("<col style = 'width:120px'>");
+                    sb.Append("<col style = 'width:120px'>");
                     sb.Append("<col style = 'width:150px'>");
                     sb.Append("</colgroup>");
 
@@ -233,7 +233,7 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("<td style='text-align:center;font-size: 80%;'>");
                     sb.Append("<b>" + (Convert.ToDateTime(txtStart2Date.Text)).ToString("dd-MM-yyyy") + "</b>");
                     sb.Append("</td>");
-                    sb.Append("<td style='text-align:right;font-size: 80%;'>");
+                    sb.Append("<td  style='text-align:right;font-size: 80%;'>");
                     sb.Append("<b>" + (Convert.ToDateTime(txtEnd2Date.Text)).ToString("dd-MM-yyyy") + "</b>");
                     sb.Append("</td>");
 
@@ -248,7 +248,7 @@ namespace Dairy.Tabs.Marketing
                     sb.Append("</tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td>");
-                    sb.Append("<b>Total Qty</b>");
+                    sb.Append("<b>Total&nbsp;Qty</b>");
                     sb.Append("</td>");
                     sb.Append("<td colspan='2'  style='text-align:center'>");
                     sb.Append("<b>Average</b>");
@@ -256,7 +256,7 @@ namespace Dairy.Tabs.Marketing
 
 
                     sb.Append("<td  style='text-align:center'>");
-                    sb.Append("<b>Total Qty</b>");
+                    sb.Append("<b>Total&nbsp;Qty</b>");
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
                     sb.Append("<b>Average</b>");
@@ -291,12 +291,31 @@ namespace Dairy.Tabs.Marketing
                     {
                         sb.Append("<tr style='border-bottom:1px solid' > <td colspan = '9'> &nbsp; </td> </tr>");
                         sb.Append("<tr>");
-                        sb.Append("<td colspan = '9'>");
+                        sb.Append("<td>");
                         sb.Append("<b>"+rows["RouteCode"].ToString()+"</b>");
-                        sb.Append("&nbsp;&nbsp;&nbsp;&nbsp;");
+                        sb.Append("</td>");
+                        sb.Append("<td>");
                         sb.Append("<b>" + rows["RouteName"].ToString() + "</b>");
                         sb.Append("</td>");
-                       
+                        sb.Append("<td>");
+                        sb.Append("<b>Total&nbsp;Qty</b>");
+                        sb.Append("</td>");
+                        sb.Append("<td colspan='2' style='text-align:center'>");
+                        sb.Append("<b>Average</b>");
+                        sb.Append("</td>");
+                        sb.Append("<td style='text-align:center'>");
+                        sb.Append("<b>Total&nbsp;Qty</b>");
+                        sb.Append("</td>");
+                        sb.Append("<td style='text-align:right'>");
+                        sb.Append("<b>Average</b>");
+                        sb.Append("</td>");
+                        sb.Append("<td style='text-align:right'>");
+                        sb.Append("<b>Diff.Quantity</b>");
+                        sb.Append("</td>");
+                        sb.Append("<td style='text-align:right'>");
+                        sb.Append("<b>Avg.Diff</b>");
+                        sb.Append("</td>");
+
                         sb.Append("</tr>");
                         sb.Append("<tr style='border-bottom:1px solid' > <td colspan = '9'></td> </tr>");
                         foreach (DataRow row in sortagent.Rows)

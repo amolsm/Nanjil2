@@ -28,7 +28,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/07/2017 15:09:57</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
-      <publishTime>07/14/2017 12:07:12</publishTime>
+      <publishTime>07/21/2017 19:26:06</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
       <publishTime>07/11/2017 12:46:42</publishTime>
@@ -442,10 +442,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2017 11:51:10</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgentSchemeDetails.aspx">
-      <publishTime>06/19/2017 12:09:44</publishTime>
+      <publishTime>07/19/2017 17:33:27</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgentSchemeSummary.aspx">
-      <publishTime>05/12/2017 11:33:16</publishTime>
+      <publishTime>07/19/2017 16:31:31</publishTime>
     </File>
     <File Include="Tabs/Marketing/AgentSlabReportList.aspx">
       <publishTime>05/11/2017 16:45:34</publishTime>
@@ -523,7 +523,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/05/2017 13:59:09</publishTime>
     </File>
     <File Include="Tabs/Marketing/SalesComparison.aspx">
-      <publishTime>05/08/2017 11:07:12</publishTime>
+      <publishTime>07/21/2017 19:25:32</publishTime>
     </File>
     <File Include="Tabs/Marketing/SalesComparisonReport.aspx">
       <publishTime>05/29/2017 11:48:12</publishTime>
@@ -808,7 +808,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2017 11:51:10</publishTime>
     </File>
     <File Include="Tabs/Reception/ItemwiseOrderSummary.aspx">
-      <publishTime>03/02/2017 11:51:10</publishTime>
+      <publishTime>07/21/2017 17:08:56</publishTime>
     </File>
     <File Include="Tabs/Reception/OrderQuantity.aspx">
       <publishTime>03/02/2017 11:51:10</publishTime>
@@ -823,7 +823,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/20/2017 11:07:52</publishTime>
     </File>
     <File Include="Tabs/Reception/RatewiseOrderSummary.aspx">
-      <publishTime>03/02/2017 11:51:10</publishTime>
+      <publishTime>07/21/2017 17:07:01</publishTime>
     </File>
     <File Include="Tabs/Reception/Web.config">
       <publishTime>03/02/2017 11:51:10</publishTime>
@@ -835,7 +835,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2017 11:51:10</publishTime>
     </File>
     <File Include="Tabs/Reports/Boothitemwisesalessummary.aspx">
-      <publishTime>06/29/2017 16:10:14</publishTime>
+      <publishTime>07/21/2017 12:16:54</publishTime>
     </File>
     <File Include="Tabs/Reports/BoothroutewiseSalesSummary.aspx">
       <publishTime>03/02/2017 11:51:10</publishTime>
@@ -3697,13 +3697,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2017 11:51:12</publishTime>
     </File>
     <File Include="UserControl/SiteMenu.ascx">
-      <publishTime>07/01/2017 19:54:18</publishTime>
+      <publishTime>07/19/2017 16:31:06</publishTime>
     </File>
     <File Include="UserControl/ThemesSetting.ascx">
       <publishTime>03/02/2017 11:51:12</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/14/2017 12:07:14</publishTime>
+      <publishTime>07/21/2017 19:26:09</publishTime>
     </File>
     <File Include="WebService/BindAgentSlab.asmx">
       <publishTime>03/02/2017 11:51:12</publishTime>

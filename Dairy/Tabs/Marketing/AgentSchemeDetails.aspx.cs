@@ -41,9 +41,10 @@ namespace Dairy.Tabs.Marketing
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 DataView view = new DataView(DS.Tables[0]);
+                view.Sort = "RouteCode ASC";
                 DataTable distinctValues = view.ToTable(true, "RouteCode", "RouteName");
                 StringBuilder sb = new StringBuilder();
-
+               
 
                 sb.Append("<style type='text / css'>");
                 sb.Append(".tg  { border - collapse:collapse; border - spacing:0; border: none; }");
@@ -57,8 +58,8 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:160px'>");
                 sb.Append("<col style = 'width:100px'>");
-                sb.Append("<col style = 'width:120px'>");
-                sb.Append("<col style = 'width:120px'>");
+                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
                 sb.Append("</colgroup>");
 
                 sb.Append("<tr>");
@@ -70,14 +71,14 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                 sb.Append("</th>");
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
-                sb.Append("TIN:330761667331<br>");
+                sb.Append("GSTIN:&nbsp;33AAECN2463R1Z2<br>");
                 sb.Append("</th>");
                 sb.Append("</tr>");
 
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:center'>");
 
-                sb.Append("<b><u>Agency Scheme Details </u> </b><br/>");
+                sb.Append("<b><u>Agency Scheme Summary </u> </b><br/>");
                 sb.Append("</td>");
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");
                 sb.Append("PH:248370,248605");
@@ -89,6 +90,20 @@ namespace Dairy.Tabs.Marketing
                 sb.Append("</td>");
                 sb.Append("<td colspan='3' style='text-align:right'>");
                 sb.Append(DateTime.Now.ToString("dd-MM-yyyy HH:mm"));
+                sb.Append("</td>");
+                sb.Append("</tr>");
+                sb.Append("<tr style='border-bottom:1px solid'>");
+                sb.Append("<td style='text-align:left'>");
+                sb.Append("Start Date: ");
+                sb.Append("</td>");
+                sb.Append("<td colspan='2'>");
+                sb.Append(Convert.ToDateTime(txtStartDate.Text).ToString("dd-MM-yyyy"));
+                sb.Append("</td>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("End Date: ");
+                sb.Append("</td>");
+                sb.Append("<td colspan='2' style='text-align:right'>");
+                sb.Append(Convert.ToDateTime(txtEndDate.Text).ToString("dd-MM-yyyy"));
                 sb.Append("</td>");
                 sb.Append("</tr>");
                 int totalentries = 0;
