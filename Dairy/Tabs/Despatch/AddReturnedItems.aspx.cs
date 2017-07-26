@@ -32,13 +32,14 @@ namespace Dairy.Tabs.Despatch
             {
                 //BindRouteList();
                 BindDropDwon();
+             
                 //txtOrderDetailsId.Visible = false;
-              
+
                 //btnPrintSummary.Visible = false;
                 //Button btnSubmitModal = (Button)FindControl("btnSubmitModal");
                 //btnSubmitModal.Visible = false;
                 // btnSubmitModal.Visible = false;
-              //  txtOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
+                //  txtOrderDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
                 //btnAddRoute.Visible = true;
                 //btnupdateroute.Visible = false;
             }

@@ -18,7 +18,7 @@ namespace Dairy.Tabs.Cashier
         double totalstaffamount;
         double totalagentcreditamount;
         double totalamount;
-        double totalscheme ;
+        double totalscheme;
 
         double totalreceipt;
         double totalagentcash;
@@ -174,17 +174,17 @@ namespace Dairy.Tabs.Cashier
 
 
                     sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:center'>");
-                   
+
                     sb.Append("<b>" + row2["SubQuantity"] + " " + row2["UnitName"] + "</b>");
-                    
+
 
                     sb.Append("</td>");
 
                     sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
-                    
+
 
                     sb.Append("<b>" + (Convert.ToDecimal(row2["SubAmount"]).ToString("#.00")) + "</b>");
-                   
+
 
                     sb.Append("</td>");
                     sb.Append("</tr>");
@@ -204,16 +204,16 @@ namespace Dairy.Tabs.Cashier
 
 
                             sb.Append("<td class='tg-yw4l' colspan='2'   style='text-align:center'>");
-                            
-                            sb.Append(row["Quantity"].ToString() + " " + row["UnitName"] );
-                           
+
+                            sb.Append(row["Quantity"].ToString() + " " + row["UnitName"]);
+
                             sb.Append("</td>");
 
                             sb.Append("<td class='tg-yw4l'   style='text-align:right'>");
-                            
+
                             sb.Append((Convert.ToDecimal(row["Amount"]).ToString("#.00")));
 
-                           
+
 
                             sb.Append("</td>");
 
@@ -242,26 +242,26 @@ namespace Dairy.Tabs.Cashier
 
                 sb.Append("<td class='tg-yw4l'  colspan='2' style='text-align:center'>");
                 double totalquantity;
-                
+
 
 
                 try
                 {
                     totalquantity = (Convert.ToDouble(DS.Tables[1].Rows[0]["TotalQuantity"]));
                     sb.Append("<b>" + totalquantity + "</b>");
-                        
+
                 }
                 catch (Exception ex)
                 {
 
                 }
-               
+
 
                 sb.Append("</td>");
 
 
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");
-              
+
                 try
                 {
                     totalamount = (Convert.ToDouble(DS.Tables[1].Rows[0]["TotalAmount"]));
@@ -273,32 +273,33 @@ namespace Dairy.Tabs.Cashier
 
                 }
 
-                
+
 
                 sb.Append("</td>");
                 sb.Append("</tr>");
 
-               
-                sb.Append("<tr style='page-break-inside:avoid;'>");
-                sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:left'>");
-                sb.Append("<b>Scheme<b>");
-                sb.Append("</td>");
+                if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1 || Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
+                {
+                    sb.Append("<tr style='page-break-inside:avoid;'>");
+                    sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:left'>");
+                    sb.Append("<b>Scheme<b>");
+                    sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:center'>");
-                sb.Append("<b>" + DS.Tables[6].Rows[0]["NumberOfScheme"].ToString() + "</b>");
-                sb.Append("</td>");
+                    sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:center'>");
+                    sb.Append("<b>" + DS.Tables[6].Rows[0]["NumberOfScheme"].ToString() + "</b>");
+                    sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' style='text-align:right'>");
-                totalscheme = string.IsNullOrEmpty(DS.Tables[6].Rows[0]["TotalScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[6].Rows[0]["TotalScheme"]);
-                sb.Append("<b>" + totalscheme.ToString("#0.00") + "</b>");
-                sb.Append("</td>");
+                    sb.Append("<td class='tg-yw4l' style='text-align:right'>");
+                    totalscheme = string.IsNullOrEmpty(DS.Tables[6].Rows[0]["TotalScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[6].Rows[0]["TotalScheme"]);
+                    sb.Append("<b>" + totalscheme.ToString("#0.00") + "</b>");
+                    sb.Append("</td>");
 
-                sb.Append("</tr>");
-               
+                    sb.Append("</tr>");
+                }
                 sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '7'> &nbsp; </td> </tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td  colspan='3' class='tg-yw4l'  style='text-align:left'>");
-                
+
                 totalamount += totalscheme;
                 sb.Append("Total Amount :   " + "<b>" + (Convert.ToDecimal(totalamount).ToString("#0.00")) + "</b>");
 
@@ -310,14 +311,14 @@ namespace Dairy.Tabs.Cashier
                 sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
                 try
                 {
-                    
-                totalagentcash = Convert.ToDouble(DS.Tables[3].Rows[0]["Amount"]);
-                totalagentcash = totalagentcash + totalscheme;
-                sb.Append("<b>" + (Convert.ToDecimal(totalagentcash).ToString("#0.00")) + "</b>");
-                 
-                    
 
-               totalreceipt = totalagentcash + totalscheme;
+                    totalagentcash = Convert.ToDouble(DS.Tables[3].Rows[0]["Amount"]);
+                    totalagentcash = totalagentcash + totalscheme;
+                    sb.Append("<b>" + (Convert.ToDecimal(totalagentcash).ToString("#0.00")) + "</b>");
+
+
+
+                    totalreceipt = totalagentcash + totalscheme;
                 }
                 catch (Exception ex)
                 { }
@@ -335,17 +336,18 @@ namespace Dairy.Tabs.Cashier
                 try
                 {
 
-                   
-                 totalstaffamount = Convert.ToDouble(DS.Tables[5].Rows[0]["Amount"]);
-                      
+
+                    totalstaffamount = Convert.ToDouble(DS.Tables[5].Rows[0]["Amount"]);
+
                 }
                 catch (Exception ex) { }
-              
-                try {
-                
-                        totalagentcreditamount = Convert.ToDouble(DS.Tables[4].Rows[0]["Amount"]);
-                   
-                   
+
+                try
+                {
+
+                    totalagentcreditamount = Convert.ToDouble(DS.Tables[4].Rows[0]["Amount"]);
+
+
                 }
                 catch (Exception ex) { }
                 totalstaffamount += totalagentcreditamount;

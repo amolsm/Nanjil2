@@ -196,7 +196,7 @@ namespace Dairy.Tabs.Reception
 
                     sb.Append("<td class='tg-yw4l' colspan='2'  style='text-align:center'>");
 
-                    sb.Append("<b>" + row2["SubQuantity"] + "</b>" +" "+ row2["UnitName"]);
+                    sb.Append("<b>" + row2["SubQuantity"] + "</b>" + " " + row2["UnitName"]);
 
 
                     sb.Append("</td>");
@@ -258,7 +258,8 @@ namespace Dairy.Tabs.Reception
 
 
                 }
-              
+                if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1 || Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
+                {
                     sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '9'> &nbsp; </td> </tr>");
                     sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'>");
 
@@ -284,8 +285,8 @@ namespace Dairy.Tabs.Reception
 
                     try
                     {
-                        noofscheme = (Convert.ToDouble(DS.Tables[3].Rows[0]["NumberOfScheme"])) ;
-                        
+                        noofscheme = (Convert.ToDouble(DS.Tables[3].Rows[0]["NumberOfScheme"]));
+
                     }
                     catch (Exception ex)
                     {
@@ -303,7 +304,7 @@ namespace Dairy.Tabs.Reception
                     try
                     {
                         totalscheme = (string.IsNullOrEmpty(DS.Tables[3].Rows[0]["TotalScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[3].Rows[0]["TotalScheme"]));
-                        
+
 
                     }
                     catch (Exception ex)
@@ -316,7 +317,7 @@ namespace Dairy.Tabs.Reception
                     sb.Append("</td>");
                     sb.Append("</tr>");
 
-                
+                }
 
 
 
@@ -331,7 +332,7 @@ namespace Dairy.Tabs.Reception
                 sb.Append("<b>" + "Total" + "</b>");
                 sb.Append("</td>");
 
-               
+
 
                 sb.Append("<td class='tg-yw4l' style='text-align:left'>");
                 double totalamount;

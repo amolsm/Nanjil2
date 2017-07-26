@@ -246,7 +246,8 @@ namespace Dairy.Tabs.Reports
 
 
                 }
-            
+                if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1 || Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
+                {
                     sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '9'> &nbsp; </td> </tr>");
                     sb.Append("<tr style='border-bottom:1px solid;page-break-inside:avoid;'>");
 
@@ -304,7 +305,7 @@ namespace Dairy.Tabs.Reports
                     sb.Append("</td>");
                     sb.Append("</tr>");
 
-             
+                }
 
 
 

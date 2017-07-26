@@ -201,7 +201,8 @@ namespace Dairy.Tabs.Reception
 
                 }
 
-             
+                if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1 || Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
+                {
                     sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '6'> &nbsp; </td> </tr>");
                     sb.Append("<tr style='border-bottom:1px solid'>");
                     sb.Append("<td  colspan='2' class='tg-yw4l'  style='text-align:left'>");
@@ -225,7 +226,7 @@ namespace Dairy.Tabs.Reception
                     try
                     {
                         noofscheme = (string.IsNullOrEmpty(DS.Tables[4].Rows[0]["NumberOfScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[4].Rows[0]["NumberOfScheme"]));
-                        
+
                     }
                     catch (Exception ex)
                     { noofscheme = 0; }
@@ -241,7 +242,7 @@ namespace Dairy.Tabs.Reception
                     try
                     {
                         totalscheme = (Convert.ToDouble(DS.Tables[4].Rows[0]["TotalScheme"]));
-                        
+
 
                     }
                     catch (Exception ex)
@@ -253,7 +254,7 @@ namespace Dairy.Tabs.Reception
                     sb.Append("</td>");
                     sb.Append("</tr>");
 
-               
+                }
 
                 sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '6'> &nbsp; </td> </tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");

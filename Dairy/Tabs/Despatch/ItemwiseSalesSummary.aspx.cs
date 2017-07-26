@@ -16,8 +16,8 @@ namespace Dairy.Tabs.Despatch
         BillData billdata = new BillData();
         DataSet DS = new DataSet();
         DataSet DS1 = new DataSet();
-        double totalstaffamount=0.00;
-        double totalagentcreditamount=0.00;
+        double totalstaffamount = 0.00;
+        double totalagentcreditamount = 0.00;
         double totalamount;
         double totalscheme;
 
@@ -333,7 +333,8 @@ namespace Dairy.Tabs.Despatch
                 sb.Append("</td>");
                 sb.Append("</tr>");
 
-                
+                if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1 || Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
+                {
                     sb.Append("<tr style='page-break-inside:avoid;'>");
                     sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:left'>");
                     sb.Append("<b>Scheme<b>");
@@ -349,7 +350,7 @@ namespace Dairy.Tabs.Despatch
                     sb.Append("</td>");
 
                     sb.Append("</tr>");
-                
+                }
                 sb.Append("<tr style='border-bottom:1px solid'> <td colspan = '7'> &nbsp; </td> </tr>");
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td  colspan='3' class='tg-yw4l'  style='text-align:left'>");

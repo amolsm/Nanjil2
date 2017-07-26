@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewDispatchOrders.aspx.cs" Inherits="Dairy.Tabs.Despatch.ViewDispatchOrders" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="../../Theme/plugins/jQueryUI/jquery-ui.css" rel="stylesheet" />
-    <script src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
-    <script src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../Theme/plugins/jQuery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../Theme/plugins/jQueryUI/jquery-ui.min.js"></script>
     
      <script type="text/javascript">
          Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);

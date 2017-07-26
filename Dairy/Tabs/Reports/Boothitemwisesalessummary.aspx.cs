@@ -39,7 +39,7 @@ namespace Dairy.Tabs.Reports
                 {
                     dpAgent.DataSource = DS;
                     dpAgent.DataBind();
-                    dpAgent.Items.Insert(0, new ListItem("--All Booth  --", "0"));
+                    dpAgent.Items.Insert(0, new ListItem("--Select Booth  --", "0"));
 
                 }
                 txtStartDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
@@ -70,9 +70,9 @@ namespace Dairy.Tabs.Reports
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:100px'>");
                 sb.Append("<col style = 'width:100px'>");
-                sb.Append("<col style = 'width:120px'>");
-                sb.Append("<col style = 'width:120px'>");
-                sb.Append("<col style = 'width:120px'>");
+                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
+                sb.Append("<col style = 'width:100px'>");
                 sb.Append("</colgroup>");
 
                 sb.Append("<tr>");
@@ -200,9 +200,9 @@ namespace Dairy.Tabs.Reports
 
                 //find out distict datatable column value
                 DataView view = new DataView(dt3);
-                view.Sort= "TypeID ASC";
+                view.Sort = "TypeID ASC";
                 DataTable distinctValues = view.ToTable(true, "ProductName", "Unit");
-                
+
 
 
 
@@ -255,9 +255,9 @@ namespace Dairy.Tabs.Reports
 
                     sb.Append("</td>");
                     sb.Append("</tr>");
-                   // var NewDt1 = dt1.AsEnumerable()
-                   //.OrderBy(r => r.Field<decimal>("Rate"))
-                   //.CopyToDataTable();
+                    // var NewDt1 = dt1.AsEnumerable()
+                    //.OrderBy(r => r.Field<decimal>("Rate"))
+                    //.CopyToDataTable();
                     foreach (DataRow row8 in dt1.Rows)
                     {
                         if (row6["ProductName"].ToString() == row8["ProductName"].ToString())
@@ -348,23 +348,24 @@ namespace Dairy.Tabs.Reports
 
 
                 //sb.Append("</tr>");
-               
-                sb.Append("<tr style='border-bottom:1px solid'>");
-                sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:left'>");
-                sb.Append("<b>" + "Scheme" + "</b>");
-                sb.Append("</td>");
-                sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:center'>");
+                if (dpBrand.SelectedItem.Value == "1" || dpBrand.SelectedItem.Value == "0")
+                {
+                    sb.Append("<tr style='border-bottom:1px solid'>");
+                    sb.Append("<td class='tg-yw4l' colspan='4' style='text-align:left'>");
+                    sb.Append("<b>" + "TotalScheme" + "</b>");
+                    sb.Append("</td>");
+                    sb.Append("<td class='tg-yw4l' colspan='2' style='text-align:center'>");
 
-                noofscheme = string.IsNullOrEmpty(DS.Tables[6].Rows[0]["NumberOfScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[6].Rows[0]["NumberOfScheme"]);
-                sb.Append("<b>" + noofscheme + "</b>");
-                sb.Append("</td>");
+                    noofscheme = string.IsNullOrEmpty(DS.Tables[6].Rows[0]["NumberOfScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[6].Rows[0]["NumberOfScheme"]);
+                    sb.Append("<b>" + noofscheme + "</b>");
+                    sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l' style='text-align:right'>");
-                totalscheme = string.IsNullOrEmpty(DS.Tables[6].Rows[0]["TotalScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[6].Rows[0]["TotalScheme"]);
-                sb.Append("<b>" + (Convert.ToDouble(totalscheme).ToString("0.00")) + "</b>");
-                sb.Append("</td>");
-                sb.Append("</tr>");
-                
+                    sb.Append("<td class='tg-yw4l' style='text-align:right'>");
+                    totalscheme = string.IsNullOrEmpty(DS.Tables[6].Rows[0]["TotalScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[6].Rows[0]["TotalScheme"]);
+                    sb.Append("<b>" + (Convert.ToDouble(totalscheme).ToString("#.00")) + "</b>");
+                    sb.Append("</td>");
+                    sb.Append("</tr>");
+                }
                 sb.Append("<tr style='border-bottom:1px solid'>");
                 double agentcreditsales = string.IsNullOrEmpty(DS.Tables[10].Rows[0]["Total"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[10].Rows[0]["Total"]);
                 double agentcashsales = string.IsNullOrEmpty(DS.Tables[9].Rows[0]["Total"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[9].Rows[0]["Total"]);
@@ -373,14 +374,14 @@ namespace Dairy.Tabs.Reports
                 double cashSale = agentcashsales + totalscheme + localsales;
                 double creditSale = agentcreditsales + employeesales;
                 double totalSale = cashSale + creditSale;
-                sb.Append("<td colspan ='2' style='text-align:left'>");
+                sb.Append("<td colspan ='4' style='text-align:left'>");
                 sb.Append("<b>" + "Total Cash Sale" + "&nbsp;" + (Convert.ToDecimal(cashSale).ToString("#0.00")) + "</b>");
                 sb.Append("</td>");
-                sb.Append("<td  colspan ='3' style='text-align:left'>");
+                sb.Append("<td  colspan ='2' style='text-align:left'>");
                 sb.Append("<b>" + "Total Credit Sale" + "&nbsp;" + (Convert.ToDecimal(creditSale).ToString("#0.00")) + "</b>");
                 sb.Append("</td>");
-                sb.Append("<td colspan ='2' style='text-align:right'>");
-                sb.Append("<b>" + "Total Amount" + "&nbsp;" + (Convert.ToDecimal(totalSale).ToString("#0.00")) + "</b>");
+                sb.Append("<td style='text-align:right'>");
+                sb.Append("<b>" + "Total Sale" + "&nbsp;" + (Convert.ToDecimal(totalSale).ToString("#0.00")) + "</b>");
                 sb.Append("</td>");
 
 

@@ -414,8 +414,9 @@ namespace Dairy.Tabs.Cashier
                 sb.Append("</td> </tr>");
 
                 #endregion
-               
-                #region SchemeTotal
+                if (Convert.ToInt32(dpBrand.SelectedItem.Value) == 1 || Convert.ToInt32(dpBrand.SelectedItem.Value) == 0)
+                {
+                    #region SchemeTotal
 
                     sb.Append("<tr style='border-Top:1px solid' > ");
                     sb.Append("<td colspan ='6' style='text-align:left'>");
@@ -459,7 +460,7 @@ namespace Dairy.Tabs.Cashier
 
 
                     #endregion
-                
+                }
 
                 sb.Append("<tr style='border-Top:1px solid' > ");
                 sb.Append("<td colspan ='6' style='text-align:right'>");

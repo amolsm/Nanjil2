@@ -355,7 +355,7 @@ namespace Dairy.Tabs.Reports
 
                 #endregion
 
-                
+
 
                 #region LocalSale
                 sb.Append("<tr style='border-Top:1px solid' > ");
@@ -428,54 +428,55 @@ namespace Dairy.Tabs.Reports
                 #endregion
 
 
-                
-
-                
-                 #region SchemeTotal
-
-                sb.Append("<tr style='border-Top:1px solid' > ");
-                sb.Append("<td colspan ='6' style='text-align:left'>");
-                sb.Append("<b>(E) Scheme Received </b>");
-                sb.Append("</td>");
 
 
-                sb.Append("<tr style='border-bottom:1px solid'  style='text-align:left'>");
-                sb.Append("<td  colspan='4' style='text-align:left'>");
-                sb.Append("&nbsp;");
-                sb.Append("</td>");
+                if (dpBrand.SelectedItem.Value == "1" || dpBrand.SelectedItem.Value == "0")
+                {
+                    #region SchemeTotal
+
+                    sb.Append("<tr style='border-Top:1px solid' > ");
+                    sb.Append("<td colspan ='6' style='text-align:left'>");
+                    sb.Append("<b>(E) Scheme Received </b>");
+                    sb.Append("</td>");
 
 
-                sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
+                    sb.Append("<tr style='border-bottom:1px solid'  style='text-align:left'>");
+                    sb.Append("<td  colspan='4' style='text-align:left'>");
+                    sb.Append("&nbsp;");
+                    sb.Append("</td>");
 
-                sb.Append("<b> No.of Scheme </b> ");
-                sb.Append("</td>");
 
-                sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
-                sb.Append("<b> Total </b> ");
-                sb.Append("</td>");
+                    sb.Append("<td class='tg-yw4l'  style='text-align:center'>");
 
-                sb.Append("</tr>");
-                sb.Append("<tr>");
+                    sb.Append("<b> No.of Scheme </b> ");
+                    sb.Append("</td>");
 
-                sb.Append("<td  class='tg-yw4l' colspan='4'  style='text-align:left'>");
-                sb.Append("Total Amount");
-                sb.Append("</td>");
+                    sb.Append("<td class='tg-yw4l'  style='text-align:right'>");
+                    sb.Append("<b> Total </b> ");
+                    sb.Append("</td>");
 
-                sb.Append("<td  class='tg-yw4l'style='text-align:center'>");
-                totalScheme = string.IsNullOrEmpty(DS.Tables[4].Rows[0]["CountScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[4].Rows[0]["CountScheme"]);
-                sb.Append(totalScheme.ToString());
-                sb.Append("</td>");
-                sb.Append("<td  class='tg-yw4l' style='text-align:right'>");
-                schemeTot = string.IsNullOrEmpty(DS.Tables[4].Rows[0]["TotalSchemeAmount"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[4].Rows[0]["TotalSchemeAmount"]);
-                sb.Append("<b>" + (Convert.ToDecimal(schemeTot).ToString("#0.00")) + "</b>");
-                sb.Append("</td>");
+                    sb.Append("</tr>");
+                    sb.Append("<tr>");
 
-                sb.Append("</tr>");
+                    sb.Append("<td  class='tg-yw4l' colspan='4'  style='text-align:left'>");
+                    sb.Append("Total Amount");
+                    sb.Append("</td>");
+
+                    sb.Append("<td  class='tg-yw4l'style='text-align:center'>");
+                    totalScheme = string.IsNullOrEmpty(DS.Tables[4].Rows[0]["CountScheme"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[4].Rows[0]["CountScheme"]);
+                    sb.Append(totalScheme.ToString());
+                    sb.Append("</td>");
+                    sb.Append("<td  class='tg-yw4l' style='text-align:right'>");
+                    schemeTot = string.IsNullOrEmpty(DS.Tables[4].Rows[0]["TotalSchemeAmount"].ToString()) ? 0 : Convert.ToDouble(DS.Tables[4].Rows[0]["TotalSchemeAmount"]);
+                    sb.Append("<b>" + (Convert.ToDecimal(schemeTot).ToString("#0.00")) + "</b>");
+                    sb.Append("</td>");
+
+                    sb.Append("</tr>");
 
 
 
                     #endregion
-               
+                }
                 sb.Append("<tr style='border-Top:1px solid' > ");
                 sb.Append("<td colspan ='6' style='text-align:right'>");
                 sb.Append("&nbsp;");
@@ -511,6 +512,7 @@ namespace Dairy.Tabs.Reports
                 sb.Append("<td colspan='6'>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
+                sb.Append("<tr style='border-bottom:1px solid; page-break-inside:avoid;'> <td colspan = '6'> &nbsp; </td> </tr>");
 
                 #region ItemwiseSummary
 

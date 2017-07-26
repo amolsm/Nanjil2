@@ -363,8 +363,9 @@
 
                 <asp:UpdatePanel runat="server" ID="uprouteList" UpdateMode="Conditional">
                     <ContentTemplate>
-
-                <table id="example1" class="table table-bordered table-striped">
+                    
+           
+                <table id="example1" class="table table-bordered table-striped results">
                    
 
                  
@@ -636,20 +637,16 @@
         });
     </script>--%>
      <script type = "text/javascript">
-        
-
-
-         //-->
-
-         $(document).ready(function () {
-             
-             $('#example1').dataTable({
-                 "bPaginate": false,
-                 "paging": false
-
-             });
-
+         $('#example1').dataTable({
+             "search": {
+                 "search": "Fred"
+             }
          });
+         $(document).ready(function () {
+             $('table').dataTable({ searching: true, paging: false });
+             
+         });
+         
     </script>
       <script type = "text/javascript">
         function PrintPanel() {
