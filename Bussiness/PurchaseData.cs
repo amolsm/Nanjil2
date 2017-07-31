@@ -207,6 +207,26 @@ namespace Bussiness
             }
 
 
+
+        }
+
+        public DataSet GetIndentList(Indent ic)
+        {
+            dbPurchase = new DBPurchase();
+            DS = new DataSet();
+
+            try
+            {
+                DS = dbPurchase.GetIndentList(ic);
+                return DS;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
         }
         #endregion
 

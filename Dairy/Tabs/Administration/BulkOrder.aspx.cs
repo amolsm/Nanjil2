@@ -17,6 +17,12 @@ namespace Dairy.Tabs.Administration
     public partial class BulkOrder : System.Web.UI.Page
     {
         static int Row = -1;
+        static string date=string.Empty;
+        static string routenam = string.Empty;
+        static string routeid = string.Empty;
+        static string typename = string.Empty;
+        static string typeid = string.Empty;
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -66,8 +72,16 @@ namespace Dairy.Tabs.Administration
                 rpAgentOrderdetails.Visible = true;
 
                 BindRepeaterCart();
+                date = txtDate.Text.ToString();
+                routenam = dpRoute.SelectedItem.Text;
+                routeid = dpRoute.SelectedItem.Value;
+                typename = dpType.SelectedItem.Text;
+                typeid = dpType.SelectedItem.Value; 
 
-         
+
+
+
+
             }
             else
             {
@@ -75,6 +89,8 @@ namespace Dairy.Tabs.Administration
                 this.BindRepeater(dt);
                 rpAgentOrderdetails.Visible = true;
                 upMain.Update();
+                date = txtDate.Text.ToString();
+            
 
             }
         }
@@ -277,6 +293,7 @@ namespace Dairy.Tabs.Administration
 
         protected void rpAgentOrderdetails_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+          
             Row = Convert.ToInt32(e.CommandArgument);
             switch (e.CommandName)
             {
@@ -288,9 +305,18 @@ namespace Dairy.Tabs.Administration
                         
                         Row = Row - 1;
                         GetDetailsbyID(Row);
+                      
+
                         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "<script type='text/javascript'> $('#myModal').modal('show'); </script>", false);
                         //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myBox", "<script type='text/javascript'> $('#myBox').removeClass('collapsed-box'); </script>", false);
                         upMain.Update();
+
+                        txtDate.Text=date;
+                        dpRoute.SelectedItem.Text = routenam;
+                        dpRoute.SelectedItem.Value = routeid;
+                        dpType.SelectedItem.Text = typename;
+                        dpType.SelectedItem.Value = typeid;
+                       
                         //uprouteList.Update();
                         break;
                     }
@@ -306,7 +332,11 @@ namespace Dairy.Tabs.Administration
             
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                txtAgent.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["AgentID"].ToString()) ? string.Empty : DS.Tables[0].Rows[Row]["AgentCode"].ToString() +" " + DS.Tables[0].Rows[Row]["AgentName"].ToString();
+                try
+                {
+                    txtAgent.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["AgentID"].ToString()) ? string.Empty: DS.Tables[0].Rows[Row]["AgentCode"].ToString() + " " + DS.Tables[0].Rows[Row]["AgentName"].ToString();
+                }
+                catch { txtAgent.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["EmployeeID"].ToString()) ? string.Empty : DS.Tables[0].Rows[Row]["EmployeeCode"].ToString() + " " + DS.Tables[0].Rows[Row]["EmployeeName"].ToString(); }
                 txtProductName.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["ProductName"].ToString()) ? string.Empty : DS.Tables[0].Rows[Row]["ProductName"].ToString();
                 txtUnitPrice.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["UnitCost"].ToString()) ? string.Empty : DS.Tables[0].Rows[Row]["UnitCost"].ToString();
                 txtQuantity.Text = string.IsNullOrEmpty(DS.Tables[0].Rows[Row]["Qty"].ToString()) ? string.Empty : DS.Tables[0].Rows[Row]["Qty"].ToString();

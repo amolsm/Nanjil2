@@ -2,59 +2,59 @@
 <NewDataSet>
   <Table>
     <Row>1</Row>
-    <OrderID>791927</OrderID>
-    <OrderDate>17-05-2017</OrderDate>
-    <AgentID>16</AgentID>
-    <SelesEmployeeId>29</SelesEmployeeId>
+    <OrderID>971981</OrderID>
+    <OrderDate>27-07-2017</OrderDate>
+    <AgentID>84</AgentID>
+    <SelesEmployeeId>0</SelesEmployeeId>
     <ShcemheApplied>false</ShcemheApplied>
-    <TotalBill>130.0000</TotalBill>
+    <TotalBill>1624.8000</TotalBill>
     <OrderType>1</OrderType>
-    <RouteID>4</RouteID>
-    <IsPrinted>true</IsPrinted>
-    <BillNo>20170517/R0002/1</BillNo>
+    <RouteID>5</RouteID>
+    <IsPrinted>false</IsPrinted>
+    <BillNo>20170727/4</BillNo>
     <CreatedBy>1</CreatedBy>
-    <CreatedDate>05-17-2017</CreatedDate>
-    <BillNumber>17-05-2017791927</BillNumber>
+    <CreatedDate>07-27-2017</CreatedDate>
+    <BillNumber>27-07-2017971981</BillNumber>
     <BulkFlag>0</BulkFlag>
-    <BillSeq>6628</BillSeq>
-    <OrderDetailsId>806257</OrderDetailsId>
-    <OrderId1>791927</OrderId1>
+    <BillSeq>48027</BillSeq>
+    <OrderDetailsId>986487</OrderDetailsId>
+    <OrderId1>971981</OrderId1>
     <TypeID>1</TypeID>
-    <ProductID>465</ProductID>
-    <Qty>1</Qty>
+    <ProductID>17</ProductID>
+    <Qty>12</Qty>
     <UnitCost>30.0000</UnitCost>
-    <Total>30.0000</Total>
-    <Dispatched>true</Dispatched>
-    <ProductID1>465</ProductID1>
+    <Total>360.0000</Total>
+    <Dispatched>false</Dispatched>
+    <ProductID1>17</ProductID1>
     <ProductName>DTM-1000ml</ProductName>
-    <ProductCode>P00465</ProductCode>
+    <ProductCode>P00017</ProductCode>
     <TypeID1>1</TypeID1>
     <CommodityID>2</CommodityID>
     <BrandID>1</BrandID>
     <State>Tamil Nadu</State>
-    <SlabID>17</SlabID>
+    <SlabID>3</SlabID>
     <Quantity>1</Quantity>
     <UnitID>2</UnitID>
     <Prize>30.0000</Prize>
     <SlabCode xml:space="preserve">          </SlabCode>
-    <CreatedBy1>47</CreatedBy1>
-    <CreatedDate1>20-09-2016</CreatedDate1>
-    <ModifiedBy>47</ModifiedBy>
-    <ModifiedDate>20-09-2016</ModifiedDate>
+    <CreatedBy1>1</CreatedBy1>
+    <CreatedDate1>29-04-2016</CreatedDate1>
+    <ModifiedBy>1</ModifiedBy>
+    <ModifiedDate>29-04-2016</ModifiedDate>
     <IsArchive>false</IsArchive>
-    <AgentID1>16</AgentID1>
-    <AgentCode>1813</AgentCode>
-    <RouteID1>4</RouteID1>
-    <AgentName>Alancode jn</AgentName>
-    <DateofJoining>27-05-2015</DateofJoining>
+    <AgentID1>84</AgentID1>
+    <AgentCode>2913</AgentCode>
+    <RouteID1>5</RouteID1>
+    <AgentName>Chembilavilai-Rajmohan</AgentName>
+    <DateofJoining>27-05-2003</DateofJoining>
     <Isactive>true</Isactive>
     <Agensytype>Agency</Agensytype>
-    <MobileNo>9626817098</MobileNo>
+    <MobileNo>9943654595</MobileNo>
     <BillingMethod>Variable</BillingMethod>
     <PaymentMode>Daily</PaymentMode>
     <IsArchive1>false</IsArchive1>
-    <SchemeAmount>100.0000</SchemeAmount>
-    <TotalSchemeAmount>113800.0000</TotalSchemeAmount>
+    <SchemeAmount>0.0000</SchemeAmount>
+    <TotalSchemeAmount>0.0000</TotalSchemeAmount>
     <TypeID2>1</TypeID2>
     <TypeName>Milk</TypeName>
     <CategoryID>1</CategoryID>
@@ -66,98 +66,59 @@
   </Table>
   <Table>
     <Row>2</Row>
-    <OrderID>791927</OrderID>
-    <OrderDate>17-05-2017</OrderDate>
-    <AgentID>16</AgentID>
-    <SelesEmployeeId>29</SelesEmployeeId>
+    <OrderID>971981</OrderID>
+    <OrderDate>27-07-2017</OrderDate>
+    <AgentID>84</AgentID>
+    <SelesEmployeeId>0</SelesEmployeeId>
     <ShcemheApplied>false</ShcemheApplied>
-    <TotalBill>130.0000</TotalBill>
+    <TotalBill>1624.8000</TotalBill>
     <OrderType>1</OrderType>
-    <RouteID>4</RouteID>
-    <IsPrinted>true</IsPrinted>
-    <BillNo>20170517/R0002/1</BillNo>
+    <RouteID>5</RouteID>
+    <IsPrinted>false</IsPrinted>
+    <BillNo>20170727/4</BillNo>
     <CreatedBy>1</CreatedBy>
-    <CreatedDate>05-17-2017</CreatedDate>
-    <BillNumber>17-05-2017791927</BillNumber>
+    <CreatedDate>07-27-2017</CreatedDate>
+    <BillNumber>27-07-2017971981</BillNumber>
     <BulkFlag>0</BulkFlag>
-    <BillSeq>6628</BillSeq>
-    <OrderDetailsId>806258</OrderDetailsId>
-    <OrderId1>791927</OrderId1>
-    <TypeID>0</TypeID>
-    <ProductID>0</ProductID>
-    <Qty>0</Qty>
-    <UnitCost>0.0000</UnitCost>
-    <Total>100.0000</Total>
-    <Dispatched>true</Dispatched>
-    <AgentID1>16</AgentID1>
-    <AgentCode>1813</AgentCode>
-    <RouteID1>4</RouteID1>
-    <AgentName>Alancode jn</AgentName>
-    <DateofJoining>27-05-2015</DateofJoining>
-    <Isactive>true</Isactive>
-    <Agensytype>Agency</Agensytype>
-    <MobileNo>9626817098</MobileNo>
-    <BillingMethod>Variable</BillingMethod>
-    <PaymentMode>Daily</PaymentMode>
-    <IsArchive1>false</IsArchive1>
-    <SchemeAmount>100.0000</SchemeAmount>
-    <TotalSchemeAmount>113800.0000</TotalSchemeAmount>
-  </Table>
-  <Table>
-    <Row>3</Row>
-    <OrderID>791928</OrderID>
-    <OrderDate>17-05-2017</OrderDate>
-    <AgentID>23</AgentID>
-    <SelesEmployeeId>29</SelesEmployeeId>
-    <ShcemheApplied>false</ShcemheApplied>
-    <TotalBill>130.3000</TotalBill>
-    <OrderType>1</OrderType>
-    <RouteID>4</RouteID>
-    <IsPrinted>true</IsPrinted>
-    <BillNo>20170517/R0002/2</BillNo>
-    <CreatedBy>1</CreatedBy>
-    <CreatedDate>05-17-2017</CreatedDate>
-    <BillNumber>17-05-2017791928</BillNumber>
-    <BulkFlag>0</BulkFlag>
-    <BillSeq>6629</BillSeq>
-    <OrderDetailsId>806259</OrderDetailsId>
-    <OrderId1>791928</OrderId1>
+    <BillSeq>48027</BillSeq>
+    <OrderDetailsId>986488</OrderDetailsId>
+    <OrderId1>971981</OrderId1>
     <TypeID>1</TypeID>
-    <ProductID>17</ProductID>
-    <Qty>1</Qty>
-    <UnitCost>30.3000</UnitCost>
-    <Total>30.3000</Total>
-    <Dispatched>true</Dispatched>
-    <ProductID1>17</ProductID1>
-    <ProductName>DTM-1000ml</ProductName>
-    <ProductCode>P00017</ProductCode>
+    <ProductID>35</ProductID>
+    <Qty>21</Qty>
+    <UnitCost>39.6000</UnitCost>
+    <Total>831.6000</Total>
+    <Dispatched>false</Dispatched>
+    <ProductID1>35</ProductID1>
+    <ProductName>SM-1000ml</ProductName>
+    <ProductCode>P00035</ProductCode>
     <TypeID1>1</TypeID1>
-    <CommodityID>2</CommodityID>
+    <CommodityID>3</CommodityID>
     <BrandID>1</BrandID>
     <State>Tamil Nadu</State>
     <SlabID>3</SlabID>
     <Quantity>1</Quantity>
     <UnitID>2</UnitID>
-    <Prize>30.3000</Prize>
+    <Prize>39.6000</Prize>
     <SlabCode xml:space="preserve">          </SlabCode>
     <CreatedBy1>1</CreatedBy1>
-    <CreatedDate1>29-04-2016</CreatedDate1>
-    <ModifiedBy>47</ModifiedBy>
-    <ModifiedDate>20-09-2016</ModifiedDate>
+    <CreatedDate1>30-04-2016</CreatedDate1>
+    <ModifiedBy>1</ModifiedBy>
+    <ModifiedDate>30-04-2016</ModifiedDate>
     <IsArchive>false</IsArchive>
-    <AgentID1>23</AgentID1>
-    <AgentCode>2719</AgentCode>
-    <RouteID1>4</RouteID1>
-    <AgentName>Berlin subash</AgentName>
-    <DateofJoining>27-05-2004</DateofJoining>
+    <AgentID1>84</AgentID1>
+    <AgentCode>2913</AgentCode>
+    <RouteID1>5</RouteID1>
+    <AgentName>Chembilavilai-Rajmohan</AgentName>
+    <DateofJoining>27-05-2003</DateofJoining>
     <Isactive>true</Isactive>
     <Agensytype>Agency</Agensytype>
-    <MobileNo>9655237140</MobileNo>
+    <MobileNo>9943654595</MobileNo>
     <BillingMethod>Variable</BillingMethod>
     <PaymentMode>Daily</PaymentMode>
     <IsArchive1>false</IsArchive1>
-    <SchemeAmount>100.0000</SchemeAmount>
-    <TotalSchemeAmount>35800.0000</TotalSchemeAmount>
+    <SchemeAmount>0.0000</SchemeAmount>
+    <TotalSchemeAmount>0.0000</TotalSchemeAmount>
     <TypeID2>1</TypeID2>
     <TypeName>Milk</TypeName>
     <CategoryID>1</CategoryID>
@@ -168,42 +129,67 @@
     <IsArchive2>true</IsArchive2>
   </Table>
   <Table>
-    <Row>4</Row>
-    <OrderID>791928</OrderID>
-    <OrderDate>17-05-2017</OrderDate>
-    <AgentID>23</AgentID>
-    <SelesEmployeeId>29</SelesEmployeeId>
+    <Row>3</Row>
+    <OrderID>971981</OrderID>
+    <OrderDate>27-07-2017</OrderDate>
+    <AgentID>84</AgentID>
+    <SelesEmployeeId>0</SelesEmployeeId>
     <ShcemheApplied>false</ShcemheApplied>
-    <TotalBill>130.3000</TotalBill>
+    <TotalBill>1624.8000</TotalBill>
     <OrderType>1</OrderType>
-    <RouteID>4</RouteID>
-    <IsPrinted>true</IsPrinted>
-    <BillNo>20170517/R0002/2</BillNo>
+    <RouteID>5</RouteID>
+    <IsPrinted>false</IsPrinted>
+    <BillNo>20170727/4</BillNo>
     <CreatedBy>1</CreatedBy>
-    <CreatedDate>05-17-2017</CreatedDate>
-    <BillNumber>17-05-2017791928</BillNumber>
+    <CreatedDate>07-27-2017</CreatedDate>
+    <BillNumber>27-07-2017971981</BillNumber>
     <BulkFlag>0</BulkFlag>
-    <BillSeq>6629</BillSeq>
-    <OrderDetailsId>806260</OrderDetailsId>
-    <OrderId1>791928</OrderId1>
-    <TypeID>0</TypeID>
-    <ProductID>0</ProductID>
-    <Qty>0</Qty>
-    <UnitCost>0.0000</UnitCost>
-    <Total>100.0000</Total>
-    <Dispatched>true</Dispatched>
-    <AgentID1>23</AgentID1>
-    <AgentCode>2719</AgentCode>
-    <RouteID1>4</RouteID1>
-    <AgentName>Berlin subash</AgentName>
-    <DateofJoining>27-05-2004</DateofJoining>
+    <BillSeq>48027</BillSeq>
+    <OrderDetailsId>986489</OrderDetailsId>
+    <OrderId1>971981</OrderId1>
+    <TypeID>1</TypeID>
+    <ProductID>10</ProductID>
+    <Qty>12</Qty>
+    <UnitCost>36.1000</UnitCost>
+    <Total>433.2000</Total>
+    <Dispatched>false</Dispatched>
+    <ProductID1>10</ProductID1>
+    <ProductName>TM-250ml</ProductName>
+    <ProductCode>P00010</ProductCode>
+    <TypeID1>1</TypeID1>
+    <CommodityID>1</CommodityID>
+    <BrandID>1</BrandID>
+    <State>Tamil Nadu</State>
+    <SlabID>3</SlabID>
+    <Quantity>1</Quantity>
+    <UnitID>2</UnitID>
+    <Prize>36.1000</Prize>
+    <SlabCode xml:space="preserve">          </SlabCode>
+    <CreatedBy1>1</CreatedBy1>
+    <CreatedDate1>29-04-2016</CreatedDate1>
+    <ModifiedBy>1</ModifiedBy>
+    <ModifiedDate>29-04-2016</ModifiedDate>
+    <IsArchive>false</IsArchive>
+    <AgentID1>84</AgentID1>
+    <AgentCode>2913</AgentCode>
+    <RouteID1>5</RouteID1>
+    <AgentName>Chembilavilai-Rajmohan</AgentName>
+    <DateofJoining>27-05-2003</DateofJoining>
     <Isactive>true</Isactive>
     <Agensytype>Agency</Agensytype>
-    <MobileNo>9655237140</MobileNo>
+    <MobileNo>9943654595</MobileNo>
     <BillingMethod>Variable</BillingMethod>
     <PaymentMode>Daily</PaymentMode>
     <IsArchive1>false</IsArchive1>
-    <SchemeAmount>100.0000</SchemeAmount>
-    <TotalSchemeAmount>35800.0000</TotalSchemeAmount>
+    <SchemeAmount>0.0000</SchemeAmount>
+    <TotalSchemeAmount>0.0000</TotalSchemeAmount>
+    <TypeID2>1</TypeID2>
+    <TypeName>Milk</TypeName>
+    <CategoryID>1</CategoryID>
+    <CreatedBy3>1</CreatedBy3>
+    <CreatedDate3>29-04-2016</CreatedDate3>
+    <ModifiedBy2>1</ModifiedBy2>
+    <ModifiedDate2>29-04-2016</ModifiedDate2>
+    <IsArchive2>true</IsArchive2>
   </Table>
 </NewDataSet>

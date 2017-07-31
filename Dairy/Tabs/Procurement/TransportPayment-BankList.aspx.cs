@@ -30,7 +30,7 @@ namespace Dairy.Tabs.Procurement
             p.Enddate = Convert.ToDateTime(txtEndDate.Text);
             p.Vehicletype = dpVehicletype.SelectedItem.Text;
             DataSet DS = new DataSet();
-            DS = pd.TransportPaymentBankList(p);
+            DS = pd.TransportPaymentDetails(p);
             string result = string.Empty;
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
@@ -196,7 +196,7 @@ namespace Dairy.Tabs.Procurement
             p.Enddate = Convert.ToDateTime(txtEndDate.Text);
            
             DataSet DS1 = new DataSet();
-            DS1 = pd.TransportPaymentBankList(p);
+            DS1 = pd.TransportPaymentDetails(p);
 
 
             //SqlCommand cmd = new SqlCommand(strQuery);
@@ -208,7 +208,7 @@ namespace Dairy.Tabs.Procurement
             {
 
                 DataSet DS2 = new DataSet();
-                DS2 = pd.TransportPaymentBankListExcel(p);
+               DS2 = pd.TransportPaymentBankListExcel(p);
                 GridView GridView1 = new GridView();
                 GridView1.ShowHeader = false;
                 GridView1.AllowPaging = false;
@@ -224,9 +224,10 @@ namespace Dairy.Tabs.Procurement
                 Response.Clear();
                 Response.Buffer = true;
 
-                //string filename = DS2.Tables[1].Rows[0]["CenterCode"] + "" + "_" + dpIfscCode.SelectedItem.Text + "" + "_" + DateTime.Now.ToString("dd-MM-yyyy").ToString();
+                string filename = dpVehicletype.SelectedItem.Text;
+                    //DS2.Tables[1].Rows[0]["CenterCode"] + "" + "_" + dpIfscCode.SelectedItem.Text + "" + "_" + DateTime.Now.ToString("dd-MM-yyyy").ToString();
 
-                //Response.AddHeader("content-disposition", "attachment;filename= " + filename + ".txt");
+                Response.AddHeader("content-disposition", "attachment;filename= " + filename + ".txt");
 
                 Response.Charset = "";
                 Response.Cache.SetCacheability(HttpCacheability.NoCache);
@@ -268,7 +269,7 @@ namespace Dairy.Tabs.Procurement
             p.Startdate = Convert.ToDateTime(txtStartDate.Text);
             p.Enddate = Convert.ToDateTime(txtEndDate.Text);
             DataSet DS1 = new DataSet();
-            DS1 = pd.TransportPaymentBankList(p);
+            DS1 = pd.TransportPaymentDetails(p);
 
 
 

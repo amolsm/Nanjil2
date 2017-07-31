@@ -31,7 +31,7 @@ namespace Dairy.Tabs.Procurement
             {
                 dpRoute.DataSource = DS;
                 dpRoute.DataBind();
-                dpRoute.Items.Insert(0, new ListItem("--Select Route  --", "0"));
+                dpRoute.Items.Insert(0, new ListItem("--All Route  --", "0"));
 
             }
         }
@@ -116,7 +116,7 @@ namespace Dairy.Tabs.Procurement
 
                     sb.Append("<th class='tg-yw4l' style='text-align:right'>");
 
-                    sb.Append("GSTIN:&nbsp;33AAECN2463R1Z2<br>");
+                    sb.Append("TIN:330761667331<br>");
                     sb.Append("</th>");
                     sb.Append("</tr>");
 

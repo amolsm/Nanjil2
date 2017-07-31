@@ -274,6 +274,7 @@
     <Content Include="Tabs\Purchase\PurchaseRequests.aspx" />
     <Content Include="Tabs\Purchase\RackSections.aspx" />
     <Content Include="Tabs\Purchase\VendorRegistration.aspx" />
+    <Content Include="Tabs\Purchase\ViewIndentMaterials.aspx" />
     <Content Include="Tabs\Purchase\ViewPurchaseOrder.aspx" />
     <Content Include="Tabs\Reception\AgentListNotPlacedOrder.aspx" />
     <Content Include="Tabs\Reception\CancelOrder.aspx" />
@@ -2525,6 +2526,13 @@
     </Compile>
     <Compile Include="Tabs\Purchase\VendorRegistration.aspx.designer.cs">
       <DependentUpon>VendorRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ViewIndentMaterials.aspx.cs">
+      <DependentUpon>ViewIndentMaterials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Purchase\ViewIndentMaterials.aspx.designer.cs">
+      <DependentUpon>ViewIndentMaterials.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tabs\Purchase\ViewPurchaseOrder.aspx.cs">
       <DependentUpon>ViewPurchaseOrder.aspx</DependentUpon>

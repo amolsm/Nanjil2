@@ -140,7 +140,7 @@
             <div class="box-header with-border">
                   <div id="divDownload" style="text-align: left;" runat="server" >     
                   <asp:Button ID="btnExporttoexcell" class="btn btn-primary" style='margin-top:2px' runat="server" CommandName="MoveNext" OnClick="btnExporttoexcell_Click1"  Text="Download as Excel file" ValidationGroup="Save" visible="true"/>     &nbsp;&nbsp;
-                  <asp:Button ID="btnExportinText" class="btn btn-primary" style='margin-top:2px' runat="server" CommandName="MoveNext" OnClick="btnExportinText_Click"   Text="Download as Text File" ValidationGroup="Save"  visible="true"/>      
+                  <asp:Button ID="btnExportinText" class="btn btn-primary" style='margin-top:2px' runat="server" CommandName="MoveNext" OnClick="btnExportinText_Click"  Text="Download as Text File" ValidationGroup="Save"  visible="true"/>      
                    </div>
 
               <h3 class="box-title"></h3>

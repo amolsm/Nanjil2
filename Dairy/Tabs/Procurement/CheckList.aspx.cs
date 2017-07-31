@@ -81,16 +81,6 @@ namespace Dairy.Tabs.Procurement
                 sb.Append("<img src='/Theme/img/logo1.png' class='img-circle' alt='Logo' width='50px' hight='50px'>");
                 sb.Append("</th>");
 
-                sb.Append("<th class='tg-baqh' colspan='7' style='text-align:center'>");
-                sb.Append("<u>Check List </u> <br/>");
-                sb.Append("</th>");
-
-                sb.Append("<th class='tg-yw4l' style='text-align:right'>");
-                sb.Append("GSTIN:&nbsp;33AAECN2463R1Z2<br>");
-                sb.Append("</th>");
-                sb.Append("</tr>");
-
-                sb.Append("<tr style='border-bottom:1px solid'>");
                 sb.Append("<td class='tg-yw4l' colspan='7' style='text-align:center'>");
                 if (Session["CollectionCenterLoggedIn"] != null)
                 {
@@ -101,6 +91,20 @@ namespace Dairy.Tabs.Procurement
                     sb.Append("<b>Nanjil Integrated Dairy Development, Mulagumoodu, K.K.Dt.</b>");
                 }
                 sb.Append("</td>");
+
+               
+
+                sb.Append("<th class='tg-yw4l' style='text-align:right'>");
+                sb.Append("TIN:330761667331<br>");
+                sb.Append("</th>");
+                
+                sb.Append("</tr>");
+
+                sb.Append("<tr style='border-bottom:1px solid'>");
+
+                sb.Append("<th class='tg-baqh' colspan='7' style='text-align:center'>");
+                sb.Append("<u>Check List </u> <br/>");
+                sb.Append("</th>");
 
                 sb.Append("<td class='tg-yw4l' style='text-align:right'>");
 
@@ -116,7 +120,7 @@ namespace Dairy.Tabs.Procurement
 
                 sb.Append("</td>");
                 sb.Append(" <td colspan='2' style='text-align:center'>");
-                sb.Append(DateTime.Now.ToString());
+                sb.Append(DateTime.Now.ToString("dd'-'MM'-'yyyy HH:mm:ss"));
                 sb.Append("</td>");
                 sb.Append("<td colspan='2'  style='text-align:center'>");
                 sb.Append(App_code.GlobalInfo.UserName);
@@ -148,6 +152,16 @@ namespace Dairy.Tabs.Procurement
                 double snfpercent = 0.00;
                 double totalsnfpercent = 0.00;
                 double tspercent = 0.00;
+
+                double fatinkg = 0.00;
+                double totalfatinkg = 0.00;
+                double ttlfatinkg = 0.00;
+                double snfinkg = 0.00;
+                double totalsnfinkg = 0.00;
+                double ttlsnfinkg = 0.00;
+                double tsinkg = 0.00;
+                double totaltsinkg = 0.00;
+                double ttltsinkg = 0.00;
                 double totaltspercent = 0.00;
 
                 double totfat = 0.00;
@@ -157,6 +171,7 @@ namespace Dairy.Tabs.Procurement
                 int totcan = 0;
                 double totts = 0.00;
                 double totclr = 0.00;
+
                 string Date;
                 int countavg = 0;
                 int totcount = 0;
@@ -260,23 +275,28 @@ namespace Dairy.Tabs.Procurement
                                     sb.Append("<td style='text-align:right'> ");
                                     fatpercent = Convert.ToDouble(row["FATPercentage"]);
                                     totalfatpercent += fatpercent;
-
                                     sb.Append(fatpercent.ToString());
-                                    sb.Append("</td>");
+                                    try { fatinkg = Convert.ToDouble(row["FATInKG"]); } catch { fatinkg = 0; }
+                                    totalfatinkg += fatinkg;
+                                sb.Append("</td>");
 
                                     sb.Append("<td style='text-align:right'>");
                                     snfpercent = Convert.ToDouble(row["SNFPercentage"]);
                                     totalsnfpercent += snfpercent;
 
                                     sb.Append(snfpercent.ToString());
-                                    sb.Append("</td>");
+                                try { snfinkg = Convert.ToDouble(row["SNFInKG"]); } catch { snfinkg = 0; }
+                                totalsnfinkg += snfinkg;
+                                sb.Append("</td>");
 
                                     sb.Append("<td style='text-align:right'>");
                                     tspercent = Convert.ToDouble(row["TSPercentage"]);
                                     totaltspercent += tspercent;
 
                                     sb.Append(tspercent.ToString());
-                                    sb.Append("</td>");
+                                try { tsinkg = Convert.ToDouble(row["TSInKg"]); } catch { tsinkg = 0; }
+                                totaltsinkg += tsinkg;
+                                sb.Append("</td>");
                                     sb.Append("</tr>");
 
                                 }
@@ -325,25 +345,28 @@ namespace Dairy.Tabs.Procurement
                     sb.Append(totalmilklter.ToString());
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    sb.Append(totalclr.ToString());
+                    //sb.Append(totalclr.ToString());
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    sb.Append(totalfatpercent.ToString());
+                    ttlfatinkg= ((totalfatpercent / count)*totalmilkkg)/ 100;
+                    sb.Append(ttlfatinkg.ToString("0.00"));
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    sb.Append(totalsnfpercent.ToString());
+                    ttlsnfinkg = ((totalsnfpercent / count) * totalmilkkg) / 100;
+                    sb.Append(ttlsnfinkg.ToString("0.00"));
                     sb.Append("</td>");
                     sb.Append("<td style='text-align:right'>");
-                    sb.Append(totaltspercent.ToString());
+                    ttltsinkg=(totaltspercent/count*totalmilkkg)/100;
+                    sb.Append(ttltsinkg.ToString("0.00"));
                     sb.Append("</td>");
                     sb.Append("</tr>");
 
-                    totfat += totalfatpercent;
-                    totsnf += totalsnfpercent;
+                    totfat += ttlfatinkg;
+                    totsnf += ttlsnfinkg;
                     totmillkg += totalmilkkg;
                     totmilkltr += totalmilklter;
                     totcan += totalcan;
-                    totts += totaltspercent;
+                    totts += ttltsinkg;
                     totclr += totalclr;
                     totcount += count;
 

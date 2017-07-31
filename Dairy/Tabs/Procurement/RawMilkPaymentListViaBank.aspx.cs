@@ -275,7 +275,7 @@ namespace Dairy.Tabs.Procurement
             { p.IFSCCode = "0"; }
             else { p.IFSCCode = dpIfscCode.SelectedItem.Text; }
             DataSet DS1 = new DataSet();
-            DS1 = pd.RawMilkPaymentListViaBank(p);
+            DS1 = pd.RawMilkPaymentListViaBank(p); 
 
 
             //SqlCommand cmd = new SqlCommand(strQuery);

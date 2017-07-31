@@ -152,7 +152,7 @@ namespace Dairy.Tabs.Procurement
 
                 sb.Append("<th class='tg-yw4l' >");
 
-                sb.Append("GSTIN:&nbsp;33AAECN2463R1Z2<br>");
+                sb.Append("TIN:330761667331<br>");
                 sb.Append("</th>");
                 sb.Append("</tr>");
 

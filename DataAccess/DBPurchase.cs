@@ -318,6 +318,28 @@ namespace DataAccess
             else
                 return false;
         }
+
+        public DataSet GetIndentList(Indent indent)
+        {
+            DS = new DataSet();
+
+            try
+            {
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                //paramCollection.Add(new DBParameter("@RequestId", req.RequestId));
+                paramCollection.Add(new DBParameter("@IndentId", indent.IndentId));
+                paramCollection.Add(new DBParameter("@Date", indent.IndentDate1));
+                paramCollection.Add(new DBParameter("@Flag", indent.Flag));
+                DS = _DBHelper.ExecuteDataSet("SpPrchsGetIndent", paramCollection, CommandType.StoredProcedure);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return DS;
+        }
         #endregion
 
         #region PurchaseOrder

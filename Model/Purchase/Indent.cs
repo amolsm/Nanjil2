@@ -11,8 +11,10 @@ namespace Model.Purchase
        
         public int IndentByEmp { get; set; }
         public DateTime IndentDate { get; set; }
+        public string IndentDate1 { get; set; }
         public string TillDate { get; set; }
         public string Tokan { get; set; }
+        public int Flag { get; set; }
 
     }
 }

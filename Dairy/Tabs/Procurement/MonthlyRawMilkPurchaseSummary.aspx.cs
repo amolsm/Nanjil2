@@ -36,17 +36,33 @@ namespace Dairy.Tabs.Procurement
 
         protected void btnGeneratereport_Click(object sender, EventArgs e)
         {
-            Model.Procurement p = new Model.Procurement();
+            int flag;
+            if (chkAllTS.Checked)
+            {
+                flag = 0;
+            }
+            else{ flag = 1; }
+
+                Model.Procurement p = new Model.Procurement();
             ProcurementData pd = new ProcurementData();
 
             p.CenterID = Convert.ToInt32(dpCenter.SelectedItem.Value);
             p.FomDate = Convert.ToDateTime(txtStartDate.Text);
             p.ToDate = Convert.ToDateTime(txtEndDate.Text);
-            p.TSStartPercentage = Convert.ToDecimal(txttsstart.Text);
-            p.TSEndPercentage = Convert.ToDecimal(txttsend.Text);
-            p.IsActive = Convert.ToBoolean(CheckBox1.Checked);
+            double tsStart = 0;
+            double tsEnd = 0;
+            try
+            {
+                tsStart = Convert.ToDouble(txttsstart.Text);
+                tsEnd = Convert.ToDouble(txttsend.Text);
+            }
+            catch
+            {
+                tsStart = 0; tsEnd = 0;
+            }
+    
             DataSet DS = new DataSet();
-            DS = pd.MonthlyRawMilkPurchaseSummary(p);
+            DS = pd.MonthlyRawMilkPurchaseSummary(Convert.ToInt32(dpCenter.SelectedItem.Value), Convert.ToDateTime(txtStartDate.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(txtEndDate.Text).ToString("yyyy-MM-dd"), tsStart, tsEnd, flag);
             string result = string.Empty;
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
@@ -275,6 +291,22 @@ namespace Dairy.Tabs.Procurement
             }
             uprouteList.Update();
 
+        }
+
+        protected void chkAllTS_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkAllTS.Checked)
+            {
+                txttsstart.Enabled = false;
+                txttsstart.Text = string.Empty;
+                txttsend.Enabled = false;
+                txttsend.Text = string.Empty;
+            }
+            else
+            {
+                txttsstart.Enabled = true;
+                txttsend.Enabled = true;
+            }
         }
     }
 }
