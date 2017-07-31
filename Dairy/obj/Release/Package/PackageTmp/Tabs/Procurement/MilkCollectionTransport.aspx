@@ -86,7 +86,7 @@
                 
               </div>
             </div>
-            <div class="box-body"  ng-app="myApp" ng-controller="myCtrl">>
+            <div class="box-body"  ng-app="myApp" ng-controller="myCtrl">
                
               
                       <asp:UpdatePanel runat="server" ID="upMain" UpdateMode="Conditional">

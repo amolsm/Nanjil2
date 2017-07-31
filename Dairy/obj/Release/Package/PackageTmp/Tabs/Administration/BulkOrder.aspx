@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BulkOrder.aspx.cs" Inherits="Dairy.Tabs.Administration.BulkOrder" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript"  src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
+     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <script src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript"  src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
         <section class="content-header">
           <h1>
              Routewise Order
@@ -394,6 +395,6 @@
              }
          }); // end Modernizr.load
         </script>
-
+    
 
 </asp:Content>

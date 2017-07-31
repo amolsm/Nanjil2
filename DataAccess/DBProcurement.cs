@@ -79,21 +79,24 @@ namespace DataAccess
             return DS;
         }
 
-        public DataSet MonthlyRawMilkPurchaseSummary(Procurement p)
+        public DataSet MonthlyRawMilkPurchaseSummary(int CenterID, string StartDate, string EndDate, double tsStart, double tsEnd, int flag)
         {
             DataSet DS = new DataSet();
             try
             {
                 DBParameterCollection paramCollection = new DBParameterCollection();
-                paramCollection.Add(new DBParameter("@CenterId", p.CenterID));
-                paramCollection.Add(new DBParameter("@StartDate", p.FomDate));
-                paramCollection.Add(new DBParameter("@EndDate", p.ToDate));
-                paramCollection.Add(new DBParameter("@TSStart", p.TSStartPercentage));
-                paramCollection.Add(new DBParameter("@TSEnd", p.TSEndPercentage));
-                paramCollection.Add(new DBParameter("@TSAll", p.IsActive));
+                paramCollection.Add(new DBParameter("@CenterId", CenterID));
+                paramCollection.Add(new DBParameter("@StartDate", StartDate));
+                paramCollection.Add(new DBParameter("@EndDate", EndDate));
+                paramCollection.Add(new DBParameter("@TSStart", tsStart));
+                paramCollection.Add(new DBParameter("@TSEnd", tsEnd));
+                paramCollection.Add(new DBParameter("@flag", flag));
                 DS = _DBHelper.ExecuteDataSet("Proc_SP_MonthlyRawMilkPurchaseSummary", paramCollection, CommandType.StoredProcedure);
             }
-            catch { }
+            catch (Exception ex)
+            {
+                string msg = ex.Message.ToString();
+            }
             return DS;
         }
 

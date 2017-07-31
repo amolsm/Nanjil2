@@ -205,7 +205,7 @@
                         </ContentTemplate>
                 </asp:UpdatePanel>
   
-                 <asp:UpdateProgress ID="UpdateProgress2" runat="server" AssociatedUpdatePanelID="uprouteList">
+                 <asp:UpdateProgress ID="UpdateProgress2" runat="server" AssociatedUpdatePanelID="upMain">
             <ProgressTemplate>
                 
                 <div class="overlay">
