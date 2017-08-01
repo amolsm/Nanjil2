@@ -77,9 +77,9 @@ namespace Bussiness
             return pdb.InsertSupplierBankDetails(p);
         }
 
-        public DataSet MonthlyRawMilkPurchaseSummary(Procurement p)
+        public DataSet MonthlyRawMilkPurchaseSummary(int CenterID, string StartDate, string EndDate, double tsStart, double tsEnd, int flag)
         {
-            return pdb.MonthlyRawMilkPurchaseSummary(p);
+            return pdb.MonthlyRawMilkPurchaseSummary(CenterID, StartDate, EndDate, tsStart, tsEnd, flag);
         }
 
         public DataSet GetTransactionDetails(Procurement p)

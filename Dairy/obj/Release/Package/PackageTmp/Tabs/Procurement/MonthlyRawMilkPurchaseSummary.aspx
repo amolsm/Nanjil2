@@ -61,7 +61,7 @@
         </div><!-- /.box-header -->
         <div class="box-body">
 
-          
+<div class="row">
                 <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -120,7 +120,8 @@
                   </div><!-- /.form group -->
                           
                       </div> 
-
+</div>         
+            <div class="row">
                   <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
@@ -134,7 +135,7 @@
                           
                       </div> 
 
-                 <div class="col-lg-3">
+<%--                 <div class="col-lg-3">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon">
@@ -145,9 +146,19 @@
 
                   </div><!-- /.form group -->
                           
-                      </div> 
+                      </div> --%>
      
-          
+                   <div class="col-lg-3">
+                  <div class="form-group">
+                   <div class="input-group">
+                        <span class="input-group-addon">
+                          <asp:CheckBox runat="server" ID="chkAllTS" OnCheckedChanged="chkAllTS_CheckedChanged" AutoPostBack="true"/>
+                        </span>
+                    <input type="text" class="form-control" value="All TS%" disabled>
+                  </div>
+                  </div><!-- /.form group -->
+                         </div>
+
          
             
                <div class="col-lg-3">
@@ -166,6 +177,7 @@
                        
                           
                       </div> 
+                </div> 
         </div><!-- /.box-body -->
       </div>
 

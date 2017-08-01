@@ -48,94 +48,7 @@ namespace Dairy.Tabs.Cashier
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
                 StringBuilder sb = new StringBuilder();
-                try
-                {
-                    DS.Tables[1].PrimaryKey = new[] { DS.Tables[1].Columns["TypeID"] };
-                    DS.Tables[1].PrimaryKey = new[] { DS.Tables[1].Columns["TypeName"] };
-                }
-                catch (Exception) { }
-                try
-                {
-                    DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["TypeID"] };
-                    DS.Tables[3].PrimaryKey = new[] { DS.Tables[3].Columns["TypeName"] };
-
-                }
-                catch (Exception) { }
-                try
-                {
-                    DS.Tables[1].Merge(DS.Tables[3], false, MissingSchemaAction.Add);
-
-                }
-                catch (Exception) { }
-
-                //--------for product quantity
-
-                try
-                {
-                   
-                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["TypeID"] };
-                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["ITEM"] };
-                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["Rate"] };
-                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["UnitType"] };
-                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["Quantity"] };
-                    DS.Tables[0].PrimaryKey = new[] { DS.Tables[0].Columns["Amount"] };
-                }
-                catch (Exception) { }
-                try
-                {
-                  
-                    DS.Tables[2].PrimaryKey = new[] { DS.Tables[2].Columns["TypeID"] };
-                    DS.Tables[2].PrimaryKey = new[] { DS.Tables[2].Columns["ITEM"] };
-                    DS.Tables[2].PrimaryKey = new[] { DS.Tables[2].Columns["Rate"] };
-                    DS.Tables[2].PrimaryKey = new[] { DS.Tables[2].Columns["UnitType"] };
-                    DS.Tables[2].PrimaryKey = new[] { DS.Tables[2].Columns["Quantity"] };
-                    DS.Tables[2].PrimaryKey = new[] { DS.Tables[2].Columns["Amount"] };
-                }
-                catch (Exception) { }
-                try
-                {
-                    DS.Tables[0].Merge(DS.Tables[2], false, MissingSchemaAction.Add);
-                   
-                
-                }
-                catch (Exception) { }
-                try
-                {
-                   
-                   var finaltable = (from row in DS.Tables[0].AsEnumerable()
-                                      let type = row.Field<int>("TypeID")
-                                      let item = row.Field<string>("ITEM")
-                                      let rate = row.Field<decimal>("Rate")
-                                      let unite = row.Field<string>("UnitType")
-                                      let qty = row.Field<double>("Quantity")
-                                      let amt = row.Field<double>("Amount")
-                                      group row by new { type, item, rate, unite } into grp
-                                      select new
-                                      {
-                                          TypeID = grp.Key.type,
-                                          ITEM = grp.Key.item,
-                                          Rate = grp.Key.rate,
-                                          UnitType = grp.Key.unite,
-
-                                          Quantity = grp.Sum(r => r.Field<double>("Quantity")),
-                                          Amount = grp.Sum(r => r.Field<double>("Amount")),
-
-                                      }).OrderBy(type => type.TypeID).ThenBy(item => item.ITEM).ToList(); 
-
-                    DataTable dat = new DataTable();
-                    dat.Columns.Add("TypeID");
-                    dat.Columns.Add("ITEM");
-                    dat.Columns.Add("Rate");
-                    dat.Columns.Add("UnitType");
-                    dat.Columns.Add("Quantity");
-                    dat.Columns.Add("Amount");
-                    DataRow setrows = null;
-                    foreach (var rowObj in finaltable)
-                    {
-                        setrows = dat.NewRow();
-                        dat.Rows.Add(rowObj.TypeID, rowObj.ITEM, rowObj.Rate, rowObj.UnitType, rowObj.Quantity, rowObj.Amount);
-                    }
-                    
+               
                     sb.Append("<style type='text / css'>");
                     sb.Append(".tg  { border - collapse:collapse; border - spacing:0; border: none; }");
                     sb.Append(".tg .tg-yw4l{vertical-align:top}");
@@ -254,7 +167,7 @@ namespace Dairy.Tabs.Cashier
                         double quantity = 0;
                         double amounts = 0;
                         double totalamounts = 0;
-                        foreach (DataRow row in dat.Rows)
+                        foreach (DataRow row in DS.Tables[0].Rows)
                         {
                             if (row2["TypeID"].ToString() == row["TypeID"].ToString())
                             {
@@ -377,13 +290,7 @@ namespace Dairy.Tabs.Cashier
 
 
                 }
-                catch (Exception ex)
-                {
-                    string msg = ex.ToString();
-                    result = " Report not found";
-                    genratedBIll.Text = result;
-                }
-            }
+                
 
 
             else
