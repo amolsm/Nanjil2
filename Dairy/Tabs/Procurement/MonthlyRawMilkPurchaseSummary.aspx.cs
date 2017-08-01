@@ -62,7 +62,9 @@ namespace Dairy.Tabs.Procurement
             }
     
             DataSet DS = new DataSet();
-            DS = pd.MonthlyRawMilkPurchaseSummary(Convert.ToInt32(dpCenter.SelectedItem.Value), Convert.ToDateTime(txtStartDate.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(txtEndDate.Text).ToString("yyyy-MM-dd"), tsStart, tsEnd, flag);
+            //  DS = pd.MonthlyRawMilkPurchaseSummary(Convert.ToInt32(dpCenter.SelectedItem.Value), Convert.ToDateTime(txtStartDate.Text).ToString("yyyy-MM-dd"), Convert.ToDateTime(txtEndDate.Text).ToString("yyyy-MM-dd"), tsStart, tsEnd, flag);
+            //Santosh or Karthik to solve above issue
+            DS = new DataSet();
             string result = string.Empty;
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {

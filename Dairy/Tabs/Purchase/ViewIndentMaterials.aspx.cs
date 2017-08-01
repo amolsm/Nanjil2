@@ -20,6 +20,7 @@ namespace Dairy.Tabs.Purchase
         {
             if (!IsPostBack)
             {
+                txtIndDate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             }
         }
 
@@ -29,7 +30,7 @@ namespace Dairy.Tabs.Purchase
             DS = new DataSet();
             indent = new Indent();
             indent.IndentDate1 = string.IsNullOrEmpty(txtIndDate.Text) ? string.Empty : Convert.ToDateTime(txtIndDate.Text).ToString("dd-MM-yyyy");
-            indent.Flag = 1; //for getting Approved Request Details by Date
+            indent.Flag = 2; //for getting Approved Request Details by Date
             DS = purchaseData.GetIndentList(indent);
             rpRequestList.DataSource = DS;
             rpRequestList.DataBind();
@@ -50,6 +51,7 @@ namespace Dairy.Tabs.Purchase
                     {
                         hfId.Value = indentId.ToString();
                         GetDetailsById(indentId);
+                        hfIndentId.Value = indentId.ToString();
                         upModal.Update();
                         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
                         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "my1", "$('#Sidebars').addClass('dispnone');", true);
@@ -66,15 +68,15 @@ namespace Dairy.Tabs.Purchase
             indent = new Indent();
             string result = string.Empty;
             indent.IndentId = indentId;
-            indent.Flag = 2; //for getting Order Details
+            indent.Flag = 3; //for getting Order Details
             DS = purchaseData.GetIndentList(indent);
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {
-                txtIndDateModal.Text = Convert.ToDateTime(DS.Tables[0].Rows[0]["IndentDate"]).ToString("yyyy/MM/dd");
-                txtCode.Text = "IN0" + DS.Tables[0].Rows[0]["IndentId"].ToString();
-                txtIndentTime.Text = DS.Tables[0].Rows[0]["IndentTime"].ToString();
-                txtReqDate.Text = Convert.ToDateTime(DS.Tables[0].Rows[0]["TillDate"]).ToString("yyyy/MM/dd");
-                txtIndBy.Text = DS.Tables[0].Rows[0]["Name"].ToString();
+                if (DS.Tables[0].Rows[0]["Delivered"].ToString() == "True")
+                    dpStatus.Enabled = false;
+
+                rpModal.DataSource = DS;
+                rpModal.DataBind();
 
                 btnUpdate.Visible = true;
                 btnSubmit.Visible = false;
@@ -85,11 +87,14 @@ namespace Dairy.Tabs.Purchase
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            indent = new Indent();
             purchaseData = new PurchaseData();
+            indent = new Indent();
             indent.IndentId = Convert.ToInt32(hfIndentId.Value);
-            indent.IndentDate = Convert.ToDateTime(txtIndDateModal.Text);
-
+            indent.Flag = 5; //set status delivered
+            int val = Convert.ToInt32(dpStatus.SelectedItem.Value);
+            bool result;
+            if (val == 1)
+               result =  purchaseData.IndentStatus(indent);
 
         }
     }
