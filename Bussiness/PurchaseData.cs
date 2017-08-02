@@ -228,6 +228,12 @@ namespace Bussiness
 
 
         }
+
+        public bool IndentStatus(Indent ic)
+        {
+            dbPurchase = new DBPurchase();
+            return dbPurchase.IndentStatus(ic);
+        }
         #endregion
 
         #region PurchaseOrder

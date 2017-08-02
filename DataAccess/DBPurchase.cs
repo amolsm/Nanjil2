@@ -340,6 +340,31 @@ namespace DataAccess
 
             return DS;
         }
+
+        public bool IndentStatus(Indent indent)
+        {
+            int result = 0;
+            try
+            {
+
+                DBParameterCollection paramCollection = new DBParameterCollection();
+                paramCollection.Add(new DBParameter("@IndentId", indent.IndentId));
+                paramCollection.Add(new DBParameter("@Date", indent.IndentDate1));
+                paramCollection.Add(new DBParameter("@Flag", indent.Flag));
+                
+                result = _DBHelper.ExecuteNonQuery("SpPrchsGetIndent", paramCollection, CommandType.StoredProcedure);
+
+
+            }
+            catch (Exception ex)
+            {
+                string e = ex.ToString();
+            }
+            if (result > 0)
+                return true;
+            else
+                return false;
+        }
         #endregion
 
         #region PurchaseOrder
@@ -684,6 +709,7 @@ namespace DataAccess
                 DBParameterCollection paramCollection = new DBParameterCollection();
                 
                 paramCollection.Add(new DBParameter("@Flag", flag));
+                paramCollection.Add(new DBParameter("@IndentId", 0));
                 DS = _DBHelper.ExecuteDataSet("SpPrchsGetIndent", paramCollection, CommandType.StoredProcedure);
             }
             catch (Exception)
