@@ -71,7 +71,7 @@ namespace Dairy.Tabs.Reports
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-baqh' colspan='5' style='text-align:center'>");
-                sb.Append("<u>Agency Sales Analysis- Itemwise </u> <br/>");
+                sb.Append("<u>Sales Analysis- Itemwise </u> <br/>");
                 sb.Append("</th>");
 
                 sb.Append("<th class='tg-yw4l' style='text-align:right'>");
