@@ -493,7 +493,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                  <li><a href="/Tabs/Purchase/Dashboard.aspx"><i class="fa fa-circle-o"></i>Dashboard</a></li>
+                   <li><a href="/Tabs/Purchase/ViewIndentMaterials.aspx"><i class="fa fa-circle-o"></i>View Indent Material</a></li>
+                 <%-- <li><a href="/Tabs/Purchase/Dashboard.aspx"><i class="fa fa-circle-o"></i>Dashboard</a></li>--%>
                   <li><a href="/Tabs/Purchase/RackSections.aspx"><i class="fa fa-circle-o"></i>RackSections</a></li>
                   <li><a href="/Tabs/Purchase/Categories.aspx"><i class="fa fa-circle-o"></i>Categories</a></li>
                   <li><a href="/Tabs/Purchase/Items.aspx"><i class="fa fa-circle-o"></i>Items</a></li>
@@ -876,7 +877,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                  <li><a href="/Tabs/Purchase/Dashboard.aspx"><i class="fa fa-circle-o"></i>Dashboard</a></li>
+                  <li><a href="/Tabs/Purchase/ViewIndentMaterials.aspx"><i class="fa fa-circle-o"></i>View Indent Material</a></li>
+                 <%-- <li><a href="/Tabs/Purchase/Dashboard.aspx"><i class="fa fa-circle-o"></i>Dashboard</a></li>--%>
                   <li><a href="/Tabs/Purchase/RackSections.aspx"><i class="fa fa-circle-o"></i>RackSections</a></li>
                   <li><a href="/Tabs/Purchase/Categories.aspx"><i class="fa fa-circle-o"></i>Categories</a></li>
                   <li><a href="/Tabs/Purchase/Items.aspx"><i class="fa fa-circle-o"></i>Items</a></li>

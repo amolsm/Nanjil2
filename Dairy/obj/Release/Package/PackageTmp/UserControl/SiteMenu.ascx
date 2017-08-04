@@ -484,6 +484,34 @@
                      </li>
                       </ul>
          </li>
+
+            
+          <li class="treeview">
+              <a href="#">
+                <i class="glyphicon glyphicon-road"></i>
+                <span>Purchase</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                   <li><a href="/Tabs/Purchase/ViewIndentMaterials.aspx"><i class="fa fa-circle-o"></i>View Indent Material</a></li>
+                 <%-- <li><a href="/Tabs/Purchase/Dashboard.aspx"><i class="fa fa-circle-o"></i>Dashboard</a></li>--%>
+                  <li><a href="/Tabs/Purchase/RackSections.aspx"><i class="fa fa-circle-o"></i>RackSections</a></li>
+                  <li><a href="/Tabs/Purchase/Categories.aspx"><i class="fa fa-circle-o"></i>Categories</a></li>
+                  <li><a href="/Tabs/Purchase/Items.aspx"><i class="fa fa-circle-o"></i>Items</a></li>
+                  <li><a href="/Tabs/Purchase/VendorRegistration.aspx"><i class="fa fa-circle-o"></i>Vendor Registration</a></li>
+                  <li><a href="/Tabs/Purchase/ItemRates.aspx"><i class="fa fa-circle-o"></i>Item Rates</a></li>
+                  
+                  <li><a href="/Tabs/Purchase/IndentMaterial.aspx"><i class="fa fa-circle-o"></i>Indent</a></li>
+                  <li><a href="/Tabs/Purchase/ComparativeStatement.aspx"><i class="fa fa-circle-o"></i>Comparative Statement</a></li>
+                  <li><a href="/Tabs/Purchase/PurchaseRequests.aspx"><i class="fa fa-circle-o"></i>Purchase Request</a></li>
+                  <li><a href="/Tabs/PurchaseM/ViewPrchsRequest.aspx"><i class="fa fa-circle-o"></i>View Requests</a></li>
+                  <li><a href="/Tabs/Purchase/PurchaseOrder.aspx"><i class="fa fa-circle-o"></i>Purchase Order</a></li>
+                  <li><a href="/Tabs/Purchase/ViewPurchaseOrder.aspx"><i class="fa fa-circle-o"></i>Print Orders</a></li>
+                  <li><a href="/Tabs/Purchase/MaterialReceived.aspx"><i class="fa fa-circle-o"></i>Material Received</a></li>
+              </ul>
+            </li> 
+
+    
               
           </ul>
          
@@ -849,7 +877,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                  <li><a href="/Tabs/Purchase/Dashboard.aspx"><i class="fa fa-circle-o"></i>Dashboard</a></li>
+                  <li><a href="/Tabs/Purchase/ViewIndentMaterials.aspx"><i class="fa fa-circle-o"></i>View Indent Material</a></li>
+                 <%-- <li><a href="/Tabs/Purchase/Dashboard.aspx"><i class="fa fa-circle-o"></i>Dashboard</a></li>--%>
                   <li><a href="/Tabs/Purchase/RackSections.aspx"><i class="fa fa-circle-o"></i>RackSections</a></li>
                   <li><a href="/Tabs/Purchase/Categories.aspx"><i class="fa fa-circle-o"></i>Categories</a></li>
                   <li><a href="/Tabs/Purchase/Items.aspx"><i class="fa fa-circle-o"></i>Items</a></li>

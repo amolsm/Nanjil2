@@ -137,7 +137,7 @@
                   <div class="form-group">
                     <div class="input-group">
                                <asp:Button ID="btngenrateBill" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btngenrateBill_click"   Text="ViewReport"    />     
-                        &nbsp; <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClientClick="return PrintPanel();return true;"   Text="Print"    />     
+                        &nbsp; <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="PrintPanel()"   Text="Print"    />     
                              
                     </div><!-- /.input group -->
 

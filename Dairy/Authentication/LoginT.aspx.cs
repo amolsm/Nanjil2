@@ -218,7 +218,7 @@ namespace Dairy.Authentication
                             }
                         case "Purchase":
                             {
-                                Response.Redirect("/Tabs/Purchase/Dashboard.aspx");
+                                Response.Redirect("/Tabs/Purchase/ViewIndentMaterials.aspx");
                                 break;
                             }
                        case "Marketing":

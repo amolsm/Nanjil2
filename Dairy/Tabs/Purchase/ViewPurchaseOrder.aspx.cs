@@ -20,6 +20,7 @@ namespace Dairy.Tabs.Purchase
         {
             if (!IsPostBack)
             {
+                txtPODate.Text = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             }
         }
 
