@@ -14,3 +14,13 @@ D:\NanjilCode2\Nanjil2\Dairy\bin\EntityFramework.xml
 D:\NanjilCode2\Nanjil2\Dairy\obj\Release\Dairy.csprojResolveAssemblyReference.cache
 D:\NanjilCode2\Nanjil2\Dairy\obj\Release\Dairy.dll
 D:\NanjilCode2\Nanjil2\Dairy\obj\Release\Dairy.pdb
+D:\NanjilCode2\Nanjil2\Dairy\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NanjilCode2\Nanjil2\Dairy\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NanjilCode2\Nanjil2\Dairy\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NanjilCode2\Nanjil2\Dairy\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NanjilCode2\Nanjil2\Dairy\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NanjilCode2\Nanjil2\Dairy\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NanjilCode2\Nanjil2\Dairy\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NanjilCode2\Nanjil2\Dairy\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NanjilCode2\Nanjil2\Dairy\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+D:\NanjilCode2\Nanjil2\Dairy\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll

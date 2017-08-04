@@ -4,7 +4,7 @@
     <link href="../../Theme/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
     <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap-select.min.js"></script>
 
-    <%--<script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>--%>
+   
     <style type="text/css">
         .dispnone {display:none;}
 
@@ -95,13 +95,14 @@
                   <thead>
                       <tr>
                          
-                            <th>Sr.No</th>
-                            <th>IndentCode</th>
-                            <th>Indent Date</th>
-                            <th>Time</th>
-                          <th>Request Date</th>
-                            <th>Indent By</th>
-                            <th>Action</th>                          
+                                        <th>Sr.No</th>
+                                        <th>IndentCode</th>
+                                        <th>Indent Date</th>
+                                        <th>Time</th>
+                                        <th>Req Date</th> 
+                                        <th>Indent BY</th> 
+                                        <th>Status</th>
+                                        <th align="center">View </th> 
                       </tr>
                     </thead>
                     <tbody>
@@ -112,17 +113,22 @@
                     <tr>
                                  
                                 <td><%# Eval("srno")%></td>
-                                <td>IN0<%# Eval("IndentId")%></td>                       
+                                <td><%# Eval("IndentId")%></td>                       
                                 <td><%# Eval("IndentDate")%></td>
-                               <td><%# Eval("IndentTime")%></td>
-                        <td><%# Eval("TillDate")%></td>
-                              <%--  <td><%# Eval("VendorCode") + " " + Eval("VendorName")%></td>--%>
-                                  <td><%# Eval("Name")%></td>                  
-                               <%--  <td><%# Eval("MDApproval")%></td> --%>
-                         <td align="left">   <asp:LinkButton ID="lbView" AlternateText="View" ForeColor="Gray" OnItemCommand="lbView_ItemCommand" 
+                                <td><%# Eval("IndentTime")%></td>
+                                <td><%# Eval("TillDate")%></td>
+                                <td><%# Eval("EmployeeCode") + " " + Eval("EmployeeName")%></td>                       
+                                <td><%# Eval("Delivered").ToString()== "True" ? "Approved" : "Pending" %></td>
+                            
+                         <td align="center">   <asp:LinkButton ID="lbdelete" AlternateText="View" ForeColor="Gray" OnItemCommand="lbView_ItemCommand" 
                                                                     ToolTip="View" runat="server" CommandArgument='<%#Eval("IndentId") %>'
                                                                     CommandName="View"><i class="fa fa-external-link"></i></asp:LinkButton>
 </td>
+
+                      
+
+
+       
                     </tr>
                </ItemTemplate>
                     <FooterTemplate>
@@ -131,13 +137,14 @@
 
                     <tfoot>
                       <tr>
-                           <th>Sr.No</th>
+                            <th>Sr.No</th>
                             <th>IndentCode</th>
                             <th>Indent Date</th>
                             <th>Time</th>
-                          <th>Request Date</th>
-                            <th>Indent By</th>
-                            <th>Action</th>   
+                            <th>Req Date</th> 
+                            <th>Indent BY</th> 
+                            
+                            <th align="center">View </th> 
                       </tr>
                     </tfoot>
 
@@ -168,88 +175,73 @@
       </div>
       <div class="modal-body">
           <div class="box-body">
-              <div class="col-lg-4">
-                  <div class="form-group frmgrp" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <asp:Label runat="server" Text="Indent Code"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="txtCode" class="form-control" ToolTip="Indent Code"   runat="server" ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCode"
-        ErrorMessage="Indent Code Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
-                  </div><!-- /.form group -->
-    
-                      </div>        <!-- -->
+              
+              <table id="example5" class="table table-bordered table-striped">
+          <asp:Repeater ID="rpModal" runat="server" >
+                
+               <HeaderTemplate>
+                  <thead>
+                      <tr>
+                         <th>SrNo</th>
+                                        <th>ItemName</th>
+                                        <th>Quantity</th>
+                                        <th>Stock</th>
+                                        <th>Rack</th>
+                                        <th>Section</th> 
+                                        
+                      </tr>
+                    </thead>
+                    <tbody>
 
-                  <div class="col-lg-4">
-                  <div class="form-group frmgrp" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <asp:Label runat="server" Text="Indent Date"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="txtIndDateModal" class="form-control" type="date" ToolTip="Date"   runat="server" ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtIndDateModal"
-        ErrorMessage="Date is Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
-                  </div><!-- /.form group -->
-    
-                      </div>        <!-- -->
+                   
+               </HeaderTemplate>
+               <ItemTemplate>
+                    <tr>
+                                 
+                                <td><%# Eval("srno")%></td>
+                                <td><%# Eval("ItemName")%></td>                       
+                                <td><%# Eval("Quantity")%></td>
+                                <td><%# Eval("Stock")%></td>
+                                <td><%# Eval("RackName")%></td>
+                                <td><%# Eval("RackSectionName")%></td>                     
+                                
+                            
+                         
 
-        <div class="col-lg-4">
-                  <div class="form-group frmgrp" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <asp:Label runat="server" Text="Indent Time"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="txtIndentTime" class="form-control" ToolTip="Indent Time"   runat="server" ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-                      <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtIndentTime"
-        ErrorMessage="Indent Time Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
-                  </div><!-- /.form group -->
-    
-                      </div>        <!-- -->
+                      
 
-        <div class="col-lg-4">
-                  <div class="form-group frmgrp" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <asp:Label runat="server" Text="Request Date"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="txtReqDate" class="form-control" type="date" ToolTip="Date"   runat="server" ></asp:TextBox>                        
-                    </div><!-- /.input group -->
-                      <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtReqDate"
-        ErrorMessage="Date is Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
-                  </div><!-- /.form group -->
-    
-                      </div>        <!-- -->
 
-              <div class="col-lg-4">
-                  <div class="form-group frmgrp" >
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <asp:Label runat="server" Text="Indent By"></asp:Label>
-                      </div>
-                       <asp:TextBox ID="txtIndBy" class="form-control" ToolTip="IndentBy"   runat="server" readonly></asp:TextBox>                        
-                    </div><!-- /.input group -->
-                      <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtIndBy"
-        ErrorMessage="IndentBy is  Required" ValidationGroup="Save" ForeColor="Red"></asp:RequiredFieldValidator>
-                  </div><!-- /.form group -->
-    
-                      </div>        <!-- -->
+       
+                    </tr>
+               </ItemTemplate>
+                    <FooterTemplate>
 
-         <%--     <div class="row">
-                  
-                    <div class="col-lg-4 ">
+                         </tbody>
+
+                   
+
+                    </FooterTemplate>
+                                             
+           </asp:Repeater>
+                
+           </table>
+              <br /><br /> <asp:HiddenField ID="HiddenField1" runat="server"/>
+               <div class="col-lg-4">
                   <div class="form-group">
                     <div class="input-group">
-                      <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClientClick="PrintPanel()" Text="Print"  />                 
-                     </div><!-- /.input group -->
-                    </div><!-- /.form group -->
-                    </div>  
-              </div>--%>
-
-              
+                      <div class="input-group-addon">
+                      <asp:Label Text="Status" runat="server"></asp:Label>
+                      </div>
+                       <asp:DropDownList ID="dpStatus" class="form-control "  data-live-search="true" runat="server" > 
+                       <asp:ListItem Value="0" Text="Select Status"></asp:ListItem>
+                           <asp:ListItem Value="1" Text="Delevered"></asp:ListItem>
+                           <asp:ListItem Value="2" Text="Reject"></asp:ListItem>
+                       </asp:DropDownList>
+                        
+                         
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
+                         </div>
           <asp:Panel runat="server" ID="pnlRequestDetails" >
                         <asp:Literal runat="server" ID="RequestDetails"></asp:Literal>
               </asp:Panel>
@@ -285,19 +277,5 @@
             });
         
     </script>
-    <script type = "text/javascript">
-         function PrintPanel() {
-             var panel = document.getElementById("<%=pnlRequestDetails.ClientID %>");
-           var printWindow = window.open('', '', 'height=600px,width=800px');
-           printWindow.document.write("<html> <head> <style type='text/css'>.style1{border-collapse:collapse;font-size: 12px; font-family: sans-serif;} .dispnone {display:none;}</style> ");
-           printWindow.document.write('</head><body >');
-           printWindow.document.write(panel.innerHTML);
-           printWindow.document.write('</body></html>');
-           printWindow.document.close();
-           setTimeout(function () {
-               printWindow.print();
-           }, 500);
-           return false;
-       }
-         </script>
+    
 </asp:Content>

@@ -484,9 +484,10 @@
                      </li>
                       </ul>
          </li>
+              
           </ul>
          
-          </ul>
+          
 </asp:Panel>
 
 <asp:Panel runat="server" ID="pnlReception" Visible="false">
@@ -517,7 +518,16 @@
                 
               </ul>
             </li> 
-        
+          <li class="treeview">
+                   <a href="#">
+            <i class="fa fa-indent" aria-hidden="true"></i>
+                <span>Indent</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+          <ul class="treeview-menu">
+             <li><a href="/Tabs/Purchase/IndentMaterial.aspx"><i class="fa fa-circle-o"></i>Indent Material</a></li>          
+        </ul>
+                </li>
           </ul>
 </asp:Panel>
 
@@ -558,7 +568,16 @@
                   
               </ul>
             </li>          
-        
+            <li class="treeview">
+                   <a href="#">
+                <i class="fa fa-indent" aria-hidden="true"></i>
+                <span>Indent</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+          <ul class="treeview-menu">
+             <li><a href="/Tabs/Purchase/IndentMaterial.aspx"><i class="fa fa-circle-o"></i>Indent Material</a></li>          
+        </ul>
+                </li>
           </ul>
 </asp:Panel>
 
@@ -598,8 +617,17 @@
                    
                   
               </ul>
-            </li>          
-        
+            </li>
+            <li class="treeview">
+                   <a href="#">
+            <i class="fa fa-indent" aria-hidden="true"></i>
+                <span>Indent</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+          <ul class="treeview-menu">
+             <li><a href="/Tabs/Purchase/IndentMaterial.aspx"><i class="fa fa-circle-o"></i>Indent Material</a></li>          
+        </ul>
+                </li>
           </ul>
 </asp:Panel>
 <asp:Panel runat="server" ID="pnlDesptach" Visible="false">
@@ -681,7 +709,16 @@
 
                        </ul>
                     </li>
-               
+                  <li class="treeview">
+                   <a href="#">
+            <i class="fa fa-indent" aria-hidden="true"></i>
+                <span>Indent</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+          <ul class="treeview-menu">
+             <li><a href="/Tabs/Purchase/IndentMaterial.aspx"><i class="fa fa-circle-o"></i>Indent Material</a></li>          
+        </ul>
+                </li>
               </ul>
            
 </asp:Panel>
@@ -742,6 +779,16 @@
                   
               </ul>
             </li> 
+           <li class="treeview">
+                   <a href="#">
+            <i class="fa fa-indent" aria-hidden="true"></i>
+                <span>Indent</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+          <ul class="treeview-menu">
+             <li><a href="/Tabs/Purchase/IndentMaterial.aspx"><i class="fa fa-circle-o"></i>Indent Material</a></li>          
+        </ul>
+                </li>
               </ul>
           
 </asp:Panel>
@@ -778,6 +825,16 @@
 
               </ul>
             </li> 
+            <li class="treeview">
+                   <a href="#">
+            <i class="fa fa-indent" aria-hidden="true"></i>
+                <span>Indent</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+          <ul class="treeview-menu">
+             <li><a href="/Tabs/Purchase/IndentMaterial.aspx"><i class="fa fa-circle-o"></i>Indent Material</a></li>          
+        </ul>
+                </li>
 
      </ul>
 </asp:Panel>   
@@ -913,7 +970,18 @@
                    
                   
               </ul>
+             
             </li>
+                      <li class="treeview">
+                   <a href="#">
+            <i class="fa fa-indent" aria-hidden="true"></i>
+                <span>Indent</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+          <ul class="treeview-menu">
+             <li><a href="/Tabs/Purchase/IndentMaterial.aspx"><i class="fa fa-circle-o"></i>Indent Material</a></li>          
+        </ul>
+                </li>
                       </ul>
                 
             </asp:Panel>
@@ -962,7 +1030,16 @@
             </li>
             
            
-        
+           <li class="treeview">
+                   <a href="#">
+            <i class="fa fa-indent" aria-hidden="true"></i>
+                <span>Indent</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+          <ul class="treeview-menu">
+             <li><a href="/Tabs/Purchase/IndentMaterial.aspx"><i class="fa fa-circle-o"></i>Indent Material</a></li>          
+        </ul>
+                </li>
           </ul>
            </asp:Panel>
 
