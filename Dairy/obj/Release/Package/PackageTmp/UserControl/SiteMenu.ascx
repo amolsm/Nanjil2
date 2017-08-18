@@ -116,6 +116,7 @@
                   <li><a href="/Tabs/Administration/CancelOrderM.aspx"><i class="fa fa-circle-o"></i>Cancel Bill</a></li>
                   <li><a href="/Tabs/Administration/BillSequence.aspx"><i class="fa fa-circle-o"></i> Bill Sequence</a></li>
                   <li><a href="/Tabs/Administration/GenrateBillThermal.aspx"><i class="fa fa-circle-o"></i>Generate Thermal Bill</a></li>
+                    <li><a href="/Tabs/Administration/GenerateThermalBillGetInPdf.aspx"><i class="fa fa-circle-o"></i>Generate Thermal Bill In Pdf</a></li>
                   <li><a href="/Tabs/Administration/GenrateBill.aspx"><i class="fa fa-circle-o"></i> Generate Bill</a></li> 
                   <li><a href="/Tabs/Administration/DuplicateBillForAgent.aspx"><i class="fa fa-circle-o"></i>Orderwise Sales Bill</a></li>
                  <li><a href="/Tabs/Reports/ItemwiseOrderSummary.aspx"><i class="fa fa-circle-o"></i>Item Wise Order Summary</a></li> 

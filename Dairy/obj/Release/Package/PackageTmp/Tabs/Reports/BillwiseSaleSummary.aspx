@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BillwiseSaleSummary.aspx.cs" Inherits="Dairy.Tabs.Reports.BillwiseSaleSummary" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link rel="stylesheet" href="http://localhost:5500/code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-            <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-            <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://localhost:5500/code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
+            <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
+            <script type="text/javascript" src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
       <script type = "text/javascript">
@@ -64,7 +64,7 @@
 
 
 
-           <div class="box  ">
+           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title"><asp:Label ID="lbltital" runat="server" Text="Billwise Sales Summary"></asp:Label> </h3>
               <div class="box-tools pull-right">
@@ -137,8 +137,7 @@
                   <div class="form-group">
                     <div class="input-group">
                                <asp:Button ID="btngenrateBill" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btngenrateBill_click"   Text="ViewReport"    />     
-                        &nbsp; <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="PrintPanel()"   Text="Print"    />     
-                             
+                      &nbsp; <asp:Button ID="btnPrint" class="btn btn-primary " runat="server" CommandName="MoveNext" OnClientClick="return PrintPanel();return true;"   Text="Print"    />       
                     </div><!-- /.input group -->
 
                   </div><!-- /.form group -->
@@ -156,7 +155,8 @@
                      
                     </ContentTemplate>
                 </asp:UpdatePanel>
-                    <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="upMain">
+                   
+                 <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="upMain">
             <ProgressTemplate>
                 
                 <div class="overlay">
@@ -166,7 +166,6 @@
 
             </ProgressTemplate>
             </asp:UpdateProgress>
-                
             </div><!-- /.box-body -->            
           </div><!-- /.box -->
           

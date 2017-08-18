@@ -1,23 +1,25 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewIndentMaterials.aspx.cs" Inherits="Dairy.Tabs.Purchase.ViewIndentMaterials" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    
      <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
-    <link href="../../Theme/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap-select.min.js"></script>
-
    
+     <link href="../../Theme/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap-select.min.js"></script>
+    
     <style type="text/css">
         .dispnone {display:none;}
 
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    
        <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
             View Indent Material
             <small>Purchase</small>
           </h1>
-          <ol class="breadcrumb">
+          <ol class="breadcrumb"><script type="text/javascript" src="../../Theme/bootstrap/js/bootstrap.min.js"></script>
             <li><a href="#"><i class="fa fa-dashboard"></i> View Indent</a></li>
             <li class="active">Indent</li>
           </ol>
@@ -141,8 +143,10 @@
                             <th>IndentCode</th>
                             <th>Indent Date</th>
                             <th>Time</th>
-                            <th>Req Date</th> 
-                            <th>Indent BY</th> 
+                            <th>Req Date</th>
+                           <th>Indent BY</th> 
+                           <th>Status</th> 
+                           
                             
                             <th align="center">View </th> 
                       </tr>
@@ -156,6 +160,7 @@
            <asp:HiddenField ID="hfIndentId" runat="server" />
        </div> 
                            </asp:Panel>
+                 </div>
                       </ContentTemplate>   
                  </asp:UpdatePanel> 
             </div>
@@ -265,17 +270,23 @@
                   
                   </section>
           
-     <script type="text/javascript">
-        
-         //$(document).ready(function () {
-         //    $('#example').DataTable();
-         //});
+      
+   <script type="text/javascript">
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InIEvent);
+        function InIEvent() {
 
             $(function () {
                 $("#example1").DataTable();
-                
+                $('#example2').DataTable({
+                    "paging": true,
+                    "lengthChange": false,
+                    "searching": false,
+                    "ordering": true,
+                    "info": true,
+                    "autoWidth": false
+                });
             });
-        
+        }
     </script>
     
 </asp:Content>

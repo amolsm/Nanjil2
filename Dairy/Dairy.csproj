@@ -47,8 +47,31 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.11.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.11\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.11.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.11\lib\itextsharp.xmlworker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.11.0.3452.0\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.11.0.3452.0\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Runtime.Common.11.0.3452.0\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicosoftReportViewerWebForms_v11.1.0.1\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -71,6 +94,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Tabs\Administration\GenerateThermalBillGetInPdf.aspx" />
     <Content Include="Tabs\Marketing\MarketingGift-Othercomparison.aspx" />
     <Content Include="ErrorPages\designi.jpg" />
     <Content Include="ErrorPages\customcss.css" />
@@ -354,7 +378,6 @@
     <Content Include="Tabs\TransportModule\VehicleTarifDetails.aspx" />
     <Content Include="test.aspx" />
     <Content Include="Test.html" />
-    <Content Include="testwithMaster.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Theme\bootstrap\css\bootstrap-select.min.css" />
@@ -1172,6 +1195,13 @@
     <Content Include="WebService\BindAgentSlab.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tabs\Administration\GenerateThermalBillGetInPdf.aspx.cs">
+      <DependentUpon>GenerateThermalBillGetInPdf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tabs\Administration\GenerateThermalBillGetInPdf.aspx.designer.cs">
+      <DependentUpon>GenerateThermalBillGetInPdf.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\Marketing\MarketingGift-Othercomparison.aspx.cs">
       <DependentUpon>MarketingGift-Othercomparison.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3108,13 +3138,6 @@
     </Compile>
     <Compile Include="test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="testwithMaster.aspx.cs">
-      <DependentUpon>testwithMaster.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="testwithMaster.aspx.designer.cs">
-      <DependentUpon>testwithMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>

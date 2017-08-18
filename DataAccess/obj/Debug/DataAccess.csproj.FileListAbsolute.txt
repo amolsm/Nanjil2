@@ -16,3 +16,12 @@ D:\NanjilCode2\Nanjil\DataAccess\bin\Model.pdb
 D:\NanjilCode2\Nanjil\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 D:\NanjilCode2\Nanjil\DataAccess\obj\Debug\DataAccess.dll
 D:\NanjilCode2\Nanjil\DataAccess\obj\Debug\DataAccess.pdb
+D:\Nanjil2\DataAccess\bin\DataAccess.dll
+D:\Nanjil2\DataAccess\bin\DataAccess.pdb
+D:\Nanjil2\DataAccess\bin\Comman.dll
+D:\Nanjil2\DataAccess\bin\Model.dll
+D:\Nanjil2\DataAccess\bin\Comman.pdb
+D:\Nanjil2\DataAccess\bin\Model.pdb
+D:\Nanjil2\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Nanjil2\DataAccess\obj\Debug\DataAccess.dll
+D:\Nanjil2\DataAccess\obj\Debug\DataAccess.pdb
