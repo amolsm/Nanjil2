@@ -13,6 +13,18 @@ namespace Bussiness
         {
             return dbbill.GenrateBillByDate(Date, routeID, salesid);
         }
+        public void GenrateBillPre(string Date, int routeID, int salesid)
+        {
+             dbbill.GenrateBillPre(Date, routeID, salesid);
+        }
+        public void GenrateBillPre1(string Date, int routeID, int salesid)
+        {
+            dbbill.GenrateBillPre1(Date, routeID, salesid);
+        }
+        public void GenrateBillPre2(string Date, int routeID, int salesid)
+        {
+            dbbill.GenrateBillPre2(Date, routeID, salesid);
+        }
         public DataSet BoothSalesAnalysis(string Date, int boothid, int brandid)
         {
             return dbbill.BoothSalesAnalysis(Date, boothid, brandid);

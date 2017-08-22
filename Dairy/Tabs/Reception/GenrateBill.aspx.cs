@@ -58,6 +58,11 @@ namespace Dairy.Tabs.Reception
         {
 
             string result = string.Empty;
+
+            billdata.GenrateBillPre((Convert.ToDateTime(txtDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpAgentSelasEMployee.SelectedItem.Value));
+            billdata.GenrateBillPre1((Convert.ToDateTime(txtDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpAgentSelasEMployee.SelectedItem.Value));
+            billdata.GenrateBillPre2((Convert.ToDateTime(txtDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpAgentSelasEMployee.SelectedItem.Value));
+
             DS = billdata.GenrateBillByDate((Convert.ToDateTime(txtDate.Text)).ToString("dd-MM-yyyy"), Convert.ToInt32(dpRoute.SelectedItem.Value), Convert.ToInt32(dpAgentSelasEMployee.SelectedItem.Value));
             if (!Comman.Comman.IsDataSetEmpty(DS))
             {

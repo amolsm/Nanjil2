@@ -20,7 +20,36 @@ namespace DataAccess
            
             return _DBHelper.ExecuteDataSet("sp_GenrateBIll", paramCollection, CommandType.StoredProcedure);
         }
+        public void GenrateBillPre(string Date, int routeID, int salesEmpID)
+        {
 
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@date", Date));
+            paramCollection.Add(new DBParameter("@routeID", routeID));
+            paramCollection.Add(new DBParameter("@salesEmpID", salesEmpID));
+
+            DataSet ds = _DBHelper.ExecuteDataSet("sp_GenrateBIllPre", paramCollection, CommandType.StoredProcedure);
+        }
+        public void GenrateBillPre1(string Date, int routeID, int salesEmpID)
+        {
+
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@date", Date));
+            paramCollection.Add(new DBParameter("@routeID", routeID));
+            paramCollection.Add(new DBParameter("@salesEmpID", salesEmpID));
+
+            DataSet ds = _DBHelper.ExecuteDataSet("sp_GenrateBIllPre1", paramCollection, CommandType.StoredProcedure);
+        }
+        public void GenrateBillPre2(string Date, int routeID, int salesEmpID)
+        {
+
+            DBParameterCollection paramCollection = new DBParameterCollection();
+            paramCollection.Add(new DBParameter("@date", Date));
+            paramCollection.Add(new DBParameter("@routeID", routeID));
+            paramCollection.Add(new DBParameter("@salesEmpID", salesEmpID));
+
+            DataSet ds = _DBHelper.ExecuteDataSet("sp_GenrateBIllPre2", paramCollection, CommandType.StoredProcedure);
+        }
         public DataSet BoothSalesAnalysis(string Date, int boothid, int brandid)
         {
 

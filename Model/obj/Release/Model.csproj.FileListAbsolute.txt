@@ -8,3 +8,8 @@ D:\Nanjil2\Model\bin\Model.pdb
 D:\Nanjil2\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
 D:\Nanjil2\Model\obj\Release\Model.dll
 D:\Nanjil2\Model\obj\Release\Model.pdb
+D:\NanjilCode2\Nanjil\Model\bin\Model.dll
+D:\NanjilCode2\Nanjil\Model\bin\Model.pdb
+D:\NanjilCode2\Nanjil\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+D:\NanjilCode2\Nanjil\Model\obj\Release\Model.dll
+D:\NanjilCode2\Nanjil\Model\obj\Release\Model.pdb
