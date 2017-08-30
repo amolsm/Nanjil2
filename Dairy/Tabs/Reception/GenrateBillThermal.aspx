@@ -148,6 +148,7 @@
                   <div class="form-group">
                     <div class="input-group">
                                <asp:Button ID="btngenrateBill" class="btn btn-primary" runat="server" CommandName="MoveNext" OnClick="btngenrateBill_click"   Text="Generate"    />     
+                        &nbsp; <asp:Button ID="btnSeq" class="btn btn-primary" runat="server" CommandName="MoveNext"   Text="Make In Seq" OnClick="btnSeq_Click" UseSubmitBehavior="true"   />     
                         &nbsp; <asp:Button ID="btnPrint" class="btn btn-primary" runat="server" CommandName="MoveNext"  OnClientClick="return PrintPanel(); return true;"    Text="Print" OnClick="btnPrint_Click" UseSubmitBehavior="true"   />     
                              
                     </div><!-- /.input group -->

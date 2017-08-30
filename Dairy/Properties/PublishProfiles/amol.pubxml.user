@@ -28,7 +28,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/01/2017 12:51:47</publishTime>
     </File>
     <File Include="bin/Dairy.dll">
-      <publishTime>08/22/2017 14:52:16</publishTime>
+      <publishTime>08/29/2017 16:57:06</publishTime>
     </File>
     <File Include="bin/DataAccess.dll">
       <publishTime>08/22/2017 14:52:04</publishTime>
@@ -826,7 +826,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2016 10:53:00</publishTime>
     </File>
     <File Include="Tabs/Reception/GenrateBillThermal.aspx">
-      <publishTime>02/16/2017 11:02:43</publishTime>
+      <publishTime>08/29/2017 16:53:08</publishTime>
     </File>
     <File Include="Tabs/Reception/ItemwiseOrderSummary.aspx">
       <publishTime>11/11/2016 10:53:00</publishTime>
